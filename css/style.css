@@ -1,0 +1,422 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+  
+.source-sans-3-w400 {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: #dfe9e8ff;
+  min-height: 100%;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Wrappers */
+
+#wrapper {
+  display: block;
+  width: 90%;
+  margin: auto;
+  overflow: show;
+  padding-top: 56px;
+}
+
+#content {
+  display: block;
+  width: 60%;
+  margin: auto;
+  height: 100%;
+  color: #0a6167ff;
+  overflow: visible;
+}
+
+/* Add a black background color to the top navigation */
+.topnav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: #0a6167ff;
+  color: #f2f2f2;
+  padding: 0;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0;
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+}
+
+.topnav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  height: auto;
+}
+
+.topnav-left {
+  display: flex;
+  align-items: inherit;
+  justify-content: left;
+}
+
+.topnav-right {
+  display: flex;
+  align-items: inherit;
+  justify-content: right;
+  height: 100%;
+}
+
+.topnav a {
+  width: auto;
+  margin: 0 !important;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: inherit;
+  justify-content: flex-start;
+  height: 100%;
+
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.topnav a:is(:hover, :focus) {
+  background-color: #00aaafff;
+}
+
+.topnav a.active {
+  background-color: #00aaafff;
+  color: white;
+  font-weight: bold;
+}
+
+.topnav img {
+  height: 24px;
+  margin: 0 !important;
+  padding-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Models */
+#model-selector {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1em;
+}
+
+.model-row {
+  position: relative;
+  border-radius: 8px;
+  padding: 0.75em;
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: 1fr 2fr 1fr;
+  transition-property: background-color, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+
+  &:hover, &:focus {
+    background-color: #e6f6f4ff;
+    transform: scale(1.1);
+  }
+
+  & a:not(.model-link) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.model-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1em;
+  background-color: white;
+  padding: 0.5em;
+}
+
+.search-icon {
+  height: 1.5em;
+}
+
+#searchModel {
+  border: 0;
+  font-size: inherit;
+  flex-grow: 1;
+}
+
+#searchBar {
+  background-image: url(searchicon.svg);
+  background-size: 1.5em;
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
