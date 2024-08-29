@@ -32,8 +32,23 @@
       
 
       <div id="model-selector">
+        <div id="bars">
+          <input type="text" class="typeInBar clickable" onkeyup="modelSearch()" placeholder="Search for names.." title="Type in a name"/>
+          
+          <button type="button" onclick="toggleTags()" class="tagsButton clickable">Tags</button>
+        </div>
 
-        <input type="text" id="searchBar" onkeyup="modelSearch()" placeholder="Search for names.." title="Type in a name">
+        <div class="tagsBox">
+          <div class="tagsCategory">
+            <h3 class="tagsHeading">Apparatus</h3>
+            <div class="tagsRow">
+              <button type="button" class="tag clickable">PSII</button>
+              <button type="button" class="tag clickable">Cytochrome b<sub>6</sub>f</button>
+              <button type="button" class="tag clickable">PSI</button>
+              <button type="button" class="tag clickable">ATP Synthase</button>
+            </div>
+          </div>
+        </div>
 
         <?php
           // Directory containing your model HTML files
@@ -100,9 +115,10 @@
           }
         }
         </script>
-
     </div>
   </div>
+
+  <script type="text/javascript" src="../js/model_select.js"></script>
 
 </body>
 

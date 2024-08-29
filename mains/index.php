@@ -29,7 +29,10 @@
 
   <div id="wrapper">
     <div class="content">
-     <h1>Hello</h1>
+      <img src="../img/Thylakoid_membrane_3.svg" usemap="#photosynthesis"/>
+      <map name="photosynthesis">
+        <area target="" alt="" title="" href="models_select.php?PSII=true" coords="99,235,115,240,128,258,136,284,138,310,132,330,121,354,100,363,76,354,63,327,59,300,65,266,78,244" shape="poly">
+      </map>
     </div>
   </div>
 

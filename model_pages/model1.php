@@ -27,6 +27,10 @@
     </header>
   </div>
 
+  <div id="tags" class="hidden">
+    <div id="apparatus">PSI</div>
+  </div>
+
   <div id="wrapper">
     <div id="content-model">
 
@@ -35,6 +39,10 @@
         </div>
 
         <h1 id='modelTitle'>Hello</h1>
+
+        <div id='modelTagsBox' class='tagsRow'>
+          <span class='tag active'>Test</span>
+        </div>
 
         <div class="modelCards">
             <div class="attributeCard">
