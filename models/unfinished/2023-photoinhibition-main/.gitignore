@@ -1,0 +1,10 @@
+*.pyc
+assets/nogit/*
+.ipynb_checkpoints
+data/*
+!data/experiment_norm.csv
+.vscode
+*.png
+*.tiff
+*.p
+*.svg

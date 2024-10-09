@@ -1,0 +1,77 @@
+,,light intensity (uE),Photosynthesis,stdevp
+"Low carbon, 625 nm light",Photosynthesis,10,32.2488476893677,1.38579259472479
+"Low carbon, 625 nm light",Photosynthesis,30,73.6766756570308,3.16602293864644
+"Low carbon, 625 nm light",Photosynthesis,50,112.263564877365,7.87329046739381
+"Low carbon, 625 nm light",Photosynthesis,75,151.900447384075,4.57259707830506
+"Low carbon, 625 nm light",Photosynthesis,100,180.903426952344,6.10219481279224
+"Low carbon, 625 nm light",Photosynthesis,150,220.835079492935,6.63608325695922
+"Low carbon, 625 nm light",Photosynthesis,200,242.59883258565,6.72153562420058
+"Low carbon, 625 nm light",Photosynthesis,250,263.630090502591,22.0210771794897
+"Low carbon, 625 nm light",Photosynthesis,300,267.542897685361,18.9808393454355
+"Low carbon, 625 nm light",Photorespiration,0,-25.0637421285419,1.98912110705111
+"Low carbon, 625 nm light",Photorespiration,10,-22.5861381926152,0.970568106874598
+"Low carbon, 625 nm light",Photorespiration,30,-24.9332612279169,1.07142832217778
+"Low carbon, 625 nm light",Photorespiration,50,-26.4068159934012,4.18386726825823
+"Low carbon, 625 nm light",Photorespiration,75,-53.9062765952784,3.61654286906301
+"Low carbon, 625 nm light",Photorespiration,100,-67.8617640455703,1.21469864396528
+"Low carbon, 625 nm light",Photorespiration,150,-92.4806083021239,6.02868330237225
+"Low carbon, 625 nm light",Photorespiration,200,-109.454299392761,4.72417914226205
+"Low carbon, 625 nm light",Photorespiration,250,-109.817052465874,10.0014991155704
+"Low carbon, 625 nm light",Photorespiration,300,-108.871164595592,6.58158303561226
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,10,39.0256199101988,1.0982610531357
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,30,78.0471383079594,1.15876493819962
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,50,156.836724287031,1.62709529190125
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,75,216.627819110426,1.28403348333144
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,100,275.101740857218,34.2944348319448
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,150,308.147071964718,7.98509908415138
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,200,350.259009095613,15.0903117343067
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,250,373.060413116818,12.0953913109848
+"Low carbon, 625 nm light + 730 nm light",Photosynthesis,300,370.226783039892,14.8399175422849
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,0,-52.5201415430514,8.60125185198328
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,10,-25.5135741454099,1.04549874116721
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,30,-24.5945280062749,1.00783794240715
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,50,-34.1145682468038,1.39795145729956
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,75,-69.9272041605139,1.10182266497356
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,100,-112.719710324715,21.6166682518612
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,150,-126.236690139176,3.26107914442215
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,200,-138.951914010204,11.3052079951872
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,250,-155.892721828649,3.80261431037522
+"Low carbon, 625 nm light + 730 nm light",Photorespiration,300,-160.748662545212,8.7225719958131
+"High carbon, 625 nm light",Photosynthesis,10,43.1890463160095,1.5862224770126
+"High carbon, 625 nm light",Photosynthesis,30,98.6709785109688,3.14799573091905
+"High carbon, 625 nm light",Photosynthesis,50,144.377532724039,4.34682391099544
+"High carbon, 625 nm light",Photosynthesis,75,201.585820214192,10.562196013225
+"High carbon, 625 nm light",Photosynthesis,100,241.273909015779,8.86778614167954
+"High carbon, 625 nm light",Photosynthesis,150,295.479660187744,6.43157212732426
+"High carbon, 625 nm light",Photosynthesis,200,332.7204591842,8.90079464287126
+"High carbon, 625 nm light",Photosynthesis,250,351.519958051099,12.0757596662509
+"High carbon, 625 nm light",Photosynthesis,300,360.419813072424,4.6462485745449
+"High carbon, 625 nm light",Photorespiration,0,-49.7944610631914,6.27883088448111
+"High carbon, 625 nm light",Photorespiration,10,-41.8696967834147,1.23172159111736
+"High carbon, 625 nm light",Photorespiration,30,-46.2207429411675,1.35972054759834
+"High carbon, 625 nm light",Photorespiration,50,-40.6877931249597,1.19695238172303
+"High carbon, 625 nm light",Photorespiration,75,-78.4973140718511,2.60994449388325
+"High carbon, 625 nm light",Photorespiration,100,-98.5405020756188,1.08934295870331
+"High carbon, 625 nm light",Photorespiration,150,-126.129427148208,3.08503698570815
+"High carbon, 625 nm light",Photorespiration,200,-148.008325216398,1.2810110410224
+"High carbon, 625 nm light",Photorespiration,250,-155.307367717769,2.86825192739496
+"High carbon, 625 nm light",Photorespiration,300,-157.185996992533,1.24840596981868
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,10,47.0120017529433,2.72538542187277
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,30,100.558677990418,6.54331576999006
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,50,150.411137137726,9.8508290266675
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,75,204.896162702268,19.0710711468275
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,100,247.736161820392,13.3704934158594
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,150,307.289663683337,15.1335601928557
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,200,346.884691845459,21.881287253034
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,250,369.312172232058,21.2153681113008
+"High carbon, 625 nm light + 730 nm light",Photosynthesis,300,370.691908068509,22.4224771861297
+"High carbon, 625 nm light + 730 nm light",Photorespiration,0,-39.3959879152849,3.73423783425106
+"High carbon, 625 nm light + 730 nm light",Photorespiration,10,-25.4393376778953,0.660506483329268
+"High carbon, 625 nm light + 730 nm light",Photorespiration,30,-24.5229656736527,0.636713817906628
+"High carbon, 625 nm light + 730 nm light",Photorespiration,50,-34.0153055945782,0.883172752456029
+"High carbon, 625 nm light + 730 nm light",Photorespiration,75,-74.5466692756845,3.49848917307948
+"High carbon, 625 nm light + 730 nm light",Photorespiration,100,-100.241519168763,4.80676112553147
+"High carbon, 625 nm light + 730 nm light",Photorespiration,150,-132.899445821097,5.94624963678943
+"High carbon, 625 nm light + 730 nm light",Photorespiration,200,-156.038001583202,10.288777903738
+"High carbon, 625 nm light + 730 nm light",Photorespiration,250,-166.704441207392,15.659881376926
+"High carbon, 625 nm light + 730 nm light",Photorespiration,300,-161.817824011495,12.8431268511937

@@ -1,0 +1,67 @@
+<mxfile>
+    <diagram id="dxLEJkFJyIN2nUp21KRl" name="Page-1">
+        <mxGraphModel dx="473" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="280" pageHeight="200" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <object label="" reaction="vLhcdeprotonation" id="11">
+                    <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="2" target="5" edge="1">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="2" value="State 3&lt;br&gt;PsbSP,&amp;nbsp;Zx" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="120" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <object label="" reaction="vDeepox" id="7">
+                    <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;strokeColor=#6F0000;" parent="1" source="3" target="2" edge="1">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </object>
+                <object label="" reaction="vLhcdeprotonation" id="10">
+                    <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="3" target="4" edge="1">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="3" value="State 2&lt;br&gt;PsbSP,&amp;nbsp;Vx" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="40" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <object label="" reaction="vLhcprotonation" id="6">
+                    <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#6F0000;" parent="1" source="4" target="3" edge="1">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="4" value="State 1&lt;br&gt;PsbS,&amp;nbsp;Vx" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <object label="" reaction="vLhcprotonation" id="8">
+                    <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#6F0000;" parent="1" source="5" target="2" edge="1">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </object>
+                <object label="" reaction="vEpox" id="9">
+                    <mxCell style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="5" target="4" edge="1">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </object>
+                <mxCell id="5" value="State 4&lt;br&gt;PsbS,&amp;nbsp;Zx" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="120" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Epox" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="90" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Deepox" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="90" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Prot." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="10" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Prot." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="170" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Deprot" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="115" y="90" width="50" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

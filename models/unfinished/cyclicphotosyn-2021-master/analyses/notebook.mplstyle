@@ -1,0 +1,10 @@
+# Reference: https://matplotlib.org/stable/tutorials/introductory/customizing.html
+
+figure.titlesize : 22
+axes.titlesize : 16
+axes.labelsize : 12
+axes.grid : True
+lines.linewidth : 3
+
+legend.loc : upper left
+legend.borderaxespad : 0

@@ -1,0 +1,6 @@
+*.pyc
+.ipynb_checkpoints/
+.vscode
+analyses/GSA_output
+__pycache__
+*temp*

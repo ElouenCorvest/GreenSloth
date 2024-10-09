@@ -1,0 +1,14 @@
+# ignore jupyter checkpoints
+**/.ipynb_checkpoints/*
+**/__pycache__/*
+
+# ignore figures
+Figures/*
+Results/*
+out/*
+!Results/README.md
+
+# ignore vscode files
+.vscode
+
+test.ipynb
