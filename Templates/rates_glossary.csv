@@ -1,0 +1,10 @@
+Short Description,Paper Abbreviation,Abbreviation Here,Python Variable
+"Light harvesting, excitation energy transfer and charge seperation of reaction centers",$v_1$,$v_1$,`v1`
+Re-reduction of the reaction centers (electron donor) by oxygen evolving complex,$v_2$,$v_2$,`v2`
+Re-oxidation of reaction centers by electron transfer to plastoquinone,$v_3$,$v_3$,`v3`
+Re-oxidation of reduced plastoquinone by cytochrome b<sub>6</sub>f,$v_4$,$v_4$,`v4`
+ATP synthesis rate by proton motive force,$v_5$,$v_5$,`v5`
+Activation of quencher with pH-dependent rate,$v_6$,$v_6$,`v6`
+Inactivation of quencher,$v_7$,$v_7$,`v7`
+Passive leak of protons into stroma,$v_8$,$v_8$,`v8`
+Combination and simplification of all ATP consuming processes,$v_9$,$v_9$,`v9`
