@@ -1,85 +1,87 @@
 from __future__ import annotations
 
-import numpy as np
+#from modelbase.ode import DerivedStoichiometry, Model
 
+from modelbase2 import Model, Derived
 
-def value(x: float) -> float:
-    return x
-
-
-def neg(x: float) -> float:
-    return -x
-
-
-def proportional(x: float, y: float) -> float:
-    return x * y
-
-
-def times_two(x: float) -> float:
-    return x * 2
-
-
-def times_minus_fourteen_thirds(x: float) -> float:
-    return -x * 14 / 3
-
-
-def k1(PFD: float, cPFD: float) -> float:
-    return cPFD * PFD
-
-
-def Keq(H: float, DG0: float, Hst: float, RT: float, Pi: float) -> float:
-    DG = DG0 - np.log(10) * (pH(Hst) - pH(H)) * (14 / 3) * RT
-    return Pi * np.exp(-DG / RT)  # type: ignore
-
-
-def v1(N: float, A1: float, PFD: float, cPFD: float) -> float:
-    return (1 - N) * k1(PFD, cPFD) * A1
-
-
-def v2(A2: float, k2: float) -> float:
-    return k2 * A2
-
+from . import basic_funcs as bf
 
 def v3(
-    A1: float, A2: float, P: float, D: float, X: float, k3p: float, k3m: float
-) -> float:  # P seems to be reduce and Q oxidized ?
-    A3 = D - A1 - A2
-    Q = X - P
-    return k3p * A3 * Q - k3m * A1 * P
-
-
-def v4(P: float, k4: float) -> float:
-    return k4 * P
-
+    A1: float, A3: float, PQ_ox: float, PQ_red: float, k3p: float, k3m: float
+) -> float:  # PQ_ox seems to be reduce and PQ_red oxidized ?
+    return k3p * A3 * PQ_red - k3m * A1 * PQ_ox
 
 def v5(
-    T: float,
-    H: float,
-    A: float,
-    k5: float,
-    DG0: float,
-    Hst: float,
-    RT: float,
-    Pi: float,
-) -> float:
-    return k5 * (A - T * (1 + 1 / Keq(H, DG0, Hst, RT, Pi)))
+    ATP_st: float, AP_tot: float, k5: float, Keq: float) -> float:
+    return k5 * (AP_tot - ATP_st * (1 + 1 / Keq))
 
+def v6(N0: float, H_lu: float, k6: float, n: float, KQ: float) -> float:
+    return k6 * N0 * ((H_lu**n) / (H_lu**n + KQ**n))  # type: ignore
 
-def v6(N: float, H: float, k6: float, n: float, KQ: float) -> float:
-    return k6 * (1 - N) * ((H**n) / (H**n + KQ**n))  # type: ignore
+def v8(H_lu: float, H_st: float, k8: float) -> float:
+    return k8 * (H_lu - H_st)
 
+def include_reactions(m: Model) -> Model:
+    m.add_reaction(
+        "v1",
+        fn=bf.proportional,
+        stoichiometry={"A1": -1, "A2": 1},
+        args=["N0", "A1", "k1"],
+    )
 
-def v7(N: float, k7: float) -> float:
-    return k7 * N
+    m.add_reaction(
+        "v2",
+        fn=bf.proportional,
+        stoichiometry={"A2": -1, "H_lu": Derived(bf.two_times_value, args=["bH"])},
+        args=["A2", "k2"],
+    )
 
+    m.add_reaction(
+        "v3",
+        fn=v3,
+        stoichiometry={"A1": 1, "PQ_ox": 1},
+        args=["A1", "A3", "PQ_ox", "PQ_red", "k3p", "k3m"],
+    )
 
-def v8(H: float, Hst: float, k8: float) -> float:
-    return k8 * (H - Hst)
+    m.add_reaction(
+        "v4",
+        fn=bf.proportional,
+        stoichiometry={"PQ_ox": -1, "H_lu": Derived(bf.value, args=["bH"])},
+        args=["PQ_ox", "k4"],
+    )
 
+    m.add_reaction(
+        "v5",
+        fn=v5,
+        stoichiometry={"ATP_st": 1, "H_lu": Derived(bf.times_neg_fourteen_thirds, args=["bH"])},
+        args=["ATP_st", "AP_tot", "k5", "Keq"],
+    )
 
-def v9(T: float, k9: float) -> float:
-    return k9 * T
+    m.add_reaction(
+        "v6",
+        fn=v6,
+        stoichiometry={"N": 1},
+        args=["N0", "H_lu", "k6", "n", "KQ"],
+    )
 
+    m.add_reaction(
+        "v7",
+        fn=bf.proportional,
+        stoichiometry={"N": -1},
+        args=["N", "k7"],
+    )
 
-def pH(H: float) -> float:
-    return -np.log10(H * 2.5e-4)  # type: ignore
+    m.add_reaction(
+        "v8",
+        fn=v8,
+        stoichiometry={"H_lu": Derived(bf.neg_value, args=["bH"])},
+        args=["H_lu", "H_st", "k8"],
+    )
+
+    m.add_reaction(
+        "v9",
+        fn=bf.proportional,
+        stoichiometry={"ATP_st": -1},
+        args=["ATP_st", "k9"],
+    )
+    return m
