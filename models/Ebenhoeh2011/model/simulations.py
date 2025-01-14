@@ -17,7 +17,7 @@ def simulate_to_steady_state_variable_param(
     param_str: str,
     m: Model,
     rel_norm: bool = False,
-    tolerance: float = 1e-8
+    tolerance: float = 1e-12
 ) -> dict[str, float]:
     """
     Function to simulate to steady-state, with the option to update a parameter
@@ -50,16 +50,26 @@ def simulate_to_steady_state_variable_param(
     
     s = Simulator(m)
     s.update_parameter(param_str, param_val)
-    
-    try:
-        for t_end in np.geomspace(10, 1e9, 5):
-            s.simulate(t_end)
-            y = s.get_concs()
+    res = None
+    for t_end in np.geomspace(10, 1e9, 5):
+        s.simulate(t_end)
+        y = s.get_concs()
+        if y is None:
+            continue
+        diff = (y.iloc[-1] - y.iloc[-2]) / y.iloc[-1] if rel_norm else y.iloc[-1] - y.iloc[-2]
+        if np.linalg.norm(diff, ord=2) < tolerance:
+            res =  y.iloc[-1].to_dict()
+            break
+        
+    if res is None:
+        _ = dict()
+        for i in m.get_variable_names():
+            _[i] = None
             
-            diff = (y.iloc[-1] - y.iloc[-2]) / y.iloc[-1] if rel_norm else y.iloc[-1] - y.iloc[-2]
-            if np.linalg.norm(diff, ord=2) < tolerance:
-                return y.iloc[-1].to_dict()
-    except:
+        return _
+    else:
+        return res
+
             
 
 def iterable_steady_scan_params(
