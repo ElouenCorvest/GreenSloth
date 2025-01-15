@@ -13,7 +13,7 @@ def remove_math_mode(
     column_name: str = 'Abbreviation Here'
 ):
     s = dic[k][column_name]
-    
+
     for i in range(dic[k][column_name].count('$')):
         s = s.replace('$', '')
 
@@ -26,7 +26,7 @@ def ode(
     for i in [first_var, second_var]:
         if '$' in i:
             raise ValueError(f"Your given variable '{i}' has a '$' in it")
-    
+
     return rf'\frac{{\mathrm{{d}}{first_var}}}{{\mathrm{{d}}{second_var}}}'
 
 ###### Model Infos ######
@@ -35,17 +35,43 @@ model_title = 'Matuszynska2016'
 model_doi = 'https://doi.org/10.1016/j.bbabio.2016.09.003'
 
 ###### Glossaries ######
+cite_dict = dict()
+def cite(
+    cit: str,
+    cite_dict = cite_dict
+):
+    if cit == '':
+        return ''
+    elif cit in cite_dict.keys():
+        return f'[{cite_dict[cit]}]'
+    else:
+        num_cites_stored = len(cite_dict.keys())
+        cite_dict[cit] = num_cites_stored + 1
+        return f'[{cite_dict[cit]}]'
+
+def gloss_fromCSV(
+    path,
+    cite_flag: bool = False,
+    reference_col: str = 'Reference'
+):
+    table_df = pd.read_csv(path, keep_default_na=False)
+
+    if cite_flag:
+        table_df[reference_col] = table_df[reference_col].apply(cite)
+
+    table_tolist = [table_df.columns.values.tolist()] + table_df.values.tolist()
+
+    table_list = [i for k in table_tolist for i in k]
+
+    return table_df, table_tolist, table_list
+
 model_info = os.path.dirname(__file__) + '/model_info'
 
-comps_table = pd.read_csv(model_info + '/comps.csv', sep = ';')
+comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(model_info + '/comps.csv')
 
-comps_table_tolist = [comps_table.columns.values.tolist()] + comps_table.values.tolist()
+rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(model_info + '/rates.csv')
 
-comps_table_list = []
-
-for lst in comps_table_tolist:
-    for i in lst:
-        comps_table_list.append(i)
+params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info + '/params.csv', cite_flag=True)
 
 # conserved_quantities = {
 #     'D': extract_from_glossary(  # noqa: F405
@@ -81,47 +107,6 @@ for lst in comps_table_tolist:
 #         ),
 # }
 
-# rates_glossary_path = Path('Templates/rates_glossary.csv')
-
-# rates_glossary = {
-#     'v1': extract_from_glossary(
-#         paper_abbr = r'$v_1$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v2': extract_from_glossary(
-#         paper_abbr = r'$v_2$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v3': extract_from_glossary(
-#         paper_abbr = r'$v_3$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v4': extract_from_glossary(
-#         paper_abbr = r'$v_4$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v5': extract_from_glossary(
-#         paper_abbr = r'$v_5$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v6': extract_from_glossary(
-#         paper_abbr = r'$v_6$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v7': extract_from_glossary(
-#         paper_abbr = r'$v_7$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v8': extract_from_glossary(
-#         paper_abbr = r'$v_8$',
-#         glossary_path = rates_glossary_path
-#     ),
-#     'v9': extract_from_glossary(
-#         paper_abbr = r'$v_9$',
-#         glossary_path = rates_glossary_path
-#     ),
-# }
-
 ###### Glossary generated tables ######
 
 # compound_table_list_header = [
@@ -136,7 +121,7 @@ for lst in comps_table_tolist:
 # for var, comp_dict in ode_dict.items():
 #     for column_name in compound_table_list_header:
 #         compound_table_list.append(comp_dict[column_name])
-        
+
 # conserved_quantities_list_header = [
 #     'Name',
 #     'Paper Abbreviation',
@@ -149,7 +134,7 @@ for lst in comps_table_tolist:
 # for var, comp_dict in conserved_quantities.items():
 #     for column_name in conserved_quantities_list_header:
 #         conserved_quantities_list.append(comp_dict[column_name])
-        
+
 # derived_comps_list_header = [
 #     'Name',
 #     'Paper Abbreviation',
@@ -181,24 +166,31 @@ for lst in comps_table_tolist:
 def remove_math(
     df,
     query_result,
-    query_column = 'Python Var',
+    query_column = 'Paper Abbr.',
     answer_column = 'Common Abbr.'
 ):
     res = df.loc[df[query_column] == query_result, answer_column].iloc[0]
-    
+
     for i in range(df.loc[df[query_column] == query_result, answer_column].iloc[0].count('$')):
         res = res.replace('$', '')
-        
+
     return res
 
+PQH_2 = remove_math(comps_table, r'$\mathrm{PQH}_2$')
+ATP = remove_math(comps_table, r'$\mathrm{ATP}$')
+H = remove_math(comps_table, r'$\mathrm{H}$')
+PsbS = remove_math(comps_table, r'$\mathrm{PsbS}$')
+Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
+ATPase = remove_math(comps_table, r'$\mathrm{ATPase}^*$')
 
-
-PQH_2 = remove_math(comps_table, 'PQH_2')
-ATP = remove_math(comps_table, 'ATP_st')
-H = remove_math(comps_table, 'H_lu')
-PsbS = remove_math(comps_table, 'psbS')
-Vx = remove_math(comps_table, 'Vx')
-ATPase = remove_math(comps_table, 'ATPase_ac')
+v_PSII = remove_math(rates_table, r'$v_{\mathrm{PSII}}$')
+v_PQ = remove_math(rates_table, r'$v_{\mathrm{PQ}_{\mathrm{ox}}}$')
+v_ATPsynth = remove_math(rates_table, r'$v_{\mathrm{ATPsynthase}}$')
+v_ATPact = remove_math(rates_table, r'$v_{\mathrm{ATPactivity}}$')
+v_Leak = remove_math(rates_table, r'$v_{\mathrm{Leak}}$')
+v_ATPcons = remove_math(rates_table, r'$v_{\mathrm{ATP}_{\mathrm{consumption}}}$')
+v_Xcyc = remove_math(rates_table, r'$v_{\mathrm{Xcyc}}$')
+v_PsbSP = remove_math(rates_table, r'$v_{\mathrm{Psbs^P}}$')
 
 # D = remove_math_mode(conserved_quantities, 'D')
 # X = remove_math_mode(conserved_quantities, 'X')
@@ -237,25 +229,25 @@ mdFile.new_header(4, 'Part of ODE system')
 
 mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_tolist), text = comps_table_list)
 
-# mdFile.new_paragraph(fr"""
+mdFile.new_paragraph(fr"""
 
-# <details>
-# <summary>Open me for the ODE system!</summary>
+<details>
+<summary>Open me for the ODE system!</summary>
 
-# $$    
-#     \begin{{align}}
-#         {ode(PQH_2)} &= {v_} - {v1} \\
-#         {ode(A2)} &= {v1} - {v2} \\
-#         {ode(P)} &= {v3} - {v4} \\
-#         {ode(H)} &= b_{{{H}}} \cdot \left( 2 \cdot {v2} + {v4} - \frac{{14}}{{3}} \cdot {v5} - {v8} \right) \\
-#         {ode(N)} &= {v6} - {v7}  \\
-#         {ode(T)} &= {v5} - {v9}
-#     \end{{align}}
-# $$
+$$
+    \begin{{align}}
+        {ode(PQH_2)} &= {v_PSII} - {v_PQ}\\
+        {ode(ATP)} &= {v_ATPsynth} - {v_ATPcons}\\
+        {ode(H)} &= \frac{{1}}{{b_{{\mathrm{{H}}}}}} \cdot \left( 2 \cdot {v_PSII} + 4 \cdot {v_PQ} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_Leak} \right) \\
+        {ode(PsbS)} &= -{v_PsbSP}\\
+        {ode(Vx)} &= - {v_Xcyc}\\
+        {ode(ATPase)} &= {v_ATPact}
+    \end{{align}}
+$$
 
-# </details>
+</details>
 
-#                      """)
+                     """)
 
 # mdFile.new_header(4, 'Conserved quantities')
 
@@ -266,7 +258,7 @@ mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_toli
 # <details>
 # <summary>Open me for the calculations of the conserved quantities!</summary>
 
-# $$    
+# $$
 #     \begin{{align}}
 #         {D} &= {A1} + {A2} + {A3} \\
 #         {X} &= {P} + {Q} \\
@@ -283,20 +275,20 @@ mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_toli
 
 # mdFile.new_table(columns = len(derived_comps_list_header), rows = int(len(derived_comps_list) / len(derived_comps_list_header)), text = derived_comps_list)
 
-# mdFile.new_header(3, 'Parameters')
+mdFile.new_header(3, 'Parameters')
 
+mdFile.new_table(columns = len(params_table.columns), rows = len(params_table_tolist), text = params_table_list)
 
+mdFile.new_header(3, 'Reaction Rates')
 
-# mdFile.new_header(3, 'Reaction Rates')
-
-# mdFile.new_table(columns = len(rates_table_list_header), rows = int(len(rates_table_list) / len(rates_table_list_header)), text = rates_table_list)
+mdFile.new_table(columns = len(rates_table.columns), rows = len(rates_table_tolist), text = rates_table_list)
 
 # mdFile.new_paragraph(fr"""
 
 # <details>
 # <summary>Open me for the rates!</summary>
 
-# $$    
+# $$
 #     \begin{{align}}
 #         {v1} &= {N0} \cdot k_1 \cdot {A1} \\
 #         {v2} &= k_2 \cdot {A2} \\
