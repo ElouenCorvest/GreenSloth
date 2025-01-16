@@ -1,4 +1,5 @@
 Short Description,Common Abbr.,Paper Abbr.,Value,Unit,MetaCyc ID,Python Var,Reference
+Photon Flux Density,$\mathrm{PFD}$,$\mathrm{PFD}$,$100$,$\mathrm{µE\ m^{-2}\ s^{-1}}$,,pfd,
 PSII reaction centres pool,$\mathrm{PSII^{tot}}$,$\mathrm{PSII^{tot}}$,$2.5$,$\mathrm{mmol(mol\ Chl)^{-1}}$,,PSII_tot,https://doi.org/10.1104/pp.104.052324
 Plastoquinone pool,$\mathrm{PQ^{tot}}$,$\mathrm{PQ^{tot}}$,$20$,$\mathrm{mmol(mol\ Chl)^{-1}}$,,PQ_tot,https://doi.org/10.1021/bi011650y
 Total adenosine phosphate pool,$\mathrm{AP^{tot}}$,$\mathrm{AP^{tot}}$,$50$,$\mathrm{mmol(mol\ Chl)^{-1}}$,,AP_tot,https://doi.org/10.1104/pp.95.4.1131
@@ -20,8 +21,8 @@ Stroma pH of a dark adapted state,$\mathrm{pH}_\mathrm{st}$,$\mathrm{pH}_\mathrm
 ,$k_\mathrm{leak}$,$k_\mathrm{leak}$,$1000$,$\mathrm{s}^{-1}$,,k_leak,
 Proton buffering constant,$b_\mathrm{H}$,$b_\mathrm{H}$,$100$,,,b_H,https://doi.org/10.1007/s11120-006-9109-1
 Ratio of protons to ATP in ATP synthase,$\mathrm{HPR}$,$\mathrm{HPR}$,$\frac{14}{3}$,,,hpr,
-,$k_\mathrm{kDeepoxV}$,$k_\mathrm{kDeepoxV}$,$0.0024$,$\mathrm{s}^{-1}$,,k_kDV,https://doi.org/10.1016/j.jplph.2014.03.004
-,$k_\mathrm{kEpoxZ}$,$k_\mathrm{kEpoxZ}$,$0.00024$,$\mathrm{s}^{-1}$,,k_kEZ,
+,$k_\mathrm{kDeepoxV}$,$k_\mathrm{DeepoxV}$,$0.0024$,$\mathrm{s}^{-1}$,,k_DV,https://doi.org/10.1016/j.jplph.2014.03.004
+,$k_\mathrm{kEpoxZ}$,$k_\mathrm{EpoxZ}$,$0.00024$,$\mathrm{s}^{-1}$,,k_EZ,
 "Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8",$K_\mathrm{pHSat}$,$K_\mathrm{pHSat}$,$5.8$,,,K_pHSat,
 Hill-coefficient for de-epoxidase acitivity,$\mathrm{nH}_\mathrm{X}$,$\mathrm{nH}_\mathrm{X}$,$5$,,,nhx,
 Half-saturation constant (relative conc. of Zx) for quenching,$K_\mathrm{ZSat}$,$K_\mathrm{ZSat}$,$0.12$,,,K_ZSat,

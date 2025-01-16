@@ -5,7 +5,9 @@
 # Matuszynska2016
 
 
-[here](https://doi.org/10.1016/j.bbabio.2016.09.003)
+[here](https://doi.org/10.1016/j.bbabio.2016.09.003) models provides
+
+
 ## Installation
 
 ## Summary
@@ -43,10 +45,70 @@ $$
 </details>
 
 
+#### Conserved quantities
+
+|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+| :---: | :---: | :---: | :---: | :---: |
+|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}$||PQ|
+|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$||ADP_st|
+|Concentration of protonated PsBS protein|$\mathrm{PsbS^P}$|$\mathrm{PsbS^P}$||PsbSP|
+|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$||Zx|
+|Concentration of inactive ATPase protein|$\mathrm{ATPase}$|$\mathrm{ATPase}$||ATPase_inac|
+|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$||B_0|
+|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$||B_1|
+|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$||B_2|
+|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$||B_3|
+|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH}$||pH_lu|
+
+
+
+
+<details>
+<summary>Open me for the calculations of the conserved quantities!</summary>
+
+$$
+    \begin{align}
+        \mathrm{PSII^{tot}} &= \mathrm{B_0} + \mathrm{B_1} + \mathrm{B_2} + \mathrm{B_3} \\
+        \mathrm{PQ^{tot}} &= \mathrm{PQ} + \mathrm{PQH}_2 \\
+        \mathrm{AP^{tot}} &= \mathrm{ATP_{st}} + \mathrm{ADP_{st}} \\
+        \mathrm{PsbS^{tot}} &= \mathrm{psbS} + \mathrm{PsbS^P} \\
+        \mathrm{X^{tot}} &= \mathrm{Vx} + \mathrm{Zx} \\
+        \mathrm{pH}_\mathrm{lu} &= - \mathrm{log}_{10}\left( \mathrm{H_{lu}} \cdot 2.5 \times 10^{-4} \right)
+    \end{align}
+$$
+
+<details>
+<summary>Calculation of Quencher</summary>
+
+$$
+    \begin{align}
+        Q &= \gamma_0 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{psbS} + \gamma_1 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{PsbS^P} + \gamma_2 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{PsbS^P} + \gamma_3 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{psbS} \\
+    \end{align}
+$$
+
+</details>
+
+<details>
+<summary>Quasi steady-state approximation to calculate the rate of PSII</summary>
+
+$$
+    \begin{align}
+        0 &= - \left( \mathrm{PFD} + \frac{k_{\mathrm{PQH_2}}}{K_\mathrm{eq, QAPQ}} \cdot \mathrm{PQ} \right) \cdot \mathrm{B_0} + \left( k_H \cdot Q + k_F \right) \cdot \mathrm{B_1} + k_{\mathrm{PQH_2}} \cdot \mathrm{PQH}_2 \cdot \mathrm{B_3} \\
+        0 &= \mathrm{PFD} \cdot \mathrm{B_0} - \left( k_H \cdot Q + k_F + k_P \right) \cdot \mathrm{B_1} \\
+        0 &= \mathrm{PFD} \cdot \mathrm{B_2} - \left( k_H \cdot Q + k_F \right) \cdot \mathrm{B_3}
+    \end{align}
+$$
+
+</details>
+
+</details>
+
+
 ### Parameters
 
 |Short Description|Common Abbr.|Paper Abbr.|Value|Unit|MetaCyc ID|Python Var|Reference|
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|Photon Flux Density|$\mathrm{PFD}$|$\mathrm{PFD}$|$100$|$\mathrm{µE\ m^{-2}\ s^{-1}}$||pfd||
 |PSII reaction centres pool|$\mathrm{PSII^{tot}}$|$\mathrm{PSII^{tot}}$|$2.5$|$\mathrm{mmol(mol\ Chl)^{-1}}$||PSII_tot|[1]|
 |Plastoquinone pool|$\mathrm{PQ^{tot}}$|$\mathrm{PQ^{tot}}$|$20$|$\mathrm{mmol(mol\ Chl)^{-1}}$||PQ_tot|[2]|
 |Total adenosine phosphate pool|$\mathrm{AP^{tot}}$|$\mathrm{AP^{tot}}$|$50$|$\mathrm{mmol(mol\ Chl)^{-1}}$||AP_tot|[3]|
@@ -68,8 +130,8 @@ $$
 ||$k_\mathrm{leak}$|$k_\mathrm{leak}$|$1000$|$\mathrm{s}^{-1}$||k_leak||
 |Proton buffering constant|$b_\mathrm{H}$|$b_\mathrm{H}$|$100$|||b_H|[5]|
 |Ratio of protons to ATP in ATP synthase|$\mathrm{HPR}$|$\mathrm{HPR}$|$\frac{14}{3}$|||hpr||
-||$k_\mathrm{kDeepoxV}$|$k_\mathrm{kDeepoxV}$|$0.0024$|$\mathrm{s}^{-1}$||k_kDV|[6]|
-||$k_\mathrm{kEpoxZ}$|$k_\mathrm{kEpoxZ}$|$0.00024$|$\mathrm{s}^{-1}$||k_kEZ||
+||$k_\mathrm{kDeepoxV}$|$k_\mathrm{DeepoxV}$|$0.0024$|$\mathrm{s}^{-1}$||k_DV|[6]|
+||$k_\mathrm{kEpoxZ}$|$k_\mathrm{EpoxZ}$|$0.00024$|$\mathrm{s}^{-1}$||k_EZ||
 |Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8|$K_\mathrm{pHSat}$|$K_\mathrm{pHSat}$|$5.8$|||K_pHSat||
 |Hill-coefficient for de-epoxidase acitivity|$\mathrm{nH}_\mathrm{X}$|$\mathrm{nH}_\mathrm{X}$|$5$|||nhx||
 |Half-saturation constant (relative conc. of Zx) for quenching|$K_\mathrm{ZSat}$|$K_\mathrm{ZSat}$|$0.12$|||K_ZSat||
@@ -89,6 +151,33 @@ $$
 ||$E^0\mathrm{(PC/PC^-)}$|$E^0\mathrm{(PC/PC^-)}$|$0.380$|$\mathrm{V}$||E_PC|[9]|
 |Standard Gibbs free energy change of ATP formation|$\Delta G_{0_{\mathrm{ATP}}}$|$\Delta G_{0_{\mathrm{ATP}}}$|$30.6$|$\mathrm{kJ mol^{-1}}$||DG_ATP|[10]|
 
+#### Derived Parameters
+
+|Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|Reference|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|Equilibrium constant of |$K_\mathrm{eq, QAPQ}$|$K_\mathrm{eq, QAPQ}$||K_eqQAPQ||
+|Equilibrium constant of ATPsynthase|$K_\mathrm{eq, ATPsynthase}$|$K_\mathrm{eq, ATPsynthase}$||K_eqATPsynthase||
+|Equilibrium constant of Cytb6f|$K_\mathrm{eq, cytb6f}$|$K_\mathrm{eq, cytb6f}$||K_eqcytb6f||
+|Stroma proton concentration of a dark adapted state|$\mathrm{H}_\mathrm{st}$|$\mathrm{H}_\mathrm{st}$||H_st||
+
+
+
+
+<details>
+<summary>Equations of derived parameters</summary>
+
+$$
+    \begin{align}
+        K_\mathrm{eq, QAPQ} &= e^{\frac{-\left( -2 \cdot E^0\mathrm{(QA/QA^-)} \cdot F - 2 \cdot E^0\mathrm{(PQ/PQH_2)} \cdot F + 2 \cdot \mathrm{pH}_\mathrm{st} \cdot \mathrm{ln}(10) \cdot R \cdot T \right)}{R \cdot T}} \\
+        K_\mathrm{eq, ATPsynthase} &= \mathrm{Pi^{mol}} \cdot e^{\frac{-\Delta G_{0_{\mathrm{ATP}}} - \mathrm{ln}\left( 10 \right) \cdot \mathrm{HPR} \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right)}{R \cdot T}} \\
+        K_\mathrm{eq, cytb6f} &= e^{\frac{-\left( \left( 2 \cdot F \cdot E^0\mathrm{(PQ/PQH_2)} - 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \mathrm{pH}_\mathrm{lu} \right) - 2 \cdot F \cdot E^0\mathrm{(PC/PC^-)} + 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T}} \\
+        \mathrm{H}_\mathrm{st} &= 4 \times 10^3 \cdot 10^\mathrm{pH}_\mathrm{st}
+    \end{align}
+$$
+
+</details>
+
+
 ### Reaction Rates
 
 |Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
@@ -101,3 +190,24 @@ $$
 |ATP consuming reaction|$v_{\mathrm{ATP}_{\mathrm{consumption}}}$|$v_{\mathrm{ATP}_{\mathrm{consumption}}}$||v_ATPcons|
 |Xanthophyll cycle|$v_{\mathrm{Xcyc}}$|$v_{\mathrm{Xcyc}}$||v_Xcyc|
 |Protonation of psbS protein|$v_{\mathrm{Psbs^P}}$|$v_{\mathrm{Psbs^P}}$||v_PsbSP|
+
+
+
+
+<details>
+<summary>Rate equations</summary>
+
+$$
+    \begin{align}
+        v_{\mathrm{PSII}} &= k_P \cdot 0.5 \cdot \mathrm{B_1} \\
+        v_{\mathrm{PQ}_{\mathrm{ox}}} &= \left( \frac{k_{\mathrm{Cytb6f}} \cdot \mathrm{PFD} \cdot K_\mathrm{eq, cytb6f}}{K_\mathrm{eq, cytb6f} + 1} + k_\mathrm{PTOX} \right) \cdot \mathrm{PQH}_2 - \frac{k_{\mathrm{Cytb6f}} \cdot \mathrm{PFD}}{K_\mathrm{eq, cytb6f} + 1} \cdot \mathrm{PQ} \\
+        v_{\mathrm{ATPsynthase}} &= \mathrm{ATPase}^* \cdot k_{\mathrm{ATPsynthase}} \cdot \left( \mathrm{AP^{tot}} - \mathrm{ATP_{st}} - \frac{\mathrm{ATP_{st}}}{K_\mathrm{eq, ATPsynthase}} \right) \\
+        v_{\mathrm{ATPactivity}} &= k_{\mathrm{ActATPase}} \cdot \mathrm{PFD} \cdot \mathrm{ATPase} - k_{\mathrm{DeactATPase}} \cdot \left( 1 - \mathrm{PFD} \right) \cdot \mathrm{ATPase}^* \\
+        v_{\mathrm{Leak}} &= k_\mathrm{leak} \cdot \left( \mathrm{H_{lu}} - \mathrm{H}_\mathrm{st} \right) \\
+        v_{\mathrm{ATP}_{\mathrm{consumption}}} &= k_{\mathrm{ATPconsumption}} \cdot \mathrm{ATP_{st}} \\
+        v_{\mathrm{Xcyc}} &= k_\mathrm{kDeepoxV} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{X}}}{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{X}} + \left( 4 \times 10^3 \cdot 10^K_\mathrm{pHSat} \right)^{\mathrm{nH}_\mathrm{X}}} \cdot \mathrm{Vx} - k_\mathrm{kEpoxZ} \cdot \left( \mathrm{X^{tot}} - \mathrm{Vx} \right) \\
+        v_{\mathrm{Psbs^P}} &= k_\mathrm{Protonation} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}}}{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}} + \left( 4 \times 10^3 \cdot 10^K_\mathrm{pHSatLHC} \right)^{\mathrm{nH}_\mathrm{L}}} \cdot \mathrm{psbS} - k_\mathrm{Deprotonation} \cdot \mathrm{PsbS^P}
+    \end{align}
+$$
+
+</details>

@@ -73,93 +73,9 @@ rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(model_info + '
 
 params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info + '/params.csv', cite_flag=True)
 
-# conserved_quantities = {
-#     'D': extract_from_glossary(  # noqa: F405
-#             paper_abbr = r'$\mathrm{D}$',
-#             glossary_path = comp_glossary_path
-#         ),
-#     'X': extract_from_glossary(  # noqa: F405
-#             paper_abbr = r'$\mathrm{X}$',
-#             glossary_path = comp_glossary_path
-#         ),
-#     'Atot': extract_from_glossary(  # noqa: F405
-#             paper_abbr = r'$\mathrm{A}^{\mathrm{tot}}$',
-#             glossary_path = comp_glossary_path
-#         ),
-# }
+derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(model_info + '/derived_comps.csv')
 
-# derived_comps = {
-#     'A3': extract_from_glossary(  # noqa: F405
-#             paper_abbr = r'$\mathrm{A}_3$',
-#             glossary_path = comp_glossary_path
-#         ),
-#     'Q': extract_from_glossary(  # noqa: F405
-#             paper_abbr = r'$\mathrm{Q}$',
-#             glossary_path = comp_glossary_path
-#         ),
-#     'S': extract_from_glossary(  # noqa: F405
-#             paper_abbr = r'$\mathrm{S}$',
-#             glossary_path = comp_glossary_path
-#         ),
-#     'N0': extract_from_glossary(  # noqa: F405
-#             paper_abbr = r'$\mathrm{N}^0$',
-#             glossary_path = comp_glossary_path
-#         ),
-# }
-
-###### Glossary generated tables ######
-
-# compound_table_list_header = [
-#     'Name',
-#     'Paper Abbreviation',
-#     'Abbreviation Here',
-#     'Python Variable'
-# ]
-
-# compound_table_list = [i for i in compound_table_list_header]
-
-# for var, comp_dict in ode_dict.items():
-#     for column_name in compound_table_list_header:
-#         compound_table_list.append(comp_dict[column_name])
-
-# conserved_quantities_list_header = [
-#     'Name',
-#     'Paper Abbreviation',
-#     'Abbreviation Here',
-#     'Python Variable'
-# ]
-
-# conserved_quantities_list = [i for i in conserved_quantities_list_header]
-
-# for var, comp_dict in conserved_quantities.items():
-#     for column_name in conserved_quantities_list_header:
-#         conserved_quantities_list.append(comp_dict[column_name])
-
-# derived_comps_list_header = [
-#     'Name',
-#     'Paper Abbreviation',
-#     'Abbreviation Here',
-#     'Python Variable'
-# ]
-
-# derived_comps_list = [i for i in derived_comps_list_header]
-
-# for var, comp_dict in derived_comps.items():
-#     for column_name in derived_comps_list_header:
-#         derived_comps_list.append(comp_dict[column_name])
-
-# rates_table_list_header = [
-#     'Short Description',
-#     'Paper Abbreviation',
-#     'Abbreviation Here',
-#     'Python Variable'
-# ]
-
-# rates_table_list = [i for i in rates_table_list_header]
-
-# for var, rates_dict in rates_glossary.items():
-#     for column_name in rates_table_list_header:
-#         rates_table_list.append(rates_dict[column_name])
+derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info + '/derived_params.csv')
 
 ###### Variables for ease of access ######
 
@@ -192,24 +108,62 @@ v_ATPcons = remove_math(rates_table, r'$v_{\mathrm{ATP}_{\mathrm{consumption}}}$
 v_Xcyc = remove_math(rates_table, r'$v_{\mathrm{Xcyc}}$')
 v_PsbSP = remove_math(rates_table, r'$v_{\mathrm{Psbs^P}}$')
 
-# D = remove_math_mode(conserved_quantities, 'D')
-# X = remove_math_mode(conserved_quantities, 'X')
-# Atot = remove_math_mode(conserved_quantities, 'Atot')
+PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
+ADP = remove_math(derived_comps_table, r'$\mathrm{ADP}$')
+PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
+Zx = remove_math(derived_comps_table, r'$\mathrm{Zx}$')
+B_0 = remove_math(derived_comps_table, r'$\mathrm{B_0}$')
+B_1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
+B_2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
+B_3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
+pH_lu = remove_math(derived_comps_table, r'$\mathrm{pH}$')
+ATPase_inac = remove_math(derived_comps_table, r'$\mathrm{ATPase}$')
 
-# A3 = remove_math_mode(derived_comps, 'A3')
-# Q = remove_math_mode(derived_comps, 'Q')
-# S = remove_math_mode(derived_comps, 'S')
-# N0 = remove_math_mode(derived_comps, 'N0')
+PSII_tot = remove_math(params_table, r'$\mathrm{PSII^{tot}}$')
+PQ_tot = remove_math(params_table, r'$\mathrm{PQ^{tot}}$')
+AP_tot = remove_math(params_table, r'$\mathrm{AP^{tot}}$')
+PsbS_tot = remove_math(params_table, r'$\mathrm{PsbS^{tot}}$')
+X_tot = remove_math(params_table, r'$\mathrm{X^{tot}}$')
+gamma_0 = remove_math(params_table, r'$\gamma_0$')
+K_ZSat = remove_math(params_table, r'$K_\mathrm{ZSat}$')
+gamma_1 = remove_math(params_table, r'$\gamma_1$')
+gamma_2 = remove_math(params_table, r'$\gamma_2$')
+gamma_3 = remove_math(params_table, r'$\gamma_3$')
+pfd = remove_math(params_table, r'$\mathrm{PFD}$')
+k_PQred = remove_math(params_table, r'$k_{\mathrm{PQred}}$')
+E_QA = remove_math(params_table, r'$E^0\mathrm{(QA/QA^-)}$')
+E_PQ = remove_math(params_table, r'$E^0\mathrm{(PQ/PQH_2)}$')
+E_PC = remove_math(params_table, r'$E^0\mathrm{(PC/PC^-)}$')
+pH_st = remove_math(params_table, r'$\mathrm{pH}_\mathrm{stroma}$')
+R = remove_math(params_table, r'$R$')
+T = remove_math(params_table, r'$T$')
+F = remove_math(params_table, r'$F$')
+k_H = remove_math(params_table, r'$k_H$')
+k_F = remove_math(params_table, r'$k_F$')
+k_P = remove_math(params_table, r'$k_P$')
+k_ATPconsum = remove_math(params_table, r'$k_{\mathrm{ATPconsumption}}$')
+Pi = remove_math(params_table, r'$\mathrm{Pi^{mol}}$')
+DG_ATP = remove_math(params_table, r'$\Delta G_{0_{\mathrm{ATP}}}$')
+hpr = remove_math(params_table, r'$\mathrm{HPR}$')
+k_Cytb6f = remove_math(params_table, r'$k_{\mathrm{Cytb6f}}$')
+k_PTOX = remove_math(params_table, r'$k_\mathrm{PTOX}$')
+k_ATPsynth = remove_math(params_table, r'$k_{\mathrm{ATPsynthase}}$')
+k_ActATPase = remove_math(params_table, r'$k_{\mathrm{ActATPase}}$')
+k_DeactATPase = remove_math(params_table, r'$k_{\mathrm{DeactATPase}}$')
+k_leak = remove_math(params_table, r'$k_\mathrm{leak}$')
+k_DV = remove_math(params_table, r'$k_\mathrm{DeepoxV}$')
+nhx = remove_math(params_table, r'$\mathrm{nH}_\mathrm{X}$')
+K_pHSat = remove_math(params_table, r'$K_\mathrm{pHSat}$')
+k_EZ = remove_math(params_table, r'$k_\mathrm{EpoxZ}$')
+k_prot = remove_math(params_table, r'$k_\mathrm{Protonation}$')
+k_deprot = remove_math(params_table, r'$k_\mathrm{Deprotonation}$')
+K_pHSatLHC = remove_math(params_table, r'$K_\mathrm{pHSatLHC}$')
+nhl = remove_math(params_table, r'$\mathrm{nH}_\mathrm{L}$')
 
-# v1 = remove_math_mode(rates_glossary, 'v1')
-# v2 = remove_math_mode(rates_glossary, 'v2')
-# v3 = remove_math_mode(rates_glossary, 'v3')
-# v4 = remove_math_mode(rates_glossary, 'v4')
-# v5 = remove_math_mode(rates_glossary, 'v5')
-# v6 = remove_math_mode(rates_glossary, 'v6')
-# v7 = remove_math_mode(rates_glossary, 'v7')
-# v8 = remove_math_mode(rates_glossary, 'v8')
-# v9 = remove_math_mode(rates_glossary, 'v9')
+K_eqQAPQ = remove_math(derived_params_table, r'$K_\mathrm{eq, QAPQ}$')
+K_eqATPsynthase = remove_math(derived_params_table, r'$K_\mathrm{eq, ATPsynthase}$')
+K_eqcytb6f = remove_math(derived_params_table, r'$K_\mathrm{eq, cytb6f}$')
+H_st = remove_math(derived_params_table, r'$\mathrm{H}_\mathrm{st}$')
 
 ###### Making README File ######
 
@@ -217,7 +171,9 @@ mdFile = MdUtils(file_name=f'{os.path.dirname(__file__)}/README.md')
 
 mdFile.new_header(1, model_title)
 
-mdFile.new_paragraph(f'[here]({model_doi})')
+mdFile.new_paragraph(f"""The [Matuszynska2016]({model_doi}) model is a small kinetic model that was created to further analyse the effect of light memory caused by Non-photochemical quenching, more in detail
+
+                     """)
 
 mdFile.new_header(2, 'Installation')
 
@@ -249,61 +205,104 @@ $$
 
                      """)
 
-# mdFile.new_header(4, 'Conserved quantities')
+mdFile.new_header(4, 'Conserved quantities')
 
-# mdFile.new_table(columns = len(conserved_quantities_list_header), rows = int(len(conserved_quantities_list) / len(conserved_quantities_list_header)), text = conserved_quantities_list)
+mdFile.new_table(columns = len(derived_comps_table.columns), rows = len(derived_comps_table_tolist), text = derived_comps_table_list)
 
-# mdFile.new_paragraph(fr"""
+mdFile.new_paragraph(fr"""
 
-# <details>
-# <summary>Open me for the calculations of the conserved quantities!</summary>
+<details>
+<summary>Open me for the calculations of the conserved quantities!</summary>
 
-# $$
-#     \begin{{align}}
-#         {D} &= {A1} + {A2} + {A3} \\
-#         {X} &= {P} + {Q} \\
-#         {Atot} &= {S} + {T} \\
-#         1 &= {N0} + {N}
-#     \end{{align}}
-# $$
+$$
+    \begin{{align}}
+        {PSII_tot} &= {B_0} + {B_1} + {B_2} + {B_3} \\
+        {PQ_tot} &= {PQ} + {PQH_2} \\
+        {AP_tot} &= {ATP} + {ADP} \\
+        {PsbS_tot} &= {PsbS} + {PsbSP} \\
+        {X_tot} &= {Vx} + {Zx} \\
+        {pH_lu} &= - \mathrm{{log}}_{{10}}\left( {H} \cdot 2.5 \times 10^{{-4}} \right)
+    \end{{align}}
+$$
 
-# </details>
+<details>
+<summary>Calculation of Quencher</summary>
 
-#                      """)
+$$
+    \begin{{align}}
+        Q &= {gamma_0} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbS} + {gamma_1} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbS} \\
+    \end{{align}}
+$$
 
-# mdFile.new_header(4, 'Derived from conserved quantities')
+</details>
 
-# mdFile.new_table(columns = len(derived_comps_list_header), rows = int(len(derived_comps_list) / len(derived_comps_list_header)), text = derived_comps_list)
+<details>
+<summary>Quasi steady-state approximation to calculate the rate of PSII</summary>
+
+$$
+    \begin{{align}}
+        0 &= - \left( {pfd} + \frac{{{k_PQred}}}{{{K_eqQAPQ}}} \cdot {PQ} \right) \cdot {B_0} + \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_1} + {k_PQred} \cdot {PQH_2} \cdot {B_3} \\
+        0 &= {pfd} \cdot {B_0} - \left( {k_H} \cdot Q + {k_F} + {k_P} \right) \cdot {B_1} \\
+        0 &= {pfd} \cdot {B_2} - \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_3}
+    \end{{align}}
+$$
+
+</details>
+
+</details>
+
+                     """)
 
 mdFile.new_header(3, 'Parameters')
 
 mdFile.new_table(columns = len(params_table.columns), rows = len(params_table_tolist), text = params_table_list)
 
+mdFile.new_header(4, 'Derived Parameters')
+
+mdFile.new_table(columns = len(derived_params_table.columns), rows = len(derived_params_table_tolist), text = derived_params_table_list)
+
+mdFile.new_paragraph(fr"""
+
+<details>
+<summary>Equations of derived parameters</summary>
+
+$$
+    \begin{{align}}
+        {K_eqQAPQ} &= e^{{\frac{{-\left( -2 \cdot {E_QA} \cdot {F} - 2 \cdot {E_PQ} \cdot {F} + 2 \cdot {pH_st} \cdot \mathrm{{ln}}(10) \cdot {R} \cdot {T} \right)}}{{{R} \cdot {T}}}}} \\
+        {K_eqATPsynthase} &= {Pi} \cdot e^{{\frac{{-{DG_ATP} - \mathrm{{ln}}\left( 10 \right) \cdot {hpr} \cdot \left( {pH_st} - {pH_lu} \right)}}{{{R} \cdot {T}}}}} \\
+        {K_eqcytb6f} &= e^{{\frac{{-\left( \left( 2 \cdot {F} \cdot {E_PQ} - 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot {pH_lu} \right) - 2 \cdot {F} \cdot {E_PC} + 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot \left( {pH_st} - {pH_lu} \right) \right)}}{{{R} \cdot {T}}}}} \\
+        {H_st} &= 4 \times 10^3 \cdot 10^{pH_st}
+    \end{{align}}
+$$
+
+</details>
+
+                     """)
+
 mdFile.new_header(3, 'Reaction Rates')
 
 mdFile.new_table(columns = len(rates_table.columns), rows = len(rates_table_tolist), text = rates_table_list)
 
-# mdFile.new_paragraph(fr"""
+mdFile.new_paragraph(fr"""
 
-# <details>
-# <summary>Open me for the rates!</summary>
+<details>
+<summary>Rate equations</summary>
 
-# $$
-#     \begin{{align}}
-#         {v1} &= {N0} \cdot k_1 \cdot {A1} \\
-#         {v2} &= k_2 \cdot {A2} \\
-#         {v3} &= k⁺_3 \cdot {A3} \cdot {P} - k⁻_3 \cdot {A1} \cdot {Q} \\
-#         {v4} &= k_4 \cdot {Q} \\
-#         {v5} &= k_5 \cdot \left({Atot} - {T} \cdot \left(1 + \frac{{1}}{{K_{{eq}}({H})}}\right)\right)  \\ \notag
-#         \mathrm{{with}} \ K_{{\mathrm{{eq}}}}({H}) &= \sqrt[RT]{{e^{{\Delta G^0 - \mathrm{{ln}}\ 10 \cdot \Delta \mathrm{{pH}} \cdot \frac{{14}}{{3}} \cdot RT}}}}\\
-#         {v6} &= k6 \cdot {N0} \cdot \frac{{{H}^n}}{{{H}^n \cdot K_{{Q}}^n}} \\
-#         {v7} &= k7 \cdot {N} \\
-#         {v8} &= k8 \cdot \left( {H} - \mathrm{{H}}_{{\mathrm{{st}}}} \right) \\
-#         {v9} &= k9 \cdot {T}
-#     \end{{align}}
-# $$
+$$
+    \begin{{align}}
+        {v_PSII} &= {k_P} \cdot 0.5 \cdot {B_1} \\
+        {v_PQ} &= \left( \frac{{{k_Cytb6f} \cdot {pfd} \cdot {K_eqcytb6f}}}{{{K_eqcytb6f} + 1}} + {k_PTOX} \right) \cdot {PQH_2} - \frac{{{k_Cytb6f} \cdot {pfd}}}{{{K_eqcytb6f} + 1}} \cdot {PQ} \\
+        {v_ATPsynth} &= {ATPase} \cdot {k_ATPsynth} \cdot \left( {AP_tot} - {ATP} - \frac{{{ATP}}}{{{K_eqATPsynthase}}} \right) \\
+        {v_ATPact} &= {k_ActATPase} \cdot {pfd} \cdot {ATPase_inac} - {k_DeactATPase} \cdot \left( 1 - {pfd} \right) \cdot {ATPase} \\
+        {v_Leak} &= {k_leak} \cdot \left( {H} - {H_st} \right) \\
+        {v_ATPcons} &= {k_ATPconsum} \cdot {ATP} \\
+        {v_Xcyc} &= {k_DV} \cdot \frac{{{H}^{{{nhx}}}}}{{{H}^{{{nhx}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSat} \right)^{{{nhx}}}}} \cdot {Vx} - {k_EZ} \cdot \left( {X_tot} - {Vx} \right) \\
+        {v_PsbSP} &= {k_prot} \cdot \frac{{{H}^{{{nhl}}}}}{{{H}^{{{nhl}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSatLHC} \right)^{{{nhl}}}}} \cdot {PsbS} - {k_deprot} \cdot {PsbSP}
+    \end{{align}}
+$$
 
-# </details>
-#                      """)
+</details>
+
+                     """)
 
 mdFile.create_md_file()
