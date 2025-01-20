@@ -31,10 +31,6 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 
 
-
-<details>
-<summary>Open me for the ODE system!</summary>
-
 $$
     \begin{align}
         \frac{\mathrm{d}\mathrm{PQH}_2}{\mathrm{d}t} &= v_{\mathrm{PSII}} - v_{\mathrm{PQ}_{\mathrm{ox}}}\\
@@ -45,9 +41,6 @@ $$
         \frac{\mathrm{d}\mathrm{ATPase}^*}{\mathrm{d}t} &= v_{\mathrm{ATPactivity}}
     \end{align}
 $$
-
-</details>
-
                      
 #### Conserved quantities
 
@@ -113,28 +106,28 @@ $$
 |Short Description|Common Abbr.|Paper Abbr.|Value|Unit|MetaCyc ID|Python Var|Reference|
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 |Photon Flux Density|$\mathrm{PFD}$|$\mathrm{PFD}$|$100$|$\mathrm{µE\ m^{-2}\ s^{-1}}$||pfd||
-|PSII reaction centres pool|$\mathrm{PSII^{tot}}$|$\mathrm{PSII^{tot}}$|$2.5$|$\mathrm{mmol(mol\ Chl)^{-1}}$||PSII_tot|[1]|
-|Plastoquinone pool|$\mathrm{PQ^{tot}}$|$\mathrm{PQ^{tot}}$|$20$|$\mathrm{mmol(mol\ Chl)^{-1}}$||PQ_tot|[2]|
-|Total adenosine phosphate pool|$\mathrm{AP^{tot}}$|$\mathrm{AP^{tot}}$|$50$|$\mathrm{mmol(mol\ Chl)^{-1}}$||AP_tot|[3]|
+|PSII reaction centres pool|$\mathrm{PSII^{tot}}$|$\mathrm{PSII^{tot}}$|$2.5$|$\mathrm{mmol(mol\ Chl)^{-1}}$||PSII_tot|[[1]](https://doi.org/10.1104/pp.104.052324)|
+|Plastoquinone pool|$\mathrm{PQ^{tot}}$|$\mathrm{PQ^{tot}}$|$20$|$\mathrm{mmol(mol\ Chl)^{-1}}$||PQ_tot|[[2]](https://doi.org/10.1021/bi011650y)|
+|Total adenosine phosphate pool|$\mathrm{AP^{tot}}$|$\mathrm{AP^{tot}}$|$50$|$\mathrm{mmol(mol\ Chl)^{-1}}$||AP_tot|[[3]](https://doi.org/10.1104/pp.95.4.1131)|
 |Total PsbS protein pool, LHCII normalized|$\mathrm{PsbS^{tot}}$|$\mathrm{PsbS^{tot}}$|$1$|||PsbS_tot||
 |Total xanthophyll pool normalized|$\mathrm{X^{tot}}$|$\mathrm{X^{tot}}$|$1$|||X_tot||
-|External oxygen pool, corresponds to $250\ \mathrm{µM}$|$\mathrm{O_2^{ex}}$|$\mathrm{O_2^{ex}}$|$8$|$\mathrm{mmol(mol\ Chl)^{-1}}$||O2_ex|[4]|
+|External oxygen pool, corresponds to $250\ \mathrm{µM}$|$\mathrm{O_2^{ex}}$|$\mathrm{O_2^{ex}}$|$8$|$\mathrm{mmol(mol\ Chl)^{-1}}$||O2_ex|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
 |Internal phosphates pool|$\mathrm{Pi^{mol}}$|$\mathrm{Pi^{mol}}$|$0.01$|||Pi||
 ||$k_{\mathrm{Cytb6f}}$|$k_{\mathrm{Cytb6f}}$|$0.104$|$\mathrm{mmol^{-2}(mol\ Chl)^{2}s^{-1}}$||k_Cytb6f||
 |Rate constant of ATPase activation in the light|$k_{\mathrm{ActATPase}}$|$k_{\mathrm{ActATPase}}$|$0.01$|$\mathrm{s}^{-1}$||k_ActATPase||
 |Parameter of ATPase deactivation in the night|$k_{\mathrm{DeactATPase}}$|$k_{\mathrm{DeactATPase}}$|$0.002$|$\mathrm{s}^{-1}$||k_DeactATPase||
-||$k_{\mathrm{ATPsynthase}}$|$k_{\mathrm{ATPsynthase}}$|$20$|$\mathrm{s}^{-1}$||k_ATPsynth|[4]|
-||$k_{\mathrm{ATPconsumption}}$|$k_{\mathrm{ATPconsumption}}$|$10$|$\mathrm{s}^{-1}$||k_ATPconsum|[4]|
-||$k_{\mathrm{PQH_2}}$|$k_{\mathrm{PQred}}$|$250$|$\mathrm{mmol^{-1}(mol\ Chl)s^{-1}}$||k_PQH2|[4]|
-|Rate of non-radiative decay|$k_H$|$k_H$|$5 \cdot 10^9$|$\mathrm{s}^{-1}$||k_H|[4]|
+||$k_{\mathrm{ATPsynthase}}$|$k_{\mathrm{ATPsynthase}}$|$20$|$\mathrm{s}^{-1}$||k_ATPsynth|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
+||$k_{\mathrm{ATPconsumption}}$|$k_{\mathrm{ATPconsumption}}$|$10$|$\mathrm{s}^{-1}$||k_ATPconsum|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
+||$k_{\mathrm{PQH_2}}$|$k_{\mathrm{PQred}}$|$250$|$\mathrm{mmol^{-1}(mol\ Chl)s^{-1}}$||k_PQH2|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
+|Rate of non-radiative decay|$k_H$|$k_H$|$5 \cdot 10^9$|$\mathrm{s}^{-1}$||k_H|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
 |Rate of flourescence|$k_F$|$k_F$|$6.25 \cdot 10^8$|$\mathrm{s}^{-1}$||k_F||
-|Rate of photochemistry|$k_P$|$k_P$|$5 \cdot 10^9$|$\mathrm{s}^{-1}$||k_P|[4]|
-||$k_\mathrm{PTOX}$|$k_\mathrm{PTOX}$|$0.01$|$\mathrm{mmol^{-1}(mol\ Chl)s^{-1}}$||k_PTOX|[4]|
+|Rate of photochemistry|$k_P$|$k_P$|$5 \cdot 10^9$|$\mathrm{s}^{-1}$||k_P|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
+||$k_\mathrm{PTOX}$|$k_\mathrm{PTOX}$|$0.01$|$\mathrm{mmol^{-1}(mol\ Chl)s^{-1}}$||k_PTOX|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
 |Stroma pH of a dark adapted state|$\mathrm{pH}_\mathrm{st}$|$\mathrm{pH}_\mathrm{stroma}$|$7.8$|||pH_st||
 ||$k_\mathrm{leak}$|$k_\mathrm{leak}$|$1000$|$\mathrm{s}^{-1}$||k_leak||
-|Proton buffering constant|$b_\mathrm{H}$|$b_\mathrm{H}$|$100$|||b_H|[5]|
+|Proton buffering constant|$b_\mathrm{H}$|$b_\mathrm{H}$|$100$|||b_H|[[5]](https://doi.org/10.1007/s11120-006-9109-1)|
 |Ratio of protons to ATP in ATP synthase|$\mathrm{HPR}$|$\mathrm{HPR}$|$\frac{14}{3}$|||hpr||
-||$k_\mathrm{kDeepoxV}$|$k_\mathrm{DeepoxV}$|$0.0024$|$\mathrm{s}^{-1}$||k_DV|[6]|
+||$k_\mathrm{kDeepoxV}$|$k_\mathrm{DeepoxV}$|$0.0024$|$\mathrm{s}^{-1}$||k_DV|[[6]](https://doi.org/10.1016/j.jplph.2014.03.004)|
 ||$k_\mathrm{kEpoxZ}$|$k_\mathrm{EpoxZ}$|$0.00024$|$\mathrm{s}^{-1}$||k_EZ||
 |Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8|$K_\mathrm{pHSat}$|$K_\mathrm{pHSat}$|$5.8$|||K_pHSat||
 |Hill-coefficient for de-epoxidase acitivity|$\mathrm{nH}_\mathrm{X}$|$\mathrm{nH}_\mathrm{X}$|$5$|||nhx||
@@ -150,10 +143,10 @@ $$
 |Faraday constant|$F$|$F$|$96.485$|$\mathrm{kJ}$||F||
 |Universal gas constant|$R$|$R$|$8.3$|$\mathrm{J\ K^{-1} \ mol^{-1}}$||R||
 |Temperature|$T$|$T$|$298$|$\mathrm{K}$||T||
-||$E^0\mathrm{(QA/QA^-)}$|$E^0\mathrm{(QA/QA^-)}$|$-0.140$|$\mathrm{V}$||E_QA|[7]|
-||$E^0\mathrm{(PQ/PQH_2)}$|$E^0\mathrm{(PQ/PQH_2)}$|$0.354$|$\mathrm{V}$||E_PQ|[8]|
-||$E^0\mathrm{(PC/PC^-)}$|$E^0\mathrm{(PC/PC^-)}$|$0.380$|$\mathrm{V}$||E_PC|[9]|
-|Standard Gibbs free energy change of ATP formation|$\Delta G_{0_{\mathrm{ATP}}}$|$\Delta G_{0_{\mathrm{ATP}}}$|$30.6$|$\mathrm{kJ mol^{-1}}$||DG_ATP|[10]|
+||$E^0\mathrm{(QA/QA^-)}$|$E^0\mathrm{(QA/QA^-)}$|$-0.140$|$\mathrm{V}$||E_QA|[[7]](https://doi.org/10.1073/pnas.1100173108)|
+||$E^0\mathrm{(PQ/PQH_2)}$|$E^0\mathrm{(PQ/PQH_2)}$|$0.354$|$\mathrm{V}$||E_PQ|[[8]](https://doi.org/10.1016/0005-2728(76)90067-0)|
+||$E^0\mathrm{(PC/PC^-)}$|$E^0\mathrm{(PC/PC^-)}$|$0.380$|$\mathrm{V}$||E_PC|[[9]](https://doi.org/10.1093/oxfordjournals.pcp.a077363)|
+|Standard Gibbs free energy change of ATP formation|$\Delta G_{0_{\mathrm{ATP}}}$|$\Delta G_{0_{\mathrm{ATP}}}$|$30.6$|$\mathrm{kJ mol^{-1}}$||DG_ATP|[[10]](https://doi.org/10.1016/B978-012518121-1/50000-2)|
 
 #### Derived Parameters
 

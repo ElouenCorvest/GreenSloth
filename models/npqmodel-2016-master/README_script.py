@@ -43,11 +43,11 @@ def cite(
     if cit == '':
         return ''
     elif cit in cite_dict.keys():
-        return f'[{cite_dict[cit]}]'
+        return f'[[{cite_dict[cit]}]]({cit})'
     else:
         num_cites_stored = len(cite_dict.keys())
         cite_dict[cit] = num_cites_stored + 1
-        return f'[{cite_dict[cit]}]'
+        return f'[[{cite_dict[cit]}]]({cit})'
 
 def gloss_fromCSV(
     path,
@@ -190,10 +190,6 @@ mdFile.new_header(4, 'Part of ODE system')
 mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_tolist), text = comps_table_list)
 
 mdFile.new_paragraph(fr"""
-
-<details>
-<summary>Open me for the ODE system!</summary>
-
 $$
     \begin{{align}}
         {ode(PQH_2)} &= {v_PSII} - {v_PQ}\\
@@ -204,9 +200,6 @@ $$
         {ode(ATPase)} &= {v_ATPact}
     \end{{align}}
 $$
-
-</details>
-
                      """)
 
 mdFile.new_header(4, 'Conserved quantities')
