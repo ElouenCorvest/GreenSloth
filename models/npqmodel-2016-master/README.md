@@ -31,7 +31,10 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 
 
-$$
+<details>
+<summary>ODE System</summary>
+
+```math
     \begin{align}
         \frac{\mathrm{d}\mathrm{PQH}_2}{\mathrm{d}t} &= v_{\mathrm{PSII}} - v_{\mathrm{PQ}_{\mathrm{ox}}}\\
         \frac{\mathrm{d}\mathrm{ATP_{st}}}{\mathrm{d}t} &= v_{\mathrm{ATPsynthase}} - v_{\mathrm{ATP}_{\mathrm{consumption}}}\\
@@ -40,7 +43,9 @@ $$
         \frac{\mathrm{d}\mathrm{Vx}}{\mathrm{d}t} &= - v_{\mathrm{Xcyc}}\\
         \frac{\mathrm{d}\mathrm{ATPase}^*}{\mathrm{d}t} &= v_{\mathrm{ATPactivity}}
     \end{align}
-$$
+```
+
+</details>
                      
 #### Conserved quantities
 

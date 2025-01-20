@@ -190,7 +190,10 @@ mdFile.new_header(4, 'Part of ODE system')
 mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_tolist), text = comps_table_list)
 
 mdFile.new_paragraph(fr"""
-$$
+<details>
+<summary>ODE System</summary>
+
+```math
     \begin{{align}}
         {ode(PQH_2)} &= {v_PSII} - {v_PQ}\\
         {ode(ATP)} &= {v_ATPsynth} - {v_ATPcons}\\
@@ -199,7 +202,9 @@ $$
         {ode(Vx)} &= - {v_Xcyc}\\
         {ode(ATPase)} &= {v_ATPact}
     \end{{align}}
-$$
+```
+
+</details>
                      """)
 
 mdFile.new_header(4, 'Conserved quantities')
