@@ -216,7 +216,7 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>Open me for the calculations of the conserved quantities!</summary>
 
-$$
+```math
     \begin{{align}}
         {PSII_tot} &= {B_0} + {B_1} + {B_2} + {B_3} \\
         {PQ_tot} &= {PQ} + {PQH_2} \\
@@ -225,29 +225,29 @@ $$
         {X_tot} &= {Vx} + {Zx} \\
         {pH_lu} &= - \mathrm{{log}}_{{10}}\left( {H} \cdot 2.5 \times 10^{{-4}} \right)
     \end{{align}}
-$$
+```
 
 <details>
 <summary>Calculation of Quencher</summary>
 
-$$
+```math
     \begin{{align}}
         Q &= {gamma_0} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbS} + {gamma_1} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbS} \\
     \end{{align}}
-$$
+```
 
 </details>
 
 <details>
 <summary>Quasi steady-state approximation to calculate the rate of PSII</summary>
 
-$$
+```math
     \begin{{align}}
         0 &= - \left( {pfd} + \frac{{{k_PQred}}}{{{K_eqQAPQ}}} \cdot {PQ} \right) \cdot {B_0} + \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_1} + {k_PQred} \cdot {PQH_2} \cdot {B_3} \\
         0 &= {pfd} \cdot {B_0} - \left( {k_H} \cdot Q + {k_F} + {k_P} \right) \cdot {B_1} \\
         0 &= {pfd} \cdot {B_2} - \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_3}
     \end{{align}}
-$$
+```
 
 </details>
 
@@ -268,14 +268,14 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>Equations of derived parameters</summary>
 
-$$
+```math
     \begin{{align}}
         {K_eqQAPQ} &= e^{{\frac{{-\left( -2 \cdot {E_QA} \cdot {F} - 2 \cdot {E_PQ} \cdot {F} + 2 \cdot {pH_st} \cdot \mathrm{{ln}}(10) \cdot {R} \cdot {T} \right)}}{{{R} \cdot {T}}}}} \\
         {K_eqATPsynthase} &= {Pi} \cdot e^{{\frac{{-{DG_ATP} - \mathrm{{ln}}\left( 10 \right) \cdot {hpr} \cdot \left( {pH_st} - {pH_lu} \right)}}{{{R} \cdot {T}}}}} \\
         {K_eqcytb6f} &= e^{{\frac{{-\left( \left( 2 \cdot {F} \cdot {E_PQ} - 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot {pH_lu} \right) - 2 \cdot {F} \cdot {E_PC} + 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot \left( {pH_st} - {pH_lu} \right) \right)}}{{{R} \cdot {T}}}}} \\
         {H_st} &= 4 \times 10^3 \cdot 10^{pH_st}
     \end{{align}}
-$$
+```
 
 </details>
 
@@ -290,7 +290,7 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>Rate equations</summary>
 
-$$
+```math
     \begin{{align}}
         {v_PSII} &= {k_P} \cdot 0.5 \cdot {B_1} \\
         {v_PQ} &= \left( \frac{{{k_Cytb6f} \cdot {pfd} \cdot {K_eqcytb6f}}}{{{K_eqcytb6f} + 1}} + {k_PTOX} \right) \cdot {PQH_2} - \frac{{{k_Cytb6f} \cdot {pfd}}}{{{K_eqcytb6f} + 1}} \cdot {PQ} \\
@@ -301,7 +301,7 @@ $$
         {v_Xcyc} &= {k_DV} \cdot \frac{{{H}^{{{nhx}}}}}{{{H}^{{{nhx}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSat} \right)^{{{nhx}}}}} \cdot {Vx} - {k_EZ} \cdot \left( {X_tot} - {Vx} \right) \\
         {v_PsbSP} &= {k_prot} \cdot \frac{{{H}^{{{nhl}}}}}{{{H}^{{{nhl}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSatLHC} \right)^{{{nhl}}}}} \cdot {PsbS} - {k_deprot} \cdot {PsbSP}
     \end{{align}}
-$$
+```
 
 </details>
 

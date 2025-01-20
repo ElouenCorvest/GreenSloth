@@ -68,7 +68,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 <details>
 <summary>Open me for the calculations of the conserved quantities!</summary>
 
-$$
+```math
     \begin{align}
         \mathrm{PSII^{tot}} &= \mathrm{B_0} + \mathrm{B_1} + \mathrm{B_2} + \mathrm{B_3} \\
         \mathrm{PQ^{tot}} &= \mathrm{PQ} + \mathrm{PQH}_2 \\
@@ -77,29 +77,29 @@ $$
         \mathrm{X^{tot}} &= \mathrm{Vx} + \mathrm{Zx} \\
         \mathrm{pH}_\mathrm{lu} &= - \mathrm{log}_{10}\left( \mathrm{H_{lu}} \cdot 2.5 \times 10^{-4} \right)
     \end{align}
-$$
+```
 
 <details>
 <summary>Calculation of Quencher</summary>
 
-$$
+```math
     \begin{align}
         Q &= \gamma_0 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{psbS} + \gamma_1 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{PsbS^P} + \gamma_2 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{PsbS^P} + \gamma_3 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{psbS} \\
     \end{align}
-$$
+```
 
 </details>
 
 <details>
 <summary>Quasi steady-state approximation to calculate the rate of PSII</summary>
 
-$$
+```math
     \begin{align}
         0 &= - \left( \mathrm{PFD} + \frac{k_{\mathrm{PQH_2}}}{K_\mathrm{eq, QAPQ}} \cdot \mathrm{PQ} \right) \cdot \mathrm{B_0} + \left( k_H \cdot Q + k_F \right) \cdot \mathrm{B_1} + k_{\mathrm{PQH_2}} \cdot \mathrm{PQH}_2 \cdot \mathrm{B_3} \\
         0 &= \mathrm{PFD} \cdot \mathrm{B_0} - \left( k_H \cdot Q + k_F + k_P \right) \cdot \mathrm{B_1} \\
         0 &= \mathrm{PFD} \cdot \mathrm{B_2} - \left( k_H \cdot Q + k_F \right) \cdot \mathrm{B_3}
     \end{align}
-$$
+```
 
 </details>
 
@@ -168,14 +168,14 @@ $$
 <details>
 <summary>Equations of derived parameters</summary>
 
-$$
+```math
     \begin{align}
         K_\mathrm{eq, QAPQ} &= e^{\frac{-\left( -2 \cdot E^0\mathrm{(QA/QA^-)} \cdot F - 2 \cdot E^0\mathrm{(PQ/PQH_2)} \cdot F + 2 \cdot \mathrm{pH}_\mathrm{st} \cdot \mathrm{ln}(10) \cdot R \cdot T \right)}{R \cdot T}} \\
         K_\mathrm{eq, ATPsynthase} &= \mathrm{Pi^{mol}} \cdot e^{\frac{-\Delta G_{0_{\mathrm{ATP}}} - \mathrm{ln}\left( 10 \right) \cdot \mathrm{HPR} \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right)}{R \cdot T}} \\
         K_\mathrm{eq, cytb6f} &= e^{\frac{-\left( \left( 2 \cdot F \cdot E^0\mathrm{(PQ/PQH_2)} - 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \mathrm{pH}_\mathrm{lu} \right) - 2 \cdot F \cdot E^0\mathrm{(PC/PC^-)} + 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T}} \\
         \mathrm{H}_\mathrm{st} &= 4 \times 10^3 \cdot 10^\mathrm{pH}_\mathrm{st}
     \end{align}
-$$
+```
 
 </details>
 
@@ -199,7 +199,7 @@ $$
 <details>
 <summary>Rate equations</summary>
 
-$$
+```math
     \begin{align}
         v_{\mathrm{PSII}} &= k_P \cdot 0.5 \cdot \mathrm{B_1} \\
         v_{\mathrm{PQ}_{\mathrm{ox}}} &= \left( \frac{k_{\mathrm{Cytb6f}} \cdot \mathrm{PFD} \cdot K_\mathrm{eq, cytb6f}}{K_\mathrm{eq, cytb6f} + 1} + k_\mathrm{PTOX} \right) \cdot \mathrm{PQH}_2 - \frac{k_{\mathrm{Cytb6f}} \cdot \mathrm{PFD}}{K_\mathrm{eq, cytb6f} + 1} \cdot \mathrm{PQ} \\
@@ -210,7 +210,7 @@ $$
         v_{\mathrm{Xcyc}} &= k_\mathrm{kDeepoxV} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{X}}}{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{X}} + \left( 4 \times 10^3 \cdot 10^K_\mathrm{pHSat} \right)^{\mathrm{nH}_\mathrm{X}}} \cdot \mathrm{Vx} - k_\mathrm{kEpoxZ} \cdot \left( \mathrm{X^{tot}} - \mathrm{Vx} \right) \\
         v_{\mathrm{Psbs^P}} &= k_\mathrm{Protonation} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}}}{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}} + \left( 4 \times 10^3 \cdot 10^K_\mathrm{pHSatLHC} \right)^{\mathrm{nH}_\mathrm{L}}} \cdot \mathrm{psbS} - k_\mathrm{Deprotonation} \cdot \mathrm{PsbS^P}
     \end{align}
-$$
+```
 
 </details>
 
