@@ -17,7 +17,7 @@ Rate of non-radiative decay,$k_H$,$k_H$,$5 \cdot 10^9$,$\mathrm{s}^{-1}$,,k_H,ht
 Rate of flourescence,$k_F$,$k_F$,$6.25 \cdot 10^8$,$\mathrm{s}^{-1}$,,k_F,
 Rate of photochemistry,$k_P$,$k_P$,$5 \cdot 10^9$,$\mathrm{s}^{-1}$,,k_P,https://doi.org/10.1098/rstb.2013.0223
 ,$k_\mathrm{PTOX}$,$k_\mathrm{PTOX}$,$0.01$,$\mathrm{mmol^{-1}(mol\ Chl)s^{-1}}$,,k_PTOX,https://doi.org/10.1098/rstb.2013.0223
-Stroma pH of a dark adapted state,$\mathrm{pH}_\mathrm{st}$,$\mathrm{pH}_\mathrm{stroma}$,$7.8$,,,pH_st,
+Stroma pH of a dark adapted state,$\mathrm{pH}_{\mathrm{st}}$,$\mathrm{pH}_\mathrm{stroma}$,$7.8$,,,pH_st,
 ,$k_\mathrm{leak}$,$k_\mathrm{leak}$,$1000$,$\mathrm{s}^{-1}$,,k_leak,
 Proton buffering constant,$b_\mathrm{H}$,$b_\mathrm{H}$,$100$,,,b_H,https://doi.org/10.1007/s11120-006-9109-1
 Ratio of protons to ATP in ATP synthase,$\mathrm{HPR}$,$\mathrm{HPR}$,$\frac{14}{3}$,,,hpr,

@@ -6,12 +6,12 @@
 
 
 The [Matuszynska2016](https://doi.org/10.1016/j.bbabio.2016.09.003) model, a small kinetic model, was developed to delve deeper into the effect of light memory caused by non-photochemical quenching. The systematic investigation of the Xanthophyll cycle, a combination of the pigments of violaxanthin, antheraxanthin, and zeaxanthin, sparked a series of experiments to determine whether plant light memory can be detected in a time-scale of minutes to hours through pulse amplitude modulated chlorophyll fluorescence. The model was then created based on these experimental results, providing a comprehensive description of NPQ dynamics and the short-term memory of the *Arabidopsis thaliana* plant.
-                     
+
 To keep the model as simple as possible, several processes not directly linked to NPQ have been simplified to create a dynamic ODE system consisting only of 6 different compounds. With these simplifications, the authors could fulfil an additional goal: to make a general framework that is not specific to one model organism.
 
 To demonstrate the adaptability of their model, the authors took their calibrated *Arabidopsis thaliana* model and successfully applied it to the non-model organism *Epipremnum aureum*. This adaptation allowed them to simulate realistic fluorescence measurements and replicate all the key features of chlorophyll induction, showcasing the model's versatility and potential for use in a variety of organisms.
 
-                     
+
 ## Installation
 
 ## Summary
@@ -46,7 +46,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 ```
 
 </details>
-                     
+
 #### Conserved quantities
 
 |Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
@@ -105,7 +105,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 </details>
 
-                     
+
 ### Parameters
 
 |Short Description|Common Abbr.|Paper Abbr.|Value|Unit|MetaCyc ID|Python Var|Reference|
@@ -128,7 +128,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 |Rate of flourescence|$k_F$|$k_F$|$6.25 \cdot 10^8$|$\mathrm{s}^{-1}$||k_F||
 |Rate of photochemistry|$k_P$|$k_P$|$5 \cdot 10^9$|$\mathrm{s}^{-1}$||k_P|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$k_\mathrm{PTOX}$|$k_\mathrm{PTOX}$|$0.01$|$\mathrm{mmol^{-1}(mol\ Chl)s^{-1}}$||k_PTOX|[[4]](https://doi.org/10.1098/rstb.2013.0223)|
-|Stroma pH of a dark adapted state|$\mathrm{pH}_\mathrm{st}$|$\mathrm{pH}_\mathrm{stroma}$|$7.8$|||pH_st||
+|Stroma pH of a dark adapted state|$\mathrm{pH}_{\mathrm{st}}$|$\mathrm{pH}_\mathrm{stroma}$|$7.8$|||pH_st||
 ||$k_\mathrm{leak}$|$k_\mathrm{leak}$|$1000$|$\mathrm{s}^{-1}$||k_leak||
 |Proton buffering constant|$b_\mathrm{H}$|$b_\mathrm{H}$|$100$|||b_H|[[5]](https://doi.org/10.1007/s11120-006-9109-1)|
 |Ratio of protons to ATP in ATP synthase|$\mathrm{HPR}$|$\mathrm{HPR}$|$\frac{14}{3}$|||hpr||
@@ -170,16 +170,16 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 ```math
     \begin{align}
-        K_\mathrm{eq, QAPQ} &= e^{\frac{-\left( -2 \cdot E^0\mathrm{(QA/QA^-)} \cdot F - 2 \cdot E^0\mathrm{(PQ/PQH_2)} \cdot F + 2 \cdot \mathrm{pH}_\mathrm{st} \cdot \mathrm{ln}(10) \cdot R \cdot T \right)}{R \cdot T}} \\
-        K_\mathrm{eq, ATPsynthase} &= \mathrm{Pi^{mol}} \cdot e^{\frac{-\Delta G_{0_{\mathrm{ATP}}} - \mathrm{ln}\left( 10 \right) \cdot \mathrm{HPR} \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right)}{R \cdot T}} \\
-        K_\mathrm{eq, cytb6f} &= e^{\frac{-\left( \left( 2 \cdot F \cdot E^0\mathrm{(PQ/PQH_2)} - 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \mathrm{pH}_\mathrm{lu} \right) - 2 \cdot F \cdot E^0\mathrm{(PC/PC^-)} + 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T}} \\
-        \mathrm{H}_\mathrm{st} &= 4 \times 10^3 \cdot 10^\mathrm{pH}_\mathrm{st}
+        K_\mathrm{eq, QAPQ} &= e^{\frac{-\left( -2 \cdot E^0\mathrm{(QA/QA^-)} \cdot F - 2 \cdot E^0\mathrm{(PQ/PQH_2)} \cdot F + 2 \cdot \mathrm{pH}_{\mathrm{st}} \cdot \mathrm{ln}(10) \cdot R \cdot T \right)}{R \cdot T}} \\
+        K_\mathrm{eq, ATPsynthase} &= \mathrm{Pi^{mol}} \cdot e^{\frac{-\Delta G_{0_{\mathrm{ATP}}} - \mathrm{ln}\left( 10 \right) \cdot \mathrm{HPR} \cdot \left( \mathrm{pH}_{\mathrm{st}} - \mathrm{pH}_\mathrm{lu} \right)}{R \cdot T}} \\
+        K_\mathrm{eq, cytb6f} &= e^{\frac{-\left( \left( 2 \cdot F \cdot E^0\mathrm{(PQ/PQH_2)} - 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \mathrm{pH}_\mathrm{lu} \right) - 2 \cdot F \cdot E^0\mathrm{(PC/PC^-)} + 2 \cdot \mathrm{ln}\left( 10 \right) \cdot R \cdot T \cdot \left( \mathrm{pH}_{\mathrm{st}} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T}} \\
+        \mathrm{H}_\mathrm{st} &= 4 \times 10^3 \cdot 10^{\mathrm{pH}_{\mathrm{st}}}
     \end{align}
 ```
 
 </details>
 
-                     
+
 ### Reaction Rates
 
 |Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
@@ -214,4 +214,10 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 </details>
 
-                     
+
+### Tags
+
+
+```mermaid
+    info
+```
