@@ -52,9 +52,13 @@ def cite(
 def gloss_fromCSV(
     path,
     cite_flag: bool = False,
-    reference_col: str = 'Reference'
+    reference_col: str = 'Reference',
+    omit_col: str = None,
 ):
     table_df = pd.read_csv(path, keep_default_na=False)
+
+    if omit_col is not None:
+        table_df = table_df.drop(columns=[omit_col])
 
     if cite_flag:
         table_df[reference_col] = table_df[reference_col].apply(cite)
@@ -65,9 +69,76 @@ def gloss_fromCSV(
 
     return table_df, table_tolist, table_list
 
+def update_from_main_gloss(
+    main_gloss_path,
+    gloss_path,
+    model_title,
+    add_to_main = False,
+):
+
+    main_gloss = pd.read_csv(main_gloss_path, keep_default_na=False)
+    gloss = pd.read_csv(gloss_path, keep_default_na=False)
+
+    gloss_ids = gloss['Glossary ID']
+
+    main_to_gloss_col_match = [i for i in main_gloss.columns if i in gloss.columns]
+
+    for index, gloss_id in gloss_ids.items():
+        main_ids = main_gloss['Glossary ID']
+
+        if gloss_id == '':
+            if add_to_main:
+                try:
+                    new_id = max(main_ids) + 1
+                except:
+                    new_id = 1
+
+                gloss.loc[index, 'Glossary ID'] = new_id
+
+                main_gloss_dic = {}
+
+                for col_name in main_gloss.columns:
+                    if col_name in gloss.columns:
+                        new_val = gloss.loc[gloss['Glossary ID'] == new_id, col_name].values[0]
+
+                    elif col_name == 'Reference':
+                        new_val = [set([model_title])]
+
+                    main_gloss_dic[col_name] = new_val
+
+                new_df = pd.DataFrame(main_gloss_dic)
+
+                main_gloss = pd.concat([main_gloss, new_df], join='inner')
+
+        else:
+            for i in main_to_gloss_col_match:
+                new_val = main_gloss.loc[main_gloss['Glossary ID'] == int(gloss_id), i].values[0]
+                gloss.loc[index, i] = new_val
+
+            main_refs = main_gloss.loc[gloss['Glossary ID'] == int(gloss_id), 'Reference'].values[0]
+
+            main_gloss.loc[main_gloss['Glossary ID'] == int(gloss_id), 'Reference'] = main_refs
+
+
+    gloss.to_csv(gloss_path, na_rep = '', index=False)
+    if add_to_main:
+        main_gloss.to_csv(main_gloss_path, na_rep = '', index=False)
+
+    return
+
 model_info = os.path.dirname(__file__) + '/model_info'
 
-comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(model_info + '/comps.csv')
+update_from_main_gloss(
+    main_gloss_path='/home/elouen/Documents/PhotoModelBase/Templates/comp_glossary.csv',
+    gloss_path=model_info + '/comps.csv',
+    add_to_main=True,
+    model_title=model_title
+)
+
+comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
+    path=model_info + '/comps.csv',
+    omit_col='Glossary ID'
+)
 
 rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(model_info + '/rates.csv')
 
@@ -309,10 +380,21 @@ mdFile.new_paragraph(fr"""
 
 mdFile.new_header(3, 'Tags')
 
-mdFile.write('''
+mdFile.write(rf'''
 
 ```mermaid
-    info
+flowchart LR;
+    H("$${H}$$") -->|"$${v_PSII}$$"| P("$${PQH_2}$$");
+    P -->|"$${v_PQ}$$"| H;
+    H -->|"$${v_ATPsynth}$$"| A("$${ATP}$$");
+    A -->|"$${v_ATPcons}$$"| empty:::hidden;
+    H -->|"$${v_Leak}$$"| empty1:::hidden;
+    PS("$${PsbS}$$") -->|"$${v_PsbSP}$$"| e1:::hidden;
+    Vx("$${Vx}$$") -->|"$${v_Xcyc}$$"| e2:::hidden;
+    e3:::hidden -->|"$${v_ATPact}$$"| ATP("$${ATPase}$$")
+
+
+    classDef hidden display: none;
 ```
 
              ''')

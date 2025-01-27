@@ -219,5 +219,16 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 
 ```mermaid
-    info
+flowchart LR;
+    H("$$\mathrm{H_{lu}}$$") -->|"$$v_{\mathrm{PSII}}$$"| P("$$\mathrm{PQH}_2$$");
+    P -->|"$$v_{\mathrm{PQ}_{\mathrm{ox}}}$$"| H;
+    H -->|"$$v_{\mathrm{ATPsynthase}}$$"| A("$$\mathrm{ATP_{st}}$$");
+    A -->|"$$v_{\mathrm{ATP}_{\mathrm{consumption}}}$$"| empty:::hidden;
+    H -->|"$$v_{\mathrm{Leak}}$$"| empty1:::hidden;
+    PS("$$\mathrm{psbS}$$") -->|"$$v_{\mathrm{Psbs^P}}$$"| e1:::hidden;
+    Vx("$$\mathrm{Vx}$$") -->|"$$v_{\mathrm{Xcyc}}$$"| e2:::hidden;
+    e3:::hidden -->|"$$v_{\mathrm{ATPactivity}}$$"| ATP("$$\mathrm{ATPase}^*$$")
+
+
+    classDef hidden display: none;
 ```

@@ -1,0 +1,7 @@
+Name,Common Abbr.,MetaCyc ID,Python Var,Glossary ID,Reference
+Plastoquinol,$\mathrm{PQH}_2$,Plastoquinols,PQH_2,1,{'Matuszynska2016'}
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,ATP,ATP_st,2,{'Matuszynska2016'}
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,PROTON,H_lu,3,{'Matuszynska2016'}
+Concentration of psBS protein,$\mathrm{psbS}$,AT1G44575,psbS,4,{'Matuszynska2016'}
+Violaxanthin,$\mathrm{Vx}$,CPD1F-133,Vx,5,{'Matuszynska2016'}
+Concentration of active ATPase protein,$\mathrm{ATPase}^*$,,ATPase_ac,6,{'Matuszynska2016'}
