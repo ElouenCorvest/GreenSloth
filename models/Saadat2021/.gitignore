@@ -4,3 +4,7 @@
 analyses/GSA_output
 __pycache__
 *temp*
+
+# pixi environments
+.pixi
+*.egg-info

@@ -18,7 +18,7 @@ def get_model():
         derived_compounds=["PQ_redoxstate"],
         parameters=["PQtot"],
     )
-    
+
     m.add_algebraic_module(
         module_name="fd_redoxstate",
         function=normalize_concentration,
@@ -26,7 +26,7 @@ def get_model():
         derived_compounds=["Fd_redoxstate"],
         parameters=["Fdtot"],
     )
-    
+
     m.add_algebraic_module(
         module_name="pc_redoxstate",
         function=normalize_concentration,
@@ -34,7 +34,7 @@ def get_model():
         derived_compounds=["PC_redoxstate"],
         parameters=["PCtot"],
     )
-    
+
     m.add_algebraic_module(
         module_name="nadp_redoxstate",
         function=normalize_concentration,
