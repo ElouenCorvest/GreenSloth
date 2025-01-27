@@ -135,6 +135,13 @@ update_from_main_gloss(
     model_title=model_title
 )
 
+update_from_main_gloss(
+    main_gloss_path='/home/elouen/Documents/PhotoModelBase/Templates/comp_glossary.csv',
+    gloss_path=model_info + '/derived_comps.csv',
+    add_to_main=True,
+    model_title=model_title
+)
+
 comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
     path=model_info + '/comps.csv',
     omit_col='Glossary ID'
