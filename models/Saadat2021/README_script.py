@@ -1,5 +1,5 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
-from glossary_utils.glossary import extract_from_glossary
+from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV
 from pathlib import Path
 import pandas as pd
 
@@ -36,44 +36,36 @@ model_doi = 'https://doi.org/10.3389/fpls.2021.750580'
 
 ###### Glossaries ######
 cite_dict = dict()
-def cite(
-    cit: str,
-    cite_dict = cite_dict
-):
-    if cit == '':
-        return ''
-    elif cit in cite_dict.keys():
-        return f'[[{cite_dict[cit]}]]({cit})'
-    else:
-        num_cites_stored = len(cite_dict.keys())
-        cite_dict[cit] = num_cites_stored + 1
-        return f'[[{cite_dict[cit]}]]({cit})'
-
-def gloss_fromCSV(
-    path,
-    cite_flag: bool = False,
-    reference_col: str = 'Reference'
-):
-    table_df = pd.read_csv(path, keep_default_na=False)
-
-    if cite_flag:
-        table_df[reference_col] = table_df[reference_col].apply(cite)
-
-    table_tolist = [table_df.columns.values.tolist()] + table_df.values.tolist()
-
-    table_list = [i for k in table_tolist for i in k]
-
-    return table_df, table_tolist, table_list
 
 model_info = os.path.dirname(__file__) + '/model_info'
 
-comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(model_info + '/comps.csv')
+update_from_main_gloss(
+    main_gloss_path='/home/elouen/Documents/PhotoModelBase/Templates/comp_glossary.csv',
+    gloss_path=model_info + '/comps.csv',
+    add_to_main=True,
+    model_title=model_title
+)
+
+update_from_main_gloss(
+    main_gloss_path='/home/elouen/Documents/PhotoModelBase/Templates/comp_glossary.csv',
+    gloss_path=model_info + '/derived_comps.csv',
+    add_to_main=True,
+    model_title=model_title
+)
+
+comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
+    path=model_info + '/comps.csv',
+    omit_col='Glossary ID'
+)
+
+derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(
+    path=model_info + '/derived_comps.csv',
+    omit_col='Glossary ID'
+)
 
 rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(model_info + '/rates.csv')
 
-params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info + '/params.csv', cite_flag=True)
-
-derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(model_info + '/derived_comps.csv')
+params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info + '/params.csv', cite_flag=True, cite_dict=cite_dict)
 
 derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info + '/derived_params.csv')
 
@@ -92,78 +84,117 @@ def remove_math(
 
     return res
 
-PQH_2 = remove_math(comps_table, r'$\mathrm{PQH}_2$')
-ATP = remove_math(comps_table, r'$\mathrm{ATP}$')
-H = remove_math(comps_table, r'$\mathrm{H}$')
-PsbS = remove_math(comps_table, r'$\mathrm{PsbS}$')
+# -- Compounds --
+
+PQ = remove_math(comps_table, r'$\mathrm{PQ}_\mathrm{ox}$')
+PC_ox = remove_math(comps_table, r'$\mathrm{PC}_\mathrm{ox}$')
+Fd_ox = remove_math(comps_table, r'$\mathrm{Fd}_\mathrm{ox}$')
+ATP_st = remove_math(comps_table, r'$\mathrm{ATP}$')
+NADPH_st = remove_math(comps_table, r'$\mathrm{NADPH}$')
+H_lu = remove_math(comps_table, r'$\mathrm{H}^+$')
+LHC = remove_math(comps_table, r'$\mathrm{LHC}$')
+psbS = remove_math(comps_table, r'$\mathrm{Psbs}$')
 Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
-ATPase = remove_math(comps_table, r'$\mathrm{ATPase}^*$')
+PGA = remove_math(comps_table, r'$\mathrm{PGA}$')
+BPGA = remove_math(comps_table, r'$\mathrm{BPGA}$')
+GAP = remove_math(comps_table, r'$\mathrm{GAP}$')
+DHAP = remove_math(comps_table, r'$\mathrm{DHAP}$')
+FBP = remove_math(comps_table, r'$\mathrm{FBP}$')
+F6P = remove_math(comps_table, r'$\mathrm{F6P}$')
+G6P = remove_math(comps_table, r'$\mathrm{G6P}$')
+G1P = remove_math(comps_table, r'$\mathrm{G1P}$')
+SBP = remove_math(comps_table, r'$\mathrm{SBP}$')
+S7P = remove_math(comps_table, r'$\mathrm{S7P}$')
+E4P = remove_math(comps_table, r'$\mathrm{E4P}$')
+X5P = remove_math(comps_table, r'$\mathrm{X5P}$')
+R5P = remove_math(comps_table, r'$\mathrm{R5P}$')
+RUBP = remove_math(comps_table, r'$\mathrm{RUBP}$')
+RU5P = remove_math(comps_table, r'$\mathrm{RU5P}$')
 
-v_PSII = remove_math(rates_table, r'$v_{\mathrm{PSII}}$')
-v_PQ = remove_math(rates_table, r'$v_{\mathrm{PQ}_{\mathrm{ox}}}$')
-v_ATPsynth = remove_math(rates_table, r'$v_{\mathrm{ATPsynthase}}$')
-v_ATPact = remove_math(rates_table, r'$v_{\mathrm{ATPactivity}}$')
-v_Leak = remove_math(rates_table, r'$v_{\mathrm{Leak}}$')
-v_ATPcons = remove_math(rates_table, r'$v_{\mathrm{ATP}_{\mathrm{consumption}}}$')
-v_Xcyc = remove_math(rates_table, r'$v_{\mathrm{Xcyc}}$')
-v_PsbSP = remove_math(rates_table, r'$v_{\mathrm{Psbs^P}}$')
+# -- Derived Compounds --
 
-PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
-ADP = remove_math(derived_comps_table, r'$\mathrm{ADP}$')
-PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
+PQH_2 = remove_math(derived_comps_table, r'$\mathrm{PQH}_2$')
+PC_red = remove_math(derived_comps_table, r'$\mathrm{PC}^-$')
+Fd_red = remove_math(derived_comps_table, r'$\mathrm{Fd}^-$')
+ADP_st = remove_math(derived_comps_table, r'$\mathrm{ADP}$')
+NADP = remove_math(derived_comps_table, r'$\mathrm{NADP}^+$')
+Pi_st = remove_math(derived_comps_table, r'$\mathrm{P}_\mathrm{i}$')
+IF_3P = remove_math(derived_comps_table, r'$\mathrm{N}$')
 Zx = remove_math(derived_comps_table, r'$\mathrm{Zx}$')
-B_0 = remove_math(derived_comps_table, r'$\mathrm{B_0}$')
-B_1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
-B_2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
-B_3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
-pH_lu = remove_math(derived_comps_table, r'$\mathrm{pH}$')
-ATPase_inac = remove_math(derived_comps_table, r'$\mathrm{ATPase}$')
+PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
 
-PSII_tot = remove_math(params_table, r'$\mathrm{PSII^{tot}}$')
-PQ_tot = remove_math(params_table, r'$\mathrm{PQ^{tot}}$')
-AP_tot = remove_math(params_table, r'$\mathrm{AP^{tot}}$')
-PsbS_tot = remove_math(params_table, r'$\mathrm{PsbS^{tot}}$')
-X_tot = remove_math(params_table, r'$\mathrm{X^{tot}}$')
-gamma_0 = remove_math(params_table, r'$\gamma_0$')
-K_ZSat = remove_math(params_table, r'$K_\mathrm{ZSat}$')
-gamma_1 = remove_math(params_table, r'$\gamma_1$')
-gamma_2 = remove_math(params_table, r'$\gamma_2$')
-gamma_3 = remove_math(params_table, r'$\gamma_3$')
-pfd = remove_math(params_table, r'$\mathrm{PFD}$')
-k_PQred = remove_math(params_table, r'$k_{\mathrm{PQred}}$')
-E_QA = remove_math(params_table, r'$E^0\mathrm{(QA/QA^-)}$')
-E_PQ = remove_math(params_table, r'$E^0\mathrm{(PQ/PQH_2)}$')
-E_PC = remove_math(params_table, r'$E^0\mathrm{(PC/PC^-)}$')
-pH_st = remove_math(params_table, r'$\mathrm{pH}_\mathrm{stroma}$')
-R = remove_math(params_table, r'$R$')
-T = remove_math(params_table, r'$T$')
-F = remove_math(params_table, r'$F$')
-k_H = remove_math(params_table, r'$k_H$')
-k_F = remove_math(params_table, r'$k_F$')
-k_P = remove_math(params_table, r'$k_P$')
-k_ATPconsum = remove_math(params_table, r'$k_{\mathrm{ATPconsumption}}$')
-Pi = remove_math(params_table, r'$\mathrm{Pi^{mol}}$')
-DG_ATP = remove_math(params_table, r'$\Delta G_{0_{\mathrm{ATP}}}$')
-hpr = remove_math(params_table, r'$\mathrm{HPR}$')
-k_Cytb6f = remove_math(params_table, r'$k_{\mathrm{Cytb6f}}$')
-k_PTOX = remove_math(params_table, r'$k_\mathrm{PTOX}$')
-k_ATPsynth = remove_math(params_table, r'$k_{\mathrm{ATPsynthase}}$')
-k_ActATPase = remove_math(params_table, r'$k_{\mathrm{ActATPase}}$')
-k_DeactATPase = remove_math(params_table, r'$k_{\mathrm{DeactATPase}}$')
-k_leak = remove_math(params_table, r'$k_\mathrm{leak}$')
-k_DV = remove_math(params_table, r'$k_\mathrm{DeepoxV}$')
-nhx = remove_math(params_table, r'$\mathrm{nH}_\mathrm{X}$')
-K_pHSat = remove_math(params_table, r'$K_\mathrm{pHSat}$')
-k_EZ = remove_math(params_table, r'$k_\mathrm{EpoxZ}$')
-k_prot = remove_math(params_table, r'$k_\mathrm{Protonation}$')
-k_deprot = remove_math(params_table, r'$k_\mathrm{Deprotonation}$')
-K_pHSatLHC = remove_math(params_table, r'$K_\mathrm{pHSatLHC}$')
-nhl = remove_math(params_table, r'$\mathrm{nH}_\mathrm{L}$')
+# PQH_2 = remove_math(comps_table, r'$\mathrm{PQH}_2$')
+# ATP = remove_math(comps_table, r'$\mathrm{ATP}$')
+# H = remove_math(comps_table, r'$\mathrm{H}$')
+# PsbS = remove_math(comps_table, r'$\mathrm{PsbS}$')
+# Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
+# ATPase = remove_math(comps_table, r'$\mathrm{ATPase}^*$')
 
-K_eqQAPQ = remove_math(derived_params_table, r'$K_\mathrm{eq, QAPQ}$')
-K_eqATPsynthase = remove_math(derived_params_table, r'$K_\mathrm{eq, ATPsynthase}$')
-K_eqcytb6f = remove_math(derived_params_table, r'$K_\mathrm{eq, cytb6f}$')
-H_st = remove_math(derived_params_table, r'$\mathrm{H}_\mathrm{st}$')
+# v_PSII = remove_math(rates_table, r'$v_{\mathrm{PSII}}$')
+# v_PQ = remove_math(rates_table, r'$v_{\mathrm{PQ}_{\mathrm{ox}}}$')
+# v_ATPsynth = remove_math(rates_table, r'$v_{\mathrm{ATPsynthase}}$')
+# v_ATPact = remove_math(rates_table, r'$v_{\mathrm{ATPactivity}}$')
+# v_Leak = remove_math(rates_table, r'$v_{\mathrm{Leak}}$')
+# v_ATPcons = remove_math(rates_table, r'$v_{\mathrm{ATP}_{\mathrm{consumption}}}$')
+# v_Xcyc = remove_math(rates_table, r'$v_{\mathrm{Xcyc}}$')
+# v_PsbSP = remove_math(rates_table, r'$v_{\mathrm{Psbs^P}}$')
+
+# PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
+# ADP = remove_math(derived_comps_table, r'$\mathrm{ADP}$')
+# PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
+# Zx = remove_math(derived_comps_table, r'$\mathrm{Zx}$')
+# B_0 = remove_math(derived_comps_table, r'$\mathrm{B_0}$')
+# B_1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
+# B_2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
+# B_3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
+# pH_lu = remove_math(derived_comps_table, r'$\mathrm{pH}$')
+# ATPase_inac = remove_math(derived_comps_table, r'$\mathrm{ATPase}$')
+
+# PSII_tot = remove_math(params_table, r'$\mathrm{PSII^{tot}}$')
+# PQ_tot = remove_math(params_table, r'$\mathrm{PQ^{tot}}$')
+# AP_tot = remove_math(params_table, r'$\mathrm{AP^{tot}}$')
+# PsbS_tot = remove_math(params_table, r'$\mathrm{PsbS^{tot}}$')
+# X_tot = remove_math(params_table, r'$\mathrm{X^{tot}}$')
+# gamma_0 = remove_math(params_table, r'$\gamma_0$')
+# K_ZSat = remove_math(params_table, r'$K_\mathrm{ZSat}$')
+# gamma_1 = remove_math(params_table, r'$\gamma_1$')
+# gamma_2 = remove_math(params_table, r'$\gamma_2$')
+# gamma_3 = remove_math(params_table, r'$\gamma_3$')
+# pfd = remove_math(params_table, r'$\mathrm{PFD}$')
+# k_PQred = remove_math(params_table, r'$k_{\mathrm{PQred}}$')
+# E_QA = remove_math(params_table, r'$E^0\mathrm{(QA/QA^-)}$')
+# E_PQ = remove_math(params_table, r'$E^0\mathrm{(PQ/PQH_2)}$')
+# E_PC = remove_math(params_table, r'$E^0\mathrm{(PC/PC^-)}$')
+# pH_st = remove_math(params_table, r'$\mathrm{pH}_\mathrm{stroma}$')
+# R = remove_math(params_table, r'$R$')
+# T = remove_math(params_table, r'$T$')
+# F = remove_math(params_table, r'$F$')
+# k_H = remove_math(params_table, r'$k_H$')
+# k_F = remove_math(params_table, r'$k_F$')
+# k_P = remove_math(params_table, r'$k_P$')
+# k_ATPconsum = remove_math(params_table, r'$k_{\mathrm{ATPconsumption}}$')
+# Pi = remove_math(params_table, r'$\mathrm{Pi^{mol}}$')
+# DG_ATP = remove_math(params_table, r'$\Delta G_{0_{\mathrm{ATP}}}$')
+# hpr = remove_math(params_table, r'$\mathrm{HPR}$')
+# k_Cytb6f = remove_math(params_table, r'$k_{\mathrm{Cytb6f}}$')
+# k_PTOX = remove_math(params_table, r'$k_\mathrm{PTOX}$')
+# k_ATPsynth = remove_math(params_table, r'$k_{\mathrm{ATPsynthase}}$')
+# k_ActATPase = remove_math(params_table, r'$k_{\mathrm{ActATPase}}$')
+# k_DeactATPase = remove_math(params_table, r'$k_{\mathrm{DeactATPase}}$')
+# k_leak = remove_math(params_table, r'$k_\mathrm{leak}$')
+# k_DV = remove_math(params_table, r'$k_\mathrm{DeepoxV}$')
+# nhx = remove_math(params_table, r'$\mathrm{nH}_\mathrm{X}$')
+# K_pHSat = remove_math(params_table, r'$K_\mathrm{pHSat}$')
+# k_EZ = remove_math(params_table, r'$k_\mathrm{EpoxZ}$')
+# k_prot = remove_math(params_table, r'$k_\mathrm{Protonation}$')
+# k_deprot = remove_math(params_table, r'$k_\mathrm{Deprotonation}$')
+# K_pHSatLHC = remove_math(params_table, r'$K_\mathrm{pHSatLHC}$')
+# nhl = remove_math(params_table, r'$\mathrm{nH}_\mathrm{L}$')
+
+# K_eqQAPQ = remove_math(derived_params_table, r'$K_\mathrm{eq, QAPQ}$')
+# K_eqATPsynthase = remove_math(derived_params_table, r'$K_\mathrm{eq, ATPsynthase}$')
+# K_eqcytb6f = remove_math(derived_params_table, r'$K_\mathrm{eq, cytb6f}$')
+# H_st = remove_math(derived_params_table, r'$\mathrm{H}_\mathrm{st}$')
 
 ###### Making README File ######
 
@@ -185,23 +216,25 @@ mdFile.new_header(4, 'Part of ODE system')
 
 mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_tolist), text = comps_table_list)
 
-mdFile.new_paragraph(fr"""
-<details>
-<summary>ODE System</summary>
+mdFile.create_md_file()
 
-```math
-    \begin{{align}}
-        {ode(PQH_2)} &= {v_PSII} - {v_PQ}\\
-        {ode(ATP)} &= {v_ATPsynth} - {v_ATPcons}\\
-        {ode(H)} &= \frac{{1}}{{b_{{\mathrm{{H}}}}}} \cdot \left( 2 \cdot {v_PSII} + 4 \cdot {v_PQ} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_Leak} \right) \\
-        {ode(PsbS)} &= -{v_PsbSP}\\
-        {ode(Vx)} &= - {v_Xcyc}\\
-        {ode(ATPase)} &= {v_ATPact}
-    \end{{align}}
-```
+# mdFile.new_paragraph(fr"""
+# <details>
+# <summary>ODE System</summary>
 
-</details>
-                     """)
+# ```math
+#     \begin{{align}}
+#         {ode(PQH_2)} &= {v_PSII} - {v_PQ}\\
+#         {ode(ATP)} &= {v_ATPsynth} - {v_ATPcons}\\
+#         {ode(H)} &= \frac{{1}}{{b_{{\mathrm{{H}}}}}} \cdot \left( 2 \cdot {v_PSII} + 4 \cdot {v_PQ} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_Leak} \right) \\
+#         {ode(PsbS)} &= -{v_PsbSP}\\
+#         {ode(Vx)} &= - {v_Xcyc}\\
+#         {ode(ATPase)} &= {v_ATPact}
+#     \end{{align}}
+# ```
+
+# </details>
+#                      """)
 
 mdFile.new_header(4, 'Conserved quantities')
 

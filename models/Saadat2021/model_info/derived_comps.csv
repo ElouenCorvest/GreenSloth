@@ -1,11 +1,10 @@
-Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var
-Plastoquinone,$\mathrm{PQ}$,$\mathrm{PQ}$,,PQ
-Stromal ADP concentration,$\mathrm{ADP_{st}}$,$\mathrm{ADP}$,,ADP_st
-Concentration of protonated PsBS protein,$\mathrm{PsbS^P}$,$\mathrm{PsbS^P}$,,PsbSP
-Zeaxanthin concentration,$\mathrm{Zx}$,$\mathrm{Zx}$,,Zx
-Concentration of inactive ATPase protein,$\mathrm{ATPase}$,$\mathrm{ATPase}$,,ATPase_inac
-Initial state of PSII,$\mathrm{B_0}$,$\mathrm{B_0}$,,B_0
-Excited state of PSII,$\mathrm{B_1}$,$\mathrm{B_1}$,,B_1
-Charge seperation state of PSII,$\mathrm{B_2}$,$\mathrm{B_2}$,,B_2
-Photoinhibited state of PSII,$\mathrm{B_3}$,$\mathrm{B_3}$,,B_3
-Lumen pH,$\mathrm{pH}_\mathrm{lu}$,$\mathrm{pH}$,,pH_lu
+Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
+Plastoquinol,$\mathrm{PQH}_2$,$\mathrm{PQH}_2$,Plastoquinols,PQH_2,1
+Reduced Plastocyanine,$\mathrm{PC}_\mathrm{red}$,$\mathrm{PC}^-$,,PC_red,36
+Reduced Ferrodoxin,$\mathrm{Fd}_\mathrm{red}$,$\mathrm{Fd}^-$,,Fd_red,37
+Stromal ADP concentration,$\mathrm{ADP_{st}}$,$\mathrm{ADP}$,,ADP_st,8
+Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,$\mathrm{NADP}^+$,,NADP,38
+Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",$\mathrm{P}_\mathrm{i}$,,Pi_st,39
+Inhibition factor of the triose phosphate translocators,$\mathrm{IF}_\mathrm{3P}$,$\mathrm{N}$,,IF_3P,40
+Zeaxanthin concentration,$\mathrm{Zx}$,$\mathrm{Zx}$,,Zx,10
+Concentration of protonated PsBS protein,$\mathrm{PsbS^P}$,$\mathrm{PsbS^P}$,,PsbSP,9
