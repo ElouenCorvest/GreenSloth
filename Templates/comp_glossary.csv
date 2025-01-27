@@ -1,7 +1,41 @@
 Name,Common Abbr.,MetaCyc ID,Python Var,Glossary ID,Reference
-Plastoquinol,$\mathrm{PQH}_2$,Plastoquinols,PQH_2,1,{'Matuszynska2016'}
-Stromal ATP concentration,$\mathrm{ATP_{st}}$,ATP,ATP_st,2,{'Matuszynska2016'}
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,PROTON,H_lu,3,{'Matuszynska2016'}
-Concentration of psBS protein,$\mathrm{psbS}$,AT1G44575,psbS,4,{'Matuszynska2016'}
-Violaxanthin,$\mathrm{Vx}$,CPD1F-133,Vx,5,{'Matuszynska2016'}
-Concentration of active ATPase protein,$\mathrm{ATPase}^*$,,ATPase_ac,6,{'Matuszynska2016'}
+Plastoquinol,$\mathrm{PQH}_2$,Plastoquinols,PQH_2,1,"Matuszynska2016, Saadat2021"
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,ATP,ATP_st,2,"Matuszynska2016, Saadat2021"
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,PROTON,H_lu,3,"Matuszynska2016, Saadat2021"
+Concentration of psBS protein,$\mathrm{psbS}$,AT1G44575,psbS,4,"Matuszynska2016, Saadat2021"
+Violaxanthin,$\mathrm{Vx}$,CPD1F-133,Vx,5,"Matuszynska2016, Saadat2021"
+Concentration of active ATPase protein,$\mathrm{ATPase}^*$,,ATPase_ac,6,Matuszynska2016
+Plastoquinone,$\mathrm{PQ}$,,PQ,7,"Matuszynska2016, Saadat2021"
+Stromal ADP concentration,$\mathrm{ADP_{st}}$,,ADP_st,8,"Matuszynska2016, Saadat2021"
+Concentration of protonated PsBS protein,$\mathrm{PsbS^P}$,,PsbSP,9,"Matuszynska2016, Saadat2021"
+Zeaxanthin concentration,$\mathrm{Zx}$,,Zx,10,"Matuszynska2016, Saadat2021"
+Concentration of inactive ATPase protein,$\mathrm{ATPase}$,,ATPase_inac,11,Matuszynska2016
+Initial state of PSII,$\mathrm{B_0}$,,B_0,12,Matuszynska2016
+Excited state of PSII,$\mathrm{B_1}$,,B_1,13,Matuszynska2016
+Charge seperation state of PSII,$\mathrm{B_2}$,,B_2,14,Matuszynska2016
+Photoinhibited state of PSII,$\mathrm{B_3}$,,B_3,15,Matuszynska2016
+Lumen pH,$\mathrm{pH}_\mathrm{lu}$,,pH_lu,16,Matuszynska2016
+Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,,PC_ox,17,Saadat2021
+Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,,Fd_ox,18,Saadat2021
+Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,,NADPH_st,19,Saadat2021
+Phosphorylated fraction of light harvesting complexes,$\mathrm{LHC}$,,LHC,20,Saadat2021
+3-phosphoglyceric acid,$\mathrm{PGA}$,,PGA,21,Saadat2021
+"2,3-biphosphoglyceric acid",$\mathrm{BPGA}$,,BPGA,22,Saadat2021
+Glyceraldehyde 3-phosphate,$\mathrm{GAP}$,,GAP,23,Saadat2021
+Dihydroxyacetone phosphate,$\mathrm{DHAP}$,,DHAP,24,Saadat2021
+"Fructose 1,6-bisphosphate",$\mathrm{FBP}$,,FBP,25,Saadat2021
+Fructose 6-phosphate,$\mathrm{F6P}$,,F6P,26,Saadat2021
+Glucose 6-phosphate,$\mathrm{G6P}$,,G6P,27,Saadat2021
+Glucose 1-phosphate,$\mathrm{G1P}$,,G1P,28,Saadat2021
+"Sedoheptulose 1,7-bisphosphate",$\mathrm{SBP}$,,SBP,29,Saadat2021
+Sedoheptulose 7-phosphate,$\mathrm{S7P}$,,S7P,30,Saadat2021
+Erythrose 4-phosphate,$\mathrm{E4P}$,,E4P,31,Saadat2021
+Xylulose 5-phosphate,$\mathrm{X5P}$,,X5P,32,Saadat2021
+Ribose 5-phosphate,$\mathrm{R5P}$,,R5P,33,Saadat2021
+"Ribulose 1,5-bisphosphate",$\mathrm{RUBP}$,,RUBP,34,Saadat2021
+Ribulose 5-phosphate,$\mathrm{RU5P}$,,RU5P,35,Saadat2021
+Reduced Plastocyanine,$\mathrm{PC}_\mathrm{red}$,,PC_red,36,Saadat2021
+Reduced Ferrodoxin,$\mathrm{Fd}_\mathrm{red}$,,Fd_red,37,Saadat2021
+Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,,NADP,38,Saadat2021
+Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",,Pi_st,39,Saadat2021
+Inhibition factor of the triose phosphate translocators,$\mathrm{IF}_\mathrm{3P}$,,IF_3P,40,Saadat2021
