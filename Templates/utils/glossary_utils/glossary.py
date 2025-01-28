@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+from typing import Optional
 
 def df_to_dict(
     df: pd.DataFrame,
@@ -180,19 +181,18 @@ def update_from_main_gloss(
     return
 
 def gloss_fromCSV(
-    path,
-    cite_dict = None,
-    cite_flag: bool = False,
+    path: str,
+    cite_dict: Optional[dict] = None,
     reference_col: str = 'Reference',
-    omit_col: str = None,
+    omit_col: Optional[str] = None,
 ):
     table_df = pd.read_csv(path, keep_default_na=False)
 
     if omit_col is not None:
         table_df = table_df.drop(columns=[omit_col])
 
-    if cite_flag:
-        table_df[reference_col] = table_df[reference_col].apply(cite, args=(cite_dict))
+    if cite_dict is not None:
+        table_df[reference_col] = table_df[reference_col].apply(cite, args=(), cite_dict=cite_dict)
 
     table_tolist = [table_df.columns.values.tolist()] + table_df.values.tolist()
 
@@ -201,8 +201,8 @@ def gloss_fromCSV(
     return table_df, table_tolist, table_list
 
 def cite(
-    cite_dict: dict,
     cit: str,
+    cite_dict: dict,
 ):
     if cit == '':
         return ''

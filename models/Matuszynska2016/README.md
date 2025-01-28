@@ -25,7 +25,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 |Plastoquinol|$\mathrm{PQH}_2$|$\mathrm{PQH}_2$|Plastoquinols|PQH_2|
 |Stromal ATP concentration|$\mathrm{ATP_{st}}$|$\mathrm{ATP}$|ATP|ATP_st|
 |Lumenal Proton concentration|$\mathrm{H_{lu}}$|$\mathrm{H}$|PROTON|H_lu|
-|Concentration of psBS protein|$\mathrm{psbS}$|$\mathrm{PsbS}$|AT1G44575|psbS|
+|Concentration of psbS protein|$\mathrm{psbS}$|$\mathrm{PsbS}$|AT1G44575|psbS|
 |Violaxanthin|$\mathrm{Vx}$|$\mathrm{Vx}$|CPD1F-133|Vx|
 |Concentration of active ATPase protein|$\mathrm{ATPase}^*$|$\mathrm{ATPase}^*$||ATPase_ac|
 
@@ -49,18 +49,18 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 #### Conserved quantities
 
-|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|Glossary ID|
-| :---: | :---: | :---: | :---: | :---: | :---: |
-|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}$||PQ|7|
-|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$||ADP_st|8|
-|Concentration of protonated PsBS protein|$\mathrm{PsbS^P}$|$\mathrm{PsbS^P}$||PsbSP|9|
-|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$||Zx|10|
-|Concentration of inactive ATPase protein|$\mathrm{ATPase}$|$\mathrm{ATPase}$||ATPase_inac|11|
-|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$||B_0|12|
-|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$||B_1|13|
-|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$||B_2|14|
-|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$||B_3|15|
-|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH}$||pH_lu|16|
+|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+| :---: | :---: | :---: | :---: | :---: |
+|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}$|PLASTOQUINONE|PQ|
+|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|ADP|ADP_st|
+|Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$\mathrm{PsbS^P}$|AT1G44575|PsbSP|
+|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|CPD1F-130|Zx|
+|Concentration of inactive ATPase protein|$\mathrm{ATPase}$|$\mathrm{ATPase}$||ATPase_inac|
+|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$|PSII|B_0|
+|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$|PSII|B_1|
+|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$|PSII|B_2|
+|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$|PSII|B_3|
+|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH}$||pH_lu|
 
 
 
@@ -73,7 +73,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
         \mathrm{PSII^{tot}} &= \mathrm{B_0} + \mathrm{B_1} + \mathrm{B_2} + \mathrm{B_3} \\
         \mathrm{PQ^{tot}} &= \mathrm{PQ} + \mathrm{PQH}_2 \\
         \mathrm{AP^{tot}} &= \mathrm{ATP_{st}} + \mathrm{ADP_{st}} \\
-        \mathrm{PsbS^{tot}} &= \mathrm{psbS} + \mathrm{PsbS^P} \\
+        \mathrm{PsbS^{tot}} &= \mathrm{psbS} + \mathrm{psbS^P} \\
         \mathrm{X^{tot}} &= \mathrm{Vx} + \mathrm{Zx} \\
         \mathrm{pH}_\mathrm{lu} &= - \mathrm{log}_{10}\left( \mathrm{H_{lu}} \cdot 2.5 \times 10^{-4} \right)
     \end{align}
@@ -84,7 +84,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 ```math
     \begin{align}
-        Q &= \gamma_0 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{psbS} + \gamma_1 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{PsbS^P} + \gamma_2 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{PsbS^P} + \gamma_3 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{psbS} \\
+        Q &= \gamma_0 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{psbS} + \gamma_1 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{psbS^P} + \gamma_2 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{psbS^P} + \gamma_3 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{psbS} \\
     \end{align}
 ```
 
@@ -208,7 +208,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
         v_{\mathrm{Leak}} &= k_\mathrm{leak} \cdot \left( \mathrm{H_{lu}} - \mathrm{H}_\mathrm{st} \right) \\
         v_{\mathrm{ATP}_{\mathrm{consumption}}} &= k_{\mathrm{ATPconsumption}} \cdot \mathrm{ATP_{st}} \\
         v_{\mathrm{Xcyc}} &= k_\mathrm{kDeepoxV} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{X}}}{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{X}} + \left( 4 \times 10^3 \cdot 10^K_\mathrm{pHSat} \right)^{\mathrm{nH}_\mathrm{X}}} \cdot \mathrm{Vx} - k_\mathrm{kEpoxZ} \cdot \left( \mathrm{X^{tot}} - \mathrm{Vx} \right) \\
-        v_{\mathrm{Psbs^P}} &= k_\mathrm{Protonation} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}}}{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}} + \left( 4 \times 10^3 \cdot 10^K_\mathrm{pHSatLHC} \right)^{\mathrm{nH}_\mathrm{L}}} \cdot \mathrm{psbS} - k_\mathrm{Deprotonation} \cdot \mathrm{PsbS^P}
+        v_{\mathrm{Psbs^P}} &= k_\mathrm{Protonation} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}}}{\mathrm{H_{lu}}^{\mathrm{nH}_\mathrm{L}} + \left( 4 \times 10^3 \cdot 10^K_\mathrm{pHSatLHC} \right)^{\mathrm{nH}_\mathrm{L}}} \cdot \mathrm{psbS} - k_\mathrm{Deprotonation} \cdot \mathrm{psbS^P}
     \end{align}
 ```
 

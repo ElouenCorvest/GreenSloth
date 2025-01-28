@@ -1,9 +1,17 @@
-Short Description,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var
-Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,$v_{\mathrm{PSII}}$,,v_PSII
-Oxidation of the PQ pool through cytochrome and PTOX,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,,v_PQ
-Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,$v_{\mathrm{ATPsynthase}}$,,v_ATPsynth
-Activation of ATPsynthase by light,$v_{\mathrm{ATPactivity}}$,$v_{\mathrm{ATPactivity}}$,,v_ATPact
-Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,$v_{\mathrm{Leak}}$,,v_Leak
-ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,,v_ATPcons
-Xanthophyll cycle,$v_{\mathrm{Xcyc}}$,$v_{\mathrm{Xcyc}}$,,v_Xcyc
-Protonation of psbS protein,$v_{\mathrm{Psbs^P}}$,$v_{\mathrm{Psbs^P}}$,,v_PsbSP
+Short Description,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
+,,$v_{\mathrm{PSII}}$,,,1
+Rate of the b6f complex,$v_{\mathrm{b6f}$,$v_{\mathrm{b6f}$,,v_b6f,
+Reaction mediated by FNR,$v_{\mathrm{FNR}$,$v_{\mathrm{FNR}$,,v_FNR,
+Ferredoxin-plastoquinone reductase,$v_{\mathrm{FQR}$,$v_{\mathrm{FQR}$,,v_FQR,
+,,$v_{\mathrm{ATPsynthase}}$,,,3
+,,$v_{\mathrm{Leak}}$,,,5
+,,$v_{\mathrm{PTOX}}$,,,2
+Reduction of PQ pool by NADH reductase,$v_{\mathrm{NDH}$,$v_{\mathrm{NDH}$,,v_NDH,
+Cyclic electron flow,$v_{\mathrm{Cyc}$,$v_{\mathrm{Cyc}$,,v_Cyc,
+State transitions from PSII to PSI,$v_{\mathrm{St21}$,$v_{\mathrm{St12}$,,v_St21,
+State transitions from PSI to PSII,$v_{\mathrm{St12}$,$v_{\mathrm{St21}$,,v_St12,
+De-epoxidation of violaxanthin,$v_{\mathrm{Deepox}$,$v_{\mathrm{Deepox}$,,v_Deepox,
+Epoxidation of violaxanthin,$v_{\mathrm{Epox}$,$v_{\mathrm{Epox}$,,v_Epox,
+,,$v_{\mathrm{LHCprotonation}$,,,8
+Deprotonation of psbS protein,$v_{\mathrm{Psbs^D}}$,$v_{\mathrm{LHCdeprotonation}$,,v_psbSD,
+,,,,,

@@ -36,31 +36,27 @@ model_doi = 'https://doi.org/10.1016/j.bbabio.2016.09.003'
 
 ###### Glossaries ######
 cite_dict = dict()
-def cite(
-    cit: str,
-    cite_dict = cite_dict
-):
-    if cit == '':
-        return ''
-    elif cit in cite_dict.keys():
-        return f'[[{cite_dict[cit]}]]({cit})'
-    else:
-        num_cites_stored = len(cite_dict.keys())
-        cite_dict[cit] = num_cites_stored + 1
-        return f'[[{cite_dict[cit]}]]({cit})'
 
 model_info = os.path.dirname(__file__) + '/model_info'
+main_gloss = Path(__file__).parents[2] / 'Templates'
 
 update_from_main_gloss(
-    main_gloss_path='/home/elouen/Documents/PhotoModelBase/Templates/comp_glossary.csv',
+    main_gloss_path=main_gloss / 'comp_glossary.csv',
     gloss_path=model_info + '/comps.csv',
     add_to_main=True,
     model_title=model_title
 )
 
 update_from_main_gloss(
-    main_gloss_path='/home/elouen/Documents/PhotoModelBase/Templates/comp_glossary.csv',
+    main_gloss_path=main_gloss / 'comp_glossary.csv',
     gloss_path=model_info + '/derived_comps.csv',
+    add_to_main=True,
+    model_title=model_title
+)
+
+update_from_main_gloss(
+    main_gloss_path=main_gloss / 'rates_glossary.csv',
+    gloss_path=model_info + '/rates.csv',
     add_to_main=True,
     model_title=model_title
 )
@@ -70,11 +66,20 @@ comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
     omit_col='Glossary ID'
 )
 
-rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(model_info + '/rates.csv')
+derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(
+    path=model_info + '/derived_comps.csv',
+    omit_col='Glossary ID'
+)
 
-params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info + '/params.csv', cite_flag=True)
+rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(
+    path=model_info + '/rates.csv',
+    omit_col='Glossary ID'
+)
 
-derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(model_info + '/derived_comps.csv')
+params_table, params_table_tolist, params_table_list = gloss_fromCSV(
+    model_info + '/params.csv',
+    cite_dict=cite_dict,
+)
 
 derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info + '/derived_params.csv')
 

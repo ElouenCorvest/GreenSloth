@@ -1,9 +1,9 @@
-Short Description,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var
-Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,$v_{\mathrm{PSII}}$,,v_PSII
-Oxidation of the PQ pool through cytochrome and PTOX,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,,v_PQ
-Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,$v_{\mathrm{ATPsynthase}}$,,v_ATPsynth
-Activation of ATPsynthase by light,$v_{\mathrm{ATPactivity}}$,$v_{\mathrm{ATPactivity}}$,,v_ATPact
-Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,$v_{\mathrm{Leak}}$,,v_Leak
-ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,,v_ATPcons
-Xanthophyll cycle,$v_{\mathrm{Xcyc}}$,$v_{\mathrm{Xcyc}}$,,v_Xcyc
-Protonation of psbS protein,$v_{\mathrm{Psbs^P}}$,$v_{\mathrm{Psbs^P}}$,,v_PsbSP
+Short Description,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
+Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,$v_{\mathrm{PSII}}$,,v_PSII,1
+Oxidation of the PQ pool through cytochrome and PTOX,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,,v_PQ,2
+Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,$v_{\mathrm{ATPsynthase}}$,,v_ATPsynth,3
+Activation of ATPsynthase by light,$v_{\mathrm{ATPactivity}}$,$v_{\mathrm{ATPactivity}}$,,v_ATPact,4
+Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,$v_{\mathrm{Leak}}$,,v_Leak,5
+ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,,v_ATPcons,6
+Xanthophyll cycle,$v_{\mathrm{Xcyc}}$,$v_{\mathrm{Xcyc}}$,,v_Xcyc,7
+Protonation of psbS protein,$v_{\mathrm{Psbs^P}}$,$v_{\mathrm{Psbs^P}}$,,v_PsbSP,8
