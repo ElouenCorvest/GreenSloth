@@ -1,5 +1,5 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
-from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV
+from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV, write_python_from_gloss
 from pathlib import Path
 import pandas as pd
 
@@ -66,9 +66,22 @@ comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
     omit_col='Glossary ID'
 )
 
+write_python_from_gloss(
+    path_to_write=Path(__file__).parent / 'model_info/comps.py',
+    gloss=comps_table,
+    var_list_name='comps_table',
+    ode_flag=True
+)
+
 derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(
     path=model_info + '/derived_comps.csv',
     omit_col='Glossary ID'
+)
+
+write_python_from_gloss(
+    path_to_write=Path(__file__).parent / 'model_info/derived_comps.py',
+    gloss=derived_comps_table,
+    var_list_name='derived_comps_table'
 )
 
 rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(
@@ -76,7 +89,11 @@ rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(
     omit_col='Glossary ID'
 )
 
-rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(model_info + '/rates.csv')
+write_python_from_gloss(
+    path_to_write=Path(__file__).parent / 'model_info/rates.py',
+    gloss=rates_table,
+    var_list_name='rates_table'
+)
 
 params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info + '/params.csv', cite_dict=cite_dict)
 
@@ -123,6 +140,12 @@ X5P = remove_math(comps_table, r'$\mathrm{X5P}$')
 R5P = remove_math(comps_table, r'$\mathrm{R5P}$')
 RUBP = remove_math(comps_table, r'$\mathrm{RUBP}$')
 RU5P = remove_math(comps_table, r'$\mathrm{RU5P}$')
+MDA = remove_math(comps_table, r'$\mathrm{MDA}$')
+H2O2 = remove_math(comps_table, r'$\mathrm{H_2O_2}$')
+DHA = remove_math(comps_table, r'$\mathrm{DHA}$')
+GSSG = remove_math(comps_table, r'$\mathrm{GSSG}$')
+Trx_ox = remove_math(comps_table, r'$\mathrm{Trx_{ox}}$')
+E_CBB_inactive = remove_math(comps_table, r'$\mathrm{E}_\mathrm{inactive}$')
 
 # -- Derived Compounds --
 
@@ -136,78 +159,45 @@ IF_3P = remove_math(derived_comps_table, r'$\mathrm{N}$')
 Zx = remove_math(derived_comps_table, r'$\mathrm{Zx}$')
 PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
 
-# PQH_2 = remove_math(comps_table, r'$\mathrm{PQH}_2$')
-# ATP = remove_math(comps_table, r'$\mathrm{ATP}$')
-# H = remove_math(comps_table, r'$\mathrm{H}$')
-# PsbS = remove_math(comps_table, r'$\mathrm{PsbS}$')
-# Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
-# ATPase = remove_math(comps_table, r'$\mathrm{ATPase}^*$')
+# -- Rates --
 
-# v_PSII = remove_math(rates_table, r'$v_{\mathrm{PSII}}$')
-# v_PQ = remove_math(rates_table, r'$v_{\mathrm{PQ}_{\mathrm{ox}}}$')
-# v_ATPsynth = remove_math(rates_table, r'$v_{\mathrm{ATPsynthase}}$')
-# v_ATPact = remove_math(rates_table, r'$v_{\mathrm{ATPactivity}}$')
-# v_Leak = remove_math(rates_table, r'$v_{\mathrm{Leak}}$')
-# v_ATPcons = remove_math(rates_table, r'$v_{\mathrm{ATP}_{\mathrm{consumption}}}$')
-# v_Xcyc = remove_math(rates_table, r'$v_{\mathrm{Xcyc}}$')
-# v_PsbSP = remove_math(rates_table, r'$v_{\mathrm{Psbs^P}}$')
-
-# PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
-# ADP = remove_math(derived_comps_table, r'$\mathrm{ADP}$')
-# PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
-# Zx = remove_math(derived_comps_table, r'$\mathrm{Zx}$')
-# B_0 = remove_math(derived_comps_table, r'$\mathrm{B_0}$')
-# B_1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
-# B_2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
-# B_3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
-# pH_lu = remove_math(derived_comps_table, r'$\mathrm{pH}$')
-# ATPase_inac = remove_math(derived_comps_table, r'$\mathrm{ATPase}$')
-
-# PSII_tot = remove_math(params_table, r'$\mathrm{PSII^{tot}}$')
-# PQ_tot = remove_math(params_table, r'$\mathrm{PQ^{tot}}$')
-# AP_tot = remove_math(params_table, r'$\mathrm{AP^{tot}}$')
-# PsbS_tot = remove_math(params_table, r'$\mathrm{PsbS^{tot}}$')
-# X_tot = remove_math(params_table, r'$\mathrm{X^{tot}}$')
-# gamma_0 = remove_math(params_table, r'$\gamma_0$')
-# K_ZSat = remove_math(params_table, r'$K_\mathrm{ZSat}$')
-# gamma_1 = remove_math(params_table, r'$\gamma_1$')
-# gamma_2 = remove_math(params_table, r'$\gamma_2$')
-# gamma_3 = remove_math(params_table, r'$\gamma_3$')
-# pfd = remove_math(params_table, r'$\mathrm{PFD}$')
-# k_PQred = remove_math(params_table, r'$k_{\mathrm{PQred}}$')
-# E_QA = remove_math(params_table, r'$E^0\mathrm{(QA/QA^-)}$')
-# E_PQ = remove_math(params_table, r'$E^0\mathrm{(PQ/PQH_2)}$')
-# E_PC = remove_math(params_table, r'$E^0\mathrm{(PC/PC^-)}$')
-# pH_st = remove_math(params_table, r'$\mathrm{pH}_\mathrm{stroma}$')
-# R = remove_math(params_table, r'$R$')
-# T = remove_math(params_table, r'$T$')
-# F = remove_math(params_table, r'$F$')
-# k_H = remove_math(params_table, r'$k_H$')
-# k_F = remove_math(params_table, r'$k_F$')
-# k_P = remove_math(params_table, r'$k_P$')
-# k_ATPconsum = remove_math(params_table, r'$k_{\mathrm{ATPconsumption}}$')
-# Pi = remove_math(params_table, r'$\mathrm{Pi^{mol}}$')
-# DG_ATP = remove_math(params_table, r'$\Delta G_{0_{\mathrm{ATP}}}$')
-# hpr = remove_math(params_table, r'$\mathrm{HPR}$')
-# k_Cytb6f = remove_math(params_table, r'$k_{\mathrm{Cytb6f}}$')
-# k_PTOX = remove_math(params_table, r'$k_\mathrm{PTOX}$')
-# k_ATPsynth = remove_math(params_table, r'$k_{\mathrm{ATPsynthase}}$')
-# k_ActATPase = remove_math(params_table, r'$k_{\mathrm{ActATPase}}$')
-# k_DeactATPase = remove_math(params_table, r'$k_{\mathrm{DeactATPase}}$')
-# k_leak = remove_math(params_table, r'$k_\mathrm{leak}$')
-# k_DV = remove_math(params_table, r'$k_\mathrm{DeepoxV}$')
-# nhx = remove_math(params_table, r'$\mathrm{nH}_\mathrm{X}$')
-# K_pHSat = remove_math(params_table, r'$K_\mathrm{pHSat}$')
-# k_EZ = remove_math(params_table, r'$k_\mathrm{EpoxZ}$')
-# k_prot = remove_math(params_table, r'$k_\mathrm{Protonation}$')
-# k_deprot = remove_math(params_table, r'$k_\mathrm{Deprotonation}$')
-# K_pHSatLHC = remove_math(params_table, r'$K_\mathrm{pHSatLHC}$')
-# nhl = remove_math(params_table, r'$\mathrm{nH}_\mathrm{L}$')
-
-# K_eqQAPQ = remove_math(derived_params_table, r'$K_\mathrm{eq, QAPQ}$')
-# K_eqATPsynthase = remove_math(derived_params_table, r'$K_\mathrm{eq, ATPsynthase}$')
-# K_eqcytb6f = remove_math(derived_params_table, r'$K_\mathrm{eq, cytb6f}$')
-# H_st = remove_math(derived_params_table, r'$\mathrm{H}_\mathrm{st}$')
+v_PSII = remove_math(rates_table, r'$v_{\mathrm{PSII}}$')
+v_b6f = remove_math(rates_table, r'$v_{\mathrm{b6f}}$')
+v_FNR = remove_math(rates_table, r'$v_{\mathrm{FNR}}$')
+v_FQR = remove_math(rates_table, r'$v_{\mathrm{FQR}}$')
+v_ATPsynth = remove_math(rates_table, r'$v_{\mathrm{ATPsynthase}}$')
+v_Leak = remove_math(rates_table, r'$v_{\mathrm{Leak}}$')
+v_PQ = remove_math(rates_table, r'$v_{\mathrm{PTOX}}$')
+v_NDH = remove_math(rates_table, r'$v_{\mathrm{NDH}}$')
+v_Cyc = remove_math(rates_table, r'$v_{\mathrm{Cyc}}$')
+v_St21 = remove_math(rates_table, r'$v_{\mathrm{St12}}$')
+v_St12 = remove_math(rates_table, r'$v_{\mathrm{St21}}$')
+v_Deepox = remove_math(rates_table, r'$v_{\mathrm{Deepox}}$')
+v_Epox = remove_math(rates_table, r'$v_{\mathrm{Epox}}$')
+v_PsbSP = remove_math(rates_table, r'$v_{\mathrm{LHCprotonation}}$')
+v_psbSD = remove_math(rates_table, r'$v_{\mathrm{LHCdeprotonation}}$')
+v_rubisco = remove_math(rates_table, r'$v_{\mathrm{RuBisCo}}$')
+v_FBPase = remove_math(rates_table, r'$v_{\mathrm{FBPase}}$')
+v_SBPase = remove_math(rates_table, r'$v_9$')
+v_PRKase = remove_math(rates_table, r'$v_{13}$')
+v_pga_ex = remove_math(rates_table, r'$v_{pga}$')
+v_dhap_ex = remove_math(rates_table, r'$v_{DHAP}$')
+v_gap_ex = remove_math(rates_table, r'$v_{gap}$')
+v_starch = remove_math(rates_table, r'$v_{\mathrm{Starch}}$')
+v_PGK1ase = remove_math(rates_table, r'$v_{\mathrm{PGA\_kinase}}$')
+v_BPGAdehynase = remove_math(rates_table, r'$v_{\mathrm{BPGA\_dehydrogenase}}$')
+v_TPIase = remove_math(rates_table, r'$v_{\mathrm{TPI}}$')
+v_Aldolase_FBP = remove_math(rates_table, r'$v_{\mathrm{Aldolase}}$')
+v_TKase_E4P = remove_math(rates_table, r'$v_{\mathrm{F6P\_ Transketolase}}$')
+v_Aldolase_SBP = remove_math(rates_table, r'$v_{8}$')
+v_TKase_R5P = remove_math(rates_table, r'$v_{10}$')
+v_Rpiase = remove_math(rates_table, r'$v_{11}$')
+v_RPEase = remove_math(rates_table, r'$v_{12}$')
+v_PGIase = remove_math(rates_table, r'$v_{G6P\_ isomerase}$')
+v_PGMase = remove_math(rates_table, r'$v_{\mathrm{Phosphoglucomutase}}$')
+v_PSI = remove_math(rates_table, r'$v_{\mathrm{PSI}}$')
+v_ATPcons = remove_math(rates_table, r'$v_{\mathrm{EX\_ ATP}}$')
+v_NADPHcons = remove_math(rates_table, r'$v_{\mathrm{EX\_ ATP}}$')
 
 ###### Making README File ######
 
@@ -229,145 +219,167 @@ mdFile.new_header(4, 'Part of ODE system')
 
 mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_tolist), text = comps_table_list)
 
-mdFile.create_md_file()
+mdFile.new_paragraph(fr"""
+<details>
+<summary>ODE System</summary>
+
+```math
+    \begin{{align}}
+        {ode(PQ)} &= - {v_PSII} + {v_b6f} - {v_FQR} + {v_PQ} - {v_NDH} \\
+        {ode(PC_ox)} &= -2 \cdot {v_b6f} + {v_PSI} \\
+        {ode(Fd_ox)} &= - {v_PSI} + 2 \cdot {v_FNR} + 2 \cdot {v_FQR} \\
+        {ode(ATP_st)} &= {v_ATPsynth} \cdot REPLACE - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\
+        {ode(NADPH_st)} &= {v_FNR} \cdot REPALCE - {v_BPGAdehynase} - {v_NADPHcons} \\
+        {ode(H_lu)} &= \left( 2 \cdot {v_PSII} + 4 \cdot {v_b6f} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_Leak} \right) \cdot \frac{{1}}{{REPLACE}} \\
+        {ode(LHC)} &= {v_St21} - {v_St12} \\
+        {ode(psbS)} &= - {v_PsbSP} + {v_psbSD} \\
+        {ode(Vx)} &= -{v_Deepox} + {v_Epox} \\
+        {ode(PGA)} &= 2 \cdot {v_rubisco} - {v_PGK1ase} - {v_pga_ex} \\
+        {ode(BPGA)} &= {v_PGK1ase} - {v_BPGAdehynase} \\
+        {ode(GAP)} &= {v_BPGAdehynase} - {v_TPIase} - {v_Aldolase_FBP} - {v_TKase_E4P} - {v_TKase_R5P} - {v_gap_ex} \\
+        {ode(DHAP)} &= {v_TPIase} - {v_Aldolase_FBP} - {v_Aldolase_SBP} - {v_dhap_ex} \\
+        {ode(FBP)} &= {v_Aldolase_FBP} - {v_FBPase} \\
+        {ode(F6P)} &= {v_FBPase} - {v_TKase_E4P} - {v_PGIase} \\
+        {ode(G6P)} &= {v_PGIase} - {v_PGMase} \\
+        {ode(G1P)} &= {v_PGMase} - {v_starch} \\
+        {ode(SBP)} &= {v_Aldolase_SBP} - {v_SBPase} \\
+        {ode(S7P)} &= {v_SBPase} - {v_TKase_R5P} \\
+        {ode(E4P)} &= {v_TKase_E4P} - {v_Aldolase_SBP} \\
+        {ode(X5P)} &= {v_TKase_E4P} + {v_TKase_R5P} - {v_RPEase} \\
+        {ode(R5P)} &= {v_TKase_R5P} - {v_Rpiase} \\
+        {ode(RUBP)} &= {v_PRKase} - {v_rubisco} \\
+        {ode(RU5P)} &= {v_Rpiase} + {v_RPEase} - {v_PRKase} \\
+        {ode(MDA)} &=  \\
+        {ode(H2O2)} &= \\
+        {ode(DHA)} &= \\
+        {ode(GSSG)} &= \\
+        {ode(Trx_ox)} &= \\
+        {ode(E_CBB_inactive)} &= \\
+    \end{{align}}
+```
+
+</details>
+                     """)
+
+mdFile.new_header(4, 'Conserved quantities')
+
+# mdFile.new_table(columns = len(derived_comps_table.columns), rows = len(derived_comps_table_tolist), text = derived_comps_table_list)
 
 # mdFile.new_paragraph(fr"""
+
 # <details>
-# <summary>ODE System</summary>
+# <summary>Open me for the calculations of the conserved quantities!</summary>
 
 # ```math
 #     \begin{{align}}
-#         {ode(PQH_2)} &= {v_PSII} - {v_PQ}\\
-#         {ode(ATP)} &= {v_ATPsynth} - {v_ATPcons}\\
-#         {ode(H)} &= \frac{{1}}{{b_{{\mathrm{{H}}}}}} \cdot \left( 2 \cdot {v_PSII} + 4 \cdot {v_PQ} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_Leak} \right) \\
-#         {ode(PsbS)} &= -{v_PsbSP}\\
-#         {ode(Vx)} &= - {v_Xcyc}\\
-#         {ode(ATPase)} &= {v_ATPact}
+#         {PSII_tot} &= {B_0} + {B_1} + {B_2} + {B_3} \\
+#         {PQ_tot} &= {PQ} + {PQH_2} \\
+#         {AP_tot} &= {ATP} + {ADP} \\
+#         {PsbS_tot} &= {PsbS} + {PsbSP} \\
+#         {X_tot} &= {Vx} + {Zx} \\
+#         {pH_lu} &= - \mathrm{{log}}_{{10}}\left( {H} \cdot 2.5 \times 10^{{-4}} \right)
+#     \end{{align}}
+# ```
+
+# <details>
+# <summary>Calculation of Quencher</summary>
+
+# ```math
+#     \begin{{align}}
+#         Q &= {gamma_0} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbS} + {gamma_1} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbS} \\
 #     \end{{align}}
 # ```
 
 # </details>
+
+# <details>
+# <summary>Quasi steady-state approximation to calculate the rate of PSII</summary>
+
+# ```math
+#     \begin{{align}}
+#         0 &= - \left( {pfd} + \frac{{{k_PQred}}}{{{K_eqQAPQ}}} \cdot {PQ} \right) \cdot {B_0} + \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_1} + {k_PQred} \cdot {PQH_2} \cdot {B_3} \\
+#         0 &= {pfd} \cdot {B_0} - \left( {k_H} \cdot Q + {k_F} + {k_P} \right) \cdot {B_1} \\
+#         0 &= {pfd} \cdot {B_2} - \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_3}
+#     \end{{align}}
+# ```
+
+# </details>
+
+# </details>
+
 #                      """)
-
-mdFile.new_header(4, 'Conserved quantities')
-
-mdFile.new_table(columns = len(derived_comps_table.columns), rows = len(derived_comps_table_tolist), text = derived_comps_table_list)
-
-mdFile.new_paragraph(fr"""
-
-<details>
-<summary>Open me for the calculations of the conserved quantities!</summary>
-
-```math
-    \begin{{align}}
-        {PSII_tot} &= {B_0} + {B_1} + {B_2} + {B_3} \\
-        {PQ_tot} &= {PQ} + {PQH_2} \\
-        {AP_tot} &= {ATP} + {ADP} \\
-        {PsbS_tot} &= {PsbS} + {PsbSP} \\
-        {X_tot} &= {Vx} + {Zx} \\
-        {pH_lu} &= - \mathrm{{log}}_{{10}}\left( {H} \cdot 2.5 \times 10^{{-4}} \right)
-    \end{{align}}
-```
-
-<details>
-<summary>Calculation of Quencher</summary>
-
-```math
-    \begin{{align}}
-        Q &= {gamma_0} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbS} + {gamma_1} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbS} \\
-    \end{{align}}
-```
-
-</details>
-
-<details>
-<summary>Quasi steady-state approximation to calculate the rate of PSII</summary>
-
-```math
-    \begin{{align}}
-        0 &= - \left( {pfd} + \frac{{{k_PQred}}}{{{K_eqQAPQ}}} \cdot {PQ} \right) \cdot {B_0} + \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_1} + {k_PQred} \cdot {PQH_2} \cdot {B_3} \\
-        0 &= {pfd} \cdot {B_0} - \left( {k_H} \cdot Q + {k_F} + {k_P} \right) \cdot {B_1} \\
-        0 &= {pfd} \cdot {B_2} - \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_3}
-    \end{{align}}
-```
-
-</details>
-
-</details>
-
-                     """)
 
 mdFile.new_header(3, 'Parameters')
 
-mdFile.new_table(columns = len(params_table.columns), rows = len(params_table_tolist), text = params_table_list)
+# mdFile.new_table(columns = len(params_table.columns), rows = len(params_table_tolist), text = params_table_list)
 
 mdFile.new_header(4, 'Derived Parameters')
 
-mdFile.new_table(columns = len(derived_params_table.columns), rows = len(derived_params_table_tolist), text = derived_params_table_list)
+# mdFile.new_table(columns = len(derived_params_table.columns), rows = len(derived_params_table_tolist), text = derived_params_table_list)
 
-mdFile.new_paragraph(fr"""
+# mdFile.new_paragraph(fr"""
 
-<details>
-<summary>Equations of derived parameters</summary>
+# <details>
+# <summary>Equations of derived parameters</summary>
 
-```math
-    \begin{{align}}
-        {K_eqQAPQ} &= e^{{\frac{{-\left( -2 \cdot {E_QA} \cdot {F} - 2 \cdot {E_PQ} \cdot {F} + 2 \cdot {pH_st} \cdot \mathrm{{ln}}(10) \cdot {R} \cdot {T} \right)}}{{{R} \cdot {T}}}}} \\
-        {K_eqATPsynthase} &= {Pi} \cdot e^{{\frac{{-{DG_ATP} - \mathrm{{ln}}\left( 10 \right) \cdot {hpr} \cdot \left( {pH_st} - {pH_lu} \right)}}{{{R} \cdot {T}}}}} \\
-        {K_eqcytb6f} &= e^{{\frac{{-\left( \left( 2 \cdot {F} \cdot {E_PQ} - 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot {pH_lu} \right) - 2 \cdot {F} \cdot {E_PC} + 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot \left( {pH_st} - {pH_lu} \right) \right)}}{{{R} \cdot {T}}}}} \\
-        {H_st} &= 4 \times 10^3 \cdot 10^{{{pH_st}}}
-    \end{{align}}
-```
+# ```math
+#     \begin{{align}}
+#         {K_eqQAPQ} &= e^{{\frac{{-\left( -2 \cdot {E_QA} \cdot {F} - 2 \cdot {E_PQ} \cdot {F} + 2 \cdot {pH_st} \cdot \mathrm{{ln}}(10) \cdot {R} \cdot {T} \right)}}{{{R} \cdot {T}}}}} \\
+#         {K_eqATPsynthase} &= {Pi} \cdot e^{{\frac{{-{DG_ATP} - \mathrm{{ln}}\left( 10 \right) \cdot {hpr} \cdot \left( {pH_st} - {pH_lu} \right)}}{{{R} \cdot {T}}}}} \\
+#         {K_eqcytb6f} &= e^{{\frac{{-\left( \left( 2 \cdot {F} \cdot {E_PQ} - 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot {pH_lu} \right) - 2 \cdot {F} \cdot {E_PC} + 2 \cdot \mathrm{{ln}}\left( 10 \right) \cdot {R} \cdot {T} \cdot \left( {pH_st} - {pH_lu} \right) \right)}}{{{R} \cdot {T}}}}} \\
+#         {H_st} &= 4 \times 10^3 \cdot 10^{{{pH_st}}}
+#     \end{{align}}
+# ```
 
-</details>
+# </details>
 
-                     """)
+#                      """)
 
 mdFile.new_header(3, 'Reaction Rates')
 
 mdFile.new_table(columns = len(rates_table.columns), rows = len(rates_table_tolist), text = rates_table_list)
 
-mdFile.new_paragraph(fr"""
+# mdFile.new_paragraph(fr"""
 
-<details>
-<summary>Rate equations</summary>
+# <details>
+# <summary>Rate equations</summary>
 
-```math
-    \begin{{align}}
-        {v_PSII} &= {k_P} \cdot 0.5 \cdot {B_1} \\
-        {v_PQ} &= \left( \frac{{{k_Cytb6f} \cdot {pfd} \cdot {K_eqcytb6f}}}{{{K_eqcytb6f} + 1}} + {k_PTOX} \right) \cdot {PQH_2} - \frac{{{k_Cytb6f} \cdot {pfd}}}{{{K_eqcytb6f} + 1}} \cdot {PQ} \\
-        {v_ATPsynth} &= {ATPase} \cdot {k_ATPsynth} \cdot \left( {AP_tot} - {ATP} - \frac{{{ATP}}}{{{K_eqATPsynthase}}} \right) \\
-        {v_ATPact} &= {k_ActATPase} \cdot {pfd} \cdot {ATPase_inac} - {k_DeactATPase} \cdot \left( 1 - {pfd} \right) \cdot {ATPase} \\
-        {v_Leak} &= {k_leak} \cdot \left( {H} - {H_st} \right) \\
-        {v_ATPcons} &= {k_ATPconsum} \cdot {ATP} \\
-        {v_Xcyc} &= {k_DV} \cdot \frac{{{H}^{{{nhx}}}}}{{{H}^{{{nhx}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSat} \right)^{{{nhx}}}}} \cdot {Vx} - {k_EZ} \cdot \left( {X_tot} - {Vx} \right) \\
-        {v_PsbSP} &= {k_prot} \cdot \frac{{{H}^{{{nhl}}}}}{{{H}^{{{nhl}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSatLHC} \right)^{{{nhl}}}}} \cdot {PsbS} - {k_deprot} \cdot {PsbSP}
-    \end{{align}}
-```
+# ```math
+#     \begin{{align}}
+#         {v_PSII} &= {k_P} \cdot 0.5 \cdot {B_1} \\
+#         {v_PQ} &= \left( \frac{{{k_Cytb6f} \cdot {pfd} \cdot {K_eqcytb6f}}}{{{K_eqcytb6f} + 1}} + {k_PTOX} \right) \cdot {PQH_2} - \frac{{{k_Cytb6f} \cdot {pfd}}}{{{K_eqcytb6f} + 1}} \cdot {PQ} \\
+#         {v_ATPsynth} &= {ATPase} \cdot {k_ATPsynth} \cdot \left( {AP_tot} - {ATP} - \frac{{{ATP}}}{{{K_eqATPsynthase}}} \right) \\
+#         {v_ATPact} &= {k_ActATPase} \cdot {pfd} \cdot {ATPase_inac} - {k_DeactATPase} \cdot \left( 1 - {pfd} \right) \cdot {ATPase} \\
+#         {v_Leak} &= {k_leak} \cdot \left( {H} - {H_st} \right) \\
+#         {v_ATPcons} &= {k_ATPconsum} \cdot {ATP} \\
+#         {v_Xcyc} &= {k_DV} \cdot \frac{{{H}^{{{nhx}}}}}{{{H}^{{{nhx}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSat} \right)^{{{nhx}}}}} \cdot {Vx} - {k_EZ} \cdot \left( {X_tot} - {Vx} \right) \\
+#         {v_PsbSP} &= {k_prot} \cdot \frac{{{H}^{{{nhl}}}}}{{{H}^{{{nhl}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSatLHC} \right)^{{{nhl}}}}} \cdot {PsbS} - {k_deprot} \cdot {PsbSP}
+#     \end{{align}}
+# ```
 
-</details>
+# </details>
 
-                     """)
+#                      """)
 
 mdFile.new_header(3, 'Tags')
 
-mdFile.write(rf'''
+# mdFile.write(rf'''
 
-```mermaid
-flowchart LR;
-    H("$${H}$$") -->|"$${v_PSII}$$"| P("$${PQH_2}$$");
-    P -->|"$${v_PQ}$$"| H;
-    H -->|"$${v_ATPsynth}$$"| A("$${ATP}$$");
-    A -->|"$${v_ATPcons}$$"| empty:::hidden;
-    H -->|"$${v_Leak}$$"| empty1:::hidden;
-    PS("$${PsbS}$$") -->|"$${v_PsbSP}$$"| e1:::hidden;
-    Vx("$${Vx}$$") -->|"$${v_Xcyc}$$"| e2:::hidden;
-    e3:::hidden -->|"$${v_ATPact}$$"| ATP("$${ATPase}$$")
+# ```mermaid
+# flowchart LR;
+#     H("$${H}$$") -->|"$${v_PSII}$$"| P("$${PQH_2}$$");
+#     P -->|"$${v_PQ}$$"| H;
+#     H -->|"$${v_ATPsynth}$$"| A("$${ATP}$$");
+#     A -->|"$${v_ATPcons}$$"| empty:::hidden;
+#     H -->|"$${v_Leak}$$"| empty1:::hidden;
+#     PS("$${PsbS}$$") -->|"$${v_PsbSP}$$"| e1:::hidden;
+#     Vx("$${Vx}$$") -->|"$${v_Xcyc}$$"| e2:::hidden;
+#     e3:::hidden -->|"$${v_ATPact}$$"| ATP("$${ATPase}$$")
 
 
-    classDef hidden display: none;
-```
+#     classDef hidden display: none;
+# ```
 
-             ''')
+#              ''')
 
 mdFile.create_md_file()

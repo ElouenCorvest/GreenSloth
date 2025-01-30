@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from typing import Optional
+from pathlib import Path
 
 def df_to_dict(
     df: pd.DataFrame,
@@ -212,3 +213,23 @@ def cite(
         num_cites_stored = len(cite_dict.keys())
         cite_dict[cit] = num_cites_stored + 1
         return f'[[{cite_dict[cit]}]]({cit})'
+
+def write_python_from_gloss(
+    path_to_write: Path,
+    gloss: pd.DataFrame,
+    var_list_name: str,
+    ode_flag: bool = False
+):
+
+    f = open(path_to_write, 'w')
+
+    for idx, row in gloss.iterrows():
+        f.write(f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n")
+
+    if ode_flag:
+        f.write('\n')
+        for idx, row in gloss.iterrows():
+            f.write(rf"{{ode({row['Python Var']})}} &= \\")
+            f.write('\n')
+
+    f.close()

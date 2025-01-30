@@ -4,8 +4,8 @@ from .rate_laws import mass_action_1s, mass_action_2s, moiety_1, proportional
 
 
 def add_thioredoxin(model: Model) -> Model:
-    for i in ["fCBB", "V1", "V6", "V9", "V13", "Vst"]:
-        model.remove_derived_parameter(i)
+    # for i in ["fCBB", "V1", "V6", "V9", "V13", "Vst"]:
+    #     model.remove_derived_parameter(i)
     model.remove_parameters(["Km_fcbb", "Vmax_fcbb"])
 
     model.add_compounds(["TR_ox", "E_inactive"])
