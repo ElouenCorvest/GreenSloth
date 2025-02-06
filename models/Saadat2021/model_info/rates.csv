@@ -35,4 +35,4 @@ Rate of PGIase,$v_{\mathrm{PGIase}}$,$v_{G6P\_ isomerase}$,AT4G24620,v_PGIase,36
 Rate of PGMase,$v_{\mathrm{PGMase}}$,$v_{\mathrm{Phosphoglucomutase}}$,AT5G51820,v_PGMase,37
 ,$v_{\mathrm{PSI}}$,$v_{\mathrm{PSI}}$,,v_PSI,38
 ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,$v_{\mathrm{EX\_ ATP}}$,,v_ATPcons,6
-Consumption of NADPH,$v_{\mathrm{NADPH}_\mathrm{consumption}}$,$v_{\mathrm{EX\_ ATP}}$,,v_NADPHcons,39
+Consumption of NADPH,$v_{\mathrm{NADPH}_\mathrm{consumption}}$,$v_{\mathrm{EX\_ NADPH}}$,,v_NADPHcons,39
