@@ -220,10 +220,17 @@ def write_python_from_gloss(
     path_to_write: Path,
     gloss: pd.DataFrame,
     var_list_name: str,
-    ode_flag: bool = False
+    ode_flag: bool = False,
+    append_flag: bool = True
 ):
-
-    f = open(path_to_write, 'w')
+    
+    if append_flag and os.path.isfile(path_to_write):
+        f = open(path_to_write, 'a')
+        f.write('\n\n')
+        f.write(f'------- Update on {datetime.now()} -------\n\n')
+    else:
+        f = open(path_to_write, 'w')
+        f.write(f'------- Start on {datetime.today().strftime('%Y-%m-%d')} -------\n\n')
 
     for idx, row in gloss.iterrows():
         f.write(f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n")
