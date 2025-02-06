@@ -1,0 +1,369 @@
+------- Start on 2025-02-06 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:52:41.400553 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:53:36.754845 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:54:35.643650 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:55:42.243007 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:56:07.297475 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:56:21.359682 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:56:38.011380 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:57:24.507974 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```
+
+------- Update on 2025-02-06 11:57:42.916851 -------
+
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{vPS2} + {vPTOX} - {vNDH} + {vB6f} - {vCyc} \\ 
+      {ode(H)} &= 0.02 \cdot {vPS2} + 0.04 \cdot {vB6f} - 0.0{vLeak} - 0.04666666666666667 \cdot {vATPsynthase} \\ 
+      {ode(Fd)} &= 2 \cdot {vCyc} + 2 \cdot {vFNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC)} &= -2 \cdot {vB6f} + {vPS1} \\ 
+      {ode(NADPH)} &= 0.032 \cdot {vFNR} - {vBPGA_dehydrogenase} - {vMDAreduct} - {vGR} - {vEX_NADPH} \\ 
+      {ode(LHC)} &= -{vSt12} + {vSt21} \\ 
+      {ode(ATP)} &= 0.032 \cdot {vATPsynthase} - {vPGA_kinase} - {v13} - {vStarch} - {vEX_ATP} \\ 
+      {ode(Vx)} &= -{vDeepox} + {vEpox} \\ 
+      {ode(Psbs)} &= -{vLhcprotonation} + {vLhcdeprotonation} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v13} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {vPGA_kinase} - {vpga} \\ 
+      {ode(BPGA)} &= {vPGA_kinase} - {vBPGA_dehydrogenase} \\ 
+      {ode(GAP)} &= {vBPGA_dehydrogenase} - {vTPI} - {vAldolase} - {vF6P_Transketolase} - {v10} - {vgap} \\ 
+      {ode(DHAP)} &= {vTPI} - {vAldolase} - {v8} - {vdhap} \\ 
+      {ode(FBP)} &= {vAldolase} - {vFBPase} \\ 
+      {ode(F6P)} &= {vFBPase} - {vF6P_Transketolase} - {vG6P_isomerase} \\ 
+      {ode(X5P)} &= {vF6P_Transketolase} + {v10} - {v12} \\ 
+      {ode(E4P)} &= {vF6P_Transketolase} - {v8} \\ 
+      {ode(SBP)} &= {v8} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v10} \\ 
+      {ode(R5P)} &= {v10} - {v11} \\ 
+      {ode(RU5P)} &= {v11} + {v12} - {v13} \\ 
+      {ode(G6P)} &= {vG6P_isomerase} - {vPhosphoglucomutase} \\ 
+      {ode(G1P)} &= {vPhosphoglucomutase} - {vStarch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(TR_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
+```

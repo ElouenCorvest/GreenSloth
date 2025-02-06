@@ -1,7 +1,8 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
-from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV, write_python_from_gloss
+from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV, write_python_from_gloss, write_odes_from_model
 from pathlib import Path
 import pandas as pd
+from models import get_model
 
 import os
 
@@ -37,32 +38,32 @@ model_doi = 'https://doi.org/10.3389/fpls.2021.750580'
 ###### Glossaries ######
 cite_dict = dict()
 
-model_info = os.path.dirname(__file__) + '/model_info'
+model_info = Path(__file__).parent / 'model_info'
 main_gloss = Path(__file__).parents[2] / 'Templates'
 
 update_from_main_gloss(
     main_gloss_path=main_gloss / 'comp_glossary.csv',
-    gloss_path=model_info + '/comps.csv',
+    gloss_path=model_info / 'comps.csv',
     add_to_main=True,
     model_title=model_title
 )
 
 update_from_main_gloss(
     main_gloss_path=main_gloss / 'comp_glossary.csv',
-    gloss_path=model_info + '/derived_comps.csv',
+    gloss_path=model_info / 'derived_comps.csv',
     add_to_main=True,
     model_title=model_title
 )
 
 update_from_main_gloss(
     main_gloss_path=main_gloss / 'rates_glossary.csv',
-    gloss_path=model_info + '/rates.csv',
+    gloss_path=model_info / 'rates.csv',
     add_to_main=True,
     model_title=model_title
 )
 
 comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
-    path=model_info + '/comps.csv',
+    path=model_info / 'comps.csv',
     omit_col='Glossary ID'
 )
 
@@ -74,7 +75,7 @@ write_python_from_gloss(
 )
 
 derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(
-    path=model_info + '/derived_comps.csv',
+    path=model_info / 'derived_comps.csv',
     omit_col='Glossary ID'
 )
 
@@ -85,7 +86,7 @@ write_python_from_gloss(
 )
 
 rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(
-    path=model_info + '/rates.csv',
+    path=model_info / 'rates.csv',
     omit_col='Glossary ID'
 )
 
@@ -95,9 +96,14 @@ write_python_from_gloss(
     var_list_name='rates_table'
 )
 
-params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info + '/params.csv', cite_dict=cite_dict)
+params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info / 'params.csv', cite_dict=cite_dict)
 
-derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info + '/derived_params.csv')
+derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info / 'derived_params.csv')
+
+write_odes_from_model(
+    path_to_write=model_info / 'odes.txt',
+    model=get_model(),
+)
 
 ###### Variables for ease of access ######
 
@@ -107,7 +113,7 @@ def remove_math(
     query_column = 'Paper Abbr.',
     answer_column = 'Common Abbr.'
 ):
-    res = df.loc[df[query_column] == query_result, answer_column].iloc[0]
+    res = df[df[query_column] == query_result][answer_column].values[0]
 
     for i in range(df.loc[df[query_column] == query_result, answer_column].iloc[0].count('$')):
         res = res.replace('$', '')
@@ -197,7 +203,7 @@ v_PGIase = remove_math(rates_table, r'$v_{G6P\_ isomerase}$')
 v_PGMase = remove_math(rates_table, r'$v_{\mathrm{Phosphoglucomutase}}$')
 v_PSI = remove_math(rates_table, r'$v_{\mathrm{PSI}}$')
 v_ATPcons = remove_math(rates_table, r'$v_{\mathrm{EX\_ ATP}}$')
-v_NADPHcons = remove_math(rates_table, r'$v_{\mathrm{EX\_ ATP}}$')
+v_NADPHcons = remove_math(rates_table, r'$v_{\mathrm{EX\_ NADPH}}$')
 
 ###### Making README File ######
 
@@ -223,39 +229,39 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>ODE System</summary>
 
-```math
-    \begin{{align}}
-        {ode(PQ)} &= - {v_PSII} + {v_b6f} - {v_FQR} + {v_PQ} - {v_NDH} \\
-        {ode(PC_ox)} &= -2 \cdot {v_b6f} + {v_PSI} \\
-        {ode(Fd_ox)} &= - {v_PSI} + 2 \cdot {v_FNR} + 2 \cdot {v_FQR} \\
-        {ode(ATP_st)} &= {v_ATPsynth} \cdot REPLACE - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\
-        {ode(NADPH_st)} &= {v_FNR} \cdot REPALCE - {v_BPGAdehynase} - {v_NADPHcons} \\
-        {ode(H_lu)} &= \left( 2 \cdot {v_PSII} + 4 \cdot {v_b6f} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_Leak} \right) \cdot \frac{{1}}{{REPLACE}} \\
-        {ode(LHC)} &= {v_St21} - {v_St12} \\
-        {ode(psbS)} &= - {v_PsbSP} + {v_psbSD} \\
-        {ode(Vx)} &= -{v_Deepox} + {v_Epox} \\
-        {ode(PGA)} &= 2 \cdot {v_rubisco} - {v_PGK1ase} - {v_pga_ex} \\
-        {ode(BPGA)} &= {v_PGK1ase} - {v_BPGAdehynase} \\
-        {ode(GAP)} &= {v_BPGAdehynase} - {v_TPIase} - {v_Aldolase_FBP} - {v_TKase_E4P} - {v_TKase_R5P} - {v_gap_ex} \\
-        {ode(DHAP)} &= {v_TPIase} - {v_Aldolase_FBP} - {v_Aldolase_SBP} - {v_dhap_ex} \\
-        {ode(FBP)} &= {v_Aldolase_FBP} - {v_FBPase} \\
-        {ode(F6P)} &= {v_FBPase} - {v_TKase_E4P} - {v_PGIase} \\
-        {ode(G6P)} &= {v_PGIase} - {v_PGMase} \\
-        {ode(G1P)} &= {v_PGMase} - {v_starch} \\
-        {ode(SBP)} &= {v_Aldolase_SBP} - {v_SBPase} \\
-        {ode(S7P)} &= {v_SBPase} - {v_TKase_R5P} \\
-        {ode(E4P)} &= {v_TKase_E4P} - {v_Aldolase_SBP} \\
-        {ode(X5P)} &= {v_TKase_E4P} + {v_TKase_R5P} - {v_RPEase} \\
-        {ode(R5P)} &= {v_TKase_R5P} - {v_Rpiase} \\
-        {ode(RUBP)} &= {v_PRKase} - {v_rubisco} \\
-        {ode(RU5P)} &= {v_Rpiase} + {v_RPEase} - {v_PRKase} \\
-        {ode(MDA)} &=  \\
-        {ode(H2O2)} &= \\
-        {ode(DHA)} &= \\
-        {ode(GSSG)} &= \\
-        {ode(Trx_ox)} &= \\
-        {ode(E_CBB_inactive)} &= \\
-    \end{{align}}
+```math 
+   \begin{{align}}
+      {ode(PQ)} &= -{v_PSII} + {v_PQ} - {v_NDH} + {v_b6f} - {v_Cyc} \\ 
+      {ode(H_lu)} &= 0.02 \cdot {v_PSII} + 0.04 \cdot {v_b6f} - 0.0{v_Leak} - 0.04666666666666667 \cdot {v_ATPsynth} \\ 
+      {ode(Fd_ox)} &= 2 \cdot {v_Cyc} + 2 \cdot {v_FNR} - {vFdred} + {vFdTrReductase} \\ 
+      {ode(PC_ox)} &= -2 \cdot {v_b6f} + {v_PSI} \\ 
+      {ode(NADPH_st)} &= 0.032 \cdot {v_FNR} - {v_BPGAdehynase} - {vMDAreduct} - {vGR} - {v_NADPHcons} \\ 
+      {ode(LHC)} &= -{v_St21} + {v_St12} \\ 
+      {ode(ATP_st)} &= 0.032 \cdot {v_ATPsynth} - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\ 
+      {ode(Vx)} &= -{v_Deepox} + {v_Epox} \\ 
+      {ode(psbS)} &= -{v_PsbSP} + {v_psbSD} \\ 
+      {ode(RUBP)} &= -{vRuBisCO} + {v_PRKase} \\ 
+      {ode(PGA)} &= 2 \cdot {vRuBisCO} - {v_PGK1ase} - {v_pga_ex} \\ 
+      {ode(BPGA)} &= {v_PGK1ase} - {v_BPGAdehynase} \\ 
+      {ode(GAP)} &= {v_BPGAdehynase} - {v_TPIase} - {v_Aldolase_FBP} - {v_TKase_E4P} - {v_TKase_R5P} - {v_gap_ex} \\ 
+      {ode(DHAP)} &= {v_TPIase} - {v_Aldolase_FBP} - {v_Aldolase_SBP} - {v_dhap_ex} \\ 
+      {ode(FBP)} &= {v_Aldolase_FBP} - {v_FBPase} \\ 
+      {ode(F6P)} &= {v_FBPase} - {v_TKase_E4P} - {v_PGIase} \\ 
+      {ode(X5P)} &= {v_TKase_E4P} + {v_TKase_R5P} - {v_RPEase} \\ 
+      {ode(E4P)} &= {v_TKase_E4P} - {v_Aldolase_SBP} \\ 
+      {ode(SBP)} &= {v_Aldolase_SBP} - {v9} \\ 
+      {ode(S7P)} &= {v9} - {v_TKase_R5P} \\ 
+      {ode(R5P)} &= {v_TKase_R5P} - {v_Rpiase} \\ 
+      {ode(RU5P)} &= {v_Rpiase} + {v_RPEase} - {v_PRKase} \\ 
+      {ode(G6P)} &= {v_PGIase} - {v_PGMase} \\ 
+      {ode(G1P)} &= {v_PGMase} - {v_starch} \\ 
+      {ode(H2O2)} &= -{vAscorbate} + 0.032 \cdot {vMehler} \\ 
+      {ode(MDA)} &= 2 \cdot {vAscorbate} - 2 \cdot {vMDAreduct} - 2 \cdot {v3ASC} \\ 
+      {ode(GSSG)} &= -{vGR} + {vDHAR} \\ 
+      {ode(DHA)} &= -{vDHAR} + {v3ASC} \\ 
+      {ode(Trx_ox)} &= -{vFdTrReductase} + 5 \cdot {vE_activation} \\ 
+      {ode(E_CBB_inactive)} &= -5 \cdot {vE_activation} + 5 \cdot {vE_inactivation} \\ 
+   \end{{align}}
 ```
 
 </details>

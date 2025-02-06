@@ -2,6 +2,8 @@ import pandas as pd
 import os
 from typing import Optional
 from pathlib import Path
+from modelbase.ode import Model
+from datetime import datetime
 
 def df_to_dict(
     df: pd.DataFrame,
@@ -232,4 +234,49 @@ def write_python_from_gloss(
             f.write(rf"{{ode({row['Python Var']})}} &= \\")
             f.write('\n')
 
+    f.close()
+    
+def write_odes_from_model(
+    path_to_write: Path,
+    model: Model,
+    append_flag: bool = True
+):
+    if append_flag and os.path.isfile(path_to_write):
+        f = open(path_to_write, 'a')
+        f.write('\n\n')
+        f.write(f'------- Update on {datetime.now()} -------\n\n')
+    else:
+        f = open(path_to_write, 'w')
+        f.write(f'------- Start on {datetime.today().strftime('%Y-%m-%d')} -------\n\n')
+        
+    stoics = model.get_stoichiometries_by_compounds()
+    
+    f.write('```math \n')
+    f.write(r'   \begin{{align}}')
+    f.write('\n')
+    
+    for comp, rates in stoics.items():
+        line = rf"      {{ode({comp})}} &= "
+        for rate, stoi in rates.items():
+            if line[-2] == '=':
+                stoi = str(stoi)
+            else:
+                if stoi < 0:
+                    stoi = f'- {abs(stoi)}'
+                else:
+                    stoi = f'+ {stoi}'
+            
+            line += rf'{stoi} \cdot {{{rate}}} '
+            
+            line = line.replace(r'1 \cdot ', '')
+            
+        line = line[:-1] + r' \\'
+        line += " \n"
+            
+    
+        f.write(line)
+    f.write(r'   \end{{align}}')
+    f.write('\n')
+    f.write('```')
+    
     f.close()
