@@ -4,6 +4,7 @@ from typing import Optional
 from pathlib import Path
 from modelbase.ode import Model
 from datetime import datetime
+import re
 
 def df_to_dict(
     df: pd.DataFrame,
@@ -220,47 +221,63 @@ def write_python_from_gloss(
     path_to_write: Path,
     gloss: pd.DataFrame,
     var_list_name: str,
-    ode_flag: bool = False,
-    append_flag: bool = True
+    overwrite_flag: bool = True
 ):
-    
-    if append_flag and os.path.isfile(path_to_write):
-        f = open(path_to_write, 'a')
-        f.write('\n\n')
-        f.write(f'------- Update on {datetime.now()} -------\n\n')
-    else:
-        f = open(path_to_write, 'w')
-        f.write(f'------- Start on {datetime.today().strftime('%Y-%m-%d')} -------\n\n')
-
+    inp = ''
     for idx, row in gloss.iterrows():
-        f.write(f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n")
+        inp += f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n"
+    
+    if overwrite_flag or not os.path.isfile(path_to_write):
+        with open(path_to_write, 'w') as f:
+            f.write(f'------- Start on {datetime.now()} -------\n\n')
+            f.write(inp)
+    else:
+        with open(path_to_write, 'r') as f_tmp:
+            read = f_tmp.read()
+        flag_idxs = [m.start() for m in re.finditer('-------', read)]
+        
+        try:
+            compare_block = read[flag_idxs[1] + 9:flag_idxs[2]]
+        except:
+            compare_block = read[flag_idxs[1] + 9:]
 
-    if ode_flag:
-        f.write('\n')
-        for idx, row in gloss.iterrows():
-            f.write(rf"{{ode({row['Python Var']})}} &= \\")
-            f.write('\n')
+        if compare_block == inp:
+            return
+        else:
+            with open(path_to_write, 'r+') as f:
+                f.seek(0, 0)
+                f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
+    
+    # if append_flag and os.path.isfile(path_to_write):
+    #     f = open(path_to_write, 'a')
+    #     f.write('\n\n')
+    #     f.write(f'------- Update on {datetime.now()} -------\n\n')
+    # else:
+    #     f = open(path_to_write, 'w')
+    #     f.write(f'------- Start on {datetime.today().strftime('%Y-%m-%d')} -------\n\n')
 
-    f.close()
+    # for idx, row in gloss.iterrows():
+    #     f.write(f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n")
+
+    # if ode_flag:
+    #     f.write('\n')
+    #     for idx, row in gloss.iterrows():
+    #         f.write(rf"{{ode({row['Python Var']})}} &= \\")
+    #         f.write('\n')
+
+    # f.close()
     
 def write_odes_from_model(
     path_to_write: Path,
     model: Model,
-    append_flag: bool = True
+    overwrite_flag: bool = False
 ):
-    if append_flag and os.path.isfile(path_to_write):
-        f = open(path_to_write, 'a')
-        f.write('\n\n')
-        f.write(f'------- Update on {datetime.now()} -------\n\n')
-    else:
-        f = open(path_to_write, 'w')
-        f.write(f'------- Start on {datetime.today().strftime('%Y-%m-%d')} -------\n\n')
-        
-    stoics = model.get_stoichiometries_by_compounds()
     
-    f.write('```math \n')
-    f.write(r'   \begin{{align}}')
-    f.write('\n')
+    inp = '```math \n'
+    inp += r'   \begin{{align}}'
+    inp += '\n'
+    
+    stoics = model.get_stoichiometries_by_compounds()
     
     for comp, rates in stoics.items():
         line = rf"      {{ode({comp})}} &= "
@@ -279,11 +296,30 @@ def write_odes_from_model(
             
         line = line[:-1] + r' \\'
         line += " \n"
-            
+        
+        inp += line
+    inp += r'   \end{{align}}'
+    inp += '\n'
+    inp += '```\n\n'
     
-        f.write(line)
-    f.write(r'   \end{{align}}')
-    f.write('\n')
-    f.write('```')
-    
-    f.close()
+    if overwrite_flag or not os.path.isfile(path_to_write):
+        with open(path_to_write, 'w') as f:
+            f.write(f'------- Start on {datetime.now()} -------\n\n')
+            f.write(inp)
+    else:
+        with open(path_to_write, 'r') as f_tmp:
+            read = f_tmp.read()
+        flag_idxs = [m.start() for m in re.finditer('-------', read)]
+        
+        try:
+            compare_block = read[flag_idxs[1] + 9:flag_idxs[2]]
+        except:
+            compare_block = read[flag_idxs[1] + 9:]
+
+        if compare_block == inp:
+            return
+        else:
+            with open(path_to_write, 'r+') as f:
+                f.seek(0, 0)
+                f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
+

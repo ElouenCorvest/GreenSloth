@@ -1,3 +1,5 @@
+------- Start on 2025-02-06 15:22:41.935410 -------
+
 PQH_2 = remove_math(derived_comps_table, r'$\mathrm{PQH}_2$')
 PC_red = remove_math(derived_comps_table, r'$\mathrm{PC}^-$')
 Fd_red = remove_math(derived_comps_table, r'$\mathrm{Fd}^-$')

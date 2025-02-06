@@ -7,7 +7,7 @@
 
 [Saadat2021](https://doi.org/10.3389/fpls.2021.750580)
 
-
+                     
 ## Installation
 
 ## Summary
@@ -54,43 +54,43 @@
 <details>
 <summary>ODE System</summary>
 
-```math
-    \begin{align}
-        \frac{\mathrm{d}\mathrm{PQ}}{\mathrm{d}t} &= - v_{\mathrm{PSII}} + v_{\mathrm{b6f}} - v_{\mathrm{FQR}} + v_{\mathrm{PQ}_{\mathrm{ox}}} - v_{\mathrm{NDH}} \\
-        \frac{\mathrm{d}\mathrm{PC}_\mathrm{ox}}{\mathrm{d}t} &= -2 \cdot v_{\mathrm{b6f}} + v_{\mathrm{PSI}} \\
-        \frac{\mathrm{d}\mathrm{Fd}_\mathrm{ox}}{\mathrm{d}t} &= - v_{\mathrm{PSI}} + 2 \cdot v_{\mathrm{FNR}} + 2 \cdot v_{\mathrm{FQR}} \\
-        \frac{\mathrm{d}\mathrm{ATP_{st}}}{\mathrm{d}t} &= v_{\mathrm{ATPsynthase}} \cdot REPLACE - v_{\mathrm{PGK1ase}} - v_{\mathrm{PRKase}} - v_{\mathrm{Starch}} - v_{\mathrm{ATP}_{\mathrm{consumption}}} \\
-        \frac{\mathrm{d}\mathrm{NADPH}_\mathrm{st}}{\mathrm{d}t} &= v_{\mathrm{FNR}} \cdot REPALCE - v_{\mathrm{BPGAdehynase}} - v_{\mathrm{ATP}_{\mathrm{consumption}}} \\
-        \frac{\mathrm{d}\mathrm{H_{lu}}}{\mathrm{d}t} &= \left( 2 \cdot v_{\mathrm{PSII}} + 4 \cdot v_{\mathrm{b6f}} - \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} - v_{\mathrm{Leak}} \right) \cdot \frac{1}{REPLACE} \\
-        \frac{\mathrm{d}\mathrm{LHC}}{\mathrm{d}t} &= v_{\mathrm{St21}} - v_{\mathrm{St12}} \\
-        \frac{\mathrm{d}\mathrm{psbS}}{\mathrm{d}t} &= - v_{\mathrm{Psbs^P}} + v_{\mathrm{Psbs^D}} \\
-        \frac{\mathrm{d}\mathrm{Vx}}{\mathrm{d}t} &= -v_{\mathrm{Deepox}} + v_{\mathrm{Epox}} \\
-        \frac{\mathrm{d}\mathrm{PGA}}{\mathrm{d}t} &= 2 \cdot v_{\mathrm{RuBisCo}} - v_{\mathrm{PGK1ase}} - v_{\mathrm{PGA,\ ex}} \\
-        \frac{\mathrm{d}\mathrm{BPGA}}{\mathrm{d}t} &= v_{\mathrm{PGK1ase}} - v_{\mathrm{BPGAdehynase}} \\
-        \frac{\mathrm{d}\mathrm{GAP}}{\mathrm{d}t} &= v_{\mathrm{BPGAdehynase}} - v_{\mathrm{TPIase}} - v_{\mathrm{Aldolase_{FBP}}} - v_{\mathrm{TKase_E4P}} - v_{\mathrm{TKase_R5P}} - v_{\mathrm{GAP,\ ex}} \\
-        \frac{\mathrm{d}\mathrm{DHAP}}{\mathrm{d}t} &= v_{\mathrm{TPIase}} - v_{\mathrm{Aldolase_{FBP}}} - v_{\mathrm{Aldolase_{SBP}}} - v_{\mathrm{DHAP,\ ex}} \\
-        \frac{\mathrm{d}\mathrm{FBP}}{\mathrm{d}t} &= v_{\mathrm{Aldolase_{FBP}}} - v_{\mathrm{FBPase}} \\
-        \frac{\mathrm{d}\mathrm{F6P}}{\mathrm{d}t} &= v_{\mathrm{FBPase}} - v_{\mathrm{TKase_E4P}} - v_{\mathrm{PGIase}} \\
-        \frac{\mathrm{d}\mathrm{G6P}}{\mathrm{d}t} &= v_{\mathrm{PGIase}} - v_{\mathrm{PGMase}} \\
-        \frac{\mathrm{d}\mathrm{G1P}}{\mathrm{d}t} &= v_{\mathrm{PGMase}} - v_{\mathrm{Starch}} \\
-        \frac{\mathrm{d}\mathrm{SBP}}{\mathrm{d}t} &= v_{\mathrm{Aldolase_{SBP}}} - v_{\mathrm{SBPase}} \\
-        \frac{\mathrm{d}\mathrm{S7P}}{\mathrm{d}t} &= v_{\mathrm{SBPase}} - v_{\mathrm{TKase_R5P}} \\
-        \frac{\mathrm{d}\mathrm{E4P}}{\mathrm{d}t} &= v_{\mathrm{TKase_E4P}} - v_{\mathrm{Aldolase_{SBP}}} \\
-        \frac{\mathrm{d}\mathrm{X5P}}{\mathrm{d}t} &= v_{\mathrm{TKase_E4P}} + v_{\mathrm{TKase_R5P}} - v_{\mathrm{RPEase}} \\
-        \frac{\mathrm{d}\mathrm{R5P}}{\mathrm{d}t} &= v_{\mathrm{TKase_R5P}} - v_{\mathrm{Rpiase}} \\
-        \frac{\mathrm{d}\mathrm{RUBP}}{\mathrm{d}t} &= v_{\mathrm{PRKase}} - v_{\mathrm{RuBisCo}} \\
-        \frac{\mathrm{d}\mathrm{RU5P}}{\mathrm{d}t} &= v_{\mathrm{Rpiase}} + v_{\mathrm{RPEase}} - v_{\mathrm{PRKase}} \\
-        \frac{\mathrm{d}\mathrm{MDA}}{\mathrm{d}t} &=  \\
-        \frac{\mathrm{d}\mathrm{H_2O_2}}{\mathrm{d}t} &= \\
-        \frac{\mathrm{d}\mathrm{DHA}}{\mathrm{d}t} &= \\
-        \frac{\mathrm{d}\mathrm{GSSG}}{\mathrm{d}t} &= \\
-        \frac{\mathrm{d}\mathrm{Trx_{ox}}}{\mathrm{d}t} &= \\
-        \frac{\mathrm{d}\mathrm{E}_\mathrm{CBB,\ inact}}{\mathrm{d}t} &= \\
-    \end{align}
+```math 
+   \begin{align}
+      \frac{\mathrm{d}\mathrm{PQ}}{\mathrm{d}t} &= -v_{\mathrm{PSII}} + v_{\mathrm{PQ}_{\mathrm{ox}}} - v_{\mathrm{NDH}} + v_{\mathrm{b6f}} - v_{\mathrm{Cyc}} \\ 
+      \frac{\mathrm{d}\mathrm{H_{lu}}}{\mathrm{d}t} &= 0.02 \cdot v_{\mathrm{PSII}} + 0.04 \cdot v_{\mathrm{b6f}} - 0.0v_{\mathrm{Leak}} - 0.04666666666666667 \cdot v_{\mathrm{ATPsynthase}} \\ 
+      \frac{\mathrm{d}\mathrm{Fd}_\mathrm{ox}}{\mathrm{d}t} &= 2 \cdot v_{\mathrm{Cyc}} + 2 \cdot v_{\mathrm{FNR}} - v_{\mathrm{Fd}_{\mathrm{red}}} + v_{\mathrm{FdTrReductase}} \\ 
+      \frac{\mathrm{d}\mathrm{PC}_\mathrm{ox}}{\mathrm{d}t} &= -2 \cdot v_{\mathrm{b6f}} + v_{\mathrm{PSI}} \\ 
+      \frac{\mathrm{d}\mathrm{NADPH}_\mathrm{st}}{\mathrm{d}t} &= 0.032 \cdot v_{\mathrm{FNR}} - v_{\mathrm{BPGAdehynase}} - v_{\mathrm{MDAreduct}} - v_{\mathrm{GR}} - v_{\mathrm{NADPH}_\mathrm{consumption}} \\ 
+      \frac{\mathrm{d}\mathrm{LHC}}{\mathrm{d}t} &= -v_{\mathrm{St21}} + v_{\mathrm{St12}} \\ 
+      \frac{\mathrm{d}\mathrm{ATP_{st}}}{\mathrm{d}t} &= 0.032 \cdot v_{\mathrm{ATPsynthase}} - v_{\mathrm{PGK1ase}} - v_{\mathrm{PRKase}} - v_{\mathrm{Starch}} - v_{\mathrm{ATP}_{\mathrm{consumption}}} \\ 
+      \frac{\mathrm{d}\mathrm{Vx}}{\mathrm{d}t} &= -v_{\mathrm{Deepox}} + v_{\mathrm{Epox}} \\ 
+      \frac{\mathrm{d}\mathrm{psbS}}{\mathrm{d}t} &= -v_{\mathrm{Psbs^P}} + v_{\mathrm{Psbs^D}} \\ 
+      \frac{\mathrm{d}\mathrm{RUBP}}{\mathrm{d}t} &= -v_{\mathrm{RuBisCO}} + v_{\mathrm{PRKase}} \\ 
+      \frac{\mathrm{d}\mathrm{PGA}}{\mathrm{d}t} &= 2 \cdot v_{\mathrm{RuBisCO}} - v_{\mathrm{PGK1ase}} - v_{\mathrm{PGA,\ ex}} \\ 
+      \frac{\mathrm{d}\mathrm{BPGA}}{\mathrm{d}t} &= v_{\mathrm{PGK1ase}} - v_{\mathrm{BPGAdehynase}} \\ 
+      \frac{\mathrm{d}\mathrm{GAP}}{\mathrm{d}t} &= v_{\mathrm{BPGAdehynase}} - v_{\mathrm{TPIase}} - v_{\mathrm{Aldolase_{FBP}}} - v_{\mathrm{TKase_E4P}} - v_{\mathrm{TKase_R5P}} - v_{\mathrm{GAP,\ ex}} \\ 
+      \frac{\mathrm{d}\mathrm{DHAP}}{\mathrm{d}t} &= v_{\mathrm{TPIase}} - v_{\mathrm{Aldolase_{FBP}}} - v_{\mathrm{Aldolase_{SBP}}} - v_{\mathrm{DHAP,\ ex}} \\ 
+      \frac{\mathrm{d}\mathrm{FBP}}{\mathrm{d}t} &= v_{\mathrm{Aldolase_{FBP}}} - v_{\mathrm{FBPase}} \\ 
+      \frac{\mathrm{d}\mathrm{F6P}}{\mathrm{d}t} &= v_{\mathrm{FBPase}} - v_{\mathrm{TKase_E4P}} - v_{\mathrm{PGIase}} \\ 
+      \frac{\mathrm{d}\mathrm{X5P}}{\mathrm{d}t} &= v_{\mathrm{TKase_E4P}} + v_{\mathrm{TKase_R5P}} - v_{\mathrm{RPEase}} \\ 
+      \frac{\mathrm{d}\mathrm{E4P}}{\mathrm{d}t} &= v_{\mathrm{TKase_E4P}} - v_{\mathrm{Aldolase_{SBP}}} \\ 
+      \frac{\mathrm{d}\mathrm{SBP}}{\mathrm{d}t} &= v_{\mathrm{Aldolase_{SBP}}} - v_{\mathrm{SBPase}} \\ 
+      \frac{\mathrm{d}\mathrm{S7P}}{\mathrm{d}t} &= v_{\mathrm{SBPase}} - v_{\mathrm{TKase_R5P}} \\ 
+      \frac{\mathrm{d}\mathrm{R5P}}{\mathrm{d}t} &= v_{\mathrm{TKase_R5P}} - v_{\mathrm{Rpiase}} \\ 
+      \frac{\mathrm{d}\mathrm{RU5P}}{\mathrm{d}t} &= v_{\mathrm{Rpiase}} + v_{\mathrm{RPEase}} - v_{\mathrm{PRKase}} \\ 
+      \frac{\mathrm{d}\mathrm{G6P}}{\mathrm{d}t} &= v_{\mathrm{PGIase}} - v_{\mathrm{PGMase}} \\ 
+      \frac{\mathrm{d}\mathrm{G1P}}{\mathrm{d}t} &= v_{\mathrm{PGMase}} - v_{\mathrm{Starch}} \\ 
+      \frac{\mathrm{d}\mathrm{H_2O_2}}{\mathrm{d}t} &= -v_{\mathrm{APXase}} + 0.032 \cdot v_{\mathrm{Mehler}} \\ 
+      \frac{\mathrm{d}\mathrm{MDA}}{\mathrm{d}t} &= 2 \cdot v_{\mathrm{APXase}} - 2 \cdot v_{\mathrm{MDAreduct}} - 2 \cdot v_{\mathrm{3ASC}} \\ 
+      \frac{\mathrm{d}\mathrm{GSSG}}{\mathrm{d}t} &= -v_{\mathrm{GR}} + v_{\mathrm{DHAR}} \\ 
+      \frac{\mathrm{d}\mathrm{DHA}}{\mathrm{d}t} &= -v_{\mathrm{DHAR}} + v_{\mathrm{3ASC}} \\ 
+      \frac{\mathrm{d}\mathrm{Trx_{ox}}}{\mathrm{d}t} &= -v_{\mathrm{FdTrReductase}} + 5 \cdot v_{\mathrm{Eact}} \\ 
+      \frac{\mathrm{d}\mathrm{E}_\mathrm{CBB,\ inact}}{\mathrm{d}t} &= -5 \cdot v_{\mathrm{Eact}} + 5 \cdot v_{\mathrm{Einact}} \\ 
+   \end{align}
 ```
 
 </details>
-
+                     
 #### Conserved quantities
 
 ### Parameters
@@ -137,6 +137,17 @@
 |Rate of PGMase|$v_{\mathrm{PGMase}}$|$v_{\mathrm{Phosphoglucomutase}}$|AT5G51820|v_PGMase|
 ||$v_{\mathrm{PSI}}$|$v_{\mathrm{PSI}}$||v_PSI|
 |ATP consuming reaction|$v_{\mathrm{ATP}_{\mathrm{consumption}}}$|$v_{\mathrm{EX\_ ATP}}$||v_ATPcons|
-|Consumption of NADPH|$v_{\mathrm{NADPH}_\mathrm{consumption}}$|$v_{\mathrm{EX\_ ATP}}$||v_NADPHcons|
+|Consumption of NADPH|$v_{\mathrm{NADPH}_\mathrm{consumption}}$|$v_{\mathrm{EX\_ NADPH}}$||v_NADPHcons|
+|Rate of reduction of Fd by the activity of PSI|$v_{\mathrm{Fd}_{\mathrm{red}}}$|$v_{\mathrm{Fd,\ red}}$||v_Fdred|
+||$v_{\mathrm{FdTrReductase}}$|$v_{\mathrm{FdTrReductase}}$||v_FdTrReduc|
+||$v_{\mathrm{MDAreduct}}$|$v_{\mathrm{MDAreduct}}$||v_MDAreduc|
+||$v_{\mathrm{GR}}$|$v_{\mathrm{GR}}$||v_GR|
+||$v_{\mathrm{RuBisCO}}$|$v_{\mathrm{RuBisCO}}$||v_RuBisCO|
+|Rate of APXase|$v_{\mathrm{APXase}}$|$v_{\mathrm{Ascorbate}}$||v_APXase|
+|Mehler reaction lumping the reduction of O2 instead of Fd|$v_{\mathrm{Mehler}}$|$v_{\mathrm{Mehler}}$||v_Mehler|
+||$v_{\mathrm{DHAR}}$|$v_{\mathrm{DHAR}}$||v_DHAR|
+||$v_{\mathrm{3ASC}}$|$v_{\mathrm{3ASC}}$||v_3ASC|
+|Enzyme Activation|$v_{\mathrm{Eact}}$|$v_{\mathrm{Eact}}$||v_Eact|
+|Enzyme inactivation|$v_{\mathrm{Einact}}$|$v_{\mathrm{Einact}}$||v_Einact|
 
 ### Tags

@@ -1,3 +1,5 @@
+------- Start on 2025-02-06 15:22:41.934261 -------
+
 PQ = remove_math(comps_table, r'$\mathrm{PQ}_\mathrm{ox}$')
 PC_ox = remove_math(comps_table, r'$\mathrm{PC}_\mathrm{ox}$')
 Fd_ox = remove_math(comps_table, r'$\mathrm{Fd}_\mathrm{ox}$')
@@ -28,34 +30,3 @@ DHA = remove_math(comps_table, r'$\mathrm{DHA}$')
 GSSG = remove_math(comps_table, r'$\mathrm{GSSG}$')
 Trx_ox = remove_math(comps_table, r'$\mathrm{Trx_{ox}}$')
 E_CBB_inactive = remove_math(comps_table, r'$\mathrm{E}_\mathrm{inactive}$')
-
-{ode(PQ)} &= \\
-{ode(PC_ox)} &= \\
-{ode(Fd_ox)} &= \\
-{ode(ATP_st)} &= \\
-{ode(NADPH_st)} &= \\
-{ode(H_lu)} &= \\
-{ode(LHC)} &= \\
-{ode(psbS)} &= \\
-{ode(Vx)} &= \\
-{ode(PGA)} &= \\
-{ode(BPGA)} &= \\
-{ode(GAP)} &= \\
-{ode(DHAP)} &= \\
-{ode(FBP)} &= \\
-{ode(F6P)} &= \\
-{ode(G6P)} &= \\
-{ode(G1P)} &= \\
-{ode(SBP)} &= \\
-{ode(S7P)} &= \\
-{ode(E4P)} &= \\
-{ode(X5P)} &= \\
-{ode(R5P)} &= \\
-{ode(RUBP)} &= \\
-{ode(RU5P)} &= \\
-{ode(MDA)} &= \\
-{ode(H2O2)} &= \\
-{ode(DHA)} &= \\
-{ode(GSSG)} &= \\
-{ode(Trx_ox)} &= \\
-{ode(E_CBB_inactive)} &= \\

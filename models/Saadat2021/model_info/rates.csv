@@ -36,3 +36,14 @@ Rate of PGMase,$v_{\mathrm{PGMase}}$,$v_{\mathrm{Phosphoglucomutase}}$,AT5G51820
 ,$v_{\mathrm{PSI}}$,$v_{\mathrm{PSI}}$,,v_PSI,38
 ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,$v_{\mathrm{EX\_ ATP}}$,,v_ATPcons,6
 Consumption of NADPH,$v_{\mathrm{NADPH}_\mathrm{consumption}}$,$v_{\mathrm{EX\_ NADPH}}$,,v_NADPHcons,39
+Rate of reduction of Fd by the activity of PSI,$v_{\mathrm{Fd}_{\mathrm{red}}}$,"$v_{\mathrm{Fd,\ red}}$",,v_Fdred,40
+,$v_{\mathrm{FdTrReductase}}$,$v_{\mathrm{FdTrReductase}}$,,v_FdTrReduc,41
+,$v_{\mathrm{MDAreduct}}$,$v_{\mathrm{MDAreduct}}$,,v_MDAreduc,42
+,$v_{\mathrm{GR}}$,$v_{\mathrm{GR}}$,,v_GR,43
+,$v_{\mathrm{RuBisCO}}$,$v_{\mathrm{RuBisCO}}$,,v_RuBisCO,44
+Rate of APXase,$v_{\mathrm{APXase}}$,$v_{\mathrm{Ascorbate}}$,,v_APXase,45
+Mehler reaction lumping the reduction of O2 instead of Fd,$v_{\mathrm{Mehler}}$,$v_{\mathrm{Mehler}}$,,v_Mehler,46
+,$v_{\mathrm{DHAR}}$,$v_{\mathrm{DHAR}}$,,v_DHAR,47
+,$v_{\mathrm{3ASC}}$,$v_{\mathrm{3ASC}}$,,v_3ASC,48
+Enzyme Activation,$v_{\mathrm{Eact}}$,$v_{\mathrm{Eact}}$,,v_Eact,49
+Enzyme inactivation,$v_{\mathrm{Einact}}$,$v_{\mathrm{Einact}}$,,v_Einact,50
