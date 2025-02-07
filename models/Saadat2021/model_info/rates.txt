@@ -1,4 +1,4 @@
-------- Start on 2025-02-06 15:22:41.937504 -------
+------- Start on 2025-02-07 10:33:24.446821 -------
 
 v_PSII = remove_math(rates_table, r'$v_{\mathrm{PSII}}$')
 v_b6f = remove_math(rates_table, r'$v_{\mathrm{b6f}}$')

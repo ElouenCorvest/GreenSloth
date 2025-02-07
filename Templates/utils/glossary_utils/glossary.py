@@ -248,25 +248,6 @@ def write_python_from_gloss(
                 f.seek(0, 0)
                 f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
     
-    # if append_flag and os.path.isfile(path_to_write):
-    #     f = open(path_to_write, 'a')
-    #     f.write('\n\n')
-    #     f.write(f'------- Update on {datetime.now()} -------\n\n')
-    # else:
-    #     f = open(path_to_write, 'w')
-    #     f.write(f'------- Start on {datetime.today().strftime('%Y-%m-%d')} -------\n\n')
-
-    # for idx, row in gloss.iterrows():
-    #     f.write(f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n")
-
-    # if ode_flag:
-    #     f.write('\n')
-    #     for idx, row in gloss.iterrows():
-    #         f.write(rf"{{ode({row['Python Var']})}} &= \\")
-    #         f.write('\n')
-
-    # f.close()
-    
 def write_odes_from_model(
     path_to_write: Path,
     model: Model,
@@ -322,4 +303,34 @@ def write_odes_from_model(
             with open(path_to_write, 'r+') as f:
                 f.seek(0, 0)
                 f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
-
+                
+def extract_params_from_model(
+        model = Model,
+        path_to_write = Path
+    ):
+        params = model.get_parameters()
+        
+        if os.path.isfile(path_to_write):
+            agree = input(f'\nFile "{path_to_write}" already exists. Do you wish to overwrite it?\n[y/[n]] >> ')
+            if agree.upper() not in ['Y', 'YES']:
+                print('Okay! Doing nothing.')
+                return
+        
+        empty_lst = ['' for i in params.keys()]
+        
+        df = pd.DataFrame({
+            'Short Description': empty_lst,
+            'Common Abbr.': empty_lst,
+            'Paper Abbr.': empty_lst,
+            'Value': [f'${i}$' for i in params.values()],
+            'Unit': empty_lst,
+            'MetaCyc ID': empty_lst,
+            'Python Var': list(params.keys()),
+            'Reference': empty_lst,
+            'Glossary ID': empty_lst,
+        })
+        
+        df.to_csv(
+            path_to_write,
+            index=False
+        )

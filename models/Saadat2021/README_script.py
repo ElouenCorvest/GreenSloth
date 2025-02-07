@@ -1,5 +1,5 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
-from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV, write_python_from_gloss, write_odes_from_model
+from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV, write_python_from_gloss, write_odes_from_model, extract_params_from_model
 from pathlib import Path
 import pandas as pd
 from models import get_model
@@ -36,6 +36,7 @@ model_title = 'Saadat2021'
 model_doi = 'https://doi.org/10.3389/fpls.2021.750580'
 
 ###### Glossaries ######
+
 cite_dict = dict()
 
 model_info = Path(__file__).parent / 'model_info'
@@ -93,6 +94,11 @@ write_python_from_gloss(
     path_to_write=Path(__file__).parent / 'model_info/rates.txt',
     gloss=rates_table,
     var_list_name='rates_table'
+)
+
+extract_params_from_model(
+    model=get_model(),
+    path_to_write=model_info / 'test.csv'
 )
 
 params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info / 'params.csv', cite_dict=cite_dict)
