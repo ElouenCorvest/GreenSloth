@@ -95,6 +95,193 @@
 
 ### Parameters
 
+|Short Description|Common Abbr.|Paper Abbr.|Value|Unit|MetaCyc ID|Python Var|Reference|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+||||$0.032$|||convf||
+|PSII reaction centres|$\mathrm{PSII}^{\mathrm{tot}}$|$\mathrm{PSII}^{\mathrm{tot}}$|$2.5$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$||PSII_tot|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
+|PSI reaction centres|$\mathrm{PSI}^{\mathrm{tot}}$|$\mathrm{PSI}^{\mathrm{tot}}$|$2.5$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$||PSI_tot|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
+|Total plastoquinone pool|$\mathrm{PQ}^{\mathrm{tot}}$|$\mathrm{PQ}^{\mathrm{tot}}$|$17.5$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$||PQ_tot|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
+||||$4.0$|||PCtot||
+||||$5.0$|||Fdtot||
+||||$2.5$|||Ctot||
+||||$0.8$|||NADPtot||
+||||$2.55$|||APtot||
+||||$1.0$|||Psbstot||
+||||$1.0$|||Xtot||
+||||$5000000000.0$|||kH||
+||||$500000000.0$|||kH0||
+||||$625000000.0$|||kF||
+||||$5000000000.0$|||k1||
+||||$10000000000.0$|||k1rev||
+||||$5000000000.0$|||k2||
+||||$100$|||kdeg||
+||||$0.000555$|||krep||
+||||$0.0035$|||kStt7||
+||||$0.0013$|||kPph1||
+||||$0.2$|||KM_ST||
+||||$2.0$|||n_ST||
+||||$0.37$|||staticAntI||
+||||$0.1$|||staticAntII||
+||||$1.0$|||prob_attach||
+||||$0.05$|||kActATPase||
+||||$0.002$|||kDeactATPase||
+||||$20.0$|||kATPsynth||
+||||$10.0$|||kATPcons||
+||||$0.5$|||ATPcyt||
+||||$0.01$|||Pi_mol||
+||||$30.6$|||DeltaG0_ATP||
+||||$4.666666666666667$|||HPR||
+||||$15.0$|||kNADPHcons||
+||||$0.5$|||NADPHcyt||
+||||$7.9$|||pHstroma||
+||||$10.0$|||kLeak||
+||||$100.0$|||bH||
+||||$250.0$|||kPQred||
+||||$2.5$|||kCytb6f||
+||||$0.01$|||kPTOX||
+||||$2500.0$|||kPCox||
+||||$250000.0$|||kFdred||
+||||$500.0$|||kcatFNR||
+||||$1.0$|||kcyc||
+||||$8.0$|||O2ext||
+||||$0.002$|||kNDH||
+||||$0.05$|||kNh||
+||||$0.004$|||kNr||
+||||$5.0$|||nH||
+||||$3.0$|||EFNR||
+||||$1.56$|||KM_FNR_F||
+||||$0.22$|||KM_FNR_N||
+||||$0.1$|||gamma0||
+||||$0.25$|||gamma1||
+||||$0.6$|||gamma2||
+||||$0.15$|||gamma3||
+||||$0.0096$|||kDeprotonation||
+||||$0.0096$|||kProtonationL||
+||||$5.8$|||kphSatLHC||
+||||$0.0024$|||kDeepoxV||
+||||$0.00024$|||kEpoxZ||
+||||$5.8$|||kphSat||
+||||$5.0$|||kHillX||
+||||$3.0$|||kHillL||
+||||$0.12$|||kZSat||
+||||$-0.14$|||E0_QA||
+||||$0.354$|||E0_PQ||
+||||$0.35$|||E0_cytf||
+||||$0.38$|||E0_PC||
+||||$0.48$|||E0_P700||
+||||$-0.55$|||E0_FA||
+||||$-0.43$|||E0_Fd||
+||||$-0.113$|||E0_NADP||
+||||$96.485$|||F||
+||||$0.0083$|||R||
+||||$298.0$|||T||
+||||$100.0$|||pfd||
+||||$0.0$|||Ton||
+||||$1800$|||Toff||
+||||$120$|||dT||
+||||$True$|||ox||
+||||$0.5$|||CN||
+||||$0.2$|||CO2||
+||||$17.05$|||Cp||
+||||$0.5$|||Ca||
+||||$7.6$|||pHmedium||
+||||$0.5$|||Pext||
+||||$2.72$|||V1_base||
+||||$1.6$|||V6_base||
+||||$0.32$|||V9_base||
+||||$7.9992$|||V13_base||
+||||$0.32$|||Vst_base||
+||||$2.0$|||Vmax_efflux||
+||||$0.00031$|||q2||
+||||$16000000.0$|||q3||
+||||$22.0$|||q4||
+||||$7.1$|||q5||
+||||$0.084$|||q7||
+||||$13.0$|||q8||
+||||$0.85$|||q10||
+||||$0.4$|||q11||
+||||$0.67$|||q12||
+||||$2.3$|||q14||
+||||$0.058$|||q15||
+||||$0.02$|||Km1||
+||||$0.0107$|||KmCO2||
+||||$0.03$|||Km6||
+||||$0.013$|||Km9||
+||||$0.05$|||Km131||
+||||$0.05$|||Km132||
+||||$0.014$|||Km161||
+||||$0.3$|||Km162||
+||||$0.08$|||Kmst1||
+||||$0.08$|||Kmst2||
+||||$0.19$|||Kmnadph||
+||||$0.25$|||Kpga||
+||||$0.075$|||Kgap||
+||||$0.077$|||Kdhap||
+||||$0.63$|||Kpi||
+||||$0.74$|||Kpxt||
+||||$0.04$|||Ki11||
+||||$0.04$|||Ki12||
+||||$0.075$|||Ki13||
+||||$0.9$|||Ki14||
+||||$0.07$|||Ki15||
+||||$0.7$|||Ki61||
+||||$12.0$|||Ki62||
+||||$12.0$|||Ki9||
+||||$2.0$|||Ki131||
+||||$0.7$|||Ki132||
+||||$4.0$|||Ki133||
+||||$2.5$|||Ki134||
+||||$0.4$|||Ki135||
+||||$10.0$|||Kist||
+||||$0.1$|||Kast1||
+||||$0.02$|||Kast2||
+||||$0.02$|||Kast3||
+||||$800000000.0$|||k||
+|Estimated|$kf_1$|$kf1$|$10000.0$|||k_f1||
+||$kr_1$|$kr1$|$220.0$|||k_r1|[[2]](BRENDA database)|
+|Estimated|$kf_2$|$kf2$|$10000.0$|||k_f2||
+||$kr_2$|$kr2$|$4000.0$|||k_r2|[[2]](BRENDA database)|
+||$kf_3$|$kf3$|$2510.0$|||k_f3|[[2]](BRENDA database)|
+|Estimated|$kf_4$|$kf4$|$10000.0$|||k_f4||
+||$kr_4$|$kr4$|$4000.0$|||k_r4|[[2]](BRENDA database)|
+||$kf_5$|$kf5$|$2510.0$|||k_f5|[[2]](BRENDA database)|
+|Concentration of ascorbate peroxidase|$XT$|$XT$|$0.07$|||XT|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Estimated rate constant for summarized hydrogen peroxide production|$k_{\mathrm{Mehler}}$|$k_{\mathrm{Mehler}}$|$1.0$|$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$||k_Mehler||
+|Turnover rate of gluthation reductase|$k_{\mathrm{cat}_{\mathrm{GR}}}$|$k_{\mathrm{cat}_{\mathrm{GR}}}$|$595$|$\mathrm{s}^{-1}$||kcat_GR|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Turnover rate of dehydroascorbate reductase|$k_{\mathrm{cat}_{\mathrm{DHAR}}}$|$k_{\mathrm{cat}_{\mathrm{DHAR}}}$|$142$|$\mathrm{s}^{-1}$||kcat_DHAR|[[3]](https://doi.org/10.1104/pp.108.133223)|
+||||$12000.0$|||k1APX||
+||||$50000.0$|||k2APX||
+||||$2100.0$|||k3APX||
+||||$699.9999999999999$|||k4APX||
+||||$0.01$|||k5APX||
+|Rate constant for the spontaneous disproportion of MDA|$k_3$|$k3$|$500.0$|$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$||k3|[[3]](https://doi.org/10.1104/pp.108.133223)|
+||||$100.0$|||k4||
+||||$200.0$|||k5||
+||||$200.0$|||k6||
+||||$699.9999999999999$|||k7||
+||||$0.002$|||k8||
+|Michaelis Menten constant of NADPH|$K_{\mathrm{m}_{\mathrm{NADPH}}}$|$K_{\mathrm{m}_{\mathrm{NADPH}}}$|$3 \times 10^{-3}$|$\mathrm{mM}$||Km_NADPH|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Michaelis Menten constant of oxidized gluthation|$K_{\mathrm{m}_{\mathrm{GSSG}}}$|$K_{\mathrm{m}_{\mathrm{GSSG}}}$|$0.2$|$\mathrm{mM}$||Km_GSSG|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Michaelis Menten constant of dehydroascorbate|$K_{\mathrm{m}_{\mathrm{DHA}}}$|$K_{\mathrm{m}_{\mathrm{DHA}}}$|$70 \times 10^{-3}$|$\mathrm{mM}$||Km_DHA|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Michaelis Menten constant of reduced gluthation|$K_{\mathrm{m}_{\mathrm{GSH}}}$|$K_{\mathrm{m}_{\mathrm{GSH}}}$|$2.5$|$\mathrm{mM}$||Km_GSH|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Dissociation constant of dehydroascorbate reductase|$K_{\mathrm{DHAR}}$|$K$|$0.5$|$\mathrm{mM}^2$||K_DHAR|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Concentration of gluthatione reductase|$\mathrm{GR}_0$|$\mathrm{GR}_0$|$1.4 \times 10^{-3}$|$\mathrm{mM}$||GR_0|[[3]](https://doi.org/10.1104/pp.108.133223)|
+|Concentration of dehydroascorbate reductase|$\mathrm{DHAR}_0$|$\mathrm{DHAR}_0$|$1.7 \times 10^{-3}$|$\mathrm{mM}$||DHAR_0|[[3]](https://doi.org/10.1104/pp.108.133223)|
+||||$0.07$|||APX0||
+|Total concentration of reduced and oxidized glutathione|$\mathrm{Gluthation}_{\mathrm{tot}}$|$\mathrm{Gluthation}_{\mathrm{total}}$|$10$|$\mathrm{mM}$||Glutathion_total||
+|Total concentration of reduced and oxidized ascorbate|$\mathrm{Ascorbate}_{\mathrm{tot}}$|$\mathrm{Ascorbate}_{\mathrm{total}}$|$10$|$\mathrm{mM}$||Ascorbate_total||
+|Turnover rate of monodehydroascorbate reductase|$k_{\mathrm{cat}_{\mathrm{MDAR}}}$|$k_{\mathrm{cat}_{\mathrm{MDAR}}}$|$300.0$|$\mathrm{s}^{-1}$||kcat_MDAR|[[4]](https://doi.org/10.1186/s12918-015-0239-y)|
+|Michaelis-menten constant of monodehydroascorbate for the conversion to NADPH|$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$|$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$|$23 \times 10^{-3}$|$\mathrm{mM}$||Km_MDAR_NADPH|[[4]](https://doi.org/10.1186/s12918-015-0239-y)|
+|Michaelis-menten constant of monodehydroascorbate for the conversion to MDA|$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$|$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$|$1.4 \times 10^{-3}$|$\mathrm{mM}$||Km_MDAR_MDA|[[4]](https://doi.org/10.1186/s12918-015-0239-y)|
+|Concentration of monodehydroascorbate reductase|$\mathrm{MDAR}_0$|$\mathrm{MDAR}_0$|$2 \times 10^{-3}$|$\mathrm{mM}$||MDAR_0|[[4]](https://doi.org/10.1186/s12918-015-0239-y)|
+|General consumption rate of ATP|$k_{\mathrm{ex}_{\mathrm{ATP}}}$|$k_{\mathrm{ex}_{\mathrm{atp}}}$|$0.2$|$\mathrm{s}^{-1}$||k_ex_atp|[[5]](Estimated)|
+|General consumption rate of NADPH|$k_{\mathrm{ex}_{\mathrm{NADPH}}}$|$k_{\mathrm{ex}_{\mathrm{nadph}}}$|$0.2$|$\mathrm{s}^{-1}$||k_ex_nadph|[[5]](Estimated)|
+|Relative total concentration of thioredoxin|$\mathrm{Thioredoxin}^{\mathrm{tot}}$|$\mathrm{thioredoxin}_\mathrm{tot}$|$1$|||thioredoxin_tot||
+|Estimated maximal concentration of CBB enzymes|$\mathrm{Enz}_{\mathrm{cbb}_\mathrm{tot}}$|$e_{\mathrm{cbb}_\mathrm{tot}}$|$6$|$\mathrm{mM}$||e_cbb_tot||
+|Rate constant of ferrodoxin thioredoxin reductase|$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$|$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$|$1$|$\mathrm{s}^{-1}$||k_fd_tr_reductase|[[5]](Estimated)|
+|Rate constant of CBB activation|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$|$1$|||k_e_cbb_activation|[[5]](Estimated)|
+|Rate constant of CBB relaxation|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$|$0.1$|$\mathrm{s}^{-1}$||k_e_cbb_relaxation|[[5]](Estimated)|
+
 #### Derived Parameters
 
 ### Reaction Rates

@@ -96,10 +96,10 @@ write_python_from_gloss(
     var_list_name='rates_table'
 )
 
-extract_params_from_model(
-    model=get_model(),
-    path_to_write=model_info / 'test.csv'
-)
+# extract_params_from_model(
+#     model=get_model(),
+#     path_to_write=model_info / 'test.csv'
+# )
 
 params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info / 'params.csv', cite_dict=cite_dict)
 
@@ -333,7 +333,7 @@ mdFile.new_header(4, 'Conserved quantities')
 
 mdFile.new_header(3, 'Parameters')
 
-# mdFile.new_table(columns = len(params_table.columns), rows = len(params_table_tolist), text = params_table_list)
+mdFile.new_table(columns = len(params_table.columns), rows = len(params_table_tolist), text = params_table_list)
 
 mdFile.new_header(4, 'Derived Parameters')
 
