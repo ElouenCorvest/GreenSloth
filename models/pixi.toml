@@ -1,0 +1,18 @@
+[project]
+authors = ["Elouen_Corvest <elouen.corvest@rwth-aachen.de>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "models"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+local_install = "pip install --editable ../Templates/utils"
+here = 'echo "$PWD"'
+
+[dependencies]
+mdutils = ">=1.6.0,<2"
+modelbase = ">=1.57.6,<2"
+
+[pypi-dependencies]
+glossary_utils = { path = "../Templates/utils", editable = true}
