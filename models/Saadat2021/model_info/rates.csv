@@ -26,9 +26,9 @@ Rate of PGK1ase,$v_{\mathrm{PGK1ase}}$,$v_{\mathrm{PGA\_kinase}}$,,v_PGK1ase,27
 Rate of BPGA dehydrogenase,$v_{\mathrm{BPGAdehynase}}$,$v_{\mathrm{BPGA\_dehydrogenase}}$,,v_BPGAdehynase,28
 Rate of TPIase,$v_{\mathrm{TPIase}}$,$v_{\mathrm{TPI}}$,,v_TPIase,29
 Rate of Aldolase of GAP and DHAP to FBP,$v_{\mathrm{Aldolase_{FBP}}}$,$v_{\mathrm{Aldolase}}$,,v_Aldolase_FBP,30
-Rate of TKase of GAP and F6P to X5P and E4P,$v_{\mathrm{TKase_E4P}}$,$v_{\mathrm{F6P\_ Transketolase}}$,EC 2.2.1.1,v_TKase_E4P,31
+Rate of TKase of GAP and F6P to X5P and E4P,$v_{\mathrm{TKase_{E4P}}}$,$v_{\mathrm{F6P\_ Transketolase}}$,EC 2.2.1.1,v_TKase_E4P,31
 Rate of Aldolase of E4P and DHAP to SBP,$v_{\mathrm{Aldolase_{SBP}}}$,$v_{8}$,,v_Aldolase_SBP,32
-Rate of TKase of GAP and S7P to X5P and R5P,$v_{\mathrm{TKase_R5P}}$,$v_{10}$,EC 2.2.1.1,v_TKase_R5P,33
+Rate of TKase of GAP and S7P to X5P and R5P,$v_{\mathrm{TKase_{R5P}}}$,$v_{10}$,EC 2.2.1.1,v_TKase_R5P,33
 Rate of Rpiase,$v_{\mathrm{Rpiase}}$,$v_{11}$,EC 5.3.1.6,v_Rpiase,34
 Rate of RPEase,$v_{\mathrm{RPEase}}$,$v_{12}$,EC 5.1.3.1,v_RPEase,35
 Rate of PGIase,$v_{\mathrm{PGIase}}$,$v_{G6P\_ isomerase}$,AT4G24620,v_PGIase,36

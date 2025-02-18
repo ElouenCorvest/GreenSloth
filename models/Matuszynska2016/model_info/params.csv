@@ -21,8 +21,8 @@ Stroma pH of a dark adapted state,$\mathrm{pH}_{\mathrm{st}}$,$\mathrm{pH}_\math
 ,$k_\mathrm{leak}$,$k_\mathrm{leak}$,$1000$,$\mathrm{s}^{-1}$,,k_leak,
 Proton buffering constant,$b_\mathrm{H}$,$b_\mathrm{H}$,$100$,,,b_H,https://doi.org/10.1007/s11120-006-9109-1
 Ratio of protons to ATP in ATP synthase,$\mathrm{HPR}$,$\mathrm{HPR}$,$\frac{14}{3}$,,,hpr,
-,$k_\mathrm{kDeepoxV}$,$k_\mathrm{DeepoxV}$,$0.0024$,$\mathrm{s}^{-1}$,,k_DV,https://doi.org/10.1016/j.jplph.2014.03.004
-,$k_\mathrm{kEpoxZ}$,$k_\mathrm{EpoxZ}$,$0.00024$,$\mathrm{s}^{-1}$,,k_EZ,
+Rate constant of de-epoxidation of violaxanthin,$k_\mathrm{kDeepoxV}$,$k_\mathrm{DeepoxV}$,$0.0024$,$\mathrm{s}^{-1}$,,k_DV,https://doi.org/10.1016/j.jplph.2014.03.004
+Rate constant of epoxidation of violaxanthin,$k_\mathrm{kEpoxZ}$,$k_\mathrm{EpoxZ}$,$0.00024$,$\mathrm{s}^{-1}$,,k_EZ,
 "Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8",$K_\mathrm{pHSat}$,$K_\mathrm{pHSat}$,$5.8$,,,K_pHSat,
 Hill-coefficient for de-epoxidase acitivity,$\mathrm{nH}_\mathrm{X}$,$\mathrm{nH}_\mathrm{X}$,$5$,,,nhx,
 Half-saturation constant (relative conc. of Zx) for quenching,$K_\mathrm{ZSat}$,$K_\mathrm{ZSat}$,$0.12$,,,K_ZSat,
@@ -37,7 +37,7 @@ Fitted quencher factor corresponding to slow quenching of Zx present despite lac
 Faraday constant,$F$,$F$,$96.485$,$\mathrm{kJ}$,,F,
 Universal gas constant,$R$,$R$,$8.3$,$\mathrm{J\ K^{-1} \ mol^{-1}}$,,R,
 Temperature,$T$,$T$,$298$,$\mathrm{K}$,,T,
-,$E^0\mathrm{(QA/QA^-)}$,$E^0\mathrm{(QA/QA^-)}$,$-0.140$,$\mathrm{V}$,,E_QA,https://doi.org/10.1073/pnas.1100173108
-,$E^0\mathrm{(PQ/PQH_2)}$,$E^0\mathrm{(PQ/PQH_2)}$,$0.354$,$\mathrm{V}$,,E_PQ,https://doi.org/10.1016/0005-2728(76)90067-0
-,$E^0\mathrm{(PC/PC^-)}$,$E^0\mathrm{(PC/PC^-)}$,$0.380$,$\mathrm{V}$,,E_PC,https://doi.org/10.1093/oxfordjournals.pcp.a077363
+,$E^0\mathrm{(QA/QA^-)}$,$E^0\mathrm{(QA/QA^-)}$,$-0.140$,$\mathrm{V}$,,E0_QA,https://doi.org/10.1073/pnas.1100173108
+,$E^0\mathrm{(PQ/PQH_2)}$,$E^0\mathrm{(PQ/PQH_2)}$,$0.354$,$\mathrm{V}$,,E0_PQ,https://doi.org/10.1016/0005-2728(76)90067-0
+,$E^0\mathrm{(PC/PC^-)}$,$E^0\mathrm{(PC/PC^-)}$,$0.380$,$\mathrm{V}$,,E0_PC,https://doi.org/10.1093/oxfordjournals.pcp.a077363
 Standard Gibbs free energy change of ATP formation,$\Delta G_{0_{\mathrm{ATP}}}$,$\Delta G_{0_{\mathrm{ATP}}}$,$30.6$,$\mathrm{kJ mol^{-1}}$,,DG_ATP,https://doi.org/10.1016/B978-012518121-1/50000-2
