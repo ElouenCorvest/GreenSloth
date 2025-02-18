@@ -13,6 +13,7 @@ here = 'echo "$PWD"'
 [dependencies]
 mdutils = ">=1.6.0,<2"
 modelbase = ">=1.57.6,<2"
+validators = ">=0.34.0,<0.35"
 
 [pypi-dependencies]
 glossary_utils = { path = "../Templates/utils", editable = true}

@@ -5,6 +5,7 @@ from pathlib import Path
 from modelbase.ode import Model
 from datetime import datetime
 import re
+from validators import url
 
 def df_to_dict(
     df: pd.DataFrame,
@@ -185,7 +186,7 @@ def update_from_main_gloss(
     return
 
 def gloss_fromCSV(
-    path: str,
+    path: Path,
     cite_dict: Optional[dict] = None,
     reference_col: str = 'Reference',
     omit_col: Optional[str] = None,
@@ -208,8 +209,8 @@ def cite(
     cit: str,
     cite_dict: dict,
 ):
-    if cit == '':
-        return ''
+    if cit == '' or not url(cit):
+        return cit
     elif cit in cite_dict.keys():
         return f'[[{cite_dict[cit]}]]({cit})'
     else:
@@ -221,12 +222,12 @@ def write_python_from_gloss(
     path_to_write: Path,
     gloss: pd.DataFrame,
     var_list_name: str,
-    overwrite_flag: bool = True
+    overwrite_flag: bool = False
 ):
     inp = ''
     for idx, row in gloss.iterrows():
         inp += f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n"
-    
+
     if overwrite_flag or not os.path.isfile(path_to_write):
         with open(path_to_write, 'w') as f:
             f.write(f'------- Start on {datetime.now()} -------\n\n')
@@ -235,7 +236,7 @@ def write_python_from_gloss(
         with open(path_to_write, 'r') as f_tmp:
             read = f_tmp.read()
         flag_idxs = [m.start() for m in re.finditer('-------', read)]
-        
+
         try:
             compare_block = read[flag_idxs[1] + 9:flag_idxs[2]]
         except:
@@ -247,19 +248,20 @@ def write_python_from_gloss(
             with open(path_to_write, 'r+') as f:
                 f.seek(0, 0)
                 f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
-    
+                print(f'Updated "{var_list_name}"')
+
 def write_odes_from_model(
     path_to_write: Path,
     model: Model,
     overwrite_flag: bool = False
 ):
-    
+
     inp = '```math \n'
     inp += r'   \begin{{align}}'
     inp += '\n'
-    
+
     stoics = model.get_stoichiometries_by_compounds()
-    
+
     for comp, rates in stoics.items():
         line = rf"      {{ode({comp})}} &= "
         for rate, stoi in rates.items():
@@ -270,19 +272,19 @@ def write_odes_from_model(
                     stoi = f'- {abs(stoi)}'
                 else:
                     stoi = f'+ {stoi}'
-            
+
             line += rf'{stoi} \cdot {{{rate}}} '
-            
+
             line = line.replace(r'1 \cdot ', '')
-            
+
         line = line[:-1] + r' \\'
         line += " \n"
-        
+
         inp += line
     inp += r'   \end{{align}}'
     inp += '\n'
     inp += '```\n\n'
-    
+
     if overwrite_flag or not os.path.isfile(path_to_write):
         with open(path_to_write, 'w') as f:
             f.write(f'------- Start on {datetime.now()} -------\n\n')
@@ -291,7 +293,7 @@ def write_odes_from_model(
         with open(path_to_write, 'r') as f_tmp:
             read = f_tmp.read()
         flag_idxs = [m.start() for m in re.finditer('-------', read)]
-        
+
         try:
             compare_block = read[flag_idxs[1] + 9:flag_idxs[2]]
         except:
@@ -303,21 +305,21 @@ def write_odes_from_model(
             with open(path_to_write, 'r+') as f:
                 f.seek(0, 0)
                 f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
-                
+
 def extract_params_from_model(
         model = Model,
         path_to_write = Path
     ):
         params = model.get_parameters()
-        
+
         if os.path.isfile(path_to_write):
             agree = input(f'\nFile "{path_to_write}" already exists. Do you wish to overwrite it?\n[y/[n]] >> ')
             if agree.upper() not in ['Y', 'YES']:
                 print('Okay! Doing nothing.')
                 return
-        
+
         empty_lst = ['' for i in params.keys()]
-        
+
         df = pd.DataFrame({
             'Short Description': empty_lst,
             'Common Abbr.': empty_lst,
@@ -329,7 +331,7 @@ def extract_params_from_model(
             'Reference': empty_lst,
             'Glossary ID': empty_lst,
         })
-        
+
         df.to_csv(
             path_to_write,
             index=False

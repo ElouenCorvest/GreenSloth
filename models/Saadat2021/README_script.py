@@ -49,20 +49,6 @@ update_from_main_gloss(
     model_title=model_title
 )
 
-update_from_main_gloss(
-    main_gloss_path=main_gloss / 'comp_glossary.csv',
-    gloss_path=model_info / 'derived_comps.csv',
-    add_to_main=True,
-    model_title=model_title
-)
-
-update_from_main_gloss(
-    main_gloss_path=main_gloss / 'rates_glossary.csv',
-    gloss_path=model_info / 'rates.csv',
-    add_to_main=True,
-    model_title=model_title
-)
-
 comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
     path=model_info / 'comps.csv',
     omit_col='Glossary ID'
@@ -72,6 +58,13 @@ write_python_from_gloss(
     path_to_write=Path(__file__).parent / 'model_info/comps.txt',
     gloss=comps_table,
     var_list_name='comps_table'
+)
+
+update_from_main_gloss(
+    main_gloss_path=main_gloss / 'comp_glossary.csv',
+    gloss_path=model_info / 'derived_comps.csv',
+    add_to_main=True,
+    model_title=model_title
 )
 
 derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(
@@ -85,6 +78,13 @@ write_python_from_gloss(
     var_list_name='derived_comps_table'
 )
 
+update_from_main_gloss(
+    main_gloss_path=main_gloss / 'rates_glossary.csv',
+    gloss_path=model_info / 'rates.csv',
+    add_to_main=True,
+    model_title=model_title
+)
+
 rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(
     path=model_info / 'rates.csv',
     omit_col='Glossary ID'
@@ -96,12 +96,17 @@ write_python_from_gloss(
     var_list_name='rates_table'
 )
 
+params_table, params_table_tolist, params_table_list = gloss_fromCSV(
+    path=model_info / 'params.csv',
+    cite_dict=cite_dict
+)
+
 # extract_params_from_model(
 #     model=get_model(),
 #     path_to_write=model_info / 'test.csv'
 # )
 
-params_table, params_table_tolist, params_table_list = gloss_fromCSV(model_info / 'params.csv', cite_dict=cite_dict)
+
 
 derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info / 'derived_params.csv')
 
@@ -245,38 +250,38 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>ODE System</summary>
 
-```math 
+```math
    \begin{{align}}
-      {ode(PQ)} &= -{v_PSII} + {v_PQ} - {v_NDH} + {v_b6f} - {v_Cyc} \\ 
-      {ode(H_lu)} &= 0.02 \cdot {v_PSII} + 0.04 \cdot {v_b6f} - 0.0{v_Leak} - 0.04666666666666667 \cdot {v_ATPsynth} \\ 
-      {ode(Fd_ox)} &= 2 \cdot {v_Cyc} + 2 \cdot {v_FNR} - {v_Fdred} + {v_FdTrReduc} \\ 
-      {ode(PC_ox)} &= -2 \cdot {v_b6f} + {v_PSI} \\ 
-      {ode(NADPH_st)} &= 0.032 \cdot {v_FNR} - {v_BPGAdehynase} - {v_MDAreduc} - {v_GR} - {v_NADPHcons} \\ 
-      {ode(LHC)} &= -{v_St21} + {v_St12} \\ 
-      {ode(ATP_st)} &= 0.032 \cdot {v_ATPsynth} - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\ 
-      {ode(Vx)} &= -{v_Deepox} + {v_Epox} \\ 
-      {ode(psbS)} &= -{v_PsbSP} + {v_psbSD} \\ 
-      {ode(RUBP)} &= -{v_RuBisCO} + {v_PRKase} \\ 
-      {ode(PGA)} &= 2 \cdot {v_RuBisCO} - {v_PGK1ase} - {v_pga_ex} \\ 
-      {ode(BPGA)} &= {v_PGK1ase} - {v_BPGAdehynase} \\ 
-      {ode(GAP)} &= {v_BPGAdehynase} - {v_TPIase} - {v_Aldolase_FBP} - {v_TKase_E4P} - {v_TKase_R5P} - {v_gap_ex} \\ 
-      {ode(DHAP)} &= {v_TPIase} - {v_Aldolase_FBP} - {v_Aldolase_SBP} - {v_dhap_ex} \\ 
-      {ode(FBP)} &= {v_Aldolase_FBP} - {v_FBPase} \\ 
-      {ode(F6P)} &= {v_FBPase} - {v_TKase_E4P} - {v_PGIase} \\ 
-      {ode(X5P)} &= {v_TKase_E4P} + {v_TKase_R5P} - {v_RPEase} \\ 
-      {ode(E4P)} &= {v_TKase_E4P} - {v_Aldolase_SBP} \\ 
-      {ode(SBP)} &= {v_Aldolase_SBP} - {v_SBPase} \\ 
-      {ode(S7P)} &= {v_SBPase} - {v_TKase_R5P} \\ 
-      {ode(R5P)} &= {v_TKase_R5P} - {v_Rpiase} \\ 
-      {ode(RU5P)} &= {v_Rpiase} + {v_RPEase} - {v_PRKase} \\ 
-      {ode(G6P)} &= {v_PGIase} - {v_PGMase} \\ 
-      {ode(G1P)} &= {v_PGMase} - {v_starch} \\ 
-      {ode(H2O2)} &= -{v_APXase} + 0.032 \cdot {v_Mehler} \\ 
-      {ode(MDA)} &= 2 \cdot {v_APXase} - 2 \cdot {v_MDAreduc} - 2 \cdot {v_3ASC} \\ 
-      {ode(GSSG)} &= -{v_GR} + {v_DHAR} \\ 
-      {ode(DHA)} &= -{v_DHAR} + {v_3ASC} \\ 
-      {ode(Trx_ox)} &= -{v_FdTrReduc} + 5 \cdot {v_Eact} \\ 
-      {ode(E_CBB_inactive)} &= -5 \cdot {v_Eact} + 5 \cdot {v_Einact} \\ 
+      {ode(PQ)} &= -{v_PSII} + {v_PQ} - {v_NDH} + {v_b6f} - {v_Cyc} \\
+      {ode(H_lu)} &= 0.02 \cdot {v_PSII} + 0.04 \cdot {v_b6f} - 0.0{v_Leak} - 0.04666666666666667 \cdot {v_ATPsynth} \\
+      {ode(Fd_ox)} &= 2 \cdot {v_Cyc} + 2 \cdot {v_FNR} - {v_Fdred} + {v_FdTrReduc} \\
+      {ode(PC_ox)} &= -2 \cdot {v_b6f} + {v_PSI} \\
+      {ode(NADPH_st)} &= 0.032 \cdot {v_FNR} - {v_BPGAdehynase} - {v_MDAreduc} - {v_GR} - {v_NADPHcons} \\
+      {ode(LHC)} &= -{v_St21} + {v_St12} \\
+      {ode(ATP_st)} &= 0.032 \cdot {v_ATPsynth} - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\
+      {ode(Vx)} &= -{v_Deepox} + {v_Epox} \\
+      {ode(psbS)} &= -{v_PsbSP} + {v_psbSD} \\
+      {ode(RUBP)} &= -{v_RuBisCO} + {v_PRKase} \\
+      {ode(PGA)} &= 2 \cdot {v_RuBisCO} - {v_PGK1ase} - {v_pga_ex} \\
+      {ode(BPGA)} &= {v_PGK1ase} - {v_BPGAdehynase} \\
+      {ode(GAP)} &= {v_BPGAdehynase} - {v_TPIase} - {v_Aldolase_FBP} - {v_TKase_E4P} - {v_TKase_R5P} - {v_gap_ex} \\
+      {ode(DHAP)} &= {v_TPIase} - {v_Aldolase_FBP} - {v_Aldolase_SBP} - {v_dhap_ex} \\
+      {ode(FBP)} &= {v_Aldolase_FBP} - {v_FBPase} \\
+      {ode(F6P)} &= {v_FBPase} - {v_TKase_E4P} - {v_PGIase} \\
+      {ode(X5P)} &= {v_TKase_E4P} + {v_TKase_R5P} - {v_RPEase} \\
+      {ode(E4P)} &= {v_TKase_E4P} - {v_Aldolase_SBP} \\
+      {ode(SBP)} &= {v_Aldolase_SBP} - {v_SBPase} \\
+      {ode(S7P)} &= {v_SBPase} - {v_TKase_R5P} \\
+      {ode(R5P)} &= {v_TKase_R5P} - {v_Rpiase} \\
+      {ode(RU5P)} &= {v_Rpiase} + {v_RPEase} - {v_PRKase} \\
+      {ode(G6P)} &= {v_PGIase} - {v_PGMase} \\
+      {ode(G1P)} &= {v_PGMase} - {v_starch} \\
+      {ode(H2O2)} &= -{v_APXase} + 0.032 \cdot {v_Mehler} \\
+      {ode(MDA)} &= 2 \cdot {v_APXase} - 2 \cdot {v_MDAreduc} - 2 \cdot {v_3ASC} \\
+      {ode(GSSG)} &= -{v_GR} + {v_DHAR} \\
+      {ode(DHA)} &= -{v_DHAR} + {v_3ASC} \\
+      {ode(Trx_ox)} &= -{v_FdTrReduc} + 5 \cdot {v_Eact} \\
+      {ode(E_CBB_inactive)} &= -5 \cdot {v_Eact} + 5 \cdot {v_Einact} \\
    \end{{align}}
 ```
 

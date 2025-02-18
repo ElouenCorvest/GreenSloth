@@ -104,9 +104,9 @@
 |Total plastocyanine pool|$\mathrm{PC}^{\mathrm{tot}}$|$\mathrm{PC}^{\mathrm{tot}}$|$4.0$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|PC_tot|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Total ferrodoxin pool|$\mathrm{Fd}^{\mathrm{tot}}$|$\mathrm{Fd}^{\mathrm{tot}}$|$5.0$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|Fd_tot||
 |Total NADP pool|$\mathrm{NADP}^{\mathrm{tot}}$|$\mathrm{NADP}^{\mathrm{tot}}$|$0.8$|$\mathrm{mM}$|NADP_tot|[[2]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
-|Total adenosine phosphate pool|$\mathrm{AP}^{\mathrm{tot}}$|$\mathrm{AP}^{\mathrm{tot}}$|$2.55$|$\mathrm{mM}$|AP_tot|[[3]](Increased from Bionumbers)|
-|Relative pool of PsbS|$\mathrm{PsbS}^{\mathrm{tot}}$|$\mathrm{PsbS}^{\mathrm{tot}}$|$1.0$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|PsbS_tot|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Relative pool of xanthophylls|$\mathrm{X}^{\mathrm{tot}}$|$\mathrm{X}^{\mathrm{tot}}$|$1.0$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|X_tot|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Total adenosine phosphate pool|$\mathrm{AP}^{\mathrm{tot}}$|$\mathrm{AP}^{\mathrm{tot}}$|$2.55$|$\mathrm{mM}$|AP_tot|Increased from Bionumbers|
+|Relative pool of PsbS|$\mathrm{PsbS}^{\mathrm{tot}}$|$\mathrm{PsbS}^{\mathrm{tot}}$|$1.0$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|PsbS_tot|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Relative pool of xanthophylls|$\mathrm{X}^{\mathrm{tot}}$|$\mathrm{X}^{\mathrm{tot}}$|$1.0$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|X_tot|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
 |Rate of non-radiative decay|$k_H$|$k_H$|$5 \times 10^9$|$s^{-1}$|k_H|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Base rate of non-radiative decay|$k_{H_0}$|$k_{H_0}$|$5 \times 10^8$|$s^{-1}$|kH0||
 |Rate of fluorescence|$k_F$|$k_F$|$6.25 \times 10^8$|$s^{-1}$|k_F||
@@ -115,8 +115,8 @@
 |Rate of dephosphorylation of state transition from PSI to PSII|$k_\mathrm{Pph1}$|$k_\mathrm{Pph1}$|$0.0013$|$s^{-1}$|k_Pph1|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Switch point (half-activity of Stt7) for 20% PQ oxidised|$K_{\mathrm{M}_\mathrm{ST}}$|$K_{\mathrm{M}_\mathrm{ST}}$|$0.2$||KM_ST|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Hill coefficient of State transtion from PSII to PSI|$n_\mathrm{ST}$|$n_\mathrm{ST}$|$2.0$||n_ST|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
-|Relative cross section of PSI-LHCl supercomplex|$\sigma _\mathrm{I} ^0$|$\sigma _\mathrm{I} ^0$|$0.37$||sigma0_I|[[5]](https://doi.org/10.1073/pnas.1319164111)|
-|Relative cross section of PSII|$\sigma _\mathrm{II} ^0$|$\sigma _\mathrm{II} ^0$|$0.1$||sigma0_II|[[5]](https://doi.org/10.1073/pnas.1319164111)|
+|Relative cross section of PSI-LHCl supercomplex|$\sigma _\mathrm{I} ^0$|$\sigma _\mathrm{I} ^0$|$0.37$||sigma0_I|[[4]](https://doi.org/10.1073/pnas.1319164111)|
+|Relative cross section of PSII|$\sigma _\mathrm{II} ^0$|$\sigma _\mathrm{II} ^0$|$0.1$||sigma0_II|[[4]](https://doi.org/10.1073/pnas.1319164111)|
 |Rate constant of ATP synthase|$k_\mathrm{ATPsynth}$|$k_\mathrm{ATPsynthase}$|$20.0$|$s^{-1}$|k_ATPsynth|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Internal pool of phosphates, required to calculate ATP equilibrium|$\mathrm{Pi}_{\mathrm{mol}$|$\mathrm{Pi}_{\mathrm{mol}$|$0.01$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|Pi_mol||
 |Standard Gibbs free energy change of ATP formation|$\Delta _\mathrm{f} G^\circ_\mathrm{ATP}$|$\Delta G_{0_{ATP}}$|$30.6$|$\mathrm{kJ}\ \mathrm{mol}^{-1}$|DeltaG0_ATP|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
@@ -129,26 +129,26 @@
 ||$k_\mathrm{PTOX}$|$k_\mathrm{PTOX}$|$0.01$|$\mathrm{mmol^{-1}(mol\ Chl)\,s^{-1}}$|k_PTOX|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$k_\mathrm{PCox}$|$k_\mathrm{PCox}$|$2500.0$|$\mathrm{mmol^{-1}(mol\ Chl)\,s^{-1}}$|k_PCox|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$k_{\mathrm{Fd}_\mathrm{red}}$|$k_{\mathrm{Fd}_\mathrm{red}}$|$2.5 \times 10^5$|$\mathrm{mmol^{-1}(mol\ Chl)\,s^{-1}}$|k_Fdred|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
-|Catalytic constant of FNRase|$k_{\mathrm{cat}\|\mathrm{FNRase}}$|$k_{\mathrm{cat}_\mathrm{FNR}}$|$500.0$|$s^{-1}$|kcat_FNR|[[6]](https://doi.org/10.1046/j.1432-1033.2003.03566.x)|
+|Catalytic constant of FNRase|$k_{\mathrm{cat}\|\mathrm{FNRase}}$|$k_{\mathrm{cat}_\mathrm{FNR}}$|$500.0$|$s^{-1}$|kcat_FNR|[[5]](https://doi.org/10.1046/j.1432-1033.2003.03566.x)|
 |Reaction rate constant of cyclic electron flow|$k_\mathrm{cyc}$|$k_\mathrm{cyc}$|$1.0$|$s^{-1}$|k_cyc||
 |External oxygen pool, corresponds to 250μM.|$\mathrm{O}_{2_\mathrm{ext}}$|$\mathrm{O}_2^\mathrm{ex}$|$8.0$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|O2_ext|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$k_\mathrm{NDH}$|$k_\mathrm{NDH}$|$0.002$|$s^{-1}$|k_NDH|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||||$3.0$||EFNR||
 ||$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}$|$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}$|$1.56$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|KM_FNR_F|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}$|$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}$|$0.22$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|KM_FNR_N|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
-|Fitted quencher factor corresponding to base quenching not associated with protonation or zeaxanthin|$\gamma_0$|$\gamma_0$|$0.1$||gamma_0|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Fitted quencher factor corresponding to fast quenching due to protonation|$\gamma_1$|$\gamma_1$|$0.25$||gamma_1|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Fitted quencher factor corresponding to fastest possible quenching|$\gamma_2$|$\gamma_2$|$0.6$||gamma_2|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Fitted quencher factor corresponding to slow quenching of Zx present despite lack of protonation|$\gamma_3$|$\gamma_3$|$0.15$||gamma_3|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Rate of PsbS deprotonation|$k_\mathrm{Deprotonation}$|$k_\mathrm{Deprotonation}$|$0.0096$|$\mathrm{s}^{-1}$|k_deprot|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Rate of PsbS protonation|$k_\mathrm{Protonation}$|$k_\mathrm{Protonation}$|$0.0096$|$\mathrm{s}^{-1}$|k_prot|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|pKa of PsbS activation, kept the same as for VDA|$K_\mathrm{pHSatLHC}$|$K_\mathrm{pHSatLHC}$|$5.8$||K_pHSatLHC|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Rate constant of de-epoxidation of violaxanthin|$k_\mathrm{kDeepoxV}$|$k_\mathrm{DeepoxV}$|$0.0024$|$\mathrm{s}^{-1}$|k_DV|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Rate constant of epoxidation of violaxanthin|$k_\mathrm{kEpoxZ}$|$k_\mathrm{EpoxZ}$|$0.00024$|$\mathrm{s}^{-1}$|k_EZ|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8|$K_\mathrm{pHSat}$|$K_\mathrm{pHSat}$|$5.8$||K_pHSat|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Hill-coefficient for de-epoxidase acitivity|$\mathrm{nH}_\mathrm{X}$|$\mathrm{k}_{\mathrm{Hill}_\mathrm{X}}$|$5$||nh_x|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Hill-coefficient for PsbS protonation|$\mathrm{nH}_\mathrm{PsbS}$|$\mathrm{k}_{\mathrm{Hill}_\mathrm{L}}$|$3.0$||nh_PsbS|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
-|Half-saturation constant (relative conc. of Zx) for quenching|$K_\mathrm{ZSat}$|$K_\mathrm{ZSat}$|$0.12$||K_ZSat|[[4]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Fitted quencher factor corresponding to base quenching not associated with protonation or zeaxanthin|$\gamma_0$|$\gamma_0$|$0.1$||gamma_0|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Fitted quencher factor corresponding to fast quenching due to protonation|$\gamma_1$|$\gamma_1$|$0.25$||gamma_1|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Fitted quencher factor corresponding to fastest possible quenching|$\gamma_2$|$\gamma_2$|$0.6$||gamma_2|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Fitted quencher factor corresponding to slow quenching of Zx present despite lack of protonation|$\gamma_3$|$\gamma_3$|$0.15$||gamma_3|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Rate of PsbS deprotonation|$k_\mathrm{Deprotonation}$|$k_\mathrm{Deprotonation}$|$0.0096$|$\mathrm{s}^{-1}$|k_deprot|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Rate of PsbS protonation|$k_\mathrm{Protonation}$|$k_\mathrm{Protonation}$|$0.0096$|$\mathrm{s}^{-1}$|k_prot|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|pKa of PsbS activation, kept the same as for VDA|$K_\mathrm{pHSatLHC}$|$K_\mathrm{pHSatLHC}$|$5.8$||K_pHSatLHC|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Rate constant of de-epoxidation of violaxanthin|$k_\mathrm{kDeepoxV}$|$k_\mathrm{DeepoxV}$|$0.0024$|$\mathrm{s}^{-1}$|k_DV|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Rate constant of epoxidation of violaxanthin|$k_\mathrm{kEpoxZ}$|$k_\mathrm{EpoxZ}$|$0.00024$|$\mathrm{s}^{-1}$|k_EZ|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8|$K_\mathrm{pHSat}$|$K_\mathrm{pHSat}$|$5.8$||K_pHSat|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Hill-coefficient for de-epoxidase acitivity|$\mathrm{nH}_\mathrm{X}$|$\mathrm{k}_{\mathrm{Hill}_\mathrm{X}}$|$5$||nh_x|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Hill-coefficient for PsbS protonation|$\mathrm{nH}_\mathrm{PsbS}$|$\mathrm{k}_{\mathrm{Hill}_\mathrm{L}}$|$3.0$||nh_PsbS|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
+|Half-saturation constant (relative conc. of Zx) for quenching|$K_\mathrm{ZSat}$|$K_\mathrm{ZSat}$|$0.12$||K_ZSat|[[3]](https://doi.org/10.1016/j.bbabio.2016.09.003)|
 ||$E^0\mathrm{(QA/QA^-)}$|$E^0\mathrm{(QA/QA^-)}$|$-0.140$|$\mathrm{V}$|E0_QA|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$E^0\mathrm{(PQ/PQH_2)}$|$E^0\mathrm{(PQ/PQH_2)}$|$0.354$|$\mathrm{V}$|E0_PQ|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$E^0\mathrm{(PC/PC^-)}$|$E^0\mathrm{(PC/PC^-)}$|$0.380$|$\mathrm{V}$|E0_PC|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
@@ -213,40 +213,40 @@
 |Activation factor of Starch production by PGA|$K_{\mathrm{act}\|\mathrm{Starch}\|\mathrm{PGA}}$|$K_{\mathrm{ast1}}$|$0.1$||Kact_Starch_PGA|[[2]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
 |Activation factor of Starch production by F6P|$K_{\mathrm{act}\|\mathrm{Starch}\|\mathrm{F6P}}$|$K_{\mathrm{ast2}}$|$0.02$||Kact_Starch_F6P|[[2]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
 |Activation factor of Starch production by FBP|$K_{\mathrm{act}\|\mathrm{Starch}\|\mathrm{FBP}}$|$K_{\mathrm{ast3}}$|$0.02$||Kact_Starch_FBP|[[2]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
-|Arbituary fast rate constant|$k_\mathrm{fast}$|$k$|$8 \times 10^8$|$\mathrm{mM}$|k_fast|[[7]](https://doi.org/10.1093/jexbot/51.suppl_1.319)|
-||$kf_1$|$kf1$|$10000.0$||k_f1|[[8]](Estimated)|
-||$kr_1$|$kr1$|$220.0$||k_r1|[[9]](BRENDA database)|
-||$kf_2$|$kf2$|$10000.0$||k_f2|[[8]](Estimated)|
-||$kr_2$|$kr2$|$4000.0$||k_r2|[[9]](BRENDA database)|
-||$kf_3$|$kf3$|$2510.0$||k_f3|[[9]](BRENDA database)|
-||$kf_4$|$kf4$|$10000.0$||k_f4|[[8]](Estimated)|
-||$kr_4$|$kr4$|$4000.0$||k_r4|[[9]](BRENDA database)|
-||$kf_5$|$kf5$|$2510.0$||k_f5|[[9]](BRENDA database)|
-|Concentration of ascorbate peroxidase|$XT$|$XT$|$0.07$||XT|[[10]](https://doi.org/10.1104/pp.108.133223)|
+|Arbituary fast rate constant|$k_\mathrm{fast}$|$k$|$8 \times 10^8$|$\mathrm{mM}$|k_fast|[[6]](https://doi.org/10.1093/jexbot/51.suppl_1.319)|
+||$kf_1$|$kf1$|$10000.0$||k_f1|Estimated|
+||$kr_1$|$kr1$|$220.0$||k_r1|BRENDA database|
+||$kf_2$|$kf2$|$10000.0$||k_f2|Estimated|
+||$kr_2$|$kr2$|$4000.0$||k_r2|BRENDA database|
+||$kf_3$|$kf3$|$2510.0$||k_f3|BRENDA database|
+||$kf_4$|$kf4$|$10000.0$||k_f4|Estimated|
+||$kr_4$|$kr4$|$4000.0$||k_r4|BRENDA database|
+||$kf_5$|$kf5$|$2510.0$||k_f5|BRENDA database|
+|Concentration of ascorbate peroxidase|$XT$|$XT$|$0.07$||XT|[[7]](https://doi.org/10.1104/pp.108.133223)|
 |Estimated rate constant for summarized hydrogen peroxide production|$k_{\mathrm{Mehler}}$|$k_{\mathrm{Mehler}}$|$1.0$|$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$|k_Mehler||
-|Turnover rate of gluthation reductase|$k_{\mathrm{cat}_{\mathrm{GR}}}$|$k_{\mathrm{cat}_{\mathrm{GR}}}$|$595$|$\mathrm{s}^{-1}$|kcat_GR|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Turnover rate of dehydroascorbate reductase|$k_{\mathrm{cat}_{\mathrm{DHAR}}}$|$k_{\mathrm{cat}_{\mathrm{DHAR}}}$|$142$|$\mathrm{s}^{-1}$|kcat_DHAR|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Rate constant for the spontaneous disproportion of MDA|$k_3$|$k3$|$500.0$|$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$|k3|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Michaelis Menten constant of NADPH|$K_{\mathrm{m}_{\mathrm{NADPH}}}$|$K_{\mathrm{m}_{\mathrm{NADPH}}}$|$3 \times 10^{-3}$|$\mathrm{mM}$|Km_NADPH|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Michaelis Menten constant of oxidized gluthation|$K_{\mathrm{m}_{\mathrm{GSSG}}}$|$K_{\mathrm{m}_{\mathrm{GSSG}}}$|$0.2$|$\mathrm{mM}$|Km_GSSG|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Michaelis Menten constant of dehydroascorbate|$K_{\mathrm{m}_{\mathrm{DHA}}}$|$K_{\mathrm{m}_{\mathrm{DHA}}}$|$70 \times 10^{-3}$|$\mathrm{mM}$|Km_DHA|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Michaelis Menten constant of reduced gluthation|$K_{\mathrm{m}_{\mathrm{GSH}}}$|$K_{\mathrm{m}_{\mathrm{GSH}}}$|$2.5$|$\mathrm{mM}$|Km_GSH|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Dissociation constant of dehydroascorbate reductase|$K_{\mathrm{DHAR}}$|$K$|$0.5$|$\mathrm{mM}^2$|K_DHAR|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Concentration of gluthatione reductase|$\mathrm{GR}_0$|$\mathrm{GR}_0$|$1.4 \times 10^{-3}$|$\mathrm{mM}$|GR_0|[[10]](https://doi.org/10.1104/pp.108.133223)|
-|Concentration of dehydroascorbate reductase|$\mathrm{DHAR}_0$|$\mathrm{DHAR}_0$|$1.7 \times 10^{-3}$|$\mathrm{mM}$|DHAR_0|[[10]](https://doi.org/10.1104/pp.108.133223)|
+|Turnover rate of gluthation reductase|$k_{\mathrm{cat}_{\mathrm{GR}}}$|$k_{\mathrm{cat}_{\mathrm{GR}}}$|$595$|$\mathrm{s}^{-1}$|kcat_GR|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Turnover rate of dehydroascorbate reductase|$k_{\mathrm{cat}_{\mathrm{DHAR}}}$|$k_{\mathrm{cat}_{\mathrm{DHAR}}}$|$142$|$\mathrm{s}^{-1}$|kcat_DHAR|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Rate constant for the spontaneous disproportion of MDA|$k_3$|$k3$|$500.0$|$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$|k3|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Michaelis Menten constant of NADPH|$K_{\mathrm{m}_{\mathrm{NADPH}}}$|$K_{\mathrm{m}_{\mathrm{NADPH}}}$|$3 \times 10^{-3}$|$\mathrm{mM}$|Km_NADPH|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Michaelis Menten constant of oxidized gluthation|$K_{\mathrm{m}_{\mathrm{GSSG}}}$|$K_{\mathrm{m}_{\mathrm{GSSG}}}$|$0.2$|$\mathrm{mM}$|Km_GSSG|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Michaelis Menten constant of dehydroascorbate|$K_{\mathrm{m}_{\mathrm{DHA}}}$|$K_{\mathrm{m}_{\mathrm{DHA}}}$|$70 \times 10^{-3}$|$\mathrm{mM}$|Km_DHA|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Michaelis Menten constant of reduced gluthation|$K_{\mathrm{m}_{\mathrm{GSH}}}$|$K_{\mathrm{m}_{\mathrm{GSH}}}$|$2.5$|$\mathrm{mM}$|Km_GSH|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Dissociation constant of dehydroascorbate reductase|$K_{\mathrm{DHAR}}$|$K$|$0.5$|$\mathrm{mM}^2$|K_DHAR|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Concentration of gluthatione reductase|$\mathrm{GR}_0$|$\mathrm{GR}_0$|$1.4 \times 10^{-3}$|$\mathrm{mM}$|GR_0|[[7]](https://doi.org/10.1104/pp.108.133223)|
+|Concentration of dehydroascorbate reductase|$\mathrm{DHAR}_0$|$\mathrm{DHAR}_0$|$1.7 \times 10^{-3}$|$\mathrm{mM}$|DHAR_0|[[7]](https://doi.org/10.1104/pp.108.133223)|
 |Total concentration of reduced and oxidized glutathione|$\mathrm{Gluthation}^{\mathrm{tot}}$|$\mathrm{Gluthation}_{\mathrm{total}}$|$10$|$\mathrm{mM}$|Glutathion_total||
 |Total concentration of reduced and oxidized ascorbate|$\mathrm{Ascorbate}^{\mathrm{tot}}$|$\mathrm{Ascorbate}_{\mathrm{total}}$|$10$|$\mathrm{mM}$|Ascorbate_total||
-|Turnover rate of monodehydroascorbate reductase|$k_{\mathrm{cat}_{\mathrm{MDAR}}}$|$k_{\mathrm{cat}_{\mathrm{MDAR}}}$|$300.0$|$\mathrm{s}^{-1}$|kcat_MDAR|[[11]](https://doi.org/10.1186/s12918-015-0239-y)|
-|Michaelis-menten constant of monodehydroascorbate for the conversion to NADPH|$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$|$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$|$23 \times 10^{-3}$|$\mathrm{mM}$|Km_MDAR_NADPH|[[11]](https://doi.org/10.1186/s12918-015-0239-y)|
-|Michaelis-menten constant of monodehydroascorbate for the conversion to MDA|$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$|$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$|$1.4 \times 10^{-3}$|$\mathrm{mM}$|Km_MDAR_MDA|[[11]](https://doi.org/10.1186/s12918-015-0239-y)|
-|Concentration of monodehydroascorbate reductase|$\mathrm{MDAR}_0$|$\mathrm{MDAR}_0$|$2 \times 10^{-3}$|$\mathrm{mM}$|MDAR_0|[[11]](https://doi.org/10.1186/s12918-015-0239-y)|
-|General consumption rate of ATP|$k_{\mathrm{ex}_{\mathrm{ATP}}}$|$k_{\mathrm{ex}_{\mathrm{atp}}}$|$0.2$|$\mathrm{s}^{-1}$|k_ex_atp|[[8]](Estimated)|
-|General consumption rate of NADPH|$k_{\mathrm{ex}_{\mathrm{NADPH}}}$|$k_{\mathrm{ex}_{\mathrm{nadph}}}$|$0.2$|$\mathrm{s}^{-1}$|k_ex_nadph|[[8]](Estimated)|
+|Turnover rate of monodehydroascorbate reductase|$k_{\mathrm{cat}_{\mathrm{MDAR}}}$|$k_{\mathrm{cat}_{\mathrm{MDAR}}}$|$300.0$|$\mathrm{s}^{-1}$|kcat_MDAR|[[8]](https://doi.org/10.1186/s12918-015-0239-y)|
+|Michaelis-menten constant of monodehydroascorbate for the conversion to NADPH|$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$|$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$|$23 \times 10^{-3}$|$\mathrm{mM}$|Km_MDAR_NADPH|[[8]](https://doi.org/10.1186/s12918-015-0239-y)|
+|Michaelis-menten constant of monodehydroascorbate for the conversion to MDA|$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$|$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$|$1.4 \times 10^{-3}$|$\mathrm{mM}$|Km_MDAR_MDA|[[8]](https://doi.org/10.1186/s12918-015-0239-y)|
+|Concentration of monodehydroascorbate reductase|$\mathrm{MDAR}_0$|$\mathrm{MDAR}_0$|$2 \times 10^{-3}$|$\mathrm{mM}$|MDAR_0|[[8]](https://doi.org/10.1186/s12918-015-0239-y)|
+|General consumption rate of ATP|$k_{\mathrm{ex}_{\mathrm{ATP}}}$|$k_{\mathrm{ex}_{\mathrm{atp}}}$|$0.2$|$\mathrm{s}^{-1}$|k_ex_atp|Estimated|
+|General consumption rate of NADPH|$k_{\mathrm{ex}_{\mathrm{NADPH}}}$|$k_{\mathrm{ex}_{\mathrm{nadph}}}$|$0.2$|$\mathrm{s}^{-1}$|k_ex_nadph|Estimated|
 |Relative total concentration of thioredoxin|$\mathrm{Thioredoxin}^{\mathrm{tot}}$|$\mathrm{thioredoxin}_\mathrm{tot}$|$1$||thioredoxin_tot||
 |Estimated maximal concentration of CBB enzymes|$\mathrm{Enz}_{\mathrm{cbb}_\mathrm{tot}}$|$e_{\mathrm{cbb}_\mathrm{tot}}$|$6$|$\mathrm{mM}$|e_cbb_tot||
-|Rate constant of ferrodoxin thioredoxin reductase|$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$|$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$|$1$|$\mathrm{s}^{-1}$|k_fd_tr_reductase|[[8]](Estimated)|
-|Rate constant of CBB activation|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$|$1$||k_e_cbb_activation|[[8]](Estimated)|
-|Rate constant of CBB relaxation|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$|$0.1$|$\mathrm{s}^{-1}$|k_e_cbb_relaxation|[[8]](Estimated)|
+|Rate constant of ferrodoxin thioredoxin reductase|$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$|$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$|$1$|$\mathrm{s}^{-1}$|k_fd_tr_reductase|Estimated|
+|Rate constant of CBB activation|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$|$1$||k_e_cbb_activation|Estimated|
+|Rate constant of CBB relaxation|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$|$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$|$0.1$|$\mathrm{s}^{-1}$|k_e_cbb_relaxation|Estimated|
 
 #### Derived Parameters
 
