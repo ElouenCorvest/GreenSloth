@@ -40,6 +40,7 @@ model_doi = 'https://doi.org/10.3389/fpls.2021.750580'
 cite_dict = dict()
 
 model_info = Path(__file__).parent / 'model_info'
+python_written = model_info / 'python_written'
 main_gloss = Path(__file__).parents[2] / 'Templates'
 
 update_from_main_gloss(
@@ -55,7 +56,7 @@ comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
 )
 
 write_python_from_gloss(
-    path_to_write=Path(__file__).parent / 'model_info/comps.txt',
+    path_to_write=python_written / 'comps.txt',
     gloss=comps_table,
     var_list_name='comps_table'
 )
@@ -73,7 +74,7 @@ derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = glos
 )
 
 write_python_from_gloss(
-    path_to_write=Path(__file__).parent / 'model_info/derived_comps.txt',
+    path_to_write=python_written / 'derived_comps.txt',
     gloss=derived_comps_table,
     var_list_name='derived_comps_table'
 )
@@ -91,7 +92,7 @@ rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(
 )
 
 write_python_from_gloss(
-    path_to_write=Path(__file__).parent / 'model_info/rates.txt',
+    path_to_write=python_written / 'rates.txt',
     gloss=rates_table,
     var_list_name='rates_table'
 )
@@ -101,17 +102,21 @@ params_table, params_table_tolist, params_table_list = gloss_fromCSV(
     cite_dict=cite_dict
 )
 
+write_python_from_gloss(
+    path_to_write= python_written / 'params.txt',
+    gloss=params_table,
+    var_list_name='params_table'
+)
+
 # extract_params_from_model(
 #     model=get_model(),
 #     path_to_write=model_info / 'test.csv'
 # )
 
-
-
 derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info / 'derived_params.csv')
 
 write_odes_from_model(
-    path_to_write=model_info / 'odes.txt',
+    path_to_write= python_written / 'odes.txt',
     model=get_model(),
 )
 
@@ -226,6 +231,159 @@ v_3ASC = remove_math(rates_table, r'$v_{\mathrm{3ASC}}$')
 v_Eact = remove_math(rates_table, r'$v_{\mathrm{Eact}}$')
 v_Einact = remove_math(rates_table, r'$v_{\mathrm{Einact}}$')
 
+# -- Parameters --
+
+convf = remove_math(params_table, r'$\mathrm{convf}$')
+PSII_tot = remove_math(params_table, r'$\mathrm{PSII}^{\mathrm{tot}}$')
+PSI_tot = remove_math(params_table, r'$\mathrm{PSI}^{\mathrm{tot}}$')
+PQ_tot = remove_math(params_table, r'$\mathrm{PQ}^{\mathrm{tot}}$')
+PC_tot = remove_math(params_table, r'$\mathrm{PC}^{\mathrm{tot}}$')
+Fd_tot = remove_math(params_table, r'$\mathrm{Fd}^{\mathrm{tot}}$')
+NADP_tot = remove_math(params_table, r'$\mathrm{NADP}^{\mathrm{tot}}$')
+AP_tot = remove_math(params_table, r'$\mathrm{AP}^{\mathrm{tot}}$')
+PsbS_tot = remove_math(params_table, r'$\mathrm{PsbS}^{\mathrm{tot}}$')
+X_tot = remove_math(params_table, r'$\mathrm{X}^{\mathrm{tot}}$')
+k_H = remove_math(params_table, r'$k_H$')
+kH0 = remove_math(params_table, r'$k_{H_0}$')
+k_F = remove_math(params_table, r'$k_F$')
+k2 = remove_math(params_table, r'$k_2$')
+k_Stt7 = remove_math(params_table, r'$k_\mathrm{Stt7}$')
+k_Pph1 = remove_math(params_table, r'$k_\mathrm{Pph1}$')
+KM_ST = remove_math(params_table, r'$K_{\mathrm{M}_\mathrm{ST}}$')
+n_ST = remove_math(params_table, r'$n_\mathrm{ST}$')
+sigma0_I = remove_math(params_table, r'$\sigma _\mathrm{I} ^0$')
+sigma0_II = remove_math(params_table, r'$\sigma _\mathrm{II} ^0$')
+k_ATPsynth = remove_math(params_table, r'$k_\mathrm{ATPsynthase}$')
+Pi_mol = remove_math(params_table, r'$\mathrm{Pi}_\mathrm{mol}$')
+DeltaG0_ATP = remove_math(params_table, r'$\Delta G_{0_{ATP}}$')
+HPR = remove_math(params_table, r'$\mathrm{HPR}$')
+pH_stroma = remove_math(params_table, r'$\mathrm{pH}_\mathrm{stroma}$')
+k_Leak = remove_math(params_table, r'$k_\mathrm{leak}$')
+b_H = remove_math(params_table, r'$b_\mathrm{H}$')
+k_PQred = remove_math(params_table, r'$k_{\mathrm{PQ}_\mathrm{red}}$')
+k_Cytb6f = remove_math(params_table, r'$k_\mathrm{Cytb6f}$')
+k_PTOX = remove_math(params_table, r'$k_\mathrm{PTOX}$')
+k_PCox = remove_math(params_table, r'$k_\mathrm{PCox}$')
+k_Fdred = remove_math(params_table, r'$k_{\mathrm{Fd}_\mathrm{red}}$')
+kcat_FNR = remove_math(params_table, r'$k_{\mathrm{cat}_\mathrm{FNR}}$')
+k_cyc = remove_math(params_table, r'$k_\mathrm{cyc}$')
+O2_ext = remove_math(params_table, r'$\mathrm{O}_2^\mathrm{ex}$')
+k_NDH = remove_math(params_table, r'$k_\mathrm{NDH}$')
+EFNR = remove_math(params_table, r'')
+KM_FNR_F = remove_math(params_table, r'$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}$')
+KM_FNR_N = remove_math(params_table, r'$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}$')
+gamma_0 = remove_math(params_table, r'$\gamma_0$')
+gamma_1 = remove_math(params_table, r'$\gamma_1$')
+gamma_2 = remove_math(params_table, r'$\gamma_2$')
+gamma_3 = remove_math(params_table, r'$\gamma_3$')
+k_deprot = remove_math(params_table, r'$k_\mathrm{Deprotonation}$')
+k_prot = remove_math(params_table, r'$k_\mathrm{Protonation}$')
+K_pHSatLHC = remove_math(params_table, r'$K_\mathrm{pHSatLHC}$')
+k_DV = remove_math(params_table, r'$k_\mathrm{DeepoxV}$')
+k_EZ = remove_math(params_table, r'$k_\mathrm{EpoxZ}$')
+K_pHSat = remove_math(params_table, r'$K_\mathrm{pHSat}$')
+nh_x = remove_math(params_table, r'$\mathrm{k}_{\mathrm{Hill}_\mathrm{X}}$')
+nh_PsbS = remove_math(params_table, r'$\mathrm{k}_{\mathrm{Hill}_\mathrm{L}}$')
+K_ZSat = remove_math(params_table, r'$K_\mathrm{ZSat}$')
+E0_QA = remove_math(params_table, r'$E^0\mathrm{(QA/QA^-)}$')
+E0_PQ = remove_math(params_table, r'$E^0\mathrm{(PQ/PQH_2)}$')
+E0_PC = remove_math(params_table, r'$E^0\mathrm{(PC/PC^-)}$')
+E0_P700 = remove_math(params_table, r'$E^0\mathrm{(P_{700}^+/P_{700})}$')
+E0_FA = remove_math(params_table, r'$E^0\mathrm{(FA/FA^-)}$')
+E0_Fd = remove_math(params_table, r'$E^0\mathrm{(Fd/Fd^-)}$')
+E0_NADP = remove_math(params_table, r'$E^0\mathrm{(NADP^+/NADPH)}$')
+F = remove_math(params_table, r'$F$')
+R = remove_math(params_table, r'$R$')
+T = remove_math(params_table, r'$T$')
+pfd = remove_math(params_table, r'$\mathrm{PFD}$')
+Ton = remove_math(params_table, r'$t_{\mathrm{anoxia}}^\mathrm{on}$')
+Toff = remove_math(params_table, r'$t_{\mathrm{anoxia}}^\mathrm{off}$')
+ox = remove_math(params_table, r'$\mathrm{ox}$')
+CO2 = remove_math(params_table, r'$\mathrm{CO}_2$')
+P_tot = remove_math(params_table, r'$\mathrm{P}^{\mathrm{tot}}$')
+Pext = remove_math(params_table, r'$\mathrm{P}_\mathrm{ext}$')
+V_maxbase_rubisco = remove_math(params_table, r'$V_{1_{\mathrm{base}}}$')
+V_maxbase_fbpase = remove_math(params_table, r'$V_{6_{\mathrm{base}}}$')
+V_maxbase_sbpase = remove_math(params_table, r'$V_{9_{\mathrm{base}}}$')
+V_maxbase_prkase = remove_math(params_table, r'$V_{13_{\mathrm{base}}}$')
+V_maxbase_starch = remove_math(params_table, r'$V_{\mathrm{st}_{\mathrm{base}}}$')
+Vmax_ex = remove_math(params_table, r'$V_{\mathrm{ex}}$')
+K_PGK1ase = remove_math(params_table, r'$q_2$')
+K_BPGAdehynase = remove_math(params_table, r'$q_3$')
+K_TPIase = remove_math(params_table, r'$q_4$')
+K_Aldolase_FBP = remove_math(params_table, r'$q_5$')
+K_TKase_E4P = remove_math(params_table, r'$q_7$')
+K_Aldolase_SBP = remove_math(params_table, r'$q_8$')
+K_TKase_R5P = remove_math(params_table, r'$q_{10}$')
+K_Rpiase = remove_math(params_table, r'$q_{11}$')
+K_RPEase = remove_math(params_table, r'$q_{12}$')
+K_PGIase = remove_math(params_table, r'$q_{14}$')
+K_PGMase = remove_math(params_table, r'$q_{15}$')
+Km_RuBisCO_RUBP = remove_math(params_table, r'$K_{\mathrm{m}1}$')
+Km_RuBisCO_CO2 = remove_math(params_table, r'$K_{\mathrm{mCO2}}$')
+Km_FBPase = remove_math(params_table, r'$K_{\mathrm{m}6}$')
+Km_SBPase = remove_math(params_table, r'$K_{\mathrm{m}9}$')
+Km_PRKase_RU5P = remove_math(params_table, r'$K_{\mathrm{m}131}$')
+Km_PRKase_ATP = remove_math(params_table, r'$K_{\mathrm{m}132}$')
+Km_Starch_G1P = remove_math(params_table, r'$K_{\mathrm{mst}1}$')
+Km_Starch_ATP = remove_math(params_table, r'$K_{\mathrm{mst}2}$')
+K_diss_PGA = remove_math(params_table, r'$K_{\mathrm{pga}}$')
+K_diss_GAP = remove_math(params_table, r'$K_{\mathrm{gap}}$')
+K_diss_DHAP = remove_math(params_table, r'$K_{\mathrm{dhap}}$')
+K_diss_Pi = remove_math(params_table, r'$K_{\mathrm{pi}}$')
+K_diss_Pext = remove_math(params_table, r'$K_{\mathrm{pxt}}$')
+Ki_RuBisCO_PGA = remove_math(params_table, r'$K_{\mathrm{i}11}$')
+Ki_RuBisCO_FBP = remove_math(params_table, r'$K_{\mathrm{i}12}$')
+Ki_RuBisCO_SBP = remove_math(params_table, r'$K_{\mathrm{i}13}$')
+Ki_RuBisCO_Pi = remove_math(params_table, r'$K_{\mathrm{i}14}$')
+Ki_RuBisCO_NADPH = remove_math(params_table, r'$K_{\mathrm{i}15}$')
+Ki_FBPase_F6P = remove_math(params_table, r'$K_{\mathrm{i}61}$')
+Ki_FBPase_Pi = remove_math(params_table, r'$K_{\mathrm{i}62}$')
+Ki_SBPase_Pi = remove_math(params_table, r'$K_{\mathrm{i}9}$')
+Ki_PRKase_PGA = remove_math(params_table, r'$K_{\mathrm{i}131}$')
+Ki_PRKase_RuBP = remove_math(params_table, r'$K_{\mathrm{i}132}$')
+Ki_PRKase_Pi = remove_math(params_table, r'$K_{\mathrm{i}133}$')
+Kiunc_PRKase_ADP = remove_math(params_table, r'$K_{\mathrm{i}134}$')
+Kicom_PRKase_ADP = remove_math(params_table, r'$K_{\mathrm{i}135}$')
+Ki_Starch_ADP = remove_math(params_table, r'$K_{\mathrm{ist}}$')
+Kact_Starch_PGA = remove_math(params_table, r'$K_{\mathrm{ast1}}$')
+Kact_Starch_F6P = remove_math(params_table, r'$K_{\mathrm{ast2}}$')
+Kact_Starch_FBP = remove_math(params_table, r'$K_{\mathrm{ast3}}$')
+k_fast = remove_math(params_table, r'$k$')
+k_f1 = remove_math(params_table, r'$kf1$')
+k_r1 = remove_math(params_table, r'$kr1$')
+k_f2 = remove_math(params_table, r'$kf2$')
+k_r2 = remove_math(params_table, r'$kr2$')
+k_f3 = remove_math(params_table, r'$kf3$')
+k_f4 = remove_math(params_table, r'$kf4$')
+k_r4 = remove_math(params_table, r'$kr4$')
+k_f5 = remove_math(params_table, r'$kf5$')
+XT = remove_math(params_table, r'$XT$')
+k_Mehler = remove_math(params_table, r'$k_{\mathrm{Mehler}}$')
+kcat_GR = remove_math(params_table, r'$k_{\mathrm{cat}_{\mathrm{GR}}}$')
+kcat_DHAR = remove_math(params_table, r'$k_{\mathrm{cat}_{\mathrm{DHAR}}}$')
+k3 = remove_math(params_table, r'$k3$')
+Km_NADPH = remove_math(params_table, r'$K_{\mathrm{m}_{\mathrm{NADPH}}}$')
+Km_GSSG = remove_math(params_table, r'$K_{\mathrm{m}_{\mathrm{GSSG}}}$')
+Km_DHA = remove_math(params_table, r'$K_{\mathrm{m}_{\mathrm{DHA}}}$')
+Km_GSH = remove_math(params_table, r'$K_{\mathrm{m}_{\mathrm{GSH}}}$')
+K_DHAR = remove_math(params_table, r'$K$')
+GR_0 = remove_math(params_table, r'$\mathrm{GR}_0$')
+DHAR_0 = remove_math(params_table, r'$\mathrm{DHAR}_0$')
+Glutathion_total = remove_math(params_table, r'$\mathrm{Gluthation}_{\mathrm{total}}$')
+Ascorbate_total = remove_math(params_table, r'$\mathrm{Ascorbate}_{\mathrm{total}}$')
+kcat_MDAR = remove_math(params_table, r'$k_{\mathrm{cat}_{\mathrm{MDAR}}}$')
+Km_MDAR_NADPH = remove_math(params_table, r'$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$')
+Km_MDAR_MDA = remove_math(params_table, r'$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$')
+MDAR_0 = remove_math(params_table, r'$\mathrm{MDAR}_0$')
+k_ex_atp = remove_math(params_table, r'$k_{\mathrm{ex}_{\mathrm{atp}}}$')
+k_ex_nadph = remove_math(params_table, r'$k_{\mathrm{ex}_{\mathrm{nadph}}}$')
+thioredoxin_tot = remove_math(params_table, r'$\mathrm{thioredoxin}_\mathrm{tot}$')
+e_cbb_tot = remove_math(params_table, r'$e_{\mathrm{cbb}_\mathrm{tot}}$')
+k_fd_tr_reductase = remove_math(params_table, r'$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$')
+k_e_cbb_activation = remove_math(params_table, r'$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$')
+k_e_cbb_relaxation = remove_math(params_table, r'$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$')
+
 ###### Making README File ######
 
 mdFile = MdUtils(file_name=f'{os.path.dirname(__file__)}/README.md')
@@ -253,12 +411,12 @@ mdFile.new_paragraph(fr"""
 ```math
    \begin{{align}}
       {ode(PQ)} &= -{v_PSII} + {v_PQ} - {v_NDH} + {v_b6f} - {v_Cyc} \\
-      {ode(H_lu)} &= 0.02 \cdot {v_PSII} + 0.04 \cdot {v_b6f} - 0.0{v_Leak} - 0.04666666666666667 \cdot {v_ATPsynth} \\
+      {ode(H_lu)} &= \frac{{1}}{b_H} \cdot \left(  2 \cdot {v_PSII} + 4 \cdot {v_b6f} - {v_Leak} - {HPR} \cdot {v_ATPsynth} \right) \\
       {ode(Fd_ox)} &= 2 \cdot {v_Cyc} + 2 \cdot {v_FNR} - {v_Fdred} + {v_FdTrReduc} \\
       {ode(PC_ox)} &= -2 \cdot {v_b6f} + {v_PSI} \\
-      {ode(NADPH_st)} &= 0.032 \cdot {v_FNR} - {v_BPGAdehynase} - {v_MDAreduc} - {v_GR} - {v_NADPHcons} \\
+      {ode(NADPH_st)} &= {convf} \cdot {v_FNR} - {v_BPGAdehynase} - {v_MDAreduc} - {v_GR} - {v_NADPHcons} \\
       {ode(LHC)} &= -{v_St21} + {v_St12} \\
-      {ode(ATP_st)} &= 0.032 \cdot {v_ATPsynth} - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\
+      {ode(ATP_st)} &= {convf} \cdot {v_ATPsynth} - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\
       {ode(Vx)} &= -{v_Deepox} + {v_Epox} \\
       {ode(psbS)} &= -{v_PsbSP} + {v_psbSD} \\
       {ode(RUBP)} &= -{v_RuBisCO} + {v_PRKase} \\
@@ -290,7 +448,28 @@ mdFile.new_paragraph(fr"""
 
 mdFile.new_header(4, 'Conserved quantities')
 
-# mdFile.new_table(columns = len(derived_comps_table.columns), rows = len(derived_comps_table_tolist), text = derived_comps_table_list)
+mdFile.new_table(columns = len(derived_comps_table.columns), rows = len(derived_comps_table_tolist), text = derived_comps_table_list)
+
+mdFile.new_paragraph(fr"""
+
+<details>
+<summary> Calculations </summary>
+
+```math
+    \begin{{align}}
+        {PQH_2} &= {PQ_tot} - {PQ} \\
+        {PC_red} &= {PC_tot} - {PC_ox} \\
+        {Fd_red} &= {Fd_tot} - {Fd_ox} \\
+        {ADP_st} &= {AP_tot} - {ATP_st} \\
+        {NADP} &= {NADP_tot} - {NADPH_st} \\
+        {Pi_st} &= {P_tot} - \left({PGA} + 2 \cdot {BPGA} + {GAP} + {DHAP} + 2 \cdot {FBP} + {F6P} + {G6P} + {G1P} + 2 \cdot {SBP} + {S7P} + {E4P} + {X5P} + {R5P} + 2 \cdot {RUBP} + {RU5P} + {ATP_st} \right) \\
+
+    \end{{align}}
+```
+
+</details>
+
+                     """)
 
 # mdFile.new_paragraph(fr"""
 
