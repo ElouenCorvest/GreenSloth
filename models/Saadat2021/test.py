@@ -3,6 +3,7 @@ from models import get_model
 from pathlib import Path
 import os
 import pandas as pd
+from glossary_utils.glossary import export_params
 
 def check_unused_params(
     m: Model
@@ -32,8 +33,13 @@ def check_unused_params(
 
     return unused_params, double_check, triple_check
 
-print(check_unused_params(get_model())[2])
+# print(check_unused_params(get_model())[2])
 
-df = pd.read_csv('/home/elouen/Documents/PhotoModelBase/models/Saadat2021/model_info/params.csv', keep_default_na=False)
-df = df[~df['Python Var'].isin(check_unused_params(get_model())[2])]
-df.to_csv('/home/elouen/Documents/PhotoModelBase/models/Saadat2021/model_info/params.csv', na_rep = '', index=False)
+# df = pd.read_csv('/home/elouen/Documents/PhotoModelBase/models/Saadat2021/model_info/params.csv', keep_default_na=False)
+# df = df[~df['Python Var'].isin(check_unused_params(get_model())[2])]
+# df.to_csv('/home/elouen/Documents/PhotoModelBase/models/Saadat2021/model_info/params.csv', na_rep = '', index=False)
+
+export_params(
+    '/home/elouen/Documents/PhotoModelBase/models/Saadat2021/model_info/params.csv',
+    path_to_write='/home/elouen/Documents/PhotoModelBase/models/Saadat2021/model_info/python_written/model_params.txt',
+)

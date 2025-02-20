@@ -8,3 +8,4 @@ Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",$\mathrm{
 Inhibition factor of the triose phosphate translocators,$\mathrm{IF}_\mathrm{3P}$,$\mathrm{N}$,,IF_3P,40
 Zeaxanthin concentration,$\mathrm{Zx}$,$\mathrm{Zx}$,CPD1F-130,Zx,10
 Concentration of protonated psbS protein,$\mathrm{psbS^P}$,$\mathrm{PsbS^P}$,AT1G44575,PsbSP,9
+Cross section of PSII,$\mathrm{PSII_{cross}}$,$\mathrm{PSII_{cross}}$,,psIIcross,

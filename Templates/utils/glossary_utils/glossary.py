@@ -336,3 +336,55 @@ def extract_params_from_model(
             path_to_write,
             index=False
         )
+
+def mathstr_to_py(s):
+    if r'\frac' in s:
+        s = s.replace(r'\frac{', '')
+        s = s.replace('}{', ' / ')
+    for i in [r' \times 10^', r' \cdot 10^']:
+        s = s.replace(i, 'e')
+    for i in ['$', '{', '}', r'\mathrm']:
+        s = s.replace(i, '')
+    for i in [r'\times', r'\cdot']:
+        s = s.replace(i, '*')
+    return fr'{s}'
+
+def unitstr_to_py(s):
+    s = s.replace(r'\mu ', 'µ')
+    for i in [r'\mathrm', r'\left', r'\right', '^', "\\", '$', '{', '}']:
+        s = s.replace(i, '')
+    return fr'[{s}]'
+
+def export_params(
+    path_to_params: Path,
+    path_to_write: Path,
+    overwrite_flag = False,
+):
+    df = pd.read_csv(path_to_params, keep_default_na=False)
+
+    inp = ''
+    for idx, row in df.iterrows():
+        inp += f"'{row['Python Var']}': {mathstr_to_py(row['Value'])},     # {unitstr_to_py(row['Unit'])} {row['Short Description']} \n"
+    inp += '\n'
+
+    if overwrite_flag or not os.path.isfile(path_to_write):
+        with open(path_to_write, 'w') as f:
+            f.write(f'------- Start on {datetime.now()} -------\n\n')
+            f.write(inp)
+    else:
+        with open(path_to_write, 'r') as f_tmp:
+            read = f_tmp.read()
+        flag_idxs = [m.start() for m in re.finditer('-------', read)]
+
+        try:
+            compare_block = read[flag_idxs[1] + 9:flag_idxs[2]]
+        except:
+            compare_block = read[flag_idxs[1] + 9:]
+
+        if compare_block == inp:
+            return
+        else:
+            with open(path_to_write, 'r+') as f:
+                f.seek(0, 0)
+                f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
+                print(f'Updated Params to Python')

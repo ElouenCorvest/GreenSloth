@@ -469,51 +469,18 @@ mdFile.new_paragraph(fr"""
 
 </details>
 
+<details>
+<summary> Quasi-steady state approximation used to caalculate the rate of PSII </summary>
+
+```math
+    \begin{{align}}
+        - \left( {kl} \right)
+    \end{{align}}
+```
+
+</details>
+
                      """)
-
-# mdFile.new_paragraph(fr"""
-
-# <details>
-# <summary>Open me for the calculations of the conserved quantities!</summary>
-
-# ```math
-#     \begin{{align}}
-#         {PSII_tot} &= {B_0} + {B_1} + {B_2} + {B_3} \\
-#         {PQ_tot} &= {PQ} + {PQH_2} \\
-#         {AP_tot} &= {ATP} + {ADP} \\
-#         {PsbS_tot} &= {PsbS} + {PsbSP} \\
-#         {X_tot} &= {Vx} + {Zx} \\
-#         {pH_lu} &= - \mathrm{{log}}_{{10}}\left( {H} \cdot 2.5 \times 10^{{-4}} \right)
-#     \end{{align}}
-# ```
-
-# <details>
-# <summary>Calculation of Quencher</summary>
-
-# ```math
-#     \begin{{align}}
-#         Q &= {gamma_0} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbS} + {gamma_1} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) \cdot {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbS} \\
-#     \end{{align}}
-# ```
-
-# </details>
-
-# <details>
-# <summary>Quasi steady-state approximation to calculate the rate of PSII</summary>
-
-# ```math
-#     \begin{{align}}
-#         0 &= - \left( {pfd} + \frac{{{k_PQred}}}{{{K_eqQAPQ}}} \cdot {PQ} \right) \cdot {B_0} + \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_1} + {k_PQred} \cdot {PQH_2} \cdot {B_3} \\
-#         0 &= {pfd} \cdot {B_0} - \left( {k_H} \cdot Q + {k_F} + {k_P} \right) \cdot {B_1} \\
-#         0 &= {pfd} \cdot {B_2} - \left( {k_H} \cdot Q + {k_F} \right) \cdot {B_3}
-#     \end{{align}}
-# ```
-
-# </details>
-
-# </details>
-
-#                      """)
 
 mdFile.new_header(3, 'Parameters')
 
@@ -545,27 +512,20 @@ mdFile.new_header(3, 'Reaction Rates')
 
 mdFile.new_table(columns = len(rates_table.columns), rows = len(rates_table_tolist), text = rates_table_list)
 
-# mdFile.new_paragraph(fr"""
+mdFile.new_paragraph(fr"""
 
-# <details>
-# <summary>Rate equations</summary>
+<details>
+<summary>Rate equations</summary>
 
-# ```math
-#     \begin{{align}}
-#         {v_PSII} &= {k_P} \cdot 0.5 \cdot {B_1} \\
-#         {v_PQ} &= \left( \frac{{{k_Cytb6f} \cdot {pfd} \cdot {K_eqcytb6f}}}{{{K_eqcytb6f} + 1}} + {k_PTOX} \right) \cdot {PQH_2} - \frac{{{k_Cytb6f} \cdot {pfd}}}{{{K_eqcytb6f} + 1}} \cdot {PQ} \\
-#         {v_ATPsynth} &= {ATPase} \cdot {k_ATPsynth} \cdot \left( {AP_tot} - {ATP} - \frac{{{ATP}}}{{{K_eqATPsynthase}}} \right) \\
-#         {v_ATPact} &= {k_ActATPase} \cdot {pfd} \cdot {ATPase_inac} - {k_DeactATPase} \cdot \left( 1 - {pfd} \right) \cdot {ATPase} \\
-#         {v_Leak} &= {k_leak} \cdot \left( {H} - {H_st} \right) \\
-#         {v_ATPcons} &= {k_ATPconsum} \cdot {ATP} \\
-#         {v_Xcyc} &= {k_DV} \cdot \frac{{{H}^{{{nhx}}}}}{{{H}^{{{nhx}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSat} \right)^{{{nhx}}}}} \cdot {Vx} - {k_EZ} \cdot \left( {X_tot} - {Vx} \right) \\
-#         {v_PsbSP} &= {k_prot} \cdot \frac{{{H}^{{{nhl}}}}}{{{H}^{{{nhl}}} + \left( 4 \times 10^3 \cdot 10^{K_pHSatLHC} \right)^{{{nhl}}}}} \cdot {PsbS} - {k_deprot} \cdot {PsbSP}
-#     \end{{align}}
-# ```
+```math
+    \begin{{align}}
 
-# </details>
+    \end{{align}}
+```
 
-#                      """)
+</details>
+
+                     """)
 
 mdFile.new_header(3, 'Tags')
 
