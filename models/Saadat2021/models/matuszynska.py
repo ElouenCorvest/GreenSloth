@@ -84,14 +84,14 @@ def ps2crosssection(LHC, sigma0_II, sigma0_I):
     return sigma0_II + (1 - sigma0_II - sigma0_I) * LHC
 
 
-def quencher(Psbs, Vx, Psbsp, Zx, y0, y1, y2, y3, K_ZSat):
+def quencher(psbS, Vx, Psbsp, Zx, y0, y1, y2, y3, K_ZSat):
     """co-operative 4-state quenching mechanism"""
     # gamma_0: slow quenching of (Vx - protonation)
     # gamma_1: fast quenching (Vx + protonation)
     # gamma_2: fastest possible quenching (Zx + protonation)
     # gamma_3: slow quenching of Zx present (Zx - protonation)
     ZAnt = Zx / (Zx + K_ZSat)
-    return y0 * Vx * Psbs + y1 * Vx * Psbsp + y2 * ZAnt * Psbsp + y3 * ZAnt * Psbs
+    return y0 * Vx * psbS + y1 * Vx * Psbsp + y2 * ZAnt * Psbsp + y3 * ZAnt * psbS
 
 
 def ps2states(PQ, PQred, ps2cs, Q, PSII_tot, k2, k_F, k_H, Keq_PQred, k_PQred, pfd, kH0):
@@ -128,18 +128,18 @@ def calculate_pH(x):
     return -np.log(x * (2.5e-4)) / np.log(10)
 
 
-def ps1states(PC, PCred, Fd, Fdred, LHC, ps2cs, PSI_tot, k_Fdred, Keq_FAFd, Keq_PCP700, k_PCox, pfd):
+def ps1states(PC_ox, PCred, Fd_ox, Fdred, LHC, ps2cs, PSI_tot, k_Fdred, Keq_FAFd, Keq_PCP700, k_PCox, pfd):
     """
     QSSA calculates open state of PSI
     depends on reduction states of plastocyanin and ferredoxin
-    C = [PC], F = [Fd] (ox. forms)
+    C = [PC_ox], F = [Fd_ox] (ox. forms)
     """
     L = (1 - ps2cs) * pfd
 
     A1 = PSI_tot / (
         1
-        + L / (k_Fdred * Fd)
-        + (1 + Fdred / (Keq_FAFd * Fd)) * (PC / (Keq_PCP700 * PCred) + L / (k_PCox * PCred))
+        + L / (k_Fdred * Fd_ox)
+        + (1 + Fdred / (Keq_FAFd * Fd_ox)) * (PC_ox / (Keq_PCP700 * PCred) + L / (k_PCox * PCred))
     )
     return A1
 
@@ -160,7 +160,7 @@ def Pimoiety(
     R5P,
     RUBP,
     RU5P,
-    ATP,
+    ATP_st,
     P_tot,
 ):
     return P_tot - (
@@ -179,7 +179,7 @@ def Pimoiety(
         + R5P
         + 2 * RUBP
         + RU5P
-        + ATP
+        + ATP_st
     )
 
 
@@ -228,9 +228,9 @@ def vNDH(Pox, time, ox, O2_ext, k_NDH, Ton, Toff):
     return oxygen(time, ox, O2_ext, k_NDH, Ton, Toff)[1] * Pox
 
 
-def vB6f(PC, Pox, Pred, PCred, Keq_B6f, k_Cytb6f):
+def vB6f(PC_ox, PQox, PQred, PCred, Keq_B6f, k_Cytb6f):
     """calculates reaction rate of cytb6f"""
-    return np.maximum(k_Cytb6f * (Pred * PC ** 2 - (Pox * PCred ** 2) / Keq_B6f), -k_Cytb6f)
+    return np.maximum(k_Cytb6f * (PQred * PC_ox ** 2 - (PQox * PCred ** 2) / Keq_B6f), -k_Cytb6f)
 
 
 def vCyc(Pox, Fdred, k_cyc):
@@ -241,7 +241,7 @@ def vCyc(Pox, Fdred, k_cyc):
     return k_cyc * ((Fdred ** 2) * Pox)
 
 
-def vFNR(Fd, Fdred, NADPH, NADP, KM_FNR_F, KM_FNR_N, EFNR, kcat_FNR, Keq_FNR, convf):
+def vFNR(Fd_ox, Fdred, NADPH_st, NADP, KM_FNR_F, KM_FNR_N, EFNR, kcat_FNR, Keq_FNR, convf):
     """
     Reaction rate mediated by the Ferredoxin—NADP(+) reductase (FNR)
     Kinetic: convenience kinetics Liebermeister and Klipp, 2006
@@ -252,8 +252,8 @@ def vFNR(Fd, Fdred, NADPH, NADP, KM_FNR_F, KM_FNR_N, EFNR, kcat_FNR, Keq_FNR, co
     [NADPH] in mM
     """
     fdred = Fdred / KM_FNR_F
-    fdox = Fd / KM_FNR_F
-    nadph = (NADPH / convf) / KM_FNR_N  # NADPH requires conversion to mmol/mol of chlorophyll
+    fdox = Fd_ox / KM_FNR_F
+    nadph = (NADPH_st / convf) / KM_FNR_N  # NADPH requires conversion to mmol/mol of chlorophyll
     nadp = (NADP / convf) / KM_FNR_N  # NADP requires conversion to mmol/mol of chlorophyll
     return (
         EFNR
@@ -263,7 +263,7 @@ def vFNR(Fd, Fdred, NADPH, NADP, KM_FNR_F, KM_FNR_N, EFNR, kcat_FNR, Keq_FNR, co
     )
 
 
-def vLeak(H, k_Leak, pH_stroma):
+def vLeak(H_lu, k_Leak, pH_stroma):
     """
     rate of leak of protons through the membrane
     """
@@ -287,7 +287,7 @@ def vSt21(LHCp, k_Pph1):
     return k_Pph1 * LHCp
 
 
-def vATPsynthase(ATP, ADP, Keq_ATPsynthase, k_ATPsynth, convf):
+def vATPsynthase(ATP_st, ADP, Keq_ATPsynthase, k_ATPsynth, convf):
     """
     Reaction rate of ATP production
     Kinetic: simple mass action with PH dependant equilibrium
@@ -296,14 +296,14 @@ def vATPsynthase(ATP, ADP, Keq_ATPsynthase, k_ATPsynth, convf):
     Reaction rate: mmol/mol Chl/s
     [ATP], [ADP] in mM
     """
-    return k_ATPsynth * (ADP / convf - ATP / convf / Keq_ATPsynthase)
+    return k_ATPsynth * (ADP / convf - ATP_st / convf / Keq_ATPsynthase)
 
 
-def vDeepox(Vx, H, nH, k_DV, K_pHSat):
+def vDeepox(Vx, H_lu, nH, k_DV, K_pHSat):
     """
     activity of xantophyll cycle: de-epoxidation of violaxanthin, modelled by Hill kinetics
     """
-    return k_DV * ((H ** nH) / (H ** nH + calculate_pHinv(K_pHSat) ** nH)) * Vx
+    return k_DV * ((H_lu ** nH) / (H_lu ** nH + calculate_pHinv(K_pHSat) ** nH)) * Vx
 
 
 def vEpox(Zx, k_EZ):
@@ -313,11 +313,11 @@ def vEpox(Zx, k_EZ):
     return k_EZ * Zx
 
 
-def vLhcprotonation(Psbs, H, nH, k_prot, K_pHSatLHC):
+def vLhcprotonation(psbS, H_lu, nH, k_prot, K_pHSatLHC):
     """
     activity of PsbS protein protonation: protonation modelled by Hill kinetics
     """
-    return k_prot * ((H ** nH) / (H ** nH + calculate_pHinv(K_pHSatLHC) ** nH)) * Psbs
+    return k_prot * ((H_lu ** nH) / (H_lu ** nH + calculate_pHinv(K_pHSatLHC) ** nH)) * psbS
 
 
 def vLhcdeprotonation(Psbsp, k_deprot):
@@ -327,9 +327,9 @@ def vLhcdeprotonation(Psbsp, k_deprot):
     return k_deprot * Psbsp
 
 
-def v1(RUBP, PGA, FBP, SBP, P, NADPH, V1, CO2, Km_RuBisCO_RUBP, Ki_RuBisCO_PGA, Ki_RuBisCO_FBP, Ki_RuBisCO_SBP, Ki_RuBisCO_Pi, Ki_RuBisCO_NADPH, Km_RuBisCO_CO2):
+def v1(RUBP, PGA, FBP, SBP, P, NADPH_st, V1, CO2, Km_RuBisCO_RUBP, Ki_RuBisCO_PGA, Ki_RuBisCO_FBP, Ki_RuBisCO_SBP, Ki_RuBisCO_Pi, Ki_RuBisCO_NADPH, Km_RuBisCO_CO2):
     return (V1 * RUBP * CO2) / (
-        (RUBP + Km_RuBisCO_RUBP * (1 + (PGA / Ki_RuBisCO_PGA) + (FBP / Ki_RuBisCO_FBP) + (SBP / Ki_RuBisCO_SBP) + (P / Ki_RuBisCO_Pi) + (NADPH / Ki_RuBisCO_NADPH)))
+        (RUBP + Km_RuBisCO_RUBP * (1 + (PGA / Ki_RuBisCO_PGA) + (FBP / Ki_RuBisCO_FBP) + (SBP / Ki_RuBisCO_SBP) + (P / Ki_RuBisCO_Pi) + (NADPH_st / Ki_RuBisCO_NADPH)))
         * (CO2 + Km_RuBisCO_CO2)
     )
 
@@ -342,10 +342,10 @@ def v9(SBP, Pi, V9, Km_SBPase, Ki_SBPase_Pi):
     return (V9 * SBP) / (SBP + Km_SBPase * (1 + (Pi / Ki_SBPase_Pi)))
 
 
-def v13(RU5P, ATP, RUBP, PGA, P, ADP, V13, Km_PRKase_RU5P, Ki_PRKase_PGA, Ki_PRKase_RuBP, Ki_PRKase_Pi, Kiunc_PRKase_ADP, Km_PRKase_ATP, Kicom_PRKase_ADP):
-    return (V13 * RU5P * ATP) / (
+def v13(RU5P, ATP_st, RUBP, PGA, P, ADP, V13, Km_PRKase_RU5P, Ki_PRKase_PGA, Ki_PRKase_RuBP, Ki_PRKase_Pi, Kiunc_PRKase_ADP, Km_PRKase_ATP, Kicom_PRKase_ADP):
+    return (V13 * RU5P * ATP_st) / (
         (RU5P + Km_PRKase_RU5P * (1 + (PGA / Ki_PRKase_PGA) + (RUBP / Ki_PRKase_RuBP) + (P / Ki_PRKase_Pi)))
-        * (ATP * (1 + (ADP / Kiunc_PRKase_ADP)) + Km_PRKase_ATP * (1 + (ADP / Kicom_PRKase_ADP)))
+        * (ATP_st * (1 + (ADP / Kiunc_PRKase_ADP)) + Km_PRKase_ATP * (1 + (ADP / Kicom_PRKase_ADP)))
     )
 
 
@@ -353,24 +353,24 @@ def triose_export(S, N, Vx, k):
     return (Vx * S) / (N * k)
 
 
-def vStarch(G1P, ATP, ADP, P, PGA, F6P, FBP, Vst, Km_Starch_G1P, Ki_Starch_ADP, Km_Starch_ATP, Kact_Starch_PGA, Kact_Starch_F6P, Kact_Starch_FBP):
+def vStarch(G1P, ATP_st, ADP, P, PGA, F6P, FBP, Vst, Km_Starch_G1P, Ki_Starch_ADP, Km_Starch_ATP, Kact_Starch_PGA, Kact_Starch_F6P, Kact_Starch_FBP):
     """G1P -> Gn-1 ; Starch production"""
-    return (Vst * G1P * ATP) / (
+    return (Vst * G1P * ATP_st) / (
         (G1P + Km_Starch_G1P)
-        * ((1 + (ADP / Ki_Starch_ADP)) * (ATP + Km_Starch_ATP) + ((Km_Starch_ATP * P) / (Kact_Starch_PGA * PGA + Kact_Starch_F6P * F6P + Kact_Starch_FBP * FBP)))
+        * ((1 + (ADP / Ki_Starch_ADP)) * (ATP_st + Km_Starch_ATP) + ((Km_Starch_ATP * P) / (Kact_Starch_PGA * PGA + Kact_Starch_F6P * F6P + Kact_Starch_FBP * FBP)))
     )
 
 
 variables = [
     # "B",  #photosystem II protein concentration
     "PQ",  # oxidised plastoquinone
-    "PC",  # oxidised plastocyan
-    "Fd",  # oxidised ferrodoxin
-    "ATP",  # stromal concentration of ATP
-    "NADPH",  # stromal concentration of NADPH
-    "H",  # lumenal protons
+    "PC_ox",  # oxidised plastocyan
+    "Fd_ox",  # oxidised ferrodoxin
+    "ATP_st",  # stromal concentration of ATP
+    "NADPH_st",  # stromal concentration of NADPH
+    "H_lu",  # lumenal protons
     "LHC",  # ,  # non-phosphorylated antenna
-    "Psbs",  # PsBs
+    "psbS",  # PsBs
     "Vx",  # vioolaxathin relative concentration
     "PGA",
     "BPGA",
@@ -654,7 +654,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="pc_alm",
         function=moiety_1,
-        compounds=["PC"],
+        compounds=["PC_ox"],
         derived_compounds=["PCred"],
         parameters=["PC_tot"],
     )
@@ -662,7 +662,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="fd_alm",
         function=moiety_1,
-        compounds=["Fd"],
+        compounds=["Fd_ox"],
         derived_compounds=["Fdred"],
         parameters=["Fd_tot"],
     )
@@ -670,7 +670,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="adp_alm",
         function=moiety_1,
-        compounds=["ATP"],
+        compounds=["ATP_st"],
         derived_compounds=["ADP"],
         parameters=["AP_tot"],
     )
@@ -678,7 +678,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="nadp_alm",
         function=moiety_1,
-        compounds=["NADPH"],
+        compounds=["NADPH_st"],
         derived_compounds=["NADP"],
         parameters=["NADP_tot"],
     )
@@ -701,7 +701,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="psbs_alm",
         function=moiety_1,
-        compounds=["Psbs"],
+        compounds=["psbS"],
         derived_compounds=["Psbsp"],
         parameters=["PsbS_tot"],
     )
@@ -717,7 +717,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="quencher",
         function=quencher,
-        compounds=["Psbs", "Vx", "Psbsp", "Zx"],
+        compounds=["psbS", "Vx", "Psbsp", "Zx"],
         derived_compounds=["Q"],
         parameters=["gamma_0", "gamma_1", "gamma_2", "gamma_3", "K_ZSat"],
     )
@@ -733,7 +733,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="ps1states",
         function=ps1states,
-        compounds=["PC", "PCred", "Fd", "Fdred", "LHC", "ps2cs"],
+        compounds=["PC_ox", "PCred", "Fd_ox", "Fdred", "LHC", "ps2cs"],
         derived_compounds=["A1"],
         parameters=["PSI_tot", "k_Fdred", "Keq_FAFd", "Keq_PCP700", "k_PCox", "pfd"],
     )
@@ -749,7 +749,7 @@ def get_matusznyska() -> Model():
     m.add_algebraic_module(
         module_name="calculate_pH",
         function=calculate_pH,
-        compounds=["H"],
+        compounds=["H_lu"],
         derived_compounds=["pH"],
     )
 
@@ -772,7 +772,7 @@ def get_matusznyska() -> Model():
             "R5P",
             "RUBP",
             "RU5P",
-            "ATP",
+            "ATP_st",
         ],
         derived_compounds=["Pi"],
         parameters=["P_tot"],
@@ -808,7 +808,7 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vPS2",
         function=vPS2,
-        stoichiometry={"PQ": -1, "H": 2 / m.get_parameter("b_H")},
+        stoichiometry={"PQ": -1, "H_lu": 2 / m.get_parameter("b_H")},
         modifiers=["B1"],
         dynamic_variables=["B1"],  # doesn't depend on PQ
         parameters=["k2"],
@@ -816,7 +816,7 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vPS1",
         function=vPS1,
-        stoichiometry={"Fd": -1, "PC": 1},
+        stoichiometry={"Fd_ox": -1, "PC_ox": 1},
         modifiers=["A1", "ps2cs"],
         dynamic_variables=["A1", "ps2cs"],  # doesn't depend on Fd
         parameters=["pfd"],
@@ -841,9 +841,9 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vB6f",
         function=vB6f,
-        stoichiometry={"PC": -2, "PQ": 1, "H": 4 / m.get_parameter("b_H")},
+        stoichiometry={"PC_ox": -2, "PQ": 1, "H_lu": 4 / m.get_parameter("b_H")},
         modifiers=["PQred", "PCred", "Keq_B6f"],
-        dynamic_variables=["PC", "PQ", "PQred", "PCred", "Keq_B6f"],
+        dynamic_variables=["PC_ox", "PQ", "PQred", "PCred", "Keq_B6f"],
         parameters=["k_Cytb6f"],
         reversible=True,
     )
@@ -851,7 +851,7 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vCyc",
         function=vCyc,
-        stoichiometry={"PQ": -1, "Fd": 2},
+        stoichiometry={"PQ": -1, "Fd_ox": 2},
         modifiers=["Fdred"],
         parameters=["k_cyc"],
     )
@@ -859,16 +859,16 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vFNR",
         function=vFNR,
-        stoichiometry={"Fd": 2, "NADPH": 1 * m.get_parameter("convf")},
-        modifiers=["Fd", "Fdred", "NADPH", "NADP"],
-        dynamic_variables=["Fd", "Fdred", "NADPH", "NADP"],
+        stoichiometry={"Fd_ox": 2, "NADPH_st": 1 * m.get_parameter("convf")},
+        modifiers=["Fd_ox", "Fdred", "NADPH_st", "NADP"],
+        dynamic_variables=["Fd_ox", "Fdred", "NADPH_st", "NADP"],
         parameters=["KM_FNR_F", "KM_FNR_N", "EFNR", "kcat_FNR", "Keq_FNR", "convf"],
     )
 
     m.add_reaction(
         rate_name="vLeak",
         function=vLeak,
-        stoichiometry={"H": -1 / m.get_parameter("b_H")},
+        stoichiometry={"H_lu": -1 / m.get_parameter("b_H")},
         parameters=["k_Leak", "pH_stroma"],
     )
 
@@ -893,11 +893,11 @@ def get_matusznyska() -> Model():
         rate_name="vATPsynthase",
         function=vATPsynthase,
         stoichiometry={
-            "H": -m.get_parameter("HPR") / m.get_parameter("b_H"),
-            "ATP": 1 * m.get_parameter("convf"),
+            "H_lu": -m.get_parameter("HPR") / m.get_parameter("b_H"),
+            "ATP_st": 1 * m.get_parameter("convf"),
         },
         modifiers=["ADP", "Keq_ATPsynthase"],
-        dynamic_variables=["ATP", "ADP", "Keq_ATPsynthase"],
+        dynamic_variables=["ATP_st", "ADP", "Keq_ATPsynthase"],
         parameters=[
             "k_ATPsynth",
             "convf",
@@ -909,7 +909,7 @@ def get_matusznyska() -> Model():
         rate_name="vDeepox",
         function=vDeepox,
         stoichiometry={"Vx": -1},
-        modifiers=["H"],
+        modifiers=["H_lu"],
         parameters=["nh_x", "k_DV", "K_pHSat"],
     )
 
@@ -924,15 +924,15 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vLhcprotonation",
         function=vLhcprotonation,
-        stoichiometry={"Psbs": -1},
-        modifiers=["H"],
+        stoichiometry={"psbS": -1},
+        modifiers=["H_lu"],
         parameters=["nh_PsbS", "k_prot", "K_pHSatLHC"],
     )
 
     m.add_reaction(
         rate_name="vLhcdeprotonation",
         function=vLhcdeprotonation,
-        stoichiometry={"Psbs": 1},
+        stoichiometry={"psbS": 1},
         modifiers=["Psbsp"],
         parameters=["k_deprot"],
     )
@@ -945,8 +945,8 @@ def get_matusznyska() -> Model():
         rate_name="vRuBisCO",
         function=v1,
         stoichiometry={"RUBP": -1, "PGA": 2},
-        modifiers=["PGA", "FBP", "SBP", "Pi", "NADPH"],
-        dynamic_variables=["RUBP", "PGA", "FBP", "SBP", "Pi", "NADPH"],
+        modifiers=["PGA", "FBP", "SBP", "Pi", "NADPH_st"],
+        dynamic_variables=["RUBP", "PGA", "FBP", "SBP", "Pi", "NADPH_st"],
         parameters=[
             "V1",
             "CO2",
@@ -963,7 +963,7 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vPGA_kinase",
         function=rapid_eq_2_2,
-        stoichiometry={"ATP": -1, "PGA": -1, "BPGA": 1},
+        stoichiometry={"ATP_st": -1, "PGA": -1, "BPGA": 1},
         modifiers=["ADP"],
         parameters=["k_fast", "K_PGK1ase"],
         reversible=True,
@@ -972,10 +972,10 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vBPGA_dehydrogenase",
         function=rapid_eq_3_3,
-        stoichiometry={"BPGA": -1, "NADPH": -1, "GAP": 1},
+        stoichiometry={"BPGA": -1, "NADPH_st": -1, "GAP": 1},
         modifiers=["Pi", "NADP"],
         parameters=["k_fast", "H_stroma", "K_BPGAdehynase"],
-        args=["BPGA", "NADPH", "H_stroma", "GAP", "NADP", "Pi", "k_fast", "K_BPGAdehynase"],
+        args=["BPGA", "NADPH_st", "H_stroma", "GAP", "NADP", "Pi", "k_fast", "K_BPGAdehynase"],
         reversible=True,
     )
 
@@ -1057,7 +1057,7 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="v13",
         function=v13,
-        stoichiometry={"RU5P": -1, "ATP": -1, "RUBP": 1},
+        stoichiometry={"RU5P": -1, "ATP_st": -1, "RUBP": 1},
         modifiers=["PGA", "Pi", "ADP"],
         parameters=[
             "V13",
@@ -1118,7 +1118,7 @@ def get_matusznyska() -> Model():
     m.add_reaction(
         rate_name="vStarch",
         function=vStarch,
-        stoichiometry={"G1P": -1, "ATP": -1},
+        stoichiometry={"G1P": -1, "ATP_st": -1},
         modifiers=["ADP", "Pi", "PGA", "F6P", "FBP"],
         parameters=["Vst", "Km_Starch_G1P", "Ki_Starch_ADP", "Km_Starch_ATP", "Kact_Starch_PGA", "Kact_Starch_F6P", "Kact_Starch_FBP"],
     )

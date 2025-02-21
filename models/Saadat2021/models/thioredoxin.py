@@ -8,7 +8,7 @@ def add_thioredoxin(model: Model) -> Model:
     #     model.remove_derived_parameter(i)
     model.remove_parameters(["Km_fcbb", "Vmax_fcbb"])
 
-    model.add_compounds(["TR_ox", "E_inactive"])
+    model.add_compounds(["Trx_ox", "E_CBB_inactive"])
     model.add_parameters(
         {
             "thioredoxin_tot": 1,
@@ -21,37 +21,68 @@ def add_thioredoxin(model: Model) -> Model:
     model.add_algebraic_module(
         module_name="thioredoxin_alm",
         function=moiety_1,
-        compounds=["TR_ox"],
+        compounds=["Trx_ox"],
         derived_compounds=["TR_red"],
         parameters=["thioredoxin_tot"],
     )
     model.add_algebraic_module(
         module_name="e_cbb_alm",
         function=moiety_1,
-        compounds=["E_inactive"],
+        compounds=["E_CBB_inactive"],
         derived_compounds=["E_active"],
         parameters=["e_cbb_tot"],
     )
 
-    for rate_name, par in {
-        "vRuBisCO": "V1",
-        "vFBPase": "V6",
-        "v9": "V9",
-        "v13": "V13",
-        "vStarch": "Vst",
+    # for rate_name, par in {
+    #     "vRuBisCO": "V1",
+    #     "vFBPase": "V6",
+    #     "v9": "V9",
+    #     "v13": "V13",
+    #     "vStarch": "Vst",
+    # }.items():
+    #     model.add_algebraic_module(
+    #         module_name=par,
+    #         function=proportional,
+    #         derived_compounds=[par],
+    #         compounds=["E_active"],
+    #         parameters=[f"{par}_base"],
+    #     )
+    #     rate = model.rates[rate_name].copy()
+    #     modifiers = rate["modifiers"] + [par]
+    #     dynamic_variables = rate["dynamic_variables"] + [par]
+    #     parameters = rate["parameters"]
+    #     parameters.remove(par)
+    #     model.update_rate(
+    #         rate_name=rate_name,
+    #         substrates=rate["substrates"],
+    #         products=rate["products"],
+    #         modifiers=modifiers,
+    #         parameters=parameters,
+    #         dynamic_variables=dynamic_variables,
+    #         args=rate["args"],
+    #         reversible=rate["reversible"],
+    #     )
+
+    for rate_name, vals in {
+        "vRuBisCO": {'param': "V_maxbase_rubisco", 'der': 'V1'},
+        "vFBPase": {'param': "V_maxbase_fbpase", 'der': 'V6'},
+        "v9": {'param': "V_maxbase_sbpase", 'der': 'V9'},
+        "v13": {'param': "V_maxbase_prkase", 'der': 'V13'},
+        "vStarch": {'param': "V_maxbase_starch", 'der': 'Vst'},
     }.items():
         model.add_algebraic_module(
-            module_name=par,
+            module_name=vals['der'],
             function=proportional,
-            derived_compounds=[par],
+            derived_compounds=[vals['der']],
             compounds=["E_active"],
-            parameters=[f"{par}_base"],
+            parameters=[vals['param']],
         )
+
         rate = model.rates[rate_name].copy()
-        modifiers = rate["modifiers"] + [par]
-        dynamic_variables = rate["dynamic_variables"] + [par]
+        modifiers = rate["modifiers"] + [vals['der']]
+        dynamic_variables = rate["dynamic_variables"] + [vals['der']]
         parameters = rate["parameters"]
-        parameters.remove(par)
+        parameters.remove(vals['der'])
         model.update_rate(
             rate_name=rate_name,
             substrates=rate["substrates"],
@@ -66,21 +97,21 @@ def add_thioredoxin(model: Model) -> Model:
     model.add_reaction(
         rate_name="vFdTrReductase",
         function=mass_action_2s,
-        stoichiometry={"TR_ox": -1, "Fd": 1},
+        stoichiometry={"Trx_ox": -1, "Fd": 1},
         modifiers=["Fdred"],
         parameters=["k_fd_tr_reductase"],
     )
     model.add_reaction(
-        rate_name=f"vE_activation",
+        rate_name="vE_activation",
         function=mass_action_2s,
-        stoichiometry={"E_inactive": -5, "TR_ox": 5},
+        stoichiometry={"E_CBB_inactive": -5, "Trx_ox": 5},
         modifiers=["TR_red"],
         parameters=["k_e_cbb_activation"],
     )
     model.add_reaction(
         rate_name="vE_inactivation",
         function=mass_action_1s,
-        stoichiometry={"E_inactive": 5},
+        stoichiometry={"E_CBB_inactive": 5},
         modifiers=["E_active"],
         parameters=["k_e_cbb_relaxation"],
     )

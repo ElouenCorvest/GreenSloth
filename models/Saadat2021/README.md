@@ -104,6 +104,13 @@
 |Inhibition factor of the triose phosphate translocators|$\mathrm{IF}_\mathrm{3P}$|$\mathrm{N}$||IF_3P|
 |Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|CPD1F-130|Zx|
 |Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$\mathrm{PsbS^P}$|AT1G44575|PsbSP|
+|Cross section of PSII|$\mathrm{PSII_{cross}}$|$\mathrm{PSII_{cross}}$||psIIcross|
+|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$|PSII|B_0|
+|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$|PSII|B_1|
+|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$|PSII|B_2|
+|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$|PSII|B_3|
+|Co-operative 4-state quenching mechanism|$\mathrm{Q}$|$\mathrm{Q}$||Q|
+|States of PSI|$\mathrm{PSII_{sta}}$|$\mathrm{PSII_{sta}}$||PSI_sta|
 
 
 
@@ -119,7 +126,23 @@
         \mathrm{ADP_{st}} &= \mathrm{AP}^{\mathrm{tot}} - \mathrm{ATP_{st}} \\
         \mathrm{NADP}_\mathrm{st} &= \mathrm{NADP}^{\mathrm{tot}} - \mathrm{NADPH}_\mathrm{st} \\
         \mathrm{P}_\mathrm{i,\ st} &= \mathrm{P}^{\mathrm{tot}} - \left(\mathrm{PGA} + 2 \cdot \mathrm{BPGA} + \mathrm{GAP} + \mathrm{DHAP} + 2 \cdot \mathrm{FBP} + \mathrm{F6P} + \mathrm{G6P} + \mathrm{G1P} + 2 \cdot \mathrm{SBP} + \mathrm{S7P} + \mathrm{E4P} + \mathrm{X5P} + \mathrm{R5P} + 2 \cdot \mathrm{RUBP} + \mathrm{RU5P} + \mathrm{ATP_{st}} \right) \\
+        \mathrm{PSII_{cross}} &= \sigma _\mathrm{II} ^0 + (1 - \sigma _\mathrm{II} ^0 - \sigma _\mathrm{I} ^0) \cdot \mathrm{LHC} \\
+        \mathrm{Q} &= \gamma_0 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{psbS} + \gamma_1 \cdot \left( 1 - \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \right) \cdot \mathrm{psbS^P} + \gamma_2 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{psbS^P} + \gamma_3 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}} \cdot \mathrm{psbS} \\
+        \mathrm{PSII_{sta}} &= \frac{\mathrm{PSI}^{\mathrm{tot}}}{1 + \frac{(1 - \mathrm{PSII_{cross}}) \cdot \mathrm{PFD}}{k_{\mathrm{Fd}_\mathrm{red}} \cdot \mathrm{Fd}_\mathrm{ox}} + \frac{1 + \mathrm{Fd}_\mathrm{red}}{K_\mathrm{FAFd} \cdot \mathrm{Fd}_\mathrm{ox}} \cdot \left( \frac{\mathrm{PC}_\mathrm{ox}}{K_\mathrm{PCP700} \cdot \mathrm{PC}_\mathrm{red}} + \frac{(1 - \mathrm{PSII_{cross}}) \cdot \mathrm{PFD}}{k_\mathrm{PCox} \cdot \mathrm{PC}_\mathrm{red}} \right)}
+    \end{align}
+```
 
+</details>
+
+<details>
+<summary> Quasi-steady state approximation used to calculate the rate of PSII </summary>
+
+```math
+    \begin{align}
+        - \left( \mathrm{PSII_{cross}} \cdot \mathrm{PFD} + \frac{k_{\mathrm{PQ}_\mathrm{red}}}{K_\mathrm{QAPQ}} \cdot \mathrm{PQH}_2 \right) \cdot \mathrm{B_0} + \left( k_{H_0} + k_H \cdot \mathrm{Q} + k_F \right) \cdot \mathrm{B_1} + k_{\mathrm{PQ}_\mathrm{red}} \cdot \mathrm{PQ} \cdot \mathrm{B_2} &= 0 \\
+        \mathrm{PSII_{cross}} \cdot \mathrm{PFD} \cdot \mathrm{B_0} - \left( k_{H_0} + k_H \cdot \mathrm{Q} + k_F + k_2 \right) \cdot \mathrm{B_1} &= 0 \\
+        \mathrm{PSII_{cross}} \cdot \mathrm{PFD} \cdot \mathrm{B_2} - \left( k_{H_0} + k_H \cdot \mathrm{Q} + k_F\right) \cdot \mathrm{B_3} &= 0 \\
+        \mathrm{B_0} + \mathrm{B_1} + \mathrm{B_2} + \mathrm{B_3} &= \mathrm{PSII}^{\mathrm{tot}}
     \end{align}
 ```
 
@@ -283,6 +306,34 @@
 
 #### Derived Parameters
 
+|Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|Reference|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|Equilibrium constant of |$K_\mathrm{QAPQ}$|$K_\mathrm{eq, QAPQ}$||K_QAPQ||
+|Equilibrium constant of ATPsynthase|$K_\mathrm{ATPsynthase}$|$K_\mathrm{eq, ATPsynthase}$||K_ATPsynthase||
+|Equilibrium constant of Cytb6f|$K_\mathrm{cytb6f}$|$K_\mathrm{eq, cytb6f}$||K_cytb6f||
+|Stromal proton concentration of a dark adapted state|$\mathrm{H}_\mathrm{st}$|$\mathrm{H}_\mathrm{st}$||H_st||
+|Equilibrium constant of |$K_\mathrm{FAFd}$|$K_\mathrm{eq, FAFd}$||K_FAFd||
+|Equilibrium constant of|$K_\mathrm{PCP700}$|$K_\mathrm{eq, PCP700}$||K_PCP700||
+|Equilibrium constant of|$K_\mathrm{FNR}$|$K_\mathrm{eq, FNR}$||K_FNR||
+
+
+
+
+<details>
+<summary>Equations of derived parameters</summary>
+
+```math
+    \begin{align}
+        K_\mathrm{QAPQ} = \mathrm{exp}\left( \frac{-2 \cdot -E^0\mathrm{(QA/QA^-)} \cdot F + -2 \cdot E^0\mathrm{(PQ/PQH_2)} \cdot F + 2 \cdot \mathrm{pH}_\mathrm{stroma} \cdot \ln 10 \cdot R \cdot T}{R \cdot T}\right) \\
+        K_\mathrm{FAFd} = \mathrm{exp}\left( \frac{E^0\mathrm{(FA/FA^-)} \cdot F - E^0\mathrm{(Fd/Fd^-)} \cdot F}{R \cdot T} \right) \\
+        K_\mathrm{PCP700} = \mathrm{exp}\left( \frac{E^0\mathrm{(PC/PC^-)} \cdot F - E^0\mathrm{(P_{700}^+/P_{700})} \cdot F}{R \cdot T} \right) \\
+        K_\mathrm{QAPQ} = \mathrm{exp}\left( \frac{-2 \cdot -E^0\mathrm{(Fd/Fd^-)} \cdot F + -2 \cdot E^0\mathrm{(NADP^+/NADPH)} \cdot F + \mathrm{pH}_\mathrm{stroma} \cdot \ln 10 \cdot R \cdot T}{R \cdot T}\right) \\
+    \end{align}
+```
+
+</details>
+
+
 ### Reaction Rates
 
 |Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
@@ -335,5 +386,23 @@
 ||$v_{\mathrm{3ASC}}$|$v_{\mathrm{3ASC}}$||v_3ASC|
 |Enzyme Activation|$v_{\mathrm{Eact}}$|$v_{\mathrm{Eact}}$||v_Eact|
 |Enzyme inactivation|$v_{\mathrm{Einact}}$|$v_{\mathrm{Einact}}$||v_Einact|
+
+
+
+
+<details>
+<summary>Rate equations</summary>
+
+```math
+    \begin{align}
+        v_{\mathrm{PSII}} &= 0.5 \cdot k_2 \cdot \mathrm{B_1} \\
+        v_{\mathrm{PSI}} &= \left( 1 - \mathrm{PSII_{cross}} \right) \cdot \mathrm{PFD} \cdot \mathrm{PSII_{sta}} \\
+        v_{\mathrm{b6f}} &= \mathrm{max}\left( k_\mathrm{Cytb6f} \cdot \frac{\mathrm{PQH}_2 \cdot \mathrm{PC}_\mathrm{ox}^2 - \left( \mathrm{PQ} \cdot \mathrm{PC}_\mathrm{red}^2 \right)}{K_\mathrm{cytb6f}}, - k_\mathrm{Cytb6f} \right) \\
+        v_{\mathrm{FNR}} &=  \cdot k_{\mathrm{cat}|\mathrm{FNRase}} \cdot \frac{\left(\frac{\mathrm{Fd}_\mathrm{red}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}}\right)^2 \cdot \frac{\mathrm{NADP}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}} - \frac{ \left( \frac{\mathrm{Fd}_\mathrm{ox}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} \right)^2 \cdot \frac{\mathrm{NADPH}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}} }{K_\mathrm{FNR}} }{\left( 1 + \frac{\mathrm{Fd}_\mathrm{red}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} + \left(\frac{\mathrm{Fd}_\mathrm{red}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}}\right)^2 \right) \cdot \left( 1 + \frac{\mathrm{NADP}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}} \right) + \left( 1 + \frac{\mathrm{Fd}_\mathrm{ox}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} + \left(\frac{\mathrm{Fd}_\mathrm{ox}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}}\right)^2 \right) \cdot \left( 1 + \frac{\mathrm{NADPH}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}} \right) - 1} \\
+    \end{align}
+```
+
+</details>
+
 
 ### Tags

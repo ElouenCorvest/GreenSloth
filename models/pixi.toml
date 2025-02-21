@@ -17,3 +17,4 @@ validators = ">=0.34.0,<0.35"
 
 [pypi-dependencies]
 glossary_utils = { path = "../Templates/utils", editable = true}
+latexify-py = "*"
