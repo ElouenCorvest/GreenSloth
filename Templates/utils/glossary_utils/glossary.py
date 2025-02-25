@@ -2,7 +2,8 @@ import pandas as pd
 import os
 from typing import Optional
 from pathlib import Path
-from modelbase.ode import Model
+from modelbase2 import Model
+#from modelbase.ode import Model
 from datetime import datetime
 import re
 from validators import url
@@ -392,7 +393,7 @@ def export_params(
                 print(f'Updated Params to Python')
 
 
-def export_rates_as_latex(
+def export_rates_as_latex_modelbase1(
     m: Model,
     path_to_write: Path,
     overwrite_flag = False,
@@ -428,6 +429,79 @@ def export_rates_as_latex(
 
         for arg_model, arg_ltx in zip(rate_vars['args'], func_a_list):
             rhs = rhs.replace(arg_ltx, f'{{{arg_model}}}')
+
+        inp += rf'       {{{rate_name}}} &= {rhs} \\'
+        inp += '\n'
+
+    inp += r'   \end{{align}}'
+    inp += '\n'
+    inp += '```\n\n'
+
+    if overwrite_flag or not os.path.isfile(path_to_write):
+        with open(path_to_write, 'w') as f:
+            f.write(f'------- Start on {datetime.now()} -------\n\n')
+            f.write(inp)
+    else:
+        with open(path_to_write, 'r') as f_tmp:
+            read = f_tmp.read()
+        flag_idxs = [m.start() for m in re.finditer('-------', read)]
+
+        try:
+            compare_block = read[flag_idxs[1] + 9:flag_idxs[2]]
+        except:
+            compare_block = read[flag_idxs[1] + 9:]
+
+        if compare_block == inp:
+            return
+        else:
+            with open(path_to_write, 'r+') as f:
+                f.seek(0, 0)
+                f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
+                print('Updated Model Rates to Latex')
+
+def export_rates_as_latex_modelbase2(
+    m: Model,
+    path_to_write: Path,
+    overwrite_flag = False,
+):
+    inp = '```math \n'
+    inp += r'   \begin{{align}}'
+    inp += '\n'
+
+    for rate_name, rate_vars in m.reactions.items():
+        print(rate_name)
+        print(rate_vars)
+        try:
+
+            ltx = latexify.get_latex(rate_vars.fn)
+            if ltx.count(r'\\') > 0:
+                for i in [r'\begin{array}{l} ', r' \end{array}']:
+                    ltx = ltx.replace(i, '')
+                line_split = ltx.split(r'\\')
+            else:
+                line_split = [ltx]
+
+            final = line_split[-1]
+
+            for i in line_split[:-1]:
+                lhs = i.split(' = ')[0].replace(' ', '')
+                rhs = i.split(' = ')[1]
+                final = final.replace(lhs, rhs)
+
+            for old, new in zip(
+                (r'\mathopen{}', r'\mathclose{}', r'{', r'}'),
+                ('', '', r'{{', r'}}')
+            ):
+                final = final.replace(old, new)
+            lhs = final.split('=')[0]
+            rhs = final.split('=')[1]
+            func_a_list = lhs[lhs.find('(')+1:-2].split(', ')
+
+            for arg_model, arg_ltx in zip(rate_vars.args, func_a_list):
+                rhs = rhs.replace(arg_ltx, f'{{{arg_model}}}')
+
+        except:
+            rhs = 'ERROR'
 
         inp += rf'       {{{rate_name}}} &= {rhs} \\'
         inp += '\n'

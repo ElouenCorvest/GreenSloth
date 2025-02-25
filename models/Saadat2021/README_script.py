@@ -2,7 +2,7 @@ from mdutils.mdutils import MdUtils  # noqa: E402
 from glossary_utils.glossary import update_from_main_gloss, gloss_fromCSV, write_python_from_gloss, write_odes_from_model, extract_params_from_model
 from pathlib import Path
 import pandas as pd
-from models import get_model
+#from models import get_model
 
 import os
 
@@ -186,10 +186,10 @@ IF_3P = remove_math(derived_comps_table, r'$\mathrm{N}$')
 Zx = remove_math(derived_comps_table, r'$\mathrm{Zx}$')
 PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
 psIIcross = remove_math(derived_comps_table, r'$\mathrm{PSII_{cross}}$')
-B_0 = remove_math(derived_comps_table, r'$\mathrm{B_0}$')
-B_1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
-B_2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
-B_3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
+B0 = remove_math(derived_comps_table, r'$\mathrm{B_0}$')
+B1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
+B2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
+B3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
 Q = remove_math(derived_comps_table, r'$\mathrm{Q}$')
 PSI_sta = remove_math(derived_comps_table, r'$\mathrm{PSII_{sta}}$')
 
@@ -433,36 +433,36 @@ mdFile.new_paragraph(fr"""
 
 ```math
    \begin{{align}}
-      {ode(PQ)} &= -{v_PSII} + {v_PQ} - {v_NDH} + {v_b6f} - {v_Cyc} \\
-      {ode(H_lu)} &= \frac{{1}}{b_H} \cdot \left(  2 \cdot {v_PSII} + 4 \cdot {v_b6f} - {v_Leak} - {HPR} \cdot {v_ATPsynth} \right) \\
-      {ode(Fd_ox)} &= 2 \cdot {v_Cyc} + 2 \cdot {v_FNR} - {v_Fdred} + {v_FdTrReduc} \\
-      {ode(PC_ox)} &= -2 \cdot {v_b6f} + {v_PSI} \\
-      {ode(NADPH_st)} &= {convf} \cdot {v_FNR} - {v_BPGAdehynase} - {v_MDAreduc} - {v_GR} - {v_NADPHcons} \\
-      {ode(LHC)} &= -{v_St21} + {v_St12} \\
-      {ode(ATP_st)} &= {convf} \cdot {v_ATPsynth} - {v_PGK1ase} - {v_PRKase} - {v_starch} - {v_ATPcons} \\
-      {ode(Vx)} &= -{v_Deepox} + {v_Epox} \\
-      {ode(psbS)} &= -{v_PsbSP} + {v_psbSD} \\
-      {ode(RUBP)} &= -{v_RuBisCO} + {v_PRKase} \\
-      {ode(PGA)} &= 2 \cdot {v_RuBisCO} - {v_PGK1ase} - {v_pga_ex} \\
-      {ode(BPGA)} &= {v_PGK1ase} - {v_BPGAdehynase} \\
-      {ode(GAP)} &= {v_BPGAdehynase} - {v_TPIase} - {v_Aldolase_FBP} - {v_TKase_E4P} - {v_TKase_R5P} - {v_gap_ex} \\
-      {ode(DHAP)} &= {v_TPIase} - {v_Aldolase_FBP} - {v_Aldolase_SBP} - {v_dhap_ex} \\
-      {ode(FBP)} &= {v_Aldolase_FBP} - {v_FBPase} \\
-      {ode(F6P)} &= {v_FBPase} - {v_TKase_E4P} - {v_PGIase} \\
-      {ode(X5P)} &= {v_TKase_E4P} + {v_TKase_R5P} - {v_RPEase} \\
-      {ode(E4P)} &= {v_TKase_E4P} - {v_Aldolase_SBP} \\
-      {ode(SBP)} &= {v_Aldolase_SBP} - {v_SBPase} \\
-      {ode(S7P)} &= {v_SBPase} - {v_TKase_R5P} \\
-      {ode(R5P)} &= {v_TKase_R5P} - {v_Rpiase} \\
-      {ode(RU5P)} &= {v_Rpiase} + {v_RPEase} - {v_PRKase} \\
-      {ode(G6P)} &= {v_PGIase} - {v_PGMase} \\
-      {ode(G1P)} &= {v_PGMase} - {v_starch} \\
-      {ode(H2O2)} &= -{v_APXase} + 0.032 \cdot {v_Mehler} \\
-      {ode(MDA)} &= 2 \cdot {v_APXase} - 2 \cdot {v_MDAreduc} - 2 \cdot {v_3ASC} \\
-      {ode(GSSG)} &= -{v_GR} + {v_DHAR} \\
-      {ode(DHA)} &= -{v_DHAR} + {v_3ASC} \\
-      {ode(Trx_ox)} &= -{v_FdTrReduc} + 5 \cdot {v_Eact} \\
-      {ode(E_CBB_inactive)} &= -5 \cdot {v_Eact} + 5 \cdot {v_Einact} \\
+      {ode(PQ)} &= -1.0 \cdot {v_PSII} + 1.0 \cdot {v_PQ} - 1.0 \cdot {v_NDH} + 1.0 \cdot {v_b6f} - 1.0 \cdot {v_Cyc} \\
+      {ode(H_lu)} &= 0.02 \cdot {v_PSII} + 0.04 \cdot {v_b6f} - 0.0{v_Leak} - 0.04666666666666667 \cdot {v_ATPsynth} \\
+      {ode(PC_ox)} &= -2.0 \cdot {v_b6f} + 1.0 \cdot {v_PSI} \\
+      {ode(Fd_ox)} &= 2.0 \cdot {v_Cyc} + 2.0 \cdot {v_FNR} + 1.0 \cdot {v_FdTrReduc} - 1.0 \cdot {v_Fdred} \\
+      {ode(NADPH_st)} &= 0.0032 \cdot {v_FNR} - 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_MDAreduct} - 1.0 \cdot {v_GR} - 1.0 \cdot {v_NADPHcons} \\
+      {ode(LHC)} &= -1.0 \cdot {v_St21} + 1.0 \cdot {v_St12} \\
+      {ode(ATP_st)} &= 0.0032 \cdot {v_ATPsynth} - 1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_starch} - 1.0 \cdot {v_ATPcons} \\
+      {ode(Vx)} &= -1.0 \cdot {v_Deepox} + 1.0 \cdot {v_Epox} \\
+      {ode(psbS)} &= -1.0 \cdot {v_PsbSP} + 1.0 \cdot {v_PsbSD} \\
+      {ode(PGA)} &= -1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_pga_ex} + 2.0 \cdot {v_RuBisCO} \\
+      {ode(BPGA)} &= -1.0 \cdot {v_BPGAdehynase} + 1.0 \cdot {v_PGK1ase} \\
+      {ode(GAP)} &= 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_gap_ex} \\
+      {ode(DHAP)} &= 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_Aldolase_R5P} - 1.0 \cdot {v_dhap_ex} \\
+      {ode(FBP)} &= 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_FBPase} \\
+      {ode(F6P)} &= -1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_FBPase} - 1.0 \cdot {v_PGIase} \\
+      {ode(X5P)} &= 1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_RPEase} \\
+      {ode(E4P)} &= 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_Aldolase_R5P} \\
+      {ode(SBP)} &= 1.0 \cdot {v_Aldolase_R5P} - 1.0 \cdot {v_SBPase} \\
+      {ode(S7P)} &= -1.0 \cdot {v_TKase_R5P} + 1.0 \cdot {v_SBPase} \\
+      {ode(R5P)} &= 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_Rpiase} \\
+      {ode(RU5P)} &= -1.0 \cdot {v_PRKase} + 1.0 \cdot {v_RPEase} + 1.0 \cdot {v_Rpiase} \\
+      {ode(G6P)} &= 1.0 \cdot {v_PGIase} - 1.0 \cdot {v_PGMase} \\
+      {ode(G1P)} &= -1.0 \cdot {v_starch} + 1.0 \cdot {v_PGMase} \\
+      {ode(RUBP)} &= 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_RuBisCO} \\
+      {ode(TR_ox)} &= -1.0 \cdot {v_FdTrReduc} + 5.0 \cdot {v_Eact} \\
+      {ode(E_CBB_inactive)} &= -5.0 \cdot {v_Eact} + 5.0 \cdot {v_Einact} \\
+      {ode(H2O2)} &= -1.0 \cdot {v_APXase} + 0.0032 \cdot {v_Mehler} \\
+      {ode(MDA)} &= -2.0 \cdot {v_MDAreduct} + 2.0 \cdot {v_APXase} - 2.0 \cdot {v_3ASC} \\
+      {ode(GSSG)} &= -1.0 \cdot {v_GR} + 1.0 \cdot {v_DHAR} \\
+      {ode(DHA)} &= 1.0 \cdot {v_3ASC} - 1.0 \cdot {v_DHAR} \\
    \end{{align}}
 ```
 
@@ -499,10 +499,10 @@ mdFile.new_paragraph(fr"""
 
 ```math
     \begin{{align}}
-        - \left( {psIIcross} \cdot {pfd} + \frac{{{k_PQred}}}{{{K_QAPQ}}} \cdot {PQH_2} \right) \cdot {B_0} + \left( {kH0} + {k_H} \cdot {Q} + {k_F} \right) \cdot {B_1} + {k_PQred} \cdot {PQ} \cdot {B_2} &= 0 \\
-        {psIIcross} \cdot {pfd} \cdot {B_0} - \left( {kH0} + {k_H} \cdot {Q} + {k_F} + {k2} \right) \cdot {B_1} &= 0 \\
-        {psIIcross} \cdot {pfd} \cdot {B_2} - \left( {kH0} + {k_H} \cdot {Q} + {k_F}\right) \cdot {B_3} &= 0 \\
-        {B_0} + {B_1} + {B_2} + {B_3} &= {PSII_tot}
+        - \left( {psIIcross} \cdot {pfd} + \frac{{{k_PQred}}}{{{K_QAPQ}}} \cdot {PQH_2} \right) \cdot {B0} + \left( {kH0} + {k_H} \cdot {Q} + {k_F} \right) \cdot {B1} + {k_PQred} \cdot {PQ} \cdot {B2} &= 0 \\
+        {psIIcross} \cdot {pfd} \cdot {B0} - \left( {kH0} + {k_H} \cdot {Q} + {k_F} + {k2} \right) \cdot {B1} &= 0 \\
+        {psIIcross} \cdot {pfd} \cdot {B2} - \left( {kH0} + {k_H} \cdot {Q} + {k_F}\right) \cdot {B3} &= 0 \\
+        {B0} + {B1} + {B2} + {B3} &= {PSII_tot}
     \end{{align}}
 ```
 
@@ -566,52 +566,52 @@ mdFile.new_paragraph(fr"""
 
 ```math
    \begin{{align}}
-       {vPS2} &=  0.5 {k2} \cdot {B1} \\
-       {vPS1} &=  \left( 1 - {ps2cs} \right) {pfd} {A0} \\
-       {vPTOX} &=  {PQred} \cdot {k_PTOX} \cdot \mathrm{{oxygen}} \left( {time}, {ox}, {O2_ext}, {k_NDH}, {Ton}, {Toff} \right)_{{0}} \\
-       {vNDH} &=  \mathrm{{oxygen}} \left( {time}, {ox}, {O2_ext}, {k_NDH}, {Ton}, {Toff} \right)_{{1}} {PQ} \\
-       {vB6f} &=  \mathrm{{np}}.\mathrm{{maximum}} \left( {k_Cytb6f} \cdot \left( {PQred} \cdot {PC}^{{2}} - \frac{{{PQ} \cdot {PCred}^{{2}}}}{{{Keq_B6f}}} \right), -{k_Cytb6f} \right) \\
-       {vCyc} &=  {k_cyc} \cdot {Fdred}^{{2}} \cdot {PQ} \\
-       {vFNR} &=  \frac{{{EFNR} \cdot {kcat_FNR} \cdot \left( \frac{{{Fdred}}}{{{KM_FNR_F}}} ^{{2}} \cdot \frac{{\frac{{{NADP}}}{{{convf}}}}}{{{KM_FNR_N}}}  - \frac{{\frac{{{Fd}}}{{{KM_FNR_F}}} ^{{2}} \cdot \frac{{\frac{{{NADPH}}}{{{convf}}}}}{{{KM_FNR_N}}} }}{{{Keq_FNR}}} \right)}}{{\left( 1 + \frac{{{Fdred}}}{{{KM_FNR_F}}}  + \frac{{{Fdred}}}{{{KM_FNR_F}}} ^{{2}} \right) \left( 1 + \frac{{\frac{{{NADP}}}{{{convf}}}}}{{{KM_FNR_N}}}  \right) + \left( 1 + \frac{{{Fd}}}{{{KM_FNR_F}}}  + \frac{{{Fd}}}{{{KM_FNR_F}}} ^{{2}} \right) \left( 1 + \frac{{\frac{{{NADPH}}}{{{convf}}}}}{{{KM_FNR_N}}}  \right) - 1}} \\
-       {vLeak} &=  {k_Leak} \cdot \left( {H} - \mathrm{{calculate\_p{H}inv}} \left( \mathrm{{p{H}\_stroma}} \right) \right) \\
-       {vSt12} &=  {k_Stt7} \cdot \frac{{1}}{{1 + \left( \frac{{\frac{{{PQ}}}{{{PQ_tot}}}}}{{{KM_ST}}} \right)^{{{n_ST}}}}}  \cdot {LHC} \\
-       {vSt21} &=  {k_Pph1} \cdot {LHCp} \\
-       {vATPsynthase} &=  {k_ATPsynth} \cdot \left( \frac{{{ADP}}}{{{convf}}} - \frac{{\frac{{{ATP}}}{{{convf}}}}}{{{Keq_ATPsynthase}}} \right) \\
-       {vDeepox} &=  {k_DV} \cdot \frac{{{H}^{{\mathrm{{n{H}}}}}}}{{{H}^{{\mathrm{{n{H}}}}} + \left( \mathrm{{calculate\_p{H}inv}} \left( \mathrm{{K\_p{H}Sat}} \right) \right)^{{\mathrm{{n{H}}}}}}} {Vx} \\
-       {vEpox} &=  {k_EZ} \cdot {Zx} \\
-       {vLhcprotonation} &=  {k_prot} \cdot \frac{{{H}^{{\mathrm{{n{H}}}}}}}{{{H}^{{\mathrm{{n{H}}}}} + \left( \mathrm{{calculate\_p{H}inv}} \left( \mathrm{{K\_p{H}SatL{H}C}} \right) \right)^{{\mathrm{{n{H}}}}}}} {Psbs} \\
-       {vLhcdeprotonation} &=  {k_deprot} \cdot {Psbsp} \\
-       {vRuBisCO} &=  \frac{{{V1} \cdot {RUB{Pi}} \cdot {CO2}}}{{\left( {RUB{Pi}} + \mathrm{{Km\_RuBisCO\_RUB{Pi}}} \cdot \left( 1 + \frac{{{{Pi}GA}}}{{\mathrm{{Ki\_RuBisCO\_{Pi}GA}}}} + \frac{{{FB{Pi}}}}{{\mathrm{{Ki\_RuBisCO\_FB{Pi}}}}} + \frac{{{SB{Pi}}}}{{\mathrm{{Ki\_RuBisCO\_SB{Pi}}}}} + \frac{{{Pi}}}{{\mathrm{{Ki\_RuBisCO\_{Pi}i}}}} + \frac{{\mathrm{{NAD{Pi}H}}}}{{\mathrm{{Ki\_RuBisCO\_NAD{Pi}H}}}} \right) \right) \left( {CO2} + {Km_RuBisCO_CO2} \right)}} \\
-       {vPGA_kinase} &=  {k_fast} \cdot \left( {ATP} \cdot {PGA} - \frac{{{BPGA} \cdot {ADP}}}{{{K_PGK1ase}}} \right) \\
-       {vBPGA_dehydrogenase} &=  {k_fast} \cdot \left( {BPGA} \cdot {NADPH} \cdot {H_stroma} - \frac{{{GAP} \cdot {NADP} \cdot {Pi}}}{{{K_BPGAdehynase}}} \right) \\
-       {vTPI} &=  {k_fast} \cdot \left( {GAP} - \frac{{{DHAP}}}{{{K_TPIase}}} \right) \\
-       {vAldolase} &=  {k_fast} \cdot \left( {GAP} \cdot {DHAP} - \frac{{{FBP}}}{{{K_Aldolase_FBP}}} \right) \\
-       {vFBPase} &=  \frac{{{V6} \cdot {FB{Pi}}}}{{{FB{Pi}} + \mathrm{{Km\_FB{Pi}ase}} \cdot \left( 1 + \frac{{{F6{Pi}}}}{{\mathrm{{Ki\_FB{Pi}ase\_F6{Pi}}}}} + \frac{{{Pi}}}{{\mathrm{{Ki\_FB{Pi}ase\_{Pi}i}}}} \right)}} \\
-       {vF6P_Transketolase} &=  {k_fast} \cdot \left( {GAP} \cdot {F6P} - \frac{{{X5P} \cdot {E4P}}}{{{K_TKase_E4P}}} \right) \\
-       {v8} &=  {k_fast} \cdot \left( {DHAP} \cdot {E4P} - \frac{{{SBP}}}{{{K_Aldolase_SBP}}} \right) \\
-       {v9} &=  \frac{{{V9} \cdot {SBP}}}{{{SBP} + {Km_SBPase} \cdot \left( 1 + \frac{{{Pi}}}{{{Ki_SBPase_Pi}}} \right)}} \\
-       {v10} &=  {k_fast} \cdot \left( {GAP} \cdot {S7P} - \frac{{{X5P} \cdot {R5P}}}{{{K_TKase_R5P}}} \right) \\
-       {v11} &=  {k_fast} \cdot \left( {R5P} - \frac{{{RU5P}}}{{{K_Rpiase}}} \right) \\
-       {v12} &=  {k_fast} \cdot \left( {X5P} - \frac{{{RU5P}}}{{{K_RPEase}}} \right) \\
-       {v13} &=  \frac{{{V13} \cdot {RU5{Pi}} \cdot {AT{Pi}}}}{{\left( {RU5{Pi}} + \mathrm{{Km\_{Pi}RKase\_RU5{Pi}}} \cdot \left( 1 + \frac{{{{Pi}GA}}}{{\mathrm{{Ki\_{Pi}RKase\_{Pi}GA}}}} + \frac{{{RUB{Pi}}}}{{\mathrm{{Ki\_{Pi}RKase\_RuB{Pi}}}}} + \frac{{{Pi}}}{{\mathrm{{Ki\_{Pi}RKase\_{Pi}i}}}} \right) \right) \left( {AT{Pi}} \cdot \left( 1 + \frac{{\mathrm{{AD{Pi}}}}}{{\mathrm{{Kiunc\_{Pi}RKase\_AD{Pi}}}}} \right) + \mathrm{{Km\_{Pi}RKase\_AT{Pi}}} \cdot \left( 1 + \frac{{\mathrm{{AD{Pi}}}}}{{\mathrm{{Kicom\_{Pi}RKase\_AD{Pi}}}}} \right) \right)}} \\
-       {vG6P_isomerase} &=  {k_fast} \cdot \left( {F6P} - \frac{{{G6P}}}{{{K_PGIase}}} \right) \\
-       {vPhosphoglucomutase} &=  {k_fast} \cdot \left( {G6P} - \frac{{{G1P}}}{{{K_PGMase}}} \right) \\
-       {vpga} &=  \frac{{{Vmax_ex} \cdot {PGA}}}{{{N} {K_diss_PGA}}} \\
-       {vgap} &=  \frac{{{Vmax_ex} \cdot {GAP}}}{{{N} {K_diss_GAP}}} \\
-       {vdhap} &=  \frac{{{Vmax_ex} \cdot {DHAP}}}{{{N} {K_diss_DHAP}}} \\
-       {vStarch} &=  \frac{{{Vst} \cdot {G1{Pi}} \cdot {AT{Pi}}}}{{\left( {G1{Pi}} + \mathrm{{Km\_Starch\_G1{Pi}}} \right) \left( \left( 1 + \frac{{{AD{Pi}}}}{{\mathrm{{Ki\_Starch\_AD{Pi}}}}} \right) \left( {AT{Pi}} + \mathrm{{Km\_Starch\_AT{Pi}}} \right) + \frac{{\mathrm{{Km\_Starch\_AT{Pi}}} \cdot {Pi}}}{{\mathrm{{Kact\_Starch\_{Pi}GA}} \cdot \mathrm{{{Pi}GA}} + \mathrm{{Kact\_Starch\_F6{Pi}}} \cdot \mathrm{{F6{Pi}}} + \mathrm{{Kact\_Starch\_FB{Pi}}} \cdot \mathrm{{FB{Pi}}}}} \right)}} \\
-       {vFdred} &=  {kFdred} \cdot {Fd} \cdot {A1} - \frac{{{kFdred}}}{{{Keq_FAFd}}} \cdot {Fdred} \cdot {A2} \\
-       {vAscorbate} &=  \frac{{{ASC} {H2O2} \cdot {XT} }}{{{ASC} {H2O2} \cdot \left( \frac{{1}}{{{kf3}}} + \frac{{1}}{{{kf5}}} \right) + \frac{{{ASC}}}{{{kf1}}} + \frac{{{H2O2}}}{{{kf4}}} + \frac{{{H2O2} \cdot {kr4}}}{{{kf4} \cdot {kf5}}} + \frac{{{H2O2}}}{{{kf2}}} + \frac{{{H2O2} \cdot {kr2}}}{{{kf2} \cdot {kf3}}} + \frac{{{kr1}}}{{{kf1} \cdot {kf2}}} + \frac{{{kr1} \cdot {kr2}}}{{{kf1} \cdot {kf2} \cdot {kf3}}} }} \\
-       {vMDAreduct} &=  \frac{{{kcatMDAR} \cdot {MDAR0} \cdot {NADPH} \cdot {MDA} }}{{{KmMDAR_NADPH} \cdot {MDA} + {KmMDAR_MDA} \cdot {NADPH} + {NADPH} \cdot {MDA} + {KmMDAR_NADPH} \cdot {KmMDAR_MDA} }} \\
-       {vMehler} &=  {A1} \cdot {kMehler} \cdot {O2ext} \\
-       {vGR} &=  \frac{{{kcat_GR} \cdot {GR0} \cdot {NADPH} \cdot {GSSG} }}{{{KmNADPH} \cdot {GSSG} + {KmGSSG} \cdot {NADPH} + {NADPH} \cdot {GSSG} + {KmNADPH} \cdot {KmGSSG} }} \\
-       {vDHAR} &=  \frac{{{kcat_DHAR} \cdot {DHAR0} \cdot {DHA} \cdot {GSH} }}{{{K} + {{K}mDHA} \cdot {GSH} + \mathrm{{{K}mGSH}} \cdot {DHA} + {DHA} \cdot {GSH} }} \\
-       {v3ASC} &=  {k3} \cdot {MDA}^{{2}} \\
-       {vEX_ATP} &=  {k_ex_atp} \cdot {ATP} \\
-       {vEX_NADPH} &=  {k_ex_nadph} \cdot {NADPH} \\
-       {vFdTrReductase} &=  {k_fd_tr_reductase} \cdot {TR_ox} \cdot {Fdred} \\
-       {vE_activation} &=  {k_e_cbb_activation} \cdot {E_inactive} \cdot {TR_red} \\
-       {vE_inactivation} &=  {k_e_cbb_relaxation} \cdot {E_active} \\
+       {v_PSII} &=  0.5 {B1} \cdot {k2} \\
+       {v_PQ} &=  {PQH_2} \cdot {k_PTOX} \cdot \mathrm{{oxygen}} \left( {time}, {ox}, {O2_ext}, {k_NDH}, {Ton}, {Toff} \right)_{{0}} \\
+       {v_NDH} &=  \mathrm{{oxygen}} \left( {time}, {ox}, {O2_ext}, {k_NDH}, {Ton}, {Toff} \right)_{{1}} {PQ} \\
+       {v_b6f} &=  \mathrm{{np}}.\mathrm{{maximum}} \left( {k_Cytb6f} \cdot \left( {PQH_2} \cdot {PC_ox}^{{2}} - \frac{{{PQ} \cdot {PC_red}^{{2}}}}{{{K_cytb6f}}} \right), -{k_Cytb6f} \right) \\
+       {v_Cyc} &=  {k_cyc} \cdot {Fd_red}^{{2}} \cdot {PQ} \\
+       {v_FNR} &=  \frac{{{EFNR} \cdot {kcat_FNR} \cdot \left( \frac{{{Fd_red}}}{{{KM_FNR_F}}} ^{{2}} \cdot \frac{{\frac{{{NADP_st}}}{{{convf}}}}}{{{KM_FNR_N}}}  - \frac{{\frac{{{Fd_ox}}}{{{KM_FNR_F}}} ^{{2}} \cdot \frac{{\frac{{{NADPH_st}}}{{{convf}}}}}{{{KM_FNR_N}}} }}{{{K_FNR}}} \right)}}{{\left( 1 + \frac{{{Fd_red}}}{{{KM_FNR_F}}}  + \frac{{{Fd_red}}}{{{KM_FNR_F}}} ^{{2}} \right) \left( 1 + \frac{{\frac{{{NADP_st}}}{{{convf}}}}}{{{KM_FNR_N}}}  \right) + \left( 1 + \frac{{{Fd_ox}}}{{{KM_FNR_F}}}  + \frac{{{Fd_ox}}}{{{KM_FNR_F}}} ^{{2}} \right) \left( 1 + \frac{{\frac{{{NADPH_st}}}{{{convf}}}}}{{{KM_FNR_N}}}  \right) - 1}} \\
+       {v_Leak} &=  {k_Leak} \cdot \left( {H_lu} - \mathrm{{calculate\_pHinv}} \left( {pH_stroma} \right) \right) \\
+       {v_St21} &=  {k_Stt7} \cdot \frac{{1}}{{1 + \left( \frac{{\frac{{{PQ}}}{{{PQ_tot}}}}}{{{KM_ST}}} \right)^{{{n_ST}}}}}  \cdot {LHC} \\
+       {v_St12} &= ERROR \\
+       {v_ATPsynth} &=  {k_ATPsynth} \cdot \left( \frac{{{ADP_st}}}{{{convf}}} - \frac{{\frac{{{ATP_st}}}{{{convf}}}}}{{{K_ATPsynth}}} \right) \\
+       {v_Deepox} &=  \mathrm{{hill\_kinetics}} \left( {k_DV}, {H_lu}, {nh_x}, \mathrm{{calculate\_pHinv}} \left( {K_pHSat} \right) \right) \cdot {Vx} \\
+       {v_Epox} &= ERROR \\
+       {v_PsbSP} &=  \mathrm{{hill\_kinetics}} \left( {k_prot}, {H_lu}, {nh_PsbS}, \mathrm{{calculate\_pHinv}} \left( {K_pHSatLHC} \right) \right) \cdot {psbS} \\
+       {v_PsbSD} &= ERROR \\
+       {v_PGK1ase} &=  {k_fast} \cdot \left( {ATP_st} \cdot {PGA} - \frac{{{BPGA} \cdot {ADP_st}}}{{{K_PGK1ase}}} \right) \\
+       {v_BPGAdehynase} &=  {k_fast} \cdot \left( {BPGA} \cdot {NADPH_st} \cdot {H_st} - \frac{{{GAP} \cdot {NADP_st} \cdot {Pi_st}}}{{{K_BPGAdehynase}}} \right) \\
+       {v_TPIase} &=  {k_fast} \cdot \left( {GAP} - \frac{{{DHAP}}}{{{K_TPIase}}} \right) \\
+       {v_Aldolase_FBP} &=  {k_fast} \cdot \left( {GAP} \cdot {DHAP} - \frac{{{FBP}}}{{{K_Aldolase_FBP}}} \right) \\
+       {v_TKase_E4P} &=  {k_fast} \cdot \left( {GAP} \cdot {F6P} - \frac{{{X5P} \cdot {E4P}}}{{{K_TKase_E4P}}} \right) \\
+       {v_Aldolase_R5P} &=  {k_fast} \cdot \left( {DHAP} \cdot {E4P} - \frac{{{SBP}}}{{{K_Aldolase_SBP}}} \right) \\
+       {v_TKase_R5P} &=  {k_fast} \cdot \left( {GAP} \cdot {S7P} - \frac{{{X5P} \cdot {R5P}}}{{{K_TKase_R5P}}} \right) \\
+       {v_Rpiase} &=  {k_fast} \cdot \left( {R5P} - \frac{{{RU5P}}}{{{K_Rpiase}}} \right) \\
+       {v_RPEase} &=  {k_fast} \cdot \left( {X5P} - \frac{{{RU5P}}}{{{K_RPEase}}} \right) \\
+       {v_PGIase} &=  {k_fast} \cdot \left( {F6P} - \frac{{{G6P}}}{{{K_PGIase}}} \right) \\
+       {v_PGMase} &=  {k_fast} \cdot \left( {G6P} - \frac{{{G1P}}}{{{K_PGMase}}} \right) \\
+       {v_pga_ex} &=  \frac{{{Vmax_ex} \cdot {PGA}}}{{{N} \cdot {K_diss_PGA}}} \\
+       {v_gap_ex} &=  \frac{{{Vmax_ex} \cdot {GAP}}}{{{N} \cdot {K_diss_GAP}}} \\
+       {v_dhap_ex} &=  \frac{{{Vmax_ex} \cdot {DHAP}}}{{{N} \cdot {K_diss_DHAP}}} \\
+       {v_RuBisCO} &=  \frac{{{Vmax_rubisco} \cdot {RUBP} \cdot {CO2}}}{{\left( {RUBP} + {Km_RuBisCO_RUBP} \cdot \left( 1 + \frac{{{PGA}}}{{{Ki_RuBisCO_PGA}}} + \frac{{{FBP}}}{{{Ki_RuBisCO_FBP}}} + \frac{{{SBP}}}{{{Ki_RuBisCO_SBP}}} + \frac{{{Pi_st}}}{{{Ki_RuBisCO_Pi}}} + \frac{{{NADPH_st}}}{{{Ki_RuBisCO_NADPH}}} \right) \right) \left( {CO2} + {Km_RuBisCO_CO2} \right)}} \\
+       {v_FBPase} &=  \frac{{{Vmax_fbpase} \cdot {FBP}}}{{{FBP} + {Km_FBPase} \cdot \left( 1 + \frac{{{F6P}}}{{{Ki_FBPase_F6P}}} + \frac{{{Pi_st}}}{{{Ki_FBPase_Pi}}} \right)}} \\
+       {v_SBPase} &=  \frac{{{Vmax_sbpase} \cdot {SBP}}}{{{SBP} + {Km_SBPase} \cdot \left( 1 + \frac{{{Pi_st}}}{{{Ki_SBPase_Pi}}} \right)}} \\
+       {v_PRKase} &=  \frac{{{Vmax_prkase} \cdot {RU5P} \cdot {ATP_st}}}{{\left( {RU5P} + {Km_PRKase_RU5P} \cdot \left( 1 + \frac{{{PGA}}}{{{Ki_PRKase_PGA}}} + \frac{{{RUBP}}}{{{Ki_PRKase_RuBP}}} + \frac{{{Pi_st}}}{{{Ki_PRKase_Pi}}} \right) \right) \left( {ATP_st} \cdot \left( 1 + \frac{{{ADP_st}}}{{{Kiunc_PRKase_ADP}}} \right) + {Km_PRKase_ATP} \cdot \left( 1 + \frac{{{ADP_st}}}{{{Kicom_PRKase_ADP}}} \right) \right)}} \\
+       {v_starch} &=  \frac{{{Vmax_starch} \cdot {G1P} \cdot {ATP_st}}}{{\left( {G1P} + {Km_Starch_G1P} \right) \left( \left( 1 + \frac{{{ADP_st}}}{{{Ki_Starch_ADP}}} \right) \left( {ATP_st} + {Km_Starch_ATP} \right) + \frac{{{Km_Starch_ATP} \cdot {Pi_st}}}{{{Kact_Starch_PGA} \cdot {PGA} + {Kact_Starch_F6P} \cdot {F6P} + {Kact_Starch_FBP} \cdot {FBP}}} \right)}} \\
+       {v_FdTrReduc} &= ERROR \\
+       {v_Eact} &= ERROR \\
+       {v_Einact} &= ERROR \\
+       {v_PSI} &=  \left( 1 - {psIIcross} \right) {pfd} \cdot {Y0} \\
+       {v_Fdred} &=  {k_Fdred} \cdot {Fd_ox} \cdot {Y1} - \frac{{{k_Fdred}}}{{{K_FAFd}}} \cdot {Fd_red} \cdot {Y2} \\
+       {v_APXase} &=  \frac{{{ASC} \cdot {H2O2} \cdot {XT} }}{{{ASC} \cdot {H2O2} \cdot \left( \frac{{1}}{{{k_f3}}} + \frac{{1}}{{{k_f5}}} \right) + \frac{{{ASC}}}{{{k_f1}}} + \frac{{{H2O2}}}{{{k_f4}}} + \frac{{{H2O2} \cdot {k_r4}}}{{{k_f4} \cdot {k_f5}}} + \frac{{{H2O2}}}{{{k_f2}}} + \frac{{{H2O2} \cdot {k_r2}}}{{{k_f2} \cdot {k_f3}}} + \frac{{{k_r1}}}{{{k_f1} \cdot {k_f2}}} + \frac{{{k_r1} \cdot {k_r2}}}{{{k_f1} \cdot {k_f2} \cdot {k_f3}}} }} \\
+       {v_MDAreduct} &=  \frac{{{kcat_MDAR} \cdot {MDAR_0} \cdot {NADPH_st} \cdot {MDA} }}{{{Km_MDAR_NADPH} \cdot {MDA} + {Km_MDAR_MDA} \cdot {NADPH_st} + {NADPH_st} \cdot {MDA} + {Km_MDAR_NADPH} \cdot {Km_MDAR_MDA} }} \\
+       {v_Mehler} &= ERROR \\
+       {v_GR} &=  \frac{{{kcat_GR} \cdot {GR_0} \cdot {NADPH_st} \cdot {GSSG} }}{{{Km_NADPH} \cdot {GSSG} + {Km_GSSG} \cdot {NADPH_st} + {NADPH_st} \cdot {GSSG} + {Km_NADPH} \cdot {Km_GSSG} }} \\
+       {v_DHAR} &=  \frac{{{kcat_DHAR} \cdot {DHAR_0} \cdot {DHA} \cdot {GSH} }}{{{K_DHAR} + {Km_DHA} \cdot {GSH} + {Km_GSH} \cdot {DHA} + {DHA} \cdot {GSH} }} \\
+       {v_3ASC} &=  {k3} \cdot {MDA}^{{2}} \\
+       {v_ATPcons} &= ERROR \\
+       {v_NADPHcons} &= ERROR \\
    \end{{align}}
 ```
 
