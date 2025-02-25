@@ -9,9 +9,9 @@ Inhibition factor of the triose phosphate translocators,$\mathrm{IF}_\mathrm{3P}
 Zeaxanthin concentration,$\mathrm{Zx}$,$\mathrm{Zx}$,CPD1F-130,Zx,10
 Concentration of protonated psbS protein,$\mathrm{psbS^P}$,$\mathrm{PsbS^P}$,AT1G44575,PsbSP,9
 Cross section of PSII,$\mathrm{PSII_{cross}}$,$\mathrm{PSII_{cross}}$,,psIIcross,47
-Initial state of PSII,$\mathrm{B_0}$,$\mathrm{B_0}$,PSII,B_0,12
-Excited state of PSII,$\mathrm{B_1}$,$\mathrm{B_1}$,PSII,B_1,13
-Charge seperation state of PSII,$\mathrm{B_2}$,$\mathrm{B_2}$,PSII,B_2,14
-Photoinhibited state of PSII,$\mathrm{B_3}$,$\mathrm{B_3}$,PSII,B_3,15
+Initial state of PSII,$\mathrm{B_0}$,$\mathrm{B_0}$,PSII,B0,12
+Excited state of PSII,$\mathrm{B_1}$,$\mathrm{B_1}$,PSII,B1,13
+Charge seperation state of PSII,$\mathrm{B_2}$,$\mathrm{B_2}$,PSII,B2,14
+Photoinhibited state of PSII,$\mathrm{B_3}$,$\mathrm{B_3}$,PSII,B3,15
 Co-operative 4-state quenching mechanism,$\mathrm{Q}$,$\mathrm{Q}$,,Q,48
 States of PSI,$\mathrm{PSII_{sta}}$,$\mathrm{PSII_{sta}}$,,PSI_sta,49
