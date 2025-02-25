@@ -1,7 +1,7 @@
 from modelbase2 import Model
 import numpy as np
 import numpy.typing as npt
-from basic_funcs import continous_subtraction, proportional
+from .basic_funcs import continous_subtraction, proportional
 
 def H_st(pH_stroma: float) -> float:
     """Calculate stromal H concentration from stromal pH

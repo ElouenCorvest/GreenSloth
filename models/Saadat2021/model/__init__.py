@@ -1,6 +1,10 @@
 from modelbase2 import Model
-from derived_quantities import include_derived_quantities
-from rates import include_rates
+from .derived_quantities import include_derived_quantities
+from .rates import include_rates
+
+__all__ = [
+    'Saadat2021'
+]
 
 def Saadat2021() -> Model:
     m = Model()
@@ -201,5 +205,3 @@ def Saadat2021() -> Model:
     return m
 
 m = Saadat2021()
-
-print(m.get_stoichiometries()[:1].T)

@@ -1,6 +1,6 @@
 from modelbase2 import Model, Derived
 import numpy as np
-from basic_funcs import proportional, two_divided_value, four_divided_value, value, neg_one_divided_value, neg_value1_divided_value2, hill_kinetics, rapid_eq_2_2, rapid_eq_3_3, rapid_eq_1_1, rapid_eq_2_1
+from .basic_funcs import proportional, two_divided_value, four_divided_value, value, neg_one_divided_value, neg_value1_divided_value2, hill_kinetics, rapid_eq_2_2, rapid_eq_3_3, rapid_eq_1_1, rapid_eq_2_1
 
 def v_PSII(B1, k2):
     return 0.5 * B1 * k2
@@ -436,14 +436,14 @@ def include_rates(
         name="v_FdTrReduc",
         fn=proportional,
         args=['TR_ox', 'Fd_red', 'k_fd_tr_reductase'],
-        stoichiometry={"TR_ox": -1, "Fd": 1},
+        stoichiometry={"TR_ox": -1, "Fd_ox": 1},
     )
 
     m.add_reaction(
         name="v_Eact",
         fn=proportional,
         args=['E_CBB_inactive', 'TR_red', 'k_e_cbb_activation'],
-        stoichiometry={"E_CBB_inactive": -5, "Trx_ox": 5},
+        stoichiometry={"E_CBB_inactive": -5, "TR_ox": 5},
     )
 
     m.add_reaction(
@@ -468,7 +468,7 @@ def include_rates(
         name="v_Fdred",
         fn=v_Fdred,
         args=['Fd_ox', 'Fd_red', 'Y1', 'Y2', 'k_Fdred', 'K_FAFd'],
-        stoichiometry={"Fd": -1}
+        stoichiometry={"Fd_ox": -1}
     )
 
     m.add_reaction(
@@ -521,7 +521,7 @@ def include_rates(
         name="v_ATPcons",
         fn=proportional,
         args=['ATP_st', 'k_ex_atp'],
-        stoichiometry={"ATP": -1},
+        stoichiometry={"ATP_st": -1},
     )
 
     m.add_reaction(
