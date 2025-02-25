@@ -16,3 +16,4 @@ assimulo = ">=3.6.0,<4"
 modelbase2 = ">=0.2.0, <0.3"
 mdutils = ">=1.6.0, <2"
 glossary-utils = { path = "../../../Templates/utils/", editable = true }
+validators = ">=0.34.0, <0.35"
