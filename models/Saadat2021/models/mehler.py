@@ -130,11 +130,11 @@ def add_mehler(m) -> Model:
             # V09 µM -> mM
             "kcat_GR": 595,
             "kcat_DHAR": 142,
-            "k1APX": 12 / 1e-3, # Not used
-            "k2APX": 50 / 1e-3, # Not used
-            "k3APX": 2.1 / 1e-3, # Not used
-            "k4APX": 0.7 / 1e-3, # Not used
-            "k5APX": 0.01, # Not used
+            "k1APX": 12 / 1e-3,
+            "k2APX": 50 / 1e-3,
+            "k3APX": 2.1 / 1e-3,
+            "k4APX": 0.7 / 1e-3,
+            "k5APX": 0.01,
             "k3": 0.5 / 1e-3,
             "k4": 0.1 / 1e-3,
             "k5": 0.2 / 1e-3,
