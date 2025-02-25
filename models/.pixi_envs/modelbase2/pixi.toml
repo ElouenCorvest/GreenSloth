@@ -1,0 +1,18 @@
+[project]
+authors = ["Elouen_Corvest <elouen.corvest@rwth-aachen.de>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "modelbase2"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.13.2,<3.14"
+assimulo = ">=3.6.0,<4"
+
+[pypi-dependencies]
+modelbase2 = ">=0.2.0, <0.3"
+mdutils = ">=1.6.0, <2"
+glossary-utils = { path = "../../../Templates/utils/", editable = true }
