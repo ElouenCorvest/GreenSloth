@@ -107,13 +107,18 @@ def export_odes_as_latex(
     inp += r'   \begin{{align}}'
     inp += '\n'
 
+    inp = ''
+
     stoics = m.get_stoichiometries()
 
     for comp, stoic in stoics.iterrows():
+
+        line = '```math \n'
+
         clean = stoic[stoic != 0.0]
         rates = clean.index
 
-        line = rf"      {{ode({comp})}} &= "
+        line += rf"{{ode({comp})}} = "
         for rate in rates:
             stoi = clean[rate]
             if line[-2] == '=':
@@ -128,13 +133,13 @@ def export_odes_as_latex(
 
             line = line.replace(r'1 \cdot ', '')
 
-        line = line[:-1] + r' \\'
+        line = line[:-1]
         line += " \n"
+        line += '```\n'
 
         inp += line
-    inp += r'   \end{{align}}'
+
     inp += '\n'
-    inp += '```\n\n'
 
     if overwrite_flag or not os.path.isfile(path_to_write):
         with open(path_to_write, 'w') as f:

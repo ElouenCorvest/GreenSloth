@@ -383,38 +383,94 @@ mdFile.new_paragraph(fr"""
 <summary>ODE System</summary>
 
 ```math
-   \begin{{align}}
-      {ode(PQ)} &= -1.0 \cdot {v_PSII} + 1.0 \cdot {v_PQ} - 1.0 \cdot {v_NDH} + 1.0 \cdot {v_b6f} - 1.0 \cdot {v_Cyc} \\
-      {ode(H_lu)} &= \frac{{1}}{{{b_H}}} \cdot \left( 2 \cdot {v_PSII} + 4 \cdot {v_b6f} - {HPR} \cdot {v_ATPsynth} - {v_Leak} \right) \\
-      {ode(PC_ox)} &= -2.0 \cdot {v_b6f} + 1.0 \cdot {v_PSI} \\
-      {ode(Fd_ox)} &= 2.0 \cdot {v_Cyc} + 2.0 \cdot {v_FNR} + 1.0 \cdot {v_FdTrReduc} - 1.0 \cdot {v_Fdred} \\
-      {ode(NADPH_st)} &= {convf} \cdot {v_FNR} - 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_MDAreduct} - 1.0 \cdot {v_GR} - 1.0 \cdot {v_NADPHcons} \\
-      {ode(LHC)} &= -1.0 \cdot {v_St21} + 1.0 \cdot {v_St12} \\
-      {ode(ATP_st)} &= {convf} \cdot {v_ATPsynth} - 1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_starch} - 1.0 \cdot {v_ATPcons} \\
-      {ode(Vx)} &= -1.0 \cdot {v_Deepox} + 1.0 \cdot {v_Epox} \\
-      {ode(psbS)} &= -1.0 \cdot {v_PsbSP} + 1.0 \cdot {v_PsbSD} \\
-      {ode(PGA)} &= -1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_pga_ex} + 2.0 \cdot {v_RuBisCO} \\
-      {ode(BPGA)} &= -1.0 \cdot {v_BPGAdehynase} + 1.0 \cdot {v_PGK1ase} \\
-      {ode(GAP)} &= 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_gap_ex} \\
-      {ode(DHAP)} &= 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_dhap_ex} \\
-      {ode(FBP)} &= 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_FBPase} \\
-      {ode(F6P)} &= -1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_FBPase} - 1.0 \cdot {v_PGIase} \\
-      {ode(X5P)} &= 1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_RPEase} \\
-      {ode(E4P)} &= 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_Aldolase_SBP} \\
-      {ode(SBP)} &= 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_SBPase} \\
-      {ode(S7P)} &= -1.0 \cdot {v_TKase_R5P} + 1.0 \cdot {v_SBPase} \\
-      {ode(R5P)} &= 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_Rpiase} \\
-      {ode(RU5P)} &= -1.0 \cdot {v_PRKase} + 1.0 \cdot {v_RPEase} + 1.0 \cdot {v_Rpiase} \\
-      {ode(G6P)} &= 1.0 \cdot {v_PGIase} - 1.0 \cdot {v_PGMase} \\
-      {ode(G1P)} &= -1.0 \cdot {v_starch} + 1.0 \cdot {v_PGMase} \\
-      {ode(RUBP)} &= 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_RuBisCO} \\
-      {ode(TRX_ox)} &= -1.0 \cdot {v_FdTrReduc} + 5.0 \cdot {v_Eact} \\
-      {ode(E_CBB_inactive)} &= -5.0 \cdot {v_Eact} + 5.0 \cdot {v_Einact} \\
-      {ode(H2O2)} &= -1.0 \cdot {v_APXase} + 0.0032 \cdot {v_Mehler} \\
-      {ode(MDA)} &= -2.0 \cdot {v_MDAreduct} + 2.0 \cdot {v_APXase} - 2.0 \cdot {v_3ASC} \\
-      {ode(GSSG)} &= -1.0 \cdot {v_GR} + 1.0 \cdot {v_DHAR} \\
-      {ode(DHA)} &= 1.0 \cdot {v_3ASC} - 1.0 \cdot {v_DHAR} \\
-   \end{{align}}
+{ode(PQ)} = -1.0 \cdot {v_PSII} + 1.0 \cdot {v_PQ} - 1.0 \cdot {v_NDH} + 1.0 \cdot {v_b6f} - 1.0 \cdot {v_Cyc}
+```
+```math
+{ode(H_lu)} = \frac{{1}}{{{b_H}}} \cdot \left( 2 \cdot {v_PSII} + 4 \cdot {v_b6f} - {HPR} \cdot {v_ATPsynth} - {v_Leak} \right)
+```
+```math
+{ode(PC_ox)} = -2.0 \cdot {v_b6f} + 1.0 \cdot {v_PSI}
+```
+```math
+{ode(Fd_ox)} = 2.0 \cdot {v_Cyc} + 2.0 \cdot {v_FNR} + 1.0 \cdot {v_FdTrReduc} - 1.0 \cdot {v_Fdred}
+```
+```math
+{ode(NADPH_st)} = {convf} \cdot {v_FNR} - 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_MDAreduct} - 1.0 \cdot {v_GR} - 1.0 \cdot {v_NADPHcons}
+```
+```math
+{ode(LHC)} = -1.0 \cdot {v_St21} + 1.0 \cdot {v_St12}
+```
+```math
+{ode(ATP_st)} = {convf} \cdot {v_ATPsynth} - 1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_starch} - 1.0 \cdot {v_ATPcons}
+```
+```math
+{ode(Vx)} = -1.0 \cdot {v_Deepox} + 1.0 \cdot {v_Epox}
+```
+```math
+{ode(psbS)} = -1.0 \cdot {v_PsbSP} + 1.0 \cdot {v_PsbSD}
+```
+```math
+{ode(PGA)} = -1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_pga_ex} + 2.0 \cdot {v_RuBisCO}
+```
+```math
+{ode(BPGA)} = -1.0 \cdot {v_BPGAdehynase} + 1.0 \cdot {v_PGK1ase}
+```
+```math
+{ode(GAP)} = 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_gap_ex}
+```
+```math
+{ode(DHAP)} = 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_dhap_ex}
+```
+```math
+{ode(FBP)} = 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_FBPase}
+```
+```math
+{ode(F6P)} = -1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_FBPase} - 1.0 \cdot {v_PGIase}
+```
+```math
+{ode(X5P)} = 1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_RPEase}
+```
+```math
+{ode(E4P)} = 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_Aldolase_SBP}
+```
+```math
+{ode(SBP)} = 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_SBPase}
+```
+```math
+{ode(S7P)} = -1.0 \cdot {v_TKase_R5P} + 1.0 \cdot {v_SBPase}
+```
+```math
+{ode(R5P)} = 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_Rpiase}
+```
+```math
+{ode(RU5P)} = -1.0 \cdot {v_PRKase} + 1.0 \cdot {v_RPEase} + 1.0 \cdot {v_Rpiase}
+```
+```math
+{ode(G6P)} = 1.0 \cdot {v_PGIase} - 1.0 \cdot {v_PGMase}
+```
+```math
+{ode(G1P)} = -1.0 \cdot {v_starch} + 1.0 \cdot {v_PGMase}
+```
+```math
+{ode(RUBP)} = 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_RuBisCO}
+```
+```math
+{ode(TRX_ox)} = -1.0 \cdot {v_FdTrReduc} + 5.0 \cdot {v_Eact}
+```
+```math
+{ode(E_CBB_inactive)} = -5.0 \cdot {v_Eact} + 5.0 \cdot {v_Einact}
+```
+```math
+{ode(H2O2)} = -1.0 \cdot {v_APXase} + 0.0032 \cdot {v_Mehler}
+```
+```math
+{ode(MDA)} = -2.0 \cdot {v_MDAreduct} + 2.0 \cdot {v_APXase} - 2.0 \cdot {v_3ASC}
+```
+```math
+{ode(GSSG)} = -1.0 \cdot {v_GR} + 1.0 \cdot {v_DHAR}
+```
+```math
+{ode(DHA)} = 1.0 \cdot {v_3ASC} - 1.0 \cdot {v_DHAR}
 ```
 
 </details>

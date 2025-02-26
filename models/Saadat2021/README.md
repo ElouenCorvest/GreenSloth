@@ -55,6 +55,97 @@
 <summary>ODE System</summary>
 
 ```math
+\frac{\mathrm{d}\mathrm{PQ}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{PSII}} + 1.0 \cdot v_{\mathrm{PQ}_{\mathrm{ox}}} - 1.0 \cdot v_{\mathrm{NDH}} + 1.0 \cdot v_{\mathrm{b6f}} - 1.0 \cdot v_{\mathrm{Cyc}}
+```
+```math
+\frac{\mathrm{d}\mathrm{H_{lu}}}{\mathrm{d}t} = \frac{1}{b_\mathrm{H}} \cdot \left( 2 \cdot v_{\mathrm{PSII}} + 4 \cdot v_{\mathrm{b6f}} - \mathrm{HPR} \cdot v_{\mathrm{ATPsynthase}} - v_{\mathrm{Leak}} \right)
+```
+```math
+\frac{\mathrm{d}\mathrm{PC}_\mathrm{ox}}{\mathrm{d}t} = -2.0 \cdot v_{\mathrm{b6f}} + 1.0 \cdot v_{\mathrm{PSI}}
+```
+```math
+\frac{\mathrm{d}\mathrm{Fd}_\mathrm{ox}}{\mathrm{d}t} = 2.0 \cdot v_{\mathrm{Cyc}} + 2.0 \cdot v_{\mathrm{FNR}} + 1.0 \cdot v_{\mathrm{FdTrReductase}} - 1.0 \cdot v_{\mathrm{Fd}_{\mathrm{red}}}
+```
+```math
+\frac{\mathrm{d}\mathrm{NADPH}_\mathrm{st}}{\mathrm{d}t} = \mathrm{convf} \cdot v_{\mathrm{FNR}} - 1.0 \cdot v_{\mathrm{BPGAdehynase}} - 1.0 \cdot v_{\mathrm{MDAreduct}} - 1.0 \cdot v_{\mathrm{GR}} - 1.0 \cdot v_{\mathrm{NADPH}_\mathrm{consumption}}
+```
+```math
+\frac{\mathrm{d}\mathrm{LHC}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{St21}} + 1.0 \cdot v_{\mathrm{St12}}
+```
+```math
+\frac{\mathrm{d}\mathrm{ATP_{st}}}{\mathrm{d}t} = \mathrm{convf} \cdot v_{\mathrm{ATPsynthase}} - 1.0 \cdot v_{\mathrm{PGK1ase}} - 1.0 \cdot v_{\mathrm{PRKase}} - 1.0 \cdot v_{\mathrm{Starch}} - 1.0 \cdot v_{\mathrm{ATP}_{\mathrm{consumption}}}
+```
+```math
+\frac{\mathrm{d}\mathrm{Vx}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{Deepox}} + 1.0 \cdot v_{\mathrm{Epox}}
+```
+```math
+\frac{\mathrm{d}\mathrm{psbS}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{Psbs^P}} + 1.0 \cdot v_{\mathrm{Psbs^D}}
+```
+```math
+\frac{\mathrm{d}\mathrm{PGA}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{PGK1ase}} - 1.0 \cdot v_{\mathrm{PGA,\ ex}} + 2.0 \cdot v_{\mathrm{RuBisCo}}
+```
+```math
+\frac{\mathrm{d}\mathrm{BPGA}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{BPGAdehynase}} + 1.0 \cdot v_{\mathrm{PGK1ase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{GAP}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{BPGAdehynase}} - 1.0 \cdot v_{\mathrm{TPIase}} - 1.0 \cdot v_{\mathrm{Aldolase_{FBP}}} - 1.0 \cdot v_{\mathrm{TKase_{E4P}}} - 1.0 \cdot v_{\mathrm{TKase_{R5P}}} - 1.0 \cdot v_{\mathrm{GAP,\ ex}}
+```
+```math
+\frac{\mathrm{d}\mathrm{DHAP}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{TPIase}} - 1.0 \cdot v_{\mathrm{Aldolase_{FBP}}} - 1.0 \cdot v_{\mathrm{Aldolase_{SBP}}} - 1.0 \cdot v_{\mathrm{DHAP,\ ex}}
+```
+```math
+\frac{\mathrm{d}\mathrm{FBP}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{Aldolase_{FBP}}} - 1.0 \cdot v_{\mathrm{FBPase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{F6P}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{TKase_{E4P}}} + 1.0 \cdot v_{\mathrm{FBPase}} - 1.0 \cdot v_{\mathrm{PGIase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{X5P}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{TKase_{E4P}}} + 1.0 \cdot v_{\mathrm{TKase_{R5P}}} - 1.0 \cdot v_{\mathrm{RPEase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{E4P}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{TKase_{E4P}}} - 1.0 \cdot v_{\mathrm{Aldolase_{SBP}}}
+```
+```math
+\frac{\mathrm{d}\mathrm{SBP}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{Aldolase_{SBP}}} - 1.0 \cdot v_{\mathrm{SBPase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{S7P}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{TKase_{R5P}}} + 1.0 \cdot v_{\mathrm{SBPase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{R5P}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{TKase_{R5P}}} - 1.0 \cdot v_{\mathrm{Rpiase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{RU5P}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{PRKase}} + 1.0 \cdot v_{\mathrm{RPEase}} + 1.0 \cdot v_{\mathrm{Rpiase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{G6P}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{PGIase}} - 1.0 \cdot v_{\mathrm{PGMase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{G1P}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{Starch}} + 1.0 \cdot v_{\mathrm{PGMase}}
+```
+```math
+\frac{\mathrm{d}\mathrm{RUBP}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{PRKase}} - 1.0 \cdot v_{\mathrm{RuBisCo}}
+```
+```math
+\frac{\mathrm{d}\mathrm{Trx_{ox}}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{FdTrReductase}} + 5.0 \cdot v_{\mathrm{Eact}}
+```
+```math
+\frac{\mathrm{d}\mathrm{E}_\mathrm{CBB,\ inact}}{\mathrm{d}t} = -5.0 \cdot v_{\mathrm{Eact}} + 5.0 \cdot v_{\mathrm{Einact}}
+```
+```math
+\frac{\mathrm{d}\mathrm{H_2O_2}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{APXase}} + 0.0032 \cdot v_{\mathrm{Mehler}}
+```
+```math
+\frac{\mathrm{d}\mathrm{MDA}}{\mathrm{d}t} = -2.0 \cdot v_{\mathrm{MDAreduct}} + 2.0 \cdot v_{\mathrm{APXase}} - 2.0 \cdot v_{\mathrm{3ASC}}
+```
+```math
+\frac{\mathrm{d}\mathrm{GSSG}}{\mathrm{d}t} = -1.0 \cdot v_{\mathrm{GR}} + 1.0 \cdot v_{\mathrm{DHAR}}
+```
+```math
+\frac{\mathrm{d}\mathrm{DHA}}{\mathrm{d}t} = 1.0 \cdot v_{\mathrm{3ASC}} - 1.0 \cdot v_{\mathrm{DHAR}}
+```
+
+```math
    \begin{align}
       \frac{\mathrm{d}\mathrm{PQ}}{\mathrm{d}t} &= -1.0 \cdot v_{\mathrm{PSII}} + 1.0 \cdot v_{\mathrm{PQ}_{\mathrm{ox}}} - 1.0 \cdot v_{\mathrm{NDH}} + 1.0 \cdot v_{\mathrm{b6f}} - 1.0 \cdot v_{\mathrm{Cyc}} \\
       \frac{\mathrm{d}\mathrm{H_{lu}}}{\mathrm{d}t} &= \frac{1}{b_\mathrm{H}} \cdot \left( 2 \cdot v_{\mathrm{PSII}} + 4 \cdot v_{\mathrm{b6f}} - \mathrm{HPR} \cdot v_{\mathrm{ATPsynthase}} - v_{\mathrm{Leak}} \right) \\
@@ -127,32 +218,32 @@
 <summary> Calculations </summary>
 
 ```math
-   \begin{align}
-       \mathrm{PQH}_2 &= \mathrm{PQ}^{\mathrm{tot}} - \mathrm{PQ} \\
-       \mathrm{PC}_\mathrm{red} &= \mathrm{PC}^{\mathrm{tot}} - \mathrm{PC}_\mathrm{ox} \\
-       \mathrm{Fd}_\mathrm{red} &= \mathrm{Fd}^{\mathrm{tot}} - \mathrm{Fd}_\mathrm{ox} \\
-       \mathrm{ADP_{st}} &= \mathrm{AP}^{\mathrm{tot}} - \mathrm{ATP_{st}} \\
-       \mathrm{NADP}_\mathrm{st} &= \mathrm{NADP}^{\mathrm{tot}} - \mathrm{NADPH}_\mathrm{st} \\
-       \mathrm{LHCp} &=  1 - \mathrm{LHC} \\
-       \mathrm{Zx} &= \mathrm{X}^{\mathrm{tot}} - \mathrm{Vx} \\
-       \mathrm{psbS^P} &= \mathrm{PsbS}^{\mathrm{tot}} - \mathrm{psbS} \\
-       \mathrm{PSII_{cross}} &=  \sigma _\mathrm{II} ^0 + \left( 1 - \sigma _\mathrm{II} ^0 - \sigma _\mathrm{I} ^0 \right) \mathrm{LHC} \\
-       \mathrm{Q} &=  \gamma_0 \cdot \mathrm{Vx} \cdot \mathrm{psbS} + \gamma_1 \cdot \mathrm{Vx} \cdot \mathrm{psbS^P} + \gamma_2 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}}  \cdot \mathrm{psbS^P} + \gamma_3 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}}  \cdot \mathrm{psbS} \\
-       \mathrm{B_0} &=  \mathrm{B0} \\
-       \mathrm{B_1} &=  \mathrm{B1} \\
-       \mathrm{B_2} &=  \mathrm{B2} \\
-       \mathrm{B_3} &=  \mathrm{B3} \\
-       \mathrm{pH}_\mathrm{lu} &=  \frac{-\log \left( \mathrm{H_{lu}} \cdot 0.00025 \right)}{\log 10} \\
-       \mathrm{P}_\mathrm{i,\ st} &=  \mathrm{P}^{\mathrm{tot}} - \left( \mathrm{PGA} + 2 \cdot \mathrm{BPGA} + \mathrm{GAP} + \mathrm{DHAP} + 2 \cdot \mathrm{FBP} + \mathrm{F6P} + \mathrm{G6P} + \mathrm{G1P} + 2 \cdot \mathrm{SBP} + \mathrm{S7P} + \mathrm{E4P} + \mathrm{X5P} + \mathrm{R5P} + 2 \cdot \mathrm{RUBP} + \mathrm{RU5P} + \mathrm{ATP_{st}} \right) \\
-       \mathrm{IF}_\mathrm{3P} &=  1 + \left( 1 + \frac{K_{\mathrm{diss}|\mathrm{P_{ext}}} }{\mathrm{P}_\mathrm{ext}} \right) \left( \frac{\mathrm{P}_\mathrm{i,\ st}}{K_{\mathrm{diss}|\mathrm{Pi}} } + \frac{\mathrm{PGA}}{K_{\mathrm{diss}|\mathrm{PGA}} } + \frac{\mathrm{GAP}}{K_{\mathrm{diss}|\mathrm{GAP}} } + \frac{\mathrm{DHAP}}{K_{\mathrm{diss}|\mathrm{DHAP}} } \right) \\
-       \mathrm{TRX_{red}} &= \mathrm{Thioredoxin}^{\mathrm{tot}} - \mathrm{Trx_{ox}} \\
-       \mathrm{E}_\mathrm{CBB,\ inact} &= \mathrm{Enz}_{\mathrm{cbb}_\mathrm{tot}} - \mathrm{E}_\mathrm{CBB,\ inact} \\
-       \mathrm{ASC} &= \mathrm{Ascorbate}^{\mathrm{tot}} - \mathrm{MDA} - \mathrm{DHA} \\
-       \mathrm{GSH} &=  \mathrm{Gluthation}^{\mathrm{tot}} - 2 \cdot \mathrm{GSSG} \\
-       \mathrm{Y_0} &=  \mathrm{y0} \\
-       \mathrm{Y_1} &=  \mathrm{y1} \\
-       \mathrm{Y_2} &=  \mathrm{y2} \\
-   \end{align}
+    \begin{align}
+        \mathrm{PQH}_2 &= \mathrm{PQ}^{\mathrm{tot}} - \mathrm{PQ} \\
+        \mathrm{PC}_\mathrm{red} &= \mathrm{PC}^{\mathrm{tot}} - \mathrm{PC}_\mathrm{ox} \\
+        \mathrm{Fd}_\mathrm{red} &= \mathrm{Fd}^{\mathrm{tot}} - \mathrm{Fd}_\mathrm{ox} \\
+        \mathrm{ADP_{st}} &= \mathrm{AP}^{\mathrm{tot}} - \mathrm{ATP_{st}} \\
+        \mathrm{NADP}_\mathrm{st} &= \mathrm{NADP}^{\mathrm{tot}} - \mathrm{NADPH}_\mathrm{st} \\
+        \mathrm{LHCp} &=  1 - \mathrm{LHC} \\
+        \mathrm{Zx} &= \mathrm{X}^{\mathrm{tot}} - \mathrm{Vx} \\
+        \mathrm{psbS^P} &= \mathrm{PsbS}^{\mathrm{tot}} - \mathrm{psbS} \\
+        \mathrm{PSII_{cross}} &=  \sigma _\mathrm{II} ^0 + \left( 1 - \sigma _\mathrm{II} ^0 - \sigma _\mathrm{I} ^0 \right) \mathrm{LHC} \\
+        \mathrm{Q} &=  \gamma_0 \cdot \mathrm{Vx} \cdot \mathrm{psbS} + \gamma_1 \cdot \mathrm{Vx} \cdot \mathrm{psbS^P} + \gamma_2 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}}  \cdot \mathrm{psbS^P} + \gamma_3 \cdot \frac{\mathrm{Zx}}{\mathrm{Zx} + K_\mathrm{ZSat}}  \cdot \mathrm{psbS} \\
+        \mathrm{B_0} &=  \mathrm{B0} \\
+        \mathrm{B_1} &=  \mathrm{B1} \\
+        \mathrm{B_2} &=  \mathrm{B2} \\
+        \mathrm{B_3} &=  \mathrm{B3} \\
+        \mathrm{pH}_\mathrm{lu} &=  \frac{-\log \left( \mathrm{H_{lu}} \cdot 0.00025 \right)}{\log 10} \\
+        \mathrm{P}_\mathrm{i,\ st} &=  \mathrm{P}^{\mathrm{tot}} - \left( \mathrm{PGA} + 2 \cdot \mathrm{BPGA} + \mathrm{GAP} + \mathrm{DHAP} + 2 \cdot \mathrm{FBP} + \mathrm{F6P} + \mathrm{G6P} + \mathrm{G1P} + 2 \cdot \mathrm{SBP} + \mathrm{S7P} + \mathrm{E4P} + \mathrm{X5P} + \mathrm{R5P} + 2 \cdot \mathrm{RUBP} + \mathrm{RU5P} + \mathrm{ATP_{st}} \right) \\
+        \mathrm{IF}_\mathrm{3P} &=  1 + \left( 1 + \frac{K_{\mathrm{diss}|\mathrm{P_{ext}}} }{\mathrm{P}_\mathrm{ext}} \right) \left( \frac{\mathrm{P}_\mathrm{i,\ st}}{K_{\mathrm{diss}|\mathrm{Pi}} } + \frac{\mathrm{PGA}}{K_{\mathrm{diss}|\mathrm{PGA}} } + \frac{\mathrm{GAP}}{K_{\mathrm{diss}|\mathrm{GAP}} } + \frac{\mathrm{DHAP}}{K_{\mathrm{diss}|\mathrm{DHAP}} } \right) \\
+        \mathrm{TRX_{red}} &= \mathrm{Thioredoxin}^{\mathrm{tot}} - \mathrm{Trx_{ox}} \\
+        \mathrm{E}_\mathrm{CBB,\ inact} &= \mathrm{Enz}_{\mathrm{cbb}_\mathrm{tot}} - \mathrm{E}_\mathrm{CBB,\ inact} \\
+        \mathrm{ASC} &= \mathrm{Ascorbate}^{\mathrm{tot}} - \mathrm{MDA} - \mathrm{DHA} \\
+        \mathrm{GSH} &=  \mathrm{Gluthation}^{\mathrm{tot}} - 2 \cdot \mathrm{GSSG} \\
+        \mathrm{Y_0} &=  \mathrm{y0} \\
+        \mathrm{Y_1} &=  \mathrm{y1} \\
+        \mathrm{Y_2} &=  \mathrm{y2} \\
+    \end{align}
 ```
 
 </details>

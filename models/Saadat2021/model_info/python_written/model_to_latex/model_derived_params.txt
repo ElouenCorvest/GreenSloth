@@ -1,3 +1,15 @@
+------- Update on 2025-02-26 12:42:08.030796 -------
+
+```math
+   \begin{{align}}
+       {H_st} &=  32000.0 \cdot 10^{{-{pH_stroma}}} \\
+       {K_QAPQ} &=  \exp \left( \frac{{2 \mathrm{{PDG}} + 2 {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right) \\
+       {K_FAFd} &=  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right) \\
+       {K_PCP700} &=  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right) \\
+       {K_FNR} &=  \exp \left( \frac{{2 \mathrm{{PDG}} + {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right) \\
+   \end{{align}}
+```
+
 ------- Update on 2025-02-26 11:29:08.584851 -------
 
 ```math
