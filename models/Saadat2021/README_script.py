@@ -430,32 +430,32 @@ mdFile.new_paragraph(fr"""
 <summary> Calculations </summary>
 
 ```math
-   \begin{{align}}
-       {PQH_2} &= {PQ_tot} - {PQ} \\
-       {PC_red} &= {PC_tot} - {PC_ox} \\
-       {Fd_red} &= {Fd_tot} - {Fd_ox} \\
-       {ADP_st} &= {AP_tot} - {ATP_st} \\
-       {NADP_st} &= {NADP_tot} - {NADPH_st} \\
-       {LHCp} &=  1 - {LHC} \\
-       {Zx} &= {X_tot} - {Vx} \\
-       {PsbSP} &= {PsbS_tot} - {psbS} \\
-       {psIIcross} &=  {sigma0_II} + \left( 1 - {sigma0_II} - {sigma0_I} \right) {LHC} \\
-       {Q} &=  {gamma_0} \cdot {Vx} \cdot {psbS} + {gamma_1} \cdot {Vx} \cdot {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}}  \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}}  \cdot {psbS} \\
-       {B0} &=  \mathrm{{B0}} \\
-       {B1} &=  \mathrm{{B1}} \\
-       {B2} &=  \mathrm{{B2}} \\
-       {B3} &=  \mathrm{{B3}} \\
-       {pH_lu} &=  \frac{{-\log \left( {H_lu} \cdot 0.00025 \right)}}{{\log 10}} \\
-       {Pi_st} &=  {P_tot} - \left( {PGA} + 2 \cdot {BPGA} + {GAP} + {DHAP} + 2 \cdot {FBP} + {F6P} + {G6P} + {G1P} + 2 \cdot {SBP} + {S7P} + {E4P} + {X5P} + {R5P} + 2 \cdot {RUBP} + {RU5P} + {ATP_st} \right) \\
-       {IF_3P} &=  1 + \left( 1 + \frac{{{K_diss_Pext}}}{{{Pext}}} \right) \left( \frac{{{Pi_st}}}{{{K_diss_Pi}}} + \frac{{{PGA}}}{{{K_diss_PGA}}} + \frac{{{GAP}}}{{{K_diss_GAP}}} + \frac{{{DHAP}}}{{{K_diss_DHAP}}} \right) \\
-       {TRX_red} &= {thioredoxin_tot} - {TRX_ox} \\
-       {E_CBB_active} &= {e_cbb_tot} - {E_CBB_inactive} \\
-       {ASC} &= {Ascorbate_total} - {MDA} - {DHA} \\
-       {GSH} &=  {Glutathion_total} - 2 \cdot {GSSG} \\
-       {Y0} &=  \mathrm{{y0}} \\
-       {Y1} &=  \mathrm{{y1}} \\
-       {Y2} &=  \mathrm{{y2}} \\
-   \end{{align}}
+    \begin{{align}}
+        {PQH_2} &= {PQ_tot} - {PQ} \\
+        {PC_red} &= {PC_tot} - {PC_ox} \\
+        {Fd_red} &= {Fd_tot} - {Fd_ox} \\
+        {ADP_st} &= {AP_tot} - {ATP_st} \\
+        {NADP_st} &= {NADP_tot} - {NADPH_st} \\
+        {LHCp} &=  1 - {LHC} \\
+        {Zx} &= {X_tot} - {Vx} \\
+        {PsbSP} &= {PsbS_tot} - {psbS} \\
+        {psIIcross} &=  {sigma0_II} + \left( 1 - {sigma0_II} - {sigma0_I} \right) {LHC} \\
+        {Q} &=  {gamma_0} \cdot {Vx} \cdot {psbS} + {gamma_1} \cdot {Vx} \cdot {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}}  \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}}  \cdot {psbS} \\
+        {B0} &=  \mathrm{{B0}} \\
+        {B1} &=  \mathrm{{B1}} \\
+        {B2} &=  \mathrm{{B2}} \\
+        {B3} &=  \mathrm{{B3}} \\
+        {pH_lu} &=  \frac{{-\log \left( {H_lu} \cdot 0.00025 \right)}}{{\log 10}} \\
+        {Pi_st} &=  {P_tot} - \left( {PGA} + 2 \cdot {BPGA} + {GAP} + {DHAP} + 2 \cdot {FBP} + {F6P} + {G6P} + {G1P} + 2 \cdot {SBP} + {S7P} + {E4P} + {X5P} + {R5P} + 2 \cdot {RUBP} + {RU5P} + {ATP_st} \right) \\
+        {IF_3P} &=  1 + \left( 1 + \frac{{{K_diss_Pext}}}{{{Pext}}} \right) \left( \frac{{{Pi_st}}}{{{K_diss_Pi}}} + \frac{{{PGA}}}{{{K_diss_PGA}}} + \frac{{{GAP}}}{{{K_diss_GAP}}} + \frac{{{DHAP}}}{{{K_diss_DHAP}}} \right) \\
+        {TRX_red} &= {thioredoxin_tot} - {TRX_ox} \\
+        {E_CBB_active} &= {e_cbb_tot} - {E_CBB_inactive} \\
+        {ASC} &= {Ascorbate_total} - {MDA} - {DHA} \\
+        {GSH} &=  {Glutathion_total} - 2 \cdot {GSSG} \\
+        {Y0} &=  \mathrm{{y0}} \\
+        {Y1} &=  \mathrm{{y1}} \\
+        {Y2} &=  \mathrm{{y2}} \\
+    \end{{align}}
 ```
 
 </details>
