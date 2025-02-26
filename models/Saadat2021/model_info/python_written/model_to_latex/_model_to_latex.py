@@ -8,7 +8,7 @@ import inspect
 import re
 
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
+parentdir = os.path.dirname(os.path.dirname(currentdir))
 sys.path.insert(0, os.path.dirname(parentdir))
 
 from model import Saadat2021
@@ -26,13 +26,13 @@ def export_select_as_latex(
         if var.fn == proportional:
             rhs = ''
             for i in var.args:
-                rhs += fr'{i} \cdot '
+                rhs += fr'{{{i}}} \cdot '
             rhs = rhs[:-7]
 
         elif var.fn == continous_subtraction:
             rhs = ''
             for i in var.args:
-                rhs += fr'{i} - '
+                rhs += fr'{{{i}}} - '
             rhs = rhs[:-3]
 
         else:
@@ -160,20 +160,20 @@ def export_odes_as_latex(
 
 export_select_as_latex(
     select=Saadat2021().reactions,
-    path_to_write=Path(__file__).parent / 'model_to_latex/model_rates.txt'
+    path_to_write=Path(__file__).parent / 'model_rates.txt'
 )
 
 export_select_as_latex(
     select=Saadat2021().derived_variables,
-    path_to_write=Path(__file__).parent / 'model_to_latex/model_derived_comps.txt'
+    path_to_write=Path(__file__).parent / 'model_derived_comps.txt'
 )
 
 export_select_as_latex(
     select=Saadat2021().derived_parameters,
-    path_to_write=Path(__file__).parent / 'model_to_latex/model_derived_params.txt'
+    path_to_write=Path(__file__).parent / 'model_derived_params.txt'
 )
 
 export_odes_as_latex(
     m=Saadat2021(),
-    path_to_write= Path(__file__).parent / 'model_to_latex/model_odes.txt'
+    path_to_write= Path(__file__).parent / 'model_odes.txt'
 )

@@ -130,8 +130,8 @@ def v_PRKase(RU5P, ATP_st, RUBP, PGA, Pi_st, ADP_st, Vmax_prkase, Km_PRKase_RU5P
         * (ATP_st * (1 + (ADP_st / Kiunc_PRKase_ADP)) + Km_PRKase_ATP * (1 + (ADP_st / Kicom_PRKase_ADP)))
     )
 
-def triose_export(S, N, Vmax_ex, K_diss_PGA):
-    return (Vmax_ex * S) / (N * K_diss_PGA)
+def triose_export(S, IF_3P, Vmax_ex, K_diss_PGA):
+    return (Vmax_ex * S) / (IF_3P * K_diss_PGA)
 
 def v_starch(G1P, ATP_st, ADP_st, Pi_st, PGA, F6P, FBP, Vmax_starch, Km_Starch_G1P, Ki_Starch_ADP, Km_Starch_ATP, Kact_Starch_PGA, Kact_Starch_F6P, Kact_Starch_FBP):
     """G1P -> Gn-1 ; Starch production"""
@@ -331,7 +331,7 @@ def include_rates(
     )
 
     m.add_reaction(
-        name="v_Aldolase_R5P",
+        name="v_Aldolase_SBP",
         fn=rapid_eq_2_1,
         args=['DHAP', 'E4P', 'SBP', 'k_fast', 'K_Aldolase_SBP'],
         stoichiometry={"DHAP": -1, "E4P": -1, "SBP": 1},
@@ -375,21 +375,21 @@ def include_rates(
     m.add_reaction(
         name="v_pga_ex",
         fn=triose_export,
-        args=['PGA', 'N', 'Vmax_ex', 'K_diss_PGA'],
+        args=['PGA', 'IF_3P', 'Vmax_ex', 'K_diss_PGA'],
         stoichiometry={"PGA": -1},
     )
 
     m.add_reaction(
         name="v_gap_ex",
         fn=triose_export,
-        args=['GAP', 'N', 'Vmax_ex', 'K_diss_GAP'],
+        args=['GAP', 'IF_3P', 'Vmax_ex', 'K_diss_GAP'],
         stoichiometry={"GAP": -1},
     )
 
     m.add_reaction(
         name="v_dhap_ex",
         fn=triose_export,
-        args=['DHAP', 'N', 'Vmax_ex', 'K_diss_DHAP'],
+        args=['DHAP', 'IF_3P', 'Vmax_ex', 'K_diss_DHAP'],
         stoichiometry={"DHAP": -1},
     )
 
@@ -435,15 +435,15 @@ def include_rates(
     m.add_reaction(
         name="v_FdTrReduc",
         fn=proportional,
-        args=['TR_ox', 'Fd_red', 'k_fd_tr_reductase'],
-        stoichiometry={"TR_ox": -1, "Fd_ox": 1},
+        args=['TRX_ox', 'Fd_red', 'k_fd_tr_reductase'],
+        stoichiometry={"TRX_ox": -1, "Fd_ox": 1},
     )
 
     m.add_reaction(
         name="v_Eact",
         fn=proportional,
-        args=['E_CBB_inactive', 'TR_red', 'k_e_cbb_activation'],
-        stoichiometry={"E_CBB_inactive": -5, "TR_ox": 5},
+        args=['E_CBB_inactive', 'TRX_red', 'k_e_cbb_activation'],
+        stoichiometry={"E_CBB_inactive": -5, "TRX_ox": 5},
     )
 
     m.add_reaction(

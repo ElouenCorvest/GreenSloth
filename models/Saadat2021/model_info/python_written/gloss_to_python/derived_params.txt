@@ -1,0 +1,29 @@
+------- Update on 2025-02-26 11:39:22.285907 -------
+
+H_st = remove_math(derived_params_table, r'$\mathrm{H}_\mathrm{st}$')
+K_QAPQ = remove_math(derived_params_table, r'$K_\mathrm{eq, QAPQ}$')
+K_FAFd = remove_math(derived_params_table, r'$K_\mathrm{eq, FAFd}$')
+K_PCP700 = remove_math(derived_params_table, r'$K_\mathrm{eq, PCP700}$')
+K_FNR = remove_math(derived_params_table, r'$K_\mathrm{eq, FNR}$')
+K_ATPsynth = remove_math(derived_params_table, r'$K_\mathrm{eq, ATPsynthase}$')
+K_cytb6f = remove_math(derived_params_table, r'$K_\mathrm{eq, cytb6f}$')
+Vmax_rubisco = remove_math(derived_params_table, r'$V_1$')
+Vmax_fbpase = remove_math(derived_params_table, r'$V_6$')
+Vmax_sbpase = remove_math(derived_params_table, r'$V_9$')
+Vmax_prkase = remove_math(derived_params_table, r'$V_13$')
+Vmax_starch = remove_math(derived_params_table, r'$V_\mathrm{st}$')
+
+------- Start on 2025-02-26 11:22:51.442214 -------
+
+H_st = remove_math(derived_params_table, r'$\mathrm{H}_\mathrm{st}$')
+K_QAPQ = remove_math(derived_params_table, r'$K_\mathrm{eq, QAPQ}$')
+K_FAFd = remove_math(derived_params_table, r'$K_\mathrm{eq, FAFd}$')
+K_PCP700 = remove_math(derived_params_table, r'$K_\mathrm{eq, PCP700}$')
+K_FNR = remove_math(derived_params_table, r'$K_\mathrm{eq, FNR}$')
+K_ATPsynthase = remove_math(derived_params_table, r'$K_\mathrm{eq, ATPsynthase}$')
+K_cytb6f = remove_math(derived_params_table, r'$K_\mathrm{eq, cytb6f}$')
+Vmax_rubisco = remove_math(derived_params_table, r'$V_1$')
+Vmax_fbpase = remove_math(derived_params_table, r'$V_6$')
+Vmax_sbpase = remove_math(derived_params_table, r'$V_9$')
+Vmax_prkase = remove_math(derived_params_table, r'$V_13$')
+Vmax_starch = remove_math(derived_params_table, r'$V_\mathrm{st}$')

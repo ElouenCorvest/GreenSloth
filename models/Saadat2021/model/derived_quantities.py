@@ -70,7 +70,7 @@ def Keq_nernst_S2_P2_PpHstroma2(SE0: float, PE0: float, pH_stroma: float, R: flo
     DG = (2 * PDG + 2 * pH_stroma * np.log(10) * R * T) - (2 * SDG)
     return np.exp(DG / (R * T))
 
-def Keq_nernst_S1_SpHlumen2_P2_PpHstroma2(SE0: float, PE0: float, pH_stroma: float, pH_lumen: float, R: float, T: float, F: float) -> float:
+def Keq_nernst_S1_SpHlumen2_P2_PpHstroma2(SE0: float, PE0: float, pH_stroma: float, pH_lu: float, R: float, T: float, F: float) -> float:
     """Calculation of equilibrium constant of reaction: 2S -> 2P + 2pH_stroma.
 
     Args:
@@ -86,7 +86,7 @@ def Keq_nernst_S1_SpHlumen2_P2_PpHstroma2(SE0: float, PE0: float, pH_stroma: flo
     """
     SDG = -SE0 * F
     PDG = -PE0 * F
-    DG = (2 * PDG + 2 * (pH_stroma - pH_lumen) * np.log(10) * R * T) - (2 * SDG + 2 * np.log(10) * R * T * pH_lumen)
+    DG = (2 * PDG + 2 * (pH_stroma - pH_lu) * np.log(10) * R * T) - (2 * SDG + 2 * np.log(10) * R * T * pH_lu)
     return np.exp(DG / (R * T))
 
 def psIIcross(LHC: float, sigma0_I: float, sigma0_II: float) -> float:
@@ -232,7 +232,7 @@ def Y2_psIstates(PC_ox, PC_red, Fd_ox, Fd_red, psIIcross, PSI_tot, k_Fd_red, K_F
 def Flou(Q, B0, B2, psIIcross, k2, k_F, k_H):
     return (psIIcross * k_F * B0) / (k_F + k2 + k_H * Q) + (psIIcross * k_F * B2) / (k_F + k_H * Q)
 
-def pH_lumen(H_lu):
+def pH_lu(H_lu):
     return -np.log(H_lu * (2.5e-4)) / np.log(10)
 
 def Pi_st(PGA, BPGA, GAP, DHAP, FBP, F6P, G6P, G1P, SBP, S7P, E4P, X5P, R5P, RUBP, RU5P, ATP_st, P_tot):
@@ -255,12 +255,12 @@ def Pi_st(PGA, BPGA, GAP, DHAP, FBP, F6P, G6P, G1P, SBP, S7P, E4P, X5P, R5P, RUB
         + ATP_st
     )
 
-def Nfunc(Pi_st, PGA, GAP, DHAP, K_diss_Pext, Pext, K_diss_Pi, K_diss_PGA, K_diss_GAP, K_diss_DHAP):
+def IF_3Pfunc(Pi_st, PGA, GAP, DHAP, K_diss_Pext, Pext, K_diss_Pi, K_diss_PGA, K_diss_GAP, K_diss_DHAP):
     """Used several times to calculate the rate of vPGA, vGAP and vDHAP"""
     return 1 + (1 + (K_diss_Pext / Pext)) * ((Pi_st / K_diss_Pi) + (PGA / K_diss_PGA) + (GAP / K_diss_GAP) + (DHAP / K_diss_DHAP))
 
-def K_ATPsynth(Pi_st, pH_stroma, pH_lumen, DeltaG0_ATP, HPR, R, T):
-    DG = DeltaG0_ATP - (np.log(10) * R * T) * HPR * (pH_stroma - pH_lumen)
+def K_ATPsynth(Pi_st, pH_stroma, pH_lu, DeltaG0_ATP, HPR, R, T):
+    DG = DeltaG0_ATP - (np.log(10) * R * T) * HPR * (pH_stroma - pH_lu)
     return Pi_st * np.exp(-DG / (R * T))
 
 def GSH(Glutathion_total, GSSG):
@@ -397,8 +397,8 @@ def include_derived_quantities(
     )
 
     m.add_derived(
-        name='pH_lumen',
-        fn=pH_lumen,
+        name='pH_lu',
+        fn=pH_lu,
         args=['H_lu']
     )
 
@@ -409,21 +409,21 @@ def include_derived_quantities(
     )
 
     m.add_derived(
-        name='N',
-        fn=Nfunc,
+        name='IF_3P',
+        fn=IF_3Pfunc,
         args=['Pi_st', 'PGA', 'GAP', 'DHAP', 'K_diss_Pext', 'Pext', 'K_diss_Pi', 'K_diss_PGA', 'K_diss_GAP', 'K_diss_DHAP']
     )
 
     m.add_derived(
         name='K_ATPsynth',
         fn=K_ATPsynth,
-        args=['Pi_st', 'pH_stroma', 'pH_lumen', 'DeltaG0_ATP', 'HPR', 'R', 'T']
+        args=['Pi_st', 'pH_stroma', 'pH_lu', 'DeltaG0_ATP', 'HPR', 'R', 'T']
     )
 
     m.add_derived(
         name='K_cytb6f',
         fn=Keq_nernst_S1_SpHlumen2_P2_PpHstroma2,
-        args=['E0_PQ', 'E0_PC', 'pH_stroma', 'pH_lumen', 'R', 'T', 'F']
+        args=['E0_PQ', 'E0_PC', 'pH_stroma', 'pH_lu', 'R', 'T', 'F']
     )
 
     # --------------------------------------
@@ -431,9 +431,9 @@ def include_derived_quantities(
     # --------------------------------------
 
     m.add_derived(
-        name='TR_red',
+        name='TRX_red',
         fn=continous_subtraction,
-        args=['thioredoxin_tot', 'TR_ox']
+        args=['thioredoxin_tot', 'TRX_ox']
     )
 
     m.add_derived(

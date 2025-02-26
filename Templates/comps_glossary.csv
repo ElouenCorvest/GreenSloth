@@ -14,7 +14,7 @@ Initial state of PSII,$\mathrm{B_0}$,PSII,B0,12,"Matuszynska2016, Saadat2021"
 Excited state of PSII,$\mathrm{B_1}$,PSII,B1,13,"Matuszynska2016, Saadat2021"
 Charge seperation state of PSII,$\mathrm{B_2}$,PSII,B2,14,"Matuszynska2016, Saadat2021"
 Photoinhibited state of PSII,$\mathrm{B_3}$,PSII,B3,15,"Matuszynska2016, Saadat2021"
-Lumen pH,$\mathrm{pH}_\mathrm{lu}$,,pH_lu,16,Matuszynska2016
+Lumen pH,$\mathrm{pH}_\mathrm{lu}$,,pH_lu,16,"Matuszynska2016, Saadat2021"
 Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,C03162,PC_ox,17,Saadat2021
 Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,C00139,Fd_ox,18,Saadat2021
 Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,NADPH,NADPH_st,19,Saadat2021
@@ -36,15 +36,23 @@ Ribose 5-phosphate,$\mathrm{R5P}$,CPD-15318,R5P,33,Saadat2021
 Ribulose 5-phosphate,$\mathrm{RU5P}$,RIBULOSE-5P,RU5P,35,Saadat2021
 Reduced Plastocyanine,$\mathrm{PC}_\mathrm{red}$,C03025,PC_red,36,Saadat2021
 Reduced Ferrodoxin,$\mathrm{Fd}_\mathrm{red}$,C00138,Fd_red,37,Saadat2021
-Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,NADP,NADP,38,Saadat2021
+Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,NADP,NADP_st,38,Saadat2021
 Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",Pi,Pi_st,39,Saadat2021
 Inhibition factor of the triose phosphate translocators,$\mathrm{IF}_\mathrm{3P}$,,IF_3P,40,Saadat2021
 Monodehydroascorbate radicals,$\mathrm{MDA}$,CPD-318,MDA,41,Saadat2021
 Hydrogen Peroxide,$\mathrm{H_2O_2}$,HYDROGEN-PEROXIDE,H2O2,42,Saadat2021
 Dehydroacorbate,$\mathrm{DHA}$,L-DEHYDRO-ASCORBATE,DHA,43,Saadat2021
 Glutathione disulfide,$\mathrm{GSSG}$,OXIDIZED-GLUTATHIONE,GSSG,44,Saadat2021
-Oxidised thioredoxin,$\mathrm{Trx_{ox}}$,2142833,Trx_ox,45,Saadat2021
+Oxidised thioredoxin,$\mathrm{Trx_{ox}}$,2142833,TRX_ox,45,Saadat2021
 Inactive CBB proteins,"$\mathrm{E}_\mathrm{CBB,\ inact}$",,E_CBB_inactive,46,Saadat2021
 Cross section of PSII,$\mathrm{PSII_{cross}}$,,psIIcross,47,Saadat2021
 Co-operative 4-state quenching mechanism,$\mathrm{Q}$,,Q,48,Saadat2021
 States of PSI,$\mathrm{PSII_{sta}}$,,PSI_sta,49,Saadat2021
+Phosphorylated fraction of light harvesting complexes,$\mathrm{LHCp}$,,LHCp,50,Saadat2021
+Reduced thioredoxin,$\mathrm{TRX_{red}}$,,TRX_red,51,Saadat2021
+Active CBB proteins,"$\mathrm{E}_\mathrm{CBB,\ inact}$",,E_CBB_active,52,Saadat2021
+Reduced ascorbate,$\mathrm{ASC}$,,ASC,53,Saadat2021
+Reduced glutathione,$\mathrm{GSH}$,,GSH,54,Saadat2021
+Ground state of PSI (P700),$\mathrm{Y_0}$,,Y0,55,Saadat2021
+Activated state of PSI (P700*),$\mathrm{Y_1}$,,Y1,56,Saadat2021
+Oxidised state of PSI (P700+),$\mathrm{Y_2}$,,Y2,57,Saadat2021
