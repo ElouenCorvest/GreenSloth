@@ -1,3 +1,3 @@
 from distutils.core import setup
 
-setup(name='glossary_utils', version='1.0.0', packages=['glossary_utils'])
+setup(name='glossary-utils', version='1.0.0', packages=['glossary-utils'])
