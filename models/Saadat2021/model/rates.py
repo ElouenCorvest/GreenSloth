@@ -26,7 +26,8 @@ def oxygen(time, ox, O2_ext, k_NDH, Ton, Toff):
     if isinstance(time, (int, float)):
         return np.array(_oxygen(time, ox, O2_ext, k_NDH, Ton, Toff))
     else:
-        return np.array([_oxygen(t, ox, O2_ext, k_NDH, Ton, Toff) for t in time]).T
+
+        return np.array([_oxygen(time, ox, O2_ext, k_NDH, Ton, Toff) for time, ox, O2_ext, k_NDH, Ton, Toff in zip(time, ox, O2_ext, k_NDH, Ton, Toff)]).T
 
 def v_PQ(PQH_2, time, k_PTOX, ox, O2_ext, k_NDH, Ton, Toff):
     """calculates reaction rate of PTOX"""
@@ -37,7 +38,7 @@ def v_NDH(PQ, time, ox, O2_ext, k_NDH, Ton, Toff):
     calculates reaction rate of PQ reduction under absence of oxygen
     can be mediated by NADH reductase NDH
     """
-    return oxygen(time, ox, O2_ext, k_NDH, Ton, Toff)[1] * PQ
+    return  PQ * oxygen(time, ox, O2_ext, k_NDH, Ton, Toff)[1]
 
 def v_b6f(PC_ox, PQ, PQH_2, PC_red, K_cytb6f, k_Cytb6f):
     """calculates reaction rate of cytb6f"""
@@ -62,8 +63,8 @@ def v_FNR(Fd_ox, Fd_red, NADPH_st, NADP_st, KM_FNR_F, KM_FNR_N, EFNR, kcat_FNR, 
     """
     fdred = Fd_red / KM_FNR_F
     fdox = Fd_ox / KM_FNR_F
-    nadph = (NADPH_st / convf) / KM_FNR_N  # NADPH requires conversion to mmol/mol of chlorophyll
-    nadp = (NADP_st / convf) / KM_FNR_N  # NADP requires conversion to mmol/mol of chlorophyll
+    nadph = NADPH_st / (convf * KM_FNR_N)   # NADPH requires conversion to mmol/mol of chlorophyll
+    nadp = NADP_st / (convf * KM_FNR_N)  # NADP requires conversion to mmol/mol of chlorophyll
     return (
         EFNR
         * kcat_FNR
@@ -86,7 +87,7 @@ def v_St21(LHC, PQ, k_Stt7, PQ_tot, KM_ST, n_ST):
     Ant depending on module used corresponds to non-phosphorylated antennae
     or antennae associated with PSII
     """
-    kKin = k_Stt7 * (1 / (1 + ((PQ / PQ_tot) / KM_ST) ** n_ST))
+    kKin = k_Stt7 * (1 / (1 + (PQ / (PQ_tot * KM_ST) ) ** n_ST))
     return kKin * LHC
 
 def v_ATPsynth(ATP_st, ADP_st, K_ATPsynth, k_ATPsynth, convf):
@@ -98,7 +99,7 @@ def v_ATPsynth(ATP_st, ADP_st, K_ATPsynth, k_ATPsynth, convf):
     Reaction rate: mmol/mol Chl/s
     [ATP], [ADP] in mM
     """
-    return k_ATPsynth * (ADP_st / convf - ATP_st / convf / K_ATPsynth)
+    return k_ATPsynth * (ADP_st / convf - ATP_st / (convf * K_ATPsynth))
 
 def v_Deepox(Vx, H_lu, nh_x, k_DV, K_pHSat):
     """

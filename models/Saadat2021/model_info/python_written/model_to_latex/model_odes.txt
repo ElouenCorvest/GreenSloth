@@ -1,3 +1,189 @@
+------- Update on 2025-02-28 09:48:31.642092 -------
+
+```math
+{ode(PQ)} = -1.0 \cdot {v_PSII} + 1.0 \cdot {v_PQ} - 1.0 \cdot {v_NDH} + 1.0 \cdot {v_b6f} - 1.0 \cdot {v_Cyc}
+```
+```math
+{ode(H_lu)} = 0.02 \cdot {v_PSII} + 0.04 \cdot {v_b6f} - 0.0{v_Leak} - 0.04666666666666667 \cdot {v_ATPsynth}
+```
+```math
+{ode(PC_ox)} = -2.0 \cdot {v_b6f} + 1.0 \cdot {v_PSI}
+```
+```math
+{ode(Fd_ox)} = 2.0 \cdot {v_Cyc} + 2.0 \cdot {v_FNR} + 1.0 \cdot {v_FdTrReduc} - 1.0 \cdot {v_Fdred}
+```
+```math
+{ode(NADPH_st)} = 0.032 \cdot {v_FNR} - 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_MDAreduct} - 1.0 \cdot {v_GR} - 1.0 \cdot {v_NADPHcons}
+```
+```math
+{ode(LHC)} = -1.0 \cdot {v_St21} + 1.0 \cdot {v_St12}
+```
+```math
+{ode(ATP_st)} = 0.032 \cdot {v_ATPsynth} - 1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_starch} - 1.0 \cdot {v_ATPcons}
+```
+```math
+{ode(Vx)} = -1.0 \cdot {v_Deepox} + 1.0 \cdot {v_Epox}
+```
+```math
+{ode(psbS)} = -1.0 \cdot {v_PsbSP} + 1.0 \cdot {v_PsbSD}
+```
+```math
+{ode(PGA)} = -1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_pga_ex} + 2.0 \cdot {v_RuBisCO}
+```
+```math
+{ode(BPGA)} = -1.0 \cdot {v_BPGAdehynase} + 1.0 \cdot {v_PGK1ase}
+```
+```math
+{ode(GAP)} = 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_gap_ex}
+```
+```math
+{ode(DHAP)} = 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_dhap_ex}
+```
+```math
+{ode(FBP)} = 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_FBPase}
+```
+```math
+{ode(F6P)} = -1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_FBPase} - 1.0 \cdot {v_PGIase}
+```
+```math
+{ode(X5P)} = 1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_RPEase}
+```
+```math
+{ode(E4P)} = 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_Aldolase_SBP}
+```
+```math
+{ode(SBP)} = 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_SBPase}
+```
+```math
+{ode(S7P)} = -1.0 \cdot {v_TKase_R5P} + 1.0 \cdot {v_SBPase}
+```
+```math
+{ode(R5P)} = 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_Rpiase}
+```
+```math
+{ode(RU5P)} = -1.0 \cdot {v_PRKase} + 1.0 \cdot {v_RPEase} + 1.0 \cdot {v_Rpiase}
+```
+```math
+{ode(G6P)} = 1.0 \cdot {v_PGIase} - 1.0 \cdot {v_PGMase}
+```
+```math
+{ode(G1P)} = -1.0 \cdot {v_starch} + 1.0 \cdot {v_PGMase}
+```
+```math
+{ode(RUBP)} = 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_RuBisCO}
+```
+```math
+{ode(TRX_ox)} = -1.0 \cdot {v_FdTrReduc} + 5.0 \cdot {v_Eact}
+```
+```math
+{ode(E_CBB_inactive)} = -5.0 \cdot {v_Eact} + 5.0 \cdot {v_Einact}
+```
+```math
+{ode(H2O2)} = -1.0 \cdot {v_APXase} + 0.032 \cdot {v_Mehler}
+```
+```math
+{ode(MDA)} = -2.0 \cdot {v_MDAreduct} + 2.0 \cdot {v_APXase} - 2.0 \cdot {v_3ASC}
+```
+```math
+{ode(GSSG)} = -1.0 \cdot {v_GR} + 1.0 \cdot {v_DHAR}
+```
+```math
+{ode(DHA)} = 1.0 \cdot {v_3ASC} - 1.0 \cdot {v_DHAR}
+```
+
+------- Update on 2025-02-26 13:10:48.111394 -------
+
+```math
+{ode(PQ)} = -1.0 \cdot {v_PSII} + 1.0 \cdot {v_PQ} - 1.0 \cdot {v_NDH} + 1.0 \cdot {v_b6f} - 1.0 \cdot {v_Cyc}
+```
+```math
+{ode(H_lu)} = 0.02 \cdot {v_PSII} + 0.04 \cdot {v_b6f} - 0.0{v_Leak} - 0.04666666666666667 \cdot {v_ATPsynth}
+```
+```math
+{ode(PC_ox)} = -2.0 \cdot {v_b6f} + 1.0 \cdot {v_PSI}
+```
+```math
+{ode(Fd_ox)} = 2.0 \cdot {v_Cyc} + 2.0 \cdot {v_FNR} + 1.0 \cdot {v_FdTrReduc} - 1.0 \cdot {v_Fdred}
+```
+```math
+{ode(NADPH_st)} = 0.0032 \cdot {v_FNR} - 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_MDAreduct} - 1.0 \cdot {v_GR} - 1.0 \cdot {v_NADPHcons}
+```
+```math
+{ode(LHC)} = -1.0 \cdot {v_St21} + 1.0 \cdot {v_St12}
+```
+```math
+{ode(ATP_st)} = 0.0032 \cdot {v_ATPsynth} - 1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_starch} - 1.0 \cdot {v_ATPcons}
+```
+```math
+{ode(Vx)} = -1.0 \cdot {v_Deepox} + 1.0 \cdot {v_Epox}
+```
+```math
+{ode(psbS)} = -1.0 \cdot {v_PsbSP} + 1.0 \cdot {v_PsbSD}
+```
+```math
+{ode(PGA)} = -1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_pga_ex} + 2.0 \cdot {v_RuBisCO}
+```
+```math
+{ode(BPGA)} = -1.0 \cdot {v_BPGAdehynase} + 1.0 \cdot {v_PGK1ase}
+```
+```math
+{ode(GAP)} = 1.0 \cdot {v_BPGAdehynase} - 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_gap_ex}
+```
+```math
+{ode(DHAP)} = 1.0 \cdot {v_TPIase} - 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_dhap_ex}
+```
+```math
+{ode(FBP)} = 1.0 \cdot {v_Aldolase_FBP} - 1.0 \cdot {v_FBPase}
+```
+```math
+{ode(F6P)} = -1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_FBPase} - 1.0 \cdot {v_PGIase}
+```
+```math
+{ode(X5P)} = 1.0 \cdot {v_TKase_E4P} + 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_RPEase}
+```
+```math
+{ode(E4P)} = 1.0 \cdot {v_TKase_E4P} - 1.0 \cdot {v_Aldolase_SBP}
+```
+```math
+{ode(SBP)} = 1.0 \cdot {v_Aldolase_SBP} - 1.0 \cdot {v_SBPase}
+```
+```math
+{ode(S7P)} = -1.0 \cdot {v_TKase_R5P} + 1.0 \cdot {v_SBPase}
+```
+```math
+{ode(R5P)} = 1.0 \cdot {v_TKase_R5P} - 1.0 \cdot {v_Rpiase}
+```
+```math
+{ode(RU5P)} = -1.0 \cdot {v_PRKase} + 1.0 \cdot {v_RPEase} + 1.0 \cdot {v_Rpiase}
+```
+```math
+{ode(G6P)} = 1.0 \cdot {v_PGIase} - 1.0 \cdot {v_PGMase}
+```
+```math
+{ode(G1P)} = -1.0 \cdot {v_starch} + 1.0 \cdot {v_PGMase}
+```
+```math
+{ode(RUBP)} = 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_RuBisCO}
+```
+```math
+{ode(TRX_ox)} = -1.0 \cdot {v_FdTrReduc} + 5.0 \cdot {v_Eact}
+```
+```math
+{ode(E_CBB_inactive)} = -5.0 \cdot {v_Eact} + 5.0 \cdot {v_Einact}
+```
+```math
+{ode(H2O2)} = -1.0 \cdot {v_APXase} + 0.0032 \cdot {v_Mehler}
+```
+```math
+{ode(MDA)} = -2.0 \cdot {v_MDAreduct} + 2.0 \cdot {v_APXase} - 2.0 \cdot {v_3ASC}
+```
+```math
+{ode(GSSG)} = -1.0 \cdot {v_GR} + 1.0 \cdot {v_DHAR}
+```
+```math
+{ode(DHA)} = 1.0 \cdot {v_3ASC} - 1.0 \cdot {v_DHAR}
+```
+
 ------- Update on 2025-02-26 12:43:36.766163 -------
 
 ```math

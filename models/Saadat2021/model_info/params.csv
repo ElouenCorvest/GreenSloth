@@ -35,7 +35,7 @@ Catalytic constant of FNRase,$k_{\mathrm{cat}|\mathrm{FNRase}}$,$k_{\mathrm{cat}
 Reaction rate constant of cyclic electron flow,$k_\mathrm{cyc}$,$k_\mathrm{cyc}$,$1.0$,$\mathrm{s}^{-1}$,k_cyc,
 "External oxygen pool, corresponds to 250μM.",$\mathrm{O}_{2_\mathrm{ext}}$,$\mathrm{O}_2^\mathrm{ex}$,$8.0$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,O2_ext,https://doi.org/10.1098/rstb.2013.0223
 ,$k_\mathrm{NDH}$,$k_\mathrm{NDH}$,$0.002$,$\mathrm{s}^{-1}$,k_NDH,https://doi.org/10.1098/rstb.2013.0223
-,,,$3.0$,,EFNR,
+,$\mathrm{EFNR}$,$\mathrm{EFNR}$,$3.0$,,EFNR,
 ,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}$,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}$,$1.56$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,KM_FNR_F,https://doi.org/10.1098/rstb.2013.0223
 ,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}$,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}$,$0.22$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,KM_FNR_N,https://doi.org/10.1098/rstb.2013.0223
 Fitted quencher factor corresponding to base quenching not associated with protonation or zeaxanthin,$\gamma_0$,$\gamma_0$,$0.1$,,gamma_0,https://doi.org/10.1016/j.bbabio.2016.09.003
@@ -48,8 +48,8 @@ Rate of PsbS protonation,$k_\mathrm{Protonation}$,$k_\mathrm{Protonation}$,$0.00
 Rate constant of de-epoxidation of violaxanthin,$k_\mathrm{kDeepoxV}$,$k_\mathrm{DeepoxV}$,$0.0024$,$\mathrm{s}^{-1}$,k_DV,https://doi.org/10.1016/j.bbabio.2016.09.003
 Rate constant of epoxidation of violaxanthin,$k_\mathrm{kEpoxZ}$,$k_\mathrm{EpoxZ}$,$0.00024$,$\mathrm{s}^{-1}$,k_EZ,https://doi.org/10.1016/j.bbabio.2016.09.003
 "Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8",$K_\mathrm{pHSat}$,$K_\mathrm{pHSat}$,$5.8$,,K_pHSat,https://doi.org/10.1016/j.bbabio.2016.09.003
-Hill-coefficient for de-epoxidase acitivity,$\mathrm{nH}_\mathrm{X}$,$\mathrm{k}_{\mathrm{Hill}_\mathrm{X}}$,$5$,,nh_x,https://doi.org/10.1016/j.bbabio.2016.09.003
-Hill-coefficient for PsbS protonation,$\mathrm{nH}_\mathrm{PsbS}$,$\mathrm{k}_{\mathrm{Hill}_\mathrm{L}}$,$3.0$,,nh_PsbS,https://doi.org/10.1016/j.bbabio.2016.09.003
+Hill-coefficient for de-epoxidase acitivity,${\mathrm{nH}_\mathrm{X}}$,$\mathrm{k}_{\mathrm{Hill}_\mathrm{X}}$,$5$,,nh_x,https://doi.org/10.1016/j.bbabio.2016.09.003
+Hill-coefficient for PsbS protonation,${\mathrm{nH}_\mathrm{PsbS}}$,$\mathrm{k}_{\mathrm{Hill}_\mathrm{L}}$,$3.0$,,nh_PsbS,https://doi.org/10.1016/j.bbabio.2016.09.003
 Half-saturation constant (relative conc. of Zx) for quenching,$K_\mathrm{ZSat}$,$K_\mathrm{ZSat}$,$0.12$,,K_ZSat,https://doi.org/10.1016/j.bbabio.2016.09.003
 ,$E^0\mathrm{(QA/QA^-)}$,$E^0\mathrm{(QA/QA^-)}$,$-0.140$,$\mathrm{V}$,E0_QA,https://doi.org/10.1098/rstb.2013.0223
 ,$E^0\mathrm{(PQ/PQH_2)}$,$E^0\mathrm{(PQ/PQH_2)}$,$0.354$,$\mathrm{V}$,E0_PQ,https://doi.org/10.1098/rstb.2013.0223

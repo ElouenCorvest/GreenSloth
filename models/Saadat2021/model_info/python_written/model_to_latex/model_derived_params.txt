@@ -1,3 +1,149 @@
+------- Update on 2025-02-28 10:29:52.483738 -------
+
+```math
+{H_st} =  1000.0 \cdot 10.0^{{-{pH_stroma}}}
+```
+```math
+{K_QAPQ} =  \exp \left( \frac{{-\left( -2 \cdot -{E0_QA} {F} + -2 {E0_PQ} {F} + 2 {pH_stroma} \log 10 \cdot {R} {T} \right)}}{{{R} {T}}} \right)
+```
+```math
+{K_FAFd} =  \exp \left( \frac{{-\left( -\left( -{E0_{F}A} {F} \right) + -\mathrm{{E0\_{F}d}} {F} \right)}}{{{R} {T}}} \right)
+```
+```math
+{K_PCP700} =  \exp \left( \frac{{-\left( -\left( -{E0_PC} {F} \right) + -{E0_P700} {F} \right)}}{{{R} {T}}} \right)
+```
+```math
+{K_FNR} =  \exp \left( \frac{{-\left( -2 \cdot -{E0_{F}d} {F} + -2 {E0_NADP} {F} + \log 10 \cdot {R} {T} \cdot {pH_stroma} \right)}}{{{R} {T}}} \right)
+```
+
+------- Update on 2025-02-28 09:48:31.635164 -------
+
+```math
+{H_st} =  1000.0 \cdot 10.0^{{-{pH_stroma}}}
+```
+```math
+{K_QAPQ} =  \exp \left( \frac{{-\mathrm{{DG}}}}{{{R} {T}}} \right)
+```
+```math
+{K_FAFd} =  \exp \left( \frac{{-\mathrm{{DG}}}}{{{R} {T}}} \right)
+```
+```math
+{K_PCP700} =  \exp \left( \frac{{-\mathrm{{DG}}}}{{{R} {T}}} \right)
+```
+```math
+{K_FNR} =  \exp \left( \frac{{-\mathrm{{DG}}}}{{{R} {T}}} \right)
+```
+
+------- Update on 2025-02-26 13:22:39.166439 -------
+
+```math
+{H_st} =  32000.0 \cdot 10^{{-{pH_stroma}}}
+```
+```math
+{K_QAPQ} =  \exp \left( \frac{{2 \mathrm{{PDG}} + 2 {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_FAFd} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_PCP700} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_FNR} =  \exp \left( \frac{{2 \mathrm{{PDG}} + {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+
+------- Update on 2025-02-26 13:21:48.801159 -------
+
+```math
+{H_st} = ERROR because of function "H_st"
+```
+```math
+{K_QAPQ} = ERROR because of function "Keq_nernst_S2_P2_PpHstroma2"
+```
+```math
+{K_FAFd} = ERROR because of function "Keq_nernst_S1_P1"
+```
+```math
+{K_PCP700} = ERROR because of function "Keq_nernst_S1_P1"
+```
+```math
+{K_FNR} = ERROR because of function "Keq_nernst_S2_P2_PpHstroma1"
+```
+
+------- Update on 2025-02-26 13:15:17.544438 -------
+
+```math
+{H_st} =  32000.0 \cdot 10^{{-{pH_stroma}}}
+```
+```math
+{K_QAPQ} =  \exp \left( \frac{{2 \mathrm{{PDG}} + 2 {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_FAFd} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_PCP700} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_FNR} =  \exp \left( \frac{{2 \mathrm{{PDG}} + {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+
+------- Update on 2025-02-26 13:15:10.608516 -------
+
+
+------- Update on 2025-02-26 13:13:45.013454 -------
+
+```math
+{H_st} =  32000.0 \cdot 10^{{-{pH_stroma}}}
+```
+
+```math
+{K_QAPQ} =  \exp \left( \frac{{2 \mathrm{{PDG}} + 2 {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+
+```math
+{K_FAFd} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+
+```math
+{K_PCP700} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+
+```math
+{K_FNR} =  \exp \left( \frac{{2 \mathrm{{PDG}} + {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+
+------- Update on 2025-02-26 13:13:02.359574 -------
+
+```math
+{H_st} =  32000.0 \cdot 10^{{-{pH_stroma}}}
+```
+```math
+{K_QAPQ} =  \exp \left( \frac{{2 \mathrm{{PDG}} + 2 {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_FAFd} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_PCP700} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+```math
+{K_FNR} =  \exp \left( \frac{{2 \mathrm{{PDG}} + {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+------- Update on 2025-02-26 13:10:48.104134 -------
+
+```math
+   \begin{{align}}
+{H_st} =  32000.0 \cdot 10^{{-{pH_stroma}}}
+```
+{K_QAPQ} =  \exp \left( \frac{{2 \mathrm{{PDG}} + 2 {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+{K_FAFd} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+{K_PCP700} =  \exp \left( \frac{{\mathrm{{PDG}} - \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
+{K_FNR} =  \exp \left( \frac{{2 \mathrm{{PDG}} + {pH_stroma} \cdot \log 10 {R} {T} - 2 \mathrm{{SDG}} }}{{{R} {T}}} \right)
+```
 ------- Update on 2025-02-26 12:42:08.030796 -------
 
 ```math

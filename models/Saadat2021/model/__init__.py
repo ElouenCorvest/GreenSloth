@@ -11,7 +11,7 @@ def Saadat2021() -> Model:
 
     m.add_parameters(
         {
-            'convf': 3.2e-3,     # [] Conversion factor of ATP and NADPH
+            'convf': 3.2e-2,     # [] Conversion factor of ATP and NADPH
             'PSII_tot': 2.5,     # [mmol (mol Chl)-1] PSII reaction centres
             'PSI_tot': 2.5,     # [mmol (mol Chl)-1] PSI reaction centres
             'PQ_tot': 17.5,     # [mmol (mol Chl)-1] Total plastoquinone pool

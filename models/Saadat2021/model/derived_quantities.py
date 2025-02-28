@@ -12,82 +12,37 @@ def H_st(pH_stroma: float) -> float:
     Returns:
         float: Stromal H concentration
     """
-    return 3.2e4 * 10 ** (-pH_stroma)
+    return 1000.0 * 10.0 ** (-pH_stroma)
 
-def Keq_nernst_S1_P1(SE0: float, PE0: float, R: float, T: float, F: float) -> float:
-    """Calculation of equilibrium constant of reaction: S -> P.
+def K_QAPQ(E0_QA, F, E0_PQ, pH_stroma, R, T):
+    dG_pH = np.log(10) * R * T
+    DG1 = -E0_QA * F
+    DG2 = -2 * E0_PQ * F
+    DG = -2 * DG1 + DG2 + 2 * pH_stroma * dG_pH
+    K = np.exp(-DG / (R * T))
+    return K
 
-    Args:
-        SE0 (float): Standard electrode potential of Substrate
-        PE0 (float): Standard electrode potential of Product
-        R (float): Universal gas constant
-        T (float): Temperature in Kelvin
-        F (float): Farraday Constant
+def K_FAFd(E0_FA, F, E0_Fd, R, T):
+    DG1 = -E0_FA * F
+    DG2 = -E0_Fd * F
+    DG = -DG1 + DG2
+    K = np.exp(-DG / (R * T))
+    return K
 
-    Returns:
-        float: Equilibrium constant
-    """
-    SDG = -SE0 * F
-    PDG = -PE0 * F
-    DG = (PDG) - (SDG)
-    return np.exp(DG / (R * T))
+def K_PCP700(E0_PC, F, E0_P700, R, T):
+    DG1 = -E0_PC * F
+    DG2 = -E0_P700 * F
+    DG = -DG1 + DG2
+    K = np.exp(-DG / (R * T))
+    return K
 
-def Keq_nernst_S2_P2_PpHstroma1(SE0: float, PE0: float, pH_stroma: float, R: float, T: float, F: float) -> float:
-    """Calculation of equilibrium constant of reaction: 2S -> 2P + 1pH_stroma.
-
-    Args:
-        SE0 (float): Standard electrode potential of Substrate
-        PE0 (float): Standard electrode potential of Product
-        pH_stroma (float): pH Value of stroma
-        R (float): Universal gas constant
-        T (float): Temperature in Kelvin
-        F (float): Farraday Constant
-
-    Returns:
-        float: Equilibrium constant
-    """
-    SDG = -SE0 * F
-    PDG = -PE0 * F
-    DG = (2 * PDG + pH_stroma * np.log(10) * R * T) - (2 * SDG)
-    return np.exp(DG / (R * T))
-
-def Keq_nernst_S2_P2_PpHstroma2(SE0: float, PE0: float, pH_stroma: float, R: float, T: float, F: float) -> float:
-    """Calculation of equilibrium constant of reaction: 2S -> 2P + 2pH_stroma.
-
-    Args:
-        SE0 (float): Standard electrode potential of Substrate
-        PE0 (float): Standard electrode potential of Product
-        pH_stroma (float): pH Value of stroma
-        R (float): Universal gas constant
-        T (float): Temperature in Kelvin
-        F (float): Farraday Constant
-
-    Returns:
-        float: Equilibrium constant
-    """
-    SDG = -SE0 * F
-    PDG = -PE0 * F
-    DG = (2 * PDG + 2 * pH_stroma * np.log(10) * R * T) - (2 * SDG)
-    return np.exp(DG / (R * T))
-
-def Keq_nernst_S1_SpHlumen2_P2_PpHstroma2(SE0: float, PE0: float, pH_stroma: float, pH_lu: float, R: float, T: float, F: float) -> float:
-    """Calculation of equilibrium constant of reaction: 2S -> 2P + 2pH_stroma.
-
-    Args:
-        SE0 (float): Standard electrode potential of Substrate
-        PE0 (float): Standard electrode potential of Product
-        pH_stroma (float): pH Value of stroma
-        R (float): Universal gas constant
-        T (float): Temperature in Kelvin
-        F (float): Farraday Constant
-
-    Returns:
-        float: Equilibrium constant
-    """
-    SDG = -SE0 * F
-    PDG = -PE0 * F
-    DG = (2 * PDG + 2 * (pH_stroma - pH_lu) * np.log(10) * R * T) - (2 * SDG + 2 * np.log(10) * R * T * pH_lu)
-    return np.exp(DG / (R * T))
+def K_FNR(E0_Fd, F, E0_NADP, pH_stroma, R, T):
+    dG_pH = np.log(10) * R * T
+    DG1 = -E0_Fd * F
+    DG2 = -2 * E0_NADP * F
+    DG = -2 * DG1 + DG2 + dG_pH * pH_stroma
+    K = np.exp(-DG / (R* T))
+    return K
 
 def psIIcross(LHC: float, sigma0_I: float, sigma0_II: float) -> float:
     """Calculates the crosssection of PSII
@@ -122,43 +77,50 @@ def Quencher(psbS: float, Vx: float, PsbSP: float, Zx: float, gamma_0: float, ga
     ZAnt = Zx / (Zx + K_ZSat)
     return gamma_0 * Vx * psbS + gamma_1 * Vx * PsbSP + gamma_2 * ZAnt * PsbSP + gamma_3 * ZAnt * psbS
 
-def psIIstates(PQ: float, PQH_2: float, Q: float, psIIcross: float, k_H: float, kH0: float, pfd: float, k_PQred: float, K_QAPQ: float, k_F: float, k2: float, PSII_tot: float) -> npt.NDArray:
+def psIIstates(PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot) -> npt.NDArray:
     L = psIIcross * pfd
     kH = kH0 + k_H * Q
     k3p = k_PQred * PQ
     k3m = k_PQred * PQH_2 / K_QAPQ
 
-    Bs = []
-
     if isinstance(kH, float) and isinstance(PQ, np.ndarray):
         kH = np.repeat(kH, len(PQ))
 
-    # if isinstance(L, float):
-    #     L = tuple([L])
+    if any([not isinstance(i, np.ndarray) for i in [L, kH, k3p, k3m]]):
+        M = np.array(
+            [
+                [-L - k3m, kH + k_F, k3p, 0],
+                [L, -(kH + k_F + k2), 0, 0],
+                [0, 0, L, -(kH + k_F)],
+                [1, 1, 1, 1],
+            ]
+        )
+        A = np.array([0, 0, 0, PSII_tot])
+        B0, B1, B2, B3 = np.linalg.solve(M, A)
+        return B0, B1, B2, B3
 
-    # if isinstance(kH, float):
-    #     kH = tuple([kH])
+    else:
+        B0 = []
+        B1 = []
+        B2 = []
+        B3 = []
 
-    # if isinstance(k3p, float):
-    #     k3p = tuple([k3p])
-
-    # if isinstance(k3m, float):
-    #     k3m = tuple([k3m])
-
-    #for L, kH, k3p, k3m in zip(L, kH, k3p, k3m):
-    M = np.array(
-        [
-            [-L - k3m, kH + k_F, k3p, 0],
-            [L, -(kH + k_F + k2), 0, 0],
-            [0, 0, L, -(kH + k_F)],
-            [1, 1, 1, 1],
-        ]
-    )
-    A = np.array([0, 0, 0, PSII_tot])
-    B0, B1, B2, B3 = np.linalg.solve(M, A)
-    # Bs.append([B0, B1, B2, B3])
-    # print(Bs)
-    return B0, B1, B2, B3
+        for L, kH, k3p, k3m, k_F, k2, PSII_tot in zip(L, kH, k3p, k3m, k_F, k2, PSII_tot):
+            M = np.array(
+                [
+                    [-L - k3m, kH + k_F, k3p, 0],
+                    [L, -(kH + k_F + k2), 0, 0],
+                    [0, 0, L, -(kH + k_F)],
+                    [1, 1, 1, 1],
+                ]
+            )
+            A = np.array([0, 0, 0, PSII_tot])
+            B0_, B1_, B2_, B3_ = np.linalg.solve(M, A)
+            B0.append(B0_)
+            B1.append(B1_)
+            B2.append(B2_)
+            B3.append(B3_)
+        return np.array(B0), np.array(B1), np.array(B2), np.array(B3)
 
 def B0_psIIstates(PQ: float, PQH_2: float, Q: float, psIIcross: float, k_H: float, kH0: float, pfd: float, k_PQred: float, K_QAPQ: float, k_F: float, k2: float, PSII_tot: float) -> float:
     B0, B1, B2, B3 = psIIstates(PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot)
@@ -176,46 +138,41 @@ def B3_psIIstates(PQ: float, PQH_2: float, Q: float, psIIcross: float, k_H: floa
     B0, B1, B2, B3 = psIIstates(PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot)
     return B3
 
-def psIstates(PC_ox, PC_red, Fd_ox, Fd_red, psIIcross, PSI_tot, k_Fd_red, K_FAFd, K_PCP700, k_PCox, pfd, k_Mehler, O2_ext):
-    """
-    QSSA calculates open state of PSI
-    depends on reduction states of plastocyanin and ferredoxin
-    C = [PC_ox], F = [Fd_ox] (ox. forms)
-    """
+def psIstates(PC_ox, PC_red, Fd_ox, Fd_red, psIIcross, PSI_tot, k_Fdred, K_FAFd, K_PCP700, k_PCox, pfd, k_Mehler, O2_ext):
     kLI = (1 - psIIcross) * pfd
 
-    y0 = (
-        K_PCP700
-        * K_FAFd
-        * PC_red
-        * PSI_tot
-        * k_PCox
-        * (Fd_ox * k_Fd_red + O2_ext * k_Mehler)
-        / (
-            Fd_ox * K_PCP700 * K_FAFd * PC_red * k_Fd_red * k_PCox
-            + Fd_ox * K_FAFd * k_Fd_red * (K_PCP700 * kLI + PC_ox * k_PCox)
-            + Fd_red * k_Fd_red * (K_PCP700 * kLI + PC_ox * k_PCox)
-            + K_PCP700 * K_FAFd * O2_ext * PC_red * k_Mehler * k_PCox
-            + K_PCP700 * K_FAFd * PC_red * kLI * k_PCox
-            + K_FAFd * O2_ext * k_Mehler * (K_PCP700 * kLI + PC_ox * k_PCox)
+    if any([not isinstance(i, np.ndarray) for i in [kLI, k_PCox, K_PCP700, PC_ox, PC_red, k_Fdred, Fd_ox, O2_ext, k_Mehler, K_FAFd, Fd_red, PSI_tot]]):
+        M = np.array(
+            [
+                [-(kLI + (k_PCox / K_PCP700) * PC_ox), 0, k_PCox * PC_red],
+                [kLI, -(k_Fdred * Fd_ox + O2_ext * k_Mehler), k_Fdred/K_FAFd * Fd_red],
+                [1, 1, 1],
+            ]
         )
-    )
+        A = np.array([0, 0, PSI_tot])
+        Y0, Y1, Y2 = np.linalg.solve(M, A)
 
-    y1 = (
-        PSI_tot
-        * (Fd_red * k_Fd_red * (K_PCP700 * kLI + PC_ox * k_PCox) + K_PCP700 * K_FAFd * PC_red * kLI * k_PCox)
-        / (
-            Fd_ox * K_PCP700 * K_FAFd * PC_red * k_Fd_red * k_PCox
-            + Fd_ox * K_FAFd * k_Fd_red * (K_PCP700 * kLI + PC_ox * k_PCox)
-            + Fd_red * k_Fd_red * (K_PCP700 * kLI + PC_ox * k_PCox)
-            + K_PCP700 * K_FAFd * O2_ext * PC_red * k_Mehler * k_PCox
-            + K_PCP700 * K_FAFd * PC_red * kLI * k_PCox
-            + K_FAFd * O2_ext * k_Mehler * (K_PCP700 * kLI + PC_ox * k_PCox)
-        )
-    )
-    y2 = PSI_tot - y0 - y1
+        return Y0, Y1, Y2
 
-    return y0, y1, y2
+    else:
+        Y0 = []
+        Y2 = []
+        Y1 = []
+
+        for kLI, k_PCox, K_PCP700, PC_ox, PC_red, k_Fdred, Fd_ox, O2_ext, k_Mehler, K_FAFd, Fd_red, PSI_tot in zip(kLI, k_PCox, K_PCP700, PC_ox, PC_red, k_Fdred, Fd_ox, O2_ext, k_Mehler, K_FAFd, Fd_red, PSI_tot):
+            M = np.array(
+                [
+                    [-(kLI + (k_PCox / K_PCP700) * PC_ox), 0, k_PCox * PC_red],
+                    [kLI, -(k_Fdred * Fd_ox + O2_ext * k_Mehler), k_Fdred/K_FAFd * Fd_red],
+                    [1, 1, 1],
+                ]
+            )
+            A = np.array([0, 0, PSI_tot])
+            Y0_, Y1_, Y2_ = np.linalg.solve(M, A)
+            Y0.append(Y0_)
+            Y1.append(Y1_)
+            Y2.append(Y2_)
+        return np.array(Y0), np.array(Y1), np.array(Y2)
 
 def Y0_psIstates(PC_ox, PC_red, Fd_ox, Fd_red, psIIcross, PSI_tot, k_Fd_red, K_FAFd, K_PCP700, k_PCox, pfd, k_Mehler, O2_ext):
     y0, y1, y2 = psIstates(PC_ox, PC_red, Fd_ox, Fd_red, psIIcross, PSI_tot, k_Fd_red, K_FAFd, K_PCP700, k_PCox, pfd, k_Mehler, O2_ext)
@@ -229,7 +186,7 @@ def Y2_psIstates(PC_ox, PC_red, Fd_ox, Fd_red, psIIcross, PSI_tot, k_Fd_red, K_F
     y0, y1, y2 = psIstates(PC_ox, PC_red, Fd_ox, Fd_red, psIIcross, PSI_tot, k_Fd_red, K_FAFd, K_PCP700, k_PCox, pfd, k_Mehler, O2_ext)
     return y2
 
-def Flou(Q, B0, B2, psIIcross, k2, k_F, k_H):
+def Fluo(Q, B0, B2, psIIcross, k2, k_F, k_H):
     return (psIIcross * k_F * B0) / (k_F + k2 + k_H * Q) + (psIIcross * k_F * B2) / (k_F + k_H * Q)
 
 def pH_lu(H_lu):
@@ -259,9 +216,19 @@ def IF_3Pfunc(Pi_st, PGA, GAP, DHAP, K_diss_Pext, Pext, K_diss_Pi, K_diss_PGA, K
     """Used several times to calculate the rate of vPGA, vGAP and vDHAP"""
     return 1 + (1 + (K_diss_Pext / Pext)) * ((Pi_st / K_diss_Pi) + (PGA / K_diss_PGA) + (GAP / K_diss_GAP) + (DHAP / K_diss_DHAP))
 
-def K_ATPsynth(Pi_st, pH_stroma, pH_lu, DeltaG0_ATP, HPR, R, T):
-    DG = DeltaG0_ATP - (np.log(10) * R * T) * HPR * (pH_stroma - pH_lu)
-    return Pi_st * np.exp(-DG / (R * T))
+def K_ATPsynth(pH_lu, DeltaG0_ATP, HPR, pH_stroma, Pi_mol, R, T):
+    dG_pH = np.log(10) * R * T
+    DG = DeltaG0_ATP - dG_pH * HPR * (pH_stroma - pH_lu)
+    Keq = Pi_mol * np.exp(-DG / (R*T))
+    return Keq
+
+def K_cytb6f(pH_lu, F, E0_PQ, E0_PC, pH_stroma, R, T):
+    dG_pH = (np.log(10) * R * T)
+    DG1 = -2 * F * E0_PQ
+    DG2 = -F * E0_PC
+    DG = -(DG1 + 2 * dG_pH * pH_lu) + 2 * DG2 + 2 * dG_pH * (pH_stroma - pH_lu)
+    Keq = np.exp(-DG / (R * T))
+    return Keq
 
 def GSH(Glutathion_total, GSSG):
     return Glutathion_total - 2 * GSSG
@@ -284,26 +251,26 @@ def include_derived_quantities(
 
     m.add_derived(
         name='K_QAPQ',
-        fn=Keq_nernst_S2_P2_PpHstroma2,
-        args=['E0_QA', 'E0_PQ', 'pH_stroma', 'R', 'T', 'F']
+        fn=K_QAPQ,
+        args=['E0_QA', 'F', 'E0_PQ', 'pH_stroma', 'R', 'T']
     )
 
     m.add_derived(
         name='K_FAFd',
-        fn=Keq_nernst_S1_P1,
-        args=['E0_FA', 'E0_Fd', 'R', 'T', 'F']
+        fn=K_FAFd,
+        args=['E0_FA', 'F', 'E0_Fd', 'R', 'T']
     )
 
     m.add_derived(
         name='K_PCP700',
-        fn=Keq_nernst_S1_P1,
-        args=['E0_PC', 'E0_P700', 'R', 'T', 'F']
+        fn=K_PCP700,
+        args=['E0_PC', 'F', 'E0_P700', 'R', 'T']
     )
 
     m.add_derived(
         name='K_FNR',
-        fn=Keq_nernst_S2_P2_PpHstroma1,
-        args=['E0_PC', 'E0_P700', 'pH_stroma', 'R', 'T', 'F']
+        fn=K_FNR,
+        args=['E0_Fd', 'F', 'E0_NADP', 'pH_stroma', 'R', 'T']
     )
 
     m.add_derived(
@@ -391,8 +358,8 @@ def include_derived_quantities(
     )
 
     m.add_derived(
-        name='Flou',
-        fn=Flou,
+        name='Fluo',
+        fn=Fluo,
         args=['Q', 'B0', 'B2', 'psIIcross', 'k2', 'k_F', 'k_H']
     )
 
@@ -417,13 +384,13 @@ def include_derived_quantities(
     m.add_derived(
         name='K_ATPsynth',
         fn=K_ATPsynth,
-        args=['Pi_st', 'pH_stroma', 'pH_lu', 'DeltaG0_ATP', 'HPR', 'R', 'T']
+        args=['pH_lu', 'DeltaG0_ATP', 'HPR', 'pH_stroma', 'Pi_mol', 'R', 'T']
     )
 
     m.add_derived(
         name='K_cytb6f',
-        fn=Keq_nernst_S1_SpHlumen2_P2_PpHstroma2,
-        args=['E0_PQ', 'E0_PC', 'pH_stroma', 'pH_lu', 'R', 'T', 'F']
+        fn=K_cytb6f,
+        args=['pH_lu', 'F', 'E0_PQ', 'E0_PC', 'pH_stroma', 'R', 'T']
     )
 
     # --------------------------------------

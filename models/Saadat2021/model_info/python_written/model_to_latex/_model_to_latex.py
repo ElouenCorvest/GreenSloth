@@ -18,11 +18,11 @@ def export_select_as_latex(
     select: dict,
     path_to_write: Path
 ):
-    inp = '```math \n'
-    inp += r'   \begin{{align}}'
-    inp += '\n'
+
+    inp = ''
 
     for name, var in select.items():
+
         if var.fn == proportional:
             rhs = ''
             for i in var.args:
@@ -38,7 +38,7 @@ def export_select_as_latex(
         else:
             try:
 
-                ltx = latexify.get_latex(var.fn)
+                ltx = latexify.get_latex(var.fn, reduce_assignments = True)
                 if ltx.count(r'\\') > 0:
                     for i in [r'\begin{array}{l} ', r' \end{array}']:
                         ltx = ltx.replace(i, '')
@@ -54,7 +54,7 @@ def export_select_as_latex(
                     final = final.replace(lhs, rhs)
 
                 for old, new in zip(
-                    (r'\mathopen{}', r'\mathclose{}', r'{', r'}'),
+                    (r'\mathopen{}', r'\mathclose{}', r'{', r'}', ),
                     ('', '', r'{{', r'}}')
                 ):
                     final = final.replace(old, new)
@@ -68,12 +68,11 @@ def export_select_as_latex(
             except:
                 rhs = f'ERROR because of function "{var.fn.__name__}"'
 
-        inp += rf'       {{{name}}} &= {rhs} \\'
-        inp += '\n'
+        inp += '```math\n'
+        inp += rf'{{{name}}} = {rhs}'
+        inp += '\n```\n'
 
-    inp += r'   \end{{align}}'
     inp += '\n'
-    inp += '```\n\n'
 
     if not os.path.isfile(path_to_write):
         with open(path_to_write, 'w') as f:
@@ -102,11 +101,6 @@ def export_odes_as_latex(
     m: Model,
     overwrite_flag: bool = False
 ):
-
-    inp = '```math \n'
-    inp += r'   \begin{{align}}'
-    inp += '\n'
-
     inp = ''
 
     stoics = m.get_stoichiometries()
