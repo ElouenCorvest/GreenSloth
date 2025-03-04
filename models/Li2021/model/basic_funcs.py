@@ -33,6 +33,9 @@ def times_neg_fourteen_thirds(x: float) -> float:
 def two_times_value(x: float) -> float:
     return 2 * x
 
+def neg_two_times_value(x: float) -> float:
+    return -2 * x
+
 def three_times_value(x: float) -> float:
     return 3 * x
 
@@ -45,8 +48,17 @@ def four_divided_value(x: float) -> float:
 def neg_one_divided_value(x: float) -> float:
     return -1 / x
 
+def value1_divided_value2(x: float, y: float) -> float:
+    return x / y
+
 def neg_value1_divided_value2(x: float, y: float) -> float:
     return - x / y
+
+def neg_two_value1_divided_value2(x: float, y: float) -> float:
+    return -2 * x / y
+
+def fourteenthirds_value1_divided_value2(x: float, y: float) -> float:
+    return 14/3 * x / y
 
 def quadratic(
     a: float,

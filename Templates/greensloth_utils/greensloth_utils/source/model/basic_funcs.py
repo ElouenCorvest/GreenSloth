@@ -33,6 +33,9 @@ def times_neg_fourteen_thirds(x: float) -> float:
 def two_times_value(x: float) -> float:
     return 2 * x
 
+def neg_two_times_value(x: float) -> float:
+    return -2 * x
+
 def three_times_value(x: float) -> float:
     return 3 * x
 

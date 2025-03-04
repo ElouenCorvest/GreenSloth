@@ -15,6 +15,12 @@ def {{MODEL_NAME}}() -> Model:
         }
     )
 
+    m.add_variables(
+        {
+
+        }
+    )
+
     m = include_derived_quantities(m)
     m = include_rates(m)
 

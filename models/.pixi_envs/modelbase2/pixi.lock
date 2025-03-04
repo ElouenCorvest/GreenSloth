@@ -397,7 +397,7 @@ packages:
 - pypi: ../../../Templates/utils/
   name: glossary-utils
   version: 1.0.0
-  sha256: 89879ef7e613d6c55c794db7660f99dcd98cc0e0d7e1112a79fe596abbe8a546
+  sha256: 2cfc5afd673e350be76ecdff6bf8a5d4a725c9fc5310e5b78ce233fde396061d
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/linux-64/gmp-6.3.0-hac33072_2.conda
   sha256: 309cf4f04fec0c31b6771a5809a1909b4b3154a2208f52351e1ada006f4c750c
@@ -412,7 +412,7 @@ packages:
 - pypi: ../../../Templates/greensloth_utils/
   name: greensloth-utils
   version: 1.0.0
-  sha256: 26d42f66d101a25ec7ead3a01911ff8cb465dca0a27e0350439478444f06db44
+  sha256: bb8cd74886cd659eae5bf2235328d6b88c2692ac7f6ddd2d0575c2e114855dd1
   editable: true
 - pypi: https://files.pythonhosted.org/packages/95/04/ff642e65ad6b90db43e668d70ffb6736436c7ce41fcc549f4e9472234127/h11-0.14.0-py3-none-any.whl
   name: h11
