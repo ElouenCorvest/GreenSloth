@@ -4,7 +4,6 @@ Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
 ,,,,PsbS_protonation,
 ,,,,NPQ,
 ,,,,Keq_b6f,
-,,,,pmf_activity,
 ,,,,kb6f,
 ,,,,Keq_NDH1,
 ,,,,ATPsynthase_activity,
@@ -18,3 +17,4 @@ Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
 ,,,,relative_VCCN1,
 ,,,,reg_KEA3,
 ,,,,dG_voltageK,
+,,,,pmf_activity,
