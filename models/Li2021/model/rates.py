@@ -1,6 +1,6 @@
 from modelbase2 import Model, Derived
 import numpy as np
-from basic_funcs import (
+from .basic_funcs import (
     value,
     value1_divided_value2,
     neg_value,

@@ -1,3 +1,7 @@
-Short Description,Common Abbr.,Paper Abbr.,Python Var
-,,,Hstroma
-,,,ppPSII
+Short Description,Common Abbr.,Paper Abbr.,Python Var,old
+,,,,Hstroma
+,,,,ppPSII
+,,,,Keq_b6f
+,,,,Keq_NDH1
+,,,,dG_voltageK
+,,,,pmf_activity
