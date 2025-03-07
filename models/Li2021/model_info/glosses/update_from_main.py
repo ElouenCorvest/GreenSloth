@@ -90,7 +90,7 @@ update_from_main_gloss(
 update_from_main_gloss(
     main_gloss_path=Path(__file__).parents[4] / "Templates" / "comps_glossary.csv",
     gloss_path=Path(__file__).parents[1] / "derived_comps.csv",
-    add_to_main=True,
+    add_to_main=False,
     model_title=model_name,
 )
 
