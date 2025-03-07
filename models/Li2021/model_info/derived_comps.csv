@@ -5,5 +5,5 @@ Concentration of protonated psbS protein,$\mathrm{psbS^P}$,$PsbS\_H$,AT1G44575,P
 Nonphotochemical quenching,$\mathrm{NPQ}$,$NPQ$,,NPQ,67
 Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,$\mathrm{d\_protons\_to\_ATP}$,,Prot_ATPsynth,68
 Efficiency of PSII,$\Phi \mathrm{PSII}$,$\Phi \mathrm{PSII}$,,PhiPSII,69
-Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,$^1\mathrm{O_2}$,,1O2,70
+Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,$^1\mathrm{O_2}$,,singO2,70
 Stromal Proton concentration,$\mathrm{H_{st}}$,$H_{stroma}$,PROTON,H_st,71

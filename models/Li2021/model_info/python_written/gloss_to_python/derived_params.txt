@@ -1,0 +1,11 @@
+------- Start on 2025-03-07 14:06:09.079879 -------
+
+ppPSII = remove_math(derived_params_table, r'$\mathrm{light\_per\_L}$')
+K_b6f = remove_math(derived_params_table, r'$Keq_{b6f}')
+k_b6f = remove_math(derived_params_table, r'$k_{b6f}$')
+K_NDH1 = remove_math(derived_params_table, r'$Keq_{NDH}')
+Act_ATPsynth = remove_math(derived_params_table, r'$\mathrm{ATP\_synthase\_actvt}$')
+PSII_ChSep = remove_math(derived_params_table, r'$PSII_{charge}$')
+PSII_recomb = remove_math(derived_params_table, r'$PSII_{recom}$')
+Cl_df = remove_math(derived_params_table, r'$\mathrm{driving\_force\_Cl}$')
+

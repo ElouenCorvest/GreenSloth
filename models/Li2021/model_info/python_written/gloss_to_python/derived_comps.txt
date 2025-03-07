@@ -1,0 +1,22 @@
+------- Update on 2025-03-07 14:39:33.357226 -------
+
+H_lu = remove_math(derived_comps_table, r'$H_{lumen}$')
+PMF = remove_math(derived_comps_table, r'$pmf$')
+PsbSP = remove_math(derived_comps_table, r'$PsbS\_H$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+Prot_ATPsynth = remove_math(derived_comps_table, r'$\mathrm{d\_protons\_to\_ATP}$')
+PhiPSII = remove_math(derived_comps_table, r'$\Phi \mathrm{PSII}$')
+singO2 = remove_math(derived_comps_table, r'$^1\mathrm{O_2}$')
+H_st = remove_math(derived_comps_table, r'$H_{stroma}$')
+
+------- Start on 2025-03-07 14:06:09.078931 -------
+
+H_lu = remove_math(derived_comps_table, r'$H_{lumen}$')
+PMF = remove_math(derived_comps_table, r'$pmf$')
+PsbSP = remove_math(derived_comps_table, r'$PsbS\_H$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+Prot_ATPsynth = remove_math(derived_comps_table, r'$\mathrm{d\_protons\_to\_ATP}$')
+PhiPSII = remove_math(derived_comps_table, r'$\Phi \mathrm{PSII}$')
+1O2 = remove_math(derived_comps_table, r'$^1\mathrm{O_2}$')
+H_st = remove_math(derived_comps_table, r'$H_{stroma}$')
+

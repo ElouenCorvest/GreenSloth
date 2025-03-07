@@ -228,7 +228,7 @@ def include_rates(m: Model):
     m.add_reaction(
         name="vPSII_ChSep",
         fn=value,
-        args=["ChSep_PSII"],
+        args=["PSII_ChSep"],
         stoichiometry={
             "QA_red": 1,
             "QA_ox": -1,

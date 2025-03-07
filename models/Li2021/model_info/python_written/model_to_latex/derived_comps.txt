@@ -1,0 +1,54 @@
+------- Update on 2025-03-07 14:39:20.519529 -------
+
+```math
+{H_lu} =  10^{{-1 {pH_lu}}}
+```
+```math
+{PMF} =  {Dpsi} + 0.06 \left( {pH_st} - {pH_lu} \right)
+```
+```math
+{PsbSP} =  \frac{{1}}{{10^{{3 \left( {pH_lu} - {pKa_PsbS} \right)}} + 1}}
+```
+```math
+{NPQ} =  0.4 {NPQ_max} \cdot {PsbSP} \cdot {Zx} + 0.5 {NPQ_max} \cdot {PsbSP} + 0.1 {NPQ_max} \cdot {Zx}
+```
+```math
+{Prot_ATPsynth} =  {Act_ATPsynth} \cdot \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.132 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth} + \left( 1 - {Act_ATPsynth} \right) \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.204 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth}
+```
+```math
+{PhiPSII} =  \frac{{1}}{{1 + \frac{{1 + {NPQ}}}{{4.88 {QA_ox}}}}}
+```
+```math
+{singO2} =  {PSII_recomb} \cdot {phi_triplet} \cdot {phi_1O2}
+```
+```math
+{H_st} =  10^{{-1 {pH_st}}}
+```
+
+------- Start on 2025-03-07 14:37:34.344536 -------
+
+```math
+{H_lu} =  10^{{-1 {pH_lu}}}
+```
+```math
+{PMF} =  {Dpsi} + 0.06 \left( {pH_st} - {pH_lu} \right)
+```
+```math
+{PsbSP} =  \frac{{1}}{{10^{{3 \left( {pH_lu} - {pKa_PsbS} \right)}} + 1}}
+```
+```math
+{NPQ} =  0.4 {NPQ_max} \cdot {PsbSP} \cdot {Zx} + 0.5 {NPQ_max} \cdot {PsbSP} + 0.1 {NPQ_max} \cdot {Zx}
+```
+```math
+{Prot_ATPsynth} =  {Act_ATPsynth} \cdot \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.132 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth} + \left( 1 - {Act_ATPsynth} \right) \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.204 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth}
+```
+```math
+{PhiPSII} =  \frac{{1}}{{1 + \frac{{1 + {NPQ}}}{{4.88 {QA_ox}}}}}
+```
+```math
+{1O2} =  {PSII_recomb} \cdot {phi_triplet} \cdot {phi_1O2}
+```
+```math
+{H_st} =  10^{{-1 {pH_st}}}
+```
+

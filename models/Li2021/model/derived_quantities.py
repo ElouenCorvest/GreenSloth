@@ -78,9 +78,9 @@ def PhiPSII(QA_ox, NPQ):  # quantum yield of photosystem II #correct
     return PhiPSII
 
 
-def ChSep_PSII(sigma0_II, PhiPSII, ppPSII):
-    ChSep_PSII = sigma0_II * ppPSII * PhiPSII
-    return ChSep_PSII
+def PSII_ChSep(sigma0_II, PhiPSII, ppPSII):
+    PSII_ChSep = sigma0_II * ppPSII * PhiPSII
+    return PSII_ChSep
 
 
 def PSII_recomb(k_recomb, QA_red, Dpsi, pH_lu):  # correct
@@ -141,8 +141,8 @@ def include_derived_quantities(m: Model):
     m.add_derived(name="PhiPSII", fn=PhiPSII, args=["QA_ox", "NPQ"])
 
     m.add_derived(
-        name="ChSep_PSII",
-        fn=ChSep_PSII,
+        name="PSII_ChSep",
+        fn=PSII_ChSep,
         args=["sigma0_II", "PhiPSII", "ppPSII"],
     )
 
@@ -153,7 +153,7 @@ def include_derived_quantities(m: Model):
     )
 
     m.add_derived(
-        name="1O2",
+        name="singO2",
         fn=singlet_O2,
         args=["PSII_recomb", "phi_triplet", "phi_1O2"],
     )

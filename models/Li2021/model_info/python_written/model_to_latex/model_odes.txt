@@ -1,0 +1,63 @@
+------- Start on 2025-03-07 14:37:34.351533 -------
+
+```math 
+{ode(PC_red)} = 1.0 \cdot {v_b6f} - 1.0 \cdot {v_PSI_PCoxid} 
+```
+```math 
+{ode(PC_ox)} = -1.0 \cdot {v_b6f} + 1.0 \cdot {v_PSI_PCoxid} 
+```
+```math 
+{ode(PQH_2)} = -0.5 \cdot {v_b6f} + 0.5 \cdot {v_NDH} + 0.5 \cdot {v_PGR} + 0.5 \cdot {v_PSII} 
+```
+```math 
+{ode(PQ)} = 0.5 \cdot {v_b6f} - 0.5 \cdot {v_NDH} - 0.5 \cdot {v_PGR} - 0.5 \cdot {v_PSII} 
+```
+```math 
+{ode(pH_lu)} = -0.08385714285714285 \cdot {v_b6f} - 0.08385714285714285 \cdot {v_NDH} + 0.19566666666666666 \cdot {v_ATPsynth} + 0.041928571428571426 \cdot {v_ClCe} + 0.041928571428571426 \cdot {v_KEA3} - 0.041928571428571426 \cdot {vPSII_ChSep} + 0.041928571428571426 \cdot {vPSII_recomb} 
+```
+```math 
+{ode(Dpsi)} = 0.047 \cdot {v_b6f} + 0.094 \cdot {v_NDH} - 0.21933333333333335 \cdot {v_ATPsynth} - 0.047 \cdot {v_ClCe} + 0.047 \cdot {vPSII_ChSep} - 0.047 \cdot {vPSII_recomb} - 0.047 \cdot {v_VCCN1} - 0.047 \cdot {v_VKC} + 0.047 \cdot {PSI_ChSep} 
+```
+```math 
+{ode(Fd_red)} = -1.0 \cdot {v_NDH} - 1.0 \cdot {v_PGR} + 1.0 \cdot {PSI_ChSep} - 1.0 \cdot {v_FNR} - 1.0 \cdot {v_Mehler} 
+```
+```math 
+{ode(Fd_ox)} = 1.0 \cdot {v_NDH} + 1.0 \cdot {v_PGR} - 1.0 \cdot {PSI_ChSep} + 1.0 \cdot {v_FNR} + 1.0 \cdot {v_Mehler} 
+```
+```math 
+{ode(Vx)} = -1.0 \cdot {v_Deepox} 
+```
+```math 
+{ode(Zx)} = 1.0 \cdot {v_Deepox} 
+```
+```math 
+{ode(Cl_lu)} = 0.001174 \cdot {v_ClCe} + 0.000587 \cdot {v_VCCN1} 
+```
+```math 
+{ode(Cl_st)} = -0.0001174 \cdot {v_ClCe} - 5.87e-05 \cdot {v_VCCN1} 
+```
+```math 
+{ode(K_lu)} = 0.000587 \cdot {v_KEA3} - 0.000587 \cdot {v_VKC} 
+```
+```math 
+{ode(K_st)} = -5.87e-05 \cdot {v_KEA3} + 5.87e-05 \cdot {v_VKC} 
+```
+```math 
+{ode(QA_red)} = -1.0 \cdot {v_PSII} + 1.0 \cdot {vPSII_ChSep} - 1.0 \cdot {vPSII_recomb} 
+```
+```math 
+{ode(QA_ox)} = 1.0 \cdot {v_PSII} - 1.0 \cdot {vPSII_ChSep} + 1.0 \cdot {vPSII_recomb} 
+```
+```math 
+{ode(Y2)} = -1.0 \cdot {v_PSI_PCoxid} + 1.0 \cdot {PSI_ChSep} 
+```
+```math 
+{ode(Y0)} = 1.0 \cdot {v_PSI_PCoxid} - 1.0 \cdot {PSI_ChSep} 
+```
+```math 
+{ode(NADPH_st)} = 0.5 \cdot {v_FNR} - 0.5 \cdot {v_CBB} 
+```
+```math 
+{ode(NADP_st)} = -0.5 \cdot {v_FNR} + 0.5 \cdot {v_CBB} 
+```
+

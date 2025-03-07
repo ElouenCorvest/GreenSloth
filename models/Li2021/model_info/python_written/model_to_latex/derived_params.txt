@@ -1,0 +1,27 @@
+------- Start on 2025-03-07 14:37:34.347327 -------
+
+```math
+{ppPSII} =  0.84 \frac{{{PAR}}}{{0.7}}
+```
+```math
+{K_b6f} =  10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \left( {pH_lu} - 7.0 \right) \right) - {PMF}}}{{0.06}}}}
+```
+```math
+{k_b6f} =  \left( 1 - \frac{{1}}{{10^{{{pH_lu} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f}
+```
+```math
+{K_NDH1} =  10^{{\frac{{{Em_PQH2_pH7} - 0.06 \left( {pH_st} - 7.0 \right) - {Em_Fd} - {PMF} \cdot 2}}{{0.06}}}}
+```
+```math
+{Act_ATPsynth} =  0.2 + 0.8 \frac{{\left( \frac{{{time}}}{{165}} \right)^{{4}}}}{{\left( \frac{{{time}}}{{165}} \right)^{{4}} + 1}}
+```
+```math
+{PSII_ChSep} =  {sigma0_II} \cdot {ppPSII} \cdot {PhiPSII}
+```
+```math
+{PSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \left( 7.0 - {pH_lu} \right)}}{{0.06}}}}
+```
+```math
+{Cl_df} =  0.06 \log_{{10}} \left( \frac{{{Cl_st}}}{{{Cl_lu}}} \right) + {Dpsi}
+```
+
