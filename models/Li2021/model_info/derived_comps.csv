@@ -1,19 +1,9 @@
-Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python var,old,Glossary ID
-,,,,,Hlumen,3
-,,,,,pmf,
-,,,,,PsbS_protonation,
-,,,,,NPQ,
-,,,,,kb6f,
-,,,,,,
-,,,,,ATPsynthase_activity,
-,,,,,protons_to_ATPsynthase,
-,,,,,PhiPSII,
-,,,,,PSII_charge_separation,
-,,,,,dG_PSII_recomb,
-,,,,,Recomb_PSII,
-,,,,,singlet_O2,
-,,,,,Cl_driving_force,
-,,,,,relative_VCCN1,
-,,,,,reg_KEA3,
-,,,,,,
-,,,,,,
+Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,$H_{lumen}$,PROTON,H_lu,3
+The total proton motive force,$\mathrm{PMF}$,$pmf$,,PMF,66
+Concentration of protonated psbS protein,$\mathrm{psbS^P}$,$PsbS\_H$,AT1G44575,PsbSP,9
+Nonphotochemical quenching,$\mathrm{NPQ}$,$NPQ$,,NPQ,67
+Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,$\mathrm{d\_protons\_to\_ATP}$,,Prot_ATPsynth,68
+Efficiency of PSII,$\Phi \mathrm{PSII}$,$\Phi \mathrm{PSII}$,,PhiPSII,69
+Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,$^1\mathrm{O_2}$,,1O2,70
+Stromal Proton concentration,$\mathrm{H_{st}}$,$H_{stroma}$,PROTON,H_st,71

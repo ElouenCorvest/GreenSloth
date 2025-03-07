@@ -1,23 +1,23 @@
 Name,Common Abbr.,MetaCyc ID,Python Var,Glossary ID,Reference
-Plastoquinol,$\mathrm{PQH}_2$,Plastoquinols,PQH_2,1,"Matuszynska2016, Saadat2021"
-Stromal ATP concentration,$\mathrm{ATP_{st}}$,ATP,ATP_st,2,"Matuszynska2016, Saadat2021"
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,PROTON,H_lu,3,"Matuszynska2016, Saadat2021"
+Plastoquinol,$\mathrm{PQH}_2$,Plastoquinols,PQH_2,1,"Matuszynska2016, Saadat2021, Li2021"
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,ATP,ATP_st,2,"Matuszynska2016, Saadat2021, Li2021"
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,PROTON,H_lu,3,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of psbS protein,$\mathrm{psbS}$,AT1G44575,psbS,4,"Matuszynska2016, Saadat2021"
-Violaxanthin,$\mathrm{Vx}$,CPD1F-133,Vx,5,"Matuszynska2016, Saadat2021"
+Violaxanthin,$\mathrm{Vx}$,CPD1F-133,Vx,5,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of active ATPase protein,$\mathrm{ATPase}^*$,,ATPase_ac,6,Matuszynska2016
-Plastoquinone,$\mathrm{PQ}$,PLASTOQUINONE,PQ,7,"Matuszynska2016, Saadat2021"
-Stromal ADP concentration,$\mathrm{ADP_{st}}$,ADP,ADP_st,8,"Matuszynska2016, Saadat2021"
-Concentration of protonated psbS protein,$\mathrm{psbS^P}$,AT1G44575,PsbSP,9,"Matuszynska2016, Saadat2021"
-Zeaxanthin concentration,$\mathrm{Zx}$,CPD1F-130,Zx,10,"Matuszynska2016, Saadat2021"
+Plastoquinone,$\mathrm{PQ}$,PLASTOQUINONE,PQ,7,"Matuszynska2016, Saadat2021, Li2021"
+Stromal ADP concentration,$\mathrm{ADP_{st}}$,ADP,ADP_st,8,"Matuszynska2016, Saadat2021, Li2021"
+Concentration of protonated psbS protein,$\mathrm{psbS^P}$,AT1G44575,PsbSP,9,"Matuszynska2016, Saadat2021, Li2021"
+Zeaxanthin concentration,$\mathrm{Zx}$,CPD1F-130,Zx,10,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of inactive ATPase protein,$\mathrm{ATPase}$,,ATPase_inac,11,Matuszynska2016
 Initial state of PSII,$\mathrm{B_0}$,PSII,B0,12,"Matuszynska2016, Saadat2021"
 Excited state of PSII,$\mathrm{B_1}$,PSII,B1,13,"Matuszynska2016, Saadat2021"
 Charge seperation state of PSII,$\mathrm{B_2}$,PSII,B2,14,"Matuszynska2016, Saadat2021"
 Photoinhibited state of PSII,$\mathrm{B_3}$,PSII,B3,15,"Matuszynska2016, Saadat2021"
-Lumen pH,$\mathrm{pH}_\mathrm{lu}$,,pH_lu,16,"Matuszynska2016, Saadat2021"
-Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,C03162,PC_ox,17,Saadat2021
-Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,C00139,Fd_ox,18,Saadat2021
-Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,NADPH,NADPH_st,19,Saadat2021
+Lumen pH,$\mathrm{pH}_\mathrm{lu}$,,pH_lu,16,"Matuszynska2016, Saadat2021, Li2021"
+Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,C03162,PC_ox,17,"Saadat2021, Li2021"
+Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,C00139,Fd_ox,18,"Saadat2021, Li2021"
+Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,NADPH,NADPH_st,19,"Saadat2021, Li2021"
 Phosphorylated fraction of light harvesting complexes,$\mathrm{LHC}$,,LHC,20,Saadat2021
 3-phosphoglyceric acid,$\mathrm{PGA}$,G3P,PGA,21,Saadat2021
 "2,3-biphosphoglyceric acid",$\mathrm{BPGA}$,23-DIPHOSPHOGLYCERATE,BPGA,22,Saadat2021
@@ -34,9 +34,9 @@ Xylulose 5-phosphate,$\mathrm{X5P}$,XYLULOSE-5-PHOSPHATE,X5P,32,Saadat2021
 Ribose 5-phosphate,$\mathrm{R5P}$,CPD-15318,R5P,33,Saadat2021
 "Ribulose 1,5-bisphosphate",$\mathrm{RUBP}$,D-RIBULOSE-15-P2,RUBP,34,Saadat2021
 Ribulose 5-phosphate,$\mathrm{RU5P}$,RIBULOSE-5P,RU5P,35,Saadat2021
-Reduced Plastocyanine,$\mathrm{PC}_\mathrm{red}$,C03025,PC_red,36,Saadat2021
-Reduced Ferrodoxin,$\mathrm{Fd}_\mathrm{red}$,C00138,Fd_red,37,Saadat2021
-Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,NADP,NADP_st,38,Saadat2021
+Reduced Plastocyanine,$\mathrm{PC}_\mathrm{red}$,C03025,PC_red,36,"Saadat2021, Li2021"
+Reduced Ferrodoxin,$\mathrm{Fd}_\mathrm{red}$,C00138,Fd_red,37,"Saadat2021, Li2021"
+Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,NADP,NADP_st,38,"Saadat2021, Li2021"
 Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",Pi,Pi_st,39,Saadat2021
 Inhibition factor of the triose phosphate translocators,$\mathrm{IF}_\mathrm{3P}$,,IF_3P,40,Saadat2021
 Monodehydroascorbate radicals,$\mathrm{MDA}$,CPD-318,MDA,41,Saadat2021
@@ -53,7 +53,20 @@ Reduced thioredoxin,$\mathrm{TRX_{red}}$,,TRX_red,51,Saadat2021
 Active CBB proteins,"$\mathrm{E}_\mathrm{CBB,\ inact}$",,E_CBB_active,52,Saadat2021
 Reduced ascorbate,$\mathrm{ASC}$,,ASC,53,Saadat2021
 Reduced glutathione,$\mathrm{GSH}$,,GSH,54,Saadat2021
-Ground state of PSI (P700),$\mathrm{Y_0}$,,Y0,55,Saadat2021
+Ground state of PSI (P700),$\mathrm{Y_0}$,,Y0,55,"Saadat2021, Li2021"
 Activated state of PSI (P700*),$\mathrm{Y_1}$,,Y1,56,Saadat2021
-Oxidised state of PSI (P700+),$\mathrm{Y_2}$,,Y2,57,Saadat2021
+Oxidised state of PSI (P700+),$\mathrm{Y_2}$,,Y2,57,"Saadat2021, Li2021"
 Flourescence,$\mathrm{Fluo}$,,Fluo,58,Saadat2021
+Lumenal K+ concentration,$\mathrm{K}^{+}_{\mathrm{lu}$,,K_lu,59,Li2021
+Stromal K+ concentration,$\mathrm{K}^{+}_{\mathrm{st}$,,K_st,60,Li2021
+Lumenal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{lu}$,,Cl_lu,61,Li2021
+Stromal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{st}$,,Cl_st,62,Li2021
+Transthylakoid electric field,$\Delta \Psi _{\mathrm{thylakoid}}$,,Dpsi,63,Li2021
+Oxidised primary quinone of PSII,$\mathrm{Q_{A|ox}}$,,QA_ox,64,Li2021
+Reduced primary quinone of PSII,$\mathrm{Q_{A|red}}$,,QA_red,65,Li2021
+The total proton motive force,$\mathrm{PMF}$,,PMF,66,Li2021
+Nonphotochemical quenching,$\mathrm{NPQ}$,,NPQ,67,Li2021
+Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,,Prot_ATPsynth,68,Li2021
+Efficiency of PSII,$\Phi \mathrm{PSII}$,,PhiPSII,69,Li2021
+Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,,1O2,70,Li2021
+Stromal Proton concentration,$\mathrm{H_{st}}$,PROTON,H_st,71,Li2021

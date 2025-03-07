@@ -1,3 +1,9 @@
-Short Description,Common Abbr.,Paper Abbr.,Python Var
-,,,Hstroma
-,,,ppPSII
+Short Description,Common Abbr.,Paper Abbr.,Python Var,old,,
+PAR photons per PSII,$ppPSII$,$\mathrm{light\_per\_L}$,ppPSII,ppPSII,,
+Equilibrium constant of Cytochrome b6f,$K_\mathrm{b6f}$,$Keq_{b6f},K_b6f,Keq_b6f,,
+Rate constant of Cytochrome b6f,$k_\mathrm{b6f}$,$k_{b6f}$,k_b6f,kb6f,,
+Equilibrium constant of NDH1,$K_\mathrm{NDH1}$,$Keq_{NDH},K_NDH1,Keq_NDH1,,
+ATPsynthase activity,$\mathrm{Act_{ATPsynth}}$,$\mathrm{ATP\_synthase\_actvt}$,Act_ATPsynth,ATPsynthase_activity,,
+Number of charge seperations in PSII per second,$\mathrm{ChSep_{PSII}}$,$\mathrm{PSII\_charge\_seperation}$,ChSep_PSII,PSII_charge_separation,,
+Rate of PSII recombination,$v_\mathrm{PSII|recomb}$,$v_\mathrm{recomb}$,PSII_recomb,Recomb_PSII,,
+Driving force of Cl-,$Cl^- _df$,$\mathrm{driving\_force\_Cl}$,Cl_df,Cl_driving_force,,
