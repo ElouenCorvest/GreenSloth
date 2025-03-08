@@ -141,8 +141,8 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/21/02/88b65cc394961a60c43c70517066b6b679738caf78506a5da7b88ffcb643/widgetsnbextension-4.0.13-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/78/58/e860788190eba3bcce367f74d29c4675466ce8dddfba85f7827588416f01/wsproto-1.2.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/46/92/8a76eeccb5c176ea3de3965598b6fcd10dc9d72a560e59919b52845327ed/zeep-4.3.1-py3-none-any.whl
-      - pypi: ../../../Templates/greensloth_utils/
       - pypi: ../../../Templates/utils/
+      - pypi: ../../../packages/greensloth_utils/
 packages:
 - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
   sha256: fe51de6107f9edc7aa4f786a70f4a883943bc9d39b3bb7307c04c41410990726
@@ -409,10 +409,11 @@ packages:
   purls: []
   size: 460055
   timestamp: 1718980856608
-- pypi: ../../../Templates/greensloth_utils/
+- pypi: ../../../packages/greensloth_utils/
   name: greensloth-utils
-  version: 1.0.0
-  sha256: bb8cd74886cd659eae5bf2235328d6b88c2692ac7f6ddd2d0575c2e114855dd1
+  version: 0.0.1
+  sha256: ef20861db5cedee75920fbf0b75da6e9194f2ae44915f5a2a7685851786ef46a
+  requires_python: '>=3.12'
   editable: true
 - pypi: https://files.pythonhosted.org/packages/95/04/ff642e65ad6b90db43e668d70ffb6736436c7ce41fcc549f4e9472234127/h11-0.14.0-py3-none-any.whl
   name: h11
@@ -436,7 +437,7 @@ packages:
   version: 6.29.5
   sha256: afdb66ba5aa354b09b91379bac28ae4afebbb30e8b39510c9690afb7a10421b5
   requires_dist:
-  - appnope ; platform_system == 'Darwin'
+  - appnope ; sys_platform == 'darwin'
   - comm>=0.1.1
   - debugpy>=1.6.5
   - ipython>=7.23.1
@@ -1898,7 +1899,7 @@ packages:
   version: 4.67.1
   sha256: 26445eca388f82e72884e0d580d5464cd801a3ea01e63e5601bdff9ba6a48de2
   requires_dist:
-  - colorama ; platform_system == 'Windows'
+  - colorama ; sys_platform == 'win32'
   - pytest>=6 ; extra == 'dev'
   - pytest-cov ; extra == 'dev'
   - pytest-timeout ; extra == 'dev'

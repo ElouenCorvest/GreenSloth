@@ -9,11 +9,11 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, os.path.dirname(parentdir))
 
-from model import Li2021  # noqa: E402
+from model import {{MODEL_NAME}}  # noqa: E402
 
 
 extract_select_to_gloss(
-    select=Li2021().variables,
+    select={{MODEL_NAME}}().variables,
     column_names=[
         "Name",
         "Common Abbr.",
@@ -27,7 +27,7 @@ extract_select_to_gloss(
 )
 
 extract_select_to_gloss(
-    select=Li2021().parameters,
+    select={{MODEL_NAME}}().parameters,
     column_names=[
         "Short Description",
         "Common Abbr.",
@@ -43,7 +43,7 @@ extract_select_to_gloss(
 )
 
 extract_select_to_gloss(
-    select=Li2021().derived_variables,
+    select={{MODEL_NAME}}().derived_variables,
     column_names=[
         "Name",
         "Common Abbr.",
@@ -57,14 +57,14 @@ extract_select_to_gloss(
 )
 
 extract_select_to_gloss(
-    select=Li2021().derived_parameters,
+    select={{MODEL_NAME}}().derived_parameters,
     column_names=["Short Description", "Common Abbr.", "Paper Abbr.", "Python Var"],
     pythonvar_col="Python Var",
     path_to_write=Path(__file__).parent / "model_derived_params.csv",
 )
 
 extract_select_to_gloss(
-    select=Li2021().reactions,
+    select={{MODEL_NAME}}().reactions,
     column_names=[
         "Short Description",
         "Common Abbr.",

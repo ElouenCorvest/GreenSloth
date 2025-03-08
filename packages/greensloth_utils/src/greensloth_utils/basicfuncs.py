@@ -3,6 +3,90 @@ from typing import Literal
 import numpy as np
 
 
+# Direct Values
+
+def value(x: float) -> float:
+    return x
+
+def neg_value(x: float) -> float:
+    return -1 * x
+
+def two_value(x: float) -> float:
+    return 2 * x
+
+def neg_two_value(x: float) -> float:
+    return -2 * x
+
+def three_value(x: float) -> float:
+    return 3 * x
+
+def neg_three_value(x: float) -> float:
+    return -3 * x
+
+def four_value(x: float) -> float:
+    return 4 * x
+
+def neg_four_value(x: float) -> float:
+    return -4 * x
+
+def five_value(x: float) -> float:
+    return 5 * x
+
+def neg_five_value(x: float) -> float:
+    return -5 * x
+
+def fourteen_thirds_value(x: float) -> float:
+    return 14/3 * x
+
+def neg_fourteen_thirds_value(x: float) -> float:
+    return -14/3 * x
+
+# Fractioning
+
+def divided_value(x: float) -> float:
+    return 1 / x
+
+def neg_divided_value(x: float) -> float:
+    return -1 / x
+
+def two_divided_value(x: float) -> float:
+    return 2 / x
+
+def neg_two_divided_value(x: float) -> float:
+    return -2 / x
+
+def three_divided_value(x: float) -> float:
+    return 3 / x
+
+def neg_three_divided_value(x: float) -> float:
+    return -3 / x
+
+def four_divided_value(x: float) -> float:
+    return 4 / x
+
+def neg_four_divided_value(x: float) -> float:
+    return -4 / x
+
+def value1_divided_value2(x: float, y: float) -> float:
+    return x / y
+
+def neg_value1_divided_value2(x: float, y: float) -> float:
+    return x / y
+
+def two_value1_divided_value2(x: float, y: float) -> float:
+    return 2 * x / y
+
+def neg_two_value1_divided_value2(x: float, y: float) -> float:
+    return -2 * x / y
+
+def fourteenthirds_value1_divided_value2(x: float, y: float) -> float:
+    return (14/3) * (x / y)
+
+def neg_fourteenthirds_value1_divided_value2(x: float, y: float) -> float:
+    return -(14/3) * (x / y)
+
+# Advanced
+
 def proportional(*args) -> float:
     if len(args) <= 1:
         raise ValueError("Not enough arguments given")
@@ -20,36 +104,6 @@ def continous_subtraction(*args) -> float:
         for i in args[1:]:
             v -= i
         return v
-
-def value(x: float) -> float:
-    return x
-
-def neg_value(x: float) -> float:
-    return -1 * x
-
-def times_neg_fourteen_thirds(x: float) -> float:
-    return x * (-14/3)
-
-def two_times_value(x: float) -> float:
-    return 2 * x
-
-def neg_two_times_value(x: float) -> float:
-    return -2 * x
-
-def three_times_value(x: float) -> float:
-    return 3 * x
-
-def two_divided_value(x: float) -> float:
-    return 2 / x
-
-def four_divided_value(x: float) -> float:
-    return 4 / x
-
-def neg_one_divided_value(x: float) -> float:
-    return -1 / x
-
-def neg_value1_divided_value2(x: float, y: float) -> float:
-    return - x / y
 
 def quadratic(
     a: float,

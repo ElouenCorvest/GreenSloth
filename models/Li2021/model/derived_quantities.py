@@ -1,6 +1,5 @@
 from modelbase2 import Model
 import numpy as np
-from .basic_funcs import *  # noqa: F403
 
 
 def pH_to_proton(pH):

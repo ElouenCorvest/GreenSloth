@@ -1,5 +1,5 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
-from glossary_utils import gloss_fromCSV
+from __editable___glossary_utils_1_0_0_finder import gloss_fromCSV
 from pathlib import Path
 # from models import get_model
 

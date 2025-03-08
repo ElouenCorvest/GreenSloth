@@ -1,15 +1,15 @@
 from modelbase2 import Model, Derived
 import numpy as np
-from .basic_funcs import (
+from greensloth_utils.basicfuncs import (
     value,
     value1_divided_value2,
     neg_value,
     neg_value1_divided_value2,
-    neg_two_times_value,
+    neg_two_value,
     fourteenthirds_value1_divided_value2,
-    times_neg_fourteen_thirds,
+    neg_fourteen_thirds_value,
     neg_two_value1_divided_value2,
-    two_times_value,
+    two_value,
 )
 
 
@@ -142,7 +142,7 @@ def include_rates(m: Model):
             "PQ": -0.5,
             "PQH_2": 0.5,
             "pH_lu": Derived(neg_two_value1_divided_value2, args=["ipt_lu", "b_H"]),
-            "Dpsi": Derived(two_times_value, args=["vpc"]),
+            "Dpsi": Derived(two_value, args=["vpc"]),
         },
     )
 
@@ -168,7 +168,7 @@ def include_rates(m: Model):
             "pH_lu": Derived(
                 fourteenthirds_value1_divided_value2, args=["ipt_lu", "b_H"]
             ),
-            "Dpsi": Derived(times_neg_fourteen_thirds, args=["vpc"]),
+            "Dpsi": Derived(neg_fourteen_thirds_value, args=["vpc"]),
         },
     )
 
@@ -197,8 +197,8 @@ def include_rates(m: Model):
         ],
         stoichiometry={
             "pH_lu": Derived(value1_divided_value2, args=["ipt_lu", "b_H"]),
-            "Cl_lu": Derived(two_times_value, args=["ipt_lu"]),
-            "Cl_st": Derived(neg_two_times_value, args=["ipt_st"]),
+            "Cl_lu": Derived(two_value, args=["ipt_lu"]),
+            "Cl_st": Derived(neg_two_value, args=["ipt_st"]),
             "Dpsi": Derived(neg_value, args=["vpc"]),
         },
     )
