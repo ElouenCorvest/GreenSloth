@@ -71,7 +71,7 @@ def value1_divided_value2(x: float, y: float) -> float:
     return x / y
 
 def neg_value1_divided_value2(x: float, y: float) -> float:
-    return x / y
+    return - (x / y)
 
 def two_value1_divided_value2(x: float, y: float) -> float:
     return 2 * x / y

@@ -5,8 +5,10 @@ from datetime import datetime
 import os
 import re
 from modelbase2 import Model
+from modelbase2.types import Derived
 import latexify
 from greensloth_utils.basicfuncs import proportional, continous_subtraction
+from greensloth_utils import basicfuncs as bf
 
 def extract_select_to_gloss(
     select: dict,
@@ -185,3 +187,129 @@ def export_glossselect_from_model(m: Model, gloss_path: Path, write_path: Path):
         path_to_write=write_path,
         inp=inp
     )
+
+
+def export_odes_as_latex(path_to_write: Path, m: Model, overwrite_flag: bool = False):
+    inp = ""
+
+    stoics = m.get_stoichiometries()
+
+    for comp, stoic in stoics.iterrows():
+
+        line = "```math \n"
+
+        clean = stoic[stoic != 0.0]
+        rates = clean.index
+
+        line += rf"{{ode({comp})}} ="
+        
+        for rate in rates:
+            specific_stoic = m.reactions[rate].stoichiometry[comp]
+            if type(specific_stoic) == Derived:
+                try:
+                    stoic_func = getattr(bf, specific_stoic.fn.__name__)
+                    ltx = latexify.get_latex(stoic_func, reduce_assignments=True)
+                    if ltx.count(r"\\") > 0:
+                        for i in [r"\begin{array}{l} ", r" \end{array}"]:
+                            ltx = ltx.replace(i, "")
+                        line_split = ltx.split(r"\\")
+                    else:
+                        line_split = [ltx]
+
+                    final = line_split[-1]
+
+                    for i in line_split[:-1]:
+                        lhs = i.split(" = ")[0].replace(" ", "")
+                        rhs = i.split(" = ")[1]
+                        final = final.replace(lhs, rhs)
+
+                    for old, new in zip(
+                        (
+                            r"\mathopen{}",
+                            r"\mathclose{}",
+                            r"{",
+                            r"}",
+                        ),
+                        ("", "", r"{{", r"}}"),
+                    ):
+                        final = final.replace(old, new)
+                    lhs = final.split("=")[0]
+                    rhs = final.split("=")[1][1:]
+                    func_a_list = lhs[lhs.find("(") + 1 : -2].split(", ")
+
+                    for arg_model, arg_ltx in zip(specific_stoic.args, func_a_list):
+                        rhs = rhs.replace(arg_ltx, f"{{{arg_model}}}")
+
+                except:  # noqa: E722
+                    rhs = f'ERROR because of function "{specific_stoic.fn.__name__}"'
+
+            else:
+                rhs = specific_stoic
+            
+            stoi = str(rhs)
+            if stoi[0] == '-':
+                comb = ' - '
+                stoi = stoi[1:]
+            elif line[-1] != '=':
+                comb = ' + '
+            else:
+                comb = ' '
+
+            if stoi == '1':
+                stoi = ''
+            else:
+                stoi += r' \cdot '
+
+            line += rf'{comb + stoi}{{{rate}}}'
+
+        line += "\n"
+        line += "```\n"
+
+        inp += line
+
+    inp += "\n"
+
+    update_txt_file(
+        path_to_write=path_to_write,
+        inp=inp
+    )
+
+def remove_math(
+    df, query_result, query_column="Paper Abbr.", answer_column="Common Abbr."
+):
+    res = df[df[query_column] == query_result][answer_column].values[0]
+
+    return res.replace("$", "")
+
+def gloss_fromCSV(
+    path: Path,
+    cite_dict: Optional[dict] = None,
+    reference_col: str = 'Reference',
+    omit_col: Optional[str] = None,
+):
+    table_df = pd.read_csv(path, keep_default_na=False)
+
+    if omit_col is not None:
+        table_df = table_df.drop(columns=[omit_col])
+
+    if cite_dict is not None:
+        table_df[reference_col] = table_df[reference_col].apply(cite, args=(), cite_dict=cite_dict)
+
+    table_tolist = [table_df.columns.values.tolist()] + table_df.values.tolist()
+
+    table_list = [i for k in table_tolist for i in k]
+
+    return table_df, table_tolist, table_list
+
+def cite(
+    cit: str,
+    cite_dict: dict,
+):
+    if cit == '' or not url(cit):
+        return cit
+    elif cit in cite_dict.keys():
+        return f'[[{cite_dict[cit]}]]({cit})'
+    else:
+        num_cites_stored = len(cite_dict.keys())
+        cite_dict[cit] = num_cites_stored + 1
+        return f'[[{cite_dict[cit]}]]({cit})'

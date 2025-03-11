@@ -1,3 +1,28 @@
+------- Update on 2025-03-11 07:38:56.945357 -------
+
+Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
+Zx = remove_math(comps_table, r'$\mathrm{Zx}$')
+ATP_st = remove_math(comps_table, r'$\mathrm{ATP}$')
+ADP_st = remove_math(comps_table, r'$\mathrm{ADP}$')
+K_lu = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{lumen}}$')
+K_st = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{stroma}}$')
+Cl_lu = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{lumen}}$')
+Cl_st = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{stroma}}$')
+Dpsi = remove_math(comps_table, r'$\Delta \Psi$')
+QA_ox = remove_math(comps_table, r'$\mathrm{Q_{A}}$')
+QA_red = remove_math(comps_table, r'$\mathrm{Q_{A}}^{-}$')
+PQH_2 = remove_math(comps_table, r'$\mathrm{PQH_2}$')
+PQ = remove_math(comps_table, r'$\mathrm{PQ}$')
+PC_red = remove_math(comps_table, r'$\mathrm{PC}$')
+PC_ox = remove_math(comps_table, r'$\mathrm{PC}^+$')
+Fd_ox = remove_math(comps_table, r'$\mathrm{Fd_{ox}}$')
+Fd_red = remove_math(comps_table, r'$\mathrm{Fd_{red}}$')
+pH_lu = remove_math(comps_table, r'$\mathrm{pH_{lumen}}')
+NADPH_st = remove_math(comps_table, r'$\mathrm{NADPH}$')
+NADP_st = remove_math(comps_table, r'$\mathrm{NADP}^+$')
+Y0 = remove_math(comps_table, r'$\mathrm{P_{700}}$')
+Y2 = remove_math(comps_table, r'$\mathrm{P_{700}}^+$')
+
 ------- Start on 2025-03-07 14:06:09.074396 -------
 
 Vx = remove_math(comps_table, r'$\mathrm{Vx}$')

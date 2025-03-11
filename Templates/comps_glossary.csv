@@ -57,10 +57,10 @@ Ground state of PSI (P700),$\mathrm{Y_0}$,,Y0,55,"Saadat2021, Li2021"
 Activated state of PSI (P700*),$\mathrm{Y_1}$,,Y1,56,Saadat2021
 Oxidised state of PSI (P700+),$\mathrm{Y_2}$,,Y2,57,"Saadat2021, Li2021"
 Flourescence,$\mathrm{Fluo}$,,Fluo,58,Saadat2021
-Lumenal K+ concentration,$\mathrm{K}^{+}_{\mathrm{lu}$,,K_lu,59,Li2021
-Stromal K+ concentration,$\mathrm{K}^{+}_{\mathrm{st}$,,K_st,60,Li2021
-Lumenal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{lu}$,,Cl_lu,61,Li2021
-Stromal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{st}$,,Cl_st,62,Li2021
+Lumenal K+ concentration,$\mathrm{K}^{+}_{\mathrm{lu}}$,,K_lu,59,Li2021
+Stromal K+ concentration,$\mathrm{K}^{+}_{\mathrm{st}}$,,K_st,60,Li2021
+Lumenal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{lu}}$,,Cl_lu,61,Li2021
+Stromal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{st}}$,,Cl_st,62,Li2021
 Transthylakoid electric field,$\Delta \Psi _{\mathrm{thylakoid}}$,,Dpsi,63,Li2021
 Oxidised primary quinone of PSII,$\mathrm{Q_{A|ox}}$,,QA_ox,64,Li2021
 Reduced primary quinone of PSII,$\mathrm{Q_{A|red}}$,,QA_red,65,Li2021
@@ -68,5 +68,5 @@ The total proton motive force,$\mathrm{PMF}$,,PMF,66,Li2021
 Nonphotochemical quenching,$\mathrm{NPQ}$,,NPQ,67,Li2021
 Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,,Prot_ATPsynth,68,Li2021
 Efficiency of PSII,$\Phi \mathrm{PSII}$,,PhiPSII,69,Li2021
-Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,,1O2,70,Li2021
+Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,,singO2,70,Li2021
 Stromal Proton concentration,$\mathrm{H_{st}}$,PROTON,H_st,71,Li2021

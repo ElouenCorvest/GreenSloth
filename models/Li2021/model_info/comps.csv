@@ -3,10 +3,10 @@ Violaxanthin,$\mathrm{Vx}$,$\mathrm{Vx}$,CPD1F-133,Vx,5
 Zeaxanthin concentration,$\mathrm{Zx}$,$\mathrm{Zx}$,CPD1F-130,Zx,10
 Stromal ATP concentration,$\mathrm{ATP_{st}}$,$\mathrm{ATP}$,ATP,ATP_st,2
 Stromal ADP concentration,$\mathrm{ADP_{st}}$,$\mathrm{ADP}$,ADP,ADP_st,8
-Lumenal K+ concentration,$\mathrm{K}^{+}_{\mathrm{lu}$,$\mathrm{K}^{+}_{\mathrm{lumen}$,,K_lu,59
-Stromal K+ concentration,$\mathrm{K}^{+}_{\mathrm{st}$,$\mathrm{K}^{+}_{\mathrm{stroma}$,,K_st,60
-Lumenal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{lu}$,$\mathrm{Cl}^{-}_{\mathrm{lumen}$,,Cl_lu,61
-Stromal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{st}$,$\mathrm{Cl}^{-}_{\mathrm{stroma}$,,Cl_st,62
+Lumenal K+ concentration,$\mathrm{K}^{+}_{\mathrm{lu}}$,$\mathrm{K}^{+}_{\mathrm{lumen}}$,,K_lu,59
+Stromal K+ concentration,$\mathrm{K}^{+}_{\mathrm{st}}$,$\mathrm{K}^{+}_{\mathrm{stroma}}$,,K_st,60
+Lumenal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{lu}}$,$\mathrm{Cl}^{-}_{\mathrm{lumen}}$,,Cl_lu,61
+Stromal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{st}}$,$\mathrm{Cl}^{-}_{\mathrm{stroma}}$,,Cl_st,62
 Transthylakoid electric field,$\Delta \Psi _{\mathrm{thylakoid}}$,$\Delta \Psi$,,Dpsi,63
 Oxidised primary quinone of PSII,$\mathrm{Q_{A|ox}}$,$\mathrm{Q_{A}}$,,QA_ox,64
 Reduced primary quinone of PSII,$\mathrm{Q_{A|red}}$,$\mathrm{Q_{A}}^{-}$,,QA_red,65

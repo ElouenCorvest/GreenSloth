@@ -1,6 +1,6 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
-from __editable___glossary_utils_1_0_0_finder import gloss_fromCSV
 from pathlib import Path
+from greensloth_utils import remove_math, gloss_fromCSV
 # from models import get_model
 
 import os
@@ -60,55 +60,41 @@ derived_params_table, derived_params_table_tolist, derived_params_table_list = (
 
 ###### Variables for ease of access ######
 
-
-def remove_math(
-    df, query_result, query_column="Paper Abbr.", answer_column="Common Abbr."
-):
-    res = df[df[query_column] == query_result][answer_column].values[0]
-
-    for i in range(
-        df.loc[df[query_column] == query_result, answer_column].iloc[0].count("$")
-    ):
-        res = res.replace("$", "")
-
-    return res
-
-
 # -- Compounds --
 
-Vx = remove_math(comps_table, r"$\mathrm{Vx}$")
-Zx = remove_math(comps_table, r"$\mathrm{Zx}$")
-ATP_st = remove_math(comps_table, r"$\mathrm{ATP}$")
-ADP_st = remove_math(comps_table, r"$\mathrm{ADP}$")
-K_lu = remove_math(comps_table, r"$\mathrm{K}^{+}_{\mathrm{lumen}$")
-K_st = remove_math(comps_table, r"$\mathrm{K}^{+}_{\mathrm{stroma}$")
-Cl_lu = remove_math(comps_table, r"$\mathrm{Cl}^{-}_{\mathrm{lumen}$")
-Cl_st = remove_math(comps_table, r"$\mathrm{Cl}^{-}_{\mathrm{stroma}$")
-Dpsi = remove_math(comps_table, r"$\Delta \Psi$")
-QA_ox = remove_math(comps_table, r"$\mathrm{Q_{A}}$")
-QA_red = remove_math(comps_table, r"$\mathrm{Q_{A}}^{-}$")
-PQH_2 = remove_math(comps_table, r"$\mathrm{PQH_2}$")
-PQ = remove_math(comps_table, r"$\mathrm{PQ}$")
-PC_red = remove_math(comps_table, r"$\mathrm{PC}$")
-PC_ox = remove_math(comps_table, r"$\mathrm{PC}^+$")
-Fd_ox = remove_math(comps_table, r"$\mathrm{Fd_{ox}}$")
-Fd_red = remove_math(comps_table, r"$\mathrm{Fd_{red}}$")
-pH_lu = remove_math(comps_table, r"$\mathrm{pH_{lumen}}")
-NADPH_st = remove_math(comps_table, r"$\mathrm{NADPH}$")
-NADP_st = remove_math(comps_table, r"$\mathrm{NADP}^+$")
-Y0 = remove_math(comps_table, r"$\mathrm{P_{700}}$")
-Y2 = remove_math(comps_table, r"$\mathrm{P_{700}}^+$")
+Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
+Zx = remove_math(comps_table, r'$\mathrm{Zx}$')
+ATP_st = remove_math(comps_table, r'$\mathrm{ATP}$')
+ADP_st = remove_math(comps_table, r'$\mathrm{ADP}$')
+K_lu = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{lumen}}$')
+K_st = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{stroma}}$')
+Cl_lu = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{lumen}}$')
+Cl_st = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{stroma}}$')
+Dpsi = remove_math(comps_table, r'$\Delta \Psi$')
+QA_ox = remove_math(comps_table, r'$\mathrm{Q_{A}}$')
+QA_red = remove_math(comps_table, r'$\mathrm{Q_{A}}^{-}$')
+PQH_2 = remove_math(comps_table, r'$\mathrm{PQH_2}$')
+PQ = remove_math(comps_table, r'$\mathrm{PQ}$')
+PC_red = remove_math(comps_table, r'$\mathrm{PC}$')
+PC_ox = remove_math(comps_table, r'$\mathrm{PC}^+$')
+Fd_ox = remove_math(comps_table, r'$\mathrm{Fd_{ox}}$')
+Fd_red = remove_math(comps_table, r'$\mathrm{Fd_{red}}$')
+pH_lu = remove_math(comps_table, r'$\mathrm{pH_{lumen}}')
+NADPH_st = remove_math(comps_table, r'$\mathrm{NADPH}$')
+NADP_st = remove_math(comps_table, r'$\mathrm{NADP}^+$')
+Y0 = remove_math(comps_table, r'$\mathrm{P_{700}}$')
+Y2 = remove_math(comps_table, r'$\mathrm{P_{700}}^+$')
 
 # -- Derived Compounds --
 
-H_lu = remove_math(derived_comps_table, r"$H_{lumen}$")
-PMF = remove_math(derived_comps_table, r"$pmf$")
-PsbSP = remove_math(derived_comps_table, r"$PsbS\_H$")
-NPQ = remove_math(derived_comps_table, r"$NPQ$")
-Prot_ATPsynth = remove_math(derived_comps_table, r"$\mathrm{d\_protons\_to\_ATP}$")
-PhiPSII = remove_math(derived_comps_table, r"$\Phi \mathrm{PSII}$")
-singO2 = remove_math(derived_comps_table, r"$^1\mathrm{O_2}$")
-H_st = remove_math(derived_comps_table, r"$H_{stroma}$")
+H_lu = remove_math(derived_comps_table, r'$H_{lumen}$')
+PMF = remove_math(derived_comps_table, r'$pmf$')
+PsbSP = remove_math(derived_comps_table, r'$PsbS\_H$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+Prot_ATPsynth = remove_math(derived_comps_table, r'$\mathrm{d\_protons\_to\_ATP}$')
+PhiPSII = remove_math(derived_comps_table, r'$\Phi \mathrm{PSII}$')
+singO2 = remove_math(derived_comps_table, r'$^1\mathrm{O_2}$')
+H_st = remove_math(derived_comps_table, r'$H_{stroma}$')
 
 # -- Rates --
 
@@ -216,64 +202,64 @@ mdFile.new_paragraph(rf"""
 <summary>ODE System</summary>
 
 ```math 
-{ode(PC_red)} = 1.0 \cdot {v_b6f} - 1.0 \cdot {v_PSI_PCoxid} 
+{ode(PC_red)} = {v_b6f} - {v_PSI_PCoxid}
 ```
 ```math 
-{ode(PC_ox)} = -1.0 \cdot {v_b6f} + 1.0 \cdot {v_PSI_PCoxid} 
+{ode(PC_ox)} = - {v_b6f} + {v_PSI_PCoxid}
 ```
 ```math 
-{ode(PQH_2)} = -0.5 \cdot {v_b6f} + 0.5 \cdot {v_NDH} + 0.5 \cdot {v_PGR} + 0.5 \cdot {v_PSII} 
+{ode(PQH_2)} = - 0.5 \cdot {v_b6f} + 0.5 \cdot {v_NDH} + 0.5 \cdot {v_PGR} + 0.5 \cdot {v_PSII}
 ```
 ```math 
-{ode(PQ)} = 0.5 \cdot {v_b6f} - 0.5 \cdot {v_NDH} - 0.5 \cdot {v_PGR} - 0.5 \cdot {v_PSII} 
+{ode(PQ)} = 0.5 \cdot {v_b6f} - 0.5 \cdot {v_NDH} - 0.5 \cdot {v_PGR} - 0.5 \cdot {v_PSII}
 ```
 ```math 
-{ode(pH_lu)} = -0.08385714285714285 \cdot {v_b6f} - 0.08385714285714285 \cdot {v_NDH} + 0.19566666666666666 \cdot {v_ATPsynth} + 0.041928571428571426 \cdot {v_ClCe} + 0.041928571428571426 \cdot {v_KEA3} - 0.041928571428571426 \cdot {vPSII_ChSep} + 0.041928571428571426 \cdot {vPSII_recomb} 
+{ode(pH_lu)} = \frac{{{ipt_lu}}}{{{b_H}}} \cdot \left( -2 \cdot {v_b6f} - 2 \cdot {v_NDH} + \frac{{14}}{{3}} \cdot {v_ATPsynth} + {v_ClCe} + {v_KEA3} - {vPSII_ChSep} + {vPSII_recomb} \right)
 ```
 ```math 
-{ode(Dpsi)} = 0.047 \cdot {v_b6f} + 0.094 \cdot {v_NDH} - 0.21933333333333335 \cdot {v_ATPsynth} - 0.047 \cdot {v_ClCe} + 0.047 \cdot {vPSII_ChSep} - 0.047 \cdot {vPSII_recomb} - 0.047 \cdot {v_VCCN1} - 0.047 \cdot {v_VKC} + 0.047 \cdot {PSI_ChSep} 
+{ode(Dpsi)} = {vpc} \cdot \left( {v_b6f} + 2 \cdot {v_NDH} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_ClCe} + {vPSII_ChSep} - {vPSII_recomb} - {v_VCCN1} - {v_VKC} + {PSI_ChSep} \right)
 ```
 ```math 
-{ode(Fd_red)} = -1.0 \cdot {v_NDH} - 1.0 \cdot {v_PGR} + 1.0 \cdot {PSI_ChSep} - 1.0 \cdot {v_FNR} - 1.0 \cdot {v_Mehler} 
+{ode(Fd_red)} = - {v_NDH} - {v_PGR} + {PSI_ChSep} - {v_FNR} - {v_Mehler}
 ```
 ```math 
-{ode(Fd_ox)} = 1.0 \cdot {v_NDH} + 1.0 \cdot {v_PGR} - 1.0 \cdot {PSI_ChSep} + 1.0 \cdot {v_FNR} + 1.0 \cdot {v_Mehler} 
+{ode(Fd_ox)} = {v_NDH} + {v_PGR} - {PSI_ChSep} + {v_FNR} + {v_Mehler}
 ```
 ```math 
-{ode(Vx)} = -1.0 \cdot {v_Deepox} 
+{ode(Vx)} = - {v_Deepox}
 ```
 ```math 
-{ode(Zx)} = 1.0 \cdot {v_Deepox} 
+{ode(Zx)} = {v_Deepox}
 ```
 ```math 
-{ode(Cl_lu)} = 0.001174 \cdot {v_ClCe} + 0.000587 \cdot {v_VCCN1} 
+{ode(Cl_lu)} = 2 {ipt_lu} \cdot {v_ClCe} + {ipt_lu} \cdot {v_VCCN1}
 ```
 ```math 
-{ode(Cl_st)} = -0.0001174 \cdot {v_ClCe} - 5.87e-05 \cdot {v_VCCN1} 
+{ode(Cl_st)} = - 2 {ipt_st} \cdot {v_ClCe} - 1 {ipt_st} \cdot {v_VCCN1}
 ```
 ```math 
-{ode(K_lu)} = 0.000587 \cdot {v_KEA3} - 0.000587 \cdot {v_VKC} 
+{ode(K_lu)} = {ipt_lu} \cdot {v_KEA3} - 1 {ipt_lu} \cdot {v_VKC}
 ```
 ```math 
-{ode(K_st)} = -5.87e-05 \cdot {v_KEA3} + 5.87e-05 \cdot {v_VKC} 
+{ode(K_st)} = - 1 {ipt_st} \cdot {v_KEA3} + {ipt_st} \cdot {v_VKC}
 ```
 ```math 
-{ode(QA_red)} = -1.0 \cdot {v_PSII} + 1.0 \cdot {vPSII_ChSep} - 1.0 \cdot {vPSII_recomb} 
+{ode(QA_red)} = - {v_PSII} + {vPSII_ChSep} - {vPSII_recomb}
 ```
 ```math 
-{ode(QA_ox)} = 1.0 \cdot {v_PSII} - 1.0 \cdot {vPSII_ChSep} + 1.0 \cdot {vPSII_recomb} 
+{ode(QA_ox)} = {v_PSII} - {vPSII_ChSep} + {vPSII_recomb}
 ```
 ```math 
-{ode(Y2)} = -1.0 \cdot {v_PSI_PCoxid} + 1.0 \cdot {PSI_ChSep} 
+{ode(Y2)} = - {v_PSI_PCoxid} + {PSI_ChSep}
 ```
 ```math 
-{ode(Y0)} = 1.0 \cdot {v_PSI_PCoxid} - 1.0 \cdot {PSI_ChSep} 
+{ode(Y0)} = {v_PSI_PCoxid} - {PSI_ChSep}
 ```
 ```math 
-{ode(NADPH_st)} = 0.5 \cdot {v_FNR} - 0.5 \cdot {v_CBB} 
+{ode(NADPH_st)} = 0.5 \cdot {v_FNR} - 0.5 \cdot {v_CBB}
 ```
 ```math 
-{ode(NADP_st)} = -0.5 \cdot {v_FNR} + 0.5 \cdot {v_CBB} 
+{ode(NADP_st)} = - 0.5 \cdot {v_FNR} + 0.5 \cdot {v_CBB}
 ```
 
 </details>
