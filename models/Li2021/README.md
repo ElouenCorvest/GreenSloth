@@ -62,13 +62,13 @@
 \frac{\mathrm{d}\mathrm{pH}_\mathrm{lu}}{\mathrm{d}t} = \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot \left( -2 \cdot v_{\mathrm{b6f}} - 2 \cdot v_{\mathrm{NDH}} + \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} + v_\mathrm{ClCe} + v_\mathrm{KEA3} - \mathrm{PSII_{ChSep}} + v_\mathrm{PSII|recomb} \right)
 ```
 ```math 
-\frac{\mathrm{d}\Delta \Psi _{\mathrm{thylakoid}}}{\mathrm{d}t} = vpc \cdot \left( v_{\mathrm{b6f}} + 2 \cdot v_{\mathrm{NDH}} - \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} - v_\mathrm{ClCe} + \mathrm{PSII_{ChSep}} - v_\mathrm{PSII|recomb} - v_\mathrm{VCCN1} - v_\mathrm{VKC} + \mathrm{PSII_{ChSep}} \right)
+\frac{\mathrm{d}\Delta \Psi _{\mathrm{thylakoid}}}{\mathrm{d}t} = vpc \cdot \left( v_{\mathrm{b6f}} + 2 \cdot v_{\mathrm{NDH}} - \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} - v_\mathrm{ClCe} + \mathrm{PSII_{ChSep}} - v_\mathrm{PSII|recomb} - v_\mathrm{VCCN1} - v_\mathrm{VKC} + \mathrm{PSI_{ChSep}} \right)
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Fd}_\mathrm{red}}{\mathrm{d}t} = - v_{\mathrm{NDH}} - v_\mathrm{PRG5} + \mathrm{PSII_{ChSep}} - v_{\mathrm{FNR}} - v_{\mathrm{Mehler}}
+\frac{\mathrm{d}\mathrm{Fd}_\mathrm{red}}{\mathrm{d}t} = - v_{\mathrm{NDH}} - v_\mathrm{PRG5} + \mathrm{PSI_{ChSep}} - v_{\mathrm{FNR}} - v_{\mathrm{Mehler}}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Fd}_\mathrm{ox}}{\mathrm{d}t} = v_{\mathrm{NDH}} + v_\mathrm{PRG5} - \mathrm{PSII_{ChSep}} + v_{\mathrm{FNR}} + v_{\mathrm{Mehler}}
+\frac{\mathrm{d}\mathrm{Fd}_\mathrm{ox}}{\mathrm{d}t} = v_{\mathrm{NDH}} + v_\mathrm{PRG5} - \mathrm{PSI_{ChSep}} + v_{\mathrm{FNR}} + v_{\mathrm{Mehler}}
 ```
 ```math 
 \frac{\mathrm{d}\mathrm{Vx}}{\mathrm{d}t} = - v_{\mathrm{Deepox}}
@@ -95,10 +95,10 @@
 \frac{\mathrm{d}\mathrm{Q_{A|ox}}}{\mathrm{d}t} = v_{\mathrm{PSII}} - \mathrm{PSII_{ChSep}} + v_\mathrm{PSII|recomb}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Y_2}}{\mathrm{d}t} = - v_\mathrm{PSI|PCoxid} + \mathrm{PSII_{ChSep}}
+\frac{\mathrm{d}\mathrm{Y_2}}{\mathrm{d}t} = - v_\mathrm{PSI|PCoxid} + \mathrm{PSI_{ChSep}}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Y_0}}{\mathrm{d}t} = v_\mathrm{PSI|PCoxid} - \mathrm{PSII_{ChSep}}
+\frac{\mathrm{d}\mathrm{Y_0}}{\mathrm{d}t} = v_\mathrm{PSI|PCoxid} - \mathrm{PSI_{ChSep}}
 ```
 ```math 
 \frac{\mathrm{d}\mathrm{NADPH}_\mathrm{st}}{\mathrm{d}t} = 0.5 \cdot v_{\mathrm{FNR}} - 0.5 \cdot v_\mathrm{CBB}
@@ -119,7 +119,7 @@
 |Nonphotochemical quenching|$\mathrm{NPQ}$|$NPQ$||NPQ|
 |Amount of protons going to ATPsynthase|$\mathrm{Prot_{ATPsynth}}$|$\mathrm{d\_protons\_to\_ATP}$||Prot_ATPsynth|
 |Efficiency of PSII|$\Phi \mathrm{PSII}$|$\Phi \mathrm{PSII}$||PhiPSII|
-|Number of $^1\mathrm{O_2}$|$^1\mathrm{O_2}$|$^1\mathrm{O_2}$||1O2|
+|Number of $^1\mathrm{O_2}$|$^1\mathrm{O_2}$|$^1\mathrm{O_2}$||singO2|
 |Stromal Proton concentration|$\mathrm{H_{st}}$|$H_{stroma}$|PROTON|H_st|
 
 
@@ -129,28 +129,28 @@
 <summary> Calculations </summary>
 
 ```math
-\mathrm{H_{lu}} =  10^{-1 \mathrm{pH}_\mathrm{lu}}
+\mathrm{H_{lu}} =  10^{-\mathrm{pH}_\mathrm{lu}}
 ```
 ```math
-\mathrm{PMF} =  \Delta \Psi _{\mathrm{thylakoid}} + 0.06 \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right)
+\mathrm{PMF} =  \Delta \Psi _{\mathrm{thylakoid}} + 0.06 \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right)
 ```
 ```math
-\mathrm{psbS^P} =  \frac{1}{10^{3 \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a|PsbS}} \right)} + 1}
+\mathrm{psbS^P} =  \frac{1}{10^{3 \cdot \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a|PsbS}} \right)} + 1}
 ```
 ```math
-\mathrm{NPQ} =  0.4 \mathrm{NPQ_{max}} \cdot \mathrm{psbS^P} \cdot \mathrm{Zx} + 0.5 \mathrm{NPQ_{max}} \cdot \mathrm{psbS^P} + 0.1 \mathrm{NPQ_{max}} \cdot \mathrm{Zx}
+\mathrm{NPQ} =  0.4 \cdot \mathrm{NPQ_{max}} \cdot \mathrm{psbS^P} \cdot \mathrm{Zx} + 0.5 \cdot \mathrm{NPQ_{max}} \cdot \mathrm{psbS^P} + 0.1 \cdot \mathrm{NPQ_{max}} \cdot \mathrm{Zx}
 ```
 ```math
 \mathrm{Prot_{ATPsynth}} =  \mathrm{Act_{ATPsynth}} \cdot \left( 1 - \frac{1}{10^{\frac{\left( \mathrm{PMF} - 0.132 \right) \cdot 1.5}{0.06}} + 1} \right) \mathrm{HPR} \cdot V_\mathrm{max|ATPsynth} + \left( 1 - \mathrm{Act_{ATPsynth}} \right) \left( 1 - \frac{1}{10^{\frac{\left( \mathrm{PMF} - 0.204 \right) \cdot 1.5}{0.06}} + 1} \right) \mathrm{HPR} \cdot V_\mathrm{max|ATPsynth}
 ```
 ```math
-\Phi \mathrm{PSII} =  \frac{1}{1 + \frac{1 + \mathrm{NPQ}}{4.88 \mathrm{Q_{A|ox}}}}
+\Phi \mathrm{PSII} =  \frac{1}{1 + \frac{1 + \mathrm{NPQ}}{4.88 \cdot \mathrm{Q_{A|ox}}}}
 ```
 ```math
 ^1\mathrm{O_2} =  v_\mathrm{PSII|recomb} \cdot \Phi _{\mathrm{triplet}} \cdot \Phi _{\mathrm{^1O_2}}
 ```
 ```math
-\mathrm{H_{st}} =  10^{-1 \mathrm{pH}_\mathrm{st}}
+\mathrm{H_{st}} =  10^{-\mathrm{pH}_\mathrm{st}}
 ```
 
 </details>
@@ -167,7 +167,7 @@
 |The midpoint potential of the plastocyanin couple at pH=7|$E_\mathrm{m\|PC\|pH7}$|$Em_\mathrm{PC\_pH7}$|$0.37$|$\mathrm{V}$|Em_PC_pH7||
 |The midpoint potential of the PQ/PQH2 couple at pH=7|$E_\mathrm{m\|PQH2\|pH7}$|$Em_\mathrm{PQH2\_pH7}$|$0.11$|$\mathrm{V}$|Em_PQH2_pH7||
 |The midpoint potential of ferredoxin|$E_\mathrm{m\|Fd}$|$Em_{Fd}$|$-0.42$|$\mathrm{V}$|Em_Fd||
-|The rate constant for NDH|$k_\mathrm{{NDH1}$|$k_\mathrm{{NDH}}$|$1000$|$\mathrm{s}^{-1}$|k_NDH1||
+|The rate constant for NDH|$k_\mathrm{NDH1}$|$k_\mathrm{{NDH}}$|$1000$|$\mathrm{s}^{-1}$|k_NDH1||
 |The maximal turnover of the PGR5/PGRL1|$V_\mathrm{max\|PGR}$|$V_{max}\left( \mathrm{PGR} \right)$|$0$||Vmax_PGR||
 |The maximal turnover of the fully protonated VDE enzyme|$V_\mathrm{max\|VDE}$|$V_{max}\left( \mathrm{VDE} \right)$|$0.08$|$\mathrm{s}^{-1}$|Vmax_VDE||
 |The pKa for protonation and activation of VDE|$\mathrm{pK_{a\|VDE}}$|$\mathrm{pK_{VDE}}$|$5.65$||pKa_VDE||
@@ -185,8 +185,8 @@
 |Photosynthetically active radiation|$\mathrm{PAR}$|$\mathrm{PAR}$|$10$|$\mathrm{photons\ m^{-2}}$|PAR||
 |The maximum relative rate of PSII centers (0-1)|||$1$|$6 \times 10^{10} \mathrm{complexes}\ \mathrm{cm}^{-2}$|PSII_max||
 |The relative antenna size of PSII|$\sigma _\mathrm{II} ^0$|$\mathrm{PSII_{antenna_size}}$|$0.5$||sigma0_II||
-|The averate rate constant of oxidation of QA- by QB and PQ|$k_\mathrm{{QA}$|$k_\mathrm{{QA}}$|$1000$|$\mathrm{s}^{-1}$|k_QA||
-|Equilibrium constant of QA- by QB and PQ|$K_\mathrm{QA}$|$Keq_{QA \rightarrow PQ}|$200$||K_QA||
+|The averate rate constant of oxidation of QA- by QB and PQ|$k_\mathrm{QA}$|$k_\mathrm{{QA}}$|$1000$|$\mathrm{s}^{-1}$|k_QA||
+|Equilibrium constant of QA- by QB and PQ|$K_\mathrm{QA}$|$Keq_{QA \rightarrow PQ}$S|$200$||K_QA||
 |The capcitance of the thylakoid expressed as V/charge/PSII|$vpc$|$\mathrm{Volts\_per\_charge}$|$0.047$|$\mathrm{V}$|vpc||
 |The relative cross section of PSI antenna|$\sigma _\mathrm{I} ^0$|$\mathrm{PSI_{antenna_size}}$|$0.5$||sigma0_I||
 |Lumenal concentration change of ion per turnover|$ipt_\mathrm{lu}$|$\mathrm{lumen\_protons\_per\_turnover}$|$0.000587$|$\mathrm{M}$|ipt_lu||
@@ -200,20 +200,20 @@
 |The second order rate constant for oxidation of Fd by NADP+|$k_\mathrm{Fd\|NADP}$|$k_\mathrm{Fd\_to\_NADP}$|$1000$||k_FdtoNADP||
 |The rate constant for a simplified Calvin-Benson Cycle|$k_\mathrm{CBB}$|$k_{CBC}$|$60$|$\mathrm{s}^{-1}$|k_CBB||
 |Rate constant of Proton leak|$k_\mathrm{Leak}$|$k_{leak}$|$30000000$|$\mathrm{s}^{-1}\ \mathrm{M}^{-1}\ \mathrm{V}^{-1}$|k_Leak||
-|Stroma pH|$\mathrm{pH}_\mathrm{st}$|$\mathrm{pH_{stroma}}|$7.8$||pH_st||
+|Stroma pH|$\mathrm{pH}_\mathrm{st}$|$\mathrm{pH_{stroma}}$|$7.8$||pH_st||
 
 #### Derived Parameters
 
 |Short Description|Common Abbr.|Paper Abbr.|Python Var|
 | :---: | :---: | :---: | :---: |
 |PAR photons per PSII|$ppPSII$|$\mathrm{light\_per\_L}$|ppPSII|
-|Equilibrium constant of Cytochrome b6f|$K_\mathrm{b6f}$|$Keq_{b6f}|K_b6f|
+|Equilibrium constant of Cytochrome b6f|$K_\mathrm{b6f}$|$Keq_{b6f}$|K_b6f|
 |Rate constant of Cytochrome b6f|$k_\mathrm{b6f}$|$k_{b6f}$|k_b6f|
-|Equilibrium constant of NDH1|$K_\mathrm{NDH1}$|$Keq_{NDH}|K_NDH1|
+|Equilibrium constant of NDH1|$K_\mathrm{NDH1}$|$Keq_{NDH}$|K_NDH1|
 |ATPsynthase activity|$\mathrm{Act_{ATPsynth}}$|$\mathrm{ATP\_synthase\_actvt}$|Act_ATPsynth|
 |Number of charge seperations in PSII per second|$\mathrm{PSII_{ChSep}}$|$PSII_{charge}$|PSII_ChSep|
 |Rate of PSII recombination|$v_\mathrm{PSII\|recomb}$|$PSII_{recom}$|PSII_recomb|
-|Driving force of Cl-|$Cl^- _df$|$\mathrm{driving\_force\_Cl}$|Cl_df|
+|Driving force of Cl-|${\mathrm{Cl}^- _{\mathrm{df}}}$|$\mathrm{driving\_force\_Cl}$|Cl_df|
 
 
 
@@ -222,28 +222,28 @@
 <summary>Equations of derived parameters</summary>
 
 ```math
-ppPSII =  0.84 \frac{\mathrm{PAR}}{0.7}
+ppPSII =  0.84 \cdot \frac{\mathrm{PAR}}{0.7}
 ```
 ```math
-K_\mathrm{b6f} =  10^{\frac{E_\mathrm{m|PC|pH7} - \left( E_\mathrm{m|PQH2|pH7} - 0.06 \left( \mathrm{pH}_\mathrm{lu} - 7.0 \right) \right) - \mathrm{PMF}}{0.06}}
+K_\mathrm{b6f} =  10^{\frac{E_\mathrm{m|PC|pH7} - \left( E_\mathrm{m|PQH2|pH7} - 0.06 \cdot \left( \mathrm{pH}_\mathrm{lu} - 7.0 \right) \right) - \mathrm{PMF}}{0.06}}
 ```
 ```math
 k_\mathrm{b6f} =  \left( 1 - \frac{1}{10^{\mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a|reg}}} + 1} \right) c_{\mathrm{b6f}} \cdot V_\mathrm{max|b6f}
 ```
 ```math
-K_\mathrm{NDH1} =  10^{\frac{E_\mathrm{m|PQH2|pH7} - 0.06 \left( \mathrm{pH}_\mathrm{st} - 7.0 \right) - E_\mathrm{m|Fd} - \mathrm{PMF} \cdot 2}{0.06}}
+K_\mathrm{NDH1} =  10^{\frac{E_\mathrm{m|PQH2|pH7} - 0.06 \cdot \left( \mathrm{pH}_\mathrm{st} - 7.0 \right) - E_\mathrm{m|Fd} - \mathrm{PMF} \cdot 2}{0.06}}
 ```
 ```math
-\mathrm{Act_{ATPsynth}} =  0.2 + 0.8 \frac{\left( \frac{t}{165} \right)^{4}}{\left( \frac{t}{165} \right)^{4} + 1}
+\mathrm{Act_{ATPsynth}} =  0.2 + 0.8 \cdot \frac{\left( \frac{t}{165} \right)^{4}}{\left( \frac{t}{165} \right)^{4} + 1}
 ```
 ```math
 \mathrm{PSII_{ChSep}} =  \sigma _\mathrm{II} ^0 \cdot ppPSII \cdot \Phi \mathrm{PSII}
 ```
 ```math
-v_\mathrm{PSII|recomb} =  k_\mathrm{recomb} \cdot \mathrm{Q_{A|red}} \cdot 10^{\frac{\Delta \Psi _{\mathrm{thylakoid}} + 0.06 \left( 7.0 - \mathrm{pH}_\mathrm{lu} \right)}{0.06}}
+v_\mathrm{PSII|recomb} =  k_\mathrm{recomb} \cdot \mathrm{Q_{A|red}} \cdot 10^{\frac{\Delta \Psi _{\mathrm{thylakoid}} + 0.06 \cdot \left( 7.0 - \mathrm{pH}_\mathrm{lu} \right)}{0.06}}
 ```
 ```math
-Cl^- _df =  0.06 \log_{10} \left( \frac{\mathrm{Cl}^{-}_{\mathrm{st}}}{\mathrm{Cl}^{-}_{\mathrm{lu}}} \right) + \Delta \Psi _{\mathrm{thylakoid}}
+{\mathrm{Cl}^- _{\mathrm{df}}} =  0.06 \cdot \log_{10} \left( \frac{\mathrm{Cl}^{-}_{\mathrm{st}}}{\mathrm{Cl}^{-}_{\mathrm{lu}}} \right) + \Delta \Psi _{\mathrm{thylakoid}}
 ```
 
 </details>
@@ -265,7 +265,7 @@ Cl^- _df =  0.06 \log_{10} \left( \frac{\mathrm{Cl}^{-}_{\mathrm{st}}}{\mathrm{C
 |Number of charge seperations in PSII per second|$\mathrm{PSII_{ChSep}}$|$PSII_{charge}$||vPSII_ChSep|
 |Rate of PSII recombination|$v_\mathrm{PSII\|recomb}$|$PSII_{recom}$||vPSII_recomb|
 |Reduction of PQ due to PSII|$v_{\mathrm{PSII}}$|$v_{PSII}$||v_PSII|
-|Number of charge seperations in PSII per second|$\mathrm{PSII_{ChSep}}$|$PSI_{charge}$||PSI_ChSep|
+|Number of charge seperations in PSII per second|$\mathrm{PSI_{ChSep}}$|$PSI_{charge}$||PSI_ChSep|
 |Rate of PC oxidiation by PSI|$v_\mathrm{PSI\|PCoxid}$|$PSI_{PC\_oxidiation}$||v_PSI_PCoxid|
 |Reaction mediated by FNR|$v_{\mathrm{FNR}}$|$v_{FNR}$||v_FNR|
 |The rate for a simplified Calvin-Benson Cycle|$v_\mathrm{CBB}$|$v_{CBB}$||v_CBB|
@@ -278,10 +278,10 @@ Cl^- _df =  0.06 \log_{10} \left( \frac{\mathrm{Cl}^{-}_{\mathrm{st}}}{\mathrm{C
 <summary>Rate equations</summary>
 
 ```math
-v_{\mathrm{b6f}} =  \frac{\mathrm{PQH}_2}{\mathrm{PQH}_2 + \mathrm{PQ}} \cdot \mathrm{PC}_\mathrm{ox} \cdot k_\mathrm{b6f} - \left( 1 - \frac{\mathrm{PQH}_2}{\mathrm{PQH}_2 + \mathrm{PQ}} \right) \mathrm{PC}_\mathrm{red} \frac{k_\mathrm{b6f}}{K_\mathrm{b6f}}
+v_{\mathrm{b6f}} =  \frac{\mathrm{PQH}_2}{\mathrm{PQH}_2 + \mathrm{PQ}} \cdot \mathrm{PC}_\mathrm{ox} \cdot k_\mathrm{b6f} - \left( 1 - \frac{\mathrm{PQH}_2}{\mathrm{PQH}_2 + \mathrm{PQ}} \right) \cdot \mathrm{PC}_\mathrm{red} \cdot \frac{k_\mathrm{b6f}}{K_\mathrm{b6f}}
 ```
 ```math
-v_{\mathrm{NDH}} =  k_\mathrm{{NDH1} \cdot \mathrm{Fd}_\mathrm{red} \cdot \mathrm{PQ} - \frac{k_\mathrm{{NDH1}}{K_\mathrm{NDH1}} \cdot \mathrm{Fd}_\mathrm{ox} \cdot \mathrm{PQH}_2
+v_{\mathrm{NDH}} =  k_\mathrm{NDH1} \cdot \mathrm{Fd}_\mathrm{red} \cdot \mathrm{PQ} - \frac{k_\mathrm{NDH1}}{K_\mathrm{NDH1}} \cdot \mathrm{Fd}_\mathrm{ox} \cdot \mathrm{PQH}_2
 ```
 ```math
 v_\mathrm{PRG5} =  \frac{V_\mathrm{max|PGR} \cdot \frac{\mathrm{Fd}_\mathrm{red}^{4}}{\mathrm{Fd}_\mathrm{red}^{4} + 0.1^{4}} \cdot \mathrm{PQ}}{\mathrm{PQ} + \mathrm{PQH}_2}
@@ -292,22 +292,22 @@ v_{\mathrm{Deepox}} =  \mathrm{Vx} \cdot V_\mathrm{max|VDE} \frac{1}{10^{nh_\mat
 ```math
 v_{\mathrm{ATPsynthase}} = \left\{ 
   \begin{array}{ c l }
-    \mathrm{Prot_{ATPsynth}} + \mathrm{PMF} * k_\mathrm{Leak} * \mathrm{H_{lu}} & \quad \textrm{if } ppPSII > 0 \\
-    \mathrm{PMF} * k_\mathrm{Leak} * \mathrm{H_{lu}} & \quad \textrm{else}
+    \mathrm{Prot_{ATPsynth}} + \mathrm{PMF} \cdot k_\mathrm{Leak} \cdot \mathrm{H_{lu}} & \quad \textrm{if } ppPSII > 0 \\
+    \mathrm{PMF} \cdot k_\mathrm{Leak} \cdot \mathrm{H_{lu}} & \quad \textrm{else}
   \end{array}
 \right.
 ```
 ```math
-v_\mathrm{VCCN1} =  \frac{k_\mathrm{VCCN1} \cdot \left( 332 Cl^- _df^{3} + 30.8 Cl^- _df^{2} + 3.6 Cl^- _df \right) \left( \mathrm{Cl}^{-}_{\mathrm{st}} + \mathrm{Cl}^{-}_{\mathrm{lu}} \right)}{2}
+v_\mathrm{VCCN1} =  \frac{k_\mathrm{VCCN1} \cdot \left( 332 \cdot {\mathrm{Cl}^- _{\mathrm{df}}}^{3} + 30.8 \cdot {\mathrm{Cl}^- _{\mathrm{df}}}^{2} + 3.6 \cdot {\mathrm{Cl}^- _{\mathrm{df}}} \right) \cdot \left( \mathrm{Cl}^{-}_{\mathrm{st}} + \mathrm{Cl}^{-}_{\mathrm{lu}} \right)}{2}
 ```
 ```math
-v_\mathrm{ClCe} =  \frac{k_\mathrm{ClCe} \cdot \left( Cl^- _df \cdot 2 + \mathrm{PMF} \right) \left( \mathrm{Cl}^{-}_{\mathrm{st}} + \mathrm{Cl}^{-}_{\mathrm{lu}} \right) \left( \mathrm{H_{lu}} + \mathrm{H_{st}} \right)}{4}
+v_\mathrm{ClCe} =  \frac{k_\mathrm{ClCe} \cdot \left( {\mathrm{Cl}^- _{\mathrm{df}}} \cdot 2 + \mathrm{PMF} \right) \cdot \left( \mathrm{Cl}^{-}_{\mathrm{st}} + \mathrm{Cl}^{-}_{\mathrm{lu}} \right) \cdot \left( \mathrm{H_{lu}} + \mathrm{H_{st}} \right)}{4}
 ```
 ```math
-v_\mathrm{KEA3} =  k_\mathrm{KEA3} \cdot \left( \mathrm{H_{lu}} \cdot \mathrm{K}^{+}_{\mathrm{st}} - \mathrm{H_{st}} \cdot \mathrm{K}^{+}_{\mathrm{lu}} \right) \frac{\left( 1 - \mathrm{Q_{A|red}} \right)^{3}}{\left( 1 - \mathrm{Q_{A|red}} \right)^{3} + 0.15^{3}} \frac{1}{10^{1 \left( \mathrm{pH}_\mathrm{lu} - 6.0 \right)} + 1}
+v_\mathrm{KEA3} =  k_\mathrm{KEA3} \cdot \left( \mathrm{H_{lu}} \cdot \mathrm{K}^{+}_{\mathrm{st}} - \mathrm{H_{st}} \cdot \mathrm{K}^{+}_{\mathrm{lu}} \right) \frac{\left( 1 - \mathrm{Q_{A|red}} \right)^{3}}{\left( 1 - \mathrm{Q_{A|red}} \right)^{3} + 0.15^{3}} \cdot \frac{1}{10^{\left( \mathrm{pH}_\mathrm{lu} - 6.0 \right)} + 1}
 ```
 ```math
-v_\mathrm{VKC} =  \frac{\mathrm{P_{K^+}} \cdot \left( -0.06 \log_{10} \left( \frac{\mathrm{K}^{+}_{\mathrm{st}}}{\mathrm{K}^{+}_{\mathrm{lu}}} \right) + \Delta \Psi _{\mathrm{thylakoid}} \right) \left( \mathrm{K}^{+}_{\mathrm{lu}} + \mathrm{K}^{+}_{\mathrm{st}} \right)}{2}
+v_\mathrm{VKC} =  \frac{\mathrm{P_{K^+}} \cdot \left( -0.06 \cdot \log_{10} \left( \frac{\mathrm{K}^{+}_{\mathrm{st}}}{\mathrm{K}^{+}_{\mathrm{lu}}} \right) + \Delta \Psi _{\mathrm{thylakoid}} \right) \cdot \left( \mathrm{K}^{+}_{\mathrm{lu}} + \mathrm{K}^{+}_{\mathrm{st}} \right)}{2}
 ```
 ```math
 \mathrm{PSII_{ChSep}} =  \mathrm{PSII_{ChSep}}
@@ -316,10 +316,10 @@ v_\mathrm{VKC} =  \frac{\mathrm{P_{K^+}} \cdot \left( -0.06 \log_{10} \left( \fr
 v_\mathrm{PSII|recomb} =  v_\mathrm{PSII|recomb}
 ```
 ```math
-v_{\mathrm{PSII}} =  \mathrm{Q_{A|red}} \cdot \mathrm{PQ} \cdot k_\mathrm{{QA} - \mathrm{PQH}_2 \cdot \mathrm{Q_{A|ox}} \frac{k_\mathrm{{QA}}{K_\mathrm{QA}}
+v_{\mathrm{PSII}} =  \mathrm{Q_{A|red}} \cdot \mathrm{PQ} \cdot k_\mathrm{QA} - \mathrm{PQH}_2 \cdot \mathrm{Q_{A|ox}} \cdot \frac{k_\mathrm{QA}}{K_\mathrm{QA}}
 ```
 ```math
-\mathrm{PSII_{ChSep}} =  \mathrm{Y_0} \cdot ppPSII \cdot \sigma _\mathrm{I} ^0 \cdot \mathrm{Fd}_\mathrm{ox}
+\mathrm{PSI_{ChSep}} =  \mathrm{Y_0} \cdot ppPSII \cdot \sigma _\mathrm{I} ^0 \cdot \mathrm{Fd}_\mathrm{ox}
 ```
 ```math
 v_\mathrm{PSI|PCoxid} =  \mathrm{PC}_\mathrm{red} \cdot k_\mathrm{PC|P700} \cdot \mathrm{Y_2}
@@ -328,10 +328,10 @@ v_\mathrm{PSI|PCoxid} =  \mathrm{PC}_\mathrm{red} \cdot k_\mathrm{PC|P700} \cdot
 v_{\mathrm{FNR}} =  k_\mathrm{Fd|NADP} \cdot \mathrm{NADP}_\mathrm{st} \cdot \mathrm{Fd}_\mathrm{red}
 ```
 ```math
-v_\mathrm{CBB} =  \frac{k_\mathrm{CBB} \cdot \left( 1 - \exp \left( \frac{-t}{600} \right) \right) \left( \log \left( \frac{\mathrm{NADPH}_\mathrm{st}}{\mathrm{NADP}_\mathrm{st}} \right) - \log 1.25 \right)}{\log \left( \frac{3.5}{1.25} \right)}
+v_\mathrm{CBB} =  \frac{k_\mathrm{CBB} \cdot \left( 1 - \exp \left( \frac{-t}{600} \right) \right) \left( \ln \left( \frac{\mathrm{NADPH}_\mathrm{st}}{\mathrm{NADP}_\mathrm{st}} \right) - \ln 1.25 \right)}{\ln \left( \frac{3.5}{1.25} \right)}
 ```
 ```math
-v_{\mathrm{Mehler}} =  \frac{4 \cdot 0.000265 \mathrm{Fd}_\mathrm{red}}{\mathrm{Fd}_\mathrm{red} + \mathrm{Fd}_\mathrm{ox}}
+v_{\mathrm{Mehler}} =  \frac{4 \cdot 0.000265 \cdot \mathrm{Fd}_\mathrm{red}}{\mathrm{Fd}_\mathrm{red} + \mathrm{Fd}_\mathrm{ox}}
 ```
 
 </details>

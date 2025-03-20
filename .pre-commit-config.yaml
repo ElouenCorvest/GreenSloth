@@ -8,7 +8,8 @@ repos:
       exclude: |
         (?x)^(
           Templates/.*|
-          models/unfinished/.*
+          models/unfinished/.*|
+          packages/.*
         )$
       types_or: [ python, pyi ]
       args: [ --fix ]
@@ -17,6 +18,7 @@ repos:
       exclude: |
         (?x)^(
           Templates/.*|
-          models/unfinished/.*
+          models/unfinished/.*|
+          packages/.*
         )$
       types_or: [ python, pyi ]

@@ -11,7 +11,7 @@ Rate of voltage-gated K+ channel,$v_\mathrm{VKC}$,$v_{K\_channel}$,,v_VKC,54
 Number of charge seperations in PSII per second,$\mathrm{PSII_{ChSep}}$,$PSII_{charge}$,,vPSII_ChSep,55
 Rate of PSII recombination,$v_\mathrm{PSII|recomb}$,$PSII_{recom}$,,vPSII_recomb,56
 Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,$v_{PSII}$,,v_PSII,1
-Number of charge seperations in PSII per second,$\mathrm{PSII_{ChSep}}$,$PSI_{charge}$,,PSI_ChSep,57
+Number of charge seperations in PSII per second,$\mathrm{PSI_{ChSep}}$,$PSI_{charge}$,,PSI_ChSep,57
 Rate of PC oxidiation by PSI,$v_\mathrm{PSI|PCoxid}$,$PSI_{PC\_oxidiation}$,,v_PSI_PCoxid,58
 Reaction mediated by FNR,$v_{\mathrm{FNR}}$,$v_{FNR}$,,v_FNR,10
 The rate for a simplified Calvin-Benson Cycle,$v_\mathrm{CBB}$,$v_{CBB}$,,v_CBB,59

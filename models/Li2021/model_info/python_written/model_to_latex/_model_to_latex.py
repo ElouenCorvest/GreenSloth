@@ -1,12 +1,7 @@
-from modelbase2 import Model
 from pathlib import Path
-import latexify
-from datetime import datetime
 import os
 import sys
 import inspect
-import re
-import pandas as pd
 from greensloth_utils import export_glossselect_from_model, export_odes_as_latex
 
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))

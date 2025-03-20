@@ -55,6 +55,6 @@ Rate of K+/H+ anitporter KEA3,$v_\mathrm{KEA3}$,v_KEA3,,53,Li2021
 Rate of voltage-gated K+ channel,$v_\mathrm{VKC}$,v_VKC,,54,Li2021
 Number of charge seperations in PSII per second,$\mathrm{PSII_{ChSep}}$,vPSII_ChSep,,55,Li2021
 Rate of PSII recombination,$v_\mathrm{PSII|recomb}$,vPSII_recomb,,56,Li2021
-Number of charge seperations in PSII per second,$\mathrm{PSII_{ChSep}}$,PSI_ChSep,,57,Li2021
+Number of charge seperations in PSII per second,$\mathrm{PSI_{ChSep}}$,PSI_ChSep,,57,Li2021
 Rate of PC oxidiation by PSI,$v_\mathrm{PSI|PCoxid}$,v_PSI_PCoxid,,58,Li2021
 The rate for a simplified Calvin-Benson Cycle,$v_\mathrm{CBB}$,v_CBB,,59,Li2021

@@ -1,21 +1,23 @@
-from typing import Optional
-from pathlib import Path
-import pandas as pd
-from datetime import datetime
 import os
 import re
+from datetime import datetime
+from pathlib import Path
+
+import latexify
+import pandas as pd
 from modelbase2 import Model
 from modelbase2.types import Derived
-import latexify
-from greensloth_utils.basicfuncs import proportional, continous_subtraction
+
 from greensloth_utils import basicfuncs as bf
+from greensloth_utils.basicfuncs import continous_subtraction, proportional
+
 
 def extract_select_to_gloss(
     select: dict,
     column_names: list,
     pythonvar_col: str,
     path_to_write: Path,
-    value_col: Optional[str] = None,
+    value_col: str | None = None,
 ) -> None:
     """Take a selection of a model and extract all the python vars to a csv glossary
 
@@ -25,10 +27,11 @@ def extract_select_to_gloss(
         pythonvar_col (str): Name of the column to insert all the python vars. Has to be included in column_names!
         path_to_write (Path): Path of csv to write to. If suffix isn't ".csv", then it will be replaced!
         value_col (Optional[str], optional): Optional column name to add values to. Useful for parameters. Defaults to None.
-    """  
-      
+
+    """
     tmp_dict = {
-        key: value for key, value in zip(column_names, [[] for i in column_names])
+        key: value
+        for key, value in zip(column_names, [[] for i in column_names], strict=False)
     }
 
     for name, var in select.items():
@@ -41,12 +44,12 @@ def extract_select_to_gloss(
                 tmp_dict[i].append("")
 
     df = pd.DataFrame(tmp_dict)
-    
-    if path_to_write.suffix != 'csv':
-        path_to_write = path_to_write.with_suffix('.csv')
-    
+
+    if path_to_write.suffix != "csv":
+        path_to_write = path_to_write.with_suffix(".csv")
+
     df.to_csv(path_to_write, na_rep="", index=False)
-    return
+
 
 def check_gloss_to_model(from_model: Path, edit_gloss: Path, check_col: str):
     df_model = pd.read_csv(from_model, keep_default_na=False)
@@ -64,52 +67,53 @@ def check_gloss_to_model(from_model: Path, edit_gloss: Path, check_col: str):
             f"\n No inconsistencies found in {from_model.name} and {edit_gloss.name}! :)"
         )
 
+
 def update_txt_file(
     path_to_write: Path,
     inp: str,
 ) -> None:
     if not os.path.isfile(path_to_write):
-        with open(path_to_write, 'w') as f:
-            f.write(f'------- Start on {datetime.now()} -------\n\n')
+        with open(path_to_write, "w") as f:
+            f.write(f"------- Start on {datetime.now()} -------\n\n")
             f.write(inp)
     else:
-        with open(path_to_write, 'r') as f_tmp:
+        with open(path_to_write) as f_tmp:
             read = f_tmp.read()
-        flag_idxs = [m.start() for m in re.finditer('-------', read)]
+        flag_idxs = [m.start() for m in re.finditer("-------", read)]
 
         try:
-            compare_block = read[flag_idxs[1] + 9:flag_idxs[2]]
+            compare_block = read[flag_idxs[1] + 9 : flag_idxs[2]]
         except:
-            compare_block = read[flag_idxs[1] + 9:]
+            compare_block = read[flag_idxs[1] + 9 :]
 
         if compare_block == inp:
             return
-        else:
-            with open(path_to_write, 'r+') as f:
-                f.seek(0, 0)
-                f.write(f'------- Update on {datetime.now()} -------\n\n' + inp + read)
-                print(f'Updated "{path_to_write.name}"')
+        with open(path_to_write, "r+") as f:
+            f.seek(0, 0)
+            f.write(f"------- Update on {datetime.now()} -------\n\n" + inp + read)
+            print(f'Updated "{path_to_write.name}"')
+
 
 def write_python_from_gloss(
     path_to_write: Path,
     path_to_glass: pd.DataFrame,
     var_list_name: str,
 ) -> None:
+    gloss = pd.read_csv(
+        path_to_glass,
+        keep_default_na=False,
+        converters={"Glossary ID": lambda i: int(i) if i != "" else ""},
+    )
 
-    gloss = pd.read_csv(path_to_glass, keep_default_na=False, converters={'Glossary ID': lambda i: int(i) if i != '' else ''})
-
-    inp = ''
+    inp = ""
     for idx, row in gloss.iterrows():
         inp += f"{row['Python Var']} = remove_math({var_list_name}, r'{row['Paper Abbr.']}')\n"
-    inp += '\n'
+    inp += "\n"
 
-    update_txt_file(
-        path_to_write=path_to_write,
-        inp=inp
-    )
-    
+    update_txt_file(path_to_write=path_to_write, inp=inp)
+
+
 def export_glossselect_from_model(m: Model, gloss_path: Path, write_path: Path):
-    
     gloss = pd.read_csv(
         gloss_path,
         keep_default_na=False,
@@ -165,13 +169,14 @@ def export_glossselect_from_model(m: Model, gloss_path: Path, write_path: Path):
                         r"}",
                     ),
                     ("", "", r"{{", r"}}"),
+                    strict=False,
                 ):
                     final = final.replace(old, new)
                 lhs = final.split("=")[0]
                 rhs = final.split("=")[1]
                 func_a_list = lhs[lhs.find("(") + 1 : -2].split(", ")
 
-                for arg_model, arg_ltx in zip(var.args, func_a_list):
+                for arg_model, arg_ltx in zip(var.args, func_a_list, strict=False):
                     rhs = rhs.replace(arg_ltx, f"{{{arg_model}}}")
 
             except:  # noqa: E722
@@ -183,10 +188,7 @@ def export_glossselect_from_model(m: Model, gloss_path: Path, write_path: Path):
 
     inp += "\n"
 
-    update_txt_file(
-        path_to_write=write_path,
-        inp=inp
-    )
+    update_txt_file(path_to_write=write_path, inp=inp)
 
 
 def export_odes_as_latex(path_to_write: Path, m: Model, overwrite_flag: bool = False):
@@ -195,14 +197,13 @@ def export_odes_as_latex(path_to_write: Path, m: Model, overwrite_flag: bool = F
     stoics = m.get_stoichiometries()
 
     for comp, stoic in stoics.iterrows():
-
         line = "```math \n"
 
         clean = stoic[stoic != 0.0]
         rates = clean.index
 
         line += rf"{{ode({comp})}} ="
-        
+
         for rate in rates:
             specific_stoic = m.reactions[rate].stoichiometry[comp]
             if type(specific_stoic) == Derived:
@@ -231,13 +232,16 @@ def export_odes_as_latex(path_to_write: Path, m: Model, overwrite_flag: bool = F
                             r"}",
                         ),
                         ("", "", r"{{", r"}}"),
+                        strict=False,
                     ):
                         final = final.replace(old, new)
                     lhs = final.split("=")[0]
                     rhs = final.split("=")[1][1:]
                     func_a_list = lhs[lhs.find("(") + 1 : -2].split(", ")
 
-                    for arg_model, arg_ltx in zip(specific_stoic.args, func_a_list):
+                    for arg_model, arg_ltx in zip(
+                        specific_stoic.args, func_a_list, strict=False
+                    ):
                         rhs = rhs.replace(arg_ltx, f"{{{arg_model}}}")
 
                 except:  # noqa: E722
@@ -245,22 +249,22 @@ def export_odes_as_latex(path_to_write: Path, m: Model, overwrite_flag: bool = F
 
             else:
                 rhs = specific_stoic
-            
+
             stoi = str(rhs)
-            if stoi[0] == '-':
-                comb = ' - '
+            if stoi[0] == "-":
+                comb = " - "
                 stoi = stoi[1:]
-            elif line[-1] != '=':
-                comb = ' + '
+            elif line[-1] != "=":
+                comb = " + "
             else:
-                comb = ' '
+                comb = " "
 
-            if stoi == '1':
-                stoi = ''
+            if stoi == "1":
+                stoi = ""
             else:
-                stoi += r' \cdot '
+                stoi += r" \cdot "
 
-            line += rf'{comb + stoi}{{{rate}}}'
+            line += rf"{comb + stoi}{{{rate}}}"
 
         line += "\n"
         line += "```\n"
@@ -269,10 +273,8 @@ def export_odes_as_latex(path_to_write: Path, m: Model, overwrite_flag: bool = F
 
     inp += "\n"
 
-    update_txt_file(
-        path_to_write=path_to_write,
-        inp=inp
-    )
+    update_txt_file(path_to_write=path_to_write, inp=inp)
+
 
 def remove_math(
     df, query_result, query_column="Paper Abbr.", answer_column="Common Abbr."
@@ -281,11 +283,12 @@ def remove_math(
 
     return res.replace("$", "")
 
+
 def gloss_fromCSV(
     path: Path,
-    cite_dict: Optional[dict] = None,
-    reference_col: str = 'Reference',
-    omit_col: Optional[str] = None,
+    cite_dict: dict | None = None,
+    reference_col: str = "Reference",
+    omit_col: str | None = None,
 ):
     table_df = pd.read_csv(path, keep_default_na=False)
 
@@ -293,7 +296,9 @@ def gloss_fromCSV(
         table_df = table_df.drop(columns=[omit_col])
 
     if cite_dict is not None:
-        table_df[reference_col] = table_df[reference_col].apply(cite, args=(), cite_dict=cite_dict)
+        table_df[reference_col] = table_df[reference_col].apply(
+            cite, args=(), cite_dict=cite_dict
+        )
 
     table_tolist = [table_df.columns.values.tolist()] + table_df.values.tolist()
 
@@ -301,15 +306,89 @@ def gloss_fromCSV(
 
     return table_df, table_tolist, table_list
 
+
 def cite(
     cit: str,
     cite_dict: dict,
 ):
-    if cit == '' or not url(cit):
+    if cit == "" or not url(cit):
         return cit
-    elif cit in cite_dict.keys():
-        return f'[[{cite_dict[cit]}]]({cit})'
-    else:
-        num_cites_stored = len(cite_dict.keys())
-        cite_dict[cit] = num_cites_stored + 1
-        return f'[[{cite_dict[cit]}]]({cit})'
+    if cit in cite_dict:
+        return f"[[{cite_dict[cit]}]]({cit})"
+    num_cites_stored = len(cite_dict.keys())
+    cite_dict[cit] = num_cites_stored + 1
+    return f"[[{cite_dict[cit]}]]({cit})"
+
+
+def update_from_main_gloss(
+    main_gloss_path,
+    gloss_path,
+    model_title,
+    add_to_main=False,
+):
+    main_gloss = pd.read_csv(
+        main_gloss_path, keep_default_na=False, dtype={"Glossary ID": "Int64"}
+    )
+    gloss = pd.read_csv(
+        gloss_path,
+        keep_default_na=False,
+        converters={"Glossary ID": lambda i: int(i) if i != "" else ""},
+    )
+
+    gloss_ids = gloss["Glossary ID"]
+
+    main_to_gloss_col_match = [i for i in main_gloss.columns if i in gloss.columns]
+
+    for index, gloss_id in gloss_ids.items():
+        main_ids = main_gloss["Glossary ID"]
+
+        if gloss_id == "":
+            if add_to_main:
+                try:
+                    new_id = max(main_ids) + 1
+                except:  # noqa: E722
+                    new_id = 1
+
+                gloss.loc[index, "Glossary ID"] = new_id
+
+                main_gloss_dic = {}
+
+                for col_name in main_gloss.columns:
+                    if col_name in gloss.columns:
+                        new_val = gloss.loc[
+                            gloss["Glossary ID"] == new_id, col_name
+                        ].values[0]
+
+                    elif col_name == "Reference":
+                        new_val = f"{model_title}"
+
+                    main_gloss_dic[col_name] = [new_val]
+
+                new_df = pd.DataFrame(main_gloss_dic)
+
+                main_gloss = pd.concat([main_gloss, new_df], join="inner")
+
+        else:
+            for i in main_to_gloss_col_match:
+                new_val = main_gloss.loc[
+                    main_gloss["Glossary ID"] == gloss_id, i
+                ].values[0]
+                gloss.loc[index, i] = new_val
+
+            main_refs = main_gloss.loc[
+                main_gloss["Glossary ID"] == gloss_id, "Reference"
+            ].values[0]
+
+            if model_title not in main_refs:
+                main_refs += f", {model_title}"
+
+            main_gloss.loc[main_gloss["Glossary ID"] == gloss_id, "Reference"] = (
+                main_refs
+            )
+
+    gloss.to_csv(gloss_path, na_rep="", index=False)
+    if add_to_main:
+        inp = input("Are you sure you want to update the main gloss? y/[n] > ")
+        if inp.upper() in ["Y", "YES"]:
+            print("Main Gloss Changed")
+            main_gloss.to_csv(main_gloss_path, na_rep="", index=False)

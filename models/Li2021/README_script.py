@@ -1,7 +1,6 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
 from pathlib import Path
 from greensloth_utils import remove_math, gloss_fromCSV
-# from models import get_model
 
 import os
 
@@ -62,39 +61,39 @@ derived_params_table, derived_params_table_tolist, derived_params_table_list = (
 
 # -- Compounds --
 
-Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
-Zx = remove_math(comps_table, r'$\mathrm{Zx}$')
-ATP_st = remove_math(comps_table, r'$\mathrm{ATP}$')
-ADP_st = remove_math(comps_table, r'$\mathrm{ADP}$')
-K_lu = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{lumen}}$')
-K_st = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{stroma}}$')
-Cl_lu = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{lumen}}$')
-Cl_st = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{stroma}}$')
-Dpsi = remove_math(comps_table, r'$\Delta \Psi$')
-QA_ox = remove_math(comps_table, r'$\mathrm{Q_{A}}$')
-QA_red = remove_math(comps_table, r'$\mathrm{Q_{A}}^{-}$')
-PQH_2 = remove_math(comps_table, r'$\mathrm{PQH_2}$')
-PQ = remove_math(comps_table, r'$\mathrm{PQ}$')
-PC_red = remove_math(comps_table, r'$\mathrm{PC}$')
-PC_ox = remove_math(comps_table, r'$\mathrm{PC}^+$')
-Fd_ox = remove_math(comps_table, r'$\mathrm{Fd_{ox}}$')
-Fd_red = remove_math(comps_table, r'$\mathrm{Fd_{red}}$')
-pH_lu = remove_math(comps_table, r'$\mathrm{pH_{lumen}}')
-NADPH_st = remove_math(comps_table, r'$\mathrm{NADPH}$')
-NADP_st = remove_math(comps_table, r'$\mathrm{NADP}^+$')
-Y0 = remove_math(comps_table, r'$\mathrm{P_{700}}$')
-Y2 = remove_math(comps_table, r'$\mathrm{P_{700}}^+$')
+Vx = remove_math(comps_table, r"$\mathrm{Vx}$")
+Zx = remove_math(comps_table, r"$\mathrm{Zx}$")
+ATP_st = remove_math(comps_table, r"$\mathrm{ATP}$")
+ADP_st = remove_math(comps_table, r"$\mathrm{ADP}$")
+K_lu = remove_math(comps_table, r"$\mathrm{K}^{+}_{\mathrm{lumen}}$")
+K_st = remove_math(comps_table, r"$\mathrm{K}^{+}_{\mathrm{stroma}}$")
+Cl_lu = remove_math(comps_table, r"$\mathrm{Cl}^{-}_{\mathrm{lumen}}$")
+Cl_st = remove_math(comps_table, r"$\mathrm{Cl}^{-}_{\mathrm{stroma}}$")
+Dpsi = remove_math(comps_table, r"$\Delta \Psi$")
+QA_ox = remove_math(comps_table, r"$\mathrm{Q_{A}}$")
+QA_red = remove_math(comps_table, r"$\mathrm{Q_{A}}^{-}$")
+PQH_2 = remove_math(comps_table, r"$\mathrm{PQH_2}$")
+PQ = remove_math(comps_table, r"$\mathrm{PQ}$")
+PC_red = remove_math(comps_table, r"$\mathrm{PC}$")
+PC_ox = remove_math(comps_table, r"$\mathrm{PC}^+$")
+Fd_ox = remove_math(comps_table, r"$\mathrm{Fd_{ox}}$")
+Fd_red = remove_math(comps_table, r"$\mathrm{Fd_{red}}$")
+pH_lu = remove_math(comps_table, r"$\mathrm{pH_{lumen}}")
+NADPH_st = remove_math(comps_table, r"$\mathrm{NADPH}$")
+NADP_st = remove_math(comps_table, r"$\mathrm{NADP}^+$")
+Y0 = remove_math(comps_table, r"$\mathrm{P_{700}}$")
+Y2 = remove_math(comps_table, r"$\mathrm{P_{700}}^+$")
 
 # -- Derived Compounds --
 
-H_lu = remove_math(derived_comps_table, r'$H_{lumen}$')
-PMF = remove_math(derived_comps_table, r'$pmf$')
-PsbSP = remove_math(derived_comps_table, r'$PsbS\_H$')
-NPQ = remove_math(derived_comps_table, r'$NPQ$')
-Prot_ATPsynth = remove_math(derived_comps_table, r'$\mathrm{d\_protons\_to\_ATP}$')
-PhiPSII = remove_math(derived_comps_table, r'$\Phi \mathrm{PSII}$')
-singO2 = remove_math(derived_comps_table, r'$^1\mathrm{O_2}$')
-H_st = remove_math(derived_comps_table, r'$H_{stroma}$')
+H_lu = remove_math(derived_comps_table, r"$H_{lumen}$")
+PMF = remove_math(derived_comps_table, r"$pmf$")
+PsbSP = remove_math(derived_comps_table, r"$PsbS\_H$")
+NPQ = remove_math(derived_comps_table, r"$NPQ$")
+Prot_ATPsynth = remove_math(derived_comps_table, r"$\mathrm{d\_protons\_to\_ATP}$")
+PhiPSII = remove_math(derived_comps_table, r"$\Phi \mathrm{PSII}$")
+singO2 = remove_math(derived_comps_table, r"$^1\mathrm{O_2}$")
+H_st = remove_math(derived_comps_table, r"$H_{stroma}$")
 
 # -- Rates --
 
@@ -144,7 +143,7 @@ PAR = remove_math(params_table, r"$\mathrm{PAR}$")
 PSII_max = remove_math(params_table, r"")
 sigma0_II = remove_math(params_table, r"$\mathrm{PSII_{antenna_size}}$")
 k_QA = remove_math(params_table, r"$k_\mathrm{{QA}}$")
-K_QA = remove_math(params_table, r"$Keq_{QA \rightarrow PQ}")
+K_QA = remove_math(params_table, r"$Keq_{QA \rightarrow PQ}$S")
 vpc = remove_math(params_table, r"$\mathrm{Volts\_per\_charge}$")
 sigma0_I = remove_math(params_table, r"$\mathrm{PSI_{antenna_size}}$")
 ipt_lu = remove_math(params_table, r"$\mathrm{lumen\_protons\_per\_turnover}$")
@@ -158,15 +157,15 @@ k_KEA3 = remove_math(params_table, r"$k_{KEA3}$")
 k_FdtoNADP = remove_math(params_table, r"$k_\mathrm{Fd\_to\_NADP}$")
 k_CBB = remove_math(params_table, r"$k_{CBC}$")
 k_Leak = remove_math(params_table, r"$k_{leak}$")
-pH_st = remove_math(params_table, r"$\mathrm{pH_{stroma}}")
+pH_st = remove_math(params_table, r"$\mathrm{pH_{stroma}}$")
 time = "t"
 
 # --- Derived Parameters ---
 
 ppPSII = remove_math(derived_params_table, r"$\mathrm{light\_per\_L}$")
-K_b6f = remove_math(derived_params_table, r"$Keq_{b6f}")
+K_b6f = remove_math(derived_params_table, r"$Keq_{b6f}$")
 k_b6f = remove_math(derived_params_table, r"$k_{b6f}$")
-K_NDH1 = remove_math(derived_params_table, r"$Keq_{NDH}")
+K_NDH1 = remove_math(derived_params_table, r"$Keq_{NDH}$")
 Act_ATPsynth = remove_math(derived_params_table, r"$\mathrm{ATP\_synthase\_actvt}$")
 PSII_ChSep = remove_math(derived_params_table, r"$PSII_{charge}$")
 PSII_recomb = remove_math(derived_params_table, r"$PSII_{recom}$")
@@ -279,28 +278,28 @@ mdFile.new_paragraph(rf"""
 <summary> Calculations </summary>
 
 ```math
-{H_lu} =  10^{{-1 {pH_lu}}}
+{H_lu} =  10^{{-{pH_lu}}}
 ```
 ```math
-{PMF} =  {Dpsi} + 0.06 \left( {pH_st} - {pH_lu} \right)
+{PMF} =  {Dpsi} + 0.06 \cdot \left( {pH_st} - {pH_lu} \right)
 ```
 ```math
-{PsbSP} =  \frac{{1}}{{10^{{3 \left( {pH_lu} - {pKa_PsbS} \right)}} + 1}}
+{PsbSP} =  \frac{{1}}{{10^{{3 \cdot \left( {pH_lu} - {pKa_PsbS} \right)}} + 1}}
 ```
 ```math
-{NPQ} =  0.4 {NPQ_max} \cdot {PsbSP} \cdot {Zx} + 0.5 {NPQ_max} \cdot {PsbSP} + 0.1 {NPQ_max} \cdot {Zx}
+{NPQ} =  0.4 \cdot {NPQ_max} \cdot {PsbSP} \cdot {Zx} + 0.5 \cdot {NPQ_max} \cdot {PsbSP} + 0.1 \cdot {NPQ_max} \cdot {Zx}
 ```
 ```math
 {Prot_ATPsynth} =  {Act_ATPsynth} \cdot \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.132 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth} + \left( 1 - {Act_ATPsynth} \right) \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.204 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth}
 ```
 ```math
-{PhiPSII} =  \frac{{1}}{{1 + \frac{{1 + {NPQ}}}{{4.88 {QA_ox}}}}}
+{PhiPSII} =  \frac{{1}}{{1 + \frac{{1 + {NPQ}}}{{4.88 \cdot {QA_ox}}}}}
 ```
 ```math
 {singO2} =  {PSII_recomb} \cdot {phi_triplet} \cdot {phi_1O2}
 ```
 ```math
-{H_st} =  10^{{-1 {pH_st}}}
+{H_st} =  10^{{-{pH_st}}}
 ```
 
 </details>
@@ -329,28 +328,28 @@ mdFile.new_paragraph(rf"""
 <summary>Equations of derived parameters</summary>
 
 ```math
-{ppPSII} =  0.84 \frac{{{PAR}}}{{0.7}}
+{ppPSII} =  0.84 \cdot \frac{{{PAR}}}{{0.7}}
 ```
 ```math
-{K_b6f} =  10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \left( {pH_lu} - 7.0 \right) \right) - {PMF}}}{{0.06}}}}
+{K_b6f} =  10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \cdot \left( {pH_lu} - 7.0 \right) \right) - {PMF}}}{{0.06}}}}
 ```
 ```math
 {k_b6f} =  \left( 1 - \frac{{1}}{{10^{{{pH_lu} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f}
 ```
 ```math
-{K_NDH1} =  10^{{\frac{{{Em_PQH2_pH7} - 0.06 \left( {pH_st} - 7.0 \right) - {Em_Fd} - {PMF} \cdot 2}}{{0.06}}}}
+{K_NDH1} =  10^{{\frac{{{Em_PQH2_pH7} - 0.06 \cdot \left( {pH_st} - 7.0 \right) - {Em_Fd} - {PMF} \cdot 2}}{{0.06}}}}
 ```
 ```math
-{Act_ATPsynth} =  0.2 + 0.8 \frac{{\left( \frac{{{time}}}{{165}} \right)^{{4}}}}{{\left( \frac{{{time}}}{{165}} \right)^{{4}} + 1}}
+{Act_ATPsynth} =  0.2 + 0.8 \cdot \frac{{\left( \frac{{{time}}}{{165}} \right)^{{4}}}}{{\left( \frac{{{time}}}{{165}} \right)^{{4}} + 1}}
 ```
 ```math
 {PSII_ChSep} =  {sigma0_II} \cdot {ppPSII} \cdot {PhiPSII}
 ```
 ```math
-{PSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \left( 7.0 - {pH_lu} \right)}}{{0.06}}}}
+{PSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \cdot \left( 7.0 - {pH_lu} \right)}}{{0.06}}}}
 ```
 ```math
-{Cl_df} =  0.06 \log_{{10}} \left( \frac{{{Cl_st}}}{{{Cl_lu}}} \right) + {Dpsi}
+{Cl_df} =  0.06 \cdot \log_{{10}} \left( \frac{{{Cl_st}}}{{{Cl_lu}}} \right) + {Dpsi}
 ```
 
 </details>
@@ -371,7 +370,7 @@ mdFile.new_paragraph(rf"""
 <summary>Rate equations</summary>
 
 ```math
-{v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot {k_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) {PC_red} \frac{{{k_b6f}}}{{{K_b6f}}}
+{v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot {k_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) \cdot {PC_red} \cdot \frac{{{k_b6f}}}{{{K_b6f}}}
 ```
 ```math
 {v_NDH} =  {k_NDH1} \cdot {Fd_red} \cdot {PQ} - \frac{{{k_NDH1}}}{{{K_NDH1}}} \cdot {Fd_ox} \cdot {PQH_2}
@@ -385,22 +384,22 @@ mdFile.new_paragraph(rf"""
 ```math
 {v_ATPsynth} = \left\{{ 
   \begin{{array}}{{ c l }}
-    {Prot_ATPsynth} + {PMF} * {k_Leak} * {H_lu} & \quad \textrm{{if }} {ppPSII} > 0 \\
-    {PMF} * {k_Leak} * {H_lu} & \quad \textrm{{else}}
+    {Prot_ATPsynth} + {PMF} \cdot {k_Leak} \cdot {H_lu} & \quad \textrm{{if }} {ppPSII} > 0 \\
+    {PMF} \cdot {k_Leak} \cdot {H_lu} & \quad \textrm{{else}}
   \end{{array}}
 \right.
 ```
 ```math
-{v_VCCN1} =  \frac{{{k_VCCN1} \cdot \left( 332 {Cl_df}^{{3}} + 30.8 {Cl_df}^{{2}} + 3.6 {Cl_df} \right) \left( {Cl_st} + {Cl_lu} \right)}}{{2}}
+{v_VCCN1} =  \frac{{{k_VCCN1} \cdot \left( 332 \cdot {Cl_df}^{{3}} + 30.8 \cdot {Cl_df}^{{2}} + 3.6 \cdot {Cl_df} \right) \cdot \left( {Cl_st} + {Cl_lu} \right)}}{{2}}
 ```
 ```math
-{v_ClCe} =  \frac{{{k_ClCe} \cdot \left( {Cl_df} \cdot 2 + {PMF} \right) \left( {Cl_st} + {Cl_lu} \right) \left( {H_lu} + {H_st} \right)}}{{4}}
+{v_ClCe} =  \frac{{{k_ClCe} \cdot \left( {Cl_df} \cdot 2 + {PMF} \right) \cdot \left( {Cl_st} + {Cl_lu} \right) \cdot \left( {H_lu} + {H_st} \right)}}{{4}}
 ```
 ```math
-{v_KEA3} =  {k_KEA3} \cdot \left( {H_lu} \cdot {K_st} - {H_st} \cdot {K_lu} \right) \frac{{\left( 1 - {QA_red} \right)^{{3}}}}{{\left( 1 - {QA_red} \right)^{{3}} + 0.15^{{3}}}} \frac{{1}}{{10^{{1 \left( {pH_lu} - 6.0 \right)}} + 1}}
+{v_KEA3} =  {k_KEA3} \cdot \left( {H_lu} \cdot {K_st} - {H_st} \cdot {K_lu} \right) \frac{{\left( 1 - {QA_red} \right)^{{3}}}}{{\left( 1 - {QA_red} \right)^{{3}} + 0.15^{{3}}}} \cdot \frac{{1}}{{10^{{\left( {pH_lu} - 6.0 \right)}} + 1}}
 ```
 ```math
-{v_VKC} =  \frac{{{P_K} \cdot \left( -0.06 \log_{{10}} \left( \frac{{{K_st}}}{{{K_lu}}} \right) + {Dpsi} \right) \left( {K_lu} + {K_st} \right)}}{{2}}
+{v_VKC} =  \frac{{{P_K} \cdot \left( -0.06 \cdot \log_{{10}} \left( \frac{{{K_st}}}{{{K_lu}}} \right) + {Dpsi} \right) \cdot \left( {K_lu} + {K_st} \right)}}{{2}}
 ```
 ```math
 {vPSII_ChSep} =  {PSII_ChSep}
@@ -409,7 +408,7 @@ mdFile.new_paragraph(rf"""
 {vPSII_recomb} =  {PSII_recomb}
 ```
 ```math
-{v_PSII} =  {QA_red} \cdot {PQ} \cdot {k_QA} - {PQH_2} \cdot {QA_ox} \frac{{{k_QA}}}{{{K_QA}}}
+{v_PSII} =  {QA_red} \cdot {PQ} \cdot {k_QA} - {PQH_2} \cdot {QA_ox} \cdot \frac{{{k_QA}}}{{{K_QA}}}
 ```
 ```math
 {PSI_ChSep} =  {Y0} \cdot {ppPSII} \cdot {sigma0_I} \cdot {Fd_ox}
@@ -421,10 +420,10 @@ mdFile.new_paragraph(rf"""
 {v_FNR} =  {k_FdtoNADP} \cdot {NADP_st} \cdot {Fd_red}
 ```
 ```math
-{v_CBB} =  \frac{{{k_CBB} \cdot \left( 1 - \exp \left( \frac{{-{time}}}{{600}} \right) \right) \left( \log \left( \frac{{{NADPH_st}}}{{{NADP_st}}} \right) - \log 1.25 \right)}}{{\log \left( \frac{{3.5}}{{1.25}} \right)}}
+{v_CBB} =  \frac{{{k_CBB} \cdot \left( 1 - \exp \left( \frac{{-{time}}}{{600}} \right) \right) \left( \ln \left( \frac{{{NADPH_st}}}{{{NADP_st}}} \right) - \ln 1.25 \right)}}{{\ln \left( \frac{{3.5}}{{1.25}} \right)}}
 ```
 ```math
-{v_Mehler} =  \frac{{4 \cdot 0.000265 {Fd_red}}}{{{Fd_red} + {Fd_ox}}}
+{v_Mehler} =  \frac{{4 \cdot 0.000265 \cdot {Fd_red}}}{{{Fd_red} + {Fd_ox}}}
 ```
 
 </details>
