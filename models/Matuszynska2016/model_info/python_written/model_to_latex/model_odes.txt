@@ -1,0 +1,21 @@
+------- Start on 2025-03-26 13:20:01.832809 -------
+
+```math 
+{ode(PQH_2)} = {v_PSII} - {v_PQ}
+```
+```math 
+{ode(H_lu)} = \frac{{2}}{{{b_H}}} \cdot {v_PSII} + \frac{{4}}{{{b_H}}} \cdot {v_PQ} + \frac{{-\left( \frac{{14}}{{3}} \right)}}{{{b_H}}} \cdot {v_ATPsynth} + \frac{{-1}}{{{b_H}}} \cdot {v_Leak}
+```
+```math 
+{ode(ATP_st)} = {v_ATPsynth} - {v_ATPcons}
+```
+```math 
+{ode(ATPase_ac)} = {v_ATPact}
+```
+```math 
+{ode(Vx)} = - {v_Xcyc}
+```
+```math 
+{ode(psbS)} = - {v_PsbSP}
+```
+

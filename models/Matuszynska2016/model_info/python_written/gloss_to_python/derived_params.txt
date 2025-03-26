@@ -1,0 +1,9 @@
+------- Start on 2025-03-26 13:17:23.976588 -------
+
+H_st = remove_math(derived_params_table, r'$\mathrm{H}_\mathrm{st}$')
+K_pHSat_inv = remove_math(derived_params_table, r'$K_{\mathrm{pHSat}_\mathrm{inv}}$')
+K_pHSatLHC_inv = remove_math(derived_params_table, r'$K_{\mathrm{pHSatLHC}_\mathrm{inv}}$')
+K_QAPQ = remove_math(derived_params_table, r'$K_\mathrm{eq, QAPQ}$')
+K_cytb6f = remove_math(derived_params_table, r'$K_\mathrm{eq, ATPsynthase}$')
+K_ATPsynth = remove_math(derived_params_table, r'$K_\mathrm{eq, cytb6f}$')
+

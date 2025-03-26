@@ -67,6 +67,9 @@ def four_divided_value(x: float) -> float:
 def neg_four_divided_value(x: float) -> float:
     return -4 / x
 
+def neg_fourteenthirds_divided_value(x: float) -> float:
+    return -(14/3) / x
+
 def value1_divided_value2(x: float, y: float) -> float:
     return x / y
 

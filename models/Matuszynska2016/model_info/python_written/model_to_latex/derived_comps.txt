@@ -1,0 +1,36 @@
+------- Start on 2025-03-26 13:20:01.826287 -------
+
+```math
+{pH_lu} =  -\log_{{10}} \left( {H_lu} \cdot 0.00025 \right)
+```
+```math
+{PQ} = ERROR because of function "continous_subtraction"
+```
+```math
+{ADP_st} = ERROR because of function "continous_subtraction"
+```
+```math
+{PsbSP} = ERROR because of function "continous_subtraction"
+```
+```math
+{Zx} = ERROR because of function "continous_subtraction"
+```
+```math
+{Q} =  {gamma_0} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) {psbS} + {gamma_1} \cdot \left( 1 - \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \right) {PsbSP} + {gamma_2} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {PsbSP} + {gamma_3} \cdot \frac{{{Zx}}}{{{Zx} + {K_ZSat}}} \cdot {psbS}
+```
+```math
+{B0} = ERROR because of function "B0_PSII"
+```
+```math
+{B1} = ERROR because of function "B1_PSII"
+```
+```math
+{B2} = ERROR because of function "B2_PSII"
+```
+```math
+{B3} = ERROR because of function "B3_PSII"
+```
+```math
+{Fluo} =  \frac{{{k_F}}}{{{k_H} \cdot {Q} + {k_F} + {k_P}}} \cdot {B0} + \frac{{{k_F}}}{{{k_H} \cdot {Q} + {k_F}}} \cdot {B2}
+```
+

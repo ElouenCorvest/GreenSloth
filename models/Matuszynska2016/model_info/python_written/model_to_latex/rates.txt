@@ -1,0 +1,27 @@
+------- Start on 2025-03-26 13:20:01.822443 -------
+
+```math
+{v_PSII} =  {k_P} \cdot 0.5 {B1}
+```
+```math
+{v_PQ} =  \left( \frac{{{k_Cytb6f} \cdot {pfd} \cdot {K_cytb6f}}}{{{K_cytb6f} + 1}} + {k_PTOX} \cdot {O2_ex} \right) {PQH_2} - \frac{{{k_Cytb6f} \cdot {pfd}}}{{{K_cytb6f} + 1}} \cdot \left( {PQ_tot} - {PQH_2} \right)
+```
+```math
+{v_ATPsynth} =  {ATPase_ac} \cdot {k_ATPsynth} \cdot \left( {AP_tot} - {ATP_st} - \frac{{{ATP_st}}}{{{K_ATPsynth}}} \right)
+```
+```math
+{v_ATPact} =  {k_ActATPase} \cdot \left( {pfd} > 0 \right) \left( 1 - {ATPase_ac} \right) - {k_DeactATPase} \cdot \left( 1 - \left( {pfd} > 0 \right) \right) {ATPase_ac}
+```
+```math
+{v_Leak} =  {k_leak} \cdot \left( {H_lu} - {H_st} \right)
+```
+```math
+{v_ATPcons} =  {k_ATPconsum} \cdot {ATP_st}
+```
+```math
+{v_Xcyc} =  {k_DV} \cdot \frac{{{H_lu}^{{{nhx}}}}}{{{H_lu}^{{{nhx}}} + {K_pHSat_inv}^{{{nhx}}}}} \cdot {Vx} - {k_EZ} \cdot \left( {X_tot} - {Vx} \right)
+```
+```math
+{v_PsbSP} =  {k_prot} \cdot \frac{{{H_lu}^{{{nhl}}}}}{{{H_lu}^{{{nhl}}} + {K_pHSatLHC_inv}^{{{nhl}}}}} \cdot {psbS} - {k_deprot} \cdot \left( {PsbS_tot} - {psbS} \right)
+```
+

@@ -7,6 +7,7 @@ import latexify
 import pandas as pd
 from modelbase2 import Model
 from modelbase2.types import Derived
+from validators import url
 
 from greensloth_utils import basicfuncs as bf
 from greensloth_utils.basicfuncs import continous_subtraction, proportional
