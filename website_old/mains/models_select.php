@@ -61,7 +61,7 @@
                   
                   // Loop through the directory contents
                   while (($file = readdir($dh)) !== false) {
-                      // Only process .html files
+                      // Only process .php files
                       if (pathinfo($file, PATHINFO_EXTENSION) === 'php') {
                           // Get the model name (file name without extension)
                           $model_name = pathinfo($file, PATHINFO_FILENAME);
@@ -73,7 +73,7 @@
                           $contents_modelpage = file_get_contents($file_path);
 
                           // Find matching text inside simulate dmodle page
-                          if (preg_match("/<h1 id='modelTitle'>(.*)<\/h1>/i", $contents_modelpage, $matches)) {
+                          if (preg_match("/id='modelTitle'>(.*)<\/h1>/i", $contents_modelpage, $matches)) {
                             $model_title = $matches[1];
                           }
                           

@@ -190,8 +190,8 @@ textarea {
  */
 
 .clickable {
-  background-color: var(--buttonHoverColor) !important;
-  filter: grayscale(100);
+  background-color: inherit;
+  /* filter: grayscale(100); */
   border: 0.15em solid rgba(0, 170, 175, 0);
   transition-property: filter, border-color;
   transition-duration: 0.3s;
@@ -200,7 +200,8 @@ textarea {
 }
 
 .clickable:hover {
-  filter: grayscale(0);
+  background-color: var(--buttonHoverColor);
+  /* filter: grayscale(0); */
 }
 
 .active {
@@ -317,13 +318,14 @@ textarea {
   display: flex;
   align-items: center;
   position: fixed;
-  background-color: transparent;
+  background-color: white;
   box-shadow: 0px 3px 27px 5px rgba(0, 0, 0, 0.10);
   color: black;
   padding: 0;
   overflow: hidden;
   width: 100%;
   margin: 0;
+  z-index: 1000;
 }
 
 .topnav-left {
@@ -523,34 +525,75 @@ textarea {
 #content-model {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 1em 2em;
+  grid-template-rows: auto 1fr;
+  gap: 0 2em;
   justify-content: center;
 }
 
 .modelpageImg {
-  grid-row: span 3;
+  grid-row: span 2;
   width: 100%;
   text-align: center;
+  align-self: center;
 }
 
-#modelTitle {
+.modelText {
+  margin: 0.5em 0 0.25em;
   padding: 0 0.5em;
   height: fit-content;
 }
 
-.tab {
+.modelTabContainer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1em;
   background-color: transparent;
-  color: #f2f2f2;
   overflow: hidden;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   margin: 0;
   border-radius: 0.5em 0.5em 0 0;
+  border: 0.15em solid var(--buttonActiveBorderColor);
+  border-bottom: none;
 }
+
+.modelTabContainer button {
+  font-size: 0.9em;
+  padding: 14px 16px;
+}
+
+.modelTabContainer button.active {
+  border: 0.15em solid transparent;
+}
+
+.modelTabContent {
+  display: none;
+}
+
+.modelTabContent table {
+  table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 1px solid #ddd;
+}
+
+.modelTabContent thead {
+  border-bottom: 1px solid #ddd;
+  text-align: justify;
+}
+
+.modelTabContent tbody td {
+  padding: 0.2em 0.4em;
+  max-width: 200px;  
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.modelTabContent tbody tr:hover {
+  background-color: var(--buttonHoverColor);
+}
+
 
 .tab .tablinks {
   background-color: rgba(10, 97, 103, 1);

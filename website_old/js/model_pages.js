@@ -63,61 +63,94 @@ cards.forEach(card => {
     });
 })
 
-// cards.forEach(card => {
-//     console.log(mouseLeaveFLag)
-//     // Add click event listerner
-//     card.addEventListener('click', () => {
-//         if (card.classList.contains('activeCard')) {
-//             cards.forEach(sibling => {
-//                 sibling.classList.remove('activeCard', 'inactiveCard', 'inactiveCardAfter');
-//             })
-//         } else {
-//             card.classList.add('activeCard');
-//             var flag = false
-//             cards.forEach(sibling => {
-//                 sibling.classList.remove('inactiveCard', 'inactiveCardAfter');
-//                 if (sibling == card) {
-//                     flag = true
-//                 };
-//                 if (sibling !== card) {
-//                     sibling.classList.add('inactiveCard');
-//                     sibling.classList.remove('activeCard');
-//                 };
-//                 if (sibling !== card && flag == true ) {
-//                     sibling.classList.add('inactiveCardAfter')
-//                 };
-//             });
-//         };
-//     });
+function fetchCSV() {
+    const csvUrl = "https://example.com/data.csv"; // Replace with your CSV URL
 
+    Papa.parse(csvUrl, {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        chunk: function(results, parser) { // Process in chunks
+            appendToTable(results.data);
+        },
+        complete: function() {
+            MathJax.typeset(); // Render LaTeX after loading
+        }
+    });
+}
 
-//     // Add hover event listeners
-//     card.addEventListener('mouseenter', () => {
-//         // Change the background of all other siblings
-//         var flag = false
-//         cards.forEach(sibling => {
-//             if (sibling == card) {
-//                 flag = true
-//                 sibling.classList.remove('inactiveCard', 'inactiveCardAfter')
-//             };
-//             if (sibling !== card) {
-//                 sibling.classList.add("cardSibling")
-//             };
-//             if (sibling !== card && flag == true ) {
-//                 sibling.classList.add("cardSiblingAfter")
-//             };
-//         });
-//     });
+function appendToTable(data) {
+    let table = document.getElementById("csvTable");
+    if (!table.innerHTML) {
+        // Create headers
+        let thead = "<thead><tr>";
+        Object.keys(data[0]).forEach(header => {
+            thead += `<th>${header}</th>`;
+        });
+        thead += "</tr></thead><tbody>";
+        table.innerHTML = thead;
+    }
 
-//     if (mouseLeaveFLag) {
-//         // Revert the background color when mouse leaves
-//         card.addEventListener('mouseleave', () => {
-//             // Reset the background of all items
-//             cards.forEach(sibling => {
-//                 sibling.classList.remove("cardSiblingAfter", "cardSibling")
-//             });
-//         });
-//     };
-// });
+    // Append rows dynamically
+    let tbody = table.querySelector("tbody") || table;
+    data.forEach(row => {
+        let tr = "<tr>";
+        Object.values(row).forEach(cell => {
+            tr += `<td>\(${cell}\)</td>`; // Wrap LaTeX in \( ... \)
+        });
+        tr += "</tr>";
+        tbody.innerHTML += tr;
+    });
+}
 
+function openModelAttr(evt, AttrName, AttrUrl) {
+    var i, tabcontent, tablinks;
 
+    tabcontent = document.getElementsByClassName("modelTabContent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("modelTab");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(AttrName).style.display = "block";
+    evt.currentTarget.className += " active";
+
+    Papa.parse(AttrUrl, {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+            const data = results.data;
+            let tableHTML = "<thead><tr>";
+
+            // Generate table headers
+            Object.keys(data[0]).forEach(header => {
+                tableHTML += `<th>${header}</th>`;
+            });
+            tableHTML += "</tr></thead><tbody>";
+
+            // Generate table rows
+            data.forEach(row => {
+                tableHTML += "<tr>";
+                Object.values(row).forEach(cell => {
+                    if (cell.includes("https://")) {
+                        var insert = `<a href="${cell}">here</a>`
+                    } else {
+                        var insert = cell
+                    }
+                    tableHTML += `<td>${insert}</td>`;
+                });
+                tableHTML += "</tr>";
+            });
+            tableHTML += "</tbody>";
+            document.getElementById(`${AttrName}Table`).innerHTML = tableHTML;
+
+            // Tell MathJax to re-render LaTeX
+            MathJax.typeset();
+        }
+        });
+}

@@ -18,7 +18,7 @@ def ode(first_var: str, second_var: str = "t"):
 ###### Model Infos ######
 
 model_title = "Matuszynska2016"
-model_doi = "ENTER HERE"
+model_doi = "https://doi.org/10.1016/j.bbabio.2016.09.003"
 
 ###### Glossaries ######
 
