@@ -56,48 +56,55 @@
     </div>
 
     <div class="modelTabContainer">
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrODE', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/comps.csv')">ODE System</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrDerivedComps', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/derived_comps.csv')">Derived Quantities</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrParams', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/params.csv')">Parameters</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrDerivedParams', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/derived_params.csv')">Derived Parameters</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrRates', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/rates.csv')">Rates</button>
+      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrODE', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/comps.csv', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/README.md')",>ODE System</button>
+      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrDerivedComps', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/derived_comps.csv', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/README.md')">Derived Quantities</button>
+      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrParams', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/params.csv', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/README.md')">Parameters</button>
+      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrDerivedParams', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/derived_params.csv', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/README.md')">Derived Parameters</button>
+      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrRates', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/model_info/rates.csv', 'https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/README.md')">Rates</button>
     </div>
 
     <div id="modelAttrODE" class="modelTabContent">
       <h3>ODE System</h3>
       <table id="modelAttrODETable"></table>
+      <div id="modelAttrODEMath"></div>
     </div>
 
     <div id="modelAttrDerivedComps" class="modelTabContent">
       <h3>Derived Quantities</h3>
       <table id="modelAttrDerivedCompsTable"></table>
+      <div id="modelAttrDerivedCompsMath"></div>
     </div>
 
     <div id="modelAttrParams" class="modelTabContent">
       <h3>Parameters</h3>
       <table id="modelAttrParamsTable"></table>
+      <div id="modelAttrParamsMath"></div>
     </div>
 
     <div id="modelAttrDerivedParams" class="modelTabContent">
       <h3>Derived Parameters</h3>
       <table id="modelAttrDerivedParamsTable"></table>
+      <div id="modelAttrDerivedParamsMath"></div>
     </div>
 
     <div id="modelAttrRates" class="modelTabContent">
       <h3>Rates</h3>
       <table id="modelAttrRatesTable"></table>
+      <div id="modelAttrRatesMath"></div>
     </div>
   </div>
 
   <script>
     MathJax = {
       tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        tags: 'ams'
       }
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script  src="../node_modules/papaparse/papaparse.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript" src="../js/model_pages.js"></script>
 </body>
 

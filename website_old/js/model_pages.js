@@ -63,47 +63,7 @@ cards.forEach(card => {
     });
 })
 
-function fetchCSV() {
-    const csvUrl = "https://example.com/data.csv"; // Replace with your CSV URL
-
-    Papa.parse(csvUrl, {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        chunk: function(results, parser) { // Process in chunks
-            appendToTable(results.data);
-        },
-        complete: function() {
-            MathJax.typeset(); // Render LaTeX after loading
-        }
-    });
-}
-
-function appendToTable(data) {
-    let table = document.getElementById("csvTable");
-    if (!table.innerHTML) {
-        // Create headers
-        let thead = "<thead><tr>";
-        Object.keys(data[0]).forEach(header => {
-            thead += `<th>${header}</th>`;
-        });
-        thead += "</tr></thead><tbody>";
-        table.innerHTML = thead;
-    }
-
-    // Append rows dynamically
-    let tbody = table.querySelector("tbody") || table;
-    data.forEach(row => {
-        let tr = "<tr>";
-        Object.values(row).forEach(cell => {
-            tr += `<td>\(${cell}\)</td>`; // Wrap LaTeX in \( ... \)
-        });
-        tr += "</tr>";
-        tbody.innerHTML += tr;
-    });
-}
-
-function openModelAttr(evt, AttrName, AttrUrl) {
+function openModelAttr(evt, AttrName, AttrUrl, MdUrl) {
     var i, tabcontent, tablinks;
 
     tabcontent = document.getElementsByClassName("modelTabContent");
@@ -119,6 +79,7 @@ function openModelAttr(evt, AttrName, AttrUrl) {
     document.getElementById(AttrName).style.display = "block";
     evt.currentTarget.className += " active";
 
+    // Get CSV Tables
     Papa.parse(AttrUrl, {
         download: true,
         header: true,
@@ -153,4 +114,47 @@ function openModelAttr(evt, AttrName, AttrUrl) {
             MathJax.typeset();
         }
         });
+
+    // Get Equations
+
+    (async() => {
+        console.log(MdUrl)
+        const md_file = await axios.get(MdUrl);
+        if (AttrName.includes("ODE")) {
+            var regex_match = /#### Part of ODE system(.*)#### Conserved quantities/gms
+        } else if (AttrName.includes("Rates")) {
+            var regex_match = /### Reaction Rates(.*)<\/details>/gms
+        } else if (AttrName.includes("DerivedParams")) {
+            var regex_match = /#### Derived Parameters(.*)### Reaction Rates/gms
+        } else if (AttrName.includes("Params")) {
+            var regex_match = /### Parameters(.*)#### Derived Parameters/gms
+        } else if (AttrName.includes("DerivedComps")){
+            var regex_match = /#### Conserved quantities(.*)### Parameters/gms
+        }
+        var extraction = md_file.data.match(regex_match);
+        console.log(extraction[0].match(/(?<=\n)(.*)=(.*)(?=\n)/mg));
+        var math_lines = extraction[0].match(/(?<=\n)(.*)=(.*)(?=\n)/mg);
+            if (math_lines !== null) {
+                let mathHTML = "\\begin{align}";
+                math_lines.forEach(row => {
+                    console.log(row.replace(/[^&]=/mg, " &="));
+                    mathHTML += `${row.replace(/[^&]=/mg, " &=")}`;
+                    if (!row.includes('\\\\')) {
+                        mathHTML += "\\\\"
+                    }
+                    mathHTML += "[9pt]"
+                });
+                mathHTML += "\\end{align}";
+                console.log(mathHTML)
+                document.getElementById(`${AttrName}Math`).innerHTML = mathHTML;
+
+                // Tell MathJax to re-render LaTeX
+                MathJax.typeset();
+            }
+    })();
 }
+
+// (async() => {
+//     const res = await axios.get("https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/Matuszynska2016/README.md")
+//     console.log(res.data.match(/#### Part of ODE system(.*)#### Conserved quantities/gms))
+//     })()

@@ -2,8 +2,8 @@
   "short_name": "",
   "name": "",
   "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
+    "src": "icon.svg",
+    "type": "image/svg",
     "sizes": "192x192"
   }],
   "start_url": "/?utm_source=homescreen",
