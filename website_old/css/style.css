@@ -524,6 +524,7 @@ textarea {
 
 #content-model {
   display: grid;
+  margin-bottom: 1em;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto 1fr;
   gap: 0 2em;
@@ -531,16 +532,35 @@ textarea {
 }
 
 .modelpageImg {
-  grid-row: span 2;
+  grid-row: span 3;
   width: 100%;
   text-align: center;
   align-self: center;
 }
 
 .modelText {
-  margin: 0.5em 0 0.25em;
-  padding: 0 0.5em;
+  margin: 0 0 0 0;
+  padding: 0 0.5em 0 0;
   height: fit-content;
+}
+
+.modelText h3 {
+  margin-top: 0.5em;
+}
+
+.modelText {
+  text-align: justify;
+}
+
+.linkButton {
+  display: inline-block; /* Ensures the border wraps around the content */
+  padding: 0 0.5em; /* Adds some space inside the border */
+  border-color: var(--buttonActiveBorderColor);
+  text-decoration: none; /* Removes the default underline */
+  color: inherit;
+  border-radius: 5px; /* Rounds the corners (optional) */
+  width: fit-content;
+  vertical-align: middle;
 }
 
 .modelTabContainer {
