@@ -63,6 +63,8 @@ cards.forEach(card => {
     });
 })
 
+
+document.getElementById("modelScheme").src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
 document.getElementById('modelTitle').innerHTML = modelName
 document.getElementById('github-link').setAttribute("href", `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`)
 

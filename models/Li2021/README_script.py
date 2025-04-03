@@ -27,7 +27,7 @@ def ode(first_var: str, second_var: str = "t"):
 ###### Model Infos ######
 
 model_title = "Li2021"
-model_doi = "ENTER HERE"
+model_doi = "https://doi.org/10.1038/s41477-021-00947-5"
 
 ###### Glossaries ######
 
@@ -178,7 +178,7 @@ mdFile = MdUtils(file_name=f"{os.path.dirname(__file__)}/README.md")
 
 mdFile.new_header(1, model_title)
 
-mdFile.new_paragraph(f"""[{model_title}]({model_doi})
+mdFile.new_paragraph(f"""The [{model_title}]({model_doi})
 
                      """)
 

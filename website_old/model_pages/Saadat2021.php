@@ -34,17 +34,15 @@
   <div id="wrapper">
     <div id="content-model">
 
-        <div class="modelpageImg">
-            <img src="../img/Matuszynska2016.png" style="width: 100%"/>
-        </div>
+      <img id="modelScheme"/>
 
-        <h1 class="modelText" id='modelTitle'></h1>
+      <h1 class="modelText" id='modelTitle'></h1>
 
-        <a class="linkButton modelText clickable" id="github-link" target="_blank"><img src="../img/icons/github-mark.svg" style="height: 1em; vertical-align: middle;"/> Github</a>
+      <a class="linkButton modelText clickable" id="github-link" target="_blank"><img src="../img/icons/github-mark.svg" style="height: 1em; vertical-align: middle;"/> Github</a>
 
-        <div class="modelText" id="modelSummary">
-          <h3>Summary</h3>
-        </div>
+      <div class="modelText" id="modelSummary">
+        <h3>Summary</h3>
+      </div>
 
     </div>
 

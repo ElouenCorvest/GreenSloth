@@ -24,3 +24,16 @@ tags.forEach(tag => {
         };
     });
 })
+
+var modelSelector = document.getElementById("model-selector")
+
+models.forEach(name => {
+    rowHTML = `
+    <div class="model-row">
+        <img src="https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${name}/${name}_scheme.svg"/>
+        <h1>${name}</h1>
+        <a href="../model_pages/${name}.php"><span class="linkSpanner"></span></a>
+    </div>
+    `
+    modelSelector.innerHTML += rowHTML
+})

@@ -409,8 +409,8 @@ textarea {
   border-radius: 8px;
   padding: 0.75em;
   display: grid;
-  gap: 0.5em;
-  grid-template-columns: 1fr 2fr 1fr;
+  gap: 0 0.5em;
+  grid-template-columns: 1fr 1.5fr;
   transition-property: background-color, transform;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -419,20 +419,27 @@ textarea {
     background-color: #e6f6f4ff;
     transform: scale(1.1);
   }
-
-  & a:not(.model-link) {
-    position: relative;
-    z-index: 1;
-  }
 }
 
-.model-link {
-  position: absolute;
-  top: 0;
+.model-row h1 {
+  text-align: center;
+  align-self: center;
+}
+
+.model-row img {
+  width: 100%;
+}
+
+.linkSpanner {
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  z-index: 1;
 }
+
+
 
 .search-bar {
   display: flex;
@@ -531,25 +538,30 @@ textarea {
   justify-content: center;
 }
 
-.modelpageImg {
+#modelScheme {
+  transition: all .3s ease-in-out;
   grid-row: span 3;
   width: 100%;
   text-align: center;
   align-self: center;
 }
 
+#modelScheme:hover {
+  transition: all .3s ease-in-out;
+  opacity: 1;
+  transform: scale(2);
+  transform-origin: top left;
+}
+
 .modelText {
   margin: 0 0 0 0;
   padding: 0 0.5em 0 0;
   height: fit-content;
+  text-align: justify;
 }
 
 .modelText h3 {
   margin-top: 0.5em;
-}
-
-.modelText {
-  text-align: justify;
 }
 
 .linkButton {
@@ -561,6 +573,7 @@ textarea {
   border-radius: 5px; /* Rounds the corners (optional) */
   width: fit-content;
   vertical-align: middle;
+  align-items: center;
 }
 
 .modelTabContainer {
