@@ -63,9 +63,54 @@ cards.forEach(card => {
     });
 })
 
+// Get the Model Name
+var modelName = location.href.split("/").slice(-1)[0].split(".")[0]; 
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("compareModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Create Compare Select
+var modalSelect = document.getElementById("compareModel2")
+fetch("/js/models.json")
+    .then(response => response.json())
+    .then(models => {
+        models.forEach(model => {
+            if (model.name == modelName) {
+                return
+            }
+            const modelOption = document.createElement("option")
+            modelOption.value = model.name
+            modelOption.innerHTML = model.name
+            modalSelect.appendChild(modelOption)
+        });
+    });
 
 document.getElementById("modelScheme").src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
 document.getElementById('modelTitle').innerHTML = modelName
+document.getElementById('compareModel1').innerHTML = modelName
 document.getElementById('github-link').setAttribute("href", `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`)
 
 function openModelAttr(evt, AttrName) {

@@ -2,12 +2,40 @@
 <html lang="en">
 
 <head>
-  <?php include('../mains/head.html'); ?>
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="">
 
-<script>
-  const modelName = 'Matuszynska2016';
-</script>
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
 
 <body>
 
@@ -20,8 +48,8 @@
       </div>
 
       <div class="topnav-center">
-        <a class="tablinks" href="../mains/index.php">Home</a>
-        <a class="tablinks active" href="../mains/models_select.php">Models</a>
+        <a class="tablinks" href="../mains/index.html">Home</a>
+        <a class="tablinks active" href="../mains/models_select.html">Models</a>
       </div>
 
       <div class="topnav-right">
@@ -32,13 +60,38 @@
   </div>
 
   <div id="wrapper">
+
+    <!-- The Compare Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Compare</h2>
+          <h2 id=compareModel1></h2>
+          <select name="compareModel2" id="compareModel2">
+            <option value="" selected disabled hidden>Select another model...</option>
+          </select>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the Modal Body</p>
+          <p>Some other text...</p>
+        </div>
+      </div>
+
+    </div>
+
     <div id="content-model">
     
       <img id="modelScheme"/>
 
       <h1 class="modelText" id='modelTitle'></h1>
 
-      <a class="linkButton modelText clickable" id="github-link" target="_blank"><img src="../img/icons/github-mark.svg" style="height: 1em; vertical-align: middle;"/> Github</a>
+      <div id="modelButtonBar">
+        <a class="clickable" id="github-link" target="_blank"><img src="../img/icons/github-mark.svg" style="height: 1em; vertical-align: middle;"/> Github</a>
+        <button class="clickable" id="compareModal">Compare</button>
+      </div>
 
       <div class="modelText" id="modelSummary">
         <h3>Summary</h3>

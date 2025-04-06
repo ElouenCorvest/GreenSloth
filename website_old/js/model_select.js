@@ -27,13 +27,29 @@ tags.forEach(tag => {
 
 var modelSelector = document.getElementById("model-selector")
 
-models.forEach(name => {
-    rowHTML = `
-    <div class="model-row">
-        <img src="https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${name}/${name}_scheme.svg"/>
-        <h1>${name}</h1>
-        <a href="../model_pages/${name}.php"><span class="linkSpanner"></span></a>
-    </div>
-    `
-    modelSelector.innerHTML += rowHTML
-})
+fetch("../js/models.json")
+    .then(response => response.json())
+    .then (models => {
+        const modelSelector = document.getElementById("model-selector");
+        models.forEach(model => {
+            const modelRow = document.createElement("div");
+            modelRow.setAttribute("class", "model-row");
+            modelSelector.appendChild(modelRow);
+
+            const modelImg = document.createElement("img");
+            modelImg.setAttribute("src", `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${model.name}/${model.name}_scheme.svg`);
+            modelRow.appendChild(modelImg);
+
+            const modelTitle = document.createElement("h1");
+            modelTitle.innerHTML = model.name;
+            modelRow.appendChild(modelTitle);
+
+            const modelLink = document.createElement("a");
+            modelLink.href = `../model_pages/${model.name}.html`
+            modelRow.appendChild(modelLink);
+            
+            const linkSpanner = document.createElement("span");
+            linkSpanner.setAttribute("class", "linkSpanner");
+            modelLink.appendChild(linkSpanner);
+        });
+    });

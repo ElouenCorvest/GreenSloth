@@ -24,6 +24,7 @@
 :root {
   --buttonActiveBorderColor: #00aaafff;
   --buttonHoverColor: rgba(0, 170, 175, 0.2);
+  --overallBackgroundLight: #fff
 }
 
 html {
@@ -237,7 +238,7 @@ textarea {
   *,
   *::before,
   *::after {
-    background: #fff !important;
+    background: var(--overallBackgroundLight) !important;
     color: #000 !important;
     /* Black prints faster */
     box-shadow: none !important;
@@ -529,6 +530,82 @@ textarea {
 
 /* Model Pages */
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: transparent;
+  margin: 15% auto; /* 15% from the top and centered */
+  width: 80%; /* Could be more or less, depending on screen size */
+  animation: fromTop 1s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes fromTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.modal-content > * {
+  padding: 0.5em 1em;
+}
+
+/* Modal Header */
+.modal-header {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  gap: 1em;
+  border-radius: 0.5em 0.5em 0 0;
+  background-color: var(--overallBackgroundLight);
+  color: inherit;
+  box-shadow: 0px 3px 27px 5px rgba(0, 0, 0, 0.10);
+}
+
+.modal-header :last-child {
+  margin-left: auto;
+}
+
+.modal-header span {
+  font-size: xx-large;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.modal-header span:hover {
+  color: var(--buttonActiveBorderColor);
+}
+
+/* Modal Body */
+.modal-body {
+  background-color: var(--overallBackgroundLight);
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+
 #content-model {
   display: grid;
   margin-bottom: 1em;
@@ -553,6 +630,25 @@ textarea {
   transform-origin: top left;
 }
 
+#modelButtonBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+  align-items: stretch;
+  height: max-content;
+}
+
+#modelButtonBar > * {
+  padding: 0 0.5em;
+  border-color: var(--buttonActiveBorderColor);
+  text-decoration: none; /* Removes the default underline */
+  color: inherit;
+  border-radius: 5px; /* Rounds the corners (optional) */
+  width: fit-content;
+  vertical-align: middle;
+}
+
 .modelText {
   margin: 0 0 0 0;
   padding: 0 0.5em 0 0;
@@ -562,18 +658,6 @@ textarea {
 
 .modelText h3 {
   margin-top: 0.5em;
-}
-
-.linkButton {
-  display: inline-block; /* Ensures the border wraps around the content */
-  padding: 0 0.5em; /* Adds some space inside the border */
-  border-color: var(--buttonActiveBorderColor);
-  text-decoration: none; /* Removes the default underline */
-  color: inherit;
-  border-radius: 5px; /* Rounds the corners (optional) */
-  width: fit-content;
-  vertical-align: middle;
-  align-items: center;
 }
 
 .modelTabContainer {
