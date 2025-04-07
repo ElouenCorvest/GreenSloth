@@ -601,8 +601,16 @@ textarea {
 
 /* Modal Body */
 .modal-body {
+  display: flex;
+  flex-direction: column;
   background-color: var(--overallBackgroundLight);
   border-radius: 0 0 0.5em 0.5em;
+}
+
+.modalCompare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
 }
 
 
@@ -615,19 +623,22 @@ textarea {
   justify-content: center;
 }
 
-#modelScheme {
+#content-model .modelScheme {
   transition: all .3s ease-in-out;
   grid-row: span 3;
-  width: 100%;
-  text-align: center;
-  align-self: center;
 }
 
-#modelScheme:hover {
+#content-model .modelScheme:hover {
   transition: all .3s ease-in-out;
   opacity: 1;
   transform: scale(2);
   transform-origin: top left;
+}
+
+.modelScheme {
+  width: 100%;
+  text-align: center;
+  align-self: center;
 }
 
 #modelButtonBar {

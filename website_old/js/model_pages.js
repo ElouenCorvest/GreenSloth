@@ -64,8 +64,12 @@ cards.forEach(card => {
 })
 
 // Get the Model Name
-var modelName = location.href.split("/").slice(-1)[0].split(".")[0]; 
+var modelName = location.href.split("/").slice(-1)[0].split(".")[0];
 
+// Model Scheme
+document.querySelectorAll(".modelScheme").forEach(item => {
+    item.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
+})
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -108,7 +112,53 @@ fetch("/js/models.json")
         });
     });
 
-document.getElementById("modelScheme").src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
+// Edit html content with variable
+
+// Get model infromation
+Papa.parse(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/model_info/comps.csv`, {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function(results) {
+        const compsData = results.data;
+        console.log(compsData)
+        }
+});
+
+
+
+// Modal compare Button Actions
+function chooseCompareAttr(evt, AttrName) {
+    const modalCompareLeft = document.getElementById("modalCompareLeft");
+    const modalCompareRight = document.getElementById("modalCompareRight");
+    const chosenModel = document.getElementById("compareModel2").value;
+    
+    const childrenLeft = modalCompareLeft.children;
+    for (var i = 0; i < childrenLeft.length; i++) {
+        var child = childrenLeft[i]
+        child.style.display = "none"
+        if (child.id.includes(AttrName)) {
+            child.style.display = "block"
+        }
+    };
+
+    const childrenRight = modalCompareRight.children;
+    for (var i = 0; i < childrenRight.length; i++) {
+        var child = childrenRight[i]
+        child.style.display = "none"
+        if (child.id.includes(AttrName)) {
+            child.style.display = "block"
+        }
+    };
+
+    if (chosenModel !== "") {
+        // Scheme to the right
+        const schemeRight = document.getElementById("modalCompareRightScheme")
+        schemeRight.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${chosenModel}/${chosenModel}_scheme.svg`;
+    };
+}
+
+
 document.getElementById('modelTitle').innerHTML = modelName
 document.getElementById('compareModel1').innerHTML = modelName
 document.getElementById('github-link').setAttribute("href", `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`)

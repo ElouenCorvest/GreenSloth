@@ -75,8 +75,20 @@
           <span class="close">&times;</span>
         </div>
         <div class="modal-body">
-          <p>Some text in the Modal Body</p>
-          <p>Some other text...</p>
+          <div class="modalSelection">
+            <div class="modelTabContainer">
+              <button class="clickable modelTab" onclick="chooseCompareAttr(event, 'Information')">Information</button>
+              <button class="clickable modelTab" onclick="chooseCompareAttr(event, 'Scheme')">Schemes</button>
+            </div>
+          </div>
+          <div class="modalCompare">
+            <div id="modalCompareLeft">
+              <img class="modelScheme"/>
+            </div>
+            <div id="modalCompareRight">
+              <img class="modelScheme" id="modalCompareRightScheme"/>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -85,7 +97,7 @@
     <!-- The Model Content -->
     <div id="content-model">
 
-      <img id="modelScheme"/>
+      <img class="modelScheme"/>
 
       <h1 class="modelText" id='modelTitle'></h1>
 
