@@ -599,6 +599,10 @@ textarea {
   color: var(--buttonActiveBorderColor);
 }
 
+#compareModel2 {
+  cursor: pointer;
+}
+
 /* Modal Body */
 .modal-body {
   display: flex;
@@ -613,6 +617,11 @@ textarea {
   gap: 2em;
 }
 
+.compareInformation {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
 
 #content-model {
   display: grid;

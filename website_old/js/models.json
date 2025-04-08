@@ -1,5 +1,5 @@
 [
-    {"name": "Matuszynska2016", "tags": ""},
-    {"name": "Li2021", "tags": ""},
-    {"name": "Saadat2021", "tags": ""}
+    {"name": "Matuszynska2016", "tags": {"Sample": ["Matuszynska2016", "Ipsum"], "Test": ["Lorem"], "Apparatus": ["PSII"]}},
+    {"name": "Li2021", "tags": {"Sample": ["Li2021"]}},
+    {"name": "Saadat2021", "tags": {"Sample": ["Saadat2021", "Lorem", "Ipsum"]}}
 ]

@@ -1,75 +1,11 @@
-// Select all items in the container
-const cards = document.querySelectorAll('.attributeCard');
-var clickedFlag = false
-
-cards.forEach(card => {
-    // Add first click event
-    card.addEventListener('click', () => {
-        if (card.classList.contains('clicked')) {
-            cards.forEach(sibling => {
-                if (sibling == card) {
-                    sibling.classList.remove('clicked')
-                } else {
-                    sibling.classList.remove('notClicked')
-                };
-            });
-        } else
-        cards.forEach(sibling => {
-            if (sibling == card) {
-                sibling.classList.add('clicked')
-                sibling.classList.remove('notClicked')
-            } else {
-                sibling.classList.add('notClicked', 'inactiveCard')
-                if (sibling.classList.contains('afterCard')) {
-                    sibling.classList.add('inactiveCardAfter')
-                };
-                sibling.classList.remove('clicked', 'activeCard')
-            };
-        });
-    });
-    // Add mouseenter event
-    card.addEventListener('mouseenter', () => {
-        var activeCardFlag = false;
-        cards.forEach(sibling => {
-            if (sibling == card) {
-                activeCardFlag = true
-                card.classList.add('activeCard')
-                card.classList.remove('inactiveCard', 'inactiveCardAfter')
-            };
-            if (sibling !== card && !sibling.classList.contains('clicked')) {
-                sibling.classList.add('inactiveCard')
-            };
-            if (sibling !== card && activeCardFlag) {
-                sibling.classList.add('inactiveCardAfter')
-                sibling.classList.add('afterCard')
-            };
-        });
-    });
-    // Add mouseleave event
-    card.addEventListener('mouseleave', () => {
-        cards.forEach(sibling => {
-            if (sibling.classList.contains('notClicked')) {
-                sibling.classList.remove('activeCard')
-                sibling.classList.add('inactiveCard')
-                if (sibling.classList.contains('afterCard')) {
-                    sibling.classList.add('inactiveCardAfter')
-                };
-            } else if (sibling.classList.contains('clicked')) {
-                sibling.classList.remove('inactiveCard', 'inactiveCardAfter', 'afterCard')
-            } else {
-                sibling.classList.remove('inactiveCard', 'inactiveCardAfter', 'afterCard', 'activeCard')
-            };
-        });
-    });
-})
-
 // Get the Model Name
 var modelName = location.href.split("/").slice(-1)[0].split(".")[0];
 
 // Model Scheme
-document.querySelectorAll(".modelScheme").forEach(item => {
+document.querySelectorAll(".thisScheme").forEach(item => {
     item.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
-})
+});
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -112,52 +48,135 @@ fetch("/js/models.json")
         });
     });
 
-// Edit html content with variable
+// Get model information
+function parseModelInfo(modelName, InfoVar) {
+    return new Promise((resolve, reject) => {
+        Papa.parse(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/model_info/${InfoVar}.csv`, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                resolve(results.data)
+            },
+            error: function(err) {
+                reject(err);
+            }
+            
+            });
+    })
+};
 
-// Get model infromation
-Papa.parse(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/model_info/comps.csv`, {
-    download: true,
-    header: true,
-    skipEmptyLines: true,
-    complete: function(results) {
-        const compsData = results.data;
-        console.log(compsData)
-        }
-});
+async function getModelInfo(modelName) {
+    console.log(modelName)
+    return {
+        compsData: await parseModelInfo(modelName, 'comps'),
+        paramsData: await parseModelInfo(modelName, 'params'),
+        ratesData: await parseModelInfo(modelName, 'rates'),
+        derivedCompsData: await parseModelInfo(modelName, 'derived_comps'),
+        derivedParamsData: await parseModelInfo(modelName, 'derived_params'),
+    }
+};
 
+// Put Info in Table
+function createInfoTable(response) {
+    const attrNames = ["ODE", "Params", "Rates", "DerivedComps", "DerivedParams"];
+    var zip = attrNames.map(function(e, i) {return [e, Object.values(response)[i]]});
 
+    for (let i = 0; i < zip.length; i++) {
+        var attrName = zip[i][0]
+        var data = zip[i][1]
+
+        let tableHTML = "<thead><tr>";
+
+        // Generate table headers
+        Object.keys(data[0]).forEach(header => {
+            tableHTML += `<th>${header}</th>`;
+        });
+        tableHTML += "</tr></thead><tbody>";
+
+        // Generate table rows
+        data.forEach(row => {
+            tableHTML += "<tr>";
+            Object.values(row).forEach(cell => {
+                if (cell.includes("https://")) {
+                    var insert = `<a href="${cell}">here</a>`
+                } else {
+                    var insert = cell
+                }
+                tableHTML += `<td>${insert}</td>`;
+            });
+            tableHTML += "</tr>";
+        });
+        tableHTML += "</tbody>";
+        document.getElementById(`modelAttr${attrName}Table`).innerHTML = tableHTML;
+
+        // Tell MathJax to re-render LaTeX
+        MathJax.typeset();
+    }
+    
+};
+
+// Create Info List
+function createInfoList(response, side) {
+    const attrNames = ["ODE", "Params", "Rates", "DerivedComps", "DerivedParams"];
+    var zip = attrNames.map(function(e, i) {return [e, Object.values(response)[i]]});
+
+    for (let i = 0; i < zip.length; i++) {
+        var attrName = zip[i][0]
+        var data = zip[i][1]
+
+        document.getElementById(`compareInformation${side}${attrName}`).innerText = data.length
+    }
+};
+
+// Get this models Info and input into right places
+getModelInfo(modelName)
+    .then(response => {
+        createInfoTable(response);
+        createInfoList(response, "Left")
+    });
+
+// Modal Select change function
+function modalChange() {
+    var chosenModel = document.getElementById("compareModel2").value;
+    
+    if (chosenModel !== "") {
+        const schemeRight = document.getElementById("compareSchemeRight")
+        schemeRight.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${chosenModel}/${chosenModel}_scheme.svg`;
+
+        getModelInfo(chosenModel)
+            .then(response => {
+                createInfoList(response, "Right")
+            })
+
+    }
+};
 
 // Modal compare Button Actions
 function chooseCompareAttr(evt, AttrName) {
     const modalCompareLeft = document.getElementById("modalCompareLeft");
     const modalCompareRight = document.getElementById("modalCompareRight");
-    const chosenModel = document.getElementById("compareModel2").value;
     
+    // Hide all but selected compare Tab on left side
     const childrenLeft = modalCompareLeft.children;
     for (var i = 0; i < childrenLeft.length; i++) {
         var child = childrenLeft[i]
-        child.style.display = "none"
+        child.classList.add("hidden")
         if (child.id.includes(AttrName)) {
-            child.style.display = "block"
+            child.classList.remove("hidden")
         }
     };
 
+    // Hide all but selected compare Tab on right side
     const childrenRight = modalCompareRight.children;
     for (var i = 0; i < childrenRight.length; i++) {
         var child = childrenRight[i]
-        child.style.display = "none"
+        child.classList.add("hidden")
         if (child.id.includes(AttrName)) {
-            child.style.display = "block"
+            child.classList.remove("hidden")
         }
     };
-
-    if (chosenModel !== "") {
-        // Scheme to the right
-        const schemeRight = document.getElementById("modalCompareRightScheme")
-        schemeRight.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${chosenModel}/${chosenModel}_scheme.svg`;
-    };
 }
-
 
 document.getElementById('modelTitle').innerHTML = modelName
 document.getElementById('compareModel1').innerHTML = modelName
@@ -179,56 +198,6 @@ function openModelAttr(evt, AttrName) {
     document.getElementById(AttrName).style.display = "block";
     evt.currentTarget.className += " active";
 
-    if (AttrName.includes("ODE")) {
-        var infoVar = 'comps'
-    } else if (AttrName.includes("Rates")) {
-        var infoVar = 'rates'
-    } else if (AttrName.includes("DerivedParams")) {
-        var infoVar = 'derived_params'
-    } else if (AttrName.includes("Params")) {
-        var infoVar = 'params'
-    } else if (AttrName.includes("DerivedComps")){
-        var infoVar = 'derived_comps'
-    }
-    
-    // Get CSV Tables
-    Papa.parse(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/model_info/${infoVar}.csv`, {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-            const data = results.data;
-            let tableHTML = "<thead><tr>";
-
-            // Generate table headers
-            Object.keys(data[0]).forEach(header => {
-                tableHTML += `<th>${header}</th>`;
-            });
-            tableHTML += "</tr></thead><tbody>";
-
-            // Generate table rows
-            data.forEach(row => {
-                tableHTML += "<tr>";
-                Object.values(row).forEach(cell => {
-                    if (cell.includes("https://")) {
-                        var insert = `<a href="${cell}">here</a>`
-                    } else {
-                        var insert = cell
-                    }
-                    tableHTML += `<td>${insert}</td>`;
-                });
-                tableHTML += "</tr>";
-            });
-            tableHTML += "</tbody>";
-            document.getElementById(`${AttrName}Table`).innerHTML = tableHTML;
-
-            // Tell MathJax to re-render LaTeX
-            MathJax.typeset();
-        }
-        });
-
-    // Get Equations
-
     (async() => {
         // Fetch README
         const md_file = await axios.get(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/README.md`);
@@ -246,7 +215,6 @@ function openModelAttr(evt, AttrName) {
             var regex_match = /#### Conserved quantities(.*)### Parameters/gms
         }
         var extraction = md_file.data.match(regex_match);
-        console.log(extraction)
         var math_lines = extraction[0].match(/(?<=`math)[^`]*(?=\n```)/gms);
             if (math_lines !== null) {
                 let mathHTML = "\\begin{align}";
@@ -261,7 +229,6 @@ function openModelAttr(evt, AttrName) {
                     }
                     // mathHTML += "[9pt]"
                 });
-                console.log(mathHTML)
                 mathHTML += "\\end{align}";
                 document.getElementById(`${AttrName}Math`).innerHTML = mathHTML;
 

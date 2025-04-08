@@ -44,7 +44,7 @@
     <header class="topnav">
       <div class="topnav-left">
         <img src="../img/icon.svg"/>
-        <div class="onlyText">PhotoModelBase</div>
+        <div class="onlyText">Green Sloth</div>
       </div>
 
       <div class="topnav-center">
@@ -69,22 +69,59 @@
         <div class="modal-header">
           <h2>Compare</h2>
           <h2 id=compareModel1></h2>
-          <select name="compareModel2" id="compareModel2">
+          <select id="compareModel2" onchange="modalChange()">
             <option value="" selected disabled hidden>Select another model...</option>
           </select>
           <span class="close">&times;</span>
         </div>
         <div class="modal-body">
-          <p>Some text in the Modal Body</p>
-          <p>Some other text...</p>
+          <div class="modalSelection">
+            <div class="modelTabContainer">
+              <button class="clickable modelTab" onclick="chooseCompareAttr(event, 'Information')">Information</button>
+              <button class="clickable modelTab" onclick="chooseCompareAttr(event, 'Scheme')">Schemes</button>
+            </div>
+          </div>
+          <div class="modalCompare">
+            <div id="modalCompareLeft">
+              <img class="modelScheme thisScheme hidden" id="compareSchemeLeft"/>
+              <div class="compareInformation hidden" id="compareInformationLeft">
+                <h4>Number of ODEs:</h4>
+                <p id="compareInformationLeftODE"></p>
+                <h4>Number of Derived Compounds:</h4>
+                <p id="compareInformationLeftDerivedComps"></p>
+                <h4>Number of Parameters:</h4>
+                <p id="compareInformationLeftParams"></p>
+                <h4>Number of Derived Parameters:</h4>
+                <p id="compareInformationLeftDerivedParams"></p>
+                <h4>Number of Rates:</h4>
+                <p id="compareInformationLeftRates"></p>
+              </div>
+            </div>
+            <div id="modalCompareRight">
+              <img class="modelScheme hidden" id="compareSchemeRight"/>
+              <div class="compareInformation hidden" id="compareInformationLeft">
+                <h4>Number of ODEs:</h4>
+                <p id="compareInformationRightODE"></p>
+                <h4>Number of Derived Compounds:</h4>
+                <p id="compareInformationRightDerivedComps"></p>
+                <h4>Number of Parameters:</h4>
+                <p id="compareInformationRightParams"></p>
+                <h4>Number of Derived Parameters:</h4>
+                <p id="compareInformationRightDerivedParams"></p>
+                <h4>Number of Rates:</h4>
+                <p id="compareInformationRightRates"></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
 
+    <!-- The Model Content -->
     <div id="content-model">
 
-      <img id="modelScheme"/>
+      <img class="modelScheme thisScheme"/>
 
       <h1 class="modelText" id='modelTitle'></h1>
 
@@ -142,8 +179,7 @@
     MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        tags: 'ams',
-        maxBuffer: 25000
+        tags: 'ams'
       }
     };
   </script>
