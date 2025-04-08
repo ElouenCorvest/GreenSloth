@@ -3,6 +3,8 @@ function toggleTags() {
     document.querySelector('.tagsBox').classList.toggle('hidden')
 };
 
+
+
 var modelSelector = document.getElementById("model-selector")
 const tagsBox = document.getElementById("tagsBox");
 
@@ -44,14 +46,22 @@ fetch("../js/models.json")
                 simpleTags[cat] = (simpleTags[cat] || {});
                 // Create Tag Category if not existant already
                 var catExists = document.getElementById(`tagsCategory${cat}`);
+                var catTagsExists = document.getElementById(`tagsCategory${cat}Row`);
                 if (catExists == null) {
                     const catDiv = document.createElement("div");
                     catDiv.id = (`tagsCategory${cat}`)
-                    const catHead = document.createElement("h4");
+                    catDiv.classList.add("tagsCategory")
+                    const catHead = document.createElement("h3");
                     catHead.innerHTML = cat;
                     catDiv.appendChild(catHead);
+                    const catTags = document.createElement("div");
+                    catTags.id = `tagsCategory${cat}Row`
+                    catTags.classList.add("tagsRow");
+                    catDiv.appendChild(catTags);
+                    
                     tagsBox.appendChild(catDiv);
                     var catExists = document.getElementById(`tagsCategory${cat}`);
+                    var catTagsExists = document.getElementById(`tagsCategory${cat}Row`);
                 }
                 
                 tags[cat].forEach(tag => {
@@ -63,26 +73,37 @@ fetch("../js/models.json")
                         tagButton.innerHTML = tag;
                         tagButton.id = (`tagButton${cat}${tag}`);
                         tagButton.classList.add("clickable", "tag");
-                        tagButton.onclick = function(evt) {
+                        tagButton.onclick = function() {
                             this.classList.toggle("active")
-                            tagSelection(evt)
+                            tagSelection()
                         };
-                        catExists.appendChild(tagButton);
+                        catTagsExists.appendChild(tagButton);
                         var tagExists = document.getElementById(`tagButton${cat}${tag}`);
                     }
                 }); 
             });
         });
-    });
+    })
+    .then(item => {
+        const searchParams = new URLSearchParams(window.location.search);
 
-console.log(simpleTags)
+        if (searchParams.has("appar")) {
+            const urlAppar = searchParams.get("appar")
+            document.getElementById(`tagButtonApparatus${urlAppar}`).classList.toggle("active")
+            
+        }
+    })
+    .then(item => {
+        tagSelection()
+    })
 
-function tagSelection(evt) {
+function tagSelection() {
     var activeTags = document.querySelectorAll('.tag.active')
     var activeModels = []
     console.log(activeTags)
     activeTags.forEach(activeTag => {
         var catId = activeTag.parentElement.id.replace("tagsCategory", "")
+        catId = catId.replace("Row", "")
         var tagId = activeTag.id.replace(`tagButton${catId}`, "")
         activeModels = activeModels.concat(simpleTags[catId][tagId])
     })
@@ -100,8 +121,7 @@ function tagSelection(evt) {
     }
     
     activeModels.forEach(model => {
-        const modelRow = document.getElementById(model)
-        modelRow.classList.remove("hidden")
+        document.getElementById(model).classList.remove("hidden")
     })
 
 }
