@@ -535,13 +535,43 @@ textarea {
   
 }
 
-/* Model Pages */
+/* Copy Block */
+.copyBlock {
+  display: flex;
+  flex-direction: column;
+  background-color: #d4d4dd;
+  padding: 0.4em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+}
 
-/* The Modal (background) */
+.copyButton {
+  background-color: transparent;
+  border-color: rgb(0,0,0, 0.1);
+  border-radius: 1em;
+  margin-left: auto;
+  font-size: large;
+  font-weight: bold;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.copyButton:hover {
+  background-color: var(--buttonHoverColor);
+}
+
+.copyButton.active {
+  background-color: var(--buttonHoverColor);
+  color: white;
+}
+
+/* Modals */
 .modal {
-  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 100; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -551,8 +581,7 @@ textarea {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
-.modal-content {
+.modalContent {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -574,15 +603,15 @@ textarea {
 	}
 }
 
-.modal-content > * {
+.modalContent > * {
   padding: 0.5em 1em;
 }
 
-/* Modal Header */
-.modal-header {
+.modalHeader {
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  display: flex;
+  flex: 1 auto;
+  width: auto max-content;
   gap: 1em;
   border-radius: 0.5em 0.5em 0 0;
   background-color: var(--overallBackgroundLight);
@@ -590,11 +619,11 @@ textarea {
   box-shadow: 0px 3px 27px 5px rgba(0, 0, 0, 0.10);
 }
 
-.modal-header :last-child {
+.modalHeader :last-child {
   margin-left: auto;
 }
 
-.modal-header span {
+.close {
   font-size: xx-large;
   transition-property: color;
   transition-duration: 0.3s;
@@ -602,21 +631,53 @@ textarea {
   cursor: pointer;
 }
 
-.modal-header span:hover {
+.close:hover {
   color: var(--buttonActiveBorderColor);
 }
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--overallBackgroundLight);
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+/* Citation Modal */
+#citeModal .modalContent {
+  width: 40%;
+}
+
+#citeModal p {
+  text-align: justify;
+}
+
+/* Model Pages */
+
+/* The Modal (background) */
+
+
+/* Modal Content */
+
+
+
+
+
+
+/* Modal Header */
+
+
+
+
+
+
+
 
 #compareModel2 {
   cursor: pointer;
 }
 
 /* Modal Body */
-.modal-body {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--overallBackgroundLight);
-  border-radius: 0 0 0.5em 0.5em;
-}
+
 
 .modalCompare {
   display: grid;
