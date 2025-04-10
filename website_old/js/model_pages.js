@@ -7,10 +7,29 @@ document.querySelectorAll(".thisScheme").forEach(item => {
 });
 
 // Get the modal
-var modal = document.getElementById("myModal");
+var compareModal = document.getElementById("compareModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("compareModal");
+// Open Cite Modal
+var openCompareModal = document.getElementById("compareModalButton")
+openCompareModal.onclick = function() {
+    compareModal.classList.toggle("hidden")
+    this.classList.toggle("active")
+}
+
+// Create Compare Modal Content
+var compareModalContent = document.createElement("div")
+compareModalContent.classList.add("modalContent")
+compareModal.appendChild(compareModalContent)
+
+// Modal Header
+var compareModalHeader = document.createElement("div")
+compareModalHeader.classList.add("modalHeader")
+compareModalContent.appendChild(compareModalHeader)
+
+// Modal Heading
+var citeModalHeading = document.createElement("h2")
+citeModalHeading.innerText = "How to Cite"
+citeModalHeader.appendChild(citeModalHeading)
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

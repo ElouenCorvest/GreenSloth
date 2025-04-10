@@ -22,9 +22,13 @@
   }
 
 :root {
+  --mainAccentColor: rgba(77, 104, 61, 1);
+  --secondaryAccentColor: rgba(149, 193, 31, 1);
+  --tertiaryAccentColor: rgb(224, 224, 224);
+  --hoverColor: rgba(149, 193, 31, 0.2);
   --buttonActiveBorderColor: #00aaafff;
   --buttonHoverColor: rgba(0, 170, 175, 0.2);
-  --overallBackgroundLight: #fff
+  --overallBackgroundLight: #fff;
 }
 
 html {
@@ -35,9 +39,10 @@ html {
 
 body {
   margin: 0;
-  font-family: "Source Sans 3", cursive;
+  font-family: "Source Sans 3", sans-serif;
   background-color: rgba(0, 170, 175, 0.01);
-  min-height: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /*
@@ -202,14 +207,14 @@ textarea {
 }
 
 .clickable:hover {
-  background-color: var(--buttonHoverColor);
+  background-color: var(--hoverColor);
   /* filter: grayscale(0); */
 }
 
 .active {
   filter: grayscale(0);
-  border-color: var(--buttonActiveBorderColor) !important;
-  background-color: var(--buttonHoverColor);
+  border-color: var(--secondaryAccentColor) !important;
+  background-color: var(--hoverColor) !important;
 }
 
 /* ==========================================================================
@@ -298,12 +303,55 @@ textarea {
 
 /* Wrappers */
 
+#layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#topnav {
+  display: flex;
+  align-items: center;
+  background-color: var(--mainAccentColor);
+  box-shadow: 0px 3px 27px 5px rgba(0, 0, 0, 0.4);
+  color: var(--tertiaryAccentColor);
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  z-index: 1000;
+}
+
+#topnav img {
+  height: 24px;
+  margin: 0 !important;
+  text-align: center;
+  padding: 0px 10px;
+  text-decoration: none;
+  font-size: 17px;
+  justify-content: center;
+}
+
+#topnav div.onlyText {
+  width: auto;
+  margin: 0 !important;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: inherit;
+  justify-content: flex-start;
+  height: 100%;
+  font-weight: bold;
+}
+
 #wrapper {
-  display: block;
-  width: 90%;
-  margin: auto;
-  overflow: show;
-  padding-top: 100px;
+  flex: 1;
+  align-self: center;
+  width: 100%;
+  padding-top: 2%;
+  /* ChangingScrollbar Properties */
+  overflow-y: scroll; /* Show vertical scrollbar */
+  scrollbar-width: auto;
+  scrollbar-color: var(--buttonHoverColor) var(--overallBackgroundLight);
 }
 
 #content {
@@ -311,24 +359,9 @@ textarea {
   width: 60%;
   margin: auto;
   height: 100%;
-  color: #0a6167ff;
-  overflow: visible;
 }
 
-/* Add a black background color to the top navigation */
-.topnav{
-  display: flex;
-  align-items: center;
-  position: fixed;
-  background-color: white;
-  box-shadow: 0px 3px 27px 5px rgba(0, 0, 0, 0.10);
-  color: black;
-  padding: 0;
-  overflow: hidden;
-  width: 100%;
-  margin: 0;
-  z-index: 1000;
-}
+/* Topnav bar */
 
 .topnav-left {
   display: flex;
@@ -353,49 +386,34 @@ textarea {
   align-items: center;
 }
 
+/* Tab Links */
+
 .tablinks {
+  background-color: transparent;
+  border-radius: 2em;
+  padding: 0.5em 1em;
   width: 5em;
-  height: 1.5em;
   align-content: center;
   text-align: center;
   margin: 0 !important;
   text-decoration: none;
+  font-weight: bold;
   font-size: 17px;
   color: inherit;
   border: 0.15em solid rgba(0, 170, 175, 0);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
-.topnav-center .tablinks.active{
-  background-color: rgba(0, 170, 175, 0.2);
-  color: black;
-  border: 0.15em solid rgba(0, 170, 175, 0.4);
+.tablinks:is(:hover, :focus) {
+  transition: 0.3s ease-in-out;
+  background-color: var(--hoverColor);
 }
 
-.tablinks {
-  border-radius: 2em;
-  padding: 0.5em 1em;
-}
-
-.topnav img {
-  height: 24px;
-  margin: 0 !important;
+/* Index Page */
+#PhotosynthesisScheme {
   text-align: center;
-  padding: 0px 10px;
-  text-decoration: none;
-  font-size: 17px;
-  justify-content: center;
-}
-
-.topnav div.onlyText {
-  width: auto;
-  margin: 0 !important;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: inherit;
-  justify-content: flex-start;
-  height: 100%;
-  font-weight: bold;
 }
 
 /* Model Selection */
@@ -440,8 +458,6 @@ textarea {
   left: 0;
   z-index: 1;
 }
-
-
 
 .search-bar {
   display: flex;
@@ -565,7 +581,11 @@ textarea {
 
 .copyButton.active {
   background-color: var(--buttonHoverColor);
-  color: white;
+}
+
+.copyButton > span {
+  opacity: 1;
+  transition: 0.3s;
 }
 
 /* Modals */
@@ -810,10 +830,7 @@ textarea {
   width: 8em;
 }
 
-.tablinks:is(:hover, :focus) {
-  transition: background-color 0.3s ease-in-out;
-  background-color: rgba(0, 170, 175, 0.2);
-}
+
 
 .tab .tablinks.active{
   background-color: #00aaafff;

@@ -1,9 +1,11 @@
 // Cite Modal
 var citeModal = document.getElementById("citeModal")
+
 // Open Cite Modal
 var openCiteModal = document.getElementById("openCiteModal")
 openCiteModal.onclick = function() {
     citeModal.classList.toggle("hidden")
+    this.classList.toggle("active")
 }
 
 var citeModalContent = document.createElement("div")
@@ -24,7 +26,10 @@ citeModalHeader.appendChild(citeModalHeading)
 var citeClose = document.createElement("span")
 citeClose.classList.add("close")
 citeClose.innerHTML = "&times;"
-citeClose.onclick = function(){citeModal.classList.toggle("hidden")}
+citeClose.onclick = function(){
+    citeModal.classList.toggle("hidden");
+    openCiteModal.classList.toggle("active")
+}
 citeModalHeader.appendChild(citeClose)
 
 // Modal Body
@@ -49,26 +54,41 @@ citeModalBodyCopyText.innerText = "INSERT CITATION HERE"
 // Modal Body Copy Button
 var citeModalBodyCopyButton = document.createElement("button")
 citeModalBodyCopyButton.classList.add("copyButton")
-const orginalText = "<span class='iconify' data-icon='mdi:content-copy'></span> Copy"
-citeModalBodyCopyButton.innerHTML = orginalText
 citeModalBodyCopyButton.setAttribute("allow", "clipboard-read; clipboard-write")
+
+// Modal Body Copy Button Text
+var citeModalBodyCopyButtonText = document.createElement("span")
+const orginalText = "<span class='iconify' data-icon='mdi:content-copy'></span> Copy"
+citeModalBodyCopyButtonText.innerHTML = orginalText
+citeModalBodyCopyButton.appendChild(citeModalBodyCopyButtonText)
 citeModalBodyCopyButton.onclick = function() {
     navigator.clipboard.writeText(citeModalBodyCopyText.innerText)
 
-    citeModalBodyCopyButton.innerHTML = "Copied!"
     if (citeModalBodyCopyButton.classList.contains("active")) {
     } else {
         citeModalBodyCopyButton.classList.add("active")
     }
+    citeModalBodyCopyButtonText.style.opacity = 0;
 
-    const changeCopyButton = setTimeout(function() {
+    setTimeout(function() {
+        citeModalBodyCopyButtonText.innerHTML = "Copied!"
+        citeModalBodyCopyButtonText.style.opacity = 1;
+    }, 300)
+
+    setTimeout(function() {
+        citeModalBodyCopyButtonText.style.opacity = 0;
         citeModalBodyCopyButton.classList.remove("active")
-        citeModalBodyCopyButton.innerHTML = orginalText;
-        
-    }, 2000)
+        setTimeout(function() {
+            citeModalBodyCopyButtonText.innerHTML = orginalText
+            citeModalBodyCopyButtonText.style.opacity = 1;
+        }, 300)
 
-    // setTimeout(citeModalBodyCopyButton.innerHTML = orginalText, 10000)
+    }, 1000)
 }
+
+
+
+
 
 // Add elements to Copy Block
 citeModalBodyCopy.appendChild(citeModalBodyCopyButton)

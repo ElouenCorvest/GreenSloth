@@ -39,9 +39,8 @@
 
 <body>
 
-  <!-- Topnav -->
-  <div class="topnav-wrapper">
-    <header class="topnav">
+  <div id="layoutWrapper">
+    <header id="topnav">
       <div class="topnav-left">
         <img src="../img/icon.svg"/>
         <div class="onlyText">PhotoModelBase</div>
@@ -53,22 +52,22 @@
         <button class="tablinks" id="openCiteModal">Cite</button>
       </div>
 
-      <div class="topnav-right">
-
-      </div>
+      <div class="topnav-right"></div>
 
     </header>
-  </div>
 
-  <div id="wrapper">
-
-    <div id="citeModal" class="modal hidden"></div>
-
-    <div class="content">
-      <img src="../img/Thylakoid_membrane_3.svg" usemap="#photosynthesis"/>
-      <map name="photosynthesis">
-        <area target="" alt="" title="" href="models_select.html?appar=PSII" coords="99,235,115,240,128,258,136,284,138,310,132,330,121,354,100,363,76,354,63,327,59,300,65,266,78,244" shape="poly" onclick="mapClick()">
-      </map>
+    <div id="wrapper">
+      <div id="content">
+        
+        <div id="citeModal" class="modal hidden"></div>
+        
+        <div id="PhotosynthesisScheme">
+          <img src="../img/Thylakoid_membrane_3.svg" usemap="#photosynthesis" id="PhotosynthesisScheme"/>
+          <map name="photosynthesis">
+            <area target="" alt="" title="" href="models_select.html?appar=PSII" coords="99,235,115,240,128,258,136,284,138,310,132,330,121,354,100,363,76,354,63,327,59,300,65,266,78,244" shape="poly" onclick="mapClick()" >
+          </map>
+        </div>
+      </div>
     </div>
   </div>
 
