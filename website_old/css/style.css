@@ -630,17 +630,23 @@ textarea {
 .modalHeader {
   z-index: 1;
   display: flex;
-  flex: 1 auto;
   width: auto max-content;
   gap: 1em;
   border-radius: 0.5em 0.5em 0 0;
-  background-color: var(--overallBackgroundLight);
-  color: inherit;
+  background-color: var(--mainAccentColor);
+  color: var(--tertiaryAccentColor);
   box-shadow: 0px 3px 27px 5px rgba(0, 0, 0, 0.10);
 }
 
-.modalHeader :last-child {
+.modalHeader > * {
+  flex: 1;
+  margin: 0;
+  align-self: center;
+}
+
+.modalHeader > :last-child {
   margin-left: auto;
+  text-align: end;
 }
 
 .close {
@@ -652,7 +658,7 @@ textarea {
 }
 
 .close:hover {
-  color: var(--buttonActiveBorderColor);
+  color: var(--secondaryAccentColor);
 }
 
 .modalBody {
@@ -673,42 +679,71 @@ textarea {
 
 /* Model Pages */
 
-/* The Modal (background) */
+#compareModalContent {
+  margin-top: 10%;
+}
 
+#compareModalHeadingThisModel {
+  flex: 1.5;
+  text-align: center;
+}
 
-/* Modal Content */
+#compareModalSelect {
+  margin: auto;
+  flex: 1.5;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  color: var(--tertiaryAccentColor);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
 
+#compareModalSelect:hover {
+  background-color: var(--hoverColor);
+}
 
-
-
-
-
-/* Modal Header */
-
-
-
-
-
-
-
-
-#compareModel2 {
+#compareModalSelect > option {
+  color: black;
   cursor: pointer;
 }
 
-/* Modal Body */
-
-
-.modalCompare {
+.compareModalBodyCompare {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
 }
 
+
 .compareInformation {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* Tab Container */
+.TabContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--mainAccentColor);
+  margin: 0;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.TabContainer > * {
+  flex-grow: 1;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--tertiaryAccentColor);
+  background-color: transparent;
+  border: 0;
+  padding: 1em 2em;
+}
+
+.TabContainer > *:hover {
+  background-color: var(--hoverColor);
 }
 
 #content-model {
@@ -768,28 +803,7 @@ textarea {
   margin-top: 0.5em;
 }
 
-.modelTabContainer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: transparent;
-  overflow: hidden;
-  width: fit-content;
-  height: fit-content;
-  margin: 0;
-  border-radius: 0.5em 0.5em 0 0;
-  border: 0.15em solid var(--buttonActiveBorderColor);
-  border-bottom: none;
-}
 
-.modelTabContainer button {
-  font-size: 0.9em;
-  padding: 14px 16px;
-}
-
-.modelTabContainer button.active {
-  border: 0.15em solid transparent;
-}
 
 .modelTabContent {
   display: none;

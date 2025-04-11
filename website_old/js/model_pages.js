@@ -1,71 +1,14 @@
-// Get the Model Name
+// Important Variables
 var modelName = location.href.split("/").slice(-1)[0].split(".")[0];
-
-// Model Scheme
-document.querySelectorAll(".thisScheme").forEach(item => {
-    item.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
-});
-
-// Get the modal
-var compareModal = document.getElementById("compareModal");
-
-// Open Cite Modal
-var openCompareModal = document.getElementById("compareModalButton")
-openCompareModal.onclick = function() {
-    compareModal.classList.toggle("hidden")
-    this.classList.toggle("active")
+const InformationCats = {
+    "ODEs": "ODE",
+    "Derived Compounds": "DerivedComps",
+    "Parameters": "Params",
+    "Derived Parameters": "DerivedParams",
+    "Rates": "Rates"
 }
 
-// Create Compare Modal Content
-var compareModalContent = document.createElement("div")
-compareModalContent.classList.add("modalContent")
-compareModal.appendChild(compareModalContent)
-
-// Modal Header
-var compareModalHeader = document.createElement("div")
-compareModalHeader.classList.add("modalHeader")
-compareModalContent.appendChild(compareModalHeader)
-
-// Modal Heading
-var citeModalHeading = document.createElement("h2")
-citeModalHeading.innerText = "How to Cite"
-citeModalHeader.appendChild(citeModalHeading)
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-// Create Compare Select
-var modalSelect = document.getElementById("compareModel2")
-fetch("/js/models.json")
-    .then(response => response.json())
-    .then(models => {
-        models.forEach(model => {
-            if (model.name == modelName) {
-                return
-            }
-            const modelOption = document.createElement("option")
-            modelOption.value = model.name
-            modelOption.innerHTML = model.name
-            modalSelect.appendChild(modelOption)
-        });
-    });
+// Helper Functions
 
 // Get model information
 function parseModelInfo(modelName, InfoVar) {
@@ -86,7 +29,6 @@ function parseModelInfo(modelName, InfoVar) {
 };
 
 async function getModelInfo(modelName) {
-    console.log(modelName)
     return {
         compsData: await parseModelInfo(modelName, 'comps'),
         paramsData: await parseModelInfo(modelName, 'params'),
@@ -98,7 +40,7 @@ async function getModelInfo(modelName) {
 
 // Put Info in Table
 function createInfoTable(response) {
-    const attrNames = ["ODE", "Params", "Rates", "DerivedComps", "DerivedParams"];
+    const attrNames = Object.values(InformationCats);
     var zip = attrNames.map(function(e, i) {return [e, Object.values(response)[i]]});
 
     for (let i = 0; i < zip.length; i++) {
@@ -137,7 +79,7 @@ function createInfoTable(response) {
 
 // Create Info List
 function createInfoList(response, side) {
-    const attrNames = ["ODE", "Params", "Rates", "DerivedComps", "DerivedParams"];
+    const attrNames = Object.values(InformationCats);
     var zip = attrNames.map(function(e, i) {return [e, Object.values(response)[i]]});
 
     for (let i = 0; i < zip.length; i++) {
@@ -148,19 +90,36 @@ function createInfoList(response, side) {
     }
 };
 
-// Get this models Info and input into right places
-getModelInfo(modelName)
-    .then(response => {
-        createInfoTable(response);
-        createInfoList(response, "Left")
-    });
+// Modal compare Button Actions
+function chooseCompareAttr(AttrName) {
+    
+    // Hide all but selected compare Tab on left side
+    const childrenLeft = compareModalBodyCompareLeft.children;
+    for (var i = 0; i < childrenLeft.length; i++) {
+        var child = childrenLeft[i]
+        child.classList.add("hidden")
+        if (child.id.includes(AttrName)) {
+            child.classList.remove("hidden")
+        }
+    };
 
-// Modal Select change function
+    // Hide all but selected compare Tab on right side
+    const childrenRight = compareModalBodyCompareRight.children;
+    for (var i = 0; i < childrenRight.length; i++) {
+        var child = childrenRight[i]
+        child.classList.add("hidden")
+        if (child.id.includes(AttrName)) {
+            child.classList.remove("hidden")
+        }
+    };
+}
+
+// Compare Modal Select Function
 function modalChange() {
-    var chosenModel = document.getElementById("compareModel2").value;
+    const chosenModel = compareModalSelect.value;
     
     if (chosenModel !== "") {
-        const schemeRight = document.getElementById("compareSchemeRight")
+        const schemeRight = document.getElementById("compareSchemesRight")
         schemeRight.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${chosenModel}/${chosenModel}_scheme.svg`;
 
         getModelInfo(chosenModel)
@@ -171,38 +130,156 @@ function modalChange() {
     }
 };
 
-// Modal compare Button Actions
-function chooseCompareAttr(evt, AttrName) {
-    const modalCompareLeft = document.getElementById("modalCompareLeft");
-    const modalCompareRight = document.getElementById("modalCompareRight");
-    
-    // Hide all but selected compare Tab on left side
-    const childrenLeft = modalCompareLeft.children;
-    for (var i = 0; i < childrenLeft.length; i++) {
-        var child = childrenLeft[i]
-        child.classList.add("hidden")
-        if (child.id.includes(AttrName)) {
-            child.classList.remove("hidden")
-        }
-    };
+// Get Compare modal
+var compareModal = document.getElementById("compareModal");
 
-    // Hide all but selected compare Tab on right side
-    const childrenRight = modalCompareRight.children;
-    for (var i = 0; i < childrenRight.length; i++) {
-        var child = childrenRight[i]
-        child.classList.add("hidden")
-        if (child.id.includes(AttrName)) {
-            child.classList.remove("hidden")
-        }
-    };
+// Open Compare Modal
+var openCompareModal = document.getElementById("compareModalButton")
+openCompareModal.onclick = function() {
+    compareModal.classList.toggle("hidden")
+    this.classList.toggle("active")
 }
 
-document.getElementById('modelTitle').innerHTML = modelName
-document.getElementById('compareModel1').innerHTML = modelName
-document.getElementById('github-link').setAttribute("href", `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`)
+// Create Compare Modal Content
+var compareModalContent = document.createElement("div")
+compareModalContent.classList.add("modalContent")
+compareModalContent.id = "compareModalContent"
+compareModal.appendChild(compareModalContent)
+
+// Compare Modal Header
+var compareModalHeader = document.createElement("div")
+compareModalHeader.classList.add("modalHeader")
+compareModalHeader.id = "compareModalHeader"
+compareModalContent.appendChild(compareModalHeader)
+
+// Compare Modal Heading
+var compareModalHeading = document.createElement("h2")
+compareModalHeading.innerText = "Compare"
+compareModalHeader.appendChild(compareModalHeading)
+
+// Compare Modal Heading This Model
+var compareModalHeadingThisModel = document.createElement("h2")
+compareModalHeadingThisModel.innerText = modelName
+compareModalHeadingThisModel.id = "compareModalHeadingThisModel"
+compareModalHeader.appendChild(compareModalHeadingThisModel)
+
+// Compare Modal Heading Select Model
+var compareModalSelect = document.createElement("select");
+compareModalSelect.id = "compareModalSelect"
+compareModalSelect.addEventListener('change', () => {
+    modalChange();
+});
+compareModalHeader.appendChild(compareModalSelect);
+
+// Compare Modal Heading Select Default Value
+var compareModalSelectDefaultVal = document.createElement("option");
+compareModalSelectDefaultVal.value = "";
+compareModalSelectDefaultVal.innerHTML = "Select another model..."
+compareModalSelect.appendChild(compareModalSelectDefaultVal)
+
+// Compare Modal Heading Select Option Creator
+fetch("/js/models.json")
+    .then(response => response.json())
+    .then(models => {
+        models.forEach(model => {
+            if (model.name == modelName) {
+                return
+            }
+            const modelOption = document.createElement("option")
+            modelOption.value = model.name
+            modelOption.innerHTML = model.name
+            compareModalSelect.appendChild(modelOption)
+        });
+    });
+
+// Modal Close Button
+var compareClose = document.createElement("span")
+compareClose.classList.add("close")
+compareClose.innerHTML = "&times;"
+compareClose.onclick = function(){
+    compareModal.classList.toggle("hidden");
+    openCompareModal.classList.toggle("active")
+}
+compareModalHeader.appendChild(compareClose)
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == compareModal) {
+        compareModal.classList.toggle("hidden");
+        openCompareModal.classList.toggle("active")
+    }
+  }
+
+// Compare Modal Body
+var compareModalBody = document.createElement("div")
+compareModalBody.classList.add("modalBody")
+compareModalBody.id = "compareModalBody"
+compareModalContent.appendChild(compareModalBody)
+
+// Compare Modal Body Tab Selection
+var compareModalBodyTabs = document.createElement("div")
+compareModalBodyTabs.classList.add("TabContainer")
+compareModalBody.appendChild(compareModalBodyTabs)
+
+// Compare Modal Body Tabs
+const compareModalTabChoices = ["Information", "Schemes"]
+compareModalTabChoices.forEach(choice => {
+    var compareModalTab = document.createElement("button");
+    compareModalTab.innerHTML = choice;
+    compareModalTab.classList.add("clickable", "modelTab");
+    compareModalTab.addEventListener('click', () => {
+        chooseCompareAttr(choice);
+    });
+    compareModalBodyTabs.appendChild(compareModalTab)
+})
+
+// Compare Modal Body Compare
+var compareModalBodyCompare = document.createElement("div")
+compareModalBodyCompare.classList.add("compareModalBodyCompare")
+compareModalBody.appendChild(compareModalBodyCompare)
+
+// Compare Modal Body Compare Left
+var compareModalBodyCompareLeft = document.createElement("div")
+compareModalBodyCompareLeft.id = ("compareModalBodyCompareLeft")
+compareModalBodyCompare.appendChild(compareModalBodyCompareLeft)
+
+// Compare Modal Body Compare Right
+var compareModalBodyCompareRight = document.createElement("div")
+compareModalBodyCompareRight.id = ("compareModalBodyCompareRight")
+compareModalBodyCompare.appendChild(compareModalBodyCompareRight)
+
+// This Model Data
+// Scheme
+const sides = ["Left", "Right"]
+sides.forEach(side => {
+    var parentElement = document.getElementById(`compareModalBodyCompare${side}`)
+
+    // Scheme
+    var compareModalBodyCompareScheme = document.createElement("img")
+    var tmpArray = ["modelScheme", "hidden"]
+    if (side === "Left") {tmpArray.push("thisScheme")}
+    compareModalBodyCompareScheme.classList.add(...tmpArray);compareModalBodyCompareScheme.id = `compareSchemes${side}`
+    parentElement.appendChild(compareModalBodyCompareScheme)
+
+    // Information
+    var compareModalBodyCompareInformation = document.createElement("div")
+    compareModalBodyCompareInformation.classList.add("hidden", "compareInformation")
+    compareModalBodyCompareInformation.id = `compareInformation${side}`
+    parentElement.appendChild(compareModalBodyCompareInformation)
+    for (const [text, ids] of Object.entries(InformationCats)) {
+        var catName = document.createElement("h4")
+        catName.innerHTML = `Number of ${text}:`
+        compareModalBodyCompareInformation.appendChild(catName)
+        var catId = document.createElement("p")
+        catId.id = `compareInformation${side}${ids}`
+        compareModalBodyCompareInformation.appendChild(catId)
+    }
+})
 
 function openModelAttr(evt, AttrName) {
     var i, tabcontent, tablinks;
+    
+    this.classList.toggle("active")
 
     tabcontent = document.getElementsByClassName("modelTabContent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -256,3 +333,17 @@ function openModelAttr(evt, AttrName) {
             }
     })();
 }
+
+// Add at End
+// Model Scheme
+document.getElementById('modelTitle').innerHTML = modelName
+document.getElementById('github-link').setAttribute("href", `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`)
+document.querySelectorAll(".thisScheme").forEach(item => {
+    item.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
+});
+// Get this models Info and input into right places
+getModelInfo(modelName)
+    .then(response => {
+        createInfoTable(response);
+        createInfoList(response, "Left")
+    });
