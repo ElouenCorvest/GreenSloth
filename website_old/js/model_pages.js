@@ -226,7 +226,6 @@ const compareModalTabChoices = ["Information", "Schemes"]
 compareModalTabChoices.forEach(choice => {
     var compareModalTab = document.createElement("button");
     compareModalTab.innerHTML = choice;
-    compareModalTab.classList.add("clickable", "modelTab");
     compareModalTab.addEventListener('click', () => {
         chooseCompareAttr(choice);
     });

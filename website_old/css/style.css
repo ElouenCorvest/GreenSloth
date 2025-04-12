@@ -24,6 +24,7 @@
 :root {
   --mainAccentColor: rgba(77, 104, 61, 1);
   --secondaryAccentColor: rgba(149, 193, 31, 1);
+  --halfOpacity: rgba(0, 0, 0, 0.1);
   --tertiaryAccentColor: rgb(224, 224, 224);
   --hoverColor: rgba(149, 193, 31, 0.2);
   --buttonActiveBorderColor: #00aaafff;
@@ -623,10 +624,6 @@ textarea {
 	}
 }
 
-.modalContent > * {
-  padding: 0.5em 1em;
-}
-
 .modalHeader {
   z-index: 1;
   display: flex;
@@ -642,6 +639,7 @@ textarea {
   flex: 1;
   margin: 0;
   align-self: center;
+  padding: 0.5em 0.5em ;
 }
 
 .modalHeader > :last-child {
@@ -662,6 +660,7 @@ textarea {
 }
 
 .modalBody {
+  padding: 0.5em 1em;
   display: flex;
   flex-direction: column;
   background-color: var(--overallBackgroundLight);
@@ -689,7 +688,7 @@ textarea {
 }
 
 #compareModalSelect {
-  margin: auto;
+  height: auto;
   flex: 1.5;
   text-align: center;
   font-size: large;
@@ -729,6 +728,7 @@ textarea {
   background-color: var(--mainAccentColor);
   margin: 0;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
+  box-shadow: 0px 3px 27px 5px rgba(0, 0, 0, 0.10);
 }
 
 .TabContainer > * {
@@ -737,9 +737,21 @@ textarea {
   font-weight: bold;
   cursor: pointer;
   color: var(--tertiaryAccentColor);
+  transition: all .3s ease-in-out;
   background-color: transparent;
-  border: 0;
+  border-top: none;
+  border-bottom: none;
+  border-left: 0.2em solid var(--halfOpacity);
+  border-right: 0.2em solid var(--halfOpacity);
   padding: 1em 2em;
+}
+
+.TabContainer > *:first-child {
+  border-left: none;
+}
+
+.TabContainer > *:last-child {
+  border-right: none;
 }
 
 .TabContainer > *:hover {
