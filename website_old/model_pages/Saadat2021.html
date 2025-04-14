@@ -38,140 +38,30 @@
 </head>
 
 <body>
-
-  <!-- Topnav -->
-  <div class="topnav-wrapper">
-    <header class="topnav">
+  <div id="layoutWrapper">
+    <header id="topnav">
       <div class="topnav-left">
         <img src="../img/icon.svg"/>
-        <div class="onlyText">Green Sloth</div>
+        <div class="onlyText">PhotoModelBase</div>
       </div>
 
       <div class="topnav-center">
         <a class="tablinks" href="../mains/index.html">Home</a>
-        <a class="tablinks active" href="../mains/models_select.html">Models</a>
+        <a class="tablinks" href="../mains/models_select.html">Models</a>
+        <button class="tablinks" id="openCiteModal">Cite</button>
       </div>
 
-      <div class="topnav-right">
-
-      </div>
+      <div class="topnav-right"></div>
 
     </header>
-  </div>
 
-  <div id="wrapper">
-
-    <!-- The Compare Modal -->
-    <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Compare</h2>
-          <h2 id=compareModel1></h2>
-          <select id="compareModel2" onchange="modalChange()">
-            <option value="" selected disabled hidden>Select another model...</option>
-          </select>
-          <span class="close">&times;</span>
-        </div>
-        <div class="modal-body">
-          <div class="modalSelection">
-            <div class="modelTabContainer">
-              <button class="clickable modelTab" onclick="chooseCompareAttr(event, 'Information')">Information</button>
-              <button class="clickable modelTab" onclick="chooseCompareAttr(event, 'Scheme')">Schemes</button>
-            </div>
-          </div>
-          <div class="modalCompare">
-            <div id="modalCompareLeft">
-              <img class="modelScheme thisScheme hidden" id="compareSchemeLeft"/>
-              <div class="compareInformation hidden" id="compareInformationLeft">
-                <h4>Number of ODEs:</h4>
-                <p id="compareInformationLeftODE"></p>
-                <h4>Number of Derived Compounds:</h4>
-                <p id="compareInformationLeftDerivedComps"></p>
-                <h4>Number of Parameters:</h4>
-                <p id="compareInformationLeftParams"></p>
-                <h4>Number of Derived Parameters:</h4>
-                <p id="compareInformationLeftDerivedParams"></p>
-                <h4>Number of Rates:</h4>
-                <p id="compareInformationLeftRates"></p>
-              </div>
-            </div>
-            <div id="modalCompareRight">
-              <img class="modelScheme hidden" id="compareSchemeRight"/>
-              <div class="compareInformation hidden" id="compareInformationLeft">
-                <h4>Number of ODEs:</h4>
-                <p id="compareInformationRightODE"></p>
-                <h4>Number of Derived Compounds:</h4>
-                <p id="compareInformationRightDerivedComps"></p>
-                <h4>Number of Parameters:</h4>
-                <p id="compareInformationRightParams"></p>
-                <h4>Number of Derived Parameters:</h4>
-                <p id="compareInformationRightDerivedParams"></p>
-                <h4>Number of Rates:</h4>
-                <p id="compareInformationRightRates"></p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div id="wrapper">
+      <div id="content">
+        
+        <!-- The Cite Modal -->
+        <div id="citeModal" class="modal hidden"></div>
+        
       </div>
-
-    </div>
-
-    <!-- The Model Content -->
-    <div id="content-model">
-
-      <img class="modelScheme thisScheme"/>
-
-      <h1 class="modelText" id='modelTitle'></h1>
-
-      <div id="modelButtonBar">
-        <a class="clickable" id="github-link" target="_blank"><img src="../img/icons/github-mark.svg" style="height: 1em; vertical-align: middle;"/> Github</a>
-        <button class="clickable" id="compareModal">Compare</button>
-      </div>
-
-      <div class="modelText" id="modelSummary">
-        <h3>Summary</h3>
-      </div>
-
-    </div>
-
-    <div class="modelTabContainer">
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrODE')",>ODE System</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrDerivedComps')">Derived Quantities</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrParams')">Parameters</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrDerivedParams')">Derived Parameters</button>
-      <button class="clickable modelTab" onclick="openModelAttr(event, 'modelAttrRates')">Rates</button>
-    </div>
-
-    <div id="modelAttrODE" class="modelTabContent">
-      <h3>ODE System</h3>
-      <table id="modelAttrODETable"></table>
-      <div id="modelAttrODEMath"></div>
-    </div>
-
-    <div id="modelAttrDerivedComps" class="modelTabContent">
-      <h3>Derived Quantities</h3>
-      <table id="modelAttrDerivedCompsTable"></table>
-      <div id="modelAttrDerivedCompsMath"></div>
-    </div>
-
-    <div id="modelAttrParams" class="modelTabContent">
-      <h3>Parameters</h3>
-      <table id="modelAttrParamsTable"></table>
-      <div id="modelAttrParamsMath"></div>
-    </div>
-
-    <div id="modelAttrDerivedParams" class="modelTabContent">
-      <h3>Derived Parameters</h3>
-      <table id="modelAttrDerivedParamsTable"></table>
-      <div id="modelAttrDerivedParamsMath"></div>
-    </div>
-
-    <div id="modelAttrRates" class="modelTabContent">
-      <h3>Rates</h3>
-      <table id="modelAttrRatesTable"></table>
-      <div id="modelAttrRatesMath"></div>
     </div>
   </div>
 
@@ -179,7 +69,8 @@
     MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        tags: 'ams'
+        tags: 'ams',
+        maxBuffer: 10 * 1024,
       }
     };
   </script>
@@ -187,6 +78,8 @@
   <script  src="../node_modules/papaparse/papaparse.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript" src="../js/model_pages.js"></script>
+  <script type="text/javascript" src="../js/cite.js"></script>
+  <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </body>
 
 </html>

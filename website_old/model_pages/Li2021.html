@@ -61,66 +61,6 @@
         <!-- The Cite Modal -->
         <div id="citeModal" class="modal hidden"></div>
         
-        <!-- The Compare Modal -->
-        <div id="compareModal" class="modal hidden"></div>
-      
-        <!-- The Model Content -->
-        <div id="content-model">
-    
-          <img class="modelScheme thisScheme"/>
-    
-          <h1 class="modelText" id='modelTitle'></h1>
-    
-          <div id="modelButtonBar">
-            <a class="clickable" id="github-link" target="_blank"><img src="../img/icons/github-mark.svg" style="height: 1em; vertical-align: middle;"/> Github</a>
-            <button class="clickable" id="compareModalButton">Compare</button>
-          </div>
-    
-          <div class="modelText" id="modelSummary">
-            <h3>Summary</h3>
-          </div>
-    
-        </div>
-    
-        <div class="TabContainer">
-          <button class="" onclick="openModelAttr(event, 'modelAttrODE')",>ODE System</button>
-          <button class="" onclick="openModelAttr(event, 'modelAttrDerivedComps')">Derived Quantities</button>
-          <button class="" onclick="openModelAttr(event, 'modelAttrParams')">Parameters</button>
-          <button class="" onclick="openModelAttr(event, 'modelAttrDerivedParams')">Derived Parameters</button>
-          <button class="" onclick="openModelAttr(event, 'modelAttrRates')">Rates</button>
-        </div>
-    
-        <div id="modelAttrODE" class="modelTabContent">
-          <h3>ODE System</h3>
-          <table id="modelAttrODETable"></table>
-          <div id="modelAttrODEMath"></div>
-        </div>
-    
-        <div id="modelAttrDerivedComps" class="modelTabContent">
-          <h3>Derived Quantities</h3>
-          <table id="modelAttrDerivedCompsTable"></table>
-          <div id="modelAttrDerivedCompsMath"></div>
-        </div>
-    
-        <div id="modelAttrParams" class="modelTabContent">
-          <h3>Parameters</h3>
-          <table id="modelAttrParamsTable"></table>
-          <div id="modelAttrParamsMath"></div>
-        </div>
-    
-        <div id="modelAttrDerivedParams" class="modelTabContent">
-          <h3>Derived Parameters</h3>
-          <table id="modelAttrDerivedParamsTable"></table>
-          <div id="modelAttrDerivedParamsMath"></div>
-        </div>
-    
-        <div id="modelAttrRates" class="modelTabContent">
-          <h3>Rates</h3>
-          <table id="modelAttrRatesTable"></table>
-          <div id="modelAttrRatesMath"></div>
-        </div>
-        </div>
-        
       </div>
     </div>
   </div>
@@ -138,6 +78,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="text/javascript" src="../js/model_pages.js"></script>
   <script type="text/javascript" src="../js/cite.js"></script>
+  <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </body>
 
 </html>

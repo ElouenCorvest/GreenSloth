@@ -10,6 +10,13 @@ const InformationCats = {
 
 // Helper Functions
 
+// Insert Element into DOM with prior Comment
+function insertCommentedElement(parent, ele, comm) {
+    comm = document.createComment(comm)
+    parent.appendChild(comm)
+    parent.appendChild(ele)
+}
+
 // Get model information
 function parseModelInfo(modelName, InfoVar) {
     return new Promise((resolve, reject) => {
@@ -130,15 +137,116 @@ function modalChange() {
     }
 };
 
-// Get Compare modal
-var compareModal = document.getElementById("compareModal");
+// Get Github Last Update
+async function updateLastModified(ele) {
+    let res, lastUpdate;
+    const url = `https://api.github.com/repos/ElouenCorvest/GreenSloth/commits?path=models/${modelName}`;
+    
+    try {
+        const response = await fetch(url)
+        const commits = await response.json();
+        if (commits.length > 0) {
+            const lastCommit = commits["0"]
+            const date = new Date(lastCommit.commit.author.date)
+            lastUpdate = new Intl.DateTimeFormat(
+                undefined,
+                {
+                    "localeMatcher": "best fit",
+                    "year": "numeric",
+                    "month": "long",
+                    "day": "numeric"
+                }
+            ).format(date)
+            res = `Last Update: ${lastUpdate}`
+        } else {
+            res = "There exits no Updates"
+        }
+    } catch (error) {
+        console.error('Error fetching commit info:', error);
+        res = "Error loading Uodate Info"
+    }
 
-// Open Compare Modal
-var openCompareModal = document.getElementById("compareModalButton")
-openCompareModal.onclick = function() {
-    compareModal.classList.toggle("hidden")
-    this.classList.toggle("active")
+    ele.innerHTML = res
+    }
+
+// Clean Math String
+function cleanMathStr(text) {
+    var mathLines = text.match(/(?<=`math)[^`]*(?=\n```)/gms);
+        if (mathLines !== null) {
+            let mathHTML = "\\begin{align}";
+            mathLines.forEach(row => {
+                var row_cleaned = row.match(/(?<=\n)[^`]*/gm)[0];
+                row_cleaned = row_cleaned.replace(/[^&]=/mg, " &=");
+                row_cleaned = row_cleaned.replace("\\begin{align}", "")
+                row_cleaned = row_cleaned.replace("\\end{align}", "")
+                mathHTML += row_cleaned
+                if (!row.endsWith('\\\\')) {
+                    mathHTML += "\\\\"
+                }
+            });
+            mathHTML += "\\end{align}";
+            return mathHTML
+        }
 }
+
+// Get Infromation from Model Markdown File
+async function getMdFile() {
+    const response = await fetch(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/README.md`);
+    const completeText = await response.text();
+    
+    const summaryRegex = new RegExp(`#\\s*${modelName}\\s*([\\s\\S]*?)\\s*##\\s*Installation`);
+    const summarySection = completeText.match(summaryRegex)[1];
+
+    const ODESection = completeText.match(/#### Part of ODE system(.*)#### Conserved quantities/gms)[0];
+    const ODESectionMath = cleanMathStr(ODESection)
+
+    const conservedQuantitySection = completeText.match(/#### Conserved quantities(.*)### Parameters/gms)[0];
+    const conservedQuantitySectionMath = cleanMathStr(conservedQuantitySection)
+
+    const parametersSection = completeText.match(/### Parameters(.*)#### Derived Parameters/gms)[0];
+
+    const derivedParamsSection = completeText.match(/#### Derived Parameters(.*)### Reaction Rates/gms)[0];
+    const derivedParamsSectionMath = cleanMathStr(derivedParamsSection)
+
+    const ratesSection = completeText.match(/### Reaction Rates(.*)<\/details>/gms)[0];
+    const ratesSectionMath = cleanMathStr(ratesSection)
+
+    return {
+        summarySection: summarySection,
+        ODE: {
+            text: ODESection,
+            math: ODESectionMath
+        },
+        DerivedComps: {
+            text: conservedQuantitySection,
+            math: conservedQuantitySectionMath
+        },
+        Params: parametersSection,
+        DerivedParams: {
+            text: derivedParamsSection,
+            math: derivedParamsSectionMath
+        },
+        Rates: {
+            text: ratesSection,
+            math: ratesSectionMath
+        },
+    }
+
+}
+
+///////////////////////////////////////////////////////
+// Content Pipeline
+///////////////////////////////////////////////////////
+var contentElement = document.getElementById("content")
+
+///////////////////////////////////////////////////////
+// Compare Modal
+///////////////////////////////////////////////////////
+// Insert Compare Modal
+var compareModal = document.createElement("div")
+compareModal.id = "compareModal"
+compareModal.classList.add("modal", "hidden")
+insertCommentedElement(contentElement, compareModal, "The Compare Modal")
 
 // Create Compare Modal Content
 var compareModalContent = document.createElement("div")
@@ -198,7 +306,7 @@ compareClose.classList.add("close")
 compareClose.innerHTML = "&times;"
 compareClose.onclick = function(){
     compareModal.classList.toggle("hidden");
-    openCompareModal.classList.toggle("active")
+    modelSummaryBlockBarCompare.classList.toggle("active")
 }
 compareModalHeader.appendChild(compareClose)
 
@@ -206,7 +314,7 @@ compareModalHeader.appendChild(compareClose)
 window.onclick = function(event) {
     if (event.target == compareModal) {
         compareModal.classList.toggle("hidden");
-        openCompareModal.classList.toggle("active")
+        modelSummaryBlockBarCompare.classList.toggle("active")
     }
   }
 
@@ -275,68 +383,153 @@ sides.forEach(side => {
     }
 })
 
-function openModelAttr(evt, AttrName) {
-    var i, tabcontent, tablinks;
-    
+///////////////////////////////////////////////////////
+// Model Summary Block
+///////////////////////////////////////////////////////
+// Insert Model Summary Block
+var modelSummaryBlock = document.createElement("div")
+modelSummaryBlock.id = "modelSummaryBlock"
+insertCommentedElement(contentElement, modelSummaryBlock, "The Model Summary")
+
+// Insert Model Scheme
+var modelSummaryBlockScheme = document.createElement("img")
+modelSummaryBlockScheme.classList.add("modelScheme", "thisScheme")
+modelSummaryBlock.appendChild(modelSummaryBlockScheme)
+
+// Insert Model Title
+var modelSummaryBlockTitle = document.createElement("h1")
+modelSummaryBlockTitle.classList.add("modelText")
+modelSummaryBlockTitle.innerHTML = modelName
+modelSummaryBlock.appendChild(modelSummaryBlockTitle)
+
+// Insert Model Button Bar
+var modelSummaryBlockBar = document.createElement("div")
+modelSummaryBlockBar.classList.add("modelButtonBar")
+modelSummaryBlock.appendChild(modelSummaryBlockBar)
+
+// Insert Model Button Bar Github Button
+var modelSummaryBlockBarGithub = document.createElement("a")
+modelSummaryBlockBarGithub.classList.add("clickable")
+modelSummaryBlockBarGithub.target = "_blank"
+modelSummaryBlockBarGithub.href = `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`
+modelSummaryBlockBarGithub.append("Github")
+modelSummaryBlockBar.prepend(modelSummaryBlockBarGithub)
+
+// Insert Model Button Bar Github Button Logo
+var githubLogo = document.createElement("span")
+githubLogo.classList.add("githubLogo")
+modelSummaryBlockBarGithub.prepend(githubLogo)
+
+// Insert Model Button Bar Compare Button
+var modelSummaryBlockBarCompare = document.createElement("button")
+modelSummaryBlockBarCompare.classList.add("clickable")
+modelSummaryBlockBarCompare.onclick = function() {
+    compareModal.classList.toggle("hidden")
     this.classList.toggle("active")
+}
+modelSummaryBlockBarCompare.append("Compare")
+modelSummaryBlockBar.appendChild(modelSummaryBlockBarCompare)
 
-    tabcontent = document.getElementsByClassName("modelTabContent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
+// Insert Model Button Bar Last Updated
+var modelSummaryBlockBarLastUpdate = document.createElement("p")
+modelSummaryBlockBarLastUpdate.innerHTML = "Last Update: Loading..."
+updateLastModified(modelSummaryBlockBarLastUpdate)
+modelSummaryBlockBar.appendChild(modelSummaryBlockBarLastUpdate)
 
-    tablinks = document.getElementsByClassName("modelTab");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
+// Insert Model Summary
+var modelSummaryBlockText = document.createElement("div")
+modelSummaryBlockText.classList.add("modelText")
+modelSummaryBlock.appendChild(modelSummaryBlockText)
 
-    document.getElementById(AttrName).style.display = "block";
-    evt.currentTarget.className += " active";
+// Insert Model Summary Title
+var modelSummaryBlockTextTitle = document.createElement("h3")
+modelSummaryBlockTextTitle.innerHTML = "Summary"
+modelSummaryBlockText.appendChild(modelSummaryBlockTextTitle)
 
-    (async() => {
-        // Fetch README
-        const md_file = await axios.get(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/README.md`);
+// Insert Model Summary Text
+var modelSummaryBlockTextText = document.createElement("p")
+modelSummaryBlockText.appendChild(modelSummaryBlockTextText)
 
-        // Get correct regex pattenr based on Attribute
-        if (AttrName.includes("ODE")) {
-            var regex_match = /#### Part of ODE system(.*)#### Conserved quantities/gms
-        } else if (AttrName.includes("Rates")) {
-            var regex_match = /### Reaction Rates(.*)<\/details>/gms
-        } else if (AttrName.includes("DerivedParams")) {
-            var regex_match = /#### Derived Parameters(.*)### Reaction Rates/gms
-        } else if (AttrName.includes("Params")) {
-            var regex_match = /### Parameters(.*)#### Derived Parameters/gms
-        } else if (AttrName.includes("DerivedComps")){
-            var regex_match = /#### Conserved quantities(.*)### Parameters/gms
+///////////////////////////////////////////////////////
+// Tab Container for Model Information
+///////////////////////////////////////////////////////
+// Insert Tab Container
+var tabContainer = document.createElement("div")
+tabContainer.classList.add("TabContainer")
+insertCommentedElement(contentElement, tabContainer, "The Information Tabs")
+
+// Tab Container Buttons
+const tabContainerButtons = {
+    ODE: "ODE System",
+    DerivedComps: "Derived Quantities",
+    Params: "Parameters",
+    DerivedParams: "Derived Parameters",
+    Rates: "Rates"
+}
+
+for (const [key, value] of Object.entries(tabContainerButtons)) {
+    var tabContainerButton = document.createElement("button")
+    tabContainerButton.addEventListener("click", function() {
+        openModelAttr(this, `modelAttr${key}`);
+    });
+    tabContainerButton.innerHTML = value
+    tabContainer.appendChild(tabContainerButton)
+}
+
+function openModelAttr(button, AttrName) {
+    const allButtons = button.parentElement.children
+    const allInfo = document.querySelectorAll(".modelTabContent")
+
+    for (let i = 0; i < allButtons.length; i++) {
+        if (allButtons[i] === button) {
+            allButtons[i].classList.add("active")
+        } else {
+            allButtons[i].classList.remove("active")
         }
-        var extraction = md_file.data.match(regex_match);
-        var math_lines = extraction[0].match(/(?<=`math)[^`]*(?=\n```)/gms);
-            if (math_lines !== null) {
-                let mathHTML = "\\begin{align}";
-                math_lines.forEach(row => {
-                    var row_cleaned = row.match(/(?<=\n)[^`]*/gm)[0];
-                    row_cleaned = row_cleaned.replace(/[^&]=/mg, " &=");
-                    row_cleaned = row_cleaned.replace("\\begin{align}", "")
-                    row_cleaned = row_cleaned.replace("\\end{align}", "")
-                    mathHTML += row_cleaned
-                    if (!row.endsWith('\\\\')) {
-                        mathHTML += "\\\\"
-                    }
-                    // mathHTML += "[9pt]"
-                });
-                mathHTML += "\\end{align}";
-                document.getElementById(`${AttrName}Math`).innerHTML = mathHTML;
+    }
 
-                // Tell MathJax to re-render LaTeX
-                MathJax.typeset();
-            }
-    })();
+    for (let i = 0; i < allInfo.length; i++) {
+        if (allInfo[i].id === AttrName) {
+            allInfo[i].classList.remove("hidden")
+        } else {
+            allInfo[i].classList.add("hidden")
+        }
+    }
+
+    // const modelAttrContents = document.getElementsByClassName("modelTabContent");
+
+
+
+    // for (i = 0; i < tabcontent.length; i++) {
+    //     tabcontent[i].style.display = "none";
+    // }
+
+    // document.getElementById(AttrName).style.display = "block";
+}
+
+///////////////////////////////////////////////////////
+// Model Information
+///////////////////////////////////////////////////////
+// All Model Info
+for (const [key, value] of Object.entries(tabContainerButtons)) {
+    var modelAttrContent = document.createElement("div")
+    modelAttrContent.id = `modelAttr${key}`;
+    modelAttrContent.classList.add("modelTabContent", "hidden")
+    insertCommentedElement(contentElement, modelAttrContent, `Model Info ${value}`)
+    var modelAttrContentHeading = document.createElement("h3")
+    modelAttrContentHeading.innerHTML = value
+    modelAttrContent.appendChild(modelAttrContentHeading)
+    var modelAttrContentTable = document.createElement("table")
+    modelAttrContentTable.id = `modelAttr${key}Table`
+    modelAttrContent.appendChild(modelAttrContentTable)
+    var modelAttrContentMath = document.createElement("div")
+    modelAttrContentMath.id = `modelAttr${key}Math`
+    modelAttrContentMath.classList.add("modelAttrMath")
+    modelAttrContent.appendChild(modelAttrContentMath)
 }
 
 // Add at End
 // Model Scheme
-document.getElementById('modelTitle').innerHTML = modelName
-document.getElementById('github-link').setAttribute("href", `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`)
 document.querySelectorAll(".thisScheme").forEach(item => {
     item.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
 });
@@ -346,3 +539,19 @@ getModelInfo(modelName)
         createInfoTable(response);
         createInfoList(response, "Left")
     });
+
+getMdFile().then(response => {
+    // Insert Summary
+    modelSummaryBlockTextText.innerHTML = response.summarySection
+
+    // Insert Math
+    const allMath = document.querySelectorAll(".modelAttrMath")
+    for (let i = 0; i < allMath.length; i++) {
+        var changeFlag = allMath[i].id.match(/(?<=modelAttr)(.*)(?=Math)/)[0];
+        var mathHTML = response[changeFlag]["math"]
+        if (mathHTML != null) {
+            console.log(mathHTML)
+            allMath[i].innerHTML = mathHTML
+        }
+    }
+})
