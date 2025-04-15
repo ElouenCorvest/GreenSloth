@@ -169,6 +169,18 @@ async function updateLastModified(ele) {
     ele.innerHTML = res
     }
 
+// Get Github Last Update
+async function updateDOI(ele) {
+    const response = await fetch("/js/models.json");
+    const modelsInfo = await response.json();
+    for (let i=0; i < modelsInfo.length; i++) {
+        if (modelsInfo[i].name === modelName) {
+            ele.href = modelsInfo[i]["DOI"]
+            ele.innerHTML = `DOI: ${modelsInfo[i]["DOI"]}`
+        }
+    }
+}
+
 // Clean Math String
 function cleanMathStr(text) {
     var mathLines = text.match(/(?<=`math)[^`]*(?=\n```)/gms);
@@ -195,7 +207,8 @@ async function getMdFile() {
     const completeText = await response.text();
     
     const summaryRegex = new RegExp(`#\\s*${modelName}\\s*([\\s\\S]*?)\\s*##\\s*Installation`);
-    const summarySection = completeText.match(summaryRegex)[1];
+    var summarySection = completeText.match(summaryRegex)[1];
+    summarySection = marked.parse(summarySection)
 
     const ODESection = completeText.match(/#### Part of ODE system(.*)#### Conserved quantities/gms)[0];
     const ODESectionMath = cleanMathStr(ODESection)
@@ -409,7 +422,7 @@ modelSummaryBlock.appendChild(modelSummaryBlockBar)
 
 // Insert Model Button Bar Github Button
 var modelSummaryBlockBarGithub = document.createElement("a")
-modelSummaryBlockBarGithub.classList.add("clickable")
+modelSummaryBlockBarGithub.classList.add("clickable", "logoWithText")
 modelSummaryBlockBarGithub.target = "_blank"
 modelSummaryBlockBarGithub.href = `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`
 modelSummaryBlockBarGithub.append("Github")
@@ -430,8 +443,17 @@ modelSummaryBlockBarCompare.onclick = function() {
 modelSummaryBlockBarCompare.append("Compare")
 modelSummaryBlockBar.appendChild(modelSummaryBlockBarCompare)
 
+// Insert Model Button Bar DOI
+var modelSummaryBlockBarDOI = document.createElement("a")
+modelSummaryBlockBarDOI.classList.add("discreetText")
+modelSummaryBlockBarDOI.innerHTML = "DOI: Loading..."
+modelSummaryBlockBarDOI.target = "_blank"
+updateDOI(modelSummaryBlockBarDOI)
+modelSummaryBlockBar.appendChild(modelSummaryBlockBarDOI)
+
 // Insert Model Button Bar Last Updated
 var modelSummaryBlockBarLastUpdate = document.createElement("p")
+modelSummaryBlockBarLastUpdate.classList.add("discreetText")
 modelSummaryBlockBarLastUpdate.innerHTML = "Last Update: Loading..."
 updateLastModified(modelSummaryBlockBarLastUpdate)
 modelSummaryBlockBar.appendChild(modelSummaryBlockBarLastUpdate)
@@ -480,31 +502,28 @@ function openModelAttr(button, AttrName) {
     const allButtons = button.parentElement.children
     const allInfo = document.querySelectorAll(".modelTabContent")
 
-    for (let i = 0; i < allButtons.length; i++) {
-        if (allButtons[i] === button) {
-            allButtons[i].classList.add("active")
-        } else {
-            allButtons[i].classList.remove("active")
+    if (button.classList.contains("active")) {
+        button.classList.toggle("active")
+        const modelInfo = document.getElementById(AttrName)
+        modelInfo.classList.toggle("hidden")
+    } else {
+        for (let i = 0; i < allButtons.length; i++) {
+            if (allButtons[i] === button) {
+                allButtons[i].classList.add("active")
+            } else {
+                allButtons[i].classList.remove("active")
+            }
+        }
+    
+        for (let i = 0; i < allInfo.length; i++) {
+            if (allInfo[i].id === AttrName) {
+                allInfo[i].classList.remove("hidden")
+            } else {
+                allInfo[i].classList.add("hidden")
+            }
         }
     }
 
-    for (let i = 0; i < allInfo.length; i++) {
-        if (allInfo[i].id === AttrName) {
-            allInfo[i].classList.remove("hidden")
-        } else {
-            allInfo[i].classList.add("hidden")
-        }
-    }
-
-    // const modelAttrContents = document.getElementsByClassName("modelTabContent");
-
-
-
-    // for (i = 0; i < tabcontent.length; i++) {
-    //     tabcontent[i].style.display = "none";
-    // }
-
-    // document.getElementById(AttrName).style.display = "block";
 }
 
 ///////////////////////////////////////////////////////
@@ -550,7 +569,6 @@ getMdFile().then(response => {
         var changeFlag = allMath[i].id.match(/(?<=modelAttr)(.*)(?=Math)/)[0];
         var mathHTML = response[changeFlag]["math"]
         if (mathHTML != null) {
-            console.log(mathHTML)
             allMath[i].innerHTML = mathHTML
         }
     }

@@ -30,6 +30,7 @@
   --buttonActiveBorderColor: #00aaafff;
   --buttonHoverColor: rgba(0, 170, 175, 0.2);
   --overallBackgroundLight: #fff;
+  --lightText: rgb(197, 197, 197);
 }
 
 html {
@@ -315,6 +316,18 @@ textarea {
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
+}
+
+.logoWithText {
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2em;
+  align-items: center;
+}
+
+.logoWithText > * {
+  flex-grow: 1;
 }
 
 /* Wrappers */
@@ -783,6 +796,7 @@ textarea {
 }
 
 #modelSummaryBlock .modelScheme {
+  z-index: 10;
   transition: all .3s ease-in-out;
   grid-row: span 3;
 }
@@ -790,8 +804,8 @@ textarea {
 #modelSummaryBlock .modelScheme:hover {
   transition: all .3s ease-in-out;
   opacity: 1;
-  transform: scale(2);
-  transform-origin: top left;
+  transform: scale(3);
+  transform-origin: left center;
 }
 
 .modelScheme {
@@ -809,19 +823,25 @@ textarea {
   height: max-content;
 }
 
+.modelButtonBar > * {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
 .modelButtonBar > a, 
 .modelButtonBar > button {
   padding: 0 0.5em;
   border-color: var(--buttonActiveBorderColor);
   text-decoration: none; /* Removes the default underline */
-  color: inherit;
   border-radius: 5px; /* Rounds the corners (optional) */
   width: fit-content;
   vertical-align: middle;
 }
 
-.modelButtonBar > p {
-  color: var(--tertiaryAccentColor);
+.discreetText {
+  color: var(--lightText);
+  vertical-align: middle;
 }
 
 .modelText {
