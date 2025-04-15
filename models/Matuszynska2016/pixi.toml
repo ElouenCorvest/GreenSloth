@@ -1,0 +1,19 @@
+[project]
+authors = ["Elouen_Corvest <elouen.corvest@rwth-aachen.de>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "Matuszynska2016"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.13.3,<3.14"
+assimulo = ">=3.7.0,<4"
+
+[pypi-dependencies]
+modelbase2 = ">=0.3.0, <0.4"
+ipython = ">=9.1.0, <10"
+ipykernel = ">=6.29.5, <7"
+torch = ">=2.6.0, <3"
