@@ -1,8 +1,8 @@
-from mdutils.mdutils import MdUtils  # noqa: E402
-from greensloth_utils import remove_math, gloss_fromCSV
+import os
 from pathlib import Path
 
-import os
+from greensloth_utils import gloss_fromCSV, remove_math
+from mdutils.mdutils import MdUtils
 
 ###### Util Functions ######
 
@@ -267,7 +267,7 @@ mdFile.new_paragraph(rf"""
 <summary>Equations of derived parameters</summary>
 
 ```math
-{H_st} =  4000.0 \cdot 10^{{-{pH_st}}}
+{H_st} =  32000.0 \cdot 10^{{-{pH_st}}}
 ```
 ```math
 {K_pHSat_inv} =  4000.0 \cdot 10^{{-{K_pHSat}}}

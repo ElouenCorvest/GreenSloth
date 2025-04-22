@@ -1,5 +1,6 @@
-from modelbase2 import Model
 import numpy as np
+from modelbase2 import Model
+
 from . import basic_funcs as bf
 
 
@@ -8,7 +9,7 @@ def pH(H):
 
 
 def pHinv(pH):
-    return 4e3 * 10**-pH
+    return 3.2e4 * 10**-pH
 
 
 def K_QAPQ(F, E0_QA, E0_PQ, pH_st, R, T):
@@ -81,32 +82,31 @@ def PSII(PQ, PQH_2, Q, pfd, k_PQH2, K_QAPQ, k_H, k_F, k_P, PSII_tot):
         B0, B1, B2, B3 = np.linalg.solve(M, A)
         return B0, B1, B2, B3
 
-    else:
-        B0 = []
-        B1 = []
-        B2 = []
-        B3 = []
+    B0 = []
+    B1 = []
+    B2 = []
+    B3 = []
 
-        for b0, b1, k_PQH2, PQ, pfd, b2, PSII_tot in zip(
-            b0, b1, k_PQH2, PQ, pfd, b2, PSII_tot
-        ):
-            M = np.array(
-                [
-                    [-b0, b1, k_PQH2 * PQ, 0],  # B0
-                    [pfd, -b2, 0, 0],  # B1
-                    [0, 0, pfd, -b1],  # B3
-                    [1, 1, 1, 1],
-                ]
-            )
+    for b0, b1, k_PQH2, PQ, pfd, b2, PSII_tot in zip(
+        b0, b1, k_PQH2, PQ, pfd, b2, PSII_tot, strict=False
+    ):
+        M = np.array(
+            [
+                [-b0, b1, k_PQH2 * PQ, 0],  # B0
+                [pfd, -b2, 0, 0],  # B1
+                [0, 0, pfd, -b1],  # B3
+                [1, 1, 1, 1],
+            ]
+        )
 
-            A = np.array([0, 0, 0, PSII_tot])
-            B0_, B1_, B2_, B3_ = np.linalg.solve(M, A)
-            B0.append(B0_)
-            B1.append(B1_)
-            B2.append(B2_)
-            B3.append(B3_)
+        A = np.array([0, 0, 0, PSII_tot])
+        B0_, B1_, B2_, B3_ = np.linalg.solve(M, A)
+        B0.append(B0_)
+        B1.append(B1_)
+        B2.append(B2_)
+        B3.append(B3_)
 
-        return np.array(B0), np.array(B1), np.array(B2), np.array(B3)
+    return np.array(B0), np.array(B1), np.array(B2), np.array(B3)
 
 
 def B0_PSII(PQ, PQH_2, Q, pfd, k_PQH2, K_QAPQ, k_H, k_F, k_P, PSII_tot):

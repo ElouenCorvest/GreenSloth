@@ -179,7 +179,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 <summary>Equations of derived parameters</summary>
 
 ```math
-\mathrm{H}_\mathrm{st} =  4000.0 \cdot 10^{-\mathrm{pH}_{\mathrm{st}}}
+\mathrm{H}_\mathrm{st} =  32000.0 \cdot 10^{-\mathrm{pH}_{\mathrm{st}}}
 ```
 ```math
 K_\mathrm{pHSat|inv} =  4000.0 \cdot 10^{-K_\mathrm{pHSat}}
