@@ -270,10 +270,10 @@ mdFile.new_paragraph(rf"""
 {H_st} =  32000.0 \cdot 10^{{-{pH_st}}}
 ```
 ```math
-{K_pHSat_inv} =  4000.0 \cdot 10^{{-{K_pHSat}}}
+{K_pHSat_inv} =  32000.0 \cdot 10^{{-{K_pHSat}}}
 ```
 ```math
-{K_pHSatLHC_inv} =  4000.0 \cdot 10^{{-{K_pHSatLHC}}}
+{K_pHSatLHC_inv} =  32000.0 \cdot 10^{{-{K_pHSatLHC}}}
 ```
 ```math
 {K_QAPQ} =  \exp \left( \frac{{-\left( -2 \cdot -{F} \cdot {E0_QA} + -2 \cdot {F} \cdot {E0_PQ} + 2 \cdot {pH_st} \cdot \ln 10 \cdot {R} \cdot {T} \right)}}{{{R} \cdot {T}}} \right)

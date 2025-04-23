@@ -182,10 +182,10 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 \mathrm{H}_\mathrm{st} =  32000.0 \cdot 10^{-\mathrm{pH}_{\mathrm{st}}}
 ```
 ```math
-K_\mathrm{pHSat|inv} =  4000.0 \cdot 10^{-K_\mathrm{pHSat}}
+K_\mathrm{pHSat|inv} =  32000.0 \cdot 10^{-K_\mathrm{pHSat}}
 ```
 ```math
-K_\mathrm{pHSatLHC|inv} =  4000.0 \cdot 10^{-K_\mathrm{pHSatLHC}}
+K_\mathrm{pHSatLHC|inv} =  32000.0 \cdot 10^{-K_\mathrm{pHSatLHC}}
 ```
 ```math
 K_\mathrm{QAPQ} =  \exp \left( \frac{-\left( -2 \cdot -F \cdot E^0\mathrm{(QA/QA^-)} + -2 \cdot F \cdot E^0\mathrm{(PQ/PQH_2)} + 2 \cdot \mathrm{pH}_{\mathrm{st}} \cdot \ln 10 \cdot R \cdot T \right)}{R \cdot T} \right)
