@@ -421,10 +421,8 @@ textarea {
   background-color: transparent;
   border-radius: 2em;
   padding: 0.5em 1em;
-  width: 5em;
   align-content: center;
   text-align: center;
-  margin: 0 !important;
   text-decoration: none;
   font-weight: bold;
   font-size: 17px;
@@ -880,7 +878,7 @@ textarea {
 }
 
 
-.tab .tablinks {
+.tab {
   background-color: rgba(10, 97, 103, 1);
   border: 0;
   border-radius: 0.5em;
@@ -892,7 +890,7 @@ textarea {
 
 
 
-.tab .tablinks.active{
+.tab .active{
   background-color: #00aaafff;
   font-weight: 900;
 }

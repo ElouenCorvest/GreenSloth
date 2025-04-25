@@ -486,7 +486,8 @@ const tabContainerButtons = {
     DerivedComps: "Derived Quantities",
     Params: "Parameters",
     DerivedParams: "Derived Parameters",
-    Rates: "Rates"
+    Rates: "Rates",
+    Figures: "Figures"
 }
 
 for (const [key, value] of Object.entries(tabContainerButtons)) {
