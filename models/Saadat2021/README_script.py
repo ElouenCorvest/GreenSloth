@@ -1,8 +1,6 @@
 from mdutils.mdutils import MdUtils  # noqa: E402
-from glossary_utils.glossary import gloss_fromCSV
 from pathlib import Path
-import pandas as pd
-#from models import get_model
+from greensloth_utils import remove_math, gloss_fromCSV
 
 import os
 
@@ -780,25 +778,16 @@ mdFile.new_paragraph(fr"""
 
                      """)
 
-mdFile.new_header(3, 'Tags')
+mdFile.new_header(3, "Figures")
 
-# mdFile.write(rf'''
+mdFile.new_paragraph(rf"""
+                     
+<details>
+<summary></summary>
+                     
+<img style='float: center' src=''>
 
-# ```mermaid
-# flowchart LR;
-#     H("$${H}$$") -->|"$${v_PSII}$$"| P("$${PQH_2}$$");
-#     P -->|"$${v_PQ}$$"| H;
-#     H -->|"$${v_ATPsynth}$$"| A("$${ATP}$$");
-#     A -->|"$${v_ATPcons}$$"| empty:::hidden;
-#     H -->|"$${v_Leak}$$"| empty1:::hidden;
-#     PS("$${PsbS}$$") -->|"$${v_PsbSP}$$"| e1:::hidden;
-#     Vx("$${Vx}$$") -->|"$${v_Xcyc}$$"| e2:::hidden;
-#     e3:::hidden -->|"$${v_ATPact}$$"| ATP("$${ATPase}$$")
-
-
-#     classDef hidden display: none;
-# ```
-
-#              ''')
+</details>
+""")
 
 mdFile.create_md_file()

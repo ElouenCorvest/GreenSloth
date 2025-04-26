@@ -7,7 +7,7 @@
 
 [Saadat2021](https://doi.org/10.3389/fpls.2021.750580)
 
-
+                     
 ## Installation
 
 ## Summary
@@ -146,7 +146,7 @@
 ```
 
 </details>
-
+                     
 #### Conserved quantities
 
 |Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
@@ -264,7 +264,7 @@
 
 </details>
 
-
+                     
 ### Parameters
 
 |Short Description|Common Abbr.|Paper Abbr.|Value|Unit|Python Var|Reference|
@@ -481,7 +481,7 @@ V_{\mathrm{max}|\mathrm{Starch}}  = \mathrm{E}_\mathrm{CBB,\ inact} \cdot V_{\ma
 ```
 </details>
 
-
+                     
 ### Reaction Rates
 
 |Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
@@ -654,7 +654,7 @@ v_{\mathrm{Eact}} = \mathrm{E}_\mathrm{CBB,\ inact} \cdot \mathrm{TRX_{red}} \cd
 v_{\mathrm{Einact}} = \mathrm{E}_\mathrm{CBB,\ inact} \cdot k_{\mathrm{ecbb|rel}}
 ```
 ```math
-v_{\mathrm{PSI}} =  \left( 1 - \mathrm{PSII_{cross}} \right) \mathrm{PFD} \cdot \mathrm{Y_0}
+v_{\mathrm{PSI}} =  \left( 1 - \mathrm{PSII_{cross}} \right) \cdot \mathrm{PFD} \cdot \mathrm{Y_0}
 ```
 ```math
 v_{\mathrm{Fd}_{\mathrm{red}}} =  k_{\mathrm{Fd}_\mathrm{red}} \cdot \mathrm{Fd}_\mathrm{ox} \cdot \mathrm{Y_1} - \frac{k_{\mathrm{Fd}_\mathrm{red}}}{K_\mathrm{FAFd}} \cdot \mathrm{Fd}_\mathrm{red} \cdot \mathrm{Y_2}
@@ -686,5 +686,15 @@ v_{\mathrm{NADPH}_\mathrm{consumption}} = \mathrm{NADPH}_\mathrm{st} \cdot k_{\m
 
 </details>
 
+                     
+### Figures
 
-### Tags
+
+
+                     
+<details>
+<summary></summary>
+                     
+<img style='float: center' src=''>
+
+</details>

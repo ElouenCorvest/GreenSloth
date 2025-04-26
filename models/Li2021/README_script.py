@@ -430,4 +430,16 @@ mdFile.new_paragraph(rf"""
 
                      """)
 
+mdFile.new_header(3, "Figures")
+
+mdFile.new_paragraph(rf"""
+                     
+<details>
+<summary></summary>
+                     
+<img style='float: center' src=''>
+
+</details>
+""")
+
 mdFile.create_md_file()
