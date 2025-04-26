@@ -221,8 +221,28 @@ async function getMdFile() {
     const derivedParamsSection = completeText.match(/#### Derived Parameters(.*)### Reaction Rates/gms)[0];
     const derivedParamsSectionMath = cleanMathStr(derivedParamsSection)
 
-    const ratesSection = completeText.match(/### Reaction Rates(.*)<\/details>/gms)[0];
+    const ratesSection = completeText.match(/### Reaction Rates(.*)### Figures/gms)[0];
     const ratesSectionMath = cleanMathStr(ratesSection)
+
+    const figuresSection = completeText.match(/### Figures(.*)/gms)[0];
+    const figuresDetailsRegex = /<details>\s*<summary>(.*?)<\/summary>\s*([\s\S]*?)<\/details>/g;
+
+    let matches;
+    const figures = [];
+
+    while ((matches = figuresDetailsRegex.exec(figuresSection)) !== null) {
+    const title = matches[1].trim();  // Title inside <summary>...</summary>
+    const content = matches[2];        // Inside the <details> block
+
+    // Extract the <img> src
+    const imgMatch = content.match(/<img[^>]+src=['"]([^'"]+)['"]/);
+    const imgSrc = imgMatch ? imgMatch[1] : null;
+
+    // Remove the <img> tag from the content to get the text only
+    const text = marked.parse(content.replace(/<img[^>]*>/g, '').trim());
+
+    figures.push({ title, imgSrc, text });
+    }
 
     return {
         summarySection: summarySection,
@@ -243,6 +263,7 @@ async function getMdFile() {
             text: ratesSection,
             math: ratesSectionMath
         },
+        figures: figures
     }
 
 }
@@ -539,13 +560,18 @@ for (const [key, value] of Object.entries(tabContainerButtons)) {
     var modelAttrContentHeading = document.createElement("h3")
     modelAttrContentHeading.innerHTML = value
     modelAttrContent.appendChild(modelAttrContentHeading)
-    var modelAttrContentTable = document.createElement("table")
-    modelAttrContentTable.id = `modelAttr${key}Table`
-    modelAttrContent.appendChild(modelAttrContentTable)
-    var modelAttrContentMath = document.createElement("div")
-    modelAttrContentMath.id = `modelAttr${key}Math`
-    modelAttrContentMath.classList.add("modelAttrMath")
-    modelAttrContent.appendChild(modelAttrContentMath)
+
+    if (key != "Figures") {
+        var modelAttrContentTable = document.createElement("table")
+        modelAttrContentTable.id = `modelAttr${key}Table`
+        modelAttrContent.appendChild(modelAttrContentTable)
+        var modelAttrContentMath = document.createElement("div")
+        modelAttrContentMath.id = `modelAttr${key}Math`
+        modelAttrContentMath.classList.add("modelAttrMath")
+        modelAttrContent.appendChild(modelAttrContentMath)
+    }
+
+    
 }
 
 // Add at End
@@ -573,4 +599,59 @@ getMdFile().then(response => {
             allMath[i].innerHTML = mathHTML
         }
     }
+
+    // Insert Figures
+    const modelAttrFigures = document.getElementById("modelAttrFigures")
+    var arrowDown = document.createElement("span")
+    arrowDown.classList.add("arrowDown")
+
+    for (let i = 0; i < response.figures.length; i++) {
+        var figureInfo = response.figures[i]
+        var figureImgSrc = figureInfo.imgSrc
+        var figureTitle = figureInfo.title
+        var figureText = figureInfo.text
+
+        var modelAttrFiguresContainer = document.createElement("div")
+        modelAttrFiguresContainer.classList.add("modelAttrFiguresContainer")
+        modelAttrFigures.appendChild(modelAttrFiguresContainer)
+
+        var modelAttrFiguresContainerHead = document.createElement("button")
+        modelAttrFiguresContainerHead.classList.add("modelAttrFiguresContainerHead", "clickable")
+        modelAttrFiguresContainerHead.addEventListener("click", function() {
+            var siblings = this.parentNode.childNodes
+            for (let i = 0; i < siblings.length; i++) {
+                if (siblings[i] == this) {
+                    this.classList.toggle("active")
+                } else {
+                    siblings[i].classList.toggle("hidden")
+                }
+            }
+        });
+        modelAttrFiguresContainer.appendChild(modelAttrFiguresContainerHead)
+
+        var arrowDown1 = document.createElement("span")
+        arrowDown1.classList.add("arrowDown")
+        modelAttrFiguresContainerHead.appendChild(arrowDown1)
+
+        var modelAttrFiguresContainerHeadTitle = document.createElement("h3")
+        modelAttrFiguresContainerHeadTitle.innerHTML = figureTitle
+        modelAttrFiguresContainerHead.appendChild(modelAttrFiguresContainerHeadTitle)
+
+        var arrowDown2 = document.createElement("span")
+        arrowDown2.classList.add("arrowDown")
+        modelAttrFiguresContainerHead.appendChild(arrowDown2)
+
+        var modelAttrFiguresContainerContent = document.createElement("div")
+        modelAttrFiguresContainerContent.classList.add("modelAttrFiguresContainerContent", "hidden")
+        modelAttrFiguresContainer.appendChild(modelAttrFiguresContainerContent)
+
+        var modelAttrFiguresContainerContentImg = document.createElement("img")
+        modelAttrFiguresContainerContentImg.classList.add()
+        modelAttrFiguresContainerContentImg.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/${figureImgSrc}`
+        modelAttrFiguresContainerContent.appendChild(modelAttrFiguresContainerContentImg)
+
+        modelAttrFiguresContainerContent.innerHTML += figureText
+
+    }
+
 })

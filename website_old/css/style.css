@@ -318,6 +318,21 @@ textarea {
   mask-size: 100% 100%;
 }
 
+.arrowDown {
+  display: inline-block;
+  rotate: 90deg;
+  width: 12px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 24'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
 .logoWithText {
   color: inherit;
   display: flex;
@@ -785,6 +800,7 @@ textarea {
   background-color: var(--hoverColor);
 }
 
+/* Model Summary Block */
 #modelSummaryBlock {
   display: grid;
   margin-bottom: 1em;
@@ -878,6 +894,39 @@ textarea {
   background-color: var(--buttonHoverColor);
 }
 
+/* Model Info Figures */
+
+.modelAttrFiguresContainerHead {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 0.2em solid var(--tertiaryAccentColor);
+  border-radius: 1em;
+}
+
+.modelAttrFiguresContainerHead > h3 {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.modelAttrFiguresContainerContent {
+  text-align: center;
+  transition: all .3s ease-in-out;
+}
+
+.modelAttrFiguresContainerContent > img {
+  max-width: 100%;
+  max-height: 20em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modelAttrFiguresContainerContent > p {
+  text-align: justify;
+}
 
 .tab {
   background-color: rgba(10, 97, 103, 1);
