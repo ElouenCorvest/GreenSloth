@@ -392,9 +392,9 @@ textarea {
   flex: 1;
   align-self: center;
   width: 100%;
-  padding-top: 2%;
   /* ChangingScrollbar Properties */
   overflow-y: scroll; /* Show vertical scrollbar */
+  scroll-snap-type: y mandatory;
   scrollbar-width: auto;
   scrollbar-color: var(--buttonHoverColor) var(--overallBackgroundLight);
 }
@@ -429,6 +429,17 @@ textarea {
   align-items: inherit;
   justify-content: flex-end;
   align-items: center;
+}
+
+/* Slides */
+
+.slide {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: center;
+  aspect-ratio: 1/1;
+  padding-top: 2em;
 }
 
 /* Tab Links */
@@ -870,6 +881,10 @@ textarea {
   margin-top: 0.5em;
 }
 
+.modelTabContent {
+  padding-top: 1em;
+}
+
 .modelTabContent table {
   table-layout: auto;
   width: 100%;
@@ -895,6 +910,12 @@ textarea {
 }
 
 /* Model Info Figures */
+
+#modelAttrFigures {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
 
 .modelAttrFiguresContainerHead {
   width: 100%;

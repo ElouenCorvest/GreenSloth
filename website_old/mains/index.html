@@ -60,13 +60,27 @@
       <div id="content">
         
         <div id="citeModal" class="modal hidden"></div>
-        
-        <div id="PhotosynthesisScheme">
-          <img src="../img/Thylakoid_membrane_3.svg" usemap="#photosynthesis" id="PhotosynthesisScheme"/>
-          <map name="photosynthesis">
-            <area target="" alt="" title="" href="models_select.html?appar=PSII" coords="99,235,115,240,128,258,136,284,138,310,132,330,121,354,100,363,76,354,63,327,59,300,65,266,78,244" shape="poly" onclick="mapClick()" >
-          </map>
+
+        <div class="slide" style="display: flex; flex-direction: column; text-align: center; height: fit-content;">
+          <img src="/img/greensloth_color_complete.svg" style="flex-grow: 1"/>
+          <p style="color: var(--mainAccentColor); font-weight: bold; font-size: 2.5em; flex-grow: 1;">EASIER ACCESS TO PHOTOSYNTHETIC MODELS</p>
+          <span class="arrowDown" style="color: var(--mainAccentColor); transform: scale(5); flex-grow: 1"></span>
         </div>
+
+        <div class="slide" style="background-color: green;"></div>
+        <div class="slide" style="background-color: red;"></div>
+        <div class="slide" style="background-color: blue;"></div>
+          
+          
+          <div class="slide">
+            <div id="PhotosynthesisScheme">
+              <img src="../img/Thylakoid_membrane_3.svg" usemap="#photosynthesis" id="PhotosynthesisScheme"/>
+              <map name="photosynthesis">
+                <area target="" alt="" title="" href="models_select.html?appar=PSII" coords="99,235,115,240,128,258,136,284,138,310,132,330,121,354,100,363,76,354,63,327,59,300,65,266,78,244" shape="poly" onclick="mapClick()" >
+              </map>
+            </div>
+          </div>
+
       </div>
     </div>
   </div>

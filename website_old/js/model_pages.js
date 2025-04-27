@@ -10,6 +10,35 @@ const InformationCats = {
 
 // Helper Functions
 
+// Custom math block parser
+const markedMathExtension = {
+    extensions: [
+      {
+        name: 'math',
+        level: 'inline',
+        start(src) {
+          return src.match(/\$/)?.index;
+        },
+        tokenizer(src) {
+          const match = /^\$([^$]+)\$/.exec(src);
+          if (match) {
+            return {
+              type: 'math',
+              raw: match[0],
+              text: match[1].trim(), // the inside of $$
+              tokens: [],
+            };
+          }
+        },
+        renderer(token) {
+          return `$${token.text}$`;
+        }
+      }
+    ]
+  };
+  
+marked.use(markedMathExtension);
+
 // Insert Element into DOM with prior Comment
 function insertCommentedElement(parent, ele, comm) {
     comm = document.createComment(comm)
@@ -231,17 +260,18 @@ async function getMdFile() {
     const figures = [];
 
     while ((matches = figuresDetailsRegex.exec(figuresSection)) !== null) {
-    const title = matches[1].trim();  // Title inside <summary>...</summary>
-    const content = matches[2];        // Inside the <details> block
+        const title = matches[1].trim();  // Title inside <summary>...</summary>
+        const content = matches[2];        // Inside the <details> block
 
-    // Extract the <img> src
-    const imgMatch = content.match(/<img[^>]+src=['"]([^'"]+)['"]/);
-    const imgSrc = imgMatch ? imgMatch[1] : null;
+        // Extract the <img> src
+        const imgMatch = content.match(/<img[^>]+src=['"]([^'"]+)['"]/);
+        const imgSrc = imgMatch ? imgMatch[1] : null;
 
-    // Remove the <img> tag from the content to get the text only
-    const text = marked.parse(content.replace(/<img[^>]*>/g, '').trim());
+        // Remove the <img> tag from the content to get the text only
+        const text = marked.parse(content.replace(/<img[^>]*>/g, '').trim());
+        console.log(text)
 
-    figures.push({ title, imgSrc, text });
+        figures.push({ title, imgSrc, text });
     }
 
     return {
@@ -557,9 +587,6 @@ for (const [key, value] of Object.entries(tabContainerButtons)) {
     modelAttrContent.id = `modelAttr${key}`;
     modelAttrContent.classList.add("modelTabContent", "hidden")
     insertCommentedElement(contentElement, modelAttrContent, `Model Info ${value}`)
-    var modelAttrContentHeading = document.createElement("h3")
-    modelAttrContentHeading.innerHTML = value
-    modelAttrContent.appendChild(modelAttrContentHeading)
 
     if (key != "Figures") {
         var modelAttrContentTable = document.createElement("table")
