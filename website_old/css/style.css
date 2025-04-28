@@ -339,10 +339,7 @@ textarea {
   flex-direction: row;
   gap: 0.2em;
   align-items: center;
-}
-
-.logoWithText > * {
-  flex-grow: 1;
+  justify-content: center;
 }
 
 /* Wrappers */
@@ -433,14 +430,39 @@ textarea {
 
 /* Slides */
 
-.slide {
-  display: inline-block;
-  height: 100%;
+.swiper-container,
+.swiper-wrapper {
   width: 100%;
-  scroll-snap-align: center;
-  aspect-ratio: 1/1;
-  padding-top: 2em;
+  height: 100%;
 }
+
+.swiper-slide {
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  background: var(--overallBackgroundLight);
+  /* Center slide text vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-content {
+  max-height: 90%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-size: 21px;
+}
+
+/* .swiper-content > * {
+  min-height: 0;
+} */
 
 /* Tab Links */
 
@@ -840,13 +862,23 @@ textarea {
   align-self: center;
 }
 
-.modelButtonBar {
+#modelBlockHead {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 0.5em;
-  align-items: stretch;
-  height: max-content;
+  align-items: center;
+}
+
+#modelBlockHead > * {
+  flex-grow: 1;
+}
+
+#modelBlockHead :last-child {
+  flex-grow: 0;
+}
+
+#modelButtonBar > * {
+  flex-basis: 0;
+  padding: 0.5em 1em;
 }
 
 .modelButtonBar > * {
@@ -858,16 +890,26 @@ textarea {
 .modelButtonBar > a, 
 .modelButtonBar > button {
   padding: 0 0.5em;
-  border-color: var(--buttonActiveBorderColor);
   text-decoration: none; /* Removes the default underline */
   border-radius: 5px; /* Rounds the corners (optional) */
   width: fit-content;
   vertical-align: middle;
 }
 
+.modelButtonBar > a {
+  display: flex;
+  flex-direction: row;
+  color: inherit;
+}
+
+.modelButtonBar > a > * {
+  flex-grow: 1;
+}
+
 .discreetText {
   color: var(--lightText);
   vertical-align: middle;
+  text-decoration: none;
 }
 
 .modelText {

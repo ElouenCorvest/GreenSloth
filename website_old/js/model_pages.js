@@ -460,33 +460,52 @@ var modelSummaryBlockScheme = document.createElement("img")
 modelSummaryBlockScheme.classList.add("modelScheme", "thisScheme")
 modelSummaryBlock.appendChild(modelSummaryBlockScheme)
 
-// Insert Model Title
-var modelSummaryBlockTitle = document.createElement("h1")
-modelSummaryBlockTitle.classList.add("modelText")
-modelSummaryBlockTitle.innerHTML = modelName
-modelSummaryBlock.appendChild(modelSummaryBlockTitle)
+// Insert Model Head
+var modelSummaryBlockHead = document.createElement("div")
+modelSummaryBlockHead.id = "modelBlockHead"
+modelSummaryBlock.appendChild(modelSummaryBlockHead)
 
-// Insert Model Button Bar
+// Insert Model Head Title
+var modelSummaryBlockHeadTitle = document.createElement("h1")
+modelSummaryBlockHeadTitle.classList.add("modelText")
+modelSummaryBlockHeadTitle.innerHTML = modelName
+modelSummaryBlockHead.appendChild(modelSummaryBlockHeadTitle)
+
+// Insert Model Head DOI
+var modelSummaryBlockHeadDOI = document.createElement("a")
+modelSummaryBlockHeadDOI.classList.add("discreetText")
+modelSummaryBlockHeadDOI.innerHTML = "DOI: Loading..."
+modelSummaryBlockHeadDOI.target = "_blank"
+updateDOI(modelSummaryBlockHeadDOI)
+modelSummaryBlockHead.appendChild(modelSummaryBlockHeadDOI)
+
+// Insert Tab Container
 var modelSummaryBlockBar = document.createElement("div")
-modelSummaryBlockBar.classList.add("modelButtonBar")
-modelSummaryBlock.appendChild(modelSummaryBlockBar)
+modelSummaryBlockBar.classList.add("TabContainer")
+modelSummaryBlockBar.id = "modelButtonBar"
+insertCommentedElement(modelSummaryBlock, modelSummaryBlockBar, "The Model Summary Buttons")
 
 // Insert Model Button Bar Github Button
 var modelSummaryBlockBarGithub = document.createElement("a")
-modelSummaryBlockBarGithub.classList.add("clickable", "logoWithText")
 modelSummaryBlockBarGithub.target = "_blank"
 modelSummaryBlockBarGithub.href = `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`
-modelSummaryBlockBarGithub.append("Github")
+modelSummaryBlockBarGithub.style = "display: flex; text-decoration: none; align-items: last baseline; justify-content: center;"
 modelSummaryBlockBar.prepend(modelSummaryBlockBarGithub)
+
+// Insert Model Button Bar Github Button Logo With Text
+var modelSummaryBlockBarGithubLogoText = document.createElement("div")
+modelSummaryBlockBarGithubLogoText.classList.add("logoWithText")
+modelSummaryBlockBarGithubLogoText.innerHTML = "Github"
+modelSummaryBlockBarGithubLogoText.style = "flex-grow: 1"
+modelSummaryBlockBarGithub.appendChild(modelSummaryBlockBarGithubLogoText)
 
 // Insert Model Button Bar Github Button Logo
 var githubLogo = document.createElement("span")
 githubLogo.classList.add("githubLogo")
-modelSummaryBlockBarGithub.prepend(githubLogo)
+modelSummaryBlockBarGithubLogoText.prepend(githubLogo)
 
 // Insert Model Button Bar Compare Button
 var modelSummaryBlockBarCompare = document.createElement("button")
-modelSummaryBlockBarCompare.classList.add("clickable")
 modelSummaryBlockBarCompare.onclick = function() {
     compareModal.classList.toggle("hidden")
     this.classList.toggle("active")
@@ -494,20 +513,13 @@ modelSummaryBlockBarCompare.onclick = function() {
 modelSummaryBlockBarCompare.append("Compare")
 modelSummaryBlockBar.appendChild(modelSummaryBlockBarCompare)
 
-// Insert Model Button Bar DOI
-var modelSummaryBlockBarDOI = document.createElement("a")
-modelSummaryBlockBarDOI.classList.add("discreetText")
-modelSummaryBlockBarDOI.innerHTML = "DOI: Loading..."
-modelSummaryBlockBarDOI.target = "_blank"
-updateDOI(modelSummaryBlockBarDOI)
-modelSummaryBlockBar.appendChild(modelSummaryBlockBarDOI)
-
 // Insert Model Button Bar Last Updated
 var modelSummaryBlockBarLastUpdate = document.createElement("p")
 modelSummaryBlockBarLastUpdate.classList.add("discreetText")
 modelSummaryBlockBarLastUpdate.innerHTML = "Last Update: Loading..."
+modelSummaryBlockBarLastUpdate.style = "flex-grow: 1; margin: 0; font-size: 0.7em; text-align: center;"
 updateLastModified(modelSummaryBlockBarLastUpdate)
-modelSummaryBlockBar.appendChild(modelSummaryBlockBarLastUpdate)
+modelSummaryBlockBarGithub.appendChild(modelSummaryBlockBarLastUpdate)
 
 // Insert Model Summary
 var modelSummaryBlockText = document.createElement("div")
