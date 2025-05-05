@@ -23,7 +23,7 @@ Rate constant of ATP synthase,$k_\mathrm{ATPsynth}$,$k_\mathrm{ATPsynthase}$,$20
 "Internal pool of phosphates, required to calculate ATP equilibrium",$\mathrm{Pi}_\mathrm{mol}$,$\mathrm{Pi}_\mathrm{mol}$,$0.01$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,Pi_mol,
 Standard Gibbs free energy change of ATP formation,$\Delta _\mathrm{f} G^\circ_\mathrm{ATP}$,$\Delta G_{0_{ATP}}$,$30.6$,$\mathrm{kJ}\ \mathrm{mol}^{-1}$,DeltaG0_ATP,https://doi.org/10.1098/rstb.2013.0223
 Ratio of protons to ATP in ATP synthase,$\mathrm{HPR}$,$\mathrm{HPR}$,$\frac{14}{3}$,,HPR,https://doi.org/10.1098/rstb.2013.0223
-Stromal pH of a dark adapted state,$\mathrm{pH}_\mathrm{stroma}$,$\mathrm{pH}_\mathrm{stroma}$,$7.9$,,pH_stroma,https://doi.org/10.1098/rstb.2013.0223
+Stromal pH of a dark adapted state,$\mathrm{pH}_\mathrm{st}$,$\mathrm{pH}_\mathrm{stroma}$,$7.9$,,pH_stroma,https://doi.org/10.1098/rstb.2013.0223
 Rate constant of proton leak,$k_\mathrm{Leak}$,$k_\mathrm{leak}$,$10.0$,$\mathrm{s}^{-1}$,k_Leak,https://doi.org/10.1098/rstb.2013.0223
 Buffering protons constant of lumen,$b_\mathrm{H}$,$b_\mathrm{H}$,$100.0$,,b_H,https://doi.org/10.1098/rstb.2013.0223
 ,$k_{\mathrm{PQ}_\mathrm{red}}$,$k_{\mathrm{PQ}_\mathrm{red}}$,$250.0$,$\left(\mathrm{mol\ Chl}\right)\ \mathrm{mmol}^{-1}\ \mathrm{s}^{-1}$ ,k_PQred,https://doi.org/10.1098/rstb.2013.0223

@@ -293,7 +293,7 @@
 |Internal pool of phosphates, required to calculate ATP equilibrium|$\mathrm{Pi}_\mathrm{mol}$|$\mathrm{Pi}_\mathrm{mol}$|$0.01$|$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$|Pi_mol||
 |Standard Gibbs free energy change of ATP formation|$\Delta _\mathrm{f} G^\circ_\mathrm{ATP}$|$\Delta G_{0_{ATP}}$|$30.6$|$\mathrm{kJ}\ \mathrm{mol}^{-1}$|DeltaG0_ATP|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Ratio of protons to ATP in ATP synthase|$\mathrm{HPR}$|$\mathrm{HPR}$|$\frac{14}{3}$||HPR|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
-|Stromal pH of a dark adapted state|$\mathrm{pH}_\mathrm{stroma}$|$\mathrm{pH}_\mathrm{stroma}$|$7.9$||pH_stroma|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
+|Stromal pH of a dark adapted state|$\mathrm{pH}_\mathrm{st}$|$\mathrm{pH}_\mathrm{stroma}$|$7.9$||pH_stroma|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Rate constant of proton leak|$k_\mathrm{Leak}$|$k_\mathrm{leak}$|$10.0$|$\mathrm{s}^{-1}$|k_Leak|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 |Buffering protons constant of lumen|$b_\mathrm{H}$|$b_\mathrm{H}$|$100.0$||b_H|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
 ||$k_{\mathrm{PQ}_\mathrm{red}}$|$k_{\mathrm{PQ}_\mathrm{red}}$|$250.0$|$\left(\mathrm{mol\ Chl}\right)\ \mathrm{mmol}^{-1}\ \mathrm{s}^{-1}$ |k_PQred|[[1]](https://doi.org/10.1098/rstb.2013.0223)|
@@ -444,10 +444,10 @@
 <summary>Equations of derived parameters</summary>
 
 ```math
-\mathrm{H}_\mathrm{st} =  1000.0 \cdot 10.0^{-\mathrm{pH}_\mathrm{stroma}}
+\mathrm{H}_\mathrm{st} =  1000.0 \cdot 10.0^{-\mathrm{pH}_\mathrm{st}}
 ```
 ```math
-K_\mathrm{QAPQ} =  \exp \left( \frac{-\left( -2 \cdot -E^0\mathrm{(QA/QA^-)} \cdot F + -2 \cdot E^0\mathrm{(PQ/PQH_2)} \cdot F + 2 \cdot \mathrm{pH}_\mathrm{stroma} \ln 10 \cdot R \cdot T \right)}{R \cdot T} \right)
+K_\mathrm{QAPQ} =  \exp \left( \frac{-\left( -2 \cdot -E^0\mathrm{(QA/QA^-)} \cdot F + -2 \cdot E^0\mathrm{(PQ/PQH_2)} \cdot F + 2 \cdot \mathrm{pH}_\mathrm{st} \ln 10 \cdot R \cdot T \right)}{R \cdot T} \right)
 ```
 ```math
 K_\mathrm{FAFd} =  \exp \left( \frac{-\left( -\left( -E^0\mathrm{(FA/FA^-)} \cdot F \right) + -E^0\mathrm{(Fd/Fd^-)} \cdot F \right)}{R \cdot T} \right)
@@ -456,13 +456,13 @@ K_\mathrm{FAFd} =  \exp \left( \frac{-\left( -\left( -E^0\mathrm{(FA/FA^-)} \cdo
 K_\mathrm{PCP700} =  \exp \left( \frac{-\left( -\left( -E^0\mathrm{(PC/PC^-)} \cdot F \right) + -E^0\mathrm{(P_{700}^+/P_{700})} \cdot F \right)}{R \cdot T} \right)
 ```
 ```math
-K_\mathrm{FNR} =  \exp \left( \frac{-\left( -2 \cdot -E^0\mathrm{(Fd/Fd^-)} \cdot F + -2 \cdot E^0\mathrm{(NADP^+/NADPH)} \cdot F + \ln 10 \cdot R \cdot T \cdot \mathrm{pH}_\mathrm{stroma} \right)}{R \cdot T} \right)
+K_\mathrm{FNR} =  \exp \left( \frac{-\left( -2 \cdot -E^0\mathrm{(Fd/Fd^-)} \cdot F + -2 \cdot E^0\mathrm{(NADP^+/NADPH)} \cdot F + \ln 10 \cdot R \cdot T \cdot \mathrm{pH}_\mathrm{st} \right)}{R \cdot T} \right)
 ```
 ```math
-K_\mathrm{ATPsynthase} =  \mathrm{Pi}_\mathrm{mol} \cdot \exp \left( \frac{- \left( \Delta _\mathrm{f} G^\circ_\mathrm{ATP} - \left( \ln(10) \cdot R \cdot T \right) \cdot \mathrm{HPR} \cdot \left( \mathrm{pH}_\mathrm{stroma} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T} \right)
+K_\mathrm{ATPsynthase} =  \mathrm{Pi}_\mathrm{mol} \cdot \exp \left( \frac{- \left( \Delta _\mathrm{f} G^\circ_\mathrm{ATP} - \left( \ln(10) \cdot R \cdot T \right) \cdot \mathrm{HPR} \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T} \right)
 ```
 ```math
-K_\mathrm{cytb6f} =  \exp \left( \frac{-\left( -\left( -2 \cdot F \cdot E^0\mathrm{(PQ/PQH_2)} + 2 \cdot \ln 10 \cdot R T \cdot \mathrm{pH}_\mathrm{lu} \right) + 2 \cdot -F \cdot E^0\mathrm{(PC/PC^-)} + 2 \ln 10 \cdot R \cdot T \cdot \left( \mathrm{pH}_\mathrm{stroma} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T} \right)
+K_\mathrm{cytb6f} =  \exp \left( \frac{-\left( -\left( -2 \cdot F \cdot E^0\mathrm{(PQ/PQH_2)} + 2 \cdot \ln 10 \cdot R T \cdot \mathrm{pH}_\mathrm{lu} \right) + 2 \cdot -F \cdot E^0\mathrm{(PC/PC^-)} + 2 \ln 10 \cdot R \cdot T \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right) \right)}{R \cdot T} \right)
 ```
 ```math
 V_{\mathrm{max}|\mathrm{RuBisCO}}  = \mathrm{E}_\mathrm{CBB,\ inact} \cdot V_{\mathrm{max,\ base}_{\mathrm{RuBisCO}}}
@@ -564,7 +564,7 @@ v_{\mathrm{Cyc}} =  k_\mathrm{cyc} \cdot \mathrm{Fd}_\mathrm{red}^{2} \cdot \mat
 v_{\mathrm{FNR}} =  \frac{\mathrm{EFNR} \cdot k_{\mathrm{cat}|\mathrm{FNRase}} \cdot \left( \left( \frac{\mathrm{Fd}_\mathrm{red}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} \right)^{2} \cdot \frac{\mathrm{NADP}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}} - \frac{\left( \frac{\mathrm{Fd}_\mathrm{ox}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} \right)^{2} \cdot \frac{\mathrm{NADPH}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}}}{K_\mathrm{FNR}} \right)}{\left( 1 + \frac{\mathrm{Fd}_\mathrm{red}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} + \left( \frac{\mathrm{Fd}_\mathrm{red}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} \right)^{2} \right) \left( 1 + \frac{\mathrm{NADP}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}} \right) + \left( 1 + \frac{\mathrm{Fd}_\mathrm{ox}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} + \left( \frac{\mathrm{Fd}_\mathrm{ox}}{K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}} \right)^{2} \right) \cdot \left( 1 + \frac{\mathrm{NADPH}_\mathrm{st}}{\mathrm{convf} \cdot K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}} \right) - 1}
 ```
 ```math
-v_{\mathrm{Leak}} =  k_\mathrm{Leak} \cdot \left( \mathrm{H_{lu}} - 4 \times 10^3 \cdot 10^{\mathrm{pH}_\mathrm{stroma}} \right)
+v_{\mathrm{Leak}} =  k_\mathrm{Leak} \cdot \left( \mathrm{H_{lu}} - 4 \times 10^3 \cdot 10^{\mathrm{pH}_\mathrm{st}} \right)
 ```
 ```math
 v_{\mathrm{St21}} =  k_\mathrm{Stt7} \cdot \frac{1}{1 + \left( \frac{\mathrm{PQ}}{\mathrm{PQ}^{\mathrm{tot}} \cdot K_{\mathrm{M}_\mathrm{ST}}} \right)^{n_\mathrm{ST}}} \cdot \mathrm{LHC}
