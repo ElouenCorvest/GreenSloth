@@ -470,6 +470,11 @@ textarea {
   justify-content: center;
 }
 
+.swiper-content > h1,
+.swiper-content > p {
+  text-align: justify;
+}
+
 .swiper-button {
   position: relative;
   color: var(--mainAccentColor);
