@@ -28,6 +28,11 @@ var swiper = new Swiper('.swiper-container', {
         clickable: true,
         type: "bullets"
     },
-    // freeMode: true,
-    // freeModeSticky: true
+
+    // URL Navigation
+    hashNavigation: {
+        watchstate: true,
+        replaceState: true,
+      },
+
   });
