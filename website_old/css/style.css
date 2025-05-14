@@ -33,6 +33,12 @@
   --lightText: rgb(197, 197, 197);
 }
 
+@property --nav-height {
+  syntax: "<number>";
+  initial-value: 70px;
+  inherits: true;
+}
+
 html {
   color: #222;
   font-size: 16px;
@@ -361,10 +367,13 @@ textarea {
 #layoutWrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  max-height: 100vh;
 }
 
 #topnav {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--mainAccentColor);
@@ -400,6 +409,7 @@ textarea {
 }
 
 #wrapper {
+  padding-top: 1em;
   flex: 1;
   align-self: center;
   width: 100%;
@@ -445,6 +455,11 @@ textarea {
 .swiper-container {
   flex: 1;
   min-height: 0;
+  margin-top: var(--nav-height);
+}
+
+.swiper-wrapper {
+  height: 100%;
 }
 
 .swiper-slide {

@@ -42,29 +42,15 @@
 </head>
 
 <body>
-
+  <div id="citeModal" class="modal hidden"></div>
   <div id="layoutWrapper" class="">
-    <header id="topnav">
-      <div class="topnav-left">
-        <img src="../img/icon.svg"/>
-      </div>
-
-      <div class="topnav-center">
-        <a class="tablinks active" href="index.html">Home</a>
-        <a class="tablinks" href="models_select.html">Models</a>
-        <button class="tablinks" id="openCiteModal">Cite</button>
-        <a class="logoWithText tablinks" href="https://github.com/ElouenCorvest/GreenSloth/tree/main" target="_blank""><span class="githubLogo"></span>GreenSloth</a>
-        <a class="tablinks" href="index.html#HowToUse">How To Use</a>
-      </div>
-
-      <div class="topnav-right"></div>
-    </header>
+    <nav id="topnav"></nav>
     
-    <div id="citeModal" class="modal hidden"></div>
+    
 
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" data-hash="Home">
+        <div class="swiper-slide" data-hash="Home" id="HowToUse">
           <div class="swiper-prev-button swiper-button">
             <span class="arrowUp"></span>
           </div>
@@ -141,6 +127,7 @@
   </div>
 
   <script type="module" src="../js/index.js"></script>
+  <script type="text/javascript" src="../js/topnav.js"></script>
   <script type="text/javascript" src="../js/cite.js"></script>
   <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
   
