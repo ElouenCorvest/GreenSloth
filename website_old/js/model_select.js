@@ -3,8 +3,6 @@ function toggleTags() {
     document.querySelector('.tagsBox').classList.toggle('hidden')
 };
 
-
-
 var modelSelector = document.getElementById("model-selector")
 const tagsBox = document.getElementById("tagsBox");
 

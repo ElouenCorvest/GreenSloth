@@ -563,6 +563,14 @@ textarea {
 }
 
 /* Index Page */
+#photosynth-scheme-atpsynth {
+  opacity: 0.5;
+}
+
+.test {
+  cursor:grab;
+}
+
 #PhotosynthesisScheme {
   text-align: center;
 }
