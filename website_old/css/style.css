@@ -563,16 +563,16 @@ textarea {
 }
 
 /* Index Page */
-#photosynth-scheme-atpsynth {
-  opacity: 0.5;
+#photosynthesis-scheme > a {
+  transition: 0.3s ease-in-out;
 }
 
-.test {
-  cursor:grab;
+#photosynthesis-scheme:is(:hover, :focus) > a {
+  filter: grayscale(1);
 }
 
-#PhotosynthesisScheme {
-  text-align: center;
+#photosynthesis-scheme > a:is(:hover, :focus) {
+  filter: grayscale(0);
 }
 
 /* Model Selection */
