@@ -35,7 +35,7 @@
 
 @property --nav-height {
   syntax: "<number>";
-  initial-value: 70px;
+  initial-value: 70;
   inherits: true;
 }
 

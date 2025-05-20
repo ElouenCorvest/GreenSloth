@@ -1,6 +1,6 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-import Navigation from"https://cdn.jsdelivr.net/npm/swiper@11/modules/navigation.min.mjs"
-import Pagination from"https://cdn.jsdelivr.net/npm/swiper@11/modules/pagination.min.mjs"
+// core version + navigation, pagination modules:
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 // Register the Navigation module
 Swiper.use([Navigation, Pagination]);
