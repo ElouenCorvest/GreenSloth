@@ -1,0 +1,19 @@
+{
+  "name": "greensloth",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "marked": "^15.0.12",
+    "papaparse": "^5.5.3",
+    "swiper": "^11.2.7"
+  }
+}
