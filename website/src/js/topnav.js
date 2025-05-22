@@ -60,6 +60,13 @@ topnavBarCenterHowToUse.href = "../../slides/HowToUse"
 topnavBarCenterHowToUse.innerHTML = "How To Use"
 topnavBarCenter.appendChild(topnavBarCenterHowToUse)
 
+// Center Contribution
+var topnavBarCenterContribution = document.createElement("a")
+topnavBarCenterContribution.classList.add("tablinks")
+topnavBarCenterContribution.href = "/src/html/contribution.html"
+topnavBarCenterContribution.innerHTML = "Contribution"
+topnavBarCenter.appendChild(topnavBarCenterContribution)
+
 // Right Side
 var topnavBarRight = document.createElement("div")
 topnavBarRight.classList.add("topnav-right")

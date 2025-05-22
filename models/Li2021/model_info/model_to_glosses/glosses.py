@@ -11,7 +11,6 @@ sys.path.insert(0, os.path.dirname(parentdir))
 
 from model import Li2021  # noqa: E402
 
-
 extract_select_to_gloss(
     select=Li2021().variables,
     column_names=[

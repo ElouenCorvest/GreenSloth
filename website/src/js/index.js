@@ -40,6 +40,27 @@ var swiper = new Swiper('.swiper-container', {
 
   });
 
+// How To Use
+var tabContainer = document.getElementsByClassName("TabContainer")[0]
+console.log(tabContainer.children)
+for (let i = 0; i < tabContainer.children.length; i++) {
+    const button = tabContainer.children[i]
+    button.addEventListener('click', function() {
+        for (let j = 0; j < tabContainer.children.length; j++) {
+            const otherButton = tabContainer.children[j]
+            if (otherButton != button) {
+                otherButton.classList.remove("active")
+                const text = document.getElementById(`howtouse-${otherButton.innerHTML.toLowerCase()}`)
+                text.classList.add("hidden")
+            } else {
+                otherButton.classList.add("active")
+                const text = document.getElementById(`howtouse-${otherButton.innerHTML.toLowerCase()}`)
+                text.classList.remove("hidden")
+            }
+        }
+    })
+}
+
 // Photosynthesis Scheme
 
 // Photosynthesis Scheme - Set the links
