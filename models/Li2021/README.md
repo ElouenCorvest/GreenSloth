@@ -16,30 +16,30 @@ The [Li2021](https://doi.org/10.1038/s41477-021-00947-5)
 
 #### Part of ODE system
 
-|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Name|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Violaxanthin|$\mathrm{Vx}$|$\mathrm{Vx}$|CPD1F-133|Vx|
-|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|CPD1F-130|Zx|
-|Stromal ATP concentration|$\mathrm{ATP_{st}}$|$\mathrm{ATP}$|ATP|ATP_st|
-|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|ADP|ADP_st|
-|Lumenal K+ concentration|$\mathrm{K}^{+}_{\mathrm{lu}}$|$\mathrm{K}^{+}_{\mathrm{lumen}}$||K_lu|
-|Stromal K+ concentration|$\mathrm{K}^{+}_{\mathrm{st}}$|$\mathrm{K}^{+}_{\mathrm{stroma}}$||K_st|
-|Lumenal Cl- concentration|$\mathrm{Cl}^{-}_{\mathrm{lu}}$|$\mathrm{Cl}^{-}_{\mathrm{lumen}}$||Cl_lu|
-|Stromal Cl- concentration|$\mathrm{Cl}^{-}_{\mathrm{st}}$|$\mathrm{Cl}^{-}_{\mathrm{stroma}}$||Cl_st|
+|Violaxanthin|$\mathrm{Vx}$|$\mathrm{Vx}$|C08614|Vx|
+|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|C06098|Zx|
+|Stromal ATP concentration|$\mathrm{ATP_{st}}$|$\mathrm{ATP}$|C00002|ATP_st|
+|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|C00008|ADP_st|
+|Lumenal K+ concentration|$\mathrm{K}^{+}_{\mathrm{lu}}$|$\mathrm{K}^{+}_{\mathrm{lumen}}$|C00238|K_lu|
+|Stromal K+ concentration|$\mathrm{K}^{+}_{\mathrm{st}}$|$\mathrm{K}^{+}_{\mathrm{stroma}}$|C00238|K_st|
+|Lumenal Cl- concentration|$\mathrm{Cl}^{-}_{\mathrm{lu}}$|$\mathrm{Cl}^{-}_{\mathrm{lumen}}$|C00698|Cl_lu|
+|Stromal Cl- concentration|$\mathrm{Cl}^{-}_{\mathrm{st}}$|$\mathrm{Cl}^{-}_{\mathrm{stroma}}$|C00698|Cl_st|
 |Transthylakoid electric field|$\Delta \Psi _{\mathrm{thylakoid}}$|$\Delta \Psi$||Dpsi|
 |Oxidised primary quinone of PSII|$\mathrm{Q_{A\|ox}}$|$\mathrm{Q_{A}}$||QA_ox|
 |Reduced primary quinone of PSII|$\mathrm{Q_{A\|red}}$|$\mathrm{Q_{A}}^{-}$||QA_red|
-|Plastoquinol|$\mathrm{PQH}_2$|$\mathrm{PQH_2}$|Plastoquinols|PQH_2|
-|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}$|PLASTOQUINONE|PQ|
+|Plastoquinol|$\mathrm{PQH}_2$|$\mathrm{PQH_2}$|C16693|PQH_2|
+|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}$|C02061|PQ|
 |Reduced Plastocyanine|$\mathrm{PC}_\mathrm{red}$|$\mathrm{PC}$|C03025|PC_red|
 |Oxidized Plastocyanine|$\mathrm{PC}_\mathrm{ox}$|$\mathrm{PC}^+$|C03162|PC_ox|
 |Oxidized Ferrodoxin|$\mathrm{Fd}_\mathrm{ox}$|$\mathrm{Fd_{ox}}$|C00139|Fd_ox|
 |Reduced Ferrodoxin|$\mathrm{Fd}_\mathrm{red}$|$\mathrm{Fd_{red}}$|C00138|Fd_red|
-|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH_{lumen}}||pH_lu|
-|Stromal NADPH concentration|$\mathrm{NADPH}_\mathrm{st}$|$\mathrm{NADPH}$|NADPH|NADPH_st|
-|Stromal NADP concentration|$\mathrm{NADP}_\mathrm{st}$|$\mathrm{NADP}^+$|NADP|NADP_st|
-|Ground state of PSI (P700)|$\mathrm{Y_0}$|$\mathrm{P_{700}}$||Y0|
-|Oxidised state of PSI (P700+)|$\mathrm{Y_2}$|$\mathrm{P_{700}}^+$||Y2|
+|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH_{lumen}}|C00080|pH_lu|
+|Stromal NADPH concentration|$\mathrm{NADPH}_\mathrm{st}$|$\mathrm{NADPH}$|C00005|NADPH_st|
+|Stromal NADP concentration|$\mathrm{NADP}_\mathrm{st}$|$\mathrm{NADP}^+$|C00006|NADP_st|
+|Ground state of PSI (P700)|$\mathrm{Y_0}$|$\mathrm{P_{700}}$|M00163|Y0|
+|Oxidised state of PSI (P700+)|$\mathrm{Y_2}$|$\mathrm{P_{700}}^+$|M00163|Y2|
 
 
 
@@ -111,16 +111,16 @@ The [Li2021](https://doi.org/10.1038/s41477-021-00947-5)
                      
 #### Conserved quantities
 
-|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Name|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Lumenal Proton concentration|$\mathrm{H_{lu}}$|$H_{lumen}$|PROTON|H_lu|
+|Lumenal Proton concentration|$\mathrm{H_{lu}}$|$H_{lumen}$|C00080|H_lu|
 |The total proton motive force|$\mathrm{PMF}$|$pmf$||PMF|
-|Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$PsbS\_H$|AT1G44575|PsbSP|
+|Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$PsbS\_H$|K03542|PsbSP|
 |Nonphotochemical quenching|$\mathrm{NPQ}$|$NPQ$||NPQ|
 |Amount of protons going to ATPsynthase|$\mathrm{Prot_{ATPsynth}}$|$\mathrm{d\_protons\_to\_ATP}$||Prot_ATPsynth|
 |Efficiency of PSII|$\Phi \mathrm{PSII}$|$\Phi \mathrm{PSII}$||PhiPSII|
-|Number of $^1\mathrm{O_2}$|$^1\mathrm{O_2}$|$^1\mathrm{O_2}$||singO2|
-|Stromal Proton concentration|$\mathrm{H_{st}}$|$H_{stroma}$|PROTON|H_st|
+|Number of $^1\mathrm{O_2}$|$^1\mathrm{O_2}$|$^1\mathrm{O_2}$|C00007|singO2|
+|Stromal Proton concentration|$\mathrm{H_{st}}$|$H_{stroma}$|C00080|H_st|
 
 
 
@@ -251,23 +251,23 @@ v_\mathrm{PSII|recomb} =  k_\mathrm{recomb} \cdot \mathrm{Q_{A|red}} \cdot 10^{\
                      
 ### Reaction Rates
 
-|Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Short Description|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Rate of the b6f complex|$v_{\mathrm{b6f}}$|$v_{b6f}$||v_b6f|
+|Rate of the b6f complex|$v_{\mathrm{b6f}}$|$v_{b6f}$|R03817|v_b6f|
 |Reduction of PQ pool by NADH reductase|$v_{\mathrm{NDH}}$|$v_{NDH}$||v_NDH|
 |Rate of PRG5|$v_\mathrm{PRG5}$|$v_{PGR}$||v_PGR|
-|De-epoxidation of violaxanthin|$v_{\mathrm{Deepox}}$|$v_{VDE}$||v_Deepox|
-|Production of ATP by ATPsynthase|$v_{\mathrm{ATPsynthase}}$|$v_{ATPsynthase}$||v_ATPsynth|
+|De-epoxidation of violaxanthin|$v_{\mathrm{Deepox}}$|$v_{VDE}$|R10070|v_Deepox|
+|Production of ATP by ATPsynthase|$v_{\mathrm{ATPsynthase}}$|$v_{ATPsynthase}$|R00086|v_ATPsynth|
 |Rate of main voltage-gated chloride channel (VCCN1)|$v_\mathrm{VCCN1}$|$v_{VCCN1}$||v_VCCN1|
 |Rate of ClCe|$v_\mathrm{ClCe}$|$v_{ClCe}$||v_ClCe|
 |Rate of K+/H+ anitporter KEA3|$v_\mathrm{KEA3}$|$v_{KEA3}$||v_KEA3|
 |Rate of voltage-gated K+ channel|$v_\mathrm{VKC}$|$v_{K\_channel}$||v_VKC|
 |Number of charge seperations in PSII per second|$\mathrm{PSII_{ChSep}}$|$PSII_{charge}$||vPSII_ChSep|
 |Rate of PSII recombination|$v_\mathrm{PSII\|recomb}$|$PSII_{recom}$||vPSII_recomb|
-|Reduction of PQ due to PSII|$v_{\mathrm{PSII}}$|$v_{PSII}$||v_PSII|
+|Reduction of PQ due to PSII|$v_{\mathrm{PSII}}$|$v_{PSII}$|R09503|v_PSII|
 |Number of charge seperations in PSII per second|$\mathrm{PSI_{ChSep}}$|$PSI_{charge}$||PSI_ChSep|
 |Rate of PC oxidiation by PSI|$v_\mathrm{PSI\|PCoxid}$|$PSI_{PC\_oxidiation}$||v_PSI_PCoxid|
-|Reaction mediated by FNR|$v_{\mathrm{FNR}}$|$v_{FNR}$||v_FNR|
+|Reaction mediated by FNR|$v_{\mathrm{FNR}}$|$v_{FNR}$|R01195|v_FNR|
 |The rate for a simplified Calvin-Benson Cycle|$v_\mathrm{CBB}$|$v_{CBB}$||v_CBB|
 |Mehler reaction lumping the reduction of O2 instead of Fd|$v_{\mathrm{Mehler}}$|$v_{Mehler}$||v_Mehler|
 

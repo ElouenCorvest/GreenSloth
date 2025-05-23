@@ -20,14 +20,14 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 
 #### Part of ODE system
 
-|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Name|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Plastoquinol|$\mathrm{PQH}_2$|$\mathrm{PQH}_2$|Plastoquinols|PQH_2|
-|Lumenal Proton concentration|$\mathrm{H_{lu}}$|$\mathrm{H}$|PROTON|H_lu|
-|Concentration of active ATPase protein|$\mathrm{ATPase}^*$|$\mathrm{ATPase}^*$||ATPase_ac|
-|Stromal ATP concentration|$\mathrm{ATP_{st}}$|$\mathrm{ATP}$|ATP|ATP_st|
-|Concentration of psbS protein|$\mathrm{psbS}$|$\mathrm{PsbS}$|AT1G44575|psbS|
-|Violaxanthin|$\mathrm{Vx}$|$\mathrm{Vx}$|CPD1F-133|Vx|
+|Plastoquinol|$\mathrm{PQH}_2$|$\mathrm{PQH}_2$|C16693|PQH_2|
+|Lumenal Proton concentration|$\mathrm{H_{lu}}$|$\mathrm{H}$|C00080|H_lu|
+|Concentration of active ATPase protein|$\mathrm{ATPase}^*$|$\mathrm{ATPase}^*$|M00157|ATPase_ac|
+|Stromal ATP concentration|$\mathrm{ATP_{st}}$|$\mathrm{ATP}$|C00002|ATP_st|
+|Concentration of psbS protein|$\mathrm{psbS}$|$\mathrm{PsbS}$|K03542 |psbS|
+|Violaxanthin|$\mathrm{Vx}$|$\mathrm{Vx}$|C08614|Vx|
 
 
 
@@ -57,18 +57,18 @@ To demonstrate the adaptability of their model, the authors took their calibrate
                      
 #### Conserved quantities
 
-|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|old|
+|Name|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|old|
 | :---: | :---: | :---: | :---: | :---: | :---: |
-|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH}$||pH_lu|pH|
-|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}$|PLASTOQUINONE|PQ|Pox|
-|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|ADP|ADP_st|ADP|
-|Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$\mathrm{PsbS^P}$|AT1G44575|PsbSP|Pnr|
-|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|CPD1F-130|Zx|Z|
+|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH}$|C00080|pH_lu|pH|
+|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}$|C02061|PQ|Pox|
+|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|C00008|ADP_st|ADP|
+|Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$\mathrm{PsbS^P}$|K03542|PsbSP|Pnr|
+|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|C06098|Zx|Z|
 |Co-operative 4-state quenching mechanism|$\mathrm{Q}$|||Q|Q|
-|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$|PSII|B0|B0|
-|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$|PSII|B1|B1|
-|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$|PSII|B2|B2|
-|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$|PSII|B3|B3|
+|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$|M00161|B0|B0|
+|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$|M00161|B1|B1|
+|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$|M00161|B2|B2|
+|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$|M00161|B3|B3|
 |Flourescence|$\mathrm{Fluo}$|$\mathrm{Fluo}$||Fluo|Fluo|
 
 
@@ -202,15 +202,15 @@ K_\mathrm{cytb6f} =  \mathrm{Pi^{mol}} \cdot \exp \left( \frac{-\left( \Delta G_
                      
 ### Reaction Rates
 
-|Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Short Description|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Reduction of PQ due to PSII|$v_{\mathrm{PSII}}$|$v_{\mathrm{PSII}}$||v_PSII|
+|Reduction of PQ due to PSII|$v_{\mathrm{PSII}}$|$v_{\mathrm{PSII}}$|R09503|v_PSII|
 |Oxidation of the PQ pool through cytochrome and PTOX|$v_{\mathrm{PQ}_{\mathrm{ox}}}$|$v_{\mathrm{PQ}_{\mathrm{ox}}}$||v_PQ|
-|Production of ATP by ATPsynthase|$v_{\mathrm{ATPsynthase}}$|$v_{\mathrm{ATPsynthase}}$||v_ATPsynth|
+|Production of ATP by ATPsynthase|$v_{\mathrm{ATPsynthase}}$|$v_{\mathrm{ATPsynthase}}$|R00086|v_ATPsynth|
 |Activation of ATPsynthase by light|$v_{\mathrm{ATPactivity}}$|$v_{\mathrm{ATPactivity}}$||v_ATPact|
 |Transmembrane Proton Leak|$v_{\mathrm{Leak}}$|$v_{\mathrm{Leak}}$||v_Leak|
 |ATP consuming reaction|$v_{\mathrm{ATP}_{\mathrm{consumption}}}$|$v_{\mathrm{ATP}_{\mathrm{consumption}}}$||v_ATPcons|
-|Xanthophyll cycle|$v_{\mathrm{Xcyc}}$|$v_{\mathrm{Xcyc}}$||v_Xcyc|
+|Xanthophyll cycle|$v_{\mathrm{Xcyc}}$|$v_{\mathrm{Xcyc}}$|R10070|v_Xcyc|
 |Protonation of psbS protein|$v_{\mathrm{Psbs^P}}$|$v_{\mathrm{Psbs^P}}$||v_PsbSP|
 
 

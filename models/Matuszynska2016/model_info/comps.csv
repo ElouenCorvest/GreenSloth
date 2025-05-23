@@ -1,7 +1,7 @@
-Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
-Plastoquinol,$\mathrm{PQH}_2$,$\mathrm{PQH}_2$,Plastoquinols,PQH_2,1
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,$\mathrm{H}$,PROTON,H_lu,3
-Concentration of active ATPase protein,$\mathrm{ATPase}^*$,$\mathrm{ATPase}^*$,,ATPase_ac,6
-Stromal ATP concentration,$\mathrm{ATP_{st}}$,$\mathrm{ATP}$,ATP,ATP_st,2
-Concentration of psbS protein,$\mathrm{psbS}$,$\mathrm{PsbS}$,AT1G44575,psbS,4
-Violaxanthin,$\mathrm{Vx}$,$\mathrm{Vx}$,CPD1F-133,Vx,5
+Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
+Plastoquinol,$\mathrm{PQH}_2$,$\mathrm{PQH}_2$,C16693,PQH_2,1
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,$\mathrm{H}$,C00080,H_lu,3
+Concentration of active ATPase protein,$\mathrm{ATPase}^*$,$\mathrm{ATPase}^*$,M00157,ATPase_ac,6
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,$\mathrm{ATP}$,C00002,ATP_st,2
+Concentration of psbS protein,$\mathrm{psbS}$,$\mathrm{PsbS}$,K03542 ,psbS,4
+Violaxanthin,$\mathrm{Vx}$,$\mathrm{Vx}$,C08614,Vx,5

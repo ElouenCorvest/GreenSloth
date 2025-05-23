@@ -1,48 +1,48 @@
-Short Description,Common Abbr.,Python Var,MetaCyc ID,Glossary ID,Reference
-Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,v_PSII,,1,"Matuszynska2016, Saadat2021, Li2021"
+Short Description,Common Abbr.,Python Var,KEGG ID,Glossary ID,Reference
+Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,v_PSII,R09503,1,"Matuszynska2016, Saadat2021, Li2021"
 Oxidation of the PQ pool through cytochrome and PTOX,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,v_PQ,,2,"Matuszynska2016, Saadat2021"
-Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,v_ATPsynth,,3,"Matuszynska2016, Saadat2021, Li2021"
+Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,v_ATPsynth,R00086,3,"Matuszynska2016, Saadat2021, Li2021"
 Activation of ATPsynthase by light,$v_{\mathrm{ATPactivity}}$,v_ATPact,,4,Matuszynska2016
 Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,v_Leak,,5,"Matuszynska2016, Saadat2021"
 ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,v_ATPcons,,6,"Matuszynska2016, Saadat2021"
-Xanthophyll cycle,$v_{\mathrm{Xcyc}}$,v_Xcyc,,7,Matuszynska2016
+Xanthophyll cycle,$v_{\mathrm{Xcyc}}$,v_Xcyc,R10070,7,Matuszynska2016
 Protonation of psbS protein,$v_{\mathrm{Psbs^P}}$,v_PsbSP,,8,"Matuszynska2016, Saadat2021"
-Rate of the b6f complex,$v_{\mathrm{b6f}}$,v_b6f,,9,"Saadat2021, Li2021"
-Reaction mediated by FNR,$v_{\mathrm{FNR}}$,v_FNR,,10,"Saadat2021, Li2021"
+Rate of the b6f complex,$v_{\mathrm{b6f}}$,v_b6f,R03817,9,"Saadat2021, Li2021"
+Reaction mediated by FNR,$v_{\mathrm{FNR}}$,v_FNR,R01195,10,"Saadat2021, Li2021"
 Ferredoxin-plastoquinone reductase,$v_{\mathrm{FQR}}$,v_FQR,,11,Saadat2021
 Reduction of PQ pool by NADH reductase,$v_{\mathrm{NDH}}$,v_NDH,,12,"Saadat2021, Li2021"
-Cyclic electron flow,$v_{\mathrm{Cyc}}$,v_Cyc,,13,Saadat2021
+Cyclic electron flow,$v_{\mathrm{Cyc}}$,v_Cyc,EC 7.1.1.10,13,Saadat2021
 State transitions from PSII to PSI,$v_{\mathrm{St21}}$,v_St21,,14,Saadat2021
 State transitions from PSI to PSII,$v_{\mathrm{St12}}$,v_St12,,15,Saadat2021
-De-epoxidation of violaxanthin,$v_{\mathrm{Deepox}}$,v_Deepox,,16,"Saadat2021, Li2021"
-Epoxidation of violaxanthin,$v_{\mathrm{Epox}}$,v_Epox,,17,Saadat2021
+De-epoxidation of violaxanthin,$v_{\mathrm{Deepox}}$,v_Deepox,R10070,16,"Saadat2021, Li2021"
+Epoxidation of violaxanthin,$v_{\mathrm{Epox}}$,v_Epox,R10070,17,Saadat2021
 Deprotonation of psbS protein,$v_{\mathrm{Psbs^D}}$,v_PsbSD,,18,Saadat2021
-Rate of RuBisCo,$v_{\mathrm{RuBisCo}}$,v_RuBisCO,,19,Saadat2021
-Rate of FBPase,$v_{\mathrm{FBPase}}$,v_FBPase,,20,Saadat2021
-Rate of SBPase,$v_{\mathrm{SBPase}}$,v_SBPase,,21,Saadat2021
-Rate of PRKase,$v_{\mathrm{PRKase}}$,v_PRKase,,22,Saadat2021
+Rate of RuBisCo,$v_{\mathrm{RuBisCo}}$,v_RuBisCO,R00024,19,Saadat2021
+Rate of FBPase,$v_{\mathrm{FBPase}}$,v_FBPase,R00762,20,Saadat2021
+Rate of SBPase,$v_{\mathrm{SBPase}}$,v_SBPase,R01845,21,Saadat2021
+Rate of PRKase,$v_{\mathrm{PRKase}}$,v_PRKase,R01523,22,Saadat2021
 Export of PGA,"$v_{\mathrm{PGA,\ ex}}$",v_pga_ex,,23,Saadat2021
 Export of DHAP,"$v_{\mathrm{DHAP,\ ex}}$",v_dhap_ex,,24,Saadat2021
 Export of GAP,"$v_{\mathrm{GAP,\ ex}}$",v_gap_ex,,25,Saadat2021
 Starch production,$v_{\mathrm{Starch}}$,v_starch,,26,Saadat2021
-Rate of PGK1ase,$v_{\mathrm{PGK1ase}}$,v_PGK1ase,,27,Saadat2021
-Rate of BPGA dehydrogenase,$v_{\mathrm{BPGAdehynase}}$,v_BPGAdehynase,,28,Saadat2021
-Rate of TPIase,$v_{\mathrm{TPIase}}$,v_TPIase,,29,Saadat2021
-Rate of Aldolase of GAP and DHAP to FBP,$v_{\mathrm{Aldolase_{FBP}}}$,v_Aldolase_FBP,,30,Saadat2021
-Rate of TKase of GAP and F6P to X5P and E4P,$v_{\mathrm{TKase_{E4P}}}$,v_TKase_E4P,EC 2.2.1.1,31,Saadat2021
-Rate of Aldolase of E4P and DHAP to SBP,$v_{\mathrm{Aldolase_{SBP}}}$,v_Aldolase_SBP,,32,Saadat2021
-Rate of TKase of GAP and S7P to X5P and R5P,$v_{\mathrm{TKase_{R5P}}}$,v_TKase_R5P,EC 2.2.1.1,33,Saadat2021
-Rate of Rpiase,$v_{\mathrm{Rpiase}}$,v_Rpiase,EC 5.3.1.6,34,Saadat2021
-Rate of RPEase,$v_{\mathrm{RPEase}}$,v_RPEase,EC 5.1.3.1,35,Saadat2021
-Rate of PGIase,$v_{\mathrm{PGIase}}$,v_PGIase,AT4G24620,36,Saadat2021
-Rate of PGMase,$v_{\mathrm{PGMase}}$,v_PGMase,AT5G51820,37,Saadat2021
-,$v_{\mathrm{PSI}}$,v_PSI,,38,Saadat2021
+Rate of PGK1ase,$v_{\mathrm{PGK1ase}}$,v_PGK1ase,R01512,27,Saadat2021
+Rate of BPGA dehydrogenase,$v_{\mathrm{BPGAdehynase}}$,v_BPGAdehynase,R01063,28,Saadat2021
+Rate of TPIase,$v_{\mathrm{TPIase}}$,v_TPIase,R01015,29,Saadat2021
+Rate of Aldolase of GAP and DHAP to FBP,$v_{\mathrm{Aldolase_{FBP}}}$,v_Aldolase_FBP,R01068,30,Saadat2021
+Rate of TKase of GAP and F6P to X5P and E4P,$v_{\mathrm{TKase_{E4P}}}$,v_TKase_E4P,R01067,31,Saadat2021
+Rate of Aldolase of E4P and DHAP to SBP,$v_{\mathrm{Aldolase_{SBP}}}$,v_Aldolase_SBP,R01829,32,Saadat2021
+Rate of TKase of GAP and S7P to X5P and R5P,$v_{\mathrm{TKase_{R5P}}}$,v_TKase_R5P,R01641,33,Saadat2021
+Rate of Rpiase,$v_{\mathrm{Rpiase}}$,v_Rpiase,R01056,34,Saadat2021
+Rate of RPEase,$v_{\mathrm{RPEase}}$,v_RPEase,R01529,35,Saadat2021
+Rate of PGIase,$v_{\mathrm{PGIase}}$,v_PGIase,R00771,36,Saadat2021
+Rate of PGMase,$v_{\mathrm{PGMase}}$,v_PGMase,R08639,37,Saadat2021
+,$v_{\mathrm{PSI}}$,v_PSI,R09542,38,Saadat2021
 Consumption of NADPH,$v_{\mathrm{NADPH}_\mathrm{consumption}}$,v_NADPHcons,,39,Saadat2021
-Rate of reduction of Fd by the activity of PSI,$v_{\mathrm{Fd}_{\mathrm{red}}}$,v_Fdred,,40,Saadat2021
-,$v_{\mathrm{FdTrReductase}}$,v_FdTrReduc,,41,Saadat2021
-,$v_{\mathrm{MDAreduct}}$,v_MDAreduct,,42,Saadat2021
-,$v_{\mathrm{GR}}$,v_GR,,43,Saadat2021
-Rate of APXase,$v_{\mathrm{APXase}}$,v_APXase,,44,Saadat2021
+Rate of reduction of Fd by the activity of PSI,$v_{\mathrm{Fd}_{\mathrm{red}}}$,v_Fdred,R09542,40,Saadat2021
+,$v_{\mathrm{FdTrReductase}}$,v_FdTrReduc,R09502,41,Saadat2021
+,$v_{\mathrm{MDAreduct}}$,v_MDAreduct,R00095,42,Saadat2021
+,$v_{\mathrm{GR}}$,v_GR,R00115,43,Saadat2021
+Rate of APXase,$v_{\mathrm{APXase}}$,v_APXase,R09540,44,Saadat2021
 Mehler reaction lumping the reduction of O2 instead of Fd,$v_{\mathrm{Mehler}}$,v_Mehler,,45,"Saadat2021, Li2021"
 ,$v_{\mathrm{DHAR}}$,v_DHAR,,46,Saadat2021
 ,$v_{\mathrm{3ASC}}$,v_3ASC,,47,Saadat2021

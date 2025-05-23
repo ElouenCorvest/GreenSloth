@@ -1,4 +1,4 @@
-Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
+Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
 ,,,,PQH_2,
 ,,,,PC_red,
 ,,,,Fd_red,
@@ -13,7 +13,7 @@ Name,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Glossary ID
 ,,,,B1,
 ,,,,B2,
 ,,,,B3,
-,,,,Flou,
+,,,,Fluo,
 ,,,,pH_lu,
 ,,,,Pi_st,
 ,,,,IF_3P,

@@ -16,38 +16,38 @@
 
 #### Part of ODE system
 
-|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Name|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}_\mathrm{ox}$|PLASTOQUINONE|PQ|
+|Plastoquinone|$\mathrm{PQ}$|$\mathrm{PQ}_\mathrm{ox}$|C02061|PQ|
 |Oxidized Plastocyanine|$\mathrm{PC}_\mathrm{ox}$|$\mathrm{PC}_\mathrm{ox}$|C03162|PC_ox|
 |Oxidized Ferrodoxin|$\mathrm{Fd}_\mathrm{ox}$|$\mathrm{Fd}_\mathrm{ox}$|C00139|Fd_ox|
-|Stromal ATP concentration|$\mathrm{ATP_{st}}$|$\mathrm{ATP}$|ATP|ATP_st|
-|Stromal NADPH concentration|$\mathrm{NADPH}_\mathrm{st}$|$\mathrm{NADPH}$|NADPH|NADPH_st|
-|Lumenal Proton concentration|$\mathrm{H_{lu}}$|$\mathrm{H}^+$|PROTON|H_lu|
-|Phosphorylated fraction of light harvesting complexes|$\mathrm{LHC}$|$\mathrm{LHC}$||LHC|
-|Concentration of psbS protein|$\mathrm{psbS}$|$\mathrm{Psbs}$|AT1G44575|psbS|
-|Violaxanthin|$\mathrm{Vx}$|$\mathrm{Vx}$|CPD1F-133|Vx|
-|3-phosphoglyceric acid|$\mathrm{PGA}$|$\mathrm{PGA}$|G3P|PGA|
-|2,3-biphosphoglyceric acid|$\mathrm{BPGA}$|$\mathrm{BPGA}$|23-DIPHOSPHOGLYCERATE|BPGA|
-|Glyceraldehyde 3-phosphate|$\mathrm{GAP}$|$\mathrm{GAP}$|GAP|GAP|
-|Dihydroxyacetone phosphate|$\mathrm{DHAP}$|$\mathrm{DHAP}$|DIHYDROXY-ACETONE-PHOSPHATE|DHAP|
-|Fructose 1,6-bisphosphate|$\mathrm{FBP}$|$\mathrm{FBP}$|FRUCTOSE-16-DIPHOSPHATE|FBP|
-|Fructose 6-phosphate|$\mathrm{F6P}$|$\mathrm{F6P}$|FRUCTOSE-6P|F6P|
-|Glucose 6-phosphate|$\mathrm{G6P}$|$\mathrm{G6P}$|ALPHA-GLC-6-P|G6P|
-|Glucose 1-phosphate|$\mathrm{G1P}$|$\mathrm{G1P}$|GLC-1-P|G1P|
-|Sedoheptulose 1,7-bisphosphate|$\mathrm{SBP}$|$\mathrm{SBP}$|D-SEDOHEPTULOSE-1-7-P2|SBP|
-|Sedoheptulose 7-phosphate|$\mathrm{S7P}$|$\mathrm{S7P}$|D-SEDOHEPTULOSE-7-P|S7P|
-|Erythrose 4-phosphate|$\mathrm{E4P}$|$\mathrm{E4P}$|ERYTHROSE-4P|E4P|
-|Xylulose 5-phosphate|$\mathrm{X5P}$|$\mathrm{X5P}$|XYLULOSE-5-PHOSPHATE|X5P|
-|Ribose 5-phosphate|$\mathrm{R5P}$|$\mathrm{R5P}$|CPD-15318|R5P|
-|Ribulose 1,5-bisphosphate|$\mathrm{RUBP}$|$\mathrm{RUBP}$|D-RIBULOSE-15-P2|RUBP|
-|Ribulose 5-phosphate|$\mathrm{RU5P}$|$\mathrm{RU5P}$|RIBULOSE-5P|RU5P|
-|Monodehydroascorbate radicals|$\mathrm{MDA}$|$\mathrm{MDA}$|CPD-318|MDA|
-|Hydrogen Peroxide|$\mathrm{H_2O_2}$|$\mathrm{H_2O_2}$|HYDROGEN-PEROXIDE|H2O2|
-|Dehydroacorbate|$\mathrm{DHA}$|$\mathrm{DHA}$|L-DEHYDRO-ASCORBATE|DHA|
-|Glutathione disulfide|$\mathrm{GSSG}$|$\mathrm{GSSG}$|OXIDIZED-GLUTATHIONE|GSSG|
-|Oxidised thioredoxin|$\mathrm{Trx_{ox}}$|$\mathrm{Trx_{ox}}$|2142833|TRX_ox|
-|Inactive CBB proteins|$\mathrm{E}_\mathrm{CBB,\ inact}$|$\mathrm{E}_\mathrm{inactive}$||E_CBB_inactive|
+|Stromal ATP concentration|$\mathrm{ATP_{st}}$|$\mathrm{ATP}$|C00002|ATP_st|
+|Stromal NADPH concentration|$\mathrm{NADPH}_\mathrm{st}$|$\mathrm{NADPH}$|C00005|NADPH_st|
+|Lumenal Proton concentration|$\mathrm{H_{lu}}$|$\mathrm{H}^+$|C00080|H_lu|
+|Phosphorylated fraction of light harvesting complexes|$\mathrm{LHC}$|$\mathrm{LHC}$|map00196|LHC|
+|Concentration of psbS protein|$\mathrm{psbS}$|$\mathrm{Psbs}$|K03542 |psbS|
+|Violaxanthin|$\mathrm{Vx}$|$\mathrm{Vx}$|C08614|Vx|
+|3-phosphoglyceric acid|$\mathrm{PGA}$|$\mathrm{PGA}$|C00197|PGA|
+|2,3-biphosphoglyceric acid|$\mathrm{BPGA}$|$\mathrm{BPGA}$|C01159|BPGA|
+|Glyceraldehyde 3-phosphate|$\mathrm{GAP}$|$\mathrm{GAP}$|C00118|GAP|
+|Dihydroxyacetone phosphate|$\mathrm{DHAP}$|$\mathrm{DHAP}$|C00111|DHAP|
+|Fructose 1,6-bisphosphate|$\mathrm{FBP}$|$\mathrm{FBP}$|C00354|FBP|
+|Fructose 6-phosphate|$\mathrm{F6P}$|$\mathrm{F6P}$|C00085|F6P|
+|Glucose 6-phosphate|$\mathrm{G6P}$|$\mathrm{G6P}$|C00092|G6P|
+|Glucose 1-phosphate|$\mathrm{G1P}$|$\mathrm{G1P}$|C00103|G1P|
+|Sedoheptulose 1,7-bisphosphate|$\mathrm{SBP}$|$\mathrm{SBP}$|C00447|SBP|
+|Sedoheptulose 7-phosphate|$\mathrm{S7P}$|$\mathrm{S7P}$|C05382|S7P|
+|Erythrose 4-phosphate|$\mathrm{E4P}$|$\mathrm{E4P}$|C00279|E4P|
+|Xylulose 5-phosphate|$\mathrm{X5P}$|$\mathrm{X5P}$|C00231|X5P|
+|Ribose 5-phosphate|$\mathrm{R5P}$|$\mathrm{R5P}$|C00117|R5P|
+|Ribulose 1,5-bisphosphate|$\mathrm{RUBP}$|$\mathrm{RUBP}$|C01182|RUBP|
+|Ribulose 5-phosphate|$\mathrm{RU5P}$|$\mathrm{RU5P}$|C00199|RU5P|
+|Monodehydroascorbate radicals|$\mathrm{MDA}$|$\mathrm{MDA}$|C01041|MDA|
+|Hydrogen Peroxide|$\mathrm{H_2O_2}$|$\mathrm{H_2O_2}$|C00027|H2O2|
+|Dehydroacorbate|$\mathrm{DHA}$|$\mathrm{DHA}$|C05422|DHA|
+|Glutathione disulfide|$\mathrm{GSSG}$|$\mathrm{GSSG}$|C00127|GSSG|
+|Oxidised thioredoxin|$\mathrm{Trx_{ox}}$|$\mathrm{Trx_{ox}}$|C00343|TRX_ox|
+|Inactive CBB proteins|$\mathrm{E}_\mathrm{CBB,\ inact}$|$\mathrm{E}_\mathrm{inactive}$|map00710|E_CBB_inactive|
 
 
 
@@ -149,32 +149,32 @@
                      
 #### Conserved quantities
 
-|Name|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Name|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Plastoquinol|$\mathrm{PQH}_2$|$\mathrm{PQH}_2$|Plastoquinols|PQH_2|
+|Plastoquinol|$\mathrm{PQH}_2$|$\mathrm{PQH}_2$|C16693|PQH_2|
 |Reduced Plastocyanine|$\mathrm{PC}_\mathrm{red}$|$\mathrm{PC}^-$|C03025|PC_red|
 |Reduced Ferrodoxin|$\mathrm{Fd}_\mathrm{red}$|$\mathrm{Fd}^-$|C00138|Fd_red|
-|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|ADP|ADP_st|
-|Stromal NADP concentration|$\mathrm{NADP}_\mathrm{st}$|$\mathrm{NADP}^+$|NADP|NADP_st|
-|Phosphorylated fraction of light harvesting complexes|$\mathrm{LHCp}$|$\mathrm{LHCp}$||LHCp|
-|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|CPD1F-130|Zx|
-|Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$\mathrm{PsbS^P}$|AT1G44575|PsbSP|
-|Cross section of PSII|$\mathrm{PSII_{cross}}$|$\mathrm{PSII_{cross}}$||psIIcross|
+|Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|C00008|ADP_st|
+|Stromal NADP concentration|$\mathrm{NADP}_\mathrm{st}$|$\mathrm{NADP}^+$|C00006|NADP_st|
+|Phosphorylated fraction of light harvesting complexes|$\mathrm{LHCp}$|$\mathrm{LHCp}$|map00196|LHCp|
+|Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|C06098|Zx|
+|Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$\mathrm{PsbS^P}$|K03542|PsbSP|
+|Cross section of PSII|$\mathrm{PSII_{cross}}$|$\mathrm{PSII_{cross}}$|M00161|psIIcross|
 |Co-operative 4-state quenching mechanism|$\mathrm{Q}$|$\mathrm{Q}$||Q|
-|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$|PSII|B0|
-|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$|PSII|B1|
-|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$|PSII|B2|
-|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$|PSII|B3|
-|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH}_\mathrm{lumen}$||pH_lu|
-|Stromal concentration of orthophosphate|$\mathrm{P}_\mathrm{i,\ st}$|$\mathrm{P}_\mathrm{i}$|Pi|Pi_st|
-|Inhibition factor of the triose phosphate translocators|$\mathrm{IF}_\mathrm{3P}$|$\mathrm{N}$||IF_3P|
-|Reduced thioredoxin|$\mathrm{TRX_{red}}$|$\mathrm{Trx_{red}}$||TRX_red|
-|Active CBB proteins|$\mathrm{E}_\mathrm{CBB,\ inact}$|$\mathrm{E}_\mathrm{cbb,\ inactive}$||E_CBB_active|
+|Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$|M00161|B0|
+|Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$|M00161|B1|
+|Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$|M00161|B2|
+|Photoinhibited state of PSII|$\mathrm{B_3}$|$\mathrm{B_3}$|M00161|B3|
+|Lumen pH|$\mathrm{pH}_\mathrm{lu}$|$\mathrm{pH}_\mathrm{lumen}$|C00080|pH_lu|
+|Stromal concentration of orthophosphate|$\mathrm{P}_\mathrm{i,\ st}$|$\mathrm{P}_\mathrm{i}$|C00009|Pi_st|
+|Inhibition factor of the triose phosphate translocators|$\mathrm{IF}_\mathrm{3P}$|$\mathrm{N}$|K01803|IF_3P|
+|Reduced thioredoxin|$\mathrm{TRX_{red}}$|$\mathrm{Trx_{red}}$|C00342|TRX_red|
+|Active CBB proteins|$\mathrm{E}_\mathrm{CBB,\ inact}$|$\mathrm{E}_\mathrm{cbb,\ inactive}$|map00710|E_CBB_active|
 |Reduced ascorbate|$\mathrm{ASC}$|$\mathrm{ASC}$||ASC|
-|Reduced glutathione|$\mathrm{GSH}$|$\mathrm{GSH}$||GSH|
-|Ground state of PSI (P700)|$\mathrm{Y_0}$|$\mathrm{Y_0}$||Y0|
-|Activated state of PSI (P700*)|$\mathrm{Y_1}$|$\mathrm{Y_1}$||Y1|
-|Oxidised state of PSI (P700+)|$\mathrm{Y_2}$|$\mathrm{Y_2}$||Y2|
+|Reduced glutathione|$\mathrm{GSH}$|$\mathrm{GSH}$|C00051|GSH|
+|Ground state of PSI (P700)|$\mathrm{Y_0}$|$\mathrm{Y_0}$|M00163|Y0|
+|Activated state of PSI (P700*)|$\mathrm{Y_1}$|$\mathrm{Y_1}$|M00163|Y1|
+|Oxidised state of PSI (P700+)|$\mathrm{Y_2}$|$\mathrm{Y_2}$|M00163|Y2|
 |Flourescence|$\mathrm{Fluo}$|$\mathrm{Fluo}$||Fluo|
 
 
@@ -422,7 +422,7 @@
 
 #### Derived Parameters
 
-|Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|Reference|
+|Short Description|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|Reference|
 | :---: | :---: | :---: | :---: | :---: | :---: |
 |Stromal proton concentration of a dark adapted state|$\mathrm{H}_\mathrm{st}$|$\mathrm{H}_\mathrm{st}$||H_st||
 |Equilibrium constant of |$K_\mathrm{QAPQ}$|$K_\mathrm{eq, QAPQ}$||K_QAPQ||
@@ -484,50 +484,50 @@ V_{\mathrm{max}|\mathrm{Starch}}  = \mathrm{E}_\mathrm{CBB,\ inact} \cdot V_{\ma
                      
 ### Reaction Rates
 
-|Short Description|Common Abbr.|Paper Abbr.|MetaCyc ID|Python Var|
+|Short Description|Common Abbr.|Paper Abbr.|KEGG ID|Python Var|
 | :---: | :---: | :---: | :---: | :---: |
-|Reduction of PQ due to PSII|$v_{\mathrm{PSII}}$|$v_{\mathrm{PSII}}$||v_PSII|
+|Reduction of PQ due to PSII|$v_{\mathrm{PSII}}$|$v_{\mathrm{PSII}}$|R09503|v_PSII|
 |Oxidation of the PQ pool through cytochrome and PTOX|$v_{\mathrm{PQ}_{\mathrm{ox}}}$|$v_{\mathrm{PTOX}}$||v_PQ|
 |Reduction of PQ pool by NADH reductase|$v_{\mathrm{NDH}}$|$v_{\mathrm{NDH}}$||v_NDH|
-|Rate of the b6f complex|$v_{\mathrm{b6f}}$|$v_{\mathrm{b6f}}$||v_b6f|
-|Cyclic electron flow|$v_{\mathrm{Cyc}}$|$v_{\mathrm{Cyc}}$||v_Cyc|
-|Reaction mediated by FNR|$v_{\mathrm{FNR}}$|$v_{\mathrm{FNR}}$||v_FNR|
+|Rate of the b6f complex|$v_{\mathrm{b6f}}$|$v_{\mathrm{b6f}}$|R03817|v_b6f|
+|Cyclic electron flow|$v_{\mathrm{Cyc}}$|$v_{\mathrm{Cyc}}$|EC 7.1.1.10|v_Cyc|
+|Reaction mediated by FNR|$v_{\mathrm{FNR}}$|$v_{\mathrm{FNR}}$|R01195|v_FNR|
 |Transmembrane Proton Leak|$v_{\mathrm{Leak}}$|$v_{\mathrm{Leak}}$||v_Leak|
 |State transitions from PSII to PSI|$v_{\mathrm{St21}}$|$v_{\mathrm{St12}}$||v_St21|
 |State transitions from PSI to PSII|$v_{\mathrm{St12}}$|$v_{\mathrm{St21}}$||v_St12|
-|Production of ATP by ATPsynthase|$v_{\mathrm{ATPsynthase}}$|$v_{\mathrm{ATPsynthase}}$||v_ATPsynth|
-|De-epoxidation of violaxanthin|$v_{\mathrm{Deepox}}$|$v_{\mathrm{Deepox}}$||v_Deepox|
-|Epoxidation of violaxanthin|$v_{\mathrm{Epox}}$|$v_{\mathrm{Epox}}$||v_Epox|
+|Production of ATP by ATPsynthase|$v_{\mathrm{ATPsynthase}}$|$v_{\mathrm{ATPsynthase}}$|R00086|v_ATPsynth|
+|De-epoxidation of violaxanthin|$v_{\mathrm{Deepox}}$|$v_{\mathrm{Deepox}}$|R10070|v_Deepox|
+|Epoxidation of violaxanthin|$v_{\mathrm{Epox}}$|$v_{\mathrm{Epox}}$|R10070|v_Epox|
 |Protonation of psbS protein|$v_{\mathrm{Psbs^P}}$|$v_{\mathrm{LHCprotonation}}$||v_PsbSP|
 |Deprotonation of psbS protein|$v_{\mathrm{Psbs^D}}$|$v_{\mathrm{LHCdeprotonation}}$||v_PsbSD|
-|Rate of PGK1ase|$v_{\mathrm{PGK1ase}}$|$v_{\mathrm{PGA\_kinase}}$||v_PGK1ase|
-|Rate of BPGA dehydrogenase|$v_{\mathrm{BPGAdehynase}}$|$v_{\mathrm{BPGA\_dehydrogenase}}$||v_BPGAdehynase|
-|Rate of TPIase|$v_{\mathrm{TPIase}}$|$v_{\mathrm{TPI}}$||v_TPIase|
-|Rate of Aldolase of GAP and DHAP to FBP|$v_{\mathrm{Aldolase_{FBP}}}$|$v_{\mathrm{Aldolase}}$||v_Aldolase_FBP|
-|Rate of TKase of GAP and F6P to X5P and E4P|$v_{\mathrm{TKase_{E4P}}}$|$v_{\mathrm{F6P\_ Transketolase}}$|EC 2.2.1.1|v_TKase_E4P|
-|Rate of Aldolase of E4P and DHAP to SBP|$v_{\mathrm{Aldolase_{SBP}}}$|$v_{8}$||v_Aldolase_SBP|
-|Rate of TKase of GAP and S7P to X5P and R5P|$v_{\mathrm{TKase_{R5P}}}$|$v_{10}$|EC 2.2.1.1|v_TKase_R5P|
-|Rate of Rpiase|$v_{\mathrm{Rpiase}}$|$v_{11}$|EC 5.3.1.6|v_Rpiase|
-|Rate of RPEase|$v_{\mathrm{RPEase}}$|$v_{12}$|EC 5.1.3.1|v_RPEase|
-|Rate of PGIase|$v_{\mathrm{PGIase}}$|$v_{G6P\_ isomerase}$|AT4G24620|v_PGIase|
-|Rate of PGMase|$v_{\mathrm{PGMase}}$|$v_{\mathrm{Phosphoglucomutase}}$|AT5G51820|v_PGMase|
+|Rate of PGK1ase|$v_{\mathrm{PGK1ase}}$|$v_{\mathrm{PGA\_kinase}}$|R01512|v_PGK1ase|
+|Rate of BPGA dehydrogenase|$v_{\mathrm{BPGAdehynase}}$|$v_{\mathrm{BPGA\_dehydrogenase}}$|R01063|v_BPGAdehynase|
+|Rate of TPIase|$v_{\mathrm{TPIase}}$|$v_{\mathrm{TPI}}$|R01015|v_TPIase|
+|Rate of Aldolase of GAP and DHAP to FBP|$v_{\mathrm{Aldolase_{FBP}}}$|$v_{\mathrm{Aldolase}}$|R01068|v_Aldolase_FBP|
+|Rate of TKase of GAP and F6P to X5P and E4P|$v_{\mathrm{TKase_{E4P}}}$|$v_{\mathrm{F6P\_ Transketolase}}$|R01067|v_TKase_E4P|
+|Rate of Aldolase of E4P and DHAP to SBP|$v_{\mathrm{Aldolase_{SBP}}}$|$v_{8}$|R01829|v_Aldolase_SBP|
+|Rate of TKase of GAP and S7P to X5P and R5P|$v_{\mathrm{TKase_{R5P}}}$|$v_{10}$|R01641|v_TKase_R5P|
+|Rate of Rpiase|$v_{\mathrm{Rpiase}}$|$v_{11}$|R01056|v_Rpiase|
+|Rate of RPEase|$v_{\mathrm{RPEase}}$|$v_{12}$|R01529|v_RPEase|
+|Rate of PGIase|$v_{\mathrm{PGIase}}$|$v_{G6P\_ isomerase}$|R00771|v_PGIase|
+|Rate of PGMase|$v_{\mathrm{PGMase}}$|$v_{\mathrm{Phosphoglucomutase}}$|R08639|v_PGMase|
 |Export of PGA|$v_{\mathrm{PGA,\ ex}}$|$v_{pga}$||v_pga_ex|
 |Export of GAP|$v_{\mathrm{GAP,\ ex}}$|$v_{gap}$||v_gap_ex|
 |Export of DHAP|$v_{\mathrm{DHAP,\ ex}}$|$v_{DHAP}$||v_dhap_ex|
-|Rate of RuBisCo|$v_{\mathrm{RuBisCo}}$|$v_{\mathrm{RuBisCo}}$||v_RuBisCO|
-|Rate of FBPase|$v_{\mathrm{FBPase}}$|$v_{\mathrm{FBPase}}$||v_FBPase|
-|Rate of SBPase|$v_{\mathrm{SBPase}}$|$v_9$||v_SBPase|
-|Rate of PRKase|$v_{\mathrm{PRKase}}$|$v_{13}$||v_PRKase|
+|Rate of RuBisCo|$v_{\mathrm{RuBisCo}}$|$v_{\mathrm{RuBisCo}}$|R00024|v_RuBisCO|
+|Rate of FBPase|$v_{\mathrm{FBPase}}$|$v_{\mathrm{FBPase}}$|R00762|v_FBPase|
+|Rate of SBPase|$v_{\mathrm{SBPase}}$|$v_9$|R01845|v_SBPase|
+|Rate of PRKase|$v_{\mathrm{PRKase}}$|$v_{13}$|R01523|v_PRKase|
 |Starch production|$v_{\mathrm{Starch}}$|$v_{\mathrm{Starch}}$||v_starch|
-||$v_{\mathrm{FdTrReductase}}$|$v_{\mathrm{FdTrReductase}}$||v_FdTrReduc|
+||$v_{\mathrm{FdTrReductase}}$|$v_{\mathrm{FdTrReductase}}$|R09502|v_FdTrReduc|
 |Enzyme Activation|$v_{\mathrm{Eact}}$|$v_{\mathrm{Eact}}$||v_Eact|
 |Enzyme inactivation|$v_{\mathrm{Einact}}$|$v_{\mathrm{Einact}}$||v_Einact|
-||$v_{\mathrm{PSI}}$|$v_{\mathrm{PSI}}$||v_PSI|
-|Rate of reduction of Fd by the activity of PSI|$v_{\mathrm{Fd}_{\mathrm{red}}}$|$v_{\mathrm{Fd,\ red}}$||v_Fdred|
-|Rate of APXase|$v_{\mathrm{APXase}}$|$v_{\mathrm{Ascorbate}}$||v_APXase|
-||$v_{\mathrm{MDAreduct}}$|$v_{\mathrm{MDAreduct}}$||v_MDAreduct|
+||$v_{\mathrm{PSI}}$|$v_{\mathrm{PSI}}$|R09542|v_PSI|
+|Rate of reduction of Fd by the activity of PSI|$v_{\mathrm{Fd}_{\mathrm{red}}}$|$v_{\mathrm{Fd,\ red}}$|R09542|v_Fdred|
+|Rate of APXase|$v_{\mathrm{APXase}}$|$v_{\mathrm{Ascorbate}}$|R09540|v_APXase|
+||$v_{\mathrm{MDAreduct}}$|$v_{\mathrm{MDAreduct}}$|R00095|v_MDAreduct|
 |Mehler reaction lumping the reduction of O2 instead of Fd|$v_{\mathrm{Mehler}}$|$v_{\mathrm{Mehler}}$||v_Mehler|
-||$v_{\mathrm{GR}}$|$v_{\mathrm{GR}}$||v_GR|
+||$v_{\mathrm{GR}}$|$v_{\mathrm{GR}}$|R00115|v_GR|
 ||$v_{\mathrm{DHAR}}$|$v_{\mathrm{DHAR}}$||v_DHAR|
 ||$v_{\mathrm{3ASC}}$|$v_{\mathrm{3ASC}}$||v_3ASC|
 |ATP consuming reaction|$v_{\mathrm{ATP}_{\mathrm{consumption}}}$|$v_{\mathrm{EX\_ ATP}}$||v_ATPcons|
