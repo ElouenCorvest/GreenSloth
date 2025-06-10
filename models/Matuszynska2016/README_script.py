@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 from GreenSlothUtils import gloss_fromCSV, remove_math
@@ -26,7 +25,6 @@ cite_dict = dict()
 
 model_info = Path(__file__).parent / "model_info"
 python_written = model_info / "python_written"
-main_gloss = Path(__file__).parents[2] / "Templates"
 
 comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
     path=model_info / "comps.csv", omit_col="Glossary ID"
@@ -142,11 +140,11 @@ K_ATPsynth = remove_math(derived_params_table, r"$K_\mathrm{eq, cytb6f}$")
 
 ###### Making README File ######
 
-mdFile = MdUtils(file_name=f"{os.path.dirname(__file__)}/README.md")
+mdFile = MdUtils(file_name=f"{Path(__file__).parents[0]}/README.md")
 
 mdFile.new_header(1, model_title)
 
-mdFile.new_paragraph(f"""The [Matuszynska2016]({model_doi}) model, a small kinetic model, was developed to delve deeper into the effect of light memory caused by non-photochemical quenching. The systematic investigation of the Xanthophyll cycle, a combination of the pigments of violaxanthin, antheraxanthin, and zeaxanthin, sparked a series of experiments to determine whether plant light memory can be detected in a time-scale of minutes to hours through pulse amplitude modulated chlorophyll fluorescence. The model was then created based on these experimental results, providing a comprehensive description of NPQ dynamics and the short-term memory of the *Arabidopsis thaliana* plant.
+mdFile.new_paragraph(f"""The [{model_title}]({model_doi}) model, a small kinetic model, was developed to delve deeper into the effect of light memory caused by non-photochemical quenching. The systematic investigation of the Xanthophyll cycle, a combination of the pigments of violaxanthin, antheraxanthin, and zeaxanthin, sparked a series of experiments to determine whether plant light memory can be detected in a time-scale of minutes to hours through pulse amplitude modulated chlorophyll fluorescence. The model was then created based on these experimental results, providing a comprehensive description of NPQ dynamics and the short-term memory of the *Arabidopsis thaliana* plant.
 
 To keep the model as simple as possible, several processes not directly linked to NPQ have been simplified to create a dynamic ODE system consisting only of 6 different compounds. With these simplifications, the authors could fulfil an additional goal: to make a general framework that is not specific to one model organism.
 
@@ -176,7 +174,7 @@ mdFile.new_paragraph(rf"""
 {ode(PQH_2)} = {v_PSII} - {v_PQ}
 ```
 ```math 
-{ode(H_lu)} = \frac{{1}}{{{b_H}}} \cdot \left( 2 \cdot {v_PSII} + 4 \cdot {v_PQ} - {hpr} \cdot {v_ATPsynth} - {v_Leak} \right)
+{ode(H_lu)} = \frac{{2}}{{{b_H}}} \cdot {v_PSII} + \frac{{4}}{{{b_H}}} \cdot {v_PQ} + \frac{{-\left( \frac{{14}}{{3}} \right)}}{{{b_H}}} \cdot {v_ATPsynth} + \frac{{-1}}{{{b_H}}} \cdot {v_Leak}
 ```
 ```math 
 {ode(ATP_st)} = {v_ATPsynth} - {v_ATPcons}

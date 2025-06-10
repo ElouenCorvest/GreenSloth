@@ -1,4 +1,4 @@
-------- Update on 2025-03-26 13:38:24.324354 -------
+------- Start on 2025-06-10 13:56:55.705694 -------
 
 pH_lu = remove_math(derived_comps_table, r'$\mathrm{pH}$')
 PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
@@ -11,18 +11,4 @@ B1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
 B2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
 B3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
 Fluo = remove_math(derived_comps_table, r'$\mathrm{Fluo}$')
-
-------- Start on 2025-03-26 13:17:23.975701 -------
-
-pH_lu = remove_math(derived_comps_table, r'$\mathrm{pH}$')
-PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
-ADP_st = remove_math(derived_comps_table, r'$\mathrm{ADP}$')
-PsbSP = remove_math(derived_comps_table, r'$\mathrm{PsbS^P}$')
-Zx = remove_math(derived_comps_table, r'$\mathrm{Zx}$')
-Q = remove_math(derived_comps_table, r'')
-B0 = remove_math(derived_comps_table, r'$\mathrm{B_0}$')
-B1 = remove_math(derived_comps_table, r'$\mathrm{B_1}$')
-B2 = remove_math(derived_comps_table, r'$\mathrm{B_2}$')
-B3 = remove_math(derived_comps_table, r'$\mathrm{B_3}$')
-Fluo = remove_math(derived_comps_table, r'')
 

@@ -38,7 +38,7 @@ To demonstrate the adaptability of their model, the authors took their calibrate
 \frac{\mathrm{d}\mathrm{PQH}_2}{\mathrm{d}t} = v_{\mathrm{PSII}} - v_{\mathrm{PQ}_{\mathrm{ox}}}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{H_{lu}}}{\mathrm{d}t} = \frac{1}{b_\mathrm{H}} \cdot \left( 2 \cdot v_{\mathrm{PSII}} + 4 \cdot v_{\mathrm{PQ}_{\mathrm{ox}}} - \mathrm{HPR} \cdot v_{\mathrm{ATPsynthase}} - v_{\mathrm{Leak}} \right)
+\frac{\mathrm{d}\mathrm{H_{lu}}}{\mathrm{d}t} = \frac{2}{b_\mathrm{H}} \cdot v_{\mathrm{PSII}} + \frac{4}{b_\mathrm{H}} \cdot v_{\mathrm{PQ}_{\mathrm{ox}}} + \frac{-\left( \frac{14}{3} \right)}{b_\mathrm{H}} \cdot v_{\mathrm{ATPsynthase}} + \frac{-1}{b_\mathrm{H}} \cdot v_{\mathrm{Leak}}
 ```
 ```math 
 \frac{\mathrm{d}\mathrm{ATP_{st}}}{\mathrm{d}t} = v_{\mathrm{ATPsynthase}} - v_{\mathrm{ATP}_{\mathrm{consumption}}}

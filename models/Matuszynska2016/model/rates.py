@@ -1,4 +1,5 @@
-from mxlpy import Model, Derived
+from mxlpy import Derived, Model
+
 from . import basic_funcs as bf
 
 

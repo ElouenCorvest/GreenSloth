@@ -1,4 +1,4 @@
-------- Update on 2025-04-22 15:55:52.861856 -------
+------- Start on 2025-06-10 13:58:56.508153 -------
 
 ```math
 {H_st} =  32000.0 \cdot 10^{{-{pH_st}}}
@@ -8,27 +8,6 @@
 ```
 ```math
 {K_pHSatLHC_inv} =  32000.0 \cdot 10^{{-{K_pHSatLHC}}}
-```
-```math
-{K_QAPQ} =  \exp \left( \frac{{-\left( -2 \cdot -{F} \cdot {E0_QA} + -2 {F} \cdot {E0_PQ} + 2 {pH_st} \cdot \log 10 {R} {T} \right)}}{{{R} {T}}} \right)
-```
-```math
-{K_cytb6f} =  \exp \left( \frac{{-\left( -\left( -2 {F} \cdot {E0_PQ} + 2 {R} {T} \cdot \log 10 {pH_lu} \right) + 2 \cdot -{F} \cdot {E0_PC} + 2 {R} {T} \cdot \log 10 \left( {pH_st} - {pH_lu} \right) \right)}}{{{R} {T}}} \right)
-```
-```math
-{K_ATPsynth} =  {Pi} \cdot \exp \left( \frac{{-\left( {DG_A{T}P} - \log 10 \cdot \left( {pH_st} - {pH_lu} \right) \frac{{14}}{{3}} {R} {T} \right)}}{{{R} {T}}} \right)
-```
-
-------- Start on 2025-03-26 13:20:01.828883 -------
-
-```math
-{H_st} =  4000.0 \cdot 10^{{-{pH_st}}}
-```
-```math
-{K_pHSat_inv} =  4000.0 \cdot 10^{{-{K_pHSat}}}
-```
-```math
-{K_pHSatLHC_inv} =  4000.0 \cdot 10^{{-{K_pHSatLHC}}}
 ```
 ```math
 {K_QAPQ} =  \exp \left( \frac{{-\left( -2 \cdot -{F} \cdot {E0_QA} + -2 {F} \cdot {E0_PQ} + 2 {pH_st} \cdot \log 10 {R} {T} \right)}}{{{R} {T}}} \right)

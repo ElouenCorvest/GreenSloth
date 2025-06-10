@@ -1,4 +1,4 @@
-------- Start on 2025-03-26 13:17:23.974584 -------
+------- Start on 2025-06-10 13:56:55.704610 -------
 
 PSII_tot = remove_math(params_table, r'$\mathrm{PSII^{tot}}$')
 PQ_tot = remove_math(params_table, r'$\mathrm{PQ^{tot}}$')
