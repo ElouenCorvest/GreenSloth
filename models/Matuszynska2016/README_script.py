@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from greensloth_utils import gloss_fromCSV, remove_math
+from GreenSlothUtils import gloss_fromCSV, remove_math
 from mdutils.mdutils import MdUtils
 
 ###### Util Functions ######

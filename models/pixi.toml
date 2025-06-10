@@ -1,0 +1,19 @@
+[project]
+authors = ["Elouen_Corvest <elouen.corvest@rwth-aachen.de>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "models"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.13.3,<3.14"
+assimulo = ">=3.7.0,<4"
+
+[pypi-dependencies]
+GreenSlothUtils = { path = "../../GreenSlothUtils/", editable = true }
+mdutils = ">=1.6.0, <2"
+ipykernel = ">=6.29.5, <7"
+mxlpy = ">=0.19.0, <0.20"

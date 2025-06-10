@@ -1,4 +1,4 @@
-from modelbase2 import Model
+from mxlpy import Model
 from .derived_quantities import include_derived_quantities
 from .rates import include_rates
 

@@ -1,5 +1,5 @@
 import numpy as np
-from modelbase2 import Model
+from mxlpy import Model
 
 from . import basic_funcs as bf
 

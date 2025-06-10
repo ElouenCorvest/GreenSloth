@@ -1,4 +1,4 @@
-from modelbase2 import Model, Derived
+from mxlpy import Model, Derived
 from . import basic_funcs as bf
 
 
@@ -65,7 +65,10 @@ def include_rates(m: Model):
         name="v_PSII",
         fn=v_PSII,
         args=["B1", "k_P"],
-        stoichiometry={"PQH_2": 1, "H_lu": Derived(bf.two_divided_value, args=["b_H"])},
+        stoichiometry={
+            "PQH_2": 1,
+            "H_lu": Derived(fn=bf.two_divided_value, args=["b_H"]),
+        },
     )
 
     m.add_reaction(
@@ -74,7 +77,7 @@ def include_rates(m: Model):
         args=["PQH_2", "pfd", "k_Cytb6f", "k_PTOX", "O2_ex", "PQ_tot", "K_cytb6f"],
         stoichiometry={
             "PQH_2": -1,
-            "H_lu": Derived(bf.four_divided_value, args=["b_H"]),
+            "H_lu": Derived(fn=bf.four_divided_value, args=["b_H"]),
         },
     )
 
@@ -84,7 +87,7 @@ def include_rates(m: Model):
         args=["ATP_st", "ATPase_ac", "k_ATPsynth", "K_ATPsynth", "AP_tot"],
         stoichiometry={
             "ATP_st": 1,
-            "H_lu": Derived(bf.neg_fourteenthirds_divided_value, args=["b_H"]),
+            "H_lu": Derived(fn=bf.neg_fourteenthirds_divided_value, args=["b_H"]),
         },
     )
 
@@ -99,7 +102,7 @@ def include_rates(m: Model):
         name="v_Leak",
         fn=v_Leak,
         args=["H_lu", "k_leak", "H_st"],
-        stoichiometry={"H_lu": Derived(bf.neg_divided_value, args=["b_H"])},
+        stoichiometry={"H_lu": Derived(fn=bf.neg_divided_value, args=["b_H"])},
     )
 
     m.add_reaction(
