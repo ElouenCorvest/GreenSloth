@@ -16,7 +16,6 @@ assimulo = ">=3.7.0,<4"
 GreenSlothUtils = { path = "../../GreenSlothUtils/", editable = true }
 mdutils = ">=1.6.0, <2"
 ipykernel = ">=6.29.5, <7"
-mxlpy = ">=0.19.0, <0.20"
 ruff = ">=0.11.13, <0.12"
 
 [tool.bandit]

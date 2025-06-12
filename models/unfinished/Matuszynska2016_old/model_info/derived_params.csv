@@ -1,5 +1,0 @@
-Short Description,Common Abbr.,Paper Abbr.,MetaCyc ID,Python Var,Reference
-Equilibrium constant of ,"$K_\mathrm{eq, QAPQ}$","$K_\mathrm{eq, QAPQ}$",,K_eqQAPQ,
-Equilibrium constant of ATPsynthase,"$K_\mathrm{eq, ATPsynthase}$","$K_\mathrm{eq, ATPsynthase}$",,K_eqATPsynthase,
-Equilibrium constant of Cytb6f,"$K_\mathrm{eq, cytb6f}$","$K_\mathrm{eq, cytb6f}$",,K_eqcytb6f,
-Stroma proton concentration of a dark adapted state,$\mathrm{H}_\mathrm{st}$,$\mathrm{H}_\mathrm{st}$,,H_st,
