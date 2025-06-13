@@ -1,16 +1,7 @@
-from modelbase2 import Model, Derived
 import numpy as np
-from greensloth_utils.basicfuncs import (
-    value,
-    value1_divided_value2,
-    neg_value,
-    neg_value1_divided_value2,
-    neg_two_value,
-    fourteenthirds_value1_divided_value2,
-    neg_fourteen_thirds_value,
-    neg_two_value1_divided_value2,
-    two_value,
-)
+from mxlpy import Derived, Model
+
+from . import basic_funcs as bf
 
 
 def vb6f(k_b6f, K_b6f, PQ, PQH_2, PC_ox, PC_red):  # correct
@@ -127,8 +118,10 @@ def include_rates(m: Model):
             "PC_ox": -1,
             "PQH_2": -0.5,
             "PQ": 0.5,
-            "pH_lu": Derived(neg_two_value1_divided_value2, args=["ipt_lu", "b_H"]),
-            "Dpsi": Derived(value, args=["vpc"]),
+            "pH_lu": Derived(
+                fn=bf.neg_two_value1_divided_value2, args=["ipt_lu", "b_H"]
+            ),
+            "Dpsi": Derived(fn=bf.value, args=["vpc"]),
         },
     )
 
@@ -141,8 +134,10 @@ def include_rates(m: Model):
             "Fd_ox": 1,
             "PQ": -0.5,
             "PQH_2": 0.5,
-            "pH_lu": Derived(neg_two_value1_divided_value2, args=["ipt_lu", "b_H"]),
-            "Dpsi": Derived(two_value, args=["vpc"]),
+            "pH_lu": Derived(
+                fn=bf.neg_two_value1_divided_value2, args=["ipt_lu", "b_H"]
+            ),
+            "Dpsi": Derived(fn=bf.two_value, args=["vpc"]),
         },
     )
 
@@ -166,9 +161,9 @@ def include_rates(m: Model):
         args=["PMF", "ppPSII", "Prot_ATPsynth", "H_lu", "k_Leak"],
         stoichiometry={
             "pH_lu": Derived(
-                fourteenthirds_value1_divided_value2, args=["ipt_lu", "b_H"]
+                fn=bf.fourteenthirds_value1_divided_value2, args=["ipt_lu", "b_H"]
             ),
-            "Dpsi": Derived(neg_fourteen_thirds_value, args=["vpc"]),
+            "Dpsi": Derived(fn=bf.neg_fourteen_thirds_value, args=["vpc"]),
         },
     )
 
@@ -177,9 +172,9 @@ def include_rates(m: Model):
         fn=v_VCCN1,
         args=["Cl_df", "Cl_lu", "Cl_st", "k_VCCN1"],
         stoichiometry={
-            "Cl_lu": Derived(value, args=["ipt_lu"]),
-            "Cl_st": Derived(neg_value, args=["ipt_st"]),
-            "Dpsi": Derived(neg_value, args=["vpc"]),
+            "Cl_lu": Derived(fn=bf.value, args=["ipt_lu"]),
+            "Cl_st": Derived(fn=bf.neg_value, args=["ipt_st"]),
+            "Dpsi": Derived(fn=bf.neg_value, args=["vpc"]),
         },
     )
 
@@ -196,10 +191,10 @@ def include_rates(m: Model):
             "k_ClCe",
         ],
         stoichiometry={
-            "pH_lu": Derived(value1_divided_value2, args=["ipt_lu", "b_H"]),
-            "Cl_lu": Derived(two_value, args=["ipt_lu"]),
-            "Cl_st": Derived(neg_two_value, args=["ipt_st"]),
-            "Dpsi": Derived(neg_value, args=["vpc"]),
+            "pH_lu": Derived(fn=bf.value1_divided_value2, args=["ipt_lu", "b_H"]),
+            "Cl_lu": Derived(fn=bf.two_value, args=["ipt_lu"]),
+            "Cl_st": Derived(fn=bf.neg_two_value, args=["ipt_st"]),
+            "Dpsi": Derived(fn=bf.neg_value, args=["vpc"]),
         },
     )
 
@@ -208,9 +203,9 @@ def include_rates(m: Model):
         fn=v_KEA3,
         args=["k_KEA3", "QA_red", "pH_lu", "H_lu", "H_st", "K_lu", "K_st"],
         stoichiometry={
-            "K_lu": Derived(value, args=["ipt_lu"]),
-            "K_st": Derived(neg_value, args=["ipt_st"]),
-            "pH_lu": Derived(value1_divided_value2, args=["ipt_lu", "b_H"]),
+            "K_lu": Derived(fn=bf.value, args=["ipt_lu"]),
+            "K_st": Derived(fn=bf.neg_value, args=["ipt_st"]),
+            "pH_lu": Derived(fn=bf.value1_divided_value2, args=["ipt_lu", "b_H"]),
         },
     )
 
@@ -219,33 +214,33 @@ def include_rates(m: Model):
         fn=v_VKC,
         args=["P_K", "Dpsi", "K_lu", "K_st"],
         stoichiometry={
-            "K_lu": Derived(neg_value, args=["ipt_lu"]),
-            "K_st": Derived(value, args=["ipt_st"]),
-            "Dpsi": Derived(neg_value, args=["vpc"]),
+            "K_lu": Derived(fn=bf.neg_value, args=["ipt_lu"]),
+            "K_st": Derived(fn=bf.value, args=["ipt_st"]),
+            "Dpsi": Derived(fn=bf.neg_value, args=["vpc"]),
         },
     )
 
     m.add_reaction(
         name="vPSII_ChSep",
-        fn=value,
+        fn=bf.value,
         args=["PSII_ChSep"],
         stoichiometry={
             "QA_red": 1,
             "QA_ox": -1,
-            "Dpsi": Derived(value, args=["vpc"]),
-            "pH_lu": Derived(neg_value1_divided_value2, args=["ipt_lu", "b_H"]),
+            "Dpsi": Derived(fn=bf.value, args=["vpc"]),
+            "pH_lu": Derived(fn=bf.neg_value1_divided_value2, args=["ipt_lu", "b_H"]),
         },
     )
 
     m.add_reaction(
         name="vPSII_recomb",
-        fn=value,
+        fn=bf.value,
         args=["PSII_recomb"],
         stoichiometry={
             "QA_red": -1,
             "QA_ox": 1,
-            "Dpsi": Derived(neg_value, args=["vpc"]),
-            "pH_lu": Derived(value1_divided_value2, args=["ipt_lu", "b_H"]),
+            "Dpsi": Derived(fn=bf.neg_value, args=["vpc"]),
+            "pH_lu": Derived(fn=bf.value1_divided_value2, args=["ipt_lu", "b_H"]),
         },
     )
 
@@ -265,7 +260,7 @@ def include_rates(m: Model):
             "Y0": -1,
             "Fd_red": 1,
             "Fd_ox": -1,
-            "Dpsi": Derived(value, args=["vpc"]),
+            "Dpsi": Derived(fn=bf.value, args=["vpc"]),
         },
     )
 

@@ -1,4 +1,4 @@
-------- Start on 2025-03-07 14:36:36.237803 -------
+------- Start on 2025-06-13 11:41:22.563688 -------
 
 ```math
 {v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot {k_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) {PC_red} \frac{{{k_b6f}}}{{{K_b6f}}}

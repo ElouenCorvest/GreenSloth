@@ -1,25 +1,17 @@
-from mdutils.mdutils import MdUtils  # noqa: E402
 from pathlib import Path
-from greensloth_utils import remove_math, gloss_fromCSV
 
-import os
+from mdutils.mdutils import MdUtils  # noqa: E402
+
+from GreenSlothUtils import gloss_fromCSV, remove_math
 
 ###### Util Functions ######
 
 
-def remove_math_mode(dic: dict, k: str, column_name: str = "Abbreviation Here"):
-    s = dic[k][column_name]
-
-    for i in range(dic[k][column_name].count("$")):
-        s = s.replace("$", "")
-
-    return s
-
-
-def ode(first_var: str, second_var: str = "t"):
+def ode(first_var: str, second_var: str = "t") -> str:
     for i in [first_var, second_var]:
         if "$" in i:
-            raise ValueError(f"Your given variable '{i}' has a '$' in it")
+            msg = f"Your given variable '{i}' has a '$' in it"
+            raise ValueError(msg)
 
     return rf"\frac{{\mathrm{{d}}{first_var}}}{{\mathrm{{d}}{second_var}}}"
 
@@ -31,11 +23,10 @@ model_doi = "https://doi.org/10.1038/s41477-021-00947-5"
 
 ###### Glossaries ######
 
-cite_dict = dict()
+cite_dict = {}
 
 model_info = Path(__file__).parent / "model_info"
 python_written = model_info / "python_written"
-main_gloss = Path(__file__).parents[2] / "Templates"
 
 comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
     path=model_info / "comps.csv", omit_col="Glossary ID"
@@ -171,14 +162,13 @@ PSII_ChSep = remove_math(derived_params_table, r"$PSII_{charge}$")
 PSII_recomb = remove_math(derived_params_table, r"$PSII_{recom}$")
 Cl_df = remove_math(derived_params_table, r"$\mathrm{driving\_force\_Cl}$")
 
-
 ###### Making README File ######
 
-mdFile = MdUtils(file_name=f"{os.path.dirname(__file__)}/README.md")
+mdFile = MdUtils(file_name=f"{Path(__file__).parents[0]}/README.md")  # noqa: N816
 
 mdFile.new_header(1, model_title)
 
-mdFile.new_paragraph(f"""The [{model_title}]({model_doi})
+mdFile.new_paragraph(f"""[{model_title}]({model_doi})
 
                      """)
 
@@ -432,14 +422,14 @@ mdFile.new_paragraph(rf"""
 
 mdFile.new_header(3, "Figures")
 
-mdFile.new_paragraph(rf"""
-                     
-<details>
-<summary></summary>
-                     
-<img style='float: center' src=''>
+# mdFile.new_paragraph(rf"""
 
-</details>
-""")
+# <details>
+# <summary>Figure </summary>
+
+# <img style='float: center' src=''>
+
+# </details>
+# """)
 
 mdFile.create_md_file()

@@ -1,5 +1,5 @@
-from modelbase2 import Model
 import numpy as np
+from mxlpy import Model
 
 
 def pH_to_proton(pH):
