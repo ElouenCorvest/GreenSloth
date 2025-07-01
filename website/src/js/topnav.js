@@ -29,7 +29,7 @@ topnavBarCenter.appendChild(topnavBarCenterHome)
 // Center Model Select
 var topnavBarCenterModelSelect = document.createElement("a")
 topnavBarCenterModelSelect.classList.add("tablinks")
-topnavBarCenterModelSelect.href = "./src/html/models_select.php"
+topnavBarCenterModelSelect.href = "https://greensloth.rwth-aachen.de/src/html/model_select.php"
 topnavBarCenterModelSelect.innerHTML = "Models"
 topnavBarCenter.appendChild(topnavBarCenterModelSelect)
 
@@ -71,7 +71,7 @@ topnavBarCenter.appendChild(topnavBarCenterContribution)
 // Center Contribution
 var topnavBarCenterTodos = document.createElement("a")
 topnavBarCenterTodos.classList.add("tablinks")
-topnavBarCenterTodos.href = "./src/html/todos.php"
+topnavBarCenterTodos.href = "https://greensloth.rwth-aachen.de/src/html/todos.php"
 topnavBarCenterTodos.innerHTML = "To Dos"
 topnavBarCenter.appendChild(topnavBarCenterTodos)
 
