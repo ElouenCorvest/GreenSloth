@@ -1,12 +1,12 @@
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
-import { Navigation, Pagination, Mousewheel, History } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, History, HashNavigation } from 'swiper/modules';
 
 // import Swiper from 'swiper'
 
 var swiper = new Swiper('.swiper-container', {
 
-    modules: [Navigation, Pagination, Mousewheel, History],
+    modules: [Navigation, Pagination, Mousewheel, HashNavigation],
 
     observer: true,
     observerParents: true,
@@ -34,8 +34,8 @@ var swiper = new Swiper('.swiper-container', {
     },
 
     // URL Navigation
-    history: {
-        replaceState: true,
+    hashNavigation: {
+        watchState: true,
     },
 
   });
@@ -65,22 +65,22 @@ for (let i = 0; i < tabContainer.children.length; i++) {
 
 // Photosynthesis Scheme - Set the links
 var schemePsii = document.getElementById("scheme-psii")
-schemePsii.setAttribute("href", "../src/html/models_select.html?appar=PSII")
+schemePsii.setAttribute("href", "../src/html/models_select.php?appar=PSII")
 
 var schemeCytb6f = document.getElementById("scheme-cytb6f")
-schemeCytb6f.setAttribute("href", "../src/html/models_select.html?appar=Cytb6f")
+schemeCytb6f.setAttribute("href", "../src/html/models_select.php?appar=Cytb6f")
 
 var schemePsi = document.getElementById("scheme-psi")
-schemePsi.setAttribute("href", "../src/html/models_select.html?appar=PSI")
+schemePsi.setAttribute("href", "../src/html/models_select.php?appar=PSI")
 
 var schemeAtpsynth = document.getElementById("scheme-atpsynth")
-schemeAtpsynth.setAttribute("href", "../src/html/models_select.html?appar=ATPSynth")
+schemeAtpsynth.setAttribute("href", "../src/html/models_select.php?appar=ATPSynth")
 
 var schemeCBB = document.getElementById("scheme-cbb")
-schemeCBB.setAttribute("href", "../src/html/models_select.html?appar=CBB")
+schemeCBB.setAttribute("href", "../src/html/models_select.php?appar=CBB")
 
 var schemeFNR = document.getElementById("scheme-fnr")
-schemeFNR.setAttribute("href", "../src/html/models_select.html?appar=FNR")
+schemeFNR.setAttribute("href", "../src/html/models_select.php?appar=FNR")
 
 var schemeOEC = document.getElementById("scheme-oec")
-schemeOEC.setAttribute("href", "../src/html/models_select.html?appar=OEC")
+schemeOEC.setAttribute("href", "../src/html/models_select.php?appar=OEC")

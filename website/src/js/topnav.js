@@ -22,14 +22,14 @@ topnavBar.appendChild(topnavBarCenter)
 // Center Home
 var topnavBarCenterHome = document.createElement("a")
 topnavBarCenterHome.classList.add("tablinks")
-topnavBarCenterHome.href = "../../index.html"
+topnavBarCenterHome.href = window.origin
 topnavBarCenterHome.innerHTML = "Home"
 topnavBarCenter.appendChild(topnavBarCenterHome)
 
 // Center Model Select
 var topnavBarCenterModelSelect = document.createElement("a")
 topnavBarCenterModelSelect.classList.add("tablinks")
-topnavBarCenterModelSelect.href = "/src/html/models_select.html"
+topnavBarCenterModelSelect.href = "./src/html/models_select.php"
 topnavBarCenterModelSelect.innerHTML = "Models"
 topnavBarCenter.appendChild(topnavBarCenterModelSelect)
 
@@ -56,16 +56,24 @@ topnavBarCenterGithub.prepend(githubLogo)
 // Center HowToUse
 var topnavBarCenterHowToUse = document.createElement("a")
 topnavBarCenterHowToUse.classList.add("tablinks")
-topnavBarCenterHowToUse.href = "../../slides/HowToUse"
+topnavBarCenterHowToUse.href = "https://greensloth.rwth-aachen.de/#HowToUse"
+console.log(topnavBarCenterHowToUse.href)
 topnavBarCenterHowToUse.innerHTML = "How To Use"
 topnavBarCenter.appendChild(topnavBarCenterHowToUse)
 
 // Center Contribution
 var topnavBarCenterContribution = document.createElement("a")
 topnavBarCenterContribution.classList.add("tablinks")
-topnavBarCenterContribution.href = "/src/html/contribution.html"
+topnavBarCenterContribution.href = "https://greensloth.rwth-aachen.de/src/html/contribution.php"
 topnavBarCenterContribution.innerHTML = "Contribution"
 topnavBarCenter.appendChild(topnavBarCenterContribution)
+
+// Center Contribution
+var topnavBarCenterTodos = document.createElement("a")
+topnavBarCenterTodos.classList.add("tablinks")
+topnavBarCenterTodos.href = "./src/html/todos.php"
+topnavBarCenterTodos.innerHTML = "To Dos"
+topnavBarCenter.appendChild(topnavBarCenterTodos)
 
 // Right Side
 var topnavBarRight = document.createElement("div")

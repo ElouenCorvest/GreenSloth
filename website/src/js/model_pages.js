@@ -1,5 +1,6 @@
 import Papa from "papaparse";
 import { marked } from 'marked';
+import modelData from "../js/models.json"
 
 // Important Variables
 var modelName = location.href.split("/").slice(-1)[0].split(".")[0];
@@ -476,9 +477,9 @@ modelSummaryBlockHead.appendChild(modelSummaryBlockHeadTitle)
 // Insert Model Head DOI
 var modelSummaryBlockHeadDOI = document.createElement("a")
 modelSummaryBlockHeadDOI.classList.add("discreetText")
-modelSummaryBlockHeadDOI.innerHTML = "DOI: Loading..."
 modelSummaryBlockHeadDOI.target = "_blank"
-updateDOI(modelSummaryBlockHeadDOI)
+modelSummaryBlockHeadDOI.href = modelData[modelName]["DOI"]
+modelSummaryBlockHeadDOI.innerHTML = `DOI: ${modelData[modelName]["DOI"]}`
 modelSummaryBlockHead.appendChild(modelSummaryBlockHeadDOI)
 
 // Insert Tab Container

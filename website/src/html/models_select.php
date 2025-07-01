@@ -31,7 +31,7 @@
           <div id="bars">
             <input type="text" class="typeInBar clickable" onkeyup="modelSearch()" placeholder="Search for names.." title="Type in a name" id="searchBar"/>
             
-            <button type="button" onclick="toggleTags()" class="tagsButton clickable">Tags</button>
+            <button type="button" onclick="toggleTags()" class="tagsButton clickable" id="tagsButton">Tags</button>
           </div>
   
           <div class="tagsBox hidden" id="tagsBox"></div>
@@ -59,9 +59,9 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="../js/model_select.js"></script>
-  <script type="text/javascript" src="../js/topnav.js"></script>
-  <script type="text/javascript" src="../js/cite.js"></script>
+  <script type="module" src="../js/model_select.js"></script>
+  <script type="module" src="../js/topnav.js"></script>
+  <script type="module" src="../js/cite.js"></script>
   <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
 </body>

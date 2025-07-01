@@ -42,8 +42,8 @@
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script type="module" src="../js/model_pages.js"></script>
-  <script type="text/javascript" src="../js/topnav.js"></script>
-  <script type="text/javascript" src="../js/cite.js"></script>
+  <script type="module" src="../js/topnav.js"></script>
+  <script type="module" src="../js/cite.js"></script>
   <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </body>
 

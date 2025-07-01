@@ -1,3 +1,6 @@
+# Custom ignroed Files and direcotries
+/website/public
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

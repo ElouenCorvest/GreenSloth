@@ -1,9 +1,11 @@
+<?php require 'require_login.php'; ?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -19,16 +21,19 @@
 
   <!-- <link rel="manifest" href="../site.webmanifest"> -->
   <meta name="theme-color" content="#fafafa">
+  <title>GreenSloth Titlepage</title>
 </head>
 
 <body>
+  <?php require 'login_modal.php'; ?>
+
   <div id="citeModal" class="modal hidden"></div>
   <div id="layoutWrapper" class="">
     <nav id="topnav"></nav>
     
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" data-history="Home">
+        <div class="swiper-slide" data-hash="Home">
           <div class="swiper-prev-button swiper-button">
             <span class="arrowUp"></span>
           </div>
@@ -64,7 +69,7 @@
           </div>
           
         </div>
-        <div class="swiper-slide" data-history="HowToUse">
+        <div class="swiper-slide" data-hash="HowToUse">
           <div class="swiper-prev-button swiper-button">
             <span class="arrowUp"></span>
           </div>
@@ -78,7 +83,7 @@
             </div>
             <div id="howtouse-search" class="howtouse-text hidden">
               <p>The first aspect of finding models is searching for them. Most commonly, new models are found by reading scientific literature, which has many positive aspects. However, it takes time and is tiring. Additionally, with the mass of new publications over time, some models will drown under the waves of new information. This is where GreenSloth comes into play, as it highlights already curated and popular models.</p>
-              <p>GreenSloth shows its curated models in a <a href="src/html/models_select.html">list</a> with the model’s name and scheme. Furthermore, GreenSloth introduces manually curated categories to see where the chosen models overlap. These categories are separated into a tag system to facilitate selecting the right model.</p>
+              <p>GreenSloth shows its curated models in a <a href="src/html/models_select.php">list</a> with the model’s name and scheme. Furthermore, GreenSloth introduces manually curated categories to see where the chosen models overlap. These categories are separated into a tag system to facilitate selecting the right model.</p>
             </div>
             <div id="howtouse-summary" class="howtouse-text hidden">
               <p>Each of the models presented on GreenSloth comes with a curated summary from the publication and a completed version, which is available for download using the modelbase package. Additionally, some vital model information, like the ODE system, the parameters, etc., are tabularized for ease of access. Every model on GreenSloth will also include tests to give further insight into the completeness of each model.</p>
@@ -170,8 +175,8 @@
   </div>
 
   <script type="module" src="src/js/index.js"></script>
-  <script type="text/javascript" src="src/js/topnav.js"></script>
-  <script type="text/javascript" src="src/js/cite.js"></script>
+  <script type="module" src="src/js/topnav.js"></script>
+  <script type="module" src="src/js/cite.js"></script>
   <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
   
 
