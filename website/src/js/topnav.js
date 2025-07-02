@@ -1,7 +1,8 @@
 // URL of page
-const url = window.location.href
-const urlHere = window.location.pathname
+const siteUrl = window.location.origin
+import iconSrc from "../img/icon.svg"
 
+console.log(siteUrl)
 // Top Nav Bar
 var topnavBar = document.getElementById("topnav")
 
@@ -11,7 +12,7 @@ topnavBarLeft.classList.add("topnav-left")
 topnavBar.appendChild(topnavBarLeft)
 
 var topnavBarLeftImage = document.createElement("img")
-topnavBarLeftImage.src = "../icon.svg"
+topnavBarLeftImage.src = iconSrc
 topnavBarLeft.appendChild(topnavBarLeftImage)
 
 // Center
@@ -29,7 +30,7 @@ topnavBarCenter.appendChild(topnavBarCenterHome)
 // Center Model Select
 var topnavBarCenterModelSelect = document.createElement("a")
 topnavBarCenterModelSelect.classList.add("tablinks")
-topnavBarCenterModelSelect.href = "https://greensloth.rwth-aachen.de/src/html/model_select.php"
+topnavBarCenterModelSelect.href = siteUrl + "/src/html/models_select.php"
 topnavBarCenterModelSelect.innerHTML = "Models"
 topnavBarCenter.appendChild(topnavBarCenterModelSelect)
 
@@ -56,22 +57,21 @@ topnavBarCenterGithub.prepend(githubLogo)
 // Center HowToUse
 var topnavBarCenterHowToUse = document.createElement("a")
 topnavBarCenterHowToUse.classList.add("tablinks")
-topnavBarCenterHowToUse.href = "https://greensloth.rwth-aachen.de/#HowToUse"
-console.log(topnavBarCenterHowToUse.href)
+topnavBarCenterHowToUse.href = siteUrl + "/#HowToUse"
 topnavBarCenterHowToUse.innerHTML = "How To Use"
 topnavBarCenter.appendChild(topnavBarCenterHowToUse)
 
 // Center Contribution
 var topnavBarCenterContribution = document.createElement("a")
 topnavBarCenterContribution.classList.add("tablinks")
-topnavBarCenterContribution.href = "https://greensloth.rwth-aachen.de/src/html/contribution.php"
+topnavBarCenterContribution.href = siteUrl + "/src/html/contribution.php"
 topnavBarCenterContribution.innerHTML = "Contribution"
 topnavBarCenter.appendChild(topnavBarCenterContribution)
 
 // Center Contribution
 var topnavBarCenterTodos = document.createElement("a")
 topnavBarCenterTodos.classList.add("tablinks")
-topnavBarCenterTodos.href = "https://greensloth.rwth-aachen.de/src/html/todos.php"
+topnavBarCenterTodos.href = siteUrl + "/src/html/todos.php"
 topnavBarCenterTodos.innerHTML = "To Dos"
 topnavBarCenter.appendChild(topnavBarCenterTodos)
 

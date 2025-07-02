@@ -1,4 +1,4 @@
-<?php require '../../require_login.php'; ?>
+<?php require '../website/require_login.php'; ?>
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <?php require '../../login_modal.php'; ?>
+    <?php require '../website/login_modal.php'; ?>
 
   <div id="layoutWrapper">
     <nav id="topnav"></nav>
@@ -29,6 +29,8 @@
       <div id="content">
         
         <div id="citeModal" class="modal hidden"></div>
+
+        <h1>To Dos of GreenSloth</h1>
   
       </div>
     </div>
