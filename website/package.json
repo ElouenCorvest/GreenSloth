@@ -12,6 +12,7 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "chroma-js": "^3.1.2",
     "marked": "^15.0.12",
     "papaparse": "^5.5.3",
     "swiper": "^11.2.7",
