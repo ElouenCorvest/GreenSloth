@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\usepackage[version=4]{mhchem} %Enables easier chemical reactions
+
+%Format packages
+\usepackage[a4paper, left = 3cm, right = 2cm, top = 2.5cm, bottom = 2.5cm]{geometry} %Sets the margin to a nice format
+\usepackage[font = small,labelfont=bf]{caption} %Sets the figure captions as bold
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{enumitem} %Better enumeration
+
+\onehalfspacing
+\setlength{\parindent}{10pt}
+
+%Bibliography packages
+\usepackage{csquotes,xpatch}% recommended
+\usepackage[backend=biber, style = apa, sorting=none, url=false, alldates=year]{biblatex}
+\addbibresource{Preamble/GreenSloth.bib}
+
+%Ref package
+\usepackage[]{hyperref}
+
+%Title page
+\usepackage{tikz}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[right]{eurosym}
+\usepackage[framemethod=TikZ]{mdframed}

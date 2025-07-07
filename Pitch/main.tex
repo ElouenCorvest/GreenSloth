@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+
+\input{Preamble/Packages.tex}
+\input{Preamble/NewCommands.tex}
+
+\begin{document}
+
+\input{Titelpage.tex}
+
+\newpage
+
+\noindent
+Food, clothes, medicine and many more products of human labour have at least their start using plants and their fantastic way of primary metabolism, photosynthesis. While the chemical reaction can be easily written down (Eq. \ref{eq: photosynthesis}), the biological process is quite complex. It includes several proteins and complexes that come together to utilise energy absorbed by light, powering an electron transfer chain that enables the production of a few ATP molecules while transforming water into oxygen. The ATP and several other products produced by photosynthesis are used to convert breathed-in \ce{CO2} into sugars by the Calvin-Benson-Bassham cycle~\parencite{stirbet_photosynthesis_2020}.
+
+\begin{equation}
+    \label{eq: photosynthesis}
+    \ce{6CO2 + 12H2O + light energy -> C6H12O6 + 6O2 + 6H2O}
+\end{equation}
+
+Enhancing the efficiency of photosynthesis has long been a key way to increase crop yield \parencite{murchie_agriculture_2009}. However, the standard methods that introduced the Green Revolution have reached a plateau \parencite{long_can_2006}, which is why researching photosynthesis in even greater detail has gained increased importance. Of course, the basics of photosynthesis have been known since the 18th century \parencite{ingenhousz_experiments_1779}, but the pursuit of knowledge is still not complete. While experimental methods continue to be used to gain a deeper understanding of photosynthesis, the significant increase in computational prowess over the last few decades has also made it possible to model this process.
+
+Using experimental data, it is possible to gather information on enzymatic, chemical, topographic, and other types of properties. With this information, it is possible to identify mathematical connections in biological networks, which in turn give rise to calculations. As Biology is living chemistry, as chemistry is molecular physics, and as physics is interpretive mathematics, it should, in theory, be possible to translate every biological network into pure mathematics. This is no different with photosynthesis, and has been proven to be viable in many cases.
+
+As photosynthesis is such a complicated process, modelling it in its entirety is no easy task. There have been attempts \parencite{zhu_ephotosynthesis_2013}, but none have been successful enough to be chosen as the definitive model of photosynthesis. The struggle not only lies in insufficient computational power, but also in still-unexplained areas of photosynthesis. Therefore, the modelling community has introduced simplifications in the process to bridge the knowledge gaps, hone in on the model's task to a specific part of photosynthesis, or do both. This has allowed the emergence of many models of photosynthesis, not only in terms of what they depict, but also in how they are constructed.
+
+As models vary on so many aspects, it can be daunting to pursue using one. Especially, as most model builders are experts in that exact field and not in experimental studies, many models suffer from being built in a way that is not user-friendly for people who may not even know how to code. Contrarily, the goal of most models is not to be used by other modelling experts, but by experimentalists to see where they should focus their work next. Therefore, it is in the model's best interest to be as user-friendly as possible. However, it is not only the model builders at fault, but also the lack of guidelines for publishing models.
+
+Publishing experimental work has semi-strict guidelines regarding reproducibility. All publications must include a “Methods” section that explains in detail how each experiment and statistical conclusion was made. Often, they include the names of used chemicals, step-by-step guides, names of companies where resources have been allocated, and much more. These restrictions have been implemented to ensure that science is as factual as possible. Furthermore, it is customary for a publication to undergo a reviewing process, which involves consulting other experts in the field to solicit their opinions on the publication. Sometimes, the author may need to validate their conclusion further or reconsider their work from a different perspective. This process, in theory, should enhance the quality of scientific work. These tried and tested methods, although not perfect, have been a staple of the scientific world, which is why they have been incorporated into scientific work in modelling. However, one should not overlook the flaw behind it.
+
+As modelling is theoretical work, which should only be validated with experimental work, the “Methods” section is usually quite empty. It is customary, however, to include an explanation of how the model was built, thereby detailing the mathematical formulations behind it. However, as most models are pretty complex, writing numerous mathematical equations may introduce errors in formulation, just as it often happens with grammatical mistakes in written text. The reviewing process frequently overlooks these errors, as they are not mathematical errors, which would require the reviewers to compare the publication with the code of the model itself, a task they often do not undertake. This problem, combined with the fact that it is not compulsory to publish the code with the publication, makes working with the model quite difficult. These problems persist in many modelling publications, making it nearly impossible for someone inexperienced to delve into the world of modelling.
+
+This issue is widely acknowledged, and numerous attempts have been made to refute it. From new ways to share a model \parencite{hucka_systems_2003}, to an easier way to find models \parencite{malik-sheriff_biomodels15_2019}, and more. However, most have been only partially successful and are missing out on many aspects. This is where the idea of GreenSloth came into play.
+
+GreenSloth will be an open-source database that will focus on popular kinetic models of photosynthesis. It will support a list of curated models, all written in Python and utilising the mxlpy package \parencite{van_aalst_mxlpy_2025} for consistency. The models will provide a summary in text form, as well as an overview of their mathematical background. Furthermore, GreenSloth will alleviate the hassle of finding a model that fits the needs of the searchee by employing a catalogue of tags that link models together. These tags range from simple components of photosynthesis to the type of data that can be extracted from the model. Finally, a direct comparison between models will be made available, which not only includes the numerical data but also newly developed tests that will validate the model in many different ways. To bring all these features together and make them as accessible as possible, GreenSloth will be made available through a website that features a lovely and user-friendly design, further facilitating the user's work. GreenSloth is a solution that needs to exist, and a first iteration can already be found online at \url{https://greensloth.rwth-aachen.de/}.
+
+\newpage
+
+\printbibliography
+
+\end{document}
