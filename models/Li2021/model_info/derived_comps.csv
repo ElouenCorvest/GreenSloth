@@ -1,9 +1,0 @@
-Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,$H_{lumen}$,C00080,H_lu,3
-The total proton motive force,$\mathrm{PMF}$,$pmf$,,PMF,66
-Concentration of protonated psbS protein,$\mathrm{psbS^P}$,$PsbS\_H$,K03542,PsbSP,9
-Nonphotochemical quenching,$\mathrm{NPQ}$,$NPQ$,,NPQ,67
-Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,$\mathrm{d\_protons\_to\_ATP}$,,Prot_ATPsynth,68
-Efficiency of PSII,$\Phi \mathrm{PSII}$,$\Phi \mathrm{PSII}$,,PhiPSII,69
-Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,$^1\mathrm{O_2}$,C00007,singO2,70
-Stromal Proton concentration,$\mathrm{H_{st}}$,$H_{stroma}$,C00080,H_st,71
