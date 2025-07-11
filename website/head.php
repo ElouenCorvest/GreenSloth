@@ -4,7 +4,7 @@
 rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
-<link rel="stylesheet" href="src/css/style.css">
+<link rel="stylesheet" href="/src/css/style.css">
 <meta name="description" content="">
 
 <meta property="og:title" content="">

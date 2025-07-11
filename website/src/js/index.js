@@ -18,7 +18,7 @@ var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     grabCursor: true,
     autoHeight: true,
-    loop: true,
+    loop: false,
 
     // Navigation arrows
     navigation: {
@@ -37,7 +37,7 @@ var swiper = new Swiper('.swiper-container', {
     hashNavigation: {
         watchState: true,
     },
-
+    nested: true
   });
 
 // How To Use

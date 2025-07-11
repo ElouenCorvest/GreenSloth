@@ -4,7 +4,28 @@
 <html lang="en">
 
 <head>
-  <?php include_once "head.php" ?>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="/src/css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta name="theme-color" content="#fafafa">
+  <title>GreenSloth</title>
 </head>
 
 <body>
@@ -16,13 +37,10 @@
     
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" data-hash="Home">
-          <div class="swiper-prev-button swiper-button">
-            <span class="arrowUp"></span>
-          </div>
-          <div class="swiper-content">
-            <img src="src/img/greensloth_color_complete.svg" style="min-height: 0; max-height: 50%; width: 30%; flex-grow: 1;"/>
-            <p style="color: var(--mainAccentColor); font-weight: bold; font-size: 2.5em;">EASIER ACCESS TO PHOTOSYNTHETIC MODELS</p>
+        <div class="swiper-slide index-slide" data-hash="Home">
+          <div class="swiper-content swiper-content-flex">
+            <img src="src/img/greensloth_color_complete.svg" id="index-swiper-slide1-logo"/>
+            <p id="index-swiper-slide1-text">EASIER ACCESS TO PHOTOSYNTHETIC MODELS</p>
           </div>
           <div class="swiper-next-button swiper-button">
             <p>Find out more!</p>
@@ -30,21 +48,23 @@
           </div>
           
         </div>
-        <div class="swiper-slide"  data-history="Motivation">
+        <div class="swiper-slide index-slide"  data-history="Motivation">
           <div class="swiper-prev-button swiper-button">
             <span class="arrowUp"></span>
           </div>
-          <div class="swiper-content">
+          <div class="swiper-content swiper-content-flex">
             <h1>Motivation</h1>
-            <p>
-              In 2022, Elouen, the creator of GreenSloth, wrote his Bachelor's thesis about comparing the popular and simple steady-state Farquhar, von Caemmerer, and Berry Model (FvCB model) and a kinetic photosynthesis model. While searching for the other model, he searched various public sources for scientific literature and tried to recreate several models. During this time, he arrived at one conclusion: modeling, especially photosynthesis, aims to help others understand more of the essential process of life on Earth. However, the scientific community has not found a common way to share its models. This is where the idea of GreenSloth first came into play.
-            </p>
-            <p>
-              During his further experience with photosynthetic models, he found that this issue was common for experts and amateurs in modelling, which inspired his mind even more to find a solution. He wanted to create a resource that collects popular photosynthesis models and enables an easier summary and accessibility, especially for amateurs in the modelling field. 
-            </p>
-            <p>
-              With GreenSloth, Elouen hopes to facilitate researchers' access to the modeling world. He believes this is vital to understanding and coping with the complexity of photosynthesis. This website will enable even better scientific transparency.
-            </p>
+            <div class="long-text">
+              <p>
+                In 2022, Elouen, the creator of GreenSloth, wrote his Bachelor's thesis about comparing the popular and simple steady-state Farquhar, von Caemmerer, and Berry Model (FvCB model) and a kinetic photosynthesis model. While searching for the other model, he searched various public sources for scientific literature and tried to recreate several models. During this time, he arrived at one conclusion: modeling, especially photosynthesis, aims to help others understand more of the essential process of life on Earth. However, the scientific community has not found a common way to share its models. This is where the idea of GreenSloth first came into play.
+              </p>
+              <p>
+                During his further experience with photosynthetic models, he found that this issue was common for experts and amateurs in modelling, which inspired his mind even more to find a solution. He wanted to create a resource that collects popular photosynthesis models and enables an easier summary and accessibility, especially for amateurs in the modelling field. 
+              </p>
+              <p>
+                With GreenSloth, Elouen hopes to facilitate researchers' access to the modeling world. He believes this is vital to understanding and coping with the complexity of photosynthesis. This website will enable even better scientific transparency.
+              </p>
+            </div>
           </div>
           <div class="swiper-next-button swiper-button">
             <p>How to use!</p>
@@ -52,26 +72,26 @@
           </div>
           
         </div>
-        <div class="swiper-slide" data-hash="HowToUse">
+        <div class="swiper-slide index-slide" data-hash="HowToUse">
           <div class="swiper-prev-button swiper-button">
             <span class="arrowUp"></span>
           </div>
-          <div class="swiper-content" style="max-width: 1000px;">
+          <div class="swiper-content swiper-content-grid">
             <h1>How To Use</h1>
             <p style="font-size: larger; text-align: center; font-weight: bold;">GreenSloth can be separated into three distinct aspects of model searching.</p>
-            <div class="TabContainer">
+            <div class="TabContainer index-tab-container">
               <button>Search</button>
               <button>Summary</button>
               <button>Comparision</button>
             </div>
-            <div id="howtouse-search" class="howtouse-text hidden">
+            <div id="howtouse-search" class="hidden long-text">
               <p>The first aspect of finding models is searching for them. Most commonly, new models are found by reading scientific literature, which has many positive aspects. However, it takes time and is tiring. Additionally, with the mass of new publications over time, some models will drown under the waves of new information. This is where GreenSloth comes into play, as it highlights already curated and popular models.</p>
-              <p>GreenSloth shows its curated models in a <a href="src/html/models_select.php">list</a> with the model’s name and scheme. Furthermore, GreenSloth introduces manually curated categories to see where the chosen models overlap. These categories are separated into a tag system to facilitate selecting the right model.</p>
+              <p>GreenSloth shows its curated models in a <a href="src/html/models_select.php">list</a> with the model's name and scheme. Furthermore, GreenSloth introduces manually curated categories to see where the chosen models overlap. These categories are separated into a tag system to facilitate selecting the right model.</p>
             </div>
-            <div id="howtouse-summary" class="howtouse-text hidden">
+            <div id="howtouse-summary" class="hidden long-text">
               <p>Each of the models presented on GreenSloth comes with a curated summary from the publication and a completed version, which is available for download using the modelbase package. Additionally, some vital model information, like the ODE system, the parameters, etc., are tabularized for ease of access. Every model on GreenSloth will also include tests to give further insight into the completeness of each model.</p>
             </div>
-            <div id="howtouse-comparision" class="howtouse-text hidden">
+            <div id="howtouse-comparision" class="hidden long-text">
               <p>To help choose between models, GreenSloth lets you compare vital information between two models directly. This enables a quicker and more efficient way to choose which model is best tailored to your specific needs. While most comparisons are done using the information from each model summary, GreenSloth also uses more advanced, newly developed techniques.</p>
             </div>
           </div>
@@ -81,12 +101,12 @@
           </div>
           
         </div>
-        <div class="swiper-slide" data-history="PhotosynthesisScheme">
+        <div class="swiper-slide index-slide" data-history="PhotosynthesisScheme">
           <div class="swiper-prev-button swiper-button">
             <span class="arrowUp"></span>
           </div>
           <div class="swiper-content">
-            <h3>Press the photosynthesis apparatus you wish to look into!</h3>
+            <h3>Press the part of photosynthesis to see which models include it!</h3>
             <svg id="photosynthesis-scheme" style="flex-grow: 1;" width="216.05mm" height="125.18mm" version="1.1" viewBox="0 0 216.05 125.18" xmlns="http://www.w3.org/2000/svg">
               <g transform="translate(-3.2695 -25.238)">
                 <rect x="3.2695" y="108.2" width="216.05" height="2" rx=".5" fill="#4d683d" style="paint-order:markers stroke fill"/>
@@ -145,10 +165,6 @@
               </a>
             </svg>
           </div>
-          <div class="swiper-next-button swiper-button">
-            <span class="arrowDown"></span>
-          </div>
-          
         </div>
       </div>
 

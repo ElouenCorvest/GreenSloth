@@ -303,14 +303,14 @@ async function getMdFile() {
 
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 // Content Pipeline
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 var contentElement = document.getElementById("content")
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 // Compare Modal
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 // Insert Compare Modal
 var compareModal = document.createElement("div")
 compareModal.id = "compareModal"
@@ -452,74 +452,43 @@ sides.forEach(side => {
     }
 })
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Header
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Create Model Header
-var modelHeader = document.createElement("div")
-modelHeader.id = "model-header"
-insertCommentedElement(contentElement, modelHeader, "Model Header")
+///////////////////////////////////////////////////////
+// Create Swiper Div
+///////////////////////////////////////////////////////
+// Insert Swiper Div
+var swiperDiv = document.createElement("div")
+swiperDiv.classList.add("swiper-container-models", "gallery-top")
+insertCommentedElement(contentElement, swiperDiv, "The Swiper Div")
 
-// Insert Model Title
-var modelHeaderTitle = document.createElement("h1")
-modelHeaderTitle.classList.add("modelText")
-modelHeaderTitle.innerHTML = modelName
-modelHeader.appendChild(modelHeaderTitle)
+// Insert Swiper Wrapper
+var swiperWrapper = document.createElement("div")
+swiperWrapper.classList.add("swiper-wrapper")
+insertCommentedElement(swiperDiv, swiperWrapper, "The Swiper Wrapper")
 
-// Insert Model DOI
-var modelHeaderDOI = document.createElement("a")
-modelHeaderDOI.classList.add("discreetText", "grid-right")
-modelHeaderDOI.target = "_blank"
-modelHeaderDOI.href = modelData[modelName]["DOI"]
-modelHeaderDOI.innerHTML = `DOI: ${modelData[modelName]["DOI"]}`
-modelHeader.appendChild(modelHeaderDOI)
+// Insert Swiper Left Arrow
+var swiperArrowLeft = document.createElement("div")
+swiperArrowLeft.classList.add("swiper-button-prev")
+insertCommentedElement(swiperDiv, swiperArrowLeft, "The Swiper Left Button")
 
-// Insert Model Button Bar
-var modelHeaderButtonBar = document.createElement("div")
-modelHeaderButtonBar.classList.add("TabContainer")
-modelHeaderButtonBar.id = "modelButtonBar"
-modelHeaderButtonBar.style = "grid-column: span 2;"
-insertCommentedElement(modelHeader, modelHeaderButtonBar, "The Model Summary Buttons")
+// Insert Swiper Right Arrow
+var swiperArrowRight = document.createElement("div")
+swiperArrowRight.classList.add("swiper-button-next")
+insertCommentedElement(swiperDiv, swiperArrowRight, "The Swiper Right Button")
 
-// Insert Model Button Bar Github Button
-var modelHeaderButtonBarGithub = document.createElement("a")
-modelHeaderButtonBarGithub.target = "_blank"
-modelHeaderButtonBarGithub.href = `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`
-modelHeaderButtonBarGithub.style = "display: flex; text-decoration: none; align-items: last baseline; justify-content: center;"
-modelHeaderButtonBar.prepend(modelHeaderButtonBarGithub)
+// Insert Swiper Slide Summary
+var swiperSummary = document.createElement("div")
+swiperSummary.classList.add("swiper-slide")
+insertCommentedElement(swiperWrapper, swiperSummary, "The Swiper Slide Summary")
 
-// Insert Model Button Bar Github Button Logo With Text
-var modelHeaderButtonBarGithubLogoText = document.createElement("div")
-modelHeaderButtonBarGithubLogoText.classList.add("logoWithText")
-modelHeaderButtonBarGithubLogoText.innerHTML = "Github"
-modelHeaderButtonBarGithubLogoText.style = "flex-grow: 1"
-modelHeaderButtonBarGithub.appendChild(modelHeaderButtonBarGithubLogoText)
+// Insert Swiper Slide Summary
+var swiperODE = document.createElement("div")
+swiperODE.classList.add("swiper-slide")
+swiperODE.innerHTML = "Hello"
+insertCommentedElement(swiperWrapper, swiperODE, "The Swiper Slide ODE")
 
-// Insert Model Button Bar Github Button Logo
-var githubLogo = document.createElement("span")
-githubLogo.classList.add("githubLogo")
-modelHeaderButtonBarGithubLogoText.prepend(githubLogo)
-
-// Insert Model Button Bar Compare Button
-var modelHeaderButtonBarCompare = document.createElement("button")
-modelHeaderButtonBarCompare.onclick = function() {
-    compareModal.classList.toggle("hidden")
-    this.classList.toggle("active")
-}
-modelHeaderButtonBarCompare.append("Compare")
-modelHeaderButtonBar.appendChild(modelHeaderButtonBarCompare)
-
-// Insert Model Button Bar Last Updated
-var modelHeaderButtonBarLastUpdate = document.createElement("p")
-modelHeaderButtonBarLastUpdate.classList.add("discreetText")
-modelHeaderButtonBarLastUpdate.innerHTML = "Last Update: Loading..."
-modelHeaderButtonBarLastUpdate.style = "flex-grow: 1; margin: 0; font-size: 0.7em; text-align: center;"
-updateLastModified(modelHeaderButtonBarLastUpdate)
-modelHeaderButtonBarGithub.appendChild(modelHeaderButtonBarLastUpdate)
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 // Create Swiper Thumbs Div
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
 // Insert Swiper Thumbs Div
 var swiperThumbDiv = document.createElement("div")
 swiperThumbDiv.classList.add("swiper-container", "gallery-thumbs")
@@ -532,97 +501,39 @@ insertCommentedElement(swiperThumbDiv, swiperThumbWrapper, "The Swiper Thumb Wra
 
 // Insert Swiper Thumbs Summary
 var swiperThumbSummary = document.createElement("div")
-swiperThumbSummary.classList.add("swiper-slide", "clickable")
+swiperThumbSummary.classList.add("swiper-slide")
 swiperThumbSummary.innerHTML = "Summary"
 insertCommentedElement(swiperThumbWrapper, swiperThumbSummary, "The Swiper Thumb Summary")
 
-// Tab Container Buttons
-const modelInfoCats = {
-    ODE: "ODE System",
-    DerivedComps: "Derived Quantities",
-    Params: "Parameters",
-    DerivedParams: "Derived Parameters",
-    Rates: "Rates",
-    Figures: "Figures"
-}
-
-// Insert Swiper Thumbs
-for (const [key, value] of Object.entries(modelInfoCats)) {
-    var swiperThumb = document.createElement("div")
-    swiperThumb.classList.add("clickable", "swiper-slide")
-    swiperThumb.innerHTML = value
-    insertCommentedElement(swiperThumbWrapper, swiperThumb, `The Swiper Thumb ${key}`)
-}
-
-///////////////////////////////////////////////////////
-// Create Swiper Div
-///////////////////////////////////////////////////////
-// Insert Swiper Div
-var swiperDiv = document.createElement("div")
-swiperDiv.classList.add("swiper", "gallery-top")
-insertCommentedElement(contentElement, swiperDiv, "The Swiper Div")
-
-// Insert Swiper Wrapper
-var swiperWrapper = document.createElement("div")
-swiperWrapper.classList.add("swiper-wrapper", "swiper-wrapper-models")
-insertCommentedElement(swiperDiv, swiperWrapper, "The Swiper Wrapper")
-
-// Insert Swiper Right Arrow
-var swiperArrowRight = document.createElement("div")
-swiperArrowRight.classList.add("swiper-button-next")
-insertCommentedElement(swiperDiv, swiperArrowRight, "The Swiper Right Button")
-
-// Insert Swiper Left Arrow
-var swiperArrowLeft = document.createElement("div")
-swiperArrowLeft.classList.add("swiper-button-prev")
-insertCommentedElement(swiperDiv, swiperArrowLeft, "The Swiper Left Button")
-
-// Insert Swiper Slide Summary
-var swiperSummary = document.createElement("div")
-swiperSummary.classList.add("swiper-slide", "swiper-slide-models")
-insertCommentedElement(swiperWrapper, swiperSummary, "The Swiper Slide Summary")
-
-// Insert Swiper Slides
-for (const [key, value] of Object.entries(modelInfoCats)) {
-    var swiperSlide = document.createElement("div")
-    swiperSlide.classList.add("swiper-slide", "swiper-slide-models", "modelTabContent")
-    insertCommentedElement(swiperWrapper, swiperSlide, `The Swiper Slide ${key}`)
-
-    var modelAttrTable = document.createElement("table")
-    modelAttrTable.id = `modelAttr${key}Table`
-    swiperSlide.appendChild(modelAttrTable)
-
-    var modelAttrMath = document.createElement("div")
-    modelAttrMath.id = `modelAttr${key}Math`
-    modelAttrMath.classList.add("modelAttrMath")
-    swiperSlide.appendChild(modelAttrMath)
-}
+// Insert Swiper Thumbs Summary
+var swiperThumbODE = document.createElement("div")
+swiperThumbODE.classList.add("swiper-slide")
+swiperThumbODE.innerHTML = "ODE System"
+insertCommentedElement(swiperThumbWrapper, swiperThumbODE, "The Swiper Thumb ODE")
 
 ///////////////////////////////////////////////////////
 // Init Swiper
 ///////////////////////////////////////////////////////
-Swiper.use([Navigation, Thumbs]);
 var galleryThumbs = new Swiper('.gallery-thumbs', {
     spaceBetween: 10,
-    slidesPerView: 'auto', // <- makes slide width match content
+    slidesPerView: 4,
+    loop: true,
     freeMode: true,
+    loopedSlides: 5, //looped slides should be the same
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
-    // no loop here
-  });  
+});
 
 var galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,
     loop: true,
-    loopedSlides: 5,
-    grabCursor: true,
-    autoHeight: true,
+    loopedSlides: 5, //looped slides should be the same
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     thumbs: {
-        swiper: galleryThumbs,
+      swiper: galleryThumbs,
     },
 });
 
@@ -639,6 +550,67 @@ var modelSummaryBlockScheme = document.createElement("img")
 modelSummaryBlockScheme.classList.add("modelScheme", "thisScheme")
 modelSummaryBlock.appendChild(modelSummaryBlockScheme)
 
+// Insert Model Head
+var modelSummaryBlockHead = document.createElement("div")
+modelSummaryBlockHead.id = "modelBlockHead"
+modelSummaryBlock.appendChild(modelSummaryBlockHead)
+
+// Insert Model Head Title
+var modelSummaryBlockHeadTitle = document.createElement("h1")
+modelSummaryBlockHeadTitle.classList.add("modelText")
+modelSummaryBlockHeadTitle.innerHTML = modelName
+modelSummaryBlockHead.appendChild(modelSummaryBlockHeadTitle)
+
+// Insert Model Head DOI
+var modelSummaryBlockHeadDOI = document.createElement("a")
+modelSummaryBlockHeadDOI.classList.add("discreetText")
+modelSummaryBlockHeadDOI.target = "_blank"
+modelSummaryBlockHeadDOI.href = modelData[modelName]["DOI"]
+modelSummaryBlockHeadDOI.innerHTML = `DOI: ${modelData[modelName]["DOI"]}`
+modelSummaryBlockHead.appendChild(modelSummaryBlockHeadDOI)
+
+// Insert Tab Container
+var modelSummaryBlockBar = document.createElement("div")
+modelSummaryBlockBar.classList.add("TabContainer")
+modelSummaryBlockBar.id = "modelButtonBar"
+insertCommentedElement(modelSummaryBlock, modelSummaryBlockBar, "The Model Summary Buttons")
+
+// Insert Model Button Bar Github Button
+var modelSummaryBlockBarGithub = document.createElement("a")
+modelSummaryBlockBarGithub.target = "_blank"
+modelSummaryBlockBarGithub.href = `https://github.com/ElouenCorvest/GreenSloth/tree/main/models/${modelName}`
+modelSummaryBlockBarGithub.style = "display: flex; text-decoration: none; align-items: last baseline; justify-content: center;"
+modelSummaryBlockBar.prepend(modelSummaryBlockBarGithub)
+
+// Insert Model Button Bar Github Button Logo With Text
+var modelSummaryBlockBarGithubLogoText = document.createElement("div")
+modelSummaryBlockBarGithubLogoText.classList.add("logoWithText")
+modelSummaryBlockBarGithubLogoText.innerHTML = "Github"
+modelSummaryBlockBarGithubLogoText.style = "flex-grow: 1"
+modelSummaryBlockBarGithub.appendChild(modelSummaryBlockBarGithubLogoText)
+
+// Insert Model Button Bar Github Button Logo
+var githubLogo = document.createElement("span")
+githubLogo.classList.add("githubLogo")
+modelSummaryBlockBarGithubLogoText.prepend(githubLogo)
+
+// Insert Model Button Bar Compare Button
+var modelSummaryBlockBarCompare = document.createElement("button")
+modelSummaryBlockBarCompare.onclick = function() {
+    compareModal.classList.toggle("hidden")
+    this.classList.toggle("active")
+}
+modelSummaryBlockBarCompare.append("Compare")
+modelSummaryBlockBar.appendChild(modelSummaryBlockBarCompare)
+
+// Insert Model Button Bar Last Updated
+var modelSummaryBlockBarLastUpdate = document.createElement("p")
+modelSummaryBlockBarLastUpdate.classList.add("discreetText")
+modelSummaryBlockBarLastUpdate.innerHTML = "Last Update: Loading..."
+modelSummaryBlockBarLastUpdate.style = "flex-grow: 1; margin: 0; font-size: 0.7em; text-align: center;"
+updateLastModified(modelSummaryBlockBarLastUpdate)
+modelSummaryBlockBarGithub.appendChild(modelSummaryBlockBarLastUpdate)
+
 // Insert Model Summary
 var modelSummaryBlockText = document.createElement("div")
 modelSummaryBlockText.classList.add("modelText")
@@ -652,6 +624,82 @@ modelSummaryBlockText.appendChild(modelSummaryBlockTextTitle)
 // Insert Model Summary Text
 var modelSummaryBlockTextText = document.createElement("p")
 modelSummaryBlockText.appendChild(modelSummaryBlockTextText)
+
+///////////////////////////////////////////////////////
+// Tab Container for Model Information
+///////////////////////////////////////////////////////
+// Insert Tab Container
+var tabContainer = document.createElement("div")
+tabContainer.classList.add("TabContainer")
+insertCommentedElement(contentElement, tabContainer, "The Information Tabs")
+
+// Tab Container Buttons
+const tabContainerButtons = {
+    ODE: "ODE System",
+    DerivedComps: "Derived Quantities",
+    Params: "Parameters",
+    DerivedParams: "Derived Parameters",
+    Rates: "Rates",
+    Figures: "Figures"
+}
+
+for (const [key, value] of Object.entries(tabContainerButtons)) {
+    var tabContainerButton = document.createElement("button")
+    tabContainerButton.addEventListener("click", function() {
+        openModelAttr(this, `modelAttr${key}`);
+    });
+    tabContainerButton.innerHTML = value
+    tabContainer.appendChild(tabContainerButton)
+}
+
+function openModelAttr(button, AttrName) {
+    const allButtons = button.parentElement.children
+    const allInfo = document.querySelectorAll(".modelTabContent")
+
+    if (button.classList.contains("active")) {
+        button.classList.toggle("active")
+        const modelInfo = document.getElementById(AttrName)
+        modelInfo.classList.toggle("hidden")
+    } else {
+        for (let i = 0; i < allButtons.length; i++) {
+            if (allButtons[i] === button) {
+                allButtons[i].classList.add("active")
+            } else {
+                allButtons[i].classList.remove("active")
+            }
+        }
+    
+        for (let i = 0; i < allInfo.length; i++) {
+            if (allInfo[i].id === AttrName) {
+                allInfo[i].classList.remove("hidden")
+            } else {
+                allInfo[i].classList.add("hidden")
+            }
+        }
+    }
+
+}
+
+///////////////////////////////////////////////////////
+// Model Information
+///////////////////////////////////////////////////////
+// All Model Info
+for (const [key, value] of Object.entries(tabContainerButtons)) {
+    var modelAttrContent = document.createElement("div")
+    modelAttrContent.id = `modelAttr${key}`;
+    modelAttrContent.classList.add("modelTabContent", "hidden")
+    insertCommentedElement(contentElement, modelAttrContent, `Model Info ${value}`)
+
+    if (key != "Figures") {
+        var modelAttrContentTable = document.createElement("table")
+        modelAttrContentTable.id = `modelAttr${key}Table`
+        modelAttrContent.appendChild(modelAttrContentTable)
+        var modelAttrContentMath = document.createElement("div")
+        modelAttrContentMath.id = `modelAttr${key}Math`
+        modelAttrContentMath.classList.add("modelAttrMath")
+        modelAttrContent.appendChild(modelAttrContentMath)
+    }    
+}
 
 // Add at End
 // Model Scheme
