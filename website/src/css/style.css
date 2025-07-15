@@ -26,6 +26,7 @@
   --secondaryAccentColor: rgba(149, 193, 31, 1);
   --halfOpacity: rgba(0, 0, 0, 0.1);
   --tertiaryAccentColor: rgb(224, 224, 224);
+  --quateryAccentColor: #E0777D;
   --hoverColor: rgba(149, 193, 31, 0.2);
   --buttonActiveBorderColor: #00aaafff;
   --buttonHoverColor: rgba(0, 170, 175, 0.2);
@@ -398,6 +399,34 @@ textarea {
   width: 2em;
   height: 2em;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.material-symbols--zoom-out-map-rounded {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6.4 19H8q.425 0 .713.288T9 20t-.288.713T8 21H4q-.425 0-.712-.288T3 20v-4q0-.425.288-.712T4 15t.713.288T5 16v1.6l2.4-2.4q.275-.275.7-.275t.7.275t.275.7t-.275.7zm11.2 0l-2.4-2.4q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.4 2.4V16q0-.425.288-.712T20 15t.713.288T21 16v4q0 .425-.288.713T20 21h-4q-.425 0-.712-.288T15 20t.288-.712T16 19zM5 6.4V8q0 .425-.288.713T4 9t-.712-.288T3 8V4q0-.425.288-.712T4 3h4q.425 0 .713.288T9 4t-.288.713T8 5H6.4l2.4 2.4q.275.275.275.7t-.275.7t-.7.275t-.7-.275zm14 0l-2.4 2.4q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7L17.6 5H16q-.425 0-.712-.287T15 4t.288-.712T16 3h4q.425 0 .713.288T21 4v4q0 .425-.288.713T20 9t-.712-.288T19 8z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.material-symbols--circle {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22'/%3E%3C/svg%3E");
   background-color: currentColor;
   -webkit-mask-image: var(--svg);
   mask-image: var(--svg);
@@ -1131,12 +1160,116 @@ input {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
+#compare-body-variables {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+#venndiagramm {
+  grid-area: 1 / 2 / 1 / 2;
+  width: 100%;
+}
+
+.compare-variables {
+  display: flex;
+  flex-direction: row;
+}
+
+#compare-Variables-Right {
+  flex-direction: row-reverse;
+}
+
+.compare-variables div {
+  flex-grow: 1;
+  max-height: 20em;
+  overflow: auto;
+}
+
+.compare-variables span {
+  flex-grow: 0;
+  font-size: 10em;
+  opacity: 50%;
+}
+
+#compare-Variables-Left span, #compare-Variables-Left p {
+  color: var(--secondaryAccentColor);
+}
+
+#compare-Variables-Left span {
+  position: relative;
+  float: right;
+  right: -0.6em;
+}
+
+#compare-Variables-Left p {
+  justify-self: right;
+}
+
+#compare-Variables-Right span, #compare-Variables-Right p {
+  color: var(--quateryAccentColor);
+}
+
+#compare-Variables-Right span {
+  position: relative;
+  float: left;
+  left: -0.6em;
+}
+
+#compare-Variables-Right p {
+  justify-self: left;
+}
+
+/* Image Modal */
+
+.image-modal {
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.image-modal .close {
+  transform: scale(2);
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: var(--tertiaryAccentColor);
+
+  &:hover {
+    color: var(--mainAccentColor);
+  }
+}
+
+.image-modal img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  animation: zoom 1s ease-in-out;
+}
+
+@keyframes zoom {
+  from {transform:scale(0.1); opacity: 10%;} 
+  to {transform:scale(1)}
+}
+
 /* Model Header */
 #model-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  gap: 0.5em;
   align-items: center;
+}
+
+#model-header > h1 {
+  margin: 0;
 }
 
 .grid-right {
@@ -1301,32 +1434,40 @@ input {
 }
 
 /* Model Summary Block */
-#modelSummaryBlock {
+#model-summary-block {
   display: grid;
   margin-bottom: 1em;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: min-content min-content 1fr;
-  gap: 0 2em;
+  gap: 2em;
   justify-content: center;
+  align-items: center;
 }
 
-#modelSummaryBlock .modelScheme {
-  z-index: 10;
-  transition: all .3s ease-in-out;
-  grid-row: span 3;
-}
-
-#modelSummaryBlock .modelScheme:hover {
-  transition: all .3s ease-in-out;
-  opacity: 1;
-  transform: scale(3);
-  transform-origin: left center;
-}
-
-.modelScheme {
+.model-scheme-container {
   width: 100%;
-  text-align: center;
-  align-self: center;
+  height: fit-content;
+  position: relative;
+}
+
+.model-scheme-container > img {
+  width: 100%;
+}
+
+.model-text {
+  text-align: justify;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+@media screen and (max-width:960px) {
+  #model-summary-block {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content
+  }
+
+  .model-text {
+    max-height: 40vh;
+  }
 }
 
 #modelBlockHead {
@@ -1347,17 +1488,6 @@ input {
   color: var(--lightText);
   vertical-align: middle;
   text-decoration: none;
-}
-
-.modelText {
-  margin: 0 0 0 0;
-  padding: 0 0.5em 0 0;
-  height: fit-content;
-  text-align: justify;
-}
-
-.modelText h3 {
-  margin-top: 0.5em;
 }
 
 .modelTabContent {
@@ -1392,6 +1522,12 @@ input {
 
 .modelTabContent tbody tr:hover {
   background-color: var(--buttonHoverColor);
+}
+
+.modelAttrMath {
+  max-height: 50vh;
+  width: 100%;
+  overflow: auto;
 }
 
 /* Model Info Figures */

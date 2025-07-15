@@ -1,8 +1,10 @@
 import Papa from "papaparse";
 import { marked } from 'marked';
 import modelData from "../js/models.json"
+import vennDiagramm from "../img/venn_diagramm.svg?raw"
 import Swiper from 'swiper';
-import { Navigation, Pagination, Mousewheel, History, HashNavigation, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs } from 'swiper/modules';
+import chroma from "chroma-js"
 
 // Important Variables
 var modelName = location.href.split("/").slice(-1)[0].split(".")[0];
@@ -135,44 +137,118 @@ function createInfoList(response, side) {
     }
 };
 
+function filterGlossIDAbbr(gloss) {
+    var filteredGloss = {}
+        gloss.forEach(row => {
+            filteredGloss[row["Glossary ID"]] = row["Common Abbr."]
+        })
+
+    return filteredGloss
+}
+
+// Get Main Glossary
+async function getMainGlossary() {
+    return new Promise((resolve, reject) => {
+        Papa.parse(`https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/comps_glossary.csv`, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                resolve(results.data)
+            },
+            error: function(err) {
+                reject(err);
+            }
+            
+            });
+    })
+}
+
+console.log(getMainGlossary())
+
 // Modal compare Button Actions
 function chooseCompareAttr(AttrName) {
-    
-    // Hide all but selected compare Tab on left side
-    const childrenLeft = compareModalBodyCompareLeft.children;
-    for (var i = 0; i < childrenLeft.length; i++) {
-        var child = childrenLeft[i]
-        child.classList.add("hidden")
-        if (child.id.includes(AttrName)) {
-            child.classList.remove("hidden")
-        }
-    };
 
     // Hide all but selected compare Tab on right side
-    const childrenRight = compareModalBodyCompareRight.children;
-    for (var i = 0; i < childrenRight.length; i++) {
-        var child = childrenRight[i]
-        child.classList.add("hidden")
-        if (child.id.includes(AttrName)) {
-            child.classList.remove("hidden")
+    const allCompareBlocks = document.querySelectorAll(".compare-block")
+    allCompareBlocks.forEach(block => {
+        block.classList.add("hidden")
+        if (block.id.includes(AttrName)) {
+            block.classList.remove("hidden")
         }
-    };
+    })
+}
+
+// Get Both Model Info
+async function getBothModelInfo(modelName, otherModelName) {
+    const res = await Promise.all([
+        getModelInfo(modelName),
+        getModelInfo(otherModelName),
+        getMainGlossary()
+    ])
+
+    return res
 }
 
 // Compare Modal Select Function
 function modalChange() {
     const chosenModel = compareModalSelect.value;
-    
     if (chosenModel !== "") {
         const schemeRight = document.getElementById("compareSchemesRight")
         schemeRight.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${chosenModel}/${chosenModel}_scheme.svg`;
 
-        getModelInfo(chosenModel)
-            .then(response => {
-                createInfoList(response, "Right")
+        const bothInfo = getBothModelInfo(modelName, chosenModel)
+        bothInfo.then(res => {
+            const thisModelInfo = res[0]
+            const otherModelInfo = res[1]
+            const mainGloss = res[2]
+
+            createInfoList(otherModelInfo, "Right")
+
+            const thisModelVars = filterGlossIDAbbr(thisModelInfo["compsData"])
+            const thisModelVarsKeys = Object.keys(thisModelVars)
+            const otherModelVars = filterGlossIDAbbr(otherModelInfo["compsData"])
+            const otherModelVarsKeys = Object.keys(otherModelVars)
+
+            const mainGlossPointer = filterGlossIDAbbr(mainGloss)
+            
+            const commonVars = thisModelVarsKeys.filter(value => otherModelVarsKeys.includes(value))
+
+            const thisModelVarsUnique = thisModelVarsKeys.filter(value => !commonVars.includes(value))
+            const otherModelVarsUnique = otherModelVarsKeys.filter(value => !commonVars.includes(value))
+
+            // Get Left Variable Math
+            const leftVariables = document.getElementById("compare-variables-math-Left")
+            leftVariables.innerHTML = ""
+            thisModelVarsUnique.forEach(ele => {
+                var newP = document.createElement("p")
+                newP.innerText = mainGlossPointer[ele]
+                leftVariables.appendChild(newP)
+            })
+            
+            // Get Right Variable Math
+            const rightVariables = document.getElementById("compare-variables-math-Right")
+            rightVariables.innerHTML = ""
+            otherModelVarsUnique.forEach(ele => {
+                var newP = document.createElement("p")
+                newP.innerText = mainGlossPointer[ele]
+                rightVariables.appendChild(newP)
             })
 
+            // Get Common Variables
+            const commonVariables = document.getElementById("compare-Variables-common")
+            commonVariables.innerHTML = ""
+            commonVars.forEach(ele => {
+                var newP = document.createElement("p")
+                newP.innerText = mainGlossPointer[ele]
+                commonVariables.appendChild(newP)
+            })
+
+            MathJax.typeset()
+        })
+
     }
+
 };
 
 // Get Github Last Update
@@ -197,7 +273,7 @@ async function updateLastModified(ele) {
             ).format(date)
             res = `Last Update: ${lastUpdate}`
         } else {
-            res = "There exits no Updates"
+            res = "There exists no Updates"
         }
     } catch (error) {
         console.error('Error fetching commit info:', error);
@@ -206,18 +282,6 @@ async function updateLastModified(ele) {
 
     ele.innerHTML = res
     }
-
-// Get Github Last Update
-async function updateDOI(ele) {
-    const response = await fetch("../js/models.json");
-    const modelsInfo = await response.json();
-    for (let i=0; i < modelsInfo.length; i++) {
-        if (modelsInfo[i].name === modelName) {
-            ele.href = modelsInfo[i]["DOI"]
-            ele.innerHTML = `DOI: ${modelsInfo[i]["DOI"]}`
-        }
-    }
-}
 
 // Clean Math String
 function cleanMathStr(text) {
@@ -398,7 +462,7 @@ compareModalBodyTabs.classList.add("TabContainer")
 compareModalBody.appendChild(compareModalBodyTabs)
 
 // Compare Modal Body Tabs
-const compareModalTabChoices = ["Information", "Schemes"]
+const compareModalTabChoices = ["Variables", "Information", "Schemes"]
 compareModalTabChoices.forEach(choice => {
     var compareModalTab = document.createElement("button");
     compareModalTab.innerHTML = choice;
@@ -406,7 +470,35 @@ compareModalTabChoices.forEach(choice => {
         chooseCompareAttr(choice);
     });
     compareModalBodyTabs.appendChild(compareModalTab)
+
+    var compareModalTabBody = document.createElement("div")
+    compareModalTabBody.classList.add("compare-body")
+    compareModalTabBody.id = `compare-body-${choice.toLowerCase()}`
+    compareModalBody.appendChild(compareModalTabBody)
 })
+
+// Create Variable Comparision
+const compareModalBodyVariables = document.getElementById("compare-body-variables")
+
+const compareModalBodyVariablesDiagramm = document.createElement("div")
+compareModalBodyVariablesDiagramm.id = "venndiagramm"
+compareModalBodyVariablesDiagramm.innerHTML = vennDiagramm
+compareModalBodyVariables.appendChild(compareModalBodyVariablesDiagramm)
+
+// Create colors
+const gradient = chroma.scale(["#FFBA08", "3F88C5"])
+
+// Get Venn Diagram Left Side
+const vennLeft = document.getElementById("venndiagramm-left")
+vennLeft.style.fill = gradient(0).css()
+
+// Get Venn Diagram Left Side
+const vennMiddle = document.getElementById("venndiagramm-middle")
+vennMiddle.style.fill = gradient(0.5).css()
+
+// Get Venn Diagram Right Side
+const vennRight = document.getElementById("venndiagramm-right")
+vennRight.style.fill = gradient(1).css()
 
 // Compare Modal Body Compare
 var compareModalBodyCompare = document.createElement("div")
@@ -431,14 +523,14 @@ sides.forEach(side => {
 
     // Scheme
     var compareModalBodyCompareScheme = document.createElement("img")
-    var tmpArray = ["modelScheme", "hidden"]
+    var tmpArray = ["modelScheme", "hidden", "compare-block"]
     if (side === "Left") {tmpArray.push("thisScheme")}
     compareModalBodyCompareScheme.classList.add(...tmpArray);compareModalBodyCompareScheme.id = `compareSchemes${side}`
     parentElement.appendChild(compareModalBodyCompareScheme)
 
     // Information
     var compareModalBodyCompareInformation = document.createElement("div")
-    compareModalBodyCompareInformation.classList.add("hidden", "compareInformation")
+    compareModalBodyCompareInformation.classList.add("hidden", "compareInformation", "compare-block")
     compareModalBodyCompareInformation.id = `compareInformation${side}`
     parentElement.appendChild(compareModalBodyCompareInformation)
     for (const [text, ids] of Object.entries(InformationCats)) {
@@ -449,7 +541,57 @@ sides.forEach(side => {
         catId.id = `compareInformation${side}${ids}`
         compareModalBodyCompareInformation.appendChild(catId)
     }
+
+    // Variables
+    var compareModalBodyCompareVariables = document.createElement("div")
+    compareModalBodyCompareVariables.classList.add("hidden", "compare-variables", "compare-block")
+    compareModalBodyCompareVariables.id = `compare-Variables-${side}`
+    parentElement.appendChild(compareModalBodyCompareVariables)
+
+    var compareModalBodyCompareVariablesMath = document.createElement("div")
+    compareModalBodyCompareVariablesMath.classList.add("compare-variables-math")
+    compareModalBodyCompareVariablesMath.id = `compare-variables-math-${side}`
+    compareModalBodyCompareVariables.appendChild(compareModalBodyCompareVariablesMath)
+    
+    var compareModalBodyCompareVariablesCircle = document.createElement("span")
+    compareModalBodyCompareVariablesCircle.classList.add("material-symbols--circle")
+    compareModalBodyCompareVariables.appendChild(compareModalBodyCompareVariablesCircle)
 })
+
+// Insert Common Variables block
+var compareModalBodyCompareVariablesCommon = document.createElement("div")
+compareModalBodyCompareVariablesCommon.id = "compare-Variables-common"
+compareModalBodyCompareVariablesCommon.classList.add("hidden", "compare-block")
+compareModalBodyCompare.appendChild(compareModalBodyCompareVariablesCommon)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Image Modal
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Insert Image Modal
+var imageModal = document.createElement("div")
+imageModal.classList.add("image-modal", "hidden")
+insertCommentedElement(contentElement, imageModal, "The Image Modal")
+
+// Insert Image Modal Close
+var imageModalClose = document.createElement("span")
+imageModalClose.classList.add("close")
+imageModalClose.innerHTML = "&times;"
+imageModalClose.onclick = function(){
+    imageModal.classList.toggle("hidden");
+}
+imageModal.appendChild(imageModalClose)
+
+// Insert Image Modal Image
+var imageModalImg = document.createElement("img")
+imageModal.appendChild(imageModalImg)
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == imageModal) {
+        imageModal.classList.toggle("hidden");
+    }
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Header
@@ -701,17 +843,31 @@ var galleryTop = new Swiper('.gallery-top', {
 ///////////////////////////////////////////////////////
 // Insert Model Summary Block
 var modelSummaryBlock = document.createElement("div")
-modelSummaryBlock.id = "modelSummaryBlock"
+modelSummaryBlock.id = "model-summary-block"
 insertCommentedElement(swiperSummary, modelSummaryBlock, "The Model Summary")
+
+// Insert Model Scheme Block
+var modelSummaryBlockSchemeBlock = document.createElement("div")
+modelSummaryBlockSchemeBlock.classList.add("model-scheme-container")
+modelSummaryBlockSchemeBlock.addEventListener("click", function() {
+    this.childNodes.forEach(element => {
+        if (element.nodeName === "IMG") {
+            imageModalImg.src = element.src
+        }
+    })
+    imageModal.classList.toggle("hidden")
+})
+modelSummaryBlock.appendChild(modelSummaryBlockSchemeBlock)
 
 // Insert Model Scheme
 var modelSummaryBlockScheme = document.createElement("img")
-modelSummaryBlockScheme.classList.add("modelScheme", "thisScheme")
-modelSummaryBlock.appendChild(modelSummaryBlockScheme)
+modelSummaryBlockScheme.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
+modelSummaryBlockScheme.classList.add("model-scheme")
+modelSummaryBlockSchemeBlock.appendChild(modelSummaryBlockScheme)
 
 // Insert Model Summary
 var modelSummaryBlockText = document.createElement("div")
-modelSummaryBlockText.classList.add("modelText")
+modelSummaryBlockText.classList.add("model-text")
 modelSummaryBlock.appendChild(modelSummaryBlockText)
 
 // Insert Model Summary Title
@@ -733,6 +889,16 @@ getModelInfo(modelName)
     .then(response => {
         createInfoTable(response);
         createInfoList(response, "Left")
+
+        const filteredGloss = filterGlossIDAbbr(response["compsData"])
+        var leftVariables = document.getElementById("compare-variables-math-Left")
+        for (const [key, value] of Object.entries(filteredGloss)) {
+            var newP = document.createElement("p")
+            newP.innerText = value
+            leftVariables.appendChild(newP)
+        }
+        MathJax.typeset()
+
         galleryTop.update()
     });
 
