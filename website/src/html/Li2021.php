@@ -7,19 +7,6 @@
 </head>
 
 <body>
-  <div id="layoutWrapper">
-    <nav id="topnav"></nav>
-
-    <div id="wrapper">
-      <div id="content">
-        
-        <!-- The Cite Modal -->
-        <div id="citeModal" class="modal hidden"></div>
-        
-      </div>
-    </div>
-  </div>
-
   <script src="../js/mathjax-config.js" defer></script>
   <script type="text/javascript" id="MathJax-script" defer
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">

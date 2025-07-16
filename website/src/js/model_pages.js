@@ -125,15 +125,14 @@ function createInfoTable(response) {
 };
 
 // Create Info List
-function createInfoList(response, side) {
-    const attrNames = Object.values(InformationCats);
-    var zip = attrNames.map(function(e, i) {return [e, Object.values(response)[i]]});
-
-    for (let i = 0; i < zip.length; i++) {
-        var attrName = zip[i][0]
-        var data = zip[i][1]
-
-        document.getElementById(`compareInformation${side}${attrName}`).innerText = data.length
+function createInfoList(response, side, informationPointer) {
+    for (const [key, value] of Object.entries(informationPointer)) {
+        var valueElement = document.getElementById(`compare-information-${side}-${value.toLowerCase()}`)
+        if (response != "") {
+            valueElement.innerText = response[value].length
+        } else {
+            valueElement.innerText = ""
+        }
     }
 };
 
@@ -164,21 +163,6 @@ async function getMainGlossary() {
     })
 }
 
-console.log(getMainGlossary())
-
-// Modal compare Button Actions
-function chooseCompareAttr(AttrName) {
-
-    // Hide all but selected compare Tab on right side
-    const allCompareBlocks = document.querySelectorAll(".compare-block")
-    allCompareBlocks.forEach(block => {
-        block.classList.add("hidden")
-        if (block.id.includes(AttrName)) {
-            block.classList.remove("hidden")
-        }
-    })
-}
-
 // Get Both Model Info
 async function getBothModelInfo(modelName, otherModelName) {
     const res = await Promise.all([
@@ -191,10 +175,23 @@ async function getBothModelInfo(modelName, otherModelName) {
 }
 
 // Compare Modal Select Function
-function modalChange() {
+function modalChange(informationPointer) {
     const chosenModel = compareModalSelect.value;
+
+    // Get Left Variable Math
+    const leftVariables = document.getElementById("compare-variables-left")
+    leftVariables.innerHTML = ""
+
+    // Get Right Variable Math
+    const rightVariables = document.getElementById("compare-variables-right")
+    rightVariables.innerHTML = ""
+
+    // Get Common Variables
+    const commonVariables = document.getElementById("compare-variables-common")
+    commonVariables.innerHTML = ""
+
     if (chosenModel !== "") {
-        const schemeRight = document.getElementById("compareSchemesRight")
+        const schemeRight = document.getElementById("compare-schemes-right")
         schemeRight.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${chosenModel}/${chosenModel}_scheme.svg`;
 
         const bothInfo = getBothModelInfo(modelName, chosenModel)
@@ -203,11 +200,18 @@ function modalChange() {
             const otherModelInfo = res[1]
             const mainGloss = res[2]
 
-            createInfoList(otherModelInfo, "Right")
+            createInfoList(otherModelInfo, "right", informationPointer)
 
-            const thisModelVars = filterGlossIDAbbr(thisModelInfo["compsData"])
+            var combinedVars = []
+            for (let info of [thisModelInfo, otherModelInfo]){
+                var filteredGlossComps = filterGlossIDAbbr(info["compsData"])
+                var filteredGlossDerivedComps = filterGlossIDAbbr(info["derivedCompsData"])
+                combinedVars.push({...filteredGlossComps, ...filteredGlossDerivedComps})
+            }
+
+            const thisModelVars = combinedVars[0]
             const thisModelVarsKeys = Object.keys(thisModelVars)
-            const otherModelVars = filterGlossIDAbbr(otherModelInfo["compsData"])
+            const otherModelVars = combinedVars[1]
             const otherModelVarsKeys = Object.keys(otherModelVars)
 
             const mainGlossPointer = filterGlossIDAbbr(mainGloss)
@@ -217,27 +221,18 @@ function modalChange() {
             const thisModelVarsUnique = thisModelVarsKeys.filter(value => !commonVars.includes(value))
             const otherModelVarsUnique = otherModelVarsKeys.filter(value => !commonVars.includes(value))
 
-            // Get Left Variable Math
-            const leftVariables = document.getElementById("compare-variables-math-Left")
-            leftVariables.innerHTML = ""
             thisModelVarsUnique.forEach(ele => {
                 var newP = document.createElement("p")
                 newP.innerText = mainGlossPointer[ele]
                 leftVariables.appendChild(newP)
             })
             
-            // Get Right Variable Math
-            const rightVariables = document.getElementById("compare-variables-math-Right")
-            rightVariables.innerHTML = ""
             otherModelVarsUnique.forEach(ele => {
                 var newP = document.createElement("p")
                 newP.innerText = mainGlossPointer[ele]
                 rightVariables.appendChild(newP)
             })
 
-            // Get Common Variables
-            const commonVariables = document.getElementById("compare-Variables-common")
-            commonVariables.innerHTML = ""
             commonVars.forEach(ele => {
                 var newP = document.createElement("p")
                 newP.innerText = mainGlossPointer[ele]
@@ -245,8 +240,28 @@ function modalChange() {
             })
 
             MathJax.typeset()
+
         })
 
+        MathJax.typeset()
+
+    } else {
+        const thisModelInfo = getModelInfo(modelName)
+        thisModelInfo.then(res => {
+
+            createInfoList("", "right", informationPointer)
+
+            const filteredGlossComps = filterGlossIDAbbr(res["compsData"])
+            const filteredGlossDerivedComps = filterGlossIDAbbr(res["derivedCompsData"])
+            const filteredGlossCombined = {...filteredGlossComps, ...filteredGlossDerivedComps}
+            for (const [key, value] of Object.entries(filteredGlossCombined)) {
+                var newP = document.createElement("p")
+                newP.innerText = value
+                leftVariables.appendChild(newP)
+            }
+
+            MathJax.typeset()
+        })
     }
 
 };
@@ -373,7 +388,12 @@ async function getMdFile() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Content Pipeline
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var contentElement = document.getElementById("content")
+const bodyElement = document.body
+
+const citeModal = document.createElement("div")
+citeModal.id = "citeModal"
+citeModal.classList.add("modal", "hidden")
+insertCommentedElement(bodyElement, citeModal, "The Cite Modal")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Compare Modal
@@ -382,7 +402,7 @@ var contentElement = document.getElementById("content")
 var compareModal = document.createElement("div")
 compareModal.id = "compareModal"
 compareModal.classList.add("modal", "hidden")
-insertCommentedElement(contentElement, compareModal, "The Compare Modal")
+insertCommentedElement(bodyElement, compareModal, "The Compare Modal")
 
 // Create Compare Modal Content
 var compareModalContent = document.createElement("div")
@@ -411,7 +431,7 @@ compareModalHeader.appendChild(compareModalHeadingThisModel)
 var compareModalSelect = document.createElement("select");
 compareModalSelect.id = "compareModalSelect"
 compareModalSelect.addEventListener('change', () => {
-    modalChange();
+    modalChange(informationPointer);
 });
 compareModalHeader.appendChild(compareModalSelect);
 
@@ -466,27 +486,47 @@ const compareModalTabChoices = ["Variables", "Information", "Schemes"]
 compareModalTabChoices.forEach(choice => {
     var compareModalTab = document.createElement("button");
     compareModalTab.innerHTML = choice;
-    compareModalTab.addEventListener('click', () => {
-        chooseCompareAttr(choice);
+    compareModalTab.addEventListener('click', function()     {
+        var siblings = this.parentNode.childNodes
+        siblings.forEach(element => {
+            element.classList.remove("active")
+        })
+        this.classList.add("active")
+
+        const allCompareBlocks = document.querySelectorAll(".compare-body")
+        allCompareBlocks.forEach(block => {
+            block.classList.add("hidden")
+            if (block.id.includes(choice.toLowerCase())) {
+                block.classList.remove("hidden")
+            }
+        })
     });
     compareModalBodyTabs.appendChild(compareModalTab)
 
     var compareModalTabBody = document.createElement("div")
-    compareModalTabBody.classList.add("compare-body")
+    compareModalTabBody.classList.add("compare-body", "hidden")
     compareModalTabBody.id = `compare-body-${choice.toLowerCase()}`
     compareModalBody.appendChild(compareModalTabBody)
 })
 
+//////////////// VARIABLES ////////////////
 // Create Variable Comparision
 const compareModalBodyVariables = document.getElementById("compare-body-variables")
+
+// Create colors
+const gradient = chroma.scale(["#FFBA08", "3F88C5"])
+
+// Create Left Model Variables
+var compareModalBodyVariablesLeft = document.createElement("div")
+compareModalBodyVariablesLeft.classList.add("compare-variables-math")
+compareModalBodyVariablesLeft.id = "compare-variables-left"
+compareModalBodyVariablesLeft.style.color = gradient(0).css()
+compareModalBodyVariables.appendChild(compareModalBodyVariablesLeft)
 
 const compareModalBodyVariablesDiagramm = document.createElement("div")
 compareModalBodyVariablesDiagramm.id = "venndiagramm"
 compareModalBodyVariablesDiagramm.innerHTML = vennDiagramm
 compareModalBodyVariables.appendChild(compareModalBodyVariablesDiagramm)
-
-// Create colors
-const gradient = chroma.scale(["#FFBA08", "3F88C5"])
 
 // Get Venn Diagram Left Side
 const vennLeft = document.getElementById("venndiagramm-left")
@@ -500,69 +540,135 @@ vennMiddle.style.fill = gradient(0.5).css()
 const vennRight = document.getElementById("venndiagramm-right")
 vennRight.style.fill = gradient(1).css()
 
-// Compare Modal Body Compare
-var compareModalBodyCompare = document.createElement("div")
-compareModalBodyCompare.classList.add("compareModalBodyCompare")
-compareModalBody.appendChild(compareModalBodyCompare)
+// Create Right Model Variables
+var compareModalBodyVariablesRight = document.createElement("div")
+compareModalBodyVariablesRight.classList.add("compare-variables-math")
+compareModalBodyVariablesRight.id = "compare-variables-right"
+compareModalBodyVariablesRight.style.color = gradient(1).css()
+compareModalBodyVariables.appendChild(compareModalBodyVariablesRight)
 
-// Compare Modal Body Compare Left
-var compareModalBodyCompareLeft = document.createElement("div")
-compareModalBodyCompareLeft.id = ("compareModalBodyCompareLeft")
-compareModalBodyCompare.appendChild(compareModalBodyCompareLeft)
+// Create Common Model Variables
+var compareModalBodyVariablesCommon = document.createElement("div")
+compareModalBodyVariablesCommon.classList.add("compare-variables-math")
+compareModalBodyVariablesCommon.id = "compare-variables-common"
+compareModalBodyVariablesCommon.style.color = gradient(0.5).css()
+compareModalBodyVariables.appendChild(compareModalBodyVariablesCommon)
 
-// Compare Modal Body Compare Right
-var compareModalBodyCompareRight = document.createElement("div")
-compareModalBodyCompareRight.id = ("compareModalBodyCompareRight")
-compareModalBodyCompare.appendChild(compareModalBodyCompareRight)
+//////////////// SCHEMES ////////////////
+// Insert Scheme
+const compareModalBodySchemes = document.getElementById("compare-body-schemes")
 
-// This Model Data
-// Scheme
-const sides = ["Left", "Right"]
-sides.forEach(side => {
-    var parentElement = document.getElementById(`compareModalBodyCompare${side}`)
-
-    // Scheme
-    var compareModalBodyCompareScheme = document.createElement("img")
-    var tmpArray = ["modelScheme", "hidden", "compare-block"]
-    if (side === "Left") {tmpArray.push("thisScheme")}
-    compareModalBodyCompareScheme.classList.add(...tmpArray);compareModalBodyCompareScheme.id = `compareSchemes${side}`
-    parentElement.appendChild(compareModalBodyCompareScheme)
-
-    // Information
-    var compareModalBodyCompareInformation = document.createElement("div")
-    compareModalBodyCompareInformation.classList.add("hidden", "compareInformation", "compare-block")
-    compareModalBodyCompareInformation.id = `compareInformation${side}`
-    parentElement.appendChild(compareModalBodyCompareInformation)
-    for (const [text, ids] of Object.entries(InformationCats)) {
-        var catName = document.createElement("h4")
-        catName.innerHTML = `Number of ${text}:`
-        compareModalBodyCompareInformation.appendChild(catName)
-        var catId = document.createElement("p")
-        catId.id = `compareInformation${side}${ids}`
-        compareModalBodyCompareInformation.appendChild(catId)
-    }
-
-    // Variables
-    var compareModalBodyCompareVariables = document.createElement("div")
-    compareModalBodyCompareVariables.classList.add("hidden", "compare-variables", "compare-block")
-    compareModalBodyCompareVariables.id = `compare-Variables-${side}`
-    parentElement.appendChild(compareModalBodyCompareVariables)
-
-    var compareModalBodyCompareVariablesMath = document.createElement("div")
-    compareModalBodyCompareVariablesMath.classList.add("compare-variables-math")
-    compareModalBodyCompareVariablesMath.id = `compare-variables-math-${side}`
-    compareModalBodyCompareVariables.appendChild(compareModalBodyCompareVariablesMath)
-    
-    var compareModalBodyCompareVariablesCircle = document.createElement("span")
-    compareModalBodyCompareVariablesCircle.classList.add("material-symbols--circle")
-    compareModalBodyCompareVariables.appendChild(compareModalBodyCompareVariablesCircle)
+// Left Scheme
+var compareModalBodySchemesLeftContainer = document.createElement("div")
+compareModalBodySchemesLeftContainer.id = "compare-schemes-left-container"
+compareModalBodySchemesLeftContainer.classList.add("compare-schemes", "model-scheme-container")
+compareModalBodySchemesLeftContainer.addEventListener("click", function() {
+    console.log("hello")
+    this.childNodes.forEach(element => {
+        if (element.nodeName === "IMG") {
+            imageModalImg.src = element.src
+        }
+    })
+    imageModal.classList.toggle("hidden")
 })
+compareModalBodySchemes.appendChild(compareModalBodySchemesLeftContainer)
 
-// Insert Common Variables block
-var compareModalBodyCompareVariablesCommon = document.createElement("div")
-compareModalBodyCompareVariablesCommon.id = "compare-Variables-common"
-compareModalBodyCompareVariablesCommon.classList.add("hidden", "compare-block")
-compareModalBodyCompare.appendChild(compareModalBodyCompareVariablesCommon)
+var compareModalBodySchemesLeftImg = document.createElement("img")
+compareModalBodySchemesLeftImg.id = "compare-schemes-left"
+compareModalBodySchemesLeftImg.classList.add("compare-schemes", "model-scheme")
+compareModalBodySchemesLeftImg.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
+compareModalBodySchemesLeftContainer.appendChild(compareModalBodySchemesLeftImg)
+
+// Right Scheme
+var compareModalBodySchemesRightContainer = document.createElement("div")
+compareModalBodySchemesRightContainer.id = "compare-schemes-right-container"
+compareModalBodySchemesRightContainer.classList.add("compare-schemes", "model-scheme-container")
+compareModalBodySchemesRightContainer.addEventListener("click", function() {
+    console.log("hello")
+    this.childNodes.forEach(element => {
+        if (element.nodeName === "IMG") {
+            imageModalImg.src = element.src
+        }
+    })
+    imageModal.classList.toggle("hidden")
+})
+compareModalBodySchemes.appendChild(compareModalBodySchemesRightContainer)
+
+var compareModalBodySchemesRightImg = document.createElement("img")
+compareModalBodySchemesRightImg.id = "compare-schemes-right"
+compareModalBodySchemesRightImg.classList.add("compare-schemes", "model-scheme")
+compareModalBodySchemesRightContainer.appendChild(compareModalBodySchemesRightImg)
+
+//////////////// INFORMATION ////////////////
+// Parent container
+const compareModalBodyInformation = document.getElementById("compare-body-information")
+
+// Left Side
+var compareModalBodyInformationLeft = document.createElement("div")
+compareModalBodyInformationLeft.id = "compare-information-left"
+compareModalBodyInformationLeft.classList.add("compare-information")
+compareModalBodyInformationLeft.addEventListener("mouseleave", function() {
+    const allInfoBox = document.getElementsByClassName("compare-information-box")
+    for (let element of allInfoBox) {
+        element.classList.remove("active", "inactive")
+    }
+})
+compareModalBodyInformation.appendChild(compareModalBodyInformationLeft)
+
+// Right Side
+var compareModalBodyInformationRight = document.createElement("div")
+compareModalBodyInformationRight.id = "compare-information-right"
+compareModalBodyInformationRight.classList.add("compare-information")
+compareModalBodyInformationRight.addEventListener("mouseleave", function() {
+    const allInfoBox = document.getElementsByClassName("compare-information-box")
+    for (let element of allInfoBox) {
+        element.classList.remove("active", "inactive")
+    }
+})
+compareModalBodyInformation.appendChild(compareModalBodyInformationRight)
+
+const informationPointer = {
+    "ODEs": "compsData",
+    "Derived Compounds": "derivedCompsData",
+    "Parameters": "paramsData",
+    "Derived Parameters": "derivedParamsData",
+    "Rates": "ratesData"
+}
+
+// Make rows for both sides
+const sides = ["left", "right"]
+sides.forEach(side => {
+    var parentElement = document.getElementById(`compare-information-${side}`)
+
+    for (const [key, value] of Object.entries(informationPointer)) {
+        var infoBox = document.createElement("div")
+        infoBox.id = `compare-information-box-${side}-${value.toLowerCase()}`
+        infoBox.classList.add("compare-information-box")
+        infoBox.addEventListener("mouseover", function() {
+            const allInfoBox = document.getElementsByClassName("compare-information-box")
+            const thisAttr = (this.id).split("-").at(-1)
+            for (let element of allInfoBox) {
+                element.classList.remove("active")
+                element.classList.add("inactive")
+                var elementAttr = (element.id).split("-").at(-1)
+                if (elementAttr === thisAttr) {
+                    element.classList.add("active")
+                    element.classList.remove("inactive")
+                }
+            }
+        })
+        
+        parentElement.appendChild(infoBox)
+
+        var infoBoxTitle = document.createElement("h3")
+        infoBoxTitle.innerText = key
+        infoBox.appendChild(infoBoxTitle)
+
+        var infoBoxValue = document.createElement("p")
+        infoBoxValue.id = `compare-information-${side}-${value.toLowerCase()}`
+        infoBox.appendChild(infoBoxValue)
+    }
+})
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Image Modal
@@ -570,8 +676,9 @@ compareModalBodyCompare.appendChild(compareModalBodyCompareVariablesCommon)
 
 // Insert Image Modal
 var imageModal = document.createElement("div")
-imageModal.classList.add("image-modal", "hidden")
-insertCommentedElement(contentElement, imageModal, "The Image Modal")
+imageModal.id = "image-modal"
+imageModal.classList.add("modal", "hidden")
+insertCommentedElement(bodyElement, imageModal, "The Image Modal")
 
 // Insert Image Modal Close
 var imageModalClose = document.createElement("span")
@@ -592,6 +699,25 @@ window.onclick = function(event) {
         imageModal.classList.toggle("hidden");
     }
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Insert Content
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const layoutWrapper = document.createElement("div")
+layoutWrapper.id = "layoutWrapper"
+insertCommentedElement(bodyElement, layoutWrapper, "The Layout Wrapper")
+
+const topnav = document.createElement("div")
+topnav.id = "topnav"
+insertCommentedElement(layoutWrapper, topnav, "The TopNav")
+
+const wrapper = document.createElement("div")
+wrapper.id = "wrapper"
+insertCommentedElement(layoutWrapper, wrapper, "The Wrapper")
+
+const contentElement = document.createElement("div")
+contentElement.id = "content"
+insertCommentedElement(wrapper, contentElement, "The Content")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Header
@@ -880,19 +1006,17 @@ var modelSummaryBlockTextText = document.createElement("p")
 modelSummaryBlockText.appendChild(modelSummaryBlockTextText)
 
 // Add at End
-// Model Scheme
-document.querySelectorAll(".thisScheme").forEach(item => {
-    item.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
-});
 // Get this models Info and input into right places
 getModelInfo(modelName)
     .then(response => {
         createInfoTable(response);
-        createInfoList(response, "Left")
+        createInfoList(response, "left", informationPointer)
 
-        const filteredGloss = filterGlossIDAbbr(response["compsData"])
-        var leftVariables = document.getElementById("compare-variables-math-Left")
-        for (const [key, value] of Object.entries(filteredGloss)) {
+        const filteredGlossComps = filterGlossIDAbbr(response["compsData"])
+        const filteredGlossDerivedComps = filterGlossIDAbbr(response["derivedCompsData"])
+        const filteredGlossCombined = {...filteredGlossComps, ...filteredGlossDerivedComps}
+        var leftVariables = document.getElementById("compare-variables-left")
+        for (const [key, value] of Object.entries(filteredGlossCombined)) {
             var newP = document.createElement("p")
             newP.innerText = value
             leftVariables.appendChild(newP)
