@@ -1,634 +1,746 @@
-from modelbase2 import Model, Derived
+from mxlpy import Model, Derived
 import numpy as np
+from typing import cast
+
 from .basic_funcs import (
-    proportional,
-    two_divided_value,
-    four_divided_value,
+    rapid_equilibrium_1s_1p,
+    michaelis_menten_1s_1i,
+    protons_stroma,
+    rapid_equilibrium_2s_1p,
+    mass_action_1s,
+    michaelis_menten_1s_2i,
+    neg_div,
     value,
-    neg_one_divided_value,
-    neg_value1_divided_value2,
-    hill_kinetics,
-    rapid_eq_2_2,
-    rapid_eq_3_3,
-    rapid_eq_1_1,
-    rapid_eq_2_1,
+    rapid_equilibrium_2s_2p,
+    mass_action_2s,
+    rapid_equilibrium_3s_3p,
 )
 
 
-def v_PSII(B1, k2):
-    return 0.5 * B1 * k2
+def _rate_atp_synthase_2019(
+    ATP: float,
+    ADP: float,
+    Keq_ATPsynthase: float,
+    kATPsynth: float,
+    convf: float,
+) -> float:
+    return kATPsynth * (ADP / convf - ATP / convf / Keq_ATPsynthase)
 
 
-def v_PSI(psIIcross, pfd, Y0):
-    return (1 - psIIcross) * pfd * Y0
-
-
-def _oxygen(time, ox, O2_ext, k_NDH, Ton, Toff):
-    """return oxygen and NDH concentration as a function of time
-    used to simulate anoxia conditions as in the paper"""
-    if ox:
-        """by default we assume constant oxygen supply"""
-        return O2_ext, k_NDH
-    else:
-        if time < Ton or time > Toff:
-            return O2_ext, 0
-        else:
-            return 0, k_NDH
-
-
-def oxygen(time, ox, O2_ext, k_NDH, Ton, Toff):
-    """return oxygen and NDH concentration as a function of time
-    used to simulate anoxia conditions as in the paper"""
-    if isinstance(time, (int, float)):
-        return np.array(_oxygen(time, ox, O2_ext, k_NDH, Ton, Toff))
-    else:
-        return np.array(
-            [
-                _oxygen(time, ox, O2_ext, k_NDH, Ton, Toff)
-                for time, ox, O2_ext, k_NDH, Ton, Toff in zip(
-                    time, ox, O2_ext, k_NDH, Ton, Toff
-                )
-            ]
-        ).T
-
-
-def v_PQ(PQH_2, time, k_PTOX, ox, O2_ext, k_NDH, Ton, Toff):
-    """calculates reaction rate of PTOX"""
-    return PQH_2 * k_PTOX * oxygen(time, ox, O2_ext, k_NDH, Ton, Toff)[0]
-
-
-def v_NDH(PQ, time, ox, O2_ext, k_NDH, Ton, Toff):
-    """
-    calculates reaction rate of PQ reduction under absence of oxygen
-    can be mediated by NADH reductase NDH
-    """
-    return PQ * oxygen(time, ox, O2_ext, k_NDH, Ton, Toff)[1]
-
-
-def v_b6f(PC_ox, PQ, PQH_2, PC_red, K_cytb6f, k_Cytb6f):
-    """calculates reaction rate of cytb6f"""
-    return np.maximum(
-        k_Cytb6f * (PQH_2 * PC_ox**2 - (PQ * PC_red**2) / K_cytb6f), -k_Cytb6f
+def _b6f(
+    PC_ox: float,
+    PQ_ox: float,
+    PQ_red: float,
+    PC_red: float,
+    Keq_B6f: float,
+    kCytb6f: float,
+) -> float:
+    return cast(
+        float,
+        np.maximum(
+            kCytb6f * (PQ_red * PC_ox**2 - PQ_ox * PC_red**2 / Keq_B6f),
+            -kCytb6f,
+        ),
     )
 
 
-def v_Cyc(PQ, Fd_red, k_cyc):
-    """
-    calculates reaction rate of cyclic electron flow
-    considered as practically irreversible
-    """
-    return k_cyc * ((Fd_red**2) * PQ)
+def _four_div_by(x: float) -> float:
+    return 4.0 / x
 
 
-def v_FNR(
-    Fd_ox, Fd_red, NADPH_st, NADP_st, KM_FNR_F, KM_FNR_N, EFNR, kcat_FNR, K_FNR, convf
-):
-    """
-    Reaction rate mediated by the Ferredoxin—NADP(+) reductase (FNR)
-    Kinetic: convenience kinetics Liebermeister and Klipp, 2006
-    Compartment: lumenal side of the thylakoid membrane
-    Units:
-    Reaction rate: mmol/mol Chl/s
-    [F], [Fdred] in mmol/mol Chl/s
-    [NADPH] in mM
-    """
+def _protonation_hill(
+    vx: float,
+    h: float,
+    nh: float,
+    k_fwd: float,
+    k_ph_sat: float,
+) -> float:
+    return k_fwd * (h**nh / (h**nh + protons_stroma(k_ph_sat) ** nh)) * vx  # type: ignore
+
+
+def _rate_cyclic_electron_flow(
+    Pox: float,
+    Fdred: float,
+    kcyc: float,
+) -> float:
+    return kcyc * Fdred**2 * Pox
+
+
+def _rate_protonation_hill(
+    Vx: float,
+    H: float,
+    k_fwd: float,
+    nH: float,
+    kphSat: float,
+) -> float:
+    return k_fwd * (H**nH / (H**nH + protons_stroma(kphSat) ** nH)) * Vx  # type: ignore
+
+
+def _rate_fnr_2019(
+    Fd_ox: float,
+    Fd_red: float,
+    NADPH: float,
+    NADP: float,
+    KM_FNR_F: float,
+    KM_FNR_N: float,
+    vmax: float,
+    Keq_FNR: float,
+    convf: float,
+) -> float:
     fdred = Fd_red / KM_FNR_F
     fdox = Fd_ox / KM_FNR_F
-    nadph = NADPH_st / (
-        convf * KM_FNR_N
-    )  # NADPH requires conversion to mmol/mol of chlorophyll
-    nadp = NADP_st / (
-        convf * KM_FNR_N
-    )  # NADP requires conversion to mmol/mol of chlorophyll
+    nadph = NADPH / convf / KM_FNR_N
+    nadp = NADP / convf / KM_FNR_N
     return (
-        EFNR
-        * kcat_FNR
-        * ((fdred**2) * nadp - ((fdox**2) * nadph) / K_FNR)
+        vmax
+        * (fdred**2 * nadp - fdox**2 * nadph / Keq_FNR)
         / ((1 + fdred + fdred**2) * (1 + nadp) + (1 + fdox + fdox**2) * (1 + nadph) - 1)
     )
 
 
-def calculate_pHinv(x):
-    return 4e3 * 10 ** (-x)
+def _rate_ps2(
+    b1: float,
+    k2: float,
+) -> float:
+    return 0.5 * k2 * b1
 
 
-def v_Leak(H_lu, k_Leak, pH_st):
-    """
-    rate of leak of protons through the membrane
-    """
-    return k_Leak * (H_lu - calculate_pHinv(pH_st))
+def _two_div_by(x: float) -> float:
+    return 2.0 / x
 
 
-def v_St21(LHC, PQ, k_Stt7, PQ_tot, KM_ST, n_ST):
-    """
-    reaction rate of state transitions from PSII to PSI
-    Ant depending on module used corresponds to non-phosphorylated antennae
-    or antennae associated with PSII
-    """
-    kKin = k_Stt7 * (1 / (1 + (PQ / (PQ_tot * KM_ST)) ** n_ST))
-    return kKin * LHC
+def _rate_ps1(
+    a: float,
+    ps2cs: float,
+    pfd: float,
+) -> float:
+    return (1 - ps2cs) * pfd * a
 
 
-def v_ATPsynth(ATP_st, ADP_st, K_ATPsynth, k_ATPsynth, convf):
-    """
-    Reaction rate of ATP production
-    Kinetic: simple mass action with PH dependant equilibrium
-    Compartment: lumenal side of the thylakoid membrane
-    Units:
-    Reaction rate: mmol/mol Chl/s
-    [ATP], [ADP] in mM
-    """
-    return k_ATPsynth * (ADP_st / convf - ATP_st / (convf * K_ATPsynth))
-
-
-def v_Deepox(Vx, H_lu, nh_x, k_DV, K_pHSat):
-    """
-    activity of xantophyll cycle: de-epoxidation of violaxanthin, modelled by Hill kinetics
-    """
-    return hill_kinetics(k_DV, H_lu, nh_x, calculate_pHinv(K_pHSat)) * Vx
-
-
-def v_PsbSP(psbS, H_lu, nh_PsbS, k_prot, K_pHSatLHC):
-    """
-    activity of PsbS protein protonation: protonation modelled by Hill kinetics
-    """
-    return hill_kinetics(k_prot, H_lu, nh_PsbS, calculate_pHinv(K_pHSatLHC)) * psbS
-
-
-def v_RuBisCO(
-    RUBP,
-    PGA,
-    FBP,
-    SBP,
-    Pi_st,
-    NADPH_st,
-    Vmax_rubisco,
-    CO2,
-    Km_RuBisCO_RUBP,
-    Ki_RuBisCO_PGA,
-    Ki_RuBisCO_FBP,
-    Ki_RuBisCO_SBP,
-    Ki_RuBisCO_Pi,
-    Ki_RuBisCO_NADPH,
-    Km_RuBisCO_CO2,
-):
-    return (Vmax_rubisco * RUBP * CO2) / (
-        (
-            RUBP
-            + Km_RuBisCO_RUBP
-            * (
-                1
-                + (PGA / Ki_RuBisCO_PGA)
-                + (FBP / Ki_RuBisCO_FBP)
-                + (SBP / Ki_RuBisCO_SBP)
-                + (Pi_st / Ki_RuBisCO_Pi)
-                + (NADPH_st / Ki_RuBisCO_NADPH)
-            )
-        )
-        * (CO2 + Km_RuBisCO_CO2)
-    )
-
-
-def v_FBPase(FBP, F6P, Pi_st, Vmax_fbpase, Km_FBPase, Ki_FBPase_F6P, Ki_FBPase_Pi):
-    return (Vmax_fbpase * FBP) / (
-        FBP + Km_FBPase * (1 + (F6P / Ki_FBPase_F6P) + (Pi_st / Ki_FBPase_Pi))
-    )
-
-
-def v_SBPase(SBP, Pi_st, Vmax_sbpase, Km_SBPase, Ki_SBPase_Pi):
-    return (Vmax_sbpase * SBP) / (SBP + Km_SBPase * (1 + (Pi_st / Ki_SBPase_Pi)))
-
-
-def v_PRKase(
-    RU5P,
-    ATP_st,
-    RUBP,
-    PGA,
-    Pi_st,
-    ADP_st,
-    Vmax_prkase,
-    Km_PRKase_RU5P,
-    Ki_PRKase_PGA,
-    Ki_PRKase_RuBP,
-    Ki_PRKase_Pi,
-    Kiunc_PRKase_ADP,
-    Km_PRKase_ATP,
-    Kicom_PRKase_ADP,
-):
-    return (Vmax_prkase * RU5P * ATP_st) / (
-        (
-            RU5P
-            + Km_PRKase_RU5P
-            * (
-                1
-                + (PGA / Ki_PRKase_PGA)
-                + (RUBP / Ki_PRKase_RuBP)
-                + (Pi_st / Ki_PRKase_Pi)
-            )
-        )
-        * (
-            ATP_st * (1 + (ADP_st / Kiunc_PRKase_ADP))
-            + Km_PRKase_ATP * (1 + (ADP_st / Kicom_PRKase_ADP))
-        )
-    )
-
-
-def triose_export(S, IF_3P, Vmax_ex, K_diss_PGA):
-    return (Vmax_ex * S) / (IF_3P * K_diss_PGA)
-
-
-def v_starch(
-    G1P,
-    ATP_st,
-    ADP_st,
-    Pi_st,
-    PGA,
-    F6P,
-    FBP,
-    Vmax_starch,
-    Km_Starch_G1P,
-    Ki_Starch_ADP,
-    Km_Starch_ATP,
-    Kact_Starch_PGA,
-    Kact_Starch_F6P,
-    Kact_Starch_FBP,
-):
-    """G1P -> Gn-1 ; Starch production"""
-    return (Vmax_starch * G1P * ATP_st) / (
-        (G1P + Km_Starch_G1P)
-        * (
-            (1 + (ADP_st / Ki_Starch_ADP)) * (ATP_st + Km_Starch_ATP)
-            + (
-                (Km_Starch_ATP * Pi_st)
-                / (
-                    Kact_Starch_PGA * PGA
-                    + Kact_Starch_F6P * F6P
-                    + Kact_Starch_FBP * FBP
-                )
-            )
-        )
-    )
-
-
-def v_Fdred(Fd_ox, Fd_red, Y1, Y2, k_Fdred, K_FAFd):
+def _rate_ferredoxin_reductase(
+    Fd: float,
+    Fdred: float,
+    A1: float,
+    A2: float,
+    kFdred: float,
+    Keq_FAFd: float,
+) -> float:
     """rate of the redcution of Fd by the activity of PSI
     used to be equall to the rate of PSI but now
     alternative electron pathway from Fd allows for the production of ROS
     hence this rate has to be separate
     """
-    return k_Fdred * Fd_ox * Y1 - k_Fdred / K_FAFd * Fd_red * Y2
+    return kFdred * Fd * A1 - kFdred / Keq_FAFd * Fdred * A2
 
 
-def v_APXase(ASC, H2O2, k_f1, k_r1, k_f2, k_r2, k_f3, k_f4, k_r4, k_f5, XT):
+def _rate_leak(
+    protons_lumen: float,
+    ph_stroma: float,
+    k_leak: float,
+) -> float:
+    return k_leak * (protons_lumen - protons_stroma(ph_stroma))
+
+
+def _neg_one_div_by(x: float) -> float:
+    return -1.0 / x
+
+
+def _rate_state_transition_ps1_ps2(
+    ant: float,
+    pox: float,
+    p_tot: float,
+    k_stt7: float,
+    km_st: float,
+    n_st: float,
+) -> float:
+    return k_stt7 * (1 / (1 + (pox / p_tot / km_st) ** n_st)) * ant
+
+
+def _rate_poolman_5i(
+    rubp: float,
+    pga: float,
+    co2: float,
+    vmax: float,
+    kms_rubp: float,
+    kms_co2: float,
+    # inhibitors
+    ki_pga: float,
+    fbp: float,
+    ki_fbp: float,
+    sbp: float,
+    ki_sbp: float,
+    pi: float,
+    ki_p: float,
+    nadph: float,
+    ki_nadph: float,
+) -> float:
+    top = vmax * rubp * co2
+    btm = (
+        rubp
+        + kms_rubp
+        * (
+            1
+            + pga / ki_pga
+            + fbp / ki_fbp
+            + sbp / ki_sbp
+            + pi / ki_p
+            + nadph / ki_nadph
+        )
+    ) * (co2 + kms_co2)
+    return top / btm
+
+
+def _rate_prk(
+    ru5p: float,
+    atp: float,
+    pi: float,
+    pga: float,
+    rubp: float,
+    adp: float,
+    v13: float,
+    km131: float,
+    km132: float,
+    ki131: float,
+    ki132: float,
+    ki133: float,
+    ki134: float,
+    ki135: float,
+) -> float:
+    return (
+        v13
+        * ru5p
+        * atp
+        / (
+            (ru5p + km131 * (1 + pga / ki131 + rubp / ki132 + pi / ki133))
+            * (atp * (1 + adp / ki134) + km132 * (1 + adp / ki135))
+        )
+    )
+
+
+def _rate_out(
+    s1: float,
+    n_total: float,
+    vmax_efflux: float,
+    k_efflux: float,
+) -> float:
+    return vmax_efflux * s1 / (n_total * k_efflux)
+
+
+def _rate_out_2(
+    s1: float,
+    n_total: float,
+    vmax_efflux: float,
+    k_efflux: float,
+) -> float:
+    return vmax_efflux * s1 / (n_total * k_efflux)
+
+
+def _rate_starch(
+    g1p: float,
+    atp: float,
+    adp: float,
+    pi: float,
+    pga: float,
+    f6p: float,
+    fbp: float,
+    v_st: float,
+    kmst1: float,
+    kmst2: float,
+    ki_st: float,
+    kast1: float,
+    kast2: float,
+    kast3: float,
+) -> float:
+    return (
+        v_st
+        * g1p
+        * atp
+        / (
+            (g1p + kmst1)
+            * (
+                (1 + adp / ki_st) * (atp + kmst2)
+                + kmst2 * pi / (kast1 * pga + kast2 * f6p + kast3 * fbp)
+            )
+        )
+    )
+
+
+def _rate_mda_reductase(
+    mda: float,
+    k3: float,
+) -> float:
+    return k3 * mda**2
+
+
+def _rate_mda_reductase_2(
+    nadph: float,
+    mda: float,
+    vmax: float,
+    km_nadph: float,
+    km_mda: float,
+) -> float:
+    """Compare Valero et al. 2016"""
+    nom = vmax * nadph * mda
+    denom = km_nadph * mda + km_mda * nadph + nadph * mda + km_nadph * km_mda
+    return nom / denom
+
+
+def _rate_ascorbate_peroxidase(
+    A: float,
+    H: float,
+    kf1: float,
+    kr1: float,
+    kf2: float,
+    kr2: float,
+    kf3: float,
+    kf4: float,
+    kr4: float,
+    kf5: float,
+    XT: float,
+) -> float:
     """lumped reaction of ascorbate peroxidase
     the cycle stretched to a linear chain with
     two steps producing the MDA
     two steps releasing ASC
-    and one step producing hydrogen peroxide"""
-    nom = ASC * H2O2 * XT
+    and one step producing hydrogen peroxide
+    """
+    nom = A * H * XT
     denom = (
-        ASC * H2O2 * (1 / k_f3 + 1 / k_f5)
-        + ASC / k_f1
-        + H2O2 / k_f4
-        + H2O2 * k_r4 / (k_f4 * k_f5)
-        + H2O2 / k_f2
-        + H2O2 * k_r2 / (k_f2 * k_f3)
-        + k_r1 / (k_f1 * k_f2)
-        + k_r1 * k_r2 / (k_f1 * k_f2 * k_f3)
+        A * H * (1 / kf3 + 1 / kf5)
+        + A / kf1
+        + H / kf4
+        + H * kr4 / (kf4 * kf5)
+        + H / kf2
+        + H * kr2 / (kf2 * kf3)
+        + kr1 / (kf1 * kf2)
+        + kr1 * kr2 / (kf1 * kf2 * kf3)
     )
     return nom / denom
 
 
-def v_MDAreduct(NADPH_st, MDA, kcat_MDAR, Km_MDAR_NADPH, Km_MDAR_MDA, MDAR_0):
-    """Compare Valero et al. 2016"""
-    nom = kcat_MDAR * MDAR_0 * NADPH_st * MDA
-    denom = (
-        Km_MDAR_NADPH * MDA
-        + Km_MDAR_MDA * NADPH_st
-        + NADPH_st * MDA
-        + Km_MDAR_NADPH * Km_MDAR_MDA
-    )
+def _rate_glutathion_reductase(
+    nadph: float,
+    gssg: float,
+    vmax: float,
+    km_nadph: float,
+    km_gssg: float,
+) -> float:
+    nom = vmax * nadph * gssg
+    denom = km_nadph * gssg + km_gssg * nadph + nadph * gssg + km_nadph * km_gssg
     return nom / denom
 
 
-def v_GR(NADPH_st, GSSG, kcat_GR, GR_0, Km_NADPH, Km_GSSG):
-    nom = kcat_GR * GR_0 * NADPH_st * GSSG
-    denom = Km_NADPH * GSSG + Km_GSSG * NADPH_st + NADPH_st * GSSG + Km_NADPH * Km_GSSG
+def _rate_dhar(
+    dha: float,
+    gsh: float,
+    vmax: float,
+    km_dha: float,
+    km_gsh: float,
+    k: float,
+) -> float:
+    nom = vmax * dha * gsh
+    denom = k + km_dha * gsh + km_gsh * dha + dha * gsh
     return nom / denom
-
-
-def v_DHAR(DHA, GSH, kcat_DHAR, DHAR_0, Km_DHA, K_DHAR, Km_GSH):
-    nom = kcat_DHAR * DHAR_0 * DHA * GSH
-    denom = K_DHAR + Km_DHA * GSH + Km_GSH * DHA + DHA * GSH
-    return nom / denom
-
-
-def v_3ASC(MDA, k3):
-    return k3 * MDA**2
 
 
 def include_rates(m: Model):
-    # ------------------------------------
-    # Matuszynska Module
-    # ------------------------------------
-
     m.add_reaction(
-        name="v_PSII",
-        fn=v_PSII,
-        args=["B1", "k2"],
-        stoichiometry={"PQ": -1, "H_lu": Derived(two_divided_value, ["b_H"])},
+        name="v_FdTrReduc",
+        fn=mass_action_2s,
+        args=["TRX_ox", "Fd_red", "kf_v_FdTrReduc"],
+        stoichiometry={
+            "TRX_ox": -1,
+            "Fd_ox": 1,
+        },
     )
-
     m.add_reaction(
-        name="v_PQ",
-        fn=v_PQ,
-        args=["PQH_2", "time", "k_PTOX", "ox", "O2_ext", "k_NDH", "Ton", "Toff"],
-        stoichiometry={"PQ": 1},
+        name="v_Eact",
+        fn=mass_action_2s,
+        args=["E_inactive", "TRX_red", "kf_v_Eact"],
+        stoichiometry={
+            "E_inactive": -5,
+            "TRX_ox": 5,
+        },
     )
-
     m.add_reaction(
-        name="v_NDH",
-        fn=v_NDH,
-        args=["PQ", "time", "ox", "O2_ext", "k_NDH", "Ton", "Toff"],
-        stoichiometry={"PQ": -1},
+        name="v_Einact",
+        fn=mass_action_1s,
+        args=["E_active", "kf_v_Einact"],
+        stoichiometry={
+            "E_inactive": 5,
+        },
     )
-
+    m.add_reaction(
+        name="v_ATPsynth",
+        fn=_rate_atp_synthase_2019,
+        args=["ATP_st", "ADP_st", "keq_v_ATPsynth", "kf_v_ATPsynth", "convf"],
+        stoichiometry={
+            "H_lumen": Derived(fn=neg_div, args=["HPR", "bH"], unit=None),
+            "ATP_st": Derived(fn=value, args=["convf"], unit=None),
+        },
+    )
     m.add_reaction(
         name="v_b6f",
-        fn=v_b6f,
-        args=["PC_ox", "PQ", "PQH_2", "PC_red", "K_cytb6f", "k_Cytb6f"],
+        fn=_b6f,
+        args=["PC_ox", "PQ", "PQH_2", "PC_red", "keq_v_b6f", "kcat_v_b6f"],
         stoichiometry={
             "PC_ox": -2,
             "PQ": 1,
-            "H_lu": Derived(four_divided_value, ["b_H"]),
+            "H_lumen": Derived(fn=_four_div_by, args=["bH"], unit=None),
         },
     )
-
+    m.add_reaction(
+        name="v_PsbSP",
+        fn=_protonation_hill,
+        args=["psbS", "H_lumen", "kh_v_PsbSP", "kf_v_PsbSP", "ksat_v_PsbSP"],
+        stoichiometry={
+            "psbS": -1,
+        },
+    )
+    m.add_reaction(
+        name="v_PsbSD",
+        fn=mass_action_1s,
+        args=["PsbSP", "kf_v_PsbSD"],
+        stoichiometry={
+            "psbS": 1,
+        },
+    )
     m.add_reaction(
         name="v_Cyc",
-        fn=v_Cyc,
-        args=["PQ", "Fd_red", "k_cyc"],
-        stoichiometry={"PQ": -1, "Fd_ox": 2},
+        fn=_rate_cyclic_electron_flow,
+        args=["PQ", "Fd_red", "kf_v_Cyc"],
+        stoichiometry={
+            "PQ": -1,
+            "Fd_ox": 2,
+        },
     )
-
+    m.add_reaction(
+        name="v_Deepox",
+        fn=_rate_protonation_hill,
+        args=["Vx", "H_lumen", "kf_v_Deepox", "kh_v_Deepox", "ksat_v_Deepox"],
+        stoichiometry={
+            "Vx": -1,
+        },
+    )
+    m.add_reaction(
+        name="v_Epox",
+        fn=mass_action_1s,
+        args=["Zx", "kf_v_Epox"],
+        stoichiometry={
+            "Vx": 1,
+        },
+    )
     m.add_reaction(
         name="v_FNR",
-        fn=v_FNR,
+        fn=_rate_fnr_2019,
         args=[
             "Fd_ox",
             "Fd_red",
             "NADPH_st",
             "NADP_st",
-            "KM_FNR_F",
-            "KM_FNR_N",
-            "EFNR",
-            "kcat_FNR",
-            "K_FNR",
+            "km_v_FNR_Fd_red",
+            "km_v_FNR_NADP_st",
+            "vmax_v_FNR",
+            "keq_v_FNR",
             "convf",
         ],
-        stoichiometry={"Fd_ox": 2, "NADPH_st": Derived(value, ["convf"])},
-    )
-
-    m.add_reaction(
-        name="v_Leak",
-        fn=v_Leak,
-        args=["H_lu", "k_Leak", "pH_st"],
-        stoichiometry={"H_lu": Derived(neg_one_divided_value, ["b_H"])},
-    )
-
-    m.add_reaction(
-        name="v_St21",
-        fn=v_St21,
-        args=["LHC", "PQ", "k_Stt7", "PQ_tot", "KM_ST", "n_ST"],
-        stoichiometry={"LHC": -1},
-    )
-
-    m.add_reaction(
-        name="v_St12",
-        fn=proportional,
-        args=["LHCp", "k_Pph1"],
-        stoichiometry={"LHC": 1},
-    )
-
-    m.add_reaction(
-        name="v_ATPsynth",
-        fn=v_ATPsynth,
-        args=["ATP_st", "ADP_st", "K_ATPsynth", "k_ATPsynth", "convf"],
         stoichiometry={
-            "H_lu": Derived(neg_value1_divided_value2, ["HPR", "b_H"]),
-            "ATP_st": Derived(value, ["convf"]),
+            "Fd_ox": 2,
+            "NADPH_st": Derived(fn=value, args=["convf"], unit=None),
         },
     )
-
     m.add_reaction(
-        name="v_Deepox",
-        fn=v_Deepox,
-        args=["Vx", "H_lu", "nh_x", "k_DV", "K_pHSat"],
-        stoichiometry={"Vx": -1},
+        name="v_NDH",
+        fn=mass_action_1s,
+        args=["PQ", "kf_v_NDH"],
+        stoichiometry={
+            "PQ": -1,
+        },
     )
-
     m.add_reaction(
-        name="v_Epox",
-        fn=proportional,
-        args=["Zx", "k_EZ"],
-        stoichiometry={"Vx": 1},
+        name="v_PSII",
+        fn=_rate_ps2,
+        args=["B1", "k2"],
+        stoichiometry={
+            "PQ": -1,
+            "H_lumen": Derived(fn=_two_div_by, args=["bH"], unit=None),
+        },
     )
-
     m.add_reaction(
-        name="v_PsbSP",
-        fn=v_PsbSP,
-        args=["psbS", "H_lu", "nh_PsbS", "k_prot", "K_pHSatLHC"],
-        stoichiometry={"psbS": -1},
+        name="v_PSI",
+        fn=_rate_ps1,
+        args=["Y0", "psIIcross", "PPFD"],
+        stoichiometry={
+            "PC_ox": 1,
+        },
     )
-
     m.add_reaction(
-        name="v_PsbSD",
-        fn=proportional,
-        args=["k_deprot", "PsbSP"],
-        stoichiometry={"psbS": 1},
+        name="v_Mehler",
+        fn=mass_action_2s,
+        args=["Y1", "O2_lumen", "kMehler"],
+        stoichiometry={
+            "H2O2": Derived(fn=value, args=["convf"], unit=None),
+        },
     )
-
     m.add_reaction(
-        name="v_PGK1ase",
-        fn=rapid_eq_2_2,
-        args=["ATP_st", "PGA", "BPGA", "ADP_st", "k_fast", "K_PGK1ase"],
-        stoichiometry={"ATP_st": -1, "PGA": -1, "BPGA": 1},
+        name="v_Fdred",
+        fn=_rate_ferredoxin_reductase,
+        args=["Fd_ox", "Fd_red", "Y1", "Y2", "vmax_v_Fdred", "keq_v_Fdred"],
+        stoichiometry={
+            "Fd_ox": -1,
+        },
     )
-
     m.add_reaction(
-        name="v_BPGAdehynase",
-        fn=rapid_eq_3_3,
-        args=[
-            "BPGA",
-            "NADPH_st",
-            "H_st",
-            "GAP",
-            "NADP_st",
-            "Pi_st",
-            "k_fast",
-            "K_BPGAdehynase",
-        ],
-        stoichiometry={"BPGA": -1, "NADPH_st": -1, "GAP": 1},
+        name="v_Leak",
+        fn=_rate_leak,
+        args=["H_lumen", "pH_stroma", "kf_v_Leak"],
+        stoichiometry={
+            "H_lumen": Derived(fn=_neg_one_div_by, args=["bH"], unit=None),
+        },
     )
-
     m.add_reaction(
-        name="v_TPIase",
-        fn=rapid_eq_1_1,
-        args=["GAP", "DHAP", "k_fast", "K_TPIase"],
-        stoichiometry={"GAP": -1, "DHAP": 1},
+        name="v_PQ",
+        fn=mass_action_2s,
+        args=["PQH_2", "O2_lumen", "kPTOX"],
+        stoichiometry={
+            "PQ": 1,
+        },
     )
-
     m.add_reaction(
-        name="v_Aldolase_FBP",
-        fn=rapid_eq_2_1,
-        args=["GAP", "DHAP", "FBP", "k_fast", "K_Aldolase_FBP"],
-        stoichiometry={"GAP": -1, "DHAP": -1, "FBP": 1},
+        name="v_St12",
+        fn=_rate_state_transition_ps1_ps2,
+        args=["LHC", "PQ", "PQ_tot", "kStt7", "km_v_St12", "n_ST"],
+        stoichiometry={
+            "LHC": -1,
+        },
     )
-
     m.add_reaction(
-        name="v_TKase_E4P",
-        fn=rapid_eq_2_2,
-        args=["GAP", "F6P", "X5P", "E4P", "k_fast", "K_TKase_E4P"],
-        stoichiometry={"GAP": -1, "F6P": -1, "X5P": 1, "E4P": 1},
+        name="v_St21",
+        fn=mass_action_1s,
+        args=["LHCp", "kPph1"],
+        stoichiometry={
+            "LHC": 1,
+        },
     )
-
     m.add_reaction(
-        name="v_Aldolase_SBP",
-        fn=rapid_eq_2_1,
-        args=["DHAP", "E4P", "SBP", "k_fast", "K_Aldolase_SBP"],
-        stoichiometry={"DHAP": -1, "E4P": -1, "SBP": 1},
-    )
-
-    m.add_reaction(
-        name="v_TKase_R5P",
-        fn=rapid_eq_2_2,
-        args=["GAP", "S7P", "X5P", "R5P", "k_fast", "K_TKase_R5P"],
-        stoichiometry={"GAP": -1, "S7P": -1, "X5P": 1, "R5P": 1},
-    )
-
-    m.add_reaction(
-        name="v_Rpiase",
-        fn=rapid_eq_1_1,
-        args=["R5P", "RU5P", "k_fast", "K_Rpiase"],
-        stoichiometry={"R5P": -1, "RU5P": 1},
-    )
-
-    m.add_reaction(
-        name="v_RPEase",
-        fn=rapid_eq_1_1,
-        args=["X5P", "RU5P", "k_fast", "K_RPEase"],
-        stoichiometry={"X5P": -1, "RU5P": 1},
-    )
-
-    m.add_reaction(
-        name="v_PGIase",
-        fn=rapid_eq_1_1,
-        args=["F6P", "G6P", "k_fast", "K_PGIase"],
-        stoichiometry={"F6P": -1, "G6P": 1},
-    )
-
-    m.add_reaction(
-        name="v_PGMase",
-        fn=rapid_eq_1_1,
-        args=["G6P", "G1P", "k_fast", "K_PGMase"],
-        stoichiometry={"G6P": -1, "G1P": 1},
-    )
-
-    m.add_reaction(
-        name="v_pga_ex",
-        fn=triose_export,
-        args=["PGA", "IF_3P", "Vmax_ex", "K_diss_PGA"],
-        stoichiometry={"PGA": -1},
-    )
-
-    m.add_reaction(
-        name="v_gap_ex",
-        fn=triose_export,
-        args=["GAP", "IF_3P", "Vmax_ex", "K_diss_GAP"],
-        stoichiometry={"GAP": -1},
-    )
-
-    m.add_reaction(
-        name="v_dhap_ex",
-        fn=triose_export,
-        args=["DHAP", "IF_3P", "Vmax_ex", "K_diss_DHAP"],
-        stoichiometry={"DHAP": -1},
-    )
-
-    # ------------------------------------
-    # Thioredoxin Module
-    # ------------------------------------
-
-    m.add_reaction(
-        name="v_RuBisCO",
-        fn=v_RuBisCO,
+        name="v_RuBisCO_c",
+        fn=_rate_poolman_5i,
         args=[
             "RUBP",
             "PGA",
-            "FBP",
-            "SBP",
-            "Pi_st",
-            "NADPH_st",
-            "Vmax_rubisco",
             "CO2",
-            "Km_RuBisCO_RUBP",
-            "Ki_RuBisCO_PGA",
-            "Ki_RuBisCO_FBP",
-            "Ki_RuBisCO_SBP",
-            "Ki_RuBisCO_Pi",
-            "Ki_RuBisCO_NADPH",
-            "Km_RuBisCO_CO2",
+            "vmax_v_RuBisCO_c",
+            "km_v_RuBisCO_c_RUBP",
+            "km_v_RuBisCO_c_CO2",
+            "ki_v_RuBisCO_c_PGA",
+            "FBP",
+            "ki_v_RuBisCO_c_FBP",
+            "SBP",
+            "ki_v_RuBisCO_c_SBP",
+            "Pi_st",
+            "ki_v_RuBisCO_c_Pi_st",
+            "NADPH_st",
+            "ki_v_RuBisCO_c_NADPH_st",
         ],
-        stoichiometry={"RUBP": -1, "PGA": 2},
+        stoichiometry={
+            "RUBP": -1.0,
+            "PGA": 2.0,
+        },
     )
-
+    m.add_reaction(
+        name="v_PGK1ase",
+        fn=rapid_equilibrium_2s_2p,
+        args=["PGA", "ATP_st", "BPGA", "ADP_st", "kre_v_PGK1ase", "keq_v_PGK1ase"],
+        stoichiometry={
+            "PGA": -1.0,
+            "ATP_st": -1.0,
+            "BPGA": 1.0,
+        },
+    )
+    m.add_reaction(
+        name="v_BPGAdehynase",
+        fn=rapid_equilibrium_3s_3p,
+        args=[
+            "BPGA",
+            "NADPH_st",
+            "H_stroma",
+            "GAP",
+            "NADP_st",
+            "Pi_st",
+            "kre_v_BPGAdehynase",
+            "keq_v_BPGAdehynase",
+        ],
+        stoichiometry={
+            "NADPH_st": -1.0,
+            "BPGA": -1.0,
+            "GAP": 1.0,
+        },
+    )
+    m.add_reaction(
+        name="v_TPIase",
+        fn=rapid_equilibrium_1s_1p,
+        args=["GAP", "DHAP", "kre_v_TPIase", "keq_v_TPIase"],
+        stoichiometry={
+            "GAP": -1,
+            "DHAP": 1,
+        },
+    )
+    m.add_reaction(
+        name="v_Aldolase_FBP",
+        fn=rapid_equilibrium_2s_1p,
+        args=["GAP", "DHAP", "FBP", "kre_v_Aldolase_FBP", "keq_v_Aldolase_FBP"],
+        stoichiometry={
+            "GAP": -1,
+            "DHAP": -1,
+            "FBP": 1,
+        },
+    )
+    m.add_reaction(
+        name="v_Aldolase_SBP",
+        fn=rapid_equilibrium_2s_1p,
+        args=["DHAP", "E4P", "SBP", "kre_v_Aldolase_SBP", "keq_v_Aldolase_SBP"],
+        stoichiometry={
+            "DHAP": -1,
+            "E4P": -1,
+            "SBP": 1,
+        },
+    )
     m.add_reaction(
         name="v_FBPase",
-        fn=v_FBPase,
+        fn=michaelis_menten_1s_2i,
         args=[
             "FBP",
             "F6P",
             "Pi_st",
-            "Vmax_fbpase",
-            "Km_FBPase",
-            "Ki_FBPase_F6P",
-            "Ki_FBPase_Pi",
+            "vmax_v_FBPase",
+            "km_v_FBPase_s",
+            "ki_v_FBPase_F6P",
+            "ki_v_FBPase_Pi_st",
         ],
-        stoichiometry={"FBP": -1, "F6P": 1},
+        stoichiometry={
+            "FBP": -1,
+            "F6P": 1,
+        },
     )
-
+    m.add_reaction(
+        name="v_TKase_E4P",
+        fn=rapid_equilibrium_2s_2p,
+        args=["GAP", "F6P", "E4P", "X5P", "kre_v_TKase_E4P", "keq_v_TKase_E4P"],
+        stoichiometry={
+            "GAP": -1,
+            "F6P": -1,
+            "E4P": 1,
+            "X5P": 1,
+        },
+    )
+    m.add_reaction(
+        name="v_TKase_R5P",
+        fn=rapid_equilibrium_2s_2p,
+        args=["GAP", "S7P", "R5P", "X5P", "kre_v_TKase_R5P", "keq_v_TKase_R5P"],
+        stoichiometry={
+            "GAP": -1,
+            "S7P": -1,
+            "R5P": 1,
+            "X5P": 1,
+        },
+    )
     m.add_reaction(
         name="v_SBPase",
-        fn=v_SBPase,
-        args=["SBP", "Pi_st", "Vmax_sbpase", "Km_SBPase", "Ki_SBPase_Pi"],
-        stoichiometry={"SBP": -1, "S7P": 1},
+        fn=michaelis_menten_1s_1i,
+        args=["SBP", "Pi_st", "vmax_v_SBPase", "km_v_SBPase_s", "ki_v_SBPase_Pi_st"],
+        stoichiometry={
+            "SBP": -1,
+            "S7P": 1,
+        },
     )
-
+    m.add_reaction(
+        name="v_Rpiase",
+        fn=rapid_equilibrium_1s_1p,
+        args=["R5P", "RU5P", "kre_v_Rpiase", "keq_v_Rpiase"],
+        stoichiometry={
+            "R5P": -1,
+            "RU5P": 1,
+        },
+    )
+    m.add_reaction(
+        name="v_RPEase",
+        fn=rapid_equilibrium_1s_1p,
+        args=["X5P", "RU5P", "kre_v_RPEase", "keq_v_RPEase"],
+        stoichiometry={
+            "X5P": -1,
+            "RU5P": 1,
+        },
+    )
     m.add_reaction(
         name="v_PRKase",
-        fn=v_PRKase,
+        fn=_rate_prk,
         args=[
             "RU5P",
             "ATP_st",
-            "RUBP",
-            "PGA",
             "Pi_st",
+            "PGA",
+            "RUBP",
             "ADP_st",
-            "Vmax_prkase",
-            "Km_PRKase_RU5P",
-            "Ki_PRKase_PGA",
-            "Ki_PRKase_RuBP",
-            "Ki_PRKase_Pi",
-            "Kiunc_PRKase_ADP",
-            "Km_PRKase_ATP",
-            "Kicom_PRKase_ADP",
+            "vmax_v_PRKase",
+            "km_v_PRKase_RU5P",
+            "km_v_PRKase_ATP_st",
+            "ki_v_PRKase_PGA",
+            "ki_v_PRKase_RUBP",
+            "ki_v_PRKase_Pi_st",
+            "ki_v_PRKase_4",
+            "ki_v_PRKase_5",
         ],
-        stoichiometry={"RU5P": -1, "ATP_st": -1, "RUBP": 1},
+        stoichiometry={
+            "RU5P": -1.0,
+            "ATP_st": -1.0,
+            "RUBP": 1.0,
+        },
     )
-
+    m.add_reaction(
+        name="v_PGIase",
+        fn=rapid_equilibrium_1s_1p,
+        args=["F6P", "G6P", "kre_v_PGIase", "keq_v_PGIase"],
+        stoichiometry={
+            "F6P": -1,
+            "G6P": 1,
+        },
+    )
+    m.add_reaction(
+        name="v_PGMase",
+        fn=rapid_equilibrium_1s_1p,
+        args=["G6P", "G1P", "kre_v_PGMase", "keq_v_PGMase"],
+        stoichiometry={
+            "G6P": -1,
+            "G1P": 1,
+        },
+    )
+    m.add_reaction(
+        name="v_pga_ex",
+        fn=_rate_out,
+        args=["PGA", "N_translocator", "vmax_v_pga_ex", "km_v_pga_ex"],
+        stoichiometry={
+            "PGA": -1,
+        },
+    )
+    m.add_reaction(
+        name="v_gap_ex",
+        fn=_rate_out_2,
+        args=["GAP", "N_translocator", "vmax_v_pga_ex", "km_v_gap_ex"],
+        stoichiometry={
+            "GAP": -1,
+        },
+    )
+    m.add_reaction(
+        name="v_dhap_ex",
+        fn=_rate_out_2,
+        args=["DHAP", "N_translocator", "vmax_v_pga_ex", "km_v_dhap_ex"],
+        stoichiometry={
+            "DHAP": -1,
+        },
+    )
     m.add_reaction(
         name="v_starch",
-        fn=v_starch,
+        fn=_rate_starch,
         args=[
             "G1P",
             "ATP_st",
@@ -637,128 +749,97 @@ def include_rates(m: Model):
             "PGA",
             "F6P",
             "FBP",
-            "Vmax_starch",
-            "Km_Starch_G1P",
-            "Ki_Starch_ADP",
-            "Km_Starch_ATP",
-            "Kact_Starch_PGA",
-            "Kact_Starch_F6P",
-            "Kact_Starch_FBP",
+            "vmax_v_starch",
+            "km_v_starch_G1P",
+            "km_v_starch_ATP_st",
+            "ki_v_starch",
+            "ki_v_starch_PGA",
+            "ki_v_starch_F6P",
+            "ki_v_starch_FBP",
         ],
-        stoichiometry={"G1P": -1, "ATP_st": -1},
+        stoichiometry={
+            "G1P": -1.0,
+            "ATP_st": -1.0,
+        },
     )
-
     m.add_reaction(
-        name="v_FdTrReduc",
-        fn=proportional,
-        args=["TRX_ox", "Fd_red", "k_fd_tr_reductase"],
-        stoichiometry={"TRX_ox": -1, "Fd_ox": 1},
+        name="v_3ASC",
+        fn=_rate_mda_reductase,
+        args=["MDA", "kf_v_3ASC"],
+        stoichiometry={
+            "MDA": -2,
+            "DHA": 1,
+        },
     )
-
     m.add_reaction(
-        name="v_Eact",
-        fn=proportional,
-        args=["E_CBB_inactive", "TRX_red", "k_e_cbb_activation"],
-        stoichiometry={"E_CBB_inactive": -5, "TRX_ox": 5},
+        name="v_MDAreduct",
+        fn=_rate_mda_reductase_2,
+        args=[
+            "NADPH_st",
+            "MDA",
+            "vmax_v_MDAreduct",
+            "km_v_MDAreduct_NADPH_st",
+            "km_v_MDAreduct_MDA",
+        ],
+        stoichiometry={
+            "NADPH_st": -1,
+            "MDA": -2,
+        },
     )
-
-    m.add_reaction(
-        name="v_Einact",
-        fn=proportional,
-        args=["E_CBB_active", "k_e_cbb_relaxation"],
-        stoichiometry={"E_CBB_inactive": 5},
-    )
-
-    # ------------------------------------
-    # Mehler Module
-    # ------------------------------------
-
-    m.add_reaction(
-        name="v_PSI",
-        fn=v_PSI,
-        args=["psIIcross", "pfd", "Y0"],
-        stoichiometry={"PC_ox": 1},
-    )
-
-    m.add_reaction(
-        name="v_Fdred",
-        fn=v_Fdred,
-        args=["Fd_ox", "Fd_red", "Y1", "Y2", "k_Fdred", "K_FAFd"],
-        stoichiometry={"Fd_ox": -1},
-    )
-
     m.add_reaction(
         name="v_APXase",
-        fn=v_APXase,
+        fn=_rate_ascorbate_peroxidase,
         args=[
             "ASC",
             "H2O2",
-            "k_f1",
-            "k_r1",
-            "k_f2",
-            "k_r2",
-            "k_f3",
-            "k_f4",
-            "k_r4",
-            "k_f5",
+            "kf1",
+            "kr1",
+            "kf2",
+            "kr2",
+            "kf3",
+            "kf4",
+            "kr4",
+            "kf5",
             "XT",
         ],
-        stoichiometry={"H2O2": -1, "MDA": 2},
-    )
-
-    m.add_reaction(
-        name="v_MDAreduct",
-        fn=v_MDAreduct,
-        args=["NADPH_st", "MDA", "kcat_MDAR", "Km_MDAR_NADPH", "Km_MDAR_MDA", "MDAR_0"],
-        stoichiometry={"NADPH_st": -1, "MDA": -2},
-    )
-
-    m.add_reaction(
-        name="v_Mehler",
-        fn=proportional,
-        args=["Y1", "O2_ext", "k_Mehler"],
         stoichiometry={
-            "H2O2": Derived(value, ["convf"])
-        },  # required to convert as rates of PSI are expressed in mmol/mol Chl
+            "H2O2": -1,
+            "MDA": 2,
+        },
     )
-
     m.add_reaction(
         name="v_GR",
-        fn=v_GR,
-        args=["NADPH_st", "GSSG", "kcat_GR", "GR_0", "Km_NADPH", "Km_GSSG"],
-        stoichiometry={"NADPH_st": -1, "GSSG": -1},
+        fn=_rate_glutathion_reductase,
+        args=["NADPH_st", "GSSG", "vmax_v_GR", "km_v_GR_NADPH_st", "km_v_GR_GSSG"],
+        stoichiometry={
+            "NADPH_st": -1,
+            "GSSG": -1,
+        },
     )
-
     m.add_reaction(
         name="v_DHAR",
-        fn=v_DHAR,
-        args=["DHA", "GSH", "kcat_DHAR", "DHAR_0", "Km_DHA", "K_DHAR", "Km_GSH"],
-        stoichiometry={"DHA": -1, "GSSG": 1},
+        fn=_rate_dhar,
+        args=["DHA", "GSH", "vmax_v_DHAR", "km_v_DHAR_DHA", "km_v_DHAR_GSH", "K"],
+        stoichiometry={
+            "DHA": -1,
+            "GSSG": 1,
+        },
     )
-
-    m.add_reaction(
-        name="v_3ASC",
-        fn=v_3ASC,
-        args=["MDA", "k3"],
-        stoichiometry={"MDA": -2, "DHA": 1},
-    )
-
-    # ------------------------------------
-    # Consumption Module
-    # ------------------------------------
-
     m.add_reaction(
         name="v_ATPcons",
-        fn=proportional,
-        args=["ATP_st", "k_ex_atp"],
-        stoichiometry={"ATP_st": -1},
+        fn=mass_action_1s,
+        args=["ATP_st", "kf_v_ATPcons"],
+        stoichiometry={
+            "ATP_st": -1,
+        },
     )
-
     m.add_reaction(
         name="v_NADPHcons",
-        fn=proportional,
-        args=["NADPH_st", "k_ex_nadph"],
-        stoichiometry={"NADPH_st": -1},
+        fn=mass_action_1s,
+        args=["NADPH_st", "kf_v_NADPHcons"],
+        stoichiometry={
+            "NADPH_st": -1,
+        },
     )
 
     return m

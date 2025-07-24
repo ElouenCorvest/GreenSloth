@@ -17,6 +17,9 @@ GreenSlothUtils = { path = "../../GreenSlothUtils/", editable = true }
 mdutils = ">=1.6.0, <2"
 ipykernel = ">=6.29.5, <7"
 ruff = ">=0.11.13, <0.12"
+modelbase2 = ">=0.7.0, <0.8"
+torch = ">=2.7.1, <3"
+mxlbricks = ">=0.5.0"
 
 [tool.bandit]
 skips = ["B101", "B301", "B403", "B404", "B603", "B607"]

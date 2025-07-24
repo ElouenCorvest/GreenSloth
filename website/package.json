@@ -12,9 +12,16 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@nivo/core": "^0.99.0",
+    "@nivo/line": "^0.99.0",
+    "chart.js": "^4.5.0",
     "chroma-js": "^3.1.2",
+    "echarts": "^5.6.0",
     "marked": "^15.0.12",
     "papaparse": "^5.5.3",
+    "plotly": "^1.0.6",
+    "plotly.js": "^3.0.3",
+    "plotly.js-dist": "^3.0.3",
     "swiper": "^11.2.7",
     "vite-plugin-php": "^2.0.3"
   }

@@ -5,6 +5,7 @@ import vennDiagramm from "../img/venn_diagramm.svg?raw"
 import Swiper from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
 import chroma from "chroma-js"
+import Plotly from 'plotly.js-dist'
 
 // Important Variables
 var modelName = location.href.split("/").slice(-1)[0].split(".")[0];
@@ -47,11 +48,18 @@ const markedMathExtension = {
   
 marked.use(markedMathExtension);
 
-// Insert Element into DOM with prior Comment
-function insertCommentedElement(parent, ele, comm) {
+// Append Element into DOM with prior Comment
+function appendCommentedElement(parent, ele, comm) {
     comm = document.createComment(comm)
     parent.appendChild(comm)
     parent.appendChild(ele)
+}
+
+// Append Element into DOM with prior Comment
+function prependCommentedElement(parent, ele, comm) {
+    comm = document.createComment(comm)
+    parent.prepend(comm)
+    parent.prepend(ele)
 }
 
 // Get model information
@@ -145,6 +153,15 @@ function filterGlossIDAbbr(gloss) {
     return filteredGloss
 }
 
+function filterGlossIDPythonVar(gloss) {
+    var filteredGloss = {}
+        gloss.forEach(row => {
+            filteredGloss[row["Glossary ID"]] = row["Python Var"]
+        })
+
+    return filteredGloss
+}
+
 // Get Main Glossary
 async function getMainGlossary() {
     return new Promise((resolve, reject) => {
@@ -174,6 +191,35 @@ async function getBothModelInfo(modelName, otherModelName) {
     return res
 }
 
+// Get Sim
+function getSim(path) {
+    return new Promise((resolve, reject) => {
+        fetch(path).then(response => {
+            resolve(response.json())
+        })
+    }
+
+    )
+}
+
+
+// Get Both Sims
+async function getBothSims(thisModel, otherModel, pfd) {
+    const res = await Promise.all([
+        getSim(`../js/simulations/${thisModel}/${pfd}.json`),
+        getSim(`../js/simulations/${otherModel}/${pfd}.json`)
+    ])
+
+    return res
+}
+
+// Get Simulation result
+// async function getSimRes(modelName, pfd) {
+//     const res = await Promise.all(
+//         import modelData from "../js/models.json"
+//     )
+// }
+
 // Compare Modal Select Function
 function modalChange(informationPointer) {
     const chosenModel = compareModalSelect.value;
@@ -189,6 +235,9 @@ function modalChange(informationPointer) {
     // Get Common Variables
     const commonVariables = document.getElementById("compare-variables-common")
     commonVariables.innerHTML = ""
+
+    // Get Simulation Select
+    const simSelectBox = document.getElementById("compare-simulation-select")
 
     if (chosenModel !== "") {
         const schemeRight = document.getElementById("compare-schemes-right")
@@ -214,7 +263,8 @@ function modalChange(informationPointer) {
             const otherModelVars = combinedVars[1]
             const otherModelVarsKeys = Object.keys(otherModelVars)
 
-            const mainGlossPointer = filterGlossIDAbbr(mainGloss)
+            const mainGlossPointerAbbr = filterGlossIDAbbr(mainGloss)
+            const mainGlossPointerPythonVar = filterGlossIDPythonVar(mainGloss)
             
             const commonVars = thisModelVarsKeys.filter(value => otherModelVarsKeys.includes(value))
 
@@ -223,20 +273,30 @@ function modalChange(informationPointer) {
 
             thisModelVarsUnique.forEach(ele => {
                 var newP = document.createElement("p")
-                newP.innerText = mainGlossPointer[ele]
+                newP.innerText = mainGlossPointerAbbr[ele]
                 leftVariables.appendChild(newP)
             })
             
             otherModelVarsUnique.forEach(ele => {
                 var newP = document.createElement("p")
-                newP.innerText = mainGlossPointer[ele]
+                newP.innerText = mainGlossPointerAbbr[ele]
                 rightVariables.appendChild(newP)
             })
 
+            simSelectBox.innerHTML = ""
+
             commonVars.forEach(ele => {
+
+                console.log(mainGlossPointerPythonVar[ele])
+
                 var newP = document.createElement("p")
-                newP.innerText = mainGlossPointer[ele]
+                newP.innerText = mainGlossPointerAbbr[ele]
                 commonVariables.appendChild(newP)
+
+                var varOption = document.createElement("option")
+                varOption.value = mainGlossPointerPythonVar[ele]
+                varOption.innerHTML = mainGlossPointerPythonVar[ele]
+                simSelectBox.appendChild(varOption)
             })
 
             MathJax.typeset()
@@ -251,14 +311,28 @@ function modalChange(informationPointer) {
 
             createInfoList("", "right", informationPointer)
 
-            const filteredGlossComps = filterGlossIDAbbr(res["compsData"])
-            const filteredGlossDerivedComps = filterGlossIDAbbr(res["derivedCompsData"])
-            const filteredGlossCombined = {...filteredGlossComps, ...filteredGlossDerivedComps}
-            for (const [key, value] of Object.entries(filteredGlossCombined)) {
-                var newP = document.createElement("p")
-                newP.innerText = value
-                leftVariables.appendChild(newP)
-            }
+            const filteredGlossCompsAbbr = filterGlossIDAbbr(res["compsData"])
+        const filteredGlossDerivedCompsAbbr = filterGlossIDAbbr(res["derivedCompsData"])
+        const filteredGlossCombinedAbbr = {...filteredGlossCompsAbbr, ...filteredGlossDerivedCompsAbbr}
+        var leftVariables = document.getElementById("compare-variables-left")
+        for (const [key, value] of Object.entries(filteredGlossCombinedAbbr)) {
+            var newP = document.createElement("p")
+            newP.innerText = value
+            leftVariables.appendChild(newP)
+        }
+
+            const filteredGlossCompsPythonVar = filterGlossIDPythonVar(res["compsData"])
+            const filteredGlossDerivedCompsPythonVar = filterGlossIDPythonVar(res["derivedCompsData"])
+            const filteredGlossCombined = {...filteredGlossCompsPythonVar, ...filteredGlossDerivedCompsPythonVar}
+            // Compare Modal Heading Select Option Creator
+            const compareModalBodySimulationSelect = document.getElementById("compare-simulation-select")
+            const availableVars = Object.values(filteredGlossCombined)
+            availableVars.forEach(element => {
+                var varOption = document.createElement("option")
+                varOption.value = element
+                varOption.innerHTML = element
+                compareModalBodySimulationSelect.appendChild(varOption)
+            })
 
             MathJax.typeset()
         })
@@ -393,7 +467,7 @@ const bodyElement = document.body
 const citeModal = document.createElement("div")
 citeModal.id = "citeModal"
 citeModal.classList.add("modal", "hidden")
-insertCommentedElement(bodyElement, citeModal, "The Cite Modal")
+prependCommentedElement(bodyElement, citeModal, "The Cite Modal")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Compare Modal
@@ -402,7 +476,7 @@ insertCommentedElement(bodyElement, citeModal, "The Cite Modal")
 var compareModal = document.createElement("div")
 compareModal.id = "compareModal"
 compareModal.classList.add("modal", "hidden")
-insertCommentedElement(bodyElement, compareModal, "The Compare Modal")
+prependCommentedElement(bodyElement, compareModal, "The Compare Modal")
 
 // Create Compare Modal Content
 var compareModalContent = document.createElement("div")
@@ -482,7 +556,7 @@ compareModalBodyTabs.classList.add("TabContainer")
 compareModalBody.appendChild(compareModalBodyTabs)
 
 // Compare Modal Body Tabs
-const compareModalTabChoices = ["Variables", "Information", "Schemes"]
+const compareModalTabChoices = ["Variables", "Simulation", "Information", "Schemes"]
 compareModalTabChoices.forEach(choice => {
     var compareModalTab = document.createElement("button");
     compareModalTab.innerHTML = choice;
@@ -553,6 +627,102 @@ compareModalBodyVariablesCommon.classList.add("compare-variables-math")
 compareModalBodyVariablesCommon.id = "compare-variables-common"
 compareModalBodyVariablesCommon.style.color = gradient(0.5).css()
 compareModalBodyVariables.appendChild(compareModalBodyVariablesCommon)
+
+//////////////// SIMULATIONS ////////////////
+// Get Simulation Body
+const compareModalBodySimulation = document.getElementById("compare-body-simulation")
+
+// Create Explanation Text
+var compareModalBodySimulationText = document.createElement("p")
+compareModalBodySimulationText.innerText = "You can choose which variable to simulate"
+compareModalBodySimulation.appendChild(compareModalBodySimulationText)
+
+function plotVariables(plot, data) {
+    Plotly.newPlot( plot, data, {
+        yaxis: {
+            title: "test",
+            tickformat: ".2f"
+        },
+        shapes: [
+            {
+            type: "rect",
+            xref: "x",
+            yref: "paper", // y-reference is assigned to the plot paper [0,1]
+            x0: "0",
+            x1: "10",
+            y0: 0,
+            y1: 1,
+            fillcolor: "#d3d3d3",
+            opacity: 0.2,
+            line: {
+                width: 0,
+            },
+            },
+        ],
+    });
+}
+
+// Select Change Func
+function varCompare() {
+    const varSelectBox = document.getElementById("compare-simulation-select")
+    const modelSelectBox = document.getElementById("compareModalSelect")
+    const otherModel = modelSelectBox.value
+
+    const chosenVar = varSelectBox.value;
+
+    var plot = document.getElementById('compare-simulation-chart');
+
+    const pfd = 1000
+
+    if (otherModel !== "") {
+        const bothSims = getBothSims(modelName, otherModel, pfd)
+        bothSims.then(res =>{
+            const simThisModel = res[0]
+            const simOtherModel = res[1]
+
+            simThisModel[chosenVar]["type"] = "line"
+            simThisModel[chosenVar]["name"] = modelName
+            simOtherModel[chosenVar]["type"] = "line"
+            simOtherModel[chosenVar]["name"] = otherModel
+
+            const data = [simThisModel[chosenVar], simOtherModel[chosenVar]]
+
+            plotVariables(plot, data)
+        })
+    } else {
+        const thisSim = getSim(`../js/simulations/${modelName}/${pfd}.json`)
+        thisSim.then(res => {
+            const data = res[chosenVar]
+
+            data["type"] = "line"
+            data["name"] = modelName
+
+            plotVariables(plot, [data])
+
+        })
+    }
+}
+
+// Compare Modal Heading Select Model
+var compareModalBodySimulationSelect = document.createElement("select");
+compareModalBodySimulationSelect.id = "compare-simulation-select"
+compareModalBodySimulationSelect.addEventListener('change', () => {
+    varCompare()
+});
+compareModalBodySimulation.appendChild(compareModalBodySimulationSelect);
+
+// Compare Modal Heading Select Default Value
+var compareModalBodySimulationSelectDefaultVal = document.createElement("option");
+compareModalBodySimulationSelectDefaultVal.value = "";
+compareModalBodySimulationSelectDefaultVal.innerHTML = "Select Variable"
+compareModalBodySimulationSelect.appendChild(compareModalBodySimulationSelectDefaultVal)
+
+// Create Simulation Chart
+var compareModalBodySimulationChart = document.createElement("div")
+compareModalBodySimulationChart.id = "compare-simulation-chart"
+compareModalBodySimulation.appendChild(compareModalBodySimulationChart)
+
+
 
 //////////////// SCHEMES ////////////////
 // Insert Scheme
@@ -678,7 +848,7 @@ sides.forEach(side => {
 var imageModal = document.createElement("div")
 imageModal.id = "image-modal"
 imageModal.classList.add("modal", "hidden")
-insertCommentedElement(bodyElement, imageModal, "The Image Modal")
+prependCommentedElement(bodyElement, imageModal, "The Image Modal")
 
 // Insert Image Modal Close
 var imageModalClose = document.createElement("span")
@@ -705,19 +875,19 @@ window.onclick = function(event) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const layoutWrapper = document.createElement("div")
 layoutWrapper.id = "layoutWrapper"
-insertCommentedElement(bodyElement, layoutWrapper, "The Layout Wrapper")
+prependCommentedElement(bodyElement, layoutWrapper, "The Layout Wrapper")
 
 const topnav = document.createElement("div")
 topnav.id = "topnav"
-insertCommentedElement(layoutWrapper, topnav, "The TopNav")
+appendCommentedElement(layoutWrapper, topnav, "The TopNav")
 
 const wrapper = document.createElement("div")
 wrapper.id = "wrapper"
-insertCommentedElement(layoutWrapper, wrapper, "The Wrapper")
+appendCommentedElement(layoutWrapper, wrapper, "The Wrapper")
 
 const contentElement = document.createElement("div")
 contentElement.id = "content"
-insertCommentedElement(wrapper, contentElement, "The Content")
+appendCommentedElement(wrapper, contentElement, "The Content")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Header
@@ -725,7 +895,7 @@ insertCommentedElement(wrapper, contentElement, "The Content")
 // Create Model Header
 var modelHeader = document.createElement("div")
 modelHeader.id = "model-header"
-insertCommentedElement(contentElement, modelHeader, "Model Header")
+appendCommentedElement(contentElement, modelHeader, "Model Header")
 
 // Insert Model Title
 var modelHeaderTitle = document.createElement("h1")
@@ -745,7 +915,7 @@ modelHeader.appendChild(modelHeaderDOI)
 var modelHeaderButtonBar = document.createElement("div")
 modelHeaderButtonBar.classList.add("TabContainer")
 modelHeaderButtonBar.id = "model-button-bar"
-insertCommentedElement(modelHeader, modelHeaderButtonBar, "The Model Summary Buttons")
+appendCommentedElement(modelHeader, modelHeaderButtonBar, "The Model Summary Buttons")
 
 // Insert Model Button Bar Github Button
 var modelHeaderButtonBarGithub = document.createElement("a")
@@ -788,7 +958,7 @@ modelHeaderButtonBarGithub.appendChild(modelHeaderButtonBarLastUpdate)
 // Insert Model Info Selector
 var modelInfoSelector = document.createElement("div")
 modelInfoSelector.id = "model-info-selector"
-insertCommentedElement(contentElement, modelInfoSelector, "The Model Info Selector")
+appendCommentedElement(contentElement, modelInfoSelector, "The Model Info Selector")
 
 // Insert Model Info Dropdown
 var modelInfoSelectorDropdown = document.createElement("select")
@@ -800,7 +970,7 @@ modelInfoSelectorDropdown.addEventListener("change", function() {
         galleryTop.slideTo(chosenSection)
     }
 })
-insertCommentedElement(modelInfoSelector, modelInfoSelectorDropdown, "The Model Info Dropdown")
+appendCommentedElement(modelInfoSelector, modelInfoSelectorDropdown, "The Model Info Dropdown")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Create Swiper Thumbs Div
@@ -808,18 +978,18 @@ insertCommentedElement(modelInfoSelector, modelInfoSelectorDropdown, "The Model 
 // Insert Swiper Thumbs Div
 var swiperThumbDiv = document.createElement("div")
 swiperThumbDiv.classList.add("swiper-container", "gallery-thumbs")
-insertCommentedElement(modelInfoSelector, swiperThumbDiv, "The Swiper Thumb Div")
+appendCommentedElement(modelInfoSelector, swiperThumbDiv, "The Swiper Thumb Div")
 
 // Insert Swiper Thumbs Wrapper
 var swiperThumbWrapper = document.createElement("div")
 swiperThumbWrapper.classList.add("swiper-wrapper")
-insertCommentedElement(swiperThumbDiv, swiperThumbWrapper, "The Swiper Thumb Wrapper")
+appendCommentedElement(swiperThumbDiv, swiperThumbWrapper, "The Swiper Thumb Wrapper")
 
 // Insert Swiper Thumbs Summary
 var swiperThumbSummary = document.createElement("div")
 swiperThumbSummary.classList.add("swiper-slide", "clickable")
 swiperThumbSummary.innerHTML = "Summary"
-insertCommentedElement(swiperThumbWrapper, swiperThumbSummary, "The Swiper Thumb Summary")
+appendCommentedElement(swiperThumbWrapper, swiperThumbSummary, "The Swiper Thumb Summary")
 
 // Insert Model Info Select Summary
 var modelInfoSelectorDropdownOptionSummary = document.createElement("option")
@@ -842,7 +1012,7 @@ for (const [key, value] of Object.entries(modelInfoCats)) {
     var swiperThumb = document.createElement("div")
     swiperThumb.classList.add("clickable", "swiper-slide")
     swiperThumb.innerHTML = value
-    insertCommentedElement(swiperThumbWrapper, swiperThumb, `The Swiper Thumb ${key}`)
+    appendCommentedElement(swiperThumbWrapper, swiperThumb, `The Swiper Thumb ${key}`)
 
     var modelInfoSelectorDropdownOption = document.createElement("option")
     modelInfoSelectorDropdownOption.innerHTML = value
@@ -856,12 +1026,12 @@ for (const [key, value] of Object.entries(modelInfoCats)) {
 // Insert Swiper Div
 var swiperDiv = document.createElement("div")
 swiperDiv.classList.add("swiper", "gallery-top")
-insertCommentedElement(contentElement, swiperDiv, "The Swiper Div")
+appendCommentedElement(contentElement, swiperDiv, "The Swiper Div")
 
 // Insert Swiper Buttons Row
 var swiperButtons = document.createElement("div")
 swiperButtons.id = "swiper-model-buttons"
-insertCommentedElement(swiperDiv, swiperButtons, "The Swiper Buttons")
+appendCommentedElement(swiperDiv, swiperButtons, "The Swiper Buttons")
 
 // Insert Swiper Prev Arrow
 var swiperPrev = document.createElement("span")
@@ -876,7 +1046,7 @@ swiperPrev.addEventListener("click", function() {
     }
     galleryTop.slideTo(newSlideIndex)
 })
-insertCommentedElement(swiperButtons, swiperPrev, "The Swiper Prev Arrow")
+appendCommentedElement(swiperButtons, swiperPrev, "The Swiper Prev Arrow")
 
 var swiperPrevArrow = document.createElement("span")
 swiperPrevArrow.classList.add("arrowUp")
@@ -896,7 +1066,7 @@ swiperNext.addEventListener("click", function() {
     }
     galleryTop.slideTo(newSlideIndex)
 })
-insertCommentedElement(swiperButtons, swiperNext, "The Swiper Next Arrow")
+appendCommentedElement(swiperButtons, swiperNext, "The Swiper Next Arrow")
 
 var swiperNextArrow = document.createElement("span")
 swiperNextArrow.classList.add("arrowUp")
@@ -906,19 +1076,19 @@ swiperNext.appendChild(swiperNextArrow)
 // Insert Swiper Wrapper
 var swiperWrapper = document.createElement("div")
 swiperWrapper.classList.add("swiper-wrapper", "swiper-wrapper-models")
-insertCommentedElement(swiperDiv, swiperWrapper, "The Swiper Wrapper")
+appendCommentedElement(swiperDiv, swiperWrapper, "The Swiper Wrapper")
 
 // Insert Swiper Slide Summary
 var swiperSummary = document.createElement("div")
 swiperSummary.classList.add("swiper-slide", "swiper-slide-models")
-insertCommentedElement(swiperWrapper, swiperSummary, "The Swiper Slide Summary")
+appendCommentedElement(swiperWrapper, swiperSummary, "The Swiper Slide Summary")
 
 // Insert Swiper Slides
 for (const [key, value] of Object.entries(modelInfoCats)) {
     var swiperSlide = document.createElement("div")
     swiperSlide.classList.add("swiper-slide", "swiper-slide-models", "modelTabContent")
     swiperSlide.id = `modelAttr${key}`
-    insertCommentedElement(swiperWrapper, swiperSlide, `The Swiper Slide ${key}`)
+    appendCommentedElement(swiperWrapper, swiperSlide, `The Swiper Slide ${key}`)
 
     if (key != "Figures") {
         var modelAttrTableDiv = document.createElement("div")
@@ -970,7 +1140,7 @@ var galleryTop = new Swiper('.gallery-top', {
 // Insert Model Summary Block
 var modelSummaryBlock = document.createElement("div")
 modelSummaryBlock.id = "model-summary-block"
-insertCommentedElement(swiperSummary, modelSummaryBlock, "The Model Summary")
+appendCommentedElement(swiperSummary, modelSummaryBlock, "The Model Summary")
 
 // Insert Model Scheme Block
 var modelSummaryBlockSchemeBlock = document.createElement("div")
@@ -1012,15 +1182,29 @@ getModelInfo(modelName)
         createInfoTable(response);
         createInfoList(response, "left", informationPointer)
 
-        const filteredGlossComps = filterGlossIDAbbr(response["compsData"])
-        const filteredGlossDerivedComps = filterGlossIDAbbr(response["derivedCompsData"])
-        const filteredGlossCombined = {...filteredGlossComps, ...filteredGlossDerivedComps}
+        const filteredGlossCompsAbbr = filterGlossIDAbbr(response["compsData"])
+        const filteredGlossDerivedCompsAbbr = filterGlossIDAbbr(response["derivedCompsData"])
+        const filteredGlossCombinedAbbr = {...filteredGlossCompsAbbr, ...filteredGlossDerivedCompsAbbr}
         var leftVariables = document.getElementById("compare-variables-left")
-        for (const [key, value] of Object.entries(filteredGlossCombined)) {
+        for (const [key, value] of Object.entries(filteredGlossCombinedAbbr)) {
             var newP = document.createElement("p")
             newP.innerText = value
             leftVariables.appendChild(newP)
         }
+
+        const filteredGlossCompsPythonVar = filterGlossIDPythonVar(response["compsData"])
+        const filteredGlossDerivedCompsPythonVar = filterGlossIDPythonVar(response["derivedCompsData"])
+        const filteredGlossCombined = {...filteredGlossCompsPythonVar, ...filteredGlossDerivedCompsPythonVar}
+        // Compare Modal Heading Select Option Creator
+        const compareModalBodySimulationSelect = document.getElementById("compare-simulation-select")
+        const availableVars = Object.values(filteredGlossCombined)
+        availableVars.forEach(element => {
+            var varOption = document.createElement("option")
+            varOption.value = element
+            varOption.innerHTML = element
+            compareModalBodySimulationSelect.appendChild(varOption)
+        })
+
         MathJax.typeset()
 
         galleryTop.update()
@@ -1103,3 +1287,7 @@ getMdFile().then(response => {
     galleryTop.update()
 
 })
+
+// At the very End
+import('./topnav.js');
+import('./cite.js');

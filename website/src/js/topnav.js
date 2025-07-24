@@ -2,6 +2,13 @@
 const siteUrl = window.location.origin
 import iconSrc from "../img/icon.svg"
 
+document.addEventListener('DOMContentLoaded', () => {
+    var topnavBar = document.getElementById("topnav")
+    if (!(topnavBar)) {
+        console.warn('top-nav-container not found!');
+    }
+});
+
 // Top Nav Bar
 var topnavBar = document.getElementById("topnav")
 

@@ -1,4 +1,4 @@
-from modelbase2 import Model
+from mxlpy import Model
 from .derived_quantities import include_derived_quantities
 from .rates import include_rates
 
@@ -10,191 +10,208 @@ def Saadat2021() -> Model:
 
     m.add_parameters(
         {
-            "convf": 3.2e-2,  # [] Conversion factor of ATP and NADPH
-            "PSII_tot": 2.5,  # [mmol (mol Chl)-1] PSII reaction centres
-            "PSI_tot": 2.5,  # [mmol (mol Chl)-1] PSI reaction centres
-            "PQ_tot": 17.5,  # [mmol (mol Chl)-1] Total plastoquinone pool
-            "PC_tot": 4.0,  # [mmol (mol Chl)-1] Total plastocyanine pool
-            "Fd_tot": 5.0,  # [mmol (mol Chl)-1] Total ferrodoxin pool
-            "NADP_tot": 0.8,  # [mM] Total NADP pool
-            "AP_tot": 2.55,  # [mM] Total adenosine phosphate pool
-            "PsbS_tot": 1.0,  # [mmol (mol Chl)-1] Relative pool of PsbS
-            "X_tot": 1.0,  # [mmol (mol Chl)-1] Relative pool of xanthophylls
-            "k_H": 5e9,  # [s-1] Rate of non-radiative decay
-            "kH0": 5e8,  # [s-1] Base rate of non-radiative decay
-            "k_F": 6.25e8,  # [s-1] Rate of fluorescence
-            "k2": 5e9,  # [s-1] Rate constant for photochemistry
-            "k_Stt7": 0.0035,  # [s-1] Rate of phosphorylation of state transition from PSII to PSI
-            "k_Pph1": 0.0013,  # [s-1] Rate of dephosphorylation of state transition from PSI to PSII
-            "KM_ST": 0.2,  # [] Switch point (half-activity of Stt7) for 20% PQ oxidised
-            "n_ST": 2.0,  # [] Hill coefficient of State transtion from PSII to PSI
-            "sigma0_I": 0.37,  # [] Relative cross section of PSI-LHCl supercomplex
-            "sigma0_II": 0.1,  # [] Relative cross section of PSII
-            "k_ATPsynth": 20.0,  # [s-1] Rate constant of ATP synthase
-            "Pi_mol": 0.01,  # [mmol (mol Chl)-1] Internal pool of phosphates, required to calculate ATP equilibrium
-            "DeltaG0_ATP": 30.6,  # [kJ mol-1] Standard Gibbs free energy change of ATP formation
-            "HPR": 14 / 3,  # [] Ratio of protons to ATP in ATP synthase
-            "pH_st": 7.9,  # [] Stromal pH of a dark adapted state
-            "k_Leak": 10.0,  # [s-1] Rate constant of proton leak
-            "b_H": 100.0,  # [] Buffering protons constant of lumen
-            "k_PQred": 250.0,  # [(mol Chl) mmol-1 s-1 ]
-            "k_Cytb6f": 2.5,  # [(mol Chl)2  mmol-2 s-1 ]
-            "k_PTOX": 0.01,  # [(mol Chl) mmol-1 s-1 ]
-            "k_PCox": 2500.0,  # [(mol Chl) mmol-1 s-1 ]
-            "k_Fdred": 2.5e5,  # [(mol Chl) mmol-1 s-1 ]
-            "kcat_FNR": 500.0,  # [s-1] Catalytic constant of FNRase
-            "k_cyc": 1.0,  # [s-1] Reaction rate constant of cyclic electron flow
-            "O2_ext": 8.0,  # [mmol (mol Chl)-1] External oxygen pool, corresponds to 250μM.
-            "k_NDH": 0.002,  # [s-1]
-            "EFNR": 3.0,  # []
-            "KM_FNR_F": 1.56,  # [mmol (mol Chl)-1]
-            "KM_FNR_N": 0.22,  # [mmol (mol Chl)-1]
-            "gamma_0": 0.1,  # [] Fitted quencher factor corresponding to base quenching not associated with protonation or zeaxanthin
-            "gamma_1": 0.25,  # [] Fitted quencher factor corresponding to fast quenching due to protonation
-            "gamma_2": 0.6,  # [] Fitted quencher factor corresponding to fastest possible quenching
-            "gamma_3": 0.15,  # [] Fitted quencher factor corresponding to slow quenching of Zx present despite lack of protonation
-            "k_deprot": 0.0096,  # [s-1] Rate of PsbS deprotonation
-            "k_prot": 0.0096,  # [s-1] Rate of PsbS protonation
-            "K_pHSatLHC": 5.8,  # [] pKa of PsbS activation, kept the same as for VDA
-            "k_DV": 0.0024,  # [s-1] Rate constant of de-epoxidation of violaxanthin
-            "k_EZ": 0.00024,  # [s-1] Rate constant of epoxidation of violaxanthin
-            "K_pHSat": 5.8,  # [] Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8
-            "nh_x": 5,  # [] Hill-coefficient for de-epoxidase acitivity
-            "nh_PsbS": 3.0,  # [] Hill-coefficient for PsbS protonation
-            "K_ZSat": 0.12,  # [] Half-saturation constant (relative conc. of Zx) for quenching
-            "E0_QA": -0.140,  # [V]
-            "E0_PQ": 0.354,  # [V]
-            "E0_PC": 0.380,  # [V]
-            "E0_P700": 0.48,  # [V]
-            "E0_FA": -0.55,  # [V]
-            "E0_Fd": -0.43,  # [V]
-            "E0_NADP": -0.113,  # [V]
-            "F": 96.485,  # [kJ] Faraday constant
-            "R": 0.0083,  # [J K-1 mol-1] Universal gas constant
-            "T": 298.0,  # [K] Temperature
-            "pfd": 100.0,  # [µmol m-2 s-1] Photon Flux Density
-            "Ton": 0.0,  # [s] Time point with anoxia condition
-            "Toff": 1800,  # [s] Time point without anoxia condition
-            "ox": True,  # [] Conditional for constant oxygen supply
-            "CO2": 0.2,  # [mM]
-            "P_tot": 17.05,  # [mmol (mol Chl)-1] Total Phosphate pool
-            "Pext": 0.5,  # [mM] External phosphate
-            "V_maxbase_rubisco": 0.34 * 8,  # [mM s-1] Base $V_\mathrm{max}$ of RuBisCO
-            "V_maxbase_fbpase": 1.6,  # [mM s-1] Base $V_\mathrm{max}$ of FBPase
-            "V_maxbase_sbpase": 0.32,  # [mM s-1] Base $V_\mathrm{max}$ of SBPase
-            "V_maxbase_prkase": 7.9992,  # [mM s-1] Base $V_\mathrm{max}$ of PRKase
-            "V_maxbase_starch": 0.32,  # [mM s-1] Base $V_\mathrm{max}$ of Starch Synthase
-            "Vmax_ex": 2.0,  # [mM s-1] $V_\mathrm{max}$ of Export
-            "K_PGK1ase": 3.1e-4,  # [] Equilibrium constant of PGK1ase
-            "K_BPGAdehynase": 1.6e7,  # [] Equilibrium constant of BPGA dehydrogenase
-            "K_TPIase": 22.0,  # [] Equilibrium constant of TPIase
-            "K_Aldolase_FBP": 7.1,  # [mM-1] Equilibrium constant of Aldolase of GAP and DHAP to FBP
-            "K_TKase_E4P": 0.084,  # [] Equilibrium constant of TKase of GAP and F6P to X5P and E4P
-            "K_Aldolase_SBP": 13.0,  # [mM-1] Equilibrium constant of Aldolase of E4P and DHAP to SBP
-            "K_TKase_R5P": 0.85,  # [] Equilibrium constant of TKase of GAP and S7P to X5P and R5P
-            "K_Rpiase": 0.4,  # [] Equilibrium constant of Rpiase
-            "K_RPEase": 0.67,  # [] Equilibrium constant of RPEase
-            "K_PGIase": 2.3,  # [] Equilibrium constant of PGIase
-            "K_PGMase": 0.058,  # [] Equilibrium constant of PGMase
-            "Km_RuBisCO_RUBP": 0.02,  # [mM] Michaelis Menten constant of RuBisCO for RUBP
-            "Km_RuBisCO_CO2": 0.0107,  # [mM] Michaelis Menten constant of RuBisCO for CO2
-            "Km_FBPase": 0.03,  # [mM] Michaelis Menten constant of FBPase
-            "Km_SBPase": 0.013,  # [mM] Michaelis Menten constant of SBPase
-            "Km_PRKase_RU5P": 0.05,  # [mM] Michaelis Menten constant of PRKase for RU5P
-            "Km_PRKase_ATP": 0.05,  # [mM] Michaelis Menten constant of PRKase for ATP
-            "Km_Starch_G1P": 0.08,  # [mM] Michaelis Menten constant of Starch production for G1P
-            "Km_Starch_ATP": 0.08,  # [mM] Michaelis Menten constant of Starch production for ATP
-            "K_diss_PGA": 0.25,  # [mM] Dissociation constant for the complex formed by phosphate translocator and PGA
-            "K_diss_GAP": 0.075,  # [mM] Dissociation constant for the complex formed by phosphate translocator and GAP
-            "K_diss_DHAP": 0.077,  # [mM] Dissociation constant for the complex formed by phosphate translocator and DHAP
-            "K_diss_Pi": 0.63,  # [mM] Dissociation constant for the complex formed by phosphate translocator and Pi
-            "K_diss_Pext": 0.74,  # [mM] Dissociation constant for the complex formed by phosphate translocator and external orthophosphate
-            "Ki_RuBisCO_PGA": 0.04,  # [mM] Inhibition constant of RuBisCO by PGA
-            "Ki_RuBisCO_FBP": 0.04,  # [mM] Inhibition constant of RuBisCO by FBP
-            "Ki_RuBisCO_SBP": 0.075,  # [mM] Inhibition constant of RuBisCO by SBP
-            "Ki_RuBisCO_Pi": 0.9,  # [mM] Inhibition constant of RuBisCO by Pi
-            "Ki_RuBisCO_NADPH": 0.07,  # [mM] Inhibition constant of RuBisCO by NADPH
-            "Ki_FBPase_F6P": 0.7,  # [mM] Inhibition constant of FBPase by F6P
-            "Ki_FBPase_Pi": 12.0,  # [mM] Inhibition constant of FBPase by Pi
-            "Ki_SBPase_Pi": 12.0,  # [mM] Inhibition constant of SBPase by Pi
-            "Ki_PRKase_PGA": 2.0,  # [mM] Inhibition constant of Ru5P of PRKase by PGA
-            "Ki_PRKase_RuBP": 0.7,  # [mM] Inhibition constant of Ru5P of PRKase by RuBP
-            "Ki_PRKase_Pi": 4.0,  # [mM] Inhibition constant of Ru5P of PRKase by Pi
-            "Kiunc_PRKase_ADP": 2.5,  # [mM] Uncompetitive inhibition constant of ATP of PRKase by ADP
-            "Kicom_PRKase_ADP": 0.4,  # [mM] Competitive inhibition constant of ATP of PRKase by ADP
-            "Ki_Starch_ADP": 10.0,  # [mM] Inhibition constant of ATP of Starch production by ADP
-            "Kact_Starch_PGA": 0.1,  # [] Activation factor of Starch production by PGA
-            "Kact_Starch_F6P": 0.02,  # [] Activation factor of Starch production by F6P
-            "Kact_Starch_FBP": 0.02,  # [] Activation factor of Starch production by FBP
-            "k_fast": 8e8,  # [mM] Arbituary fast rate constant
-            "k_f1": 10000.0,  # []
-            "k_r1": 220.0,  # []
-            "k_f2": 10000.0,  # []
-            "k_r2": 4000.0,  # []
-            "k_f3": 2510.0,  # []
-            "k_f4": 10000.0,  # []
-            "k_r4": 4000.0,  # []
-            "k_f5": 2510.0,  # []
-            "XT": 0.07,  # [] Concentration of ascorbate peroxidase
-            "k_Mehler": 1.0,  # [mM-1 s-1] Estimated rate constant for summarized hydrogen peroxide production
-            "kcat_GR": 595,  # [s-1] Turnover rate of gluthation reductase
-            "kcat_DHAR": 142,  # [s-1] Turnover rate of dehydroascorbate reductase
-            "k3": 500.0,  # [mM-1 s-1] Rate constant for the spontaneous disproportion of MDA
-            "Km_NADPH": 3e-3,  # [mM] Michaelis Menten constant of NADPH
-            "Km_GSSG": 0.2,  # [mM] Michaelis Menten constant of oxidized gluthation
-            "Km_DHA": 70e-3,  # [mM] Michaelis Menten constant of dehydroascorbate
-            "Km_GSH": 2.5,  # [mM] Michaelis Menten constant of reduced gluthation
-            "K_DHAR": 0.5,  # [mM2] Dissociation constant of dehydroascorbate reductase
-            "GR_0": 1.4e-3,  # [mM] Concentration of gluthatione reductase
-            "DHAR_0": 1.7e-3,  # [mM] Concentration of dehydroascorbate reductase
-            "Glutathion_total": 10,  # [mM] Total concentration of reduced and oxidized glutathione
-            "Ascorbate_total": 10,  # [mM] Total concentration of reduced and oxidized ascorbate
-            "kcat_MDAR": 300.0,  # [s-1] Turnover rate of monodehydroascorbate reductase
-            "Km_MDAR_NADPH": 23e-3,  # [mM] Michaelis-menten constant of monodehydroascorbate for the conversion to NADPH
-            "Km_MDAR_MDA": 1.4e-3,  # [mM] Michaelis-menten constant of monodehydroascorbate for the conversion to MDA
-            "MDAR_0": 2e-3,  # [mM] Concentration of monodehydroascorbate reductase
-            "k_ex_atp": 0.2,  # [s-1] General consumption rate of ATP
-            "k_ex_nadph": 0.2,  # [s-1] General consumption rate of NADPH
-            "thioredoxin_tot": 1,  # [] Relative total concentration of thioredoxin
-            "e_cbb_tot": 6,  # [mM] Estimated maximal concentration of CBB enzymes
-            "k_fd_tr_reductase": 1,  # [s-1] Rate constant of ferrodoxin thioredoxin reductase
-            "k_e_cbb_activation": 1,  # [] Rate constant of CBB activation
-            "k_e_cbb_relaxation": 0.1,  # [s-1] Rate constant of CBB relaxation
+            "PPFD": 100.0,
+            "CO2": 0.2,
+            "O2_lumen": 8.0,
+            "bH": 100.0,
+            "F": 96.485,
+            "convf": 0.032,
+            "R": 0.0083,
+            "T": 298.0,
+            "Carotenoids_tot": 1.0,
+            "Fd_tot": 5.0,
+            "PC_tot": 4.0,
+            "PSBS_tot": 1.0,
+            "LHC_tot": 1.0,
+            "gamma0": 0.1,
+            "gamma1": 0.25,
+            "gamma2": 0.6,
+            "gamma3": 0.15,
+            "kZSat": 0.12,
+            "PQ_tot": 17.5,
+            "staticAntII": 0.1,
+            "staticAntI": 0.37,
+            "Thioredoxin_tot": 1.0,
+            "E_total": 6.0,
+            "NADP_tot": 0.8,
+            "AP_tot": 2.55,
+            "Pi_tot": 17.05,
+            "kf_v_FdTrReduc": 1.0,
+            "kf_v_Eact": 1.0,
+            "kf_v_Einact": 0.1,
+            "ASC_tot": 10,
+            "Glutathion_tot": 10.0,
+            "kf_v_ATPsynth": 20.0,
+            "HPR": 4.666666666666667,
+            "Pi_mol": 0.01,
+            "DeltaG0_ATP": 30.6,
+            "kcat_v_b6f": 2.5,
+            "kh_v_PsbSP": 3.0,
+            "kf_v_PsbSP": 0.0096,
+            "ksat_v_PsbSP": 5.8,
+            "kf_v_PsbSD": 0.0096,
+            "kf_v_Cyc": 1.0,
+            "kf_v_Deepox": 0.0024,
+            "kh_v_Deepox": 5.0,
+            "ksat_v_Deepox": 5.8,
+            "kf_v_Epox": 0.00024,
+            "km_v_FNR_Fd_red": 1.56,
+            "km_v_FNR_NADP_st": 0.22,
+            "Enz0_v_FNR": 3.0,
+            "kcat_v_FNR": 500.0,
+            "kf_v_NDH": 0.002,
+            "PSII_total": 2.5,
+            "PSI_total": 2.5,
+            "kH0": 500000000.0,
+            "kPQred": 250.0,
+            "kPCox": 2500.0,
+            "kFdred": 250000.0,
+            "k2": 5000000000.0,
+            "kH": 5000000000.0,
+            "kF": 625000000.0,
+            "kMehler": 1.0,
+            "Enz0_v_Fdred": 1.0,
+            "kcat_v_Fdred": 250000.0,
+            "kf_v_Leak": 10.0,
+            "kPTOX": 0.01,
+            "kStt7": 0.0035,
+            "km_v_St12": 0.2,
+            "n_ST": 2.0,
+            "kPph1": 0.0013,
+            "Enz0_rubisco": 1.0,
+            "kcat_v_RuBisCO_c": 2.72,
+            "km_v_RuBisCO_c_RUBP": 0.02,
+            "km_v_RuBisCO_c_CO2": 0.0107,
+            "ki_v_RuBisCO_c_PGA": 0.04,
+            "ki_v_RuBisCO_c_FBP": 0.04,
+            "ki_v_RuBisCO_c_SBP": 0.075,
+            "ki_v_RuBisCO_c_Pi_st": 0.9,
+            "ki_v_RuBisCO_c_NADPH_st": 0.07,
+            "kre_v_PGK1ase": 800000000.0,
+            "keq_v_PGK1ase": 0.00031,
+            "kre_v_BPGAdehynase": 800000000.0,
+            "keq_v_BPGAdehynase": 16000000.0,
+            "kre_v_TPIase": 800000000.0,
+            "keq_v_TPIase": 22.0,
+            "kre_v_Aldolase_FBP": 800000000.0,
+            "keq_v_Aldolase_FBP": 7.1,
+            "kre_v_Aldolase_SBP": 800000000.0,
+            "keq_v_Aldolase_SBP": 13.0,
+            "Enz0_v_FBPase": 1.0,
+            "kcat_v_FBPase": 1.6,
+            "km_v_FBPase_s": 0.03,
+            "ki_v_FBPase_F6P": 0.7,
+            "ki_v_FBPase_Pi_st": 12.0,
+            "kre_v_TKase_E4P": 800000000.0,
+            "keq_v_TKase_E4P": 0.084,
+            "kre_v_TKase_R5P": 800000000.0,
+            "keq_v_TKase_R5P": 0.85,
+            "Enz0_v_SBPase": 1.0,
+            "kcat_v_SBPase": 0.32,
+            "km_v_SBPase_s": 0.013,
+            "ki_v_SBPase_Pi_st": 12.0,
+            "kre_v_Rpiase": 800000000.0,
+            "keq_v_Rpiase": 0.4,
+            "kre_v_RPEase": 800000000.0,
+            "keq_v_RPEase": 0.67,
+            "Enz0_v_PRKase": 1.0,
+            "kcat_v_PRKase": 7.9992,
+            "km_v_PRKase_RU5P": 0.05,
+            "km_v_PRKase_ATP_st": 0.05,
+            "ki_v_PRKase_PGA": 2.0,
+            "ki_v_PRKase_RUBP": 0.7,
+            "ki_v_PRKase_Pi_st": 4.0,
+            "ki_v_PRKase_4": 2.5,
+            "ki_v_PRKase_5": 0.4,
+            "kre_v_PGIase": 800000000.0,
+            "keq_v_PGIase": 2.3,
+            "kre_v_PGMase": 800000000.0,
+            "keq_v_PGMase": 0.058,
+            "Pi_ext": 0.5,
+            "km_v_pga_ex": 0.25,
+            "km_v_gap_ex": 0.075,
+            "km_v_dhap_ex": 0.077,
+            "km_N_translocator_Pi_ext": 0.74,
+            "km_N_translocator_Pi_st": 0.63,
+            "kcat_N_translocator": 2.0,
+            "Enz0_N_translocator": 1.0,
+            "Enz0_v_starch": 1.0,
+            "km_v_starch_G1P": 0.08,
+            "km_v_starch_ATP_st": 0.08,
+            "ki_v_starch": 10.0,
+            "ki_v_starch_PGA": 0.1,
+            "ki_v_starch_F6P": 0.02,
+            "ki_v_starch_FBP": 0.02,
+            "kcat_v_starch": 0.32,
+            "kf_v_3ASC": 500.0,
+            "Enz0_v_MDAreduct": 0.002,
+            "kcat_v_MDAreduct": 300.0,
+            "km_v_MDAreduct_NADPH_st": 0.023,
+            "km_v_MDAreduct_MDA": 0.0014,
+            "kf1": 10000.0,
+            "kr1": 220.0,
+            "kf2": 10000.0,
+            "kr2": 4000.0,
+            "kf3": 2510.0,
+            "kf4": 10000.0,
+            "kr4": 4000.0,
+            "kf5": 2510.0,
+            "XT": 0.07,
+            "Enz0_v_GR": 0.0014,
+            "kcat_v_GR": 595,
+            "km_v_GR_NADPH_st": 0.003,
+            "km_v_GR_GSSG": 0.2,
+            "km_v_DHAR_DHA": 0.07,
+            "km_v_DHAR_GSH": 2.5,
+            "K": 0.5,
+            "Enz0_v_DHAR": 0.0017,
+            "kcat_v_DHAR": 142,
+            "kf_v_ATPcons": 0.2,
+            "kf_v_NADPHcons": 0.2,
+            "pH_stroma": 7.9,
+            "H_stroma": 1.2589254117941661e-05,
+            "E0_QA": -0.14,
+            "E0_PQ": 0.354,
+            "E0_PC": 0.38,
+            "E0_P700": 0.48,
+            "E0_FA": -0.55,
+            "E0_Fd": -0.43,
+            "E0_NADP": -0.113,
         }
     )
 
     m.add_variables(
         {
-            "PQ": 11.027139850905353,
-            "PC_ox": 1.8895071932002812,
-            "Fd_ox": 3.8690237263896705,
-            "ATP_st": 1.620195002854852,
-            "NADPH_st": 0.4882103700673736,
-            "H_lu": 0.0022147075094596015,
-            "LHC": 0.8023074419510501,
-            "psbS": 0.9607146039898598,
-            "Vx": 0.950783616933656,
-            "PGA": 0.9913970817549008,
-            "BPGA": 0.0005355311557548053,
-            "GAP": 0.0062630116252017295,
-            "DHAP": 0.13778623933075737,
-            "FBP": 0.006126990841013743,
-            "F6P": 0.31166103888161867,
-            "G6P": 0.7168203893211117,
-            "G1P": 0.041575582577936025,
-            "SBP": 0.01311315151803723,
-            "S7P": 0.15782894767619207,
-            "E4P": 0.00732079113061801,
-            "X5P": 0.022396849486562384,
-            "R5P": 0.03751472214765548,
-            "RUBP": 0.13153657267999222,
-            "RU5P": 0.015005888732707041,
-            "MDA": 5.85270097771621e-06,
-            "H2O2": 3.4273920330125316e-06,
-            "DHA": 8.513863740903352e-09,
-            "GSSG": 4.137406632226743e-09,
-            "TRX_ox": 0.9,
-            "E_CBB_inactive": 4.7368421052631575,
+            "PGA": 0.9167729479368978,
+            "BPGA": 0.0003814495319659031,
+            "GAP": 0.00580821050261484,
+            "DHAP": 0.1277806166216142,
+            "FBP": 0.005269452472931973,
+            "F6P": 0.2874944558066638,
+            "G6P": 0.6612372482712676,
+            "G1P": 0.03835176039761378,
+            "SBP": 0.011101373736607443,
+            "S7P": 0.1494578301900007,
+            "E4P": 0.00668295494870102,
+            "X5P": 0.020988553174809618,
+            "R5P": 0.035155825913785584,
+            "RUBP": 0.11293260727162346,
+            "RU5P": 0.014062330254191594,
+            "ATP_st": 1.4612747767895344,
+            "Fd_ox": 3.715702384326767,
+            "H_lumen": 0.002086128887296243,
+            "LHC": 0.7805901436176024,
+            "NADPH_st": 0.5578718406315588,
+            "PC_ox": 1.8083642974980014,
+            "PQ": 10.251099271612473,
+            "psbS": 0.9667381262477079,
+            "Vx": 0.9629870646993118,
+            "MDA": 2.0353396709300447e-07,
+            "H2O2": 1.2034405327140102e-07,
+            "DHA": 1.0296456279861962e-11,
+            "GSSG": 4.99986167652437e-12,
+            "TRX_ox": 0.9334426859846461,
+            "E_inactive": 3.6023635680406634,
         }
     )
 
@@ -202,6 +219,3 @@ def Saadat2021() -> Model:
     m = include_rates(m)
 
     return m
-
-
-m = Saadat2021()

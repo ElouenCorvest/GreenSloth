@@ -17,7 +17,7 @@ State transitions from PSI to PSII,$v_{\mathrm{St12}}$,v_St12,,15,Saadat2021
 De-epoxidation of violaxanthin,$v_{\mathrm{Deepox}}$,v_Deepox,R10070,16,"Saadat2021, Li2021"
 Epoxidation of violaxanthin,$v_{\mathrm{Epox}}$,v_Epox,R10070,17,Saadat2021
 Deprotonation of psbS protein,$v_{\mathrm{Psbs^D}}$,v_PsbSD,,18,Saadat2021
-Rate of RuBisCo,$v_{\mathrm{RuBisCo}}$,v_RuBisCO,R00024,19,Saadat2021
+Rate of RuBisCo Carboxylase,$v_{\mathrm{RuBisCO|Carboxylase}}$,v_RuBisCO_c,R00024,19,Saadat2021
 Rate of FBPase,$v_{\mathrm{FBPase}}$,v_FBPase,R00762,20,Saadat2021
 Rate of SBPase,$v_{\mathrm{SBPase}}$,v_SBPase,R01845,21,Saadat2021
 Rate of PRKase,$v_{\mathrm{PRKase}}$,v_PRKase,R01523,22,Saadat2021

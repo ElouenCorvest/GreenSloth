@@ -1,7 +1,7 @@
 Name,Common Abbr.,KEGG ID,Python Var,Glossary ID,Reference
 Plastoquinol,$\mathrm{PQH}_2$,C16693,PQH_2,1,"Matuszynska2016, Saadat2021, Li2021"
 Stromal ATP concentration,$\mathrm{ATP_{st}}$,C00002,ATP_st,2,"Matuszynska2016, Saadat2021, Li2021"
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,C00080,H_lu,3,"Matuszynska2016, Saadat2021, Li2021"
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,C00080,H_lumen,3,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of psbS protein,$\mathrm{psbS}$,K03542 ,psbS,4,"Matuszynska2016, Saadat2021"
 Violaxanthin,$\mathrm{Vx}$,C08614,Vx,5,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of active ATPase protein,$\mathrm{ATPase}^*$,M00157,ATPase_ac,6,Matuszynska2016
@@ -14,7 +14,7 @@ Initial state of PSII,$\mathrm{B_0}$,M00161,B0,12,"Matuszynska2016, Saadat2021"
 Excited state of PSII,$\mathrm{B_1}$,M00161,B1,13,"Matuszynska2016, Saadat2021"
 Charge seperation state of PSII,$\mathrm{B_2}$,M00161,B2,14,"Matuszynska2016, Saadat2021"
 Photoinhibited state of PSII,$\mathrm{B_3}$,M00161,B3,15,"Matuszynska2016, Saadat2021"
-Lumen pH,$\mathrm{pH}_\mathrm{lu}$,C00080,pH_lu,16,"Matuszynska2016, Saadat2021, Li2021"
+Lumen pH,$\mathrm{pH}_\mathrm{lu}$,C00080,pH_lumen,16,"Matuszynska2016, Saadat2021, Li2021"
 Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,C03162,PC_ox,17,"Saadat2021, Li2021"
 Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,C00139,Fd_ox,18,"Saadat2021, Li2021"
 Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,C00005,NADPH_st,19,"Saadat2021, Li2021"

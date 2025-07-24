@@ -173,9 +173,9 @@
 
   </div>
 
-  <script type="module" src="src/js/index.js"></script>
-  <script type="module" src="src/js/topnav.js"></script>
-  <script type="module" src="src/js/cite.js"></script>
+  <script type="module" src="./src/js/index.js"></script>
+  <script type="module" src="./src/js/topnav.js"></script>
+  <script type="module" src="./src/js/cite.js"></script>
   <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
   
 

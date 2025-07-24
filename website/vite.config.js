@@ -5,6 +5,7 @@ import fs from 'fs';
 import usePHP from 'vite-plugin-php';
 
 export default defineConfig({
+  base: "/",
   plugins: [usePHP({
     entry: [
       "index.php",

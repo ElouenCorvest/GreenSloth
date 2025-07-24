@@ -1,13 +1,4 @@
 Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
-Plastoquinone,$\mathrm{PQ}$,$\mathrm{PQ}_\mathrm{ox}$,C02061,PQ,7
-Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,$\mathrm{PC}_\mathrm{ox}$,C03162,PC_ox,17
-Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,$\mathrm{Fd}_\mathrm{ox}$,C00139,Fd_ox,18
-Stromal ATP concentration,$\mathrm{ATP_{st}}$,$\mathrm{ATP}$,C00002,ATP_st,2
-Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,$\mathrm{NADPH}$,C00005,NADPH_st,19
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,$\mathrm{H}^+$,C00080,H_lu,3
-Phosphorylated fraction of light harvesting complexes,$\mathrm{LHC}$,$\mathrm{LHC}$,map00196,LHC,20
-Concentration of psbS protein,$\mathrm{psbS}$,$\mathrm{Psbs}$,K03542 ,psbS,4
-Violaxanthin,$\mathrm{Vx}$,$\mathrm{Vx}$,C08614,Vx,5
 3-phosphoglyceric acid,$\mathrm{PGA}$,$\mathrm{PGA}$,C00197,PGA,21
 "2,3-biphosphoglyceric acid",$\mathrm{BPGA}$,$\mathrm{BPGA}$,C01159,BPGA,22
 Glyceraldehyde 3-phosphate,$\mathrm{GAP}$,$\mathrm{GAP}$,C00118,GAP,23
@@ -23,6 +14,15 @@ Xylulose 5-phosphate,$\mathrm{X5P}$,$\mathrm{X5P}$,C00231,X5P,32
 Ribose 5-phosphate,$\mathrm{R5P}$,$\mathrm{R5P}$,C00117,R5P,33
 "Ribulose 1,5-bisphosphate",$\mathrm{RUBP}$,$\mathrm{RUBP}$,C01182,RUBP,34
 Ribulose 5-phosphate,$\mathrm{RU5P}$,$\mathrm{RU5P}$,C00199,RU5P,35
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,$\mathrm{ATP}$,C00002,ATP_st,2
+Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,$\mathrm{Fd}_\mathrm{ox}$,C00139,Fd_ox,18
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,$\mathrm{H}^+$,C00080,H_lumen,3
+Phosphorylated fraction of light harvesting complexes,$\mathrm{LHC}$,$\mathrm{LHC}$,map00196,LHC,20
+Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,$\mathrm{NADPH}$,C00005,NADPH_st,19
+Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,$\mathrm{PC}_\mathrm{ox}$,C03162,PC_ox,17
+Plastoquinone,$\mathrm{PQ}$,$\mathrm{PQ}_\mathrm{ox}$,C02061,PQ,7
+Concentration of psbS protein,$\mathrm{psbS}$,$\mathrm{Psbs}$,K03542 ,psbS,4
+Violaxanthin,$\mathrm{Vx}$,$\mathrm{Vx}$,C08614,Vx,5
 Monodehydroascorbate radicals,$\mathrm{MDA}$,$\mathrm{MDA}$,C01041,MDA,41
 Hydrogen Peroxide,$\mathrm{H_2O_2}$,$\mathrm{H_2O_2}$,C00027,H2O2,42
 Dehydroacorbate,$\mathrm{DHA}$,$\mathrm{DHA}$,C05422,DHA,43

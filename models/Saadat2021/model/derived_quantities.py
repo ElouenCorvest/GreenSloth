@@ -1,674 +1,415 @@
-from modelbase2 import Model
+from mxlpy import Model
+from mxlpy.surrogates import qss
 import numpy as np
-import numpy.typing as npt
-from .basic_funcs import continous_subtraction, proportional
+import math
+from typing import cast, Iterable
+
+from .basic_funcs import (
+    moiety_2,
+    mass_action_1s,
+    mul,
+    moiety_1,
+    div,
+)
 
 
-def H_st(pH_st: float) -> float:
-    """Calculate stromal H concentration from stromal pH
-
-    Args:
-        pH_st (float): Stromal pH
-
-    Returns:
-        float: Stromal H concentration
-    """
-    return 3.2e4 * 10 ** (-pH_st)
+def _dg_ph(r: float, t: float) -> float:
+    return math.log(10) * r * t
 
 
-def K_QAPQ(E0_QA, F, E0_PQ, pH_st, R, T):
-    dG_pH = np.log(10) * R * T
-    DG1 = -E0_QA * F
-    DG2 = -2 * E0_PQ * F
-    DG = -2 * DG1 + DG2 + 2 * pH_st * dG_pH
-    K = np.exp(-DG / (R * T))
-    return K
+def _ph_lumen(protons: float) -> float:
+    return -math.log10(protons * 0.00025)
 
 
-def K_FAFd(E0_FA, F, E0_Fd, R, T):
-    DG1 = -E0_FA * F
-    DG2 = -E0_Fd * F
-    DG = -DG1 + DG2
-    K = np.exp(-DG / (R * T))
-    return K
-
-
-def K_PCP700(E0_PC, F, E0_P700, R, T):
-    DG1 = -E0_PC * F
-    DG2 = -E0_P700 * F
-    DG = -DG1 + DG2
-    K = np.exp(-DG / (R * T))
-    return K
-
-
-def K_FNR(E0_Fd, F, E0_NADP, pH_st, R, T):
-    dG_pH = np.log(10) * R * T
-    DG1 = -E0_Fd * F
-    DG2 = -2 * E0_NADP * F
-    DG = -2 * DG1 + DG2 + dG_pH * pH_st
-    K = np.exp(-DG / (R * T))
-    return K
-
-
-def psIIcross(LHC: float, sigma0_I: float, sigma0_II: float) -> float:
-    """Calculates the crosssection of PSII
-
-    Args:
-        LHC (float): Non-phosphorylated fraction of light harvesting complexes
-        sigma0_I (float): Relative cross section of PSI-LHCl supercomplex
-        sigma0_II (float): Relative cross section of PSII
-
-    Returns:
-        float: Cross section of PSII
-    """
-    return sigma0_II + (1 - sigma0_II - sigma0_I) * LHC
-
-
-def Quencher(
-    psbS: float,
+def _quencher(
+    Psbs: float,
     Vx: float,
-    PsbSP: float,
+    Psbsp: float,
     Zx: float,
-    gamma_0: float,
-    gamma_1: float,
-    gamma_2: float,
-    gamma_3: float,
-    K_ZSat: float,
+    y0: float,
+    y1: float,
+    y2: float,
+    y3: float,
+    kZSat: float,
 ) -> float:
-    """Calculates co-operative 4-state quenching mechanism
-
-    Args:
-        psbS (float): Concentration of psbS protein
-        Vx (float): Violaxanthin
-        PsbSP (float): Concentration of protonated psbS protein
-        Zx (float): Zeaxanthin concentration
-        gamma_0 (float): Fitted quencher factor corresponding to base quenching not associated with protonation or zeaxanthin
-        gamma_1 (float): Fitted quencher factor corresponding to fast quenching due to protonation
-        gamma_2 (float): Fitted quencher factor corresponding to fastest possible quenching
-        gamma_3 (float): Fitted quencher factor corresponding to slow quenching of Zx present despite lack of protonation
-        K_ZSat (float): Half-saturation constant (relative conc. of Zx) for quenching
-
-    Returns:
-        float: Quencher
+    """co-operative 4-state quenching mechanism
+    gamma0: slow quenching of (Vx - protonation)
+    gamma1: fast quenching (Vx + protonation)
+    gamma2: fastest possible quenching (Zx + protonation)
+    gamma3: slow quenching of Zx present (Zx - protonation)
     """
-    ZAnt = Zx / (Zx + K_ZSat)
-    return (
-        gamma_0 * Vx * psbS
-        + gamma_1 * Vx * PsbSP
-        + gamma_2 * ZAnt * PsbSP
-        + gamma_3 * ZAnt * psbS
-    )
+    ZAnt = Zx / (Zx + kZSat)
+    return y0 * Vx * Psbs + y1 * Vx * Psbsp + y2 * ZAnt * Psbsp + y3 * ZAnt * Psbs
 
 
-def psIIstates(
-    PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot
-) -> npt.NDArray:
-    L = psIIcross * pfd
-    kH = kH0 + k_H * Q
-    k3p = k_PQred * PQ
-    k3m = k_PQred * PQH_2 / K_QAPQ
-
-    if isinstance(kH, float) and isinstance(PQ, np.ndarray):
-        kH = np.repeat(kH, len(PQ))
-
-    if any([not isinstance(i, np.ndarray) for i in [L, kH, k3p, k3m]]):
-        M = np.array(
-            [
-                [-L - k3m, kH + k_F, k3p, 0],
-                [L, -(kH + k_F + k2), 0, 0],
-                [0, 0, L, -(kH + k_F)],
-                [1, 1, 1, 1],
-            ]
-        )
-        A = np.array([0, 0, 0, PSII_tot])
-        B0, B1, B2, B3 = np.linalg.solve(M, A)
-        return B0, B1, B2, B3
-
-    else:
-        B0 = []
-        B1 = []
-        B2 = []
-        B3 = []
-
-        for L, kH, k3p, k3m, k_F, k2, PSII_tot in zip(
-            L, kH, k3p, k3m, k_F, k2, PSII_tot
-        ):
-            M = np.array(
-                [
-                    [-L - k3m, kH + k_F, k3p, 0],
-                    [L, -(kH + k_F + k2), 0, 0],
-                    [0, 0, L, -(kH + k_F)],
-                    [1, 1, 1, 1],
-                ]
-            )
-            A = np.array([0, 0, 0, PSII_tot])
-            B0_, B1_, B2_, B3_ = np.linalg.solve(M, A)
-            B0.append(B0_)
-            B1.append(B1_)
-            B2.append(B2_)
-            B3.append(B3_)
-        return np.array(B0), np.array(B1), np.array(B2), np.array(B3)
-
-
-def B0_psIIstates(
-    PQ: float,
-    PQH_2: float,
-    Q: float,
-    psIIcross: float,
-    k_H: float,
-    kH0: float,
-    pfd: float,
-    k_PQred: float,
-    K_QAPQ: float,
-    k_F: float,
-    k2: float,
-    PSII_tot: float,
+def _keq_pq_red(
+    E0_QA: float,
+    F: float,
+    E0_PQ: float,
+    pHstroma: float,
+    dG_pH: float,
+    RT: float,
 ) -> float:
-    B0, B1, B2, B3 = psIIstates(
-        PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot
-    )
-    return B0
+    dg1 = -E0_QA * F
+    dg2 = -2 * E0_PQ * F
+    dg = -2 * dg1 + dg2 + 2 * pHstroma * dG_pH
+
+    return math.exp(-dg / RT)
 
 
-def B1_psIIstates(
-    PQ: float,
-    PQH_2: float,
-    Q: float,
-    psIIcross: float,
-    k_H: float,
-    kH0: float,
-    pfd: float,
-    k_PQred: float,
-    K_QAPQ: float,
-    k_F: float,
-    k2: float,
-    PSII_tot: float,
+def _ps2_crosssection(
+    lhc: float,
+    static_ant_ii: float,
+    static_ant_i: float,
 ) -> float:
-    B0, B1, B2, B3 = psIIstates(
-        PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot
-    )
-    return B1
+    return static_ant_ii + (1 - static_ant_ii - static_ant_i) * lhc
 
 
-def B2_psIIstates(
-    PQ: float,
-    PQH_2: float,
-    Q: float,
-    psIIcross: float,
-    k_H: float,
-    kH0: float,
-    pfd: float,
-    k_PQred: float,
-    K_QAPQ: float,
-    k_F: float,
-    k2: float,
-    PSII_tot: float,
+def _pi_cbb(
+    phosphate_total: float,
+    pga: float,
+    bpga: float,
+    gap: float,
+    dhap: float,
+    fbp: float,
+    f6p: float,
+    g6p: float,
+    g1p: float,
+    sbp: float,
+    s7p: float,
+    e4p: float,
+    x5p: float,
+    r5p: float,
+    rubp: float,
+    ru5p: float,
+    atp: float,
 ) -> float:
-    B0, B1, B2, B3 = psIIstates(
-        PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot
+    return phosphate_total - (
+        pga
+        + 2 * bpga
+        + gap
+        + dhap
+        + 2 * fbp
+        + f6p
+        + g6p
+        + g1p
+        + 2 * sbp
+        + s7p
+        + e4p
+        + x5p
+        + r5p
+        + 2 * rubp
+        + ru5p
+        + atp
     )
-    return B2
 
 
-def B3_psIIstates(
-    PQ: float,
-    PQH_2: float,
-    Q: float,
-    psIIcross: float,
-    k_H: float,
-    kH0: float,
-    pfd: float,
-    k_PQred: float,
-    K_QAPQ: float,
-    k_F: float,
-    k2: float,
-    PSII_tot: float,
+def _glutathion_moiety(
+    gssg: float,
+    gs_total: float,
 ) -> float:
-    B0, B1, B2, B3 = psIIstates(
-        PQ, PQH_2, Q, psIIcross, k_H, kH0, pfd, k_PQred, K_QAPQ, k_F, k2, PSII_tot
-    )
-    return B3
+    return gs_total - 2 * gssg
 
 
-def psIstates(
-    PC_ox,
-    PC_red,
-    Fd_ox,
-    Fd_red,
-    psIIcross,
-    PSI_tot,
-    k_Fdred,
-    K_FAFd,
-    K_PCP700,
-    k_PCox,
-    pfd,
-    k_Mehler,
-    O2_ext,
-):
-    kLI = (1 - psIIcross) * pfd
-
-    if any(
-        [
-            not isinstance(i, np.ndarray)
-            for i in [
-                kLI,
-                k_PCox,
-                K_PCP700,
-                PC_ox,
-                PC_red,
-                k_Fdred,
-                Fd_ox,
-                O2_ext,
-                k_Mehler,
-                K_FAFd,
-                Fd_red,
-                PSI_tot,
-            ]
-        ]
-    ):
-        M = np.array(
-            [
-                [-(kLI + (k_PCox / K_PCP700) * PC_ox), 0, k_PCox * PC_red],
-                [
-                    kLI,
-                    -(k_Fdred * Fd_ox + O2_ext * k_Mehler),
-                    k_Fdred / K_FAFd * Fd_red,
-                ],
-                [1, 1, 1],
-            ]
-        )
-        A = np.array([0, 0, PSI_tot])
-        Y0, Y1, Y2 = np.linalg.solve(M, A)
-
-        return Y0, Y1, Y2
-
-    else:
-        Y0 = []
-        Y2 = []
-        Y1 = []
-
-        for (
-            kLI,
-            k_PCox,
-            K_PCP700,
-            PC_ox,
-            PC_red,
-            k_Fdred,
-            Fd_ox,
-            O2_ext,
-            k_Mehler,
-            K_FAFd,
-            Fd_red,
-            PSI_tot,
-        ) in zip(
-            kLI,
-            k_PCox,
-            K_PCP700,
-            PC_ox,
-            PC_red,
-            k_Fdred,
-            Fd_ox,
-            O2_ext,
-            k_Mehler,
-            K_FAFd,
-            Fd_red,
-            PSI_tot,
-        ):
-            M = np.array(
-                [
-                    [-(kLI + (k_PCox / K_PCP700) * PC_ox), 0, k_PCox * PC_red],
-                    [
-                        kLI,
-                        -(k_Fdred * Fd_ox + O2_ext * k_Mehler),
-                        k_Fdred / K_FAFd * Fd_red,
-                    ],
-                    [1, 1, 1],
-                ]
-            )
-            A = np.array([0, 0, PSI_tot])
-            Y0_, Y1_, Y2_ = np.linalg.solve(M, A)
-            Y0.append(Y0_)
-            Y1.append(Y1_)
-            Y2.append(Y2_)
-        return np.array(Y0), np.array(Y1), np.array(Y2)
+def _keq_atp(
+    pH: float,
+    DeltaG0_ATP: float,
+    dG_pH: float,
+    HPR: float,
+    pHstroma: float,
+    Pi_mol: float,
+    RT: float,
+) -> float:
+    delta_g = DeltaG0_ATP - dG_pH * HPR * (pHstroma - pH)
+    return Pi_mol * math.exp(-delta_g / RT)
 
 
-def Y0_psIstates(
-    PC_ox,
-    PC_red,
-    Fd_ox,
-    Fd_red,
-    psIIcross,
-    PSI_tot,
-    k_Fd_red,
-    K_FAFd,
-    K_PCP700,
-    k_PCox,
-    pfd,
-    k_Mehler,
-    O2_ext,
-):
-    y0, y1, y2 = psIstates(
-        PC_ox,
-        PC_red,
-        Fd_ox,
-        Fd_red,
-        psIIcross,
-        PSI_tot,
-        k_Fd_red,
-        K_FAFd,
-        K_PCP700,
-        k_PCox,
-        pfd,
-        k_Mehler,
-        O2_ext,
-    )
-    return y0
-
-
-def Y1_psIstates(
-    PC_ox,
-    PC_red,
-    Fd_ox,
-    Fd_red,
-    psIIcross,
-    PSI_tot,
-    k_Fd_red,
-    K_FAFd,
-    K_PCP700,
-    k_PCox,
-    pfd,
-    k_Mehler,
-    O2_ext,
-):
-    y0, y1, y2 = psIstates(
-        PC_ox,
-        PC_red,
-        Fd_ox,
-        Fd_red,
-        psIIcross,
-        PSI_tot,
-        k_Fd_red,
-        K_FAFd,
-        K_PCP700,
-        k_PCox,
-        pfd,
-        k_Mehler,
-        O2_ext,
-    )
-    return y1
-
-
-def Y2_psIstates(
-    PC_ox,
-    PC_red,
-    Fd_ox,
-    Fd_red,
-    psIIcross,
-    PSI_tot,
-    k_Fd_red,
-    K_FAFd,
-    K_PCP700,
-    k_PCox,
-    pfd,
-    k_Mehler,
-    O2_ext,
-):
-    y0, y1, y2 = psIstates(
-        PC_ox,
-        PC_red,
-        Fd_ox,
-        Fd_red,
-        psIIcross,
-        PSI_tot,
-        k_Fd_red,
-        K_FAFd,
-        K_PCP700,
-        k_PCox,
-        pfd,
-        k_Mehler,
-        O2_ext,
-    )
-    return y2
-
-
-def Fluo(Q, B0, B2, psIIcross, k2, k_F, k_H):
-    return (psIIcross * k_F * B0) / (k_F + k2 + k_H * Q) + (psIIcross * k_F * B2) / (
-        k_F + k_H * Q
-    )
-
-
-def pH_lu(H_lu):
-    return -np.log(H_lu * (2.5e-4)) / np.log(10)
-
-
-def Pi_st(
-    PGA,
-    BPGA,
-    GAP,
-    DHAP,
-    FBP,
-    F6P,
-    G6P,
-    G1P,
-    SBP,
-    S7P,
-    E4P,
-    X5P,
-    R5P,
-    RUBP,
-    RU5P,
-    ATP_st,
-    P_tot,
-):
-    return P_tot - (
-        PGA
-        + 2 * BPGA
-        + GAP
-        + DHAP
-        + 2 * FBP
-        + F6P
-        + G6P
-        + G1P
-        + 2 * SBP
-        + S7P
-        + E4P
-        + X5P
-        + R5P
-        + 2 * RUBP
-        + RU5P
-        + ATP_st
-    )
-
-
-def IF_3Pfunc(
-    Pi_st,
-    PGA,
-    GAP,
-    DHAP,
-    K_diss_Pext,
-    Pext,
-    K_diss_Pi,
-    K_diss_PGA,
-    K_diss_GAP,
-    K_diss_DHAP,
-):
-    """Used several times to calculate the rate of vPGA, vGAP and vDHAP"""
-    return 1 + (1 + (K_diss_Pext / Pext)) * (
-        (Pi_st / K_diss_Pi)
-        + (PGA / K_diss_PGA)
-        + (GAP / K_diss_GAP)
-        + (DHAP / K_diss_DHAP)
-    )
-
-
-def K_ATPsynth(pH_lu, DeltaG0_ATP, HPR, pH_st, Pi_mol, R, T):
-    dG_pH = np.log(10) * R * T
-    DG = DeltaG0_ATP - dG_pH * HPR * (pH_st - pH_lu)
-    Keq = Pi_mol * np.exp(-DG / (R * T))
-    return Keq
-
-
-def K_cytb6f(pH_lu, F, E0_PQ, E0_PC, pH_st, R, T):
-    dG_pH = np.log(10) * R * T
+def _keq_cytb6f(
+    pH: float,
+    F: float,
+    E0_PQ: float,
+    E0_PC: float,
+    pHstroma: float,
+    RT: float,
+    dG_pH: float,
+) -> float:
     DG1 = -2 * F * E0_PQ
     DG2 = -F * E0_PC
-    DG = -(DG1 + 2 * dG_pH * pH_lu) + 2 * DG2 + 2 * dG_pH * (pH_st - pH_lu)
-    Keq = np.exp(-DG / (R * T))
-    return Keq
+    DG = -(DG1 + 2 * dG_pH * pH) + 2 * DG2 + 2 * dG_pH * (pHstroma - pH)
+    Keq = np.exp(-DG / RT)
+    return cast(float, Keq)
 
 
-def GSH(Glutathion_total, GSSG):
-    return Glutathion_total - 2 * GSSG
+def _keq_fnr(
+    E0_Fd: float,
+    F: float,
+    E0_NADP: float,
+    pHstroma: float,
+    dG_pH: float,
+    RT: float,
+) -> float:
+    dg1 = -E0_Fd * F
+    dg2 = -2 * E0_NADP * F
+    dg = -2 * dg1 + dg2 + dG_pH * pHstroma
+    return math.exp(-dg / RT)
 
 
-def LHCp(LHC):
-    return 1 - LHC
+def _keq_pcp700(
+    e0_pc: float,
+    f: float,
+    eo_p700: float,
+    rt: float,
+) -> float:
+    dg1 = -e0_pc * f
+    dg2 = -eo_p700 * f
+    dg = -dg1 + dg2
+    return math.exp(-dg / rt)
+
+
+def _keq_faf_d(
+    e0_fa: float,
+    f: float,
+    e0_fd: float,
+    rt: float,
+) -> float:
+    dg1 = -e0_fa * f
+    dg2 = -e0_fd * f
+    dg = -dg1 + dg2
+    return math.exp(-dg / rt)
+
+
+def _rate_translocator(
+    pi: float,
+    pga: float,
+    gap: float,
+    dhap: float,
+    k_pxt: float,
+    p_ext: float,
+    k_pi: float,
+    k_pga: float,
+    k_gap: float,
+    k_dhap: float,
+) -> float:
+    return 1 + (1 + k_pxt / p_ext) * (
+        pi / k_pi + pga / k_pga + gap / k_gap + dhap / k_dhap
+    )
+
+
+def _ps2states(
+    pq_ox: float,
+    pq_red: float,
+    ps2cs: float,
+    q: float,
+    psii_tot: float,
+    k2: float,
+    k_f: float,
+    _kh: float,
+    keq_pq_red: float,
+    k_pq_red: float,
+    pfd: float,
+    k_h0: float,
+) -> Iterable[float]:
+    absorbed = ps2cs * pfd
+    kH = k_h0 + _kh * q
+    k3p = k_pq_red * pq_ox
+    k3m = k_pq_red * pq_red / keq_pq_red
+
+    state_matrix = np.array(
+        [
+            [-absorbed - k3m, kH + k_f, k3p, 0],
+            [absorbed, -(kH + k_f + k2), 0, 0],
+            [0, 0, absorbed, -(kH + k_f)],
+            [1, 1, 1, 1],
+        ],
+        dtype=float,
+    )
+    a = np.array([0, 0, 0, psii_tot])
+
+    return np.linalg.solve(state_matrix, a)
+
+
+def _ps1states_2021(
+    pc_ox: float,
+    pc_red: float,
+    fd_ox: float,
+    fd_red: float,
+    ps2cs: float,
+    ps1_tot: float,
+    k_fd_red: float,
+    keq_f: float,
+    keq_c: float,
+    k_pc_ox: float,
+    pfd: float,
+    k0: float,
+    o2: float,
+) -> tuple[float, float, float]:
+    """QSSA calculates open state of PSI
+    depends on reduction states of plastocyanin and ferredoxin
+    C = [PC], F = [Fd] (ox. forms)
+    """
+    kLI = (1 - ps2cs) * pfd
+
+    y0 = (
+        keq_c
+        * keq_f
+        * pc_red
+        * ps1_tot
+        * k_pc_ox
+        * (fd_ox * k_fd_red + o2 * k0)
+        / (
+            fd_ox * keq_c * keq_f * pc_red * k_fd_red * k_pc_ox
+            + fd_ox * keq_f * k_fd_red * (keq_c * kLI + pc_ox * k_pc_ox)
+            + fd_red * k_fd_red * (keq_c * kLI + pc_ox * k_pc_ox)
+            + keq_c * keq_f * o2 * pc_red * k0 * k_pc_ox
+            + keq_c * keq_f * pc_red * kLI * k_pc_ox
+            + keq_f * o2 * k0 * (keq_c * kLI + pc_ox * k_pc_ox)
+        )
+    )
+
+    y1 = (
+        ps1_tot
+        * (
+            fd_red * k_fd_red * (keq_c * kLI + pc_ox * k_pc_ox)
+            + keq_c * keq_f * pc_red * kLI * k_pc_ox
+        )
+        / (
+            fd_ox * keq_c * keq_f * pc_red * k_fd_red * k_pc_ox
+            + fd_ox * keq_f * k_fd_red * (keq_c * kLI + pc_ox * k_pc_ox)
+            + fd_red * k_fd_red * (keq_c * kLI + pc_ox * k_pc_ox)
+            + keq_c * keq_f * o2 * pc_red * k0 * k_pc_ox
+            + keq_c * keq_f * pc_red * kLI * k_pc_ox
+            + keq_f * o2 * k0 * (keq_c * kLI + pc_ox * k_pc_ox)
+        )
+    )
+    y2 = ps1_tot - y0 - y1
+
+    return y0, y1, y2
+
+
+def _rate_fluorescence(
+    Q: float,
+    B0: float,
+    B2: float,
+    ps2cs: float,
+    k2: float,
+    kF: float,
+    kH: float,
+) -> float:
+    return ps2cs * kF * B0 / (kF + k2 + kH * Q) + ps2cs * kF * B2 / (kF + kH * Q)
 
 
 def include_derived_quantities(m: Model):
-    # ------------------------------------
-    # Matuszynska Module
-    # ------------------------------------
-
-    m.add_derived(name="H_st", fn=H_st, args=["pH_st"])
-
     m.add_derived(
-        name="K_QAPQ", fn=K_QAPQ, args=["E0_QA", "F", "E0_PQ", "pH_st", "R", "T"]
-    )
-
-    m.add_derived(name="K_FAFd", fn=K_FAFd, args=["E0_FA", "F", "E0_Fd", "R", "T"])
-
-    m.add_derived(
-        name="K_PCP700", fn=K_PCP700, args=["E0_PC", "F", "E0_P700", "R", "T"]
+        name="RT",
+        fn=mass_action_1s,
+        args=["R", "T"],
     )
 
     m.add_derived(
-        name="K_FNR", fn=K_FNR, args=["E0_Fd", "F", "E0_NADP", "pH_st", "R", "T"]
+        name="dG_pH",
+        fn=_dg_ph,
+        args=["R", "T"],
     )
-
-    m.add_derived(name="PQH_2", fn=continous_subtraction, args=["PQ_tot", "PQ"])
-
-    m.add_derived(name="PC_red", fn=continous_subtraction, args=["PC_tot", "PC_ox"])
-
-    m.add_derived(name="Fd_red", fn=continous_subtraction, args=["Fd_tot", "Fd_ox"])
-
-    m.add_derived(name="ADP_st", fn=continous_subtraction, args=["AP_tot", "ATP_st"])
 
     m.add_derived(
-        name="NADP_st", fn=continous_subtraction, args=["NADP_tot", "NADPH_st"]
+        name="pH_lumen",
+        fn=_ph_lumen,
+        args=["H_lumen"],
     )
 
-    m.add_derived(name="LHCp", fn=LHCp, args=["LHC"])
+    m.add_derived(
+        name="Zx",
+        fn=moiety_1,
+        args=["Vx", "Carotenoids_tot"],
+    )
 
-    m.add_derived(name="Zx", fn=continous_subtraction, args=["X_tot", "Vx"])
+    m.add_derived(
+        name="Fd_red",
+        fn=moiety_1,
+        args=["Fd_ox", "Fd_tot"],
+    )
 
-    m.add_derived(name="PsbSP", fn=continous_subtraction, args=["PsbS_tot", "psbS"])
+    m.add_derived(
+        name="PC_red",
+        fn=moiety_1,
+        args=["PC_ox", "PC_tot"],
+    )
 
-    m.add_derived(name="psIIcross", fn=psIIcross, args=["LHC", "sigma0_I", "sigma0_II"])
+    m.add_derived(
+        name="PsbSP",
+        fn=moiety_1,
+        args=["psbS", "PSBS_tot"],
+    )
+
+    m.add_derived(
+        name="LHCp",
+        fn=moiety_1,
+        args=["LHC", "LHC_tot"],
+    )
 
     m.add_derived(
         name="Q",
-        fn=Quencher,
+        fn=_quencher,
         args=[
             "psbS",
             "Vx",
             "PsbSP",
             "Zx",
-            "gamma_0",
-            "gamma_1",
-            "gamma_2",
-            "gamma_3",
-            "K_ZSat",
+            "gamma0",
+            "gamma1",
+            "gamma2",
+            "gamma3",
+            "kZSat",
         ],
     )
 
     m.add_derived(
-        name="B0",
-        fn=B0_psIIstates,
-        args=[
-            "PQ",
-            "PQH_2",
-            "Q",
-            "psIIcross",
-            "k_H",
-            "kH0",
-            "pfd",
-            "k_PQred",
-            "K_QAPQ",
-            "k_F",
-            "k2",
-            "PSII_tot",
-        ],
+        name="keq_PQH_2",
+        fn=_keq_pq_red,
+        args=["E0_QA", "F", "E0_PQ", "pH_stroma", "dG_pH", "RT"],
     )
 
     m.add_derived(
-        name="B1",
-        fn=B1_psIIstates,
-        args=[
-            "PQ",
-            "PQH_2",
-            "Q",
-            "psIIcross",
-            "k_H",
-            "kH0",
-            "pfd",
-            "k_PQred",
-            "K_QAPQ",
-            "k_F",
-            "k2",
-            "PSII_tot",
-        ],
+        name="PQH_2",
+        fn=moiety_1,
+        args=["PQ", "PQ_tot"],
     )
 
     m.add_derived(
-        name="B2",
-        fn=B2_psIIstates,
-        args=[
-            "PQ",
-            "PQH_2",
-            "Q",
-            "psIIcross",
-            "k_H",
-            "kH0",
-            "pfd",
-            "k_PQred",
-            "K_QAPQ",
-            "k_F",
-            "k2",
-            "PSII_tot",
-        ],
+        name="psIIcross",
+        fn=_ps2_crosssection,
+        args=["LHC", "staticAntII", "staticAntI"],
     )
 
     m.add_derived(
-        name="B3",
-        fn=B3_psIIstates,
-        args=[
-            "PQ",
-            "PQH_2",
-            "Q",
-            "psIIcross",
-            "k_H",
-            "kH0",
-            "pfd",
-            "k_PQred",
-            "K_QAPQ",
-            "k_F",
-            "k2",
-            "PSII_tot",
-        ],
+        name="TRX_red",
+        fn=moiety_1,
+        args=["TRX_ox", "Thioredoxin_tot"],
     )
 
     m.add_derived(
-        name="Fluo", fn=Fluo, args=["Q", "B0", "B2", "psIIcross", "k2", "k_F", "k_H"]
+        name="E_active",
+        fn=moiety_1,
+        args=["E_inactive", "E_total"],
     )
 
-    m.add_derived(name="pH_lu", fn=pH_lu, args=["H_lu"])
+    m.add_derived(
+        name="NADP_st",
+        fn=moiety_1,
+        args=["NADPH_st", "NADP_tot"],
+    )
+
+    m.add_derived(
+        name="ADP_st",
+        fn=moiety_1,
+        args=["ATP_st", "AP_tot"],
+    )
 
     m.add_derived(
         name="Pi_st",
-        fn=Pi_st,
+        fn=_pi_cbb,
         args=[
+            "Pi_tot",
             "PGA",
             "BPGA",
             "GAP",
@@ -685,132 +426,223 @@ def include_derived_quantities(m: Model):
             "RUBP",
             "RU5P",
             "ATP_st",
-            "P_tot",
         ],
     )
 
     m.add_derived(
-        name="IF_3P",
-        fn=IF_3Pfunc,
+        name="ASC",
+        fn=moiety_2,
+        args=["MDA", "DHA", "ASC_tot"],
+    )
+
+    m.add_derived(
+        name="GSH",
+        fn=_glutathion_moiety,
+        args=["GSSG", "Glutathion_tot"],
+    )
+
+    m.add_derived(
+        name="keq_v_ATPsynth",
+        fn=_keq_atp,
+        args=["pH_lumen", "DeltaG0_ATP", "dG_pH", "HPR", "pH_stroma", "Pi_mol", "RT"],
+    )
+
+    m.add_derived(
+        name="keq_v_b6f",
+        fn=_keq_cytb6f,
+        args=["pH_lumen", "F", "E0_PQ", "E0_PC", "pH_stroma", "RT", "dG_pH"],
+    )
+
+    m.add_derived(
+        name="keq_v_FNR",
+        fn=_keq_fnr,
+        args=["E0_Fd", "F", "E0_NADP", "pH_stroma", "dG_pH", "RT"],
+    )
+
+    m.add_derived(
+        name="vmax_v_FNR",
+        fn=mass_action_1s,
+        args=["kcat_v_FNR", "Enz0_v_FNR"],
+    )
+
+    m.add_derived(
+        name="keq_PCP700",
+        fn=_keq_pcp700,
+        args=["E0_PC", "F", "E0_P700", "RT"],
+    )
+
+    m.add_derived(
+        name="keq_v_Fdred",
+        fn=_keq_faf_d,
+        args=["E0_FA", "F", "E0_Fd", "RT"],
+    )
+
+    m.add_derived(
+        name="vmax_v_Fdred",
+        fn=mass_action_1s,
+        args=["kcat_v_Fdred", "Enz0_v_Fdred"],
+    )
+
+    m.add_derived(
+        name="Enz0_rubisco_active",
+        fn=mul,
+        args=["Enz0_rubisco", "E_active"],
+    )
+
+    m.add_derived(
+        name="vmax_v_RuBisCO_c",
+        fn=mass_action_1s,
+        args=["kcat_v_RuBisCO_c", "Enz0_rubisco_active"],
+    )
+
+    m.add_derived(
+        name="Enz0_v_FBPase_active",
+        fn=mul,
+        args=["Enz0_v_FBPase", "E_active"],
+    )
+
+    m.add_derived(
+        name="vmax_v_FBPase",
+        fn=mass_action_1s,
+        args=["kcat_v_FBPase", "Enz0_v_FBPase_active"],
+    )
+
+    m.add_derived(
+        name="Enz0_v_SBPase_active",
+        fn=mul,
+        args=["Enz0_v_SBPase", "E_active"],
+    )
+
+    m.add_derived(
+        name="vmax_v_SBPase",
+        fn=mass_action_1s,
+        args=["kcat_v_SBPase", "Enz0_v_SBPase_active"],
+    )
+
+    m.add_derived(
+        name="Enz0_v_PRKase_active",
+        fn=mul,
+        args=["Enz0_v_PRKase", "E_active"],
+    )
+
+    m.add_derived(
+        name="vmax_v_PRKase",
+        fn=mass_action_1s,
+        args=["kcat_v_PRKase", "Enz0_v_PRKase_active"],
+    )
+
+    m.add_derived(
+        name="vmax_v_pga_ex",
+        fn=mass_action_1s,
+        args=["kcat_N_translocator", "Enz0_N_translocator"],
+    )
+
+    m.add_derived(
+        name="N_translocator",
+        fn=_rate_translocator,
         args=[
             "Pi_st",
             "PGA",
             "GAP",
             "DHAP",
-            "K_diss_Pext",
-            "Pext",
-            "K_diss_Pi",
-            "K_diss_PGA",
-            "K_diss_GAP",
-            "K_diss_DHAP",
+            "km_N_translocator_Pi_ext",
+            "Pi_ext",
+            "km_N_translocator_Pi_st",
+            "km_v_pga_ex",
+            "km_v_gap_ex",
+            "km_v_dhap_ex",
         ],
     )
 
     m.add_derived(
-        name="K_ATPsynth",
-        fn=K_ATPsynth,
-        args=["pH_lu", "DeltaG0_ATP", "HPR", "pH_st", "Pi_mol", "R", "T"],
+        name="Enz0_v_starch_active",
+        fn=mul,
+        args=["Enz0_v_starch", "E_active"],
     )
 
     m.add_derived(
-        name="K_cytb6f",
-        fn=K_cytb6f,
-        args=["pH_lu", "F", "E0_PQ", "E0_PC", "pH_st", "R", "T"],
-    )
-
-    # --------------------------------------
-    # Thioredoxin Module
-    # --------------------------------------
-
-    m.add_derived(
-        name="TRX_red", fn=continous_subtraction, args=["thioredoxin_tot", "TRX_ox"]
+        name="vmax_v_starch",
+        fn=mass_action_1s,
+        args=["kcat_v_starch", "Enz0_v_starch_active"],
     )
 
     m.add_derived(
-        name="E_CBB_active",
-        fn=continous_subtraction,
-        args=["e_cbb_tot", "E_CBB_inactive"],
-    )
-
-    for name in ["rubisco", "fbpase", "sbpase", "prkase", "starch"]:
-        m.add_derived(
-            name=f"Vmax_{name}",
-            fn=proportional,
-            args=["E_CBB_active", f"V_maxbase_{name}"],
-        )
-
-    # ----------------------------------
-    # Mehler Module
-    # ----------------------------------
-
-    m.add_derived(
-        name="ASC", fn=continous_subtraction, args=["Ascorbate_total", "MDA", "DHA"]
-    )
-
-    m.add_derived(name="GSH", fn=GSH, args=["Glutathion_total", "GSSG"])
-
-    m.add_derived(
-        name="Y0",
-        fn=Y0_psIstates,
-        args=[
-            "PC_ox",
-            "PC_red",
-            "Fd_ox",
-            "Fd_red",
-            "psIIcross",
-            "PSI_tot",
-            "k_Fdred",
-            "K_FAFd",
-            "K_PCP700",
-            "k_PCox",
-            "pfd",
-            "k_Mehler",
-            "O2_ext",
-        ],
+        name="vmax_v_MDAreduct",
+        fn=mass_action_1s,
+        args=["kcat_v_MDAreduct", "Enz0_v_MDAreduct"],
     )
 
     m.add_derived(
-        name="Y1",
-        fn=Y1_psIstates,
-        args=[
-            "PC_ox",
-            "PC_red",
-            "Fd_ox",
-            "Fd_red",
-            "psIIcross",
-            "PSI_tot",
-            "k_Fdred",
-            "K_FAFd",
-            "K_PCP700",
-            "k_PCox",
-            "pfd",
-            "k_Mehler",
-            "O2_ext",
-        ],
+        name="vmax_v_GR",
+        fn=mass_action_1s,
+        args=["kcat_v_GR", "Enz0_v_GR"],
     )
 
     m.add_derived(
-        name="Y2",
-        fn=Y2_psIstates,
-        args=[
-            "PC_ox",
-            "PC_red",
-            "Fd_ox",
-            "Fd_red",
-            "psIIcross",
-            "PSI_tot",
-            "k_Fdred",
-            "K_FAFd",
-            "K_PCP700",
-            "k_PCox",
-            "pfd",
-            "k_Mehler",
-            "O2_ext",
-        ],
+        name="vmax_v_DHAR",
+        fn=mass_action_1s,
+        args=["kcat_v_DHAR", "Enz0_v_DHAR"],
     )
 
-    # ------------------------------------
-    # Consumption Module
-    # ------------------------------------
+    m.add_surrogate(
+        name="ps2states",
+        surrogate=qss.Surrogate(
+            model=_ps2states,
+            args=[
+                "PQ",
+                "PQH_2",
+                "psIIcross",
+                "Q",
+                "PSII_total",
+                "k2",
+                "kF",
+                "kH",
+                "keq_PQH_2",
+                "kPQred",
+                "PPFD",
+                "kH0",
+            ],
+            outputs=["B0", "B1", "B2", "B3"],
+        ),
+    )
+
+    m.add_surrogate(
+        name="ps1states",
+        surrogate=qss.Surrogate(
+            model=_ps1states_2021,
+            args=[
+                "PC_ox",
+                "PC_red",
+                "Fd_ox",
+                "Fd_red",
+                "psIIcross",
+                "PSI_total",
+                "kFdred",
+                "keq_v_Fdred",
+                "keq_PCP700",
+                "kPCox",
+                "PPFD",
+                "kMehler",
+                "O2_lumen",
+            ],
+            outputs=["Y0", "Y1", "Y2"],
+        ),
+    )
+
+    m.add_readout(name="PQ_ox/tot", fn=div, args=["PQH_2", "PQ_tot"])
+
+    m.add_readout(name="Fd_ox/tot", fn=div, args=["Fd_red", "Fd_tot"])
+
+    m.add_readout(name="PC_ox/tot", fn=div, args=["PC_red", "PC_tot"])
+
+    m.add_readout(name="NADPH/tot", fn=div, args=["NADPH_st", "NADP_tot"])
+
+    m.add_readout(name="ATP/tot", fn=div, args=["ATP_st", "AP_tot"])
+
+    m.add_readout(
+        name="Fluo",
+        fn=_rate_fluorescence,
+        args=["Q", "B0", "B2", "psIIcross", "k2", "kF", "kH"],
+    )
 
     return m

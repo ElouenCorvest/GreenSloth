@@ -1,134 +1,121 @@
-from __future__ import annotations
+def rapid_equilibrium_1s_1p(
+    s1: float,
+    p1: float,
+    k_re: float,
+    q: float,
+) -> float:
+    return k_re * (s1 - p1 / q)
 
-from typing import Literal
 
-import numpy as np
+def michaelis_menten_1s_1i(
+    s: float,
+    i: float,
+    vmax: float,
+    km: float,
+    ki: float,
+) -> float:
+    return vmax * s / (s + km * (1 + i / ki))
 
 
-def proportional(*args) -> float:
-    if len(args) <= 1:
-        raise ValueError("Not enough arguments given")
-    else:
-        v = args[0]
-        for i in args[1:]:
-            v *= i
-        return v
+def moiety_2(x1: float, x2: float, total: float) -> float:
+    return total - x1 - x2
 
-def continous_subtraction(*args) -> float:
-    if len(args) <= 1:
-        raise ValueError("Not enough arguments given")
-    else:
-        v = args[0]
-        for i in args[1:]:
-            v -= i
-        return v
+
+def protons_stroma(ph: float) -> float:
+    return 4000.0 * 10 ** (-ph)
+
+
+def rapid_equilibrium_2s_1p(
+    s1: float,
+    s2: float,
+    p1: float,
+    k_re: float,
+    q: float,
+) -> float:
+    return k_re * (s1 * s2 - p1 / q)
+
+
+def mass_action_1s(s1: float, k_fwd: float) -> float:
+    return k_fwd * s1
+
+
+def michaelis_menten_1s_2i(
+    s: float,
+    i1: float,
+    i2: float,
+    vmax: float,
+    km: float,
+    ki1: float,
+    ki2: float,
+) -> float:
+    return vmax * s / (s + km * (1 + i1 / ki1 + i2 / ki2))
+
+
+def neg_div(x: float, y: float) -> float:
+    return -x / y
+
 
 def value(x: float) -> float:
     return x
 
-def neg_value(x: float) -> float:
-    return -1 * x
 
-def times_neg_fourteen_thirds(x: float) -> float:
-    return x * (-14/3)
-
-def two_times_value(x: float) -> float:
-    return 2 * x
-
-def neg_two_times_value(x: float) -> float:
-    return -2 * x
-
-def three_times_value(x: float) -> float:
-    return 3 * x
-
-def two_divided_value(x: float) -> float:
-    return 2 / x
-
-def four_divided_value(x: float) -> float:
-    return 4 / x
-
-def neg_one_divided_value(x: float) -> float:
-    return -1 / x
-
-def neg_value1_divided_value2(x: float, y: float) -> float:
-    return - x / y
-
-def quadratic(
-    a: float,
-    b: float,
-    c: float,
-    option: Literal["max", "min", "both"]
+def rapid_equilibrium_2s_2p(
+    s1: float,
+    s2: float,
+    p1: float,
+    p2: float,
+    k_re: float,
+    q: float,
 ) -> float:
+    return k_re * (s1 * s2 - p1 * p2 / q)
+
+
+def mass_action_2s(s1: float, s2: float, k_fwd: float) -> float:
+    return k_fwd * s1 * s2
+
+
+def mul(x: float, y: float) -> float:
+    """Calculate the product of two values.
+
+    Parameters
+    ----------
+    x
+        First factor
+    y
+        Second factor
+
+    Returns
+    -------
+    Float
+        Product of x and y (x * y)
+
+    Examples
+    --------
+    >>> mul(2.0, 3.0)
+    6.0
+    >>> mul(0.5, 4.0)
+    2.0
+
     """
-    This function will calculate the quadratic equation from the parts given respectively to this format:
+    return x * y
 
-    a x**2 + b x + c
 
-    Args:
-        a (float): Part of the quadratic equation
-        b (float): Part of the quadratic equation
-        c (float): Part of the quadratic equation
-        option (Either 'max', 'min', or 'both'): Determines what type of output you wish to get, when your answer has two solutions. The max, min or both in a Tuple.
+def moiety_1(concentration: float, total: float) -> float:
+    return total - concentration
 
-    Returns:
-        float: _description_
-    """
-    d = b**2 - 4 * a * c
-    conds = [d > 0, d == 0]
 
-    r1 = np.select(
-        conds,
-        [
-            (-b + np.sqrt(d)) / (2 * a),
-            -b / (2 * a),
-        ],
-        None
-    )
-    r2 = np.select(
-        conds,
-        [
-            (-b - np.sqrt(d)) / (2 * a),
-            -b / (2 * a)
-        ],
-        None
-    )
+def div(x: float, y: float) -> float:
+    return x / y
 
-    if option == "max":
-        x = np.select(
-            [
-                r1 > r2,
-                r1 <= r2
-            ],
-            [
-                r1,
-                r2
-            ]
-        )
-    elif option == "min":
-        x = np.select(
-            [
-                r1 < r2,
-                r1 >= r2
-            ],
-            [
-                r1,
-                r2
-            ]
-        )
 
-    return x
-
-def hill_kinetics(k, lig, nh, K_a):
-    return k * ((lig ** nh) / (K_a ** nh + lig ** nh))
-
-def rapid_eq_2_2(s1, s2, p1, p2, k, q):
-    return k * (s1 * s2 - (p1 * p2 / q))
-
-def rapid_eq_3_3(s1, s2, s3, p1, p2, p3, k, q):
-    return k * (s1 * s2 * s3 - (p1 * p2 * p3 / q))
-
-def rapid_eq_1_1(s1, p1, k, q):
-    return k * (s1 - p1 / q)
-
-def rapid_eq_2_1(s1, s2, p1, k, q):
-    return k * (s1 * s2 - (p1 / q))
+def rapid_equilibrium_3s_3p(
+    s1: float,
+    s2: float,
+    s3: float,
+    p1: float,
+    p2: float,
+    p3: float,
+    k_re: float,
+    q: float,
+) -> float:
+    return k_re * (s1 * s2 * s3 - p1 * p2 * p3 / q)
