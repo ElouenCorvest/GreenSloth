@@ -1,5 +1,5 @@
 # Custom ignroed Files and direcotries
-/website/public
+/website/out
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

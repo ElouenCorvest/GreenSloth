@@ -31,7 +31,7 @@
   --buttonActiveBorderColor: #00aaafff;
   --buttonHoverColor: rgba(0, 170, 175, 0.2);
   --overallBackgroundLight: #fff;
-  --lightText: rgb(197, 197, 197);
+  --lightText: rgba(0, 0, 0, 0.5);
 }
 
 /* @property --nav-height {
@@ -1071,8 +1071,8 @@ input {
 .modalHeader {
   z-index: 1;
   display: flex;
-  width: auto max-content;
-  gap: 1em;
+  width: 100%;
+  gap: 1em; 
   border-radius: 0.5em 0.5em 0 0;
   background-color: var(--mainAccentColor);
   color: var(--tertiaryAccentColor);
@@ -1089,6 +1089,15 @@ input {
 .modalHeader > :last-child {
   margin-left: auto;
   text-align: end;
+}
+
+@media screen and (max-width:960px) {
+  .modalHeader {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0;
+  }
 }
 
 .close {
@@ -1152,6 +1161,21 @@ input {
   cursor: pointer;
 }
 
+@media screen and (max-width: 960px) {
+  #compareModalHeadingThisModel {
+    grid-column: 1;
+    grid-row: 2
+  }
+
+  #compareModalSelect {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 .compareModalBodyCompare {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1179,12 +1203,13 @@ input {
 #compare-body-variables {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto fit-content;
+  grid-template-rows: auto max-content max-content;
   row-gap: 1em;
   align-items: stretch;
 }
 
 .compare-variables-math {
+  min-height: 2em;
   max-height: 17em;
   overflow-y: auto;
   display: flex;
@@ -1200,26 +1225,98 @@ input {
   margin: 0;
 }
 
+#venndiagramm {
+  width: 100%;
+}
+
+#compare-variables-right {
+  flex-direction: row-reverse;
+}
+
+#compare-variables-common {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  & .compare-variables-math > p {
+    cursor: pointer;
+  }
+}
+
+#compare-variables-common-text {
+  margin: 0;
+  text-align: center;
+  grid-column: span 3;
+}
+
 #compare-body-simulation {
   height: 50vh;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content auto ;
+  grid-template-rows: max-content max-content auto ;
+
+  & > select {
+    font-size: larger;
+    padding: 0.5em 0.5em;
+    max-height: 10em;
+    overflow-y: auto;
+  }
+}
+
+#compare-simulation-text-container {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1em;
+  align-items: center;
+  row-gap: 0.5em;
+
+  & > h3, p {
+    margin: 0;
+    text-align: justify;
+  }
+}
+
+#compare-simulation-sliders {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+
+  & > p {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.slider {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1em;
+  border-radius: 5px;  
+  background: rgba(0, 0, 0, 0.1);
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%; 
+  background: var(--mainAccentColor);
+  cursor: pointer;
 }
 
 #compare-simulation-chart {
   grid-column: span 2;
   height: 100%;
   width: 100%;
-}
-
-#venndiagramm {
-  width: 100%;
-}
-
-#compare-variables-common {
-  grid-area: 2 / 1 / 2 / 4;
 }
 
 .compare-information {
@@ -1258,50 +1355,6 @@ input {
 
 .compare-information-box > h3 {
   margin: 0;
-}
-
-#compare-Variables-Right {
-  flex-direction: row-reverse;
-}
-
-.compare-variables div {
-  flex-grow: 1;
-  max-height: 20em;
-  overflow: auto;
-}
-
-.compare-variables span {
-  flex-grow: 0;
-  font-size: 10em;
-  opacity: 50%;
-}
-
-#compare-Variables-Left span, #compare-Variables-Left p {
-  color: var(--secondaryAccentColor);
-}
-
-#compare-Variables-Left span {
-  position: relative;
-  float: right;
-  right: -0.6em;
-}
-
-#compare-Variables-Left p {
-  justify-self: right;
-}
-
-#compare-Variables-Right span, #compare-Variables-Right p {
-  color: var(--quateryAccentColor);
-}
-
-#compare-Variables-Right span {
-  position: relative;
-  float: left;
-  left: -0.6em;
-}
-
-#compare-Variables-Right p {
-  justify-self: left;
 }
 
 /* Image Modal */

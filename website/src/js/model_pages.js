@@ -206,8 +206,8 @@ function getSim(path) {
 // Get Both Sims
 async function getBothSims(thisModel, otherModel, pfd) {
     const res = await Promise.all([
-        getSim(`../js/simulations/${thisModel}/${pfd}.json`),
-        getSim(`../js/simulations/${otherModel}/${pfd}.json`)
+        getSim(`/simulations/${thisModel}/${pfd}.json`),
+        getSim(`/simulations/${otherModel}/${pfd}.json`)
     ])
 
     return res
@@ -233,14 +233,18 @@ function modalChange(informationPointer) {
     rightVariables.innerHTML = ""
 
     // Get Common Variables
-    const commonVariables = document.getElementById("compare-variables-common")
+    const commonVariables = document.getElementById("compare-variables-common-math")
     commonVariables.innerHTML = ""
+
+    const commonVariablesText = document.getElementById("compare-variables-common-text")
 
     // Get Simulation Select
     const simSelectBox = document.getElementById("compare-simulation-select")
+    const simSelectTab = document.getElementById("compare-tab-simulation")
+
+    const schemeRight = document.getElementById("compare-schemes-right")
 
     if (chosenModel !== "") {
-        const schemeRight = document.getElementById("compare-schemes-right")
         schemeRight.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${chosenModel}/${chosenModel}_scheme.svg`;
 
         const bothInfo = getBothModelInfo(modelName, chosenModel)
@@ -284,42 +288,51 @@ function modalChange(informationPointer) {
             })
 
             simSelectBox.innerHTML = ""
+            var defaultVal = document.createElement("option");
+            defaultVal.value = "";
+            defaultVal.innerHTML = "Select Variable"
+            simSelectBox.appendChild(defaultVal)
 
             commonVars.forEach(ele => {
-
-                console.log(mainGlossPointerPythonVar[ele])
-
-                var newP = document.createElement("p")
-                newP.innerText = mainGlossPointerAbbr[ele]
-                commonVariables.appendChild(newP)
 
                 var varOption = document.createElement("option")
                 varOption.value = mainGlossPointerPythonVar[ele]
                 varOption.innerHTML = mainGlossPointerPythonVar[ele]
                 simSelectBox.appendChild(varOption)
+
+                var newP = document.createElement("p")
+                newP.innerText = mainGlossPointerAbbr[ele]
+                newP.addEventListener("click", function() {
+                    simSelectBox.value = mainGlossPointerPythonVar[ele]
+                    changeCompareSection(simSelectTab)
+                })
+                commonVariables.appendChild(newP)
             })
 
             MathJax.typeset()
 
+            if (commonVars.length > 0) {
+                commonVariablesText.innerText = "Click the Variable to see the simulation!"
+            }
         })
 
-        MathJax.typeset()
-
     } else {
+        schemeRight.src = ""
+
         const thisModelInfo = getModelInfo(modelName)
         thisModelInfo.then(res => {
 
             createInfoList("", "right", informationPointer)
 
             const filteredGlossCompsAbbr = filterGlossIDAbbr(res["compsData"])
-        const filteredGlossDerivedCompsAbbr = filterGlossIDAbbr(res["derivedCompsData"])
-        const filteredGlossCombinedAbbr = {...filteredGlossCompsAbbr, ...filteredGlossDerivedCompsAbbr}
-        var leftVariables = document.getElementById("compare-variables-left")
-        for (const [key, value] of Object.entries(filteredGlossCombinedAbbr)) {
-            var newP = document.createElement("p")
-            newP.innerText = value
-            leftVariables.appendChild(newP)
-        }
+            const filteredGlossDerivedCompsAbbr = filterGlossIDAbbr(res["derivedCompsData"])
+            const filteredGlossCombinedAbbr = {...filteredGlossCompsAbbr, ...filteredGlossDerivedCompsAbbr}
+            var leftVariables = document.getElementById("compare-variables-left")
+            for (const [key, value] of Object.entries(filteredGlossCombinedAbbr)) {
+                var newP = document.createElement("p")
+                newP.innerText = value
+                leftVariables.appendChild(newP)
+            }
 
             const filteredGlossCompsPythonVar = filterGlossIDPythonVar(res["compsData"])
             const filteredGlossDerivedCompsPythonVar = filterGlossIDPythonVar(res["derivedCompsData"])
@@ -331,7 +344,7 @@ function modalChange(informationPointer) {
                 var varOption = document.createElement("option")
                 varOption.value = element
                 varOption.innerHTML = element
-                compareModalBodySimulationSelect.appendChild(varOption)
+                simSelectBox.appendChild(varOption)
             })
 
             MathJax.typeset()
@@ -555,25 +568,34 @@ var compareModalBodyTabs = document.createElement("div")
 compareModalBodyTabs.classList.add("TabContainer")
 compareModalBody.appendChild(compareModalBodyTabs)
 
+// Change Compare Func
+function changeCompareSection(tabClicked) {
+    var siblings = tabClicked.parentNode.childNodes
+    siblings.forEach(element => {
+        element.classList.remove("active")
+    })
+    tabClicked.classList.add("active")
+
+    const allCompareBlocks = document.querySelectorAll(".compare-body")
+    allCompareBlocks.forEach(block => {
+        block.classList.add("hidden")
+        if (block.id.includes(tabClicked.innerHTML.toLowerCase())) {
+            block.classList.remove("hidden")
+        }
+    })
+    if (tabClicked.innerHTML.toLowerCase() == "simulation") {
+        varCompare()
+    }
+}
+
 // Compare Modal Body Tabs
 const compareModalTabChoices = ["Variables", "Simulation", "Information", "Schemes"]
 compareModalTabChoices.forEach(choice => {
     var compareModalTab = document.createElement("button");
+    compareModalTab.id = `compare-tab-${choice.toLowerCase()}`
     compareModalTab.innerHTML = choice;
     compareModalTab.addEventListener('click', function()     {
-        var siblings = this.parentNode.childNodes
-        siblings.forEach(element => {
-            element.classList.remove("active")
-        })
-        this.classList.add("active")
-
-        const allCompareBlocks = document.querySelectorAll(".compare-body")
-        allCompareBlocks.forEach(block => {
-            block.classList.add("hidden")
-            if (block.id.includes(choice.toLowerCase())) {
-                block.classList.remove("hidden")
-            }
-        })
+        changeCompareSection(this)
     });
     compareModalBodyTabs.appendChild(compareModalTab)
 
@@ -584,11 +606,11 @@ compareModalTabChoices.forEach(choice => {
 })
 
 //////////////// VARIABLES ////////////////
-// Create Variable Comparision
+// Get Variable Comparision
 const compareModalBodyVariables = document.getElementById("compare-body-variables")
 
 // Create colors
-const gradient = chroma.scale(["#FFBA08", "3F88C5"])
+const gradient = chroma.scale(["#F19A3E", "#3DA480"])
 
 // Create Left Model Variables
 var compareModalBodyVariablesLeft = document.createElement("div")
@@ -621,27 +643,79 @@ compareModalBodyVariablesRight.id = "compare-variables-right"
 compareModalBodyVariablesRight.style.color = gradient(1).css()
 compareModalBodyVariables.appendChild(compareModalBodyVariablesRight)
 
-// Create Common Model Variables
+// Create Common Model Variables Container
+var compareModalBodyVariablesCommonContainer = document.createElement("div")
+compareModalBodyVariablesCommonContainer.id = "compare-variables-common"
+compareModalBodyVariables.appendChild(compareModalBodyVariablesCommonContainer)
+
 var compareModalBodyVariablesCommon = document.createElement("div")
 compareModalBodyVariablesCommon.classList.add("compare-variables-math")
-compareModalBodyVariablesCommon.id = "compare-variables-common"
+compareModalBodyVariablesCommon.id = "compare-variables-common-math"
 compareModalBodyVariablesCommon.style.color = gradient(0.5).css()
-compareModalBodyVariables.appendChild(compareModalBodyVariablesCommon)
+compareModalBodyVariablesCommonContainer.appendChild(compareModalBodyVariablesCommon)
+
+// Create Common Variables Explanation
+var compareModalBodyVariablesCommonText = document.createElement("p")
+compareModalBodyVariablesCommonText.classList.add("discreetText")
+compareModalBodyVariablesCommonText.id = "compare-variables-common-text"
+compareModalBodyVariablesCommonContainer.appendChild(compareModalBodyVariablesCommonText)
 
 //////////////// SIMULATIONS ////////////////
 // Get Simulation Body
 const compareModalBodySimulation = document.getElementById("compare-body-simulation")
 
-// Create Explanation Text
+// Create Explanation Text Container
+var compareModalBodySimulationTextContainer = document.createElement("div")
+compareModalBodySimulationTextContainer.id = "compare-simulation-text-container"
+compareModalBodySimulation.appendChild(compareModalBodySimulationTextContainer)
+
+// Create Explanation Text Heading
+var compareModalBodySimulationTextHead = document.createElement("h3")
+compareModalBodySimulationTextHead.classList.add()
+compareModalBodySimulationTextHead.innerText = "Choose which variable to Plot!"
+compareModalBodySimulationTextContainer.appendChild(compareModalBodySimulationTextHead)
+
+// Create Explanation Text Heading
 var compareModalBodySimulationText = document.createElement("p")
-compareModalBodySimulationText.innerText = "You can choose which variable to simulate"
-compareModalBodySimulation.appendChild(compareModalBodySimulationText)
+compareModalBodySimulationText.classList.add("discreetText")
+compareModalBodySimulationText.innerText = "All simulations follow the initial conditions of the authors. The only aspect that varies is the PPFD, which you can choose on the right. The plots show the change of concentration over time and have a dark adapted state (PPFD = 50) at the start. (Please keep the scale of the y-axis in mind)"
+compareModalBodySimulationTextContainer.appendChild(compareModalBodySimulationText)
 
 function plotVariables(plot, data) {
     Plotly.newPlot( plot, data, {
+        autosize: true,
+        annotations: [
+            {
+                x: 5, y: 0.1,
+                text: "PPFD = 50",
+                xref: "x", yref: "paper",
+                showarrow: false,
+                font: {
+                    size: 16
+                }
+            }
+        ],
+        title: "",
+        margin: {
+            t: 15,
+            b: 20
+        },
         yaxis: {
-            title: "test",
-            tickformat: ".2f"
+            title: {
+                text: "Concentration"
+            },
+            exponentformat: "e",
+            showgrid: false,
+            ticks: "outside",
+            ticklen: 5,
+        },
+        xaxis: {
+            title: {
+                text: "Time [s]"
+            },
+            showgrid: false,
+            ticks: "outside",
+            ticklen: 5
         },
         shapes: [
             {
@@ -658,6 +732,32 @@ function plotVariables(plot, data) {
                 width: 0,
             },
             },
+            {
+                type: "line",
+                x0: 0,
+                y0: 0,
+                x1: 1,
+                y1: 0,
+                xref: "paper",
+                yref: "paper",
+                line: {
+                    color: "black",
+                    width: 2
+                }
+            },
+            {
+                type: "line",
+                x0: 0,
+                y0: 0,
+                x1: 0,
+                y1: 1,
+                xref: "paper",
+                yref: "paper",
+                line: {
+                    color: "black",
+                    width: 2
+                }
+            }
         ],
     });
 }
@@ -667,12 +767,23 @@ function varCompare() {
     const varSelectBox = document.getElementById("compare-simulation-select")
     const modelSelectBox = document.getElementById("compareModalSelect")
     const otherModel = modelSelectBox.value
+    const pfdSlider = document.getElementById("compare-simulation-pfdslider")
+    const pfd = pfdSlider.value
+    const leftVenn = document.getElementById("venndiagramm-left")
+    const leftColor = leftVenn.style.fill
+    const rightVenn = document.getElementById("venndiagramm-right")
+    const rightColor = rightVenn.style.fill
+
+    console.log(leftColor)
 
     const chosenVar = varSelectBox.value;
 
+    console.log(pfd)
     var plot = document.getElementById('compare-simulation-chart');
 
-    const pfd = 1000
+    if (varSelectBox.value == "") {
+        plotVariables(plot, [{"x": 0, "y": 0}])
+    }
 
     if (otherModel !== "") {
         const bothSims = getBothSims(modelName, otherModel, pfd)
@@ -682,20 +793,23 @@ function varCompare() {
 
             simThisModel[chosenVar]["type"] = "line"
             simThisModel[chosenVar]["name"] = modelName
+            simThisModel[chosenVar]["line"] = {color: leftColor}
             simOtherModel[chosenVar]["type"] = "line"
             simOtherModel[chosenVar]["name"] = otherModel
+            simOtherModel[chosenVar]["line"] = {color: rightColor}
 
             const data = [simThisModel[chosenVar], simOtherModel[chosenVar]]
 
             plotVariables(plot, data)
         })
     } else {
-        const thisSim = getSim(`../js/simulations/${modelName}/${pfd}.json`)
+        const thisSim = getSim(`/simulations/${modelName}/${pfd}.json`)
         thisSim.then(res => {
             const data = res[chosenVar]
 
             data["type"] = "line"
             data["name"] = modelName
+            data["line"] = {color: leftColor}
 
             plotVariables(plot, [data])
 
@@ -703,7 +817,7 @@ function varCompare() {
     }
 }
 
-// Compare Modal Heading Select Model
+// Compare Modal Simulation Select
 var compareModalBodySimulationSelect = document.createElement("select");
 compareModalBodySimulationSelect.id = "compare-simulation-select"
 compareModalBodySimulationSelect.addEventListener('change', () => {
@@ -711,18 +825,40 @@ compareModalBodySimulationSelect.addEventListener('change', () => {
 });
 compareModalBodySimulation.appendChild(compareModalBodySimulationSelect);
 
-// Compare Modal Heading Select Default Value
+// Compare Modal Simulation Select Value
 var compareModalBodySimulationSelectDefaultVal = document.createElement("option");
 compareModalBodySimulationSelectDefaultVal.value = "";
 compareModalBodySimulationSelectDefaultVal.innerHTML = "Select Variable"
 compareModalBodySimulationSelect.appendChild(compareModalBodySimulationSelectDefaultVal)
 
+// Create Slider Container
+var sliderContainer = document.createElement("div")
+sliderContainer.id = "compare-simulation-sliders"
+compareModalBodySimulation.appendChild(sliderContainer);
+
+// Create Slider Text
+var sliderText = document.createElement("p")
+sliderContainer.appendChild(sliderText)
+
+// Create Slider
+var pfdSlider = document.createElement("input")
+pfdSlider.id = "compare-simulation-pfdslider"
+pfdSlider.classList.add("slider")
+pfdSlider.type = "range"
+pfdSlider.min = 100
+pfdSlider.max = 1400
+pfdSlider.step = 100
+pfdSlider.addEventListener("input", (event) => {
+    sliderText.innerText = `PPFD: ${event.target.value}`
+    varCompare()
+})
+sliderContainer.appendChild(pfdSlider);
+sliderText.innerText = `PPFD: ${pfdSlider.value}`
+
 // Create Simulation Chart
 var compareModalBodySimulationChart = document.createElement("div")
 compareModalBodySimulationChart.id = "compare-simulation-chart"
 compareModalBodySimulation.appendChild(compareModalBodySimulationChart)
-
-
 
 //////////////// SCHEMES ////////////////
 // Insert Scheme
@@ -946,7 +1082,6 @@ modelHeaderButtonBar.appendChild(modelHeaderButtonBarCompare)
 
 // Insert Model Button Bar Last Updated
 var modelHeaderButtonBarLastUpdate = document.createElement("p")
-modelHeaderButtonBarLastUpdate.classList.add("discreetText")
 modelHeaderButtonBarLastUpdate.innerHTML = "Last Update: Loading..."
 modelHeaderButtonBarLastUpdate.style = "flex-grow: 1; margin: 0; font-size: 0.7em; text-align: center;"
 updateLastModified(modelHeaderButtonBarLastUpdate)
