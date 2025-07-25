@@ -25,7 +25,7 @@ topnavBarCenter.classList.add("topnav-center")
 topnavBarTop.appendChild(topnavBarCenter)
 
 // Center Text when small media query
-var topnavBarCenterMQSmallText = document.createElement("h2")
+var topnavBarCenterMQSmallText = document.createElement("h3")
 topnavBarCenterMQSmallText.classList.add("topnav-text")
 topnavBarCenterMQSmallText.innerHTML = "Under Construction"
 topnavBarCenter.appendChild(topnavBarCenterMQSmallText)
@@ -45,10 +45,10 @@ topnavBarCenterModelSelect.innerHTML = "Models"
 topnavBarCenter.appendChild(topnavBarCenterModelSelect)
 
 // Center Cite
-var topnavBarCenterCite = document.createElement("button")
-topnavBarCenterCite.classList.add("tablinks", "topnav-link", "open-cite-modal")
-topnavBarCenterCite.innerHTML = "Cite"
-topnavBarCenter.appendChild(topnavBarCenterCite)
+// var topnavBarCenterCite = document.createElement("button")
+// topnavBarCenterCite.classList.add("tablinks", "topnav-link", "open-cite-modal")
+// topnavBarCenterCite.innerHTML = "Cite"
+// topnavBarCenter.appendChild(topnavBarCenterCite)
 
 // Center Github
 var topnavBarCenterGithub = document.createElement("a")
@@ -78,11 +78,11 @@ topnavBarCenterContribution.innerHTML = "About Us"
 topnavBarCenter.appendChild(topnavBarCenterContribution)
 
 // Center Contribution
-var topnavBarCenterTodos = document.createElement("a")
-topnavBarCenterTodos.classList.add("tablinks", "topnav-link")
-topnavBarCenterTodos.href = siteUrl + "/src/html/todos.php"
-topnavBarCenterTodos.innerHTML = "To Dos"
-topnavBarCenter.appendChild(topnavBarCenterTodos)
+// var topnavBarCenterTodos = document.createElement("a")
+// topnavBarCenterTodos.classList.add("tablinks", "topnav-link")
+// topnavBarCenterTodos.href = siteUrl + "/src/html/todos.php"
+// topnavBarCenterTodos.innerHTML = "To Dos"
+// topnavBarCenter.appendChild(topnavBarCenterTodos)
 
 // Right Side
 var topnavBarRight = document.createElement("div")

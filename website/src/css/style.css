@@ -594,7 +594,8 @@ input {
   height: 100%;
   width: inherit;
   overflow: hidden;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
   align-items: center;
   color: var(--tertiaryAccentColor);
 }
@@ -655,6 +656,10 @@ input {
 
 /* Mobile override */
 @media (max-width: 960px) {
+  #topnav-top {
+    justify-items: center;
+  }
+
   .topnav-text {
     display: inline;
   }
