@@ -1,4 +1,4 @@
-<?php require 'require_login.php'; ?>
+<?php require __DIR__.'/../../require_login.php'; ?>
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <?php require 'login_modal.php'; ?>
+<?php require __DIR__.'/../../login_modal.php'; ?>
 
   <div id="layoutWrapper">
     <nav id="topnav"></nav>
