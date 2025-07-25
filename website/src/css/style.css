@@ -566,7 +566,9 @@ input {
 
 #content {
   max-width: 60%;
-  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 @media screen and (max-width: 960px) {
@@ -802,6 +804,14 @@ input {
   text-align: justify;
 }
 
+#motivation-text {
+  font-size: 1.2em;
+
+  & b {
+    color: var(--mainAccentColor);
+  }
+}
+
 #photosynthesis-scheme {
   width: 100%;
 }
@@ -893,10 +903,15 @@ input {
 
 /* Model Selection */
 #model-selector {
+  width: 100% !important;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 1em;
+
+  & > p {
+    text-align: justify;
+  }
 }
 
 .model-row {
@@ -971,14 +986,15 @@ input {
   display: flex;
   flex-flow: row nowrap;
   justify-content: stretch;
+  align-items: center;
   gap: 1em;
-  margin-bottom: 12px;
 }
 
 .typeInBar, .tagsButton, .tagsBox, .tag {
   font-family: inherit;
   font-size: inherit;
   border-radius: 2em;
+  margin: 0;
 }
 
 .typeInBar {
@@ -1009,18 +1025,18 @@ input {
   transform: scaleY(1);
 }
 
-.tagsCategory {
+.tags-category {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 }
 
-.tagsCategory h3 {
+.tags-category h3 {
   height: fit-content;
   margin: 0;
 }
 
-.tagsRow {
+.tags-row {
   display: flex;
   flex-wrap: wrap;
   column-gap: 1em;

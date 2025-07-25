@@ -54,16 +54,11 @@
           </div>
           <div class="swiper-content swiper-content-flex">
             <h1>Motivation</h1>
-            <div class="long-text">
-              <p>
-                In 2022, Elouen, the creator of GreenSloth, wrote his Bachelor's thesis about comparing the popular and simple steady-state Farquhar, von Caemmerer, and Berry Model (FvCB model) and a kinetic photosynthesis model. While searching for the other model, he searched various public sources for scientific literature and tried to recreate several models. During this time, he arrived at one conclusion: modeling, especially photosynthesis, aims to help others understand more of the essential process of life on Earth. However, the scientific community has not found a common way to share its models. This is where the idea of GreenSloth first came into play.
-              </p>
-              <p>
-                During his further experience with photosynthetic models, he found that this issue was common for experts and amateurs in modelling, which inspired his mind even more to find a solution. He wanted to create a resource that collects popular photosynthesis models and enables an easier summary and accessibility, especially for amateurs in the modelling field. 
-              </p>
-              <p>
-                With GreenSloth, Elouen hopes to facilitate researchers' access to the modeling world. He believes this is vital to understanding and coping with the complexity of photosynthesis. This website will enable even better scientific transparency.
-              </p>
+            <div class="long-text" id="motivation-text">
+              <p>Photosynthesis is arguably the most crucial process of life on Earth. It feeds us, clothes us, heals us, and calms us. Therefore, it has long been a significant target for research, and while we now know a great deal about how, why, and who photosynthesis is, there are still aspects of it that we cannot quite grasp. However, with the rise of computational prowess, we have developed new ways to examine and understand photosynthesis. Through digital models of photosynthesis!</p>
+              <p>While this field has existed for decades, it has recently gained significant importance. To such an extent that there are many different models of photosynthesis, each attempting to depict various aspects, some even the entirety, of the process. This boom enables a researcher interested in this field to have the power of choice of models. However, this power also comes with a curse.</p>
+              <p>The different models all have their strengths and aim to cater to people who are not proficient in creating a model on their own. However, since the publication of models is not as heavily regulated as lab work and most model builders are experts in their field, a disconnect exists between the model and the target user. It can be challenging to find a model that fits your needs. This is where <b>GreenSloth</b> comes in.</p>
+              <p><b>GreenSloth</b> will help you, the researcher interested in modelling photosynthesis, decide which model is best suited for your needs. While this project is still in its infancy, we, the <a href="https://www.cpbl.rwth-aachen.de/go/id/sazuq/?lidx=1" target="_blank">Computational Life Science</a> group of the Biology department at RWTH Aachen, led by Prof. Dr. rer. nat. Matuszyńska, stand behind it and its idea. If you understand our motivation and would like to be part of it, please email (<a href="mailto:elouen.corvest@rwth-aachen.de" target="_blank">elouen.corvest@rwth-aachen.de</a>) us with your ideas, models to include, or general feedback on how we can make <b>GreenSloth</b> better for you.</p>
             </div>
           </div>
           <div class="swiper-next-button swiper-button">
@@ -107,61 +102,69 @@
           </div>
           <div class="swiper-content">
             <h3>Press the part of photosynthesis to see which models include it!</h3>
-            <svg id="photosynthesis-scheme" style="flex-grow: 1;" width="216.05mm" height="125.18mm" version="1.1" viewBox="0 0 216.05 125.18" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(-3.2695 -25.238)">
-                <rect x="3.2695" y="108.2" width="216.05" height="2" rx=".5" fill="#4d683d" style="paint-order:markers stroke fill"/>
-                <rect x="3.2695" y="127.53" width="216.05" height="2" rx=".5" fill="#4d683d" style="paint-order:markers stroke fill"/>
-                <g transform="translate(10.133 25.589)" fill="#000000" font-family="'Source Sans 3'" font-size="8.2931px" stroke-width=".20733">
-                  <text x="-6.3343873" y="81.641235" style="line-height:1.05" xml:space="preserve"><tspan x="-6.3343873" y="81.641235" fill="#000000" font-weight="bold" stroke-width=".20733">Stroma</tspan></text>
-                  <text x="-6.6826963" y="109.97566" style="line-height:1.05" xml:space="preserve"><tspan x="-6.6826963" y="109.97566" fill="#000000" font-weight="bold" stroke-width=".20733">Lumen</tspan></text>
+            <svg id="photosynthesis-scheme" width="216.05mm" height="125.18mm" version="1.1" viewBox="0 0 216.05 125.18" xmlns="http://www.w3.org/2000/svg">
+              <g id="g26" transform="translate(-3.2695 -25.238)">
+                <rect id="rect1" x="3.2695" y="108.2" width="216.05" height="2" rx=".5" fill="#4d683d" style="paint-order:markers stroke fill"/>
+                <rect id="rect43" x="3.2695" y="127.53" width="216.05" height="2" rx=".5" fill="#4d683d" style="paint-order:markers stroke fill"/>
+                <g id="g43" transform="translate(10.133 25.589)" fill="#000000" font-family="'Source Sans 3'" font-size="8.2931px" stroke-width=".20733">
+                  <text id="text1-2" x="-6.3343873" y="81.641235" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-7" x="-6.3343873" y="81.641235" fill="#000000" font-weight="bold" stroke-width=".20733">Stroma</tspan></text>
+                  <text id="text1-2-3" x="-6.6826963" y="109.97566" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-7-6" x="-6.6826963" y="109.97566" fill="#000000" font-weight="bold" stroke-width=".20733">Lumen</tspan></text>
                 </g>
               </g>
               <a id="scheme-oec" transform="translate(6.8636 23.877)">
-                <ellipse cx="34.445" cy="90.412" rx="11.573" ry="9.3954" fill="#bbdef0" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
-                <text x="28.570921" y="96.907669" font-family="'Source Sans 3'" font-size="6.3989px" stroke-width=".15997" style="line-height:1.05" xml:space="preserve"><tspan x="28.570921" y="96.907669" font-weight="bold" stroke-width=".15997">OEC</tspan></text>
+                <ellipse id="ellipse1-5" cx="34.445" cy="90.412" rx="11.573" ry="9.3954" fill="#bbdef0" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
+                <text id="text1-35" x="28.570921" y="96.907669" font-family="'Source Sans 3'" font-size="6.3989px" stroke-width=".15997" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-62" x="28.570921" y="96.907669" font-weight="bold" stroke-width=".15997">OEC</tspan></text>
               </a>
               <a id="scheme-psii" transform="translate(6.8637 .35047)">
-                <ellipse cx="34.445" cy="93.275" rx="14.445" ry="19.33" fill="#5fad56" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
-                <text x="25.216417" y="96.725319" font-family="'Source Sans 3'" font-size="10.583px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan x="25.216417" y="96.725319" font-weight="bold" stroke-width=".26458">PSII</tspan></text>
+                <ellipse id="ellipse1" cx="34.445" cy="93.275" rx="14.445" ry="19.33" fill="#5fad56" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
+                <text id="text1" x="25.216417" y="96.725319" font-family="'Source Sans 3'" font-size="10.583px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1" x="25.216417" y="96.725319" font-weight="bold" stroke-width=".26458">PSII</tspan></text>
               </a>
               <a id="scheme-cytb6f" transform="translate(6.8637 .35047)">
-                <ellipse cx="83.335" cy="93.275" rx="14.445" ry="19.33" fill="#63c7b2" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
-                <text x="71.703972" y="95.296288" font-family="'Source Sans 3'" font-size="7.7885px" stroke="#000000" stroke-opacity="0" stroke-width=".19471" style="line-height:1.05" xml:space="preserve"><tspan x="71.703972" y="95.296288" font-weight="bold" stroke="#000000" stroke-opacity="0" stroke-width=".19471">Cytb6f</tspan></text>
+                <ellipse id="path1-2" cx="83.335" cy="93.275" rx="14.445" ry="19.33" fill="#63c7b2" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
+                <text id="text1-9" x="71.703972" y="95.296288" font-family="'Source Sans 3'" font-size="7.7885px" stroke="#000000" stroke-opacity="0" stroke-width=".19471" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-1" x="71.703972" y="95.296288" font-weight="bold" stroke="#000000" stroke-opacity="0" stroke-width=".19471">Cytb6f</tspan></text>
               </a>
               <a id="scheme-psi" transform="translate(6.8637 .35047)">
-                <ellipse cx="132.23" cy="93.275" rx="14.445" ry="19.33" fill="#4d9078" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
-                <text x="132.22528" y="96.725327" font-family="'Source Sans 3'" font-size="10.583px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan x="132.22528" y="96.725327" font-weight="bold" stroke-width=".26458" text-align="center" text-anchor="middle">PSI</tspan></text>
+                <ellipse id="path1-9" cx="132.23" cy="93.275" rx="14.445" ry="19.33" fill="#4d9078" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
+                <text id="text1-3" x="132.22528" y="96.725327" font-family="'Source Sans 3'" font-size="10.583px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-6" x="132.22528" y="96.725327" font-weight="bold" stroke-width=".26458" text-align="center" text-anchor="middle">PSI</tspan></text>
               </a>
               <a id="scheme-atpsynth" transform="translate(6.8637 .35047)">
-                <rect x="168.08" y="73.945" width="19.692" height="38.661" rx="1.3495" fill="#f78154" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
-                <g transform="matrix(1.4098 0 0 1.4098 -175.97 -39.243)">
-                  <ellipse cx="256.94" cy="73.424" rx="2.7751" ry="7.8286" fill="#c86a8c" style="paint-order:markers stroke fill"/>
-                  <ellipse cx="254.17" cy="73.424" rx="3.0834" ry="8.6985" fill="#f99b76" style="paint-order:markers stroke fill"/>
-                  <ellipse transform="scale(-1,1)" cx="-244.88" cy="73.424" rx="2.7751" ry="7.8286" fill="#c86a8c" style="paint-order:markers stroke fill"/>
-                  <ellipse transform="scale(-1,1)" cx="-247.66" cy="73.424" rx="3.0834" ry="8.6985" fill="#f99b76" style="paint-order:markers stroke fill"/>
-                  <ellipse cx="251.08" cy="73.424" rx="3.426" ry="9.665" fill="#c86a8c" style="paint-order:markers stroke fill"/>
+                <rect id="rect2" x="168.08" y="73.945" width="19.692" height="38.661" rx="1.3495" fill="#f78154" stroke="#fff" stroke-dashoffset="3.2519" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="paint-order:markers stroke fill"/>
+                <g id="g8" transform="matrix(1.4098 0 0 1.4098 -175.97 -39.243)">
+                  <ellipse id="path4-9-3" cx="256.94" cy="73.424" rx="2.7751" ry="7.8286" fill="#c86a8c" style="paint-order:markers stroke fill"/>
+                  <ellipse id="path4-9" cx="254.17" cy="73.424" rx="3.0834" ry="8.6985" fill="#f99b76" style="paint-order:markers stroke fill"/>
+                  <ellipse id="path4-9-3-2" transform="scale(-1,1)" cx="-244.88" cy="73.424" rx="2.7751" ry="7.8286" fill="#c86a8c" style="paint-order:markers stroke fill"/>
+                  <ellipse id="path4-9-2" transform="scale(-1,1)" cx="-247.66" cy="73.424" rx="3.0834" ry="8.6985" fill="#f99b76" style="paint-order:markers stroke fill"/>
+                  <ellipse id="path4" cx="251.08" cy="73.424" rx="3.426" ry="9.665" fill="#c86a8c" style="paint-order:markers stroke fill"/>
                 </g>
-                <g transform="translate(-4.4538 -22.039)" font-family="'Source Sans 3'">
-                  <text x="182.6032" y="114.88722" font-size="10.583px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan x="182.6032" y="114.88722" font-weight="bold" stroke-width=".26458" text-align="center" text-anchor="middle">ATP</tspan></text>
-                  <text x="182.46231" y="121.32639" font-size="6.7817px" stroke-width=".16954" style="line-height:1.05" xml:space="preserve"><tspan x="182.46231" y="121.32639" font-weight="bold" stroke-width=".16954" text-align="center" text-anchor="middle">Synth</tspan></text>
+                <g id="g9" transform="translate(-4.4538 -22.039)" font-family="'Source Sans 3'">
+                  <text id="text1-3-3" x="182.6032" y="114.88722" font-size="10.583px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-6-6" x="182.6032" y="114.88722" font-weight="bold" stroke-width=".26458" text-align="center" text-anchor="middle">ATP</tspan></text>
+                  <text id="text1-3-31" x="182.46231" y="121.32639" font-size="6.7817px" stroke-width=".16954" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-6-9" x="182.46231" y="121.32639" font-weight="bold" stroke-width=".16954" text-align="center" text-anchor="middle">Synth</tspan></text>
                 </g>
               </a>
-              <a id="scheme-cbb" transform="translate(6.8637 .35047)">
-                <g stroke-linecap="round">
-                  <path d="m129.18 26.72a21.82 21.82 0 0 1-21.82 21.82 21.82 21.82 0 0 1-21.82-21.82 21.82 21.82 0 0 1 21.82-21.82 21.82 21.82 0 0 1 21.82 21.82z" color="#000000" fill-opacity="0" stroke-linejoin="bevel" style="-inkscape-stroke:none"/>
-                  <path d="m107.36 4.1504c-12.456 0-22.57 10.112-22.57 22.568s10.114 22.57 22.57 22.57c12.456 0 22.568-10.114 22.568-22.57s-10.112-22.568-22.568-22.568zm0 1.5c11.645 0 21.068 9.4231 21.068 21.068s-9.4231 21.07-21.068 21.07c-11.645 0-21.07-9.4251-21.07-21.07s9.4251-21.068 21.07-21.068z" color="#000000" fill="#d81159" stroke-linejoin="bevel" style="-inkscape-stroke:none"/>
-                  <g fill="#d81159">
-                    <path d="m124.68 21.844a0.75 0.75 0 0 0-0.5293 0.2207 0.75 0.75 0 0 0 0 1.0605l5.0293 5.0293 5.0312-5.0293a0.75 0.75 0 0 0 0-1.0605 0.75 0.75 0 0 0-1.0606 0l-3.9707 3.9707-3.9688-3.9707a0.75 0.75 0 0 0-0.53125-0.2207z" color="#000000" style="-inkscape-stroke:none"/>
-                    <path d="m102.71-0.13086a0.75 0.75 0 0 0 0 1.0605l3.9707 3.9688-3.9707 3.9707a0.75 0.75 0 0 0 0 1.0605 0.75 0.75 0 0 0 1.0606 0l5.0312-5.0293-5.0312-5.0312a0.75 0.75 0 0 0-1.0606 0z" color="#000000" style="-inkscape-stroke:none"/>
-                    <path d="m85.541 25.283-5.0293 5.0312a0.75 0.75 0 0 0 0 1.0605 0.75 0.75 0 0 0 1.0605 0l3.9707-3.9688 3.9688 3.9688a0.75 0.75 0 0 0 1.0605 0 0.75 0.75 0 0 0 0-1.0605z" color="#000000" style="-inkscape-stroke:none"/>
-                    <path d="m111.49 43.289a0.75 0.75 0 0 0-0.53125 0.21875l-5.0293 5.0312 5.0293 5.0312a0.75 0.75 0 0 0 1.0606 0 0.75 0.75 0 0 0 0-1.0625l-3.9688-3.9688 3.9688-3.9688a0.75 0.75 0 0 0 0-1.0625 0.75 0.75 0 0 0-0.5293-0.21875z" color="#000000" style="-inkscape-stroke:none"/>
+              <a id="scheme-cbb" transform="translate(.66246 8.3033)">
+                <g id="path26" stroke-linecap="round">
+                  <path id="path37" d="m129.18 26.72a21.82 21.82 0 0 1-21.82 21.82 21.82 21.82 0 0 1-21.82-21.82 21.82 21.82 0 0 1 21.82-21.82 21.82 21.82 0 0 1 21.82 21.82z" color="#000000" fill-opacity="0" stroke-linejoin="bevel" style="-inkscape-stroke:none"/>
+                  <path id="path38" d="m107.36 4.1504c-12.456 0-22.57 10.112-22.57 22.568s10.114 22.57 22.57 22.57c12.456 0 22.568-10.114 22.568-22.57s-10.112-22.568-22.568-22.568zm0 1.5c11.645 0 21.068 9.4231 21.068 21.068s-9.4231 21.07-21.068 21.07c-11.645 0-21.07-9.4251-21.07-21.07s9.4251-21.068 21.07-21.068z" color="#000000" fill="#d81159" stroke-linejoin="bevel" style="-inkscape-stroke:none"/>
+                  <g id="g33" fill="#d81159">
+                    <path id="path36" d="m124.68 21.844a0.75 0.75 0 0 0-0.5293 0.2207 0.75 0.75 0 0 0 0 1.0605l5.0293 5.0293 5.0312-5.0293a0.75 0.75 0 0 0 0-1.0605 0.75 0.75 0 0 0-1.0606 0l-3.9707 3.9707-3.9688-3.9707a0.75 0.75 0 0 0-0.53125-0.2207z" color="#000000" style="-inkscape-stroke:none"/>
+                    <path id="path35" d="m102.71-0.13086a0.75 0.75 0 0 0 0 1.0605l3.9707 3.9688-3.9707 3.9707a0.75 0.75 0 0 0 0 1.0605 0.75 0.75 0 0 0 1.0606 0l5.0312-5.0293-5.0312-5.0312a0.75 0.75 0 0 0-1.0606 0z" color="#000000" style="-inkscape-stroke:none"/>
+                    <path id="path34" d="m85.541 25.283-5.0293 5.0312a0.75 0.75 0 0 0 0 1.0605 0.75 0.75 0 0 0 1.0605 0l3.9707-3.9688 3.9688 3.9688a0.75 0.75 0 0 0 1.0605 0 0.75 0.75 0 0 0 0-1.0605z" color="#000000" style="-inkscape-stroke:none"/>
+                    <path id="path33" d="m111.49 43.289a0.75 0.75 0 0 0-0.53125 0.21875l-5.0293 5.0312 5.0293 5.0312a0.75 0.75 0 0 0 1.0606 0 0.75 0.75 0 0 0 0-1.0625l-3.9688-3.9688 3.9688-3.9688a0.75 0.75 0 0 0 0-1.0625 0.75 0.75 0 0 0-0.5293-0.21875z" color="#000000" style="-inkscape-stroke:none"/>
                   </g>
                 </g>
-                <text x="97.809265" y="30.169697" font-family="'Source Sans 3'" font-size="10.583px" stroke-width="1.5" style="line-height:1.05" xml:space="preserve"><tspan x="97.809265" y="30.169697" font-weight="bold" stroke-width="1.5">CBB</tspan></text>
+                <text id="text1-6" x="97.809265" y="30.169697" font-family="'Source Sans 3'" font-size="10.583px" stroke-width="1.5" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-10" x="97.809265" y="30.169697" font-weight="bold" stroke-width="1.5">CBB</tspan></text>
               </a>
-              <a id="scheme-fnr" transform="translate(6.8637 .35047)">
-                <ellipse cx="146.73" cy="67.026" rx="8.4889" ry="5.2234" fill="#f2c14e" style="paint-order:markers stroke fill"/>
-                <text x="146.53954" y="69.122124" font-family="'Source Sans 3'" font-size="6.4286px" stroke-width=".16071" style="line-height:1.05" xml:space="preserve"><tspan x="146.53954" y="69.122124" font-weight="bold" stroke-width=".16071" text-align="center" text-anchor="middle">FNR</tspan></text>
+              <a id="scheme-fnr" transform="translate(1.2198 8.8918)">
+                <ellipse id="path27" cx="146.73" cy="67.026" rx="8.4889" ry="5.2234" fill="#f2c14e" style="paint-order:markers stroke fill"/>
+                <text id="text1-3-0" x="146.53954" y="69.122124" font-family="'Source Sans 3'" font-size="6.4286px" stroke-width=".16071" style="line-height:1.05" xml:space="preserve"><tspan id="tspan1-6-61" x="146.53954" y="69.122124" font-weight="bold" stroke-width=".16071" text-align="center" text-anchor="middle">FNR</tspan></text>
+              </a>
+              <a id="scheme-pq" transform="translate(20.088 -54.22)">
+                <rect id="rect3" x="37.12" y="140.06" width="17.091" height="15.576" rx="5.5295" fill="#bf93c0" stroke="#fff" stroke-linejoin="round" stroke-width="1.7544" style="paint-order:markers stroke fill"/>
+                <text id="text2" x="45.390369" y="149.88583" font-family="'Source Sans 3'" font-size="8.4667px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan id="tspan3" x="45.390369" y="149.88583" font-size="8.4667px" font-weight="bold" stroke-width=".26458" text-align="center" text-anchor="middle">PQ</tspan></text>
+              </a>
+              <a id="scheme-pc" transform="matrix(1.0437 0 0 1 66.984 -34.89)">
+                <rect id="rect4" x="33.235" y="140.26" width="24.861" height="16.281" rx="6.5393" fill="#8684cf" stroke="#fff" stroke-linejoin="round" stroke-width="2.1634" style="paint-order:markers stroke fill"/>
+                <text id="text4" x="45.390369" y="149.88583" font-family="'Source Sans 3'" font-size="8.4667px" stroke-width=".26458" style="line-height:1.05" xml:space="preserve"><tspan id="tspan4" x="45.390369" y="149.88583" font-size="8.4667px" font-weight="bold" stroke-width=".26458" text-align="center" text-anchor="middle">PC</tspan></text>
               </a>
             </svg>
           </div>

@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showguides="false"
      inkscape:zoom="0.98520767"
-     inkscape:cx="402.45322"
-     inkscape:cy="224.31819"
+     inkscape:cx="387.228"
+     inkscape:cy="292.32416"
      inkscape:window-width="1920"
      inkscape:window-height="953"
      inkscape:window-x="0"
@@ -435,5 +435,55 @@
          style="font-weight:bold;text-align:center;text-anchor:middle;stroke-width:0.160714"
          x="146.53954"
          y="69.122124">FNR</tspan></text>
+  </a>
+  <a
+     id="scheme-pq"
+     inkscape:highlight-color="#5fad56"
+     transform="translate(20.088279,-54.219875)"
+     inkscape:label="scheme-pq">
+    <rect
+       style="fill:#bf93c0;fill-opacity:1;stroke:#ffffff;stroke-width:1.75443;stroke-linejoin:round;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect3"
+       width="17.091227"
+       height="15.57585"
+       x="37.119923"
+       y="140.05743"
+       rx="5.5295143" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.05;font-family:'Source Sans 3';-inkscape-font-specification:'Source Sans 3, ';stroke-width:0.264583"
+       x="45.390369"
+       y="149.88583"
+       id="text2"><tspan
+         sodipodi:role="line"
+         style="font-weight:bold;font-size:8.46667px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="45.390369"
+         y="149.88583"
+         id="tspan3">PQ</tspan></text>
+  </a>
+  <a
+     id="scheme-pc"
+     inkscape:highlight-color="#5fad56"
+     transform="matrix(1.0436646,0,0,1,66.984445,-34.889585)"
+     inkscape:label="scheme-pc">
+    <rect
+       style="fill:#8684cf;fill-opacity:1;stroke:#ffffff;stroke-width:2.16335;stroke-linejoin:round;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect4"
+       width="24.860666"
+       height="16.281433"
+       x="33.235203"
+       y="140.2619"
+       rx="6.5392671" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:1.05;font-family:'Source Sans 3';-inkscape-font-specification:'Source Sans 3, ';stroke-width:0.264583"
+       x="45.390369"
+       y="149.88583"
+       id="text4"><tspan
+         sodipodi:role="line"
+         style="font-weight:bold;font-size:8.46667px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="45.390369"
+         y="149.88583"
+         id="tspan4">PC</tspan></text>
   </a>
 </svg>

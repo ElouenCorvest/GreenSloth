@@ -40,42 +40,47 @@ for (const [name, info] of Object.entries(modelInfo)) {
 
     const tagsCategory = Object.keys(tags)
     tagsCategory.forEach(cat => {
-        simpleTags[cat] = (simpleTags[cat] || {});
+        var cleanCat = cat.replaceAll(" ", "-")
+        cleanCat = cleanCat.toLowerCase()
+
+        simpleTags[cleanCat] = (simpleTags[cleanCat] || {});
         // Create Tag Category if not existant already
-        var catExists = document.getElementById(`tagsCategory${cat}`);
-        var catTagsExists = document.getElementById(`tagsCategory${cat}Row`);
+        var catExists = document.getElementById(`tags-category-${cleanCat}`);
+        var catTagsExists = document.getElementById(`tags-category-${cleanCat}-row`);
         if (catExists == null) {
             const catDiv = document.createElement("div");
-            catDiv.id = (`tagsCategory${cat}`)
-            catDiv.classList.add("tagsCategory")
+            catDiv.id = (`tags-category-${cleanCat}`)
+            catDiv.classList.add("tags-category")
             const catHead = document.createElement("h3");
             catHead.innerHTML = cat;
             catDiv.appendChild(catHead);
             const catTags = document.createElement("div");
-            catTags.id = `tagsCategory${cat}Row`
-            catTags.classList.add("tagsRow");
+            catTags.id = `tags-category-${cleanCat}-row`
+            catTags.classList.add("tags-row");
             catDiv.appendChild(catTags);
             
             tagsBox.appendChild(catDiv);
-            var catExists = document.getElementById(`tagsCategory${cat}`);
-            var catTagsExists = document.getElementById(`tagsCategory${cat}Row`);
+            var catExists = document.getElementById(`tags-category-${cleanCat}`);
+            var catTagsExists = document.getElementById(`tags-category-${cleanCat}-row`);
         }
         
         tags[cat].forEach(tag => {
-            simpleTags[cat][tag] = (simpleTags[cat][tag] || []).concat([name])
+            var cleanTag = tag.replaceAll(" ", "-")
+            cleanTag = cleanTag.toLowerCase()
+            simpleTags[cleanCat][cleanTag] = (simpleTags[cleanCat][cleanTag] || []).concat([name])
 
-            var tagExists = document.getElementById(`tagButton${cat}${tag}`);
+            var tagExists = document.getElementById(`tag-button-${cleanCat}-${cleanTag}`);
             if (tagExists == null) {
                 const tagButton = document.createElement("button");
                 tagButton.innerHTML = tag;
-                tagButton.id = (`tagButton${cat}${tag}`);
+                tagButton.id = (`tag-button-${cleanCat}-${cleanTag}`);
                 tagButton.classList.add("clickable", "tag");
                 tagButton.onclick = function() {
                     this.classList.toggle("active")
                     tagSelection()
                 };
                 catTagsExists.appendChild(tagButton);
-                var tagExists = document.getElementById(`tagButton${cat}${tag}`);
+                var tagExists = document.getElementById(`tag-button-${cleanCat}-${cleanTag}`        );
             }
         }); 
     });
@@ -83,20 +88,30 @@ for (const [name, info] of Object.entries(modelInfo)) {
 
 const searchParams = new URLSearchParams(window.location.search);
 
+const paramPointer = {
+    PSII: "psii",
+    PSI: "psi",
+    Cytb6f: "cytochrome-b6f",
+    AtpSynth: "atp-synthase",
+    PQ: "pq-cycle",
+    PC: "pc",
+    CBB: "cbb-cycle"
+} 
+
 if (searchParams.has("appar")) {
     const urlAppar = searchParams.get("appar")
-    document.getElementById(`tagButtonApparatus${urlAppar}`).classList.toggle("active")
+    document.getElementById(`tag-button-part-of-photosynthesis-${paramPointer[urlAppar]}`).classList.toggle("active")
 }
-
-tagSelection()
 
 function tagSelection() {
     var activeTags = document.querySelectorAll('.tag.active')
     var activeModels = []
     activeTags.forEach(activeTag => {
-        var catId = activeTag.parentElement.id.replace("tagsCategory", "")
-        catId = catId.replace("Row", "")
-        var tagId = activeTag.id.replace(`tagButton${catId}`, "")
+        var catId = activeTag.parentElement.id.replace("tags-category-", "")
+        catId = catId.replace("-row", "")
+        console.log(catId)
+        var tagId = activeTag.id.replace(`tag-button-${catId}-`, "")
+        console.log(tagId)
         if (activeTags.length <= 1) {
             activeModels = activeModels.concat(simpleTags[catId][tagId])
         } else {
@@ -125,3 +140,5 @@ function tagSelection() {
     })
 
 }
+
+tagSelection()

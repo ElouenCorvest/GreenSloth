@@ -84,3 +84,9 @@ schemeFNR.setAttribute("href", "../src/html/models_select.php?appar=FNR")
 
 var schemeOEC = document.getElementById("scheme-oec")
 schemeOEC.setAttribute("href", "../src/html/models_select.php?appar=OEC")
+
+var schemeOEC = document.getElementById("scheme-pq")
+schemeOEC.setAttribute("href", "../src/html/models_select.php?appar=PQ")
+
+var schemeOEC = document.getElementById("scheme-pc")
+schemeOEC.setAttribute("href", "../src/html/models_select.php?appar=PC")
