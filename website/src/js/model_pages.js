@@ -295,7 +295,6 @@ function modalChange(informationPointer) {
             defaultVal.value = "";
             defaultVal.innerHTML = "Select Variable"
             simSelectBox.appendChild(defaultVal)
-            varCompare()
 
             commonVars.forEach(ele => {
 
@@ -713,7 +712,7 @@ compareModalBodySimulationText.innerText = "All simulations follow the initial c
 compareModalBodySimulationTextContainer.appendChild(compareModalBodySimulationText)
 
 function plotVariables(plot, data) {
-    Plotly.newPlot( plot, data, {
+    Plotly.react( plot, data, {
         annotations: [
             {
                 x: 5, y: 0.1,
@@ -812,15 +811,13 @@ function varCompare() {
     const rightVenn = document.getElementById("venndiagramm-right")
     const rightColor = rightVenn.style.fill
 
-    console.log(leftColor)
-
     const chosenVar = varSelectBox.value;
 
-    console.log(pfd)
     var plot = document.getElementById('compare-simulation-chart');
 
     if (varSelectBox.value == "") {
         plotVariables(plot, [{"x": 0, "y": 0}])
+        return
     }
 
     if (otherModel !== "") {
@@ -850,9 +847,10 @@ function varCompare() {
             data["line"] = {color: leftColor}
 
             plotVariables(plot, [data])
-
         })
     }
+
+    // Plotly.Plots.resize(plot)
 }
 
 // Compare Modal Simulation Select
@@ -907,7 +905,6 @@ var compareModalBodySchemesLeftContainer = document.createElement("div")
 compareModalBodySchemesLeftContainer.id = "compare-schemes-left-container"
 compareModalBodySchemesLeftContainer.classList.add("compare-schemes", "model-scheme-container")
 compareModalBodySchemesLeftContainer.addEventListener("click", function() {
-    console.log("hello")
     this.childNodes.forEach(element => {
         if (element.nodeName === "IMG") {
             imageModalImg.src = element.src
@@ -928,7 +925,6 @@ var compareModalBodySchemesRightContainer = document.createElement("div")
 compareModalBodySchemesRightContainer.id = "compare-schemes-right-container"
 compareModalBodySchemesRightContainer.classList.add("compare-schemes", "model-scheme-container")
 compareModalBodySchemesRightContainer.addEventListener("click", function() {
-    console.log("hello")
     this.childNodes.forEach(element => {
         if (element.nodeName === "IMG") {
             imageModalImg.src = element.src
