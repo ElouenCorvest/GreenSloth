@@ -242,6 +242,9 @@ function modalChange(informationPointer) {
     const simSelectBox = document.getElementById("compare-simulation-select")
     const simSelectTab = document.getElementById("compare-tab-simulation")
 
+    // Get Compare Select
+    const compareSelect = document.getElementById("compare-tab-select")
+
     const schemeRight = document.getElementById("compare-schemes-right")
 
     if (chosenModel !== "") {
@@ -292,6 +295,7 @@ function modalChange(informationPointer) {
             defaultVal.value = "";
             defaultVal.innerHTML = "Select Variable"
             simSelectBox.appendChild(defaultVal)
+            varCompare()
 
             commonVars.forEach(ele => {
 
@@ -304,7 +308,8 @@ function modalChange(informationPointer) {
                 newP.innerText = mainGlossPointerAbbr[ele]
                 newP.addEventListener("click", function() {
                     simSelectBox.value = mainGlossPointerPythonVar[ele]
-                    changeCompareSection(simSelectTab)
+                    compareSelect.value = "Simulation"
+                    changeCompareTabs(simSelectTab)
                 })
                 commonVariables.appendChild(newP)
             })
@@ -338,7 +343,6 @@ function modalChange(informationPointer) {
             const filteredGlossDerivedCompsPythonVar = filterGlossIDPythonVar(res["derivedCompsData"])
             const filteredGlossCombined = {...filteredGlossCompsPythonVar, ...filteredGlossDerivedCompsPythonVar}
             // Compare Modal Heading Select Option Creator
-            const compareModalBodySimulationSelect = document.getElementById("compare-simulation-select")
             const availableVars = Object.values(filteredGlossCombined)
             availableVars.forEach(element => {
                 var varOption = document.createElement("option")
@@ -565,28 +569,47 @@ compareModalContent.appendChild(compareModalBody)
 
 // Compare Modal Body Tab Selection
 var compareModalBodyTabs = document.createElement("div")
+compareModalBodyTabs.id = "compare-tab-container"
 compareModalBodyTabs.classList.add("TabContainer")
 compareModalBody.appendChild(compareModalBodyTabs)
 
+// Change Active Body
+function changeCompareBody(changeTo) {
+    const allCompareBlocks = document.querySelectorAll(".compare-body")
+    allCompareBlocks.forEach(block => {
+        block.classList.add("hidden")
+        if (block.id.includes(changeTo.toLowerCase())) {
+            block.classList.remove("hidden")
+        }
+    })
+    if (changeTo.toLowerCase() == "simulation") {
+        varCompare()
+    }
+}
+
 // Change Compare Func
-function changeCompareSection(tabClicked) {
+function changeCompareTabs(tabClicked) {
     var siblings = tabClicked.parentNode.childNodes
     siblings.forEach(element => {
         element.classList.remove("active")
     })
     tabClicked.classList.add("active")
 
-    const allCompareBlocks = document.querySelectorAll(".compare-body")
-    allCompareBlocks.forEach(block => {
-        block.classList.add("hidden")
-        if (block.id.includes(tabClicked.innerHTML.toLowerCase())) {
-            block.classList.remove("hidden")
-        }
-    })
-    if (tabClicked.innerHTML.toLowerCase() == "simulation") {
-        varCompare()
-    }
+    changeCompareBody(tabClicked.innerHTML)
 }
+
+// Compare Modal Select Box
+const compareModalTabSelect = document.createElement("select")
+compareModalTabSelect.id = "compare-tab-select"
+compareModalTabSelect.addEventListener("change", function() {
+    changeCompareBody(this.value)
+})
+compareModalBody.appendChild(compareModalTabSelect)
+
+var compareModalTabSelectDefaultOption = document.createElement("option")
+compareModalTabSelectDefaultOption.value = "Which Compare Category?.."
+compareModalTabSelectDefaultOption.innerText = "Which Compare Category?.."
+compareModalTabSelect.appendChild(compareModalTabSelectDefaultOption)
 
 // Compare Modal Body Tabs
 const compareModalTabChoices = ["Variables", "Simulation", "Information", "Schemes"]
@@ -594,16 +617,24 @@ compareModalTabChoices.forEach(choice => {
     var compareModalTab = document.createElement("button");
     compareModalTab.id = `compare-tab-${choice.toLowerCase()}`
     compareModalTab.innerHTML = choice;
-    compareModalTab.addEventListener('click', function()     {
-        changeCompareSection(this)
+    compareModalTab.addEventListener('click', function() {
+        changeCompareTabs(this)
     });
     compareModalBodyTabs.appendChild(compareModalTab)
+
+    var compareModalTabSelectOption = document.createElement("option")
+    compareModalTabSelectOption.value = choice
+    compareModalTabSelectOption.innerText = choice
+    compareModalTabSelect.appendChild(compareModalTabSelectOption)
 
     var compareModalTabBody = document.createElement("div")
     compareModalTabBody.classList.add("compare-body", "hidden")
     compareModalTabBody.id = `compare-body-${choice.toLowerCase()}`
     compareModalBody.appendChild(compareModalTabBody)
 })
+
+// Compare Modal Select Options
+
 
 //////////////// VARIABLES ////////////////
 // Get Variable Comparision
@@ -683,7 +714,6 @@ compareModalBodySimulationTextContainer.appendChild(compareModalBodySimulationTe
 
 function plotVariables(plot, data) {
     Plotly.newPlot( plot, data, {
-        autosize: true,
         annotations: [
             {
                 x: 5, y: 0.1,
@@ -698,7 +728,8 @@ function plotVariables(plot, data) {
         title: "",
         margin: {
             t: 15,
-            b: 20
+            b: 40,
+            r: 0,
         },
         yaxis: {
             title: {
@@ -716,6 +747,13 @@ function plotVariables(plot, data) {
             showgrid: false,
             ticks: "outside",
             ticklen: 5
+        },
+        legend : {
+            orientation: "h",
+            x: 0.5,
+            xanchor: "center",
+            y: 1.1,
+            yanchor: "bottom"
         },
         shapes: [
             {
@@ -1425,4 +1463,5 @@ getMdFile().then(response => {
 
 // At the very End
 import('./topnav.js');
+
 import('./cite.js');

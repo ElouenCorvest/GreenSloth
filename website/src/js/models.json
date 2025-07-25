@@ -2,9 +2,7 @@
     "Matuszynska2016": {
         "DOI": "https://doi.org/10.1016/j.bbabio.2016.09.003",
         "tags": {
-            "Sample": ["Matuszynska2016", "Ipsum"],
-            "Test": ["Lorem"],
-            "Apparatus": ["PSII"]
+            "Part of Photosynthesis": ["PSII", "ATP Synthase", "Cytochrome b6f", "PQ Cycle"]
         }
     },
     "Li2021": {
@@ -16,7 +14,7 @@
     "Saadat2021": {
         "DOI": "https://doi.org/10.3389/fpls.2021.750580",
         "tags": {
-            "Sample": ["Saadat2021", "Lorem", "Ipsum"]
+            "Part of Photosynthesis": ["PSII", "ATP Synthase", "Cytochrome b6f", "PQ Cycle"]
         }
     }
 }

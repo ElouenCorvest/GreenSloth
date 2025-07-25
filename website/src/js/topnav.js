@@ -2,13 +2,6 @@
 const siteUrl = window.location.origin
 import iconSrc from "../img/icon.svg"
 
-document.addEventListener('DOMContentLoaded', () => {
-    var topnavBar = document.getElementById("topnav")
-    if (!(topnavBar)) {
-        console.warn('top-nav-container not found!');
-    }
-});
-
 // Top Nav Bar
 var topnavBar = document.getElementById("topnav")
 
@@ -53,8 +46,7 @@ topnavBarCenter.appendChild(topnavBarCenterModelSelect)
 
 // Center Cite
 var topnavBarCenterCite = document.createElement("button")
-topnavBarCenterCite.classList.add("tablinks", "topnav-link")
-topnavBarCenterCite.id = "openCiteModal"
+topnavBarCenterCite.classList.add("tablinks", "topnav-link", "open-cite-modal")
 topnavBarCenterCite.innerHTML = "Cite"
 topnavBarCenter.appendChild(topnavBarCenterCite)
 
@@ -81,8 +73,8 @@ topnavBarCenter.appendChild(topnavBarCenterHowToUse)
 // Center Contribution
 var topnavBarCenterContribution = document.createElement("a")
 topnavBarCenterContribution.classList.add("tablinks", "topnav-link")
-topnavBarCenterContribution.href = siteUrl + "/src/html/contribution.php"
-topnavBarCenterContribution.innerHTML = "Contribution"
+topnavBarCenterContribution.href = siteUrl + "/src/html/AboutUs.php"
+topnavBarCenterContribution.innerHTML = "About Us"
 topnavBarCenter.appendChild(topnavBarCenterContribution)
 
 // Center Contribution

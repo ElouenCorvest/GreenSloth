@@ -5,8 +5,11 @@
 # Saadat2021
 
 
-[Saadat2021](ENTER HERE)
+The [Saadat2021](https://doi.org/10.3389/fpls.2021.750580) model builds upon previous models, especially the Matuszynska2019 model, by adding and changing various reactions and aspects of photosynthesis. Overall the model can be split up into three modules, the ascorbate-glutathione cycle, Calvin-Benson-Bassham (CBB) cycle and thioredoxin reductase regulated reactions, and the photosynthetic electron transport chain (PETC).
+                     
+The model is primarily used to investigate the electron flows around PSI and their relevance on photosynthetic effeciency. Several different analyses have been done to help validate the model in steady-state and dynamic environment conditions. The most interesting, is the direct comparision of a knockout mutant of the protein PGR5. This protein is known to catalyse the reduction of plastoquinone by ferrodoxin. The results of this comparision coincide with experimental values, which are however not shown in the publication but referenced. Additionally, it is said, that the results not to be taken as accurate quantitiaive results, but only as a proof of concept of the model.
 
+Overall, the model has one advantage in comparision to other photosynthesis models, as it also highlights the importance of other electron flows, not only the PETC. Additionally, not only are the authors open with the flaws of the model, but are also insistent on making their code and analyses availble on their GitHub. Therefore, this model is a good stepping stone for more complex models that wish to include parts of photosynthesis that are often simplified in other models.
                      
 ## Installation
 

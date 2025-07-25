@@ -1,11 +1,17 @@
 // Cite Modal
 var citeModal = document.getElementById("citeModal")
 
-// Open Cite Modal
-var openCiteModal = document.getElementById("openCiteModal")
-openCiteModal.onclick = function() {
-    citeModal.classList.toggle("hidden")
-    this.classList.toggle("active")
+document.addEventListener("DOMContetLoaded", () => {
+    console.log("hello")
+})
+var openCiteModals = document.getElementsByClassName("open-cite-modal")
+console.log(openCiteModals)
+
+for (let element of openCiteModals) {
+    element.addEventListener("click", function() {
+        citeModal.classList.toggle("hidden")
+        this.classList.toggle("active")
+    })
 }
 
 var citeModalContent = document.createElement("div")
@@ -85,10 +91,6 @@ citeModalBodyCopyButton.onclick = function() {
 
     }, 1000)
 }
-
-
-
-
 
 // Add elements to Copy Block
 citeModalBodyCopy.appendChild(citeModalBodyCopyButton)
