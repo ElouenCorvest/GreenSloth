@@ -89,6 +89,11 @@ var topnavBarRight = document.createElement("div")
 topnavBarRight.classList.add("topnav-right")
 topnavBarTop.appendChild(topnavBarRight)
 
+// Center Text when small media query
+var topnavBarRightText = document.createElement("h3")
+topnavBarRightText.innerHTML = "Gordon Research Conference"
+topnavBarRight.appendChild(topnavBarRightText)
+
 // Small Media Query Nav Links
 var smNavLinkBox = document.createElement("div")
 smNavLinkBox.id = "topnav-link-box"
