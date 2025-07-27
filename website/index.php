@@ -54,7 +54,7 @@
           </div>
           <div class="swiper-content swiper-content-flex">
             <h1>Motivation</h1>
-            <div class="long-text" id="motivation-text">
+            <div class="long-text swiper-no-swiping" id="motivation-text">
               <p>Photosynthesis is arguably the most crucial process of life on Earth. It feeds us, clothes us, heals us, and calms us. Therefore, it has long been a significant target for research, and while we now know a great deal about how, why, and who photosynthesis is, there are still aspects of it that we cannot quite grasp. However, with the rise of computational prowess, we have developed new ways to examine and understand photosynthesis. Through digital models of photosynthesis!</p>
               <p>While this field has existed for decades, it has recently gained significant importance. To such an extent that there are many different models of photosynthesis, each attempting to depict various aspects, some even the entirety, of the process. This boom enables a researcher interested in this field to have the power of choice of models. However, this power also comes with a curse.</p>
               <p>The different models all have their strengths and aim to cater to people who are not proficient in creating a model on their own. However, since the publication of models is not as heavily regulated as lab work and most model builders are experts in their field, a disconnect exists between the model and the target user. It can be challenging to find a model that fits your needs. This is where <b>GreenSloth</b> comes in.</p>

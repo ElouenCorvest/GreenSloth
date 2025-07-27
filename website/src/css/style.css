@@ -53,6 +53,7 @@ body {
   background-color: rgba(0, 170, 175, 0.01);
   height: 100vh;
   overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom, 20px);
 }
 
 /*
@@ -556,7 +557,6 @@ input {
 #wrapper {
   width: 100%;
   padding-top: 1em;
-  padding-bottom: 1em;
   /* ChangingScrollbar Properties */
   overflow-y: scroll; /* Show vertical scrollbar */
   scroll-snap-type: y mandatory;
@@ -569,6 +569,7 @@ input {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
+  padding-bottom: 20px; /* fallback to 20px */
 }
 
 @media screen and (max-width: 960px) {
