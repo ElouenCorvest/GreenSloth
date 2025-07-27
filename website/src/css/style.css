@@ -634,6 +634,7 @@ input {
   align-items: inherit;
   justify-content: flex-end;
   align-items: center;
+  padding-right: 1em;
 }
 
 .topnav-burger {
@@ -674,6 +675,10 @@ input {
     width: 100%;
     background-color: var(--mainAccentColor);
   }
+  .topnav-right > h3 {
+    display: none;
+  } 
+
   .topnav-burger {
     display: inline;
   }
