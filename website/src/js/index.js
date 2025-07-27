@@ -37,7 +37,11 @@ var swiper = new Swiper('.swiper-container', {
         watchState: true,
     },
     nested: true,
-    touchStartPreventDefault: false
+    touchStartPreventDefault: false,
+    touchMoveStopPropagation: false,
+    passiveListeners: false,
+    noSwiping: true,
+    noSwipingClass: 'swiper-no-swiping',
   });
 
 // How To Use
