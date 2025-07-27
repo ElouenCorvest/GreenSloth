@@ -812,6 +812,7 @@ input {
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
   text-align: justify;
+  overscroll-behavior: contain  ;
 }
 
 #motivation-text {
@@ -875,18 +876,36 @@ input {
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
-  & > img {
+  & > :last-child {
     margin-left: auto;
-    max-width: 100%;
+
+    & > * {
+      max-width: 100%;
+    }
   }
 }
 
 #about-us-text {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: min-content min-content min-content;
+  column-gap: 1em;
+  row-gap: 0.5em;
+
+  & > img {
+    max-width: 100%;
+    grid-column: 2;
+    grid-row: 1 / -1;
+  }
+
   & > p {
     font-size: 1.2em;
-    grid-column: span 2 ;
     text-align: justify;
+    margin: 0;
   }
+
+  
 }
 
 @media screen and (max-width: 960px) {
@@ -894,7 +913,7 @@ input {
   #about-us-header {
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 1fr;
-    width: 100%;
+    max-width: 100%;
     justify-items: center;
 
     & > * {
@@ -903,9 +922,18 @@ input {
   }
 
   #about-us-text {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+
+    & > img {
+      grid-column: 1;
+      grid-row: -1;
+      max-width: 10em;
+      justify-self: center;
+    }
+
     & > p {
-      font-size: 1.2em;
-      grid-column: span 2 ;
+      font-size: 1em;
       text-align: justify;
     }
   }
