@@ -1,0 +1,21 @@
+Short Description,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
+,,$v_1$,,v_RuBisCO_c,19
+,,$v_2$,,v_PGK1ase,27
+,,$v_3$,,v_BPGAdehynase,28
+,,$v_4$,,v_TPIase,29
+,,$v_5$,,v_Aldolase_FBP,30
+,,$v_8$,,v_Aldolase_SBP,32
+,,$v_6$,,v_FBPase,20
+,,$v_7$,,v_TKase_E4P,31
+,,$v_{10}$,,v_TKase_R5P,33
+,,$v_9$,,v_SBPase,21
+,,$v_{11}$,,v_Rpiase,34
+,,$v_{12}$,,v_RPEase,35
+,,$v_{13}$,,v_PRKase,22
+,,$v_{14}$,,v_PGIase,36
+,,$v_{15}$,,v_PGMase,37
+,,$v_{TPT}^{PGA}$,,v_pga_ex,23
+,,$v_{TPT}^{GAP}$,,v_gap_ex,25
+,,$v_{TPT}^{DHAP}$,,v_dhap_ex,24
+,,$v_{16}$,,v_starch,26
+,,,,v_ATPsynth,3
