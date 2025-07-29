@@ -1,5 +1,3 @@
-<?php require 'require_login.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,8 +27,6 @@
 </head>
 
 <body>
-  <?php require 'login_modal.php'; ?>
-
   <div id="citeModal" class="modal hidden"></div>
   <div id="layoutWrapper" class="">
     <nav id="topnav"></nav>

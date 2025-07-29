@@ -23,6 +23,7 @@
     "plotly.js": "^3.0.3",
     "plotly.js-dist": "^3.0.3",
     "swiper": "^11.2.7",
-    "vite-plugin-php": "^2.0.3"
+    "vite-plugin-php": "^2.0.3",
+    "vite-plugin-radar": "^0.10.1"
   }
 }
