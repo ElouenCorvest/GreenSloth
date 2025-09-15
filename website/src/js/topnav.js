@@ -27,7 +27,7 @@ topnavBarTop.appendChild(topnavBarCenter)
 // Center Text when small media query
 var topnavBarCenterMQSmallText = document.createElement("h2")
 topnavBarCenterMQSmallText.classList.add("topnav-text")
-topnavBarCenterMQSmallText.innerHTML = "GreenSloth"
+topnavBarCenterMQSmallText.innerHTML = "Under Construction"
 topnavBarCenter.appendChild(topnavBarCenterMQSmallText)
 
 // Center Home
