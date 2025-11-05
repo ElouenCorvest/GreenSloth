@@ -483,7 +483,15 @@ def calc_pam_vals(
 ) -> tuple[pd.Series, pd.Series, pd.Series, pd.DataFrame]:
     """Calculate PAM values from fluorescence data.
 
-    Use the fluorescence data from a PAM protocol to calculate Fm, NPQ, Fmin, and the quantum yields Y(NO), Y(NPQ) and Y(II). To find the Fm values, the peaks in the fluorescence data are found using scipy.signal.find_peaks. The distance between the peaks should be the same length as a period used in the PAM protocol, however may need to be adjusted based on the fluorescence data. Bets to plot the Flourescence data and the calculated Fm to check if the peaks are found correctly.
+    Use the fluorescence data from a PAM protocol to calculate Fm, NPQ, Fmin, and the quantum yields Y(NO), Y(NPQ) and Y(II). To find the Fm values, the peaks in the fluorescence data are found using scipy.signal.find_peaks. The distance between the peaks should be the same length as a period used in the PAM protocol, however may need to be adjusted based on the fluorescence data. Best to plot the Fluorescence data and the calculated Fm to check if the peaks are found correctly.
+
+    Calculations and Assumptions:
+        Fm(t): Maximum fluorescence at time t
+        Fmin(t): Minimum fluorescence left of peak at time t
+        NPQ(t) = (Fm(0) - Fm(t)) / Fm(t): Non-photochemical quenching at time t (Fm(0) is the first Fm value and is assumed to be the highest Fm value)
+        Y(NO)(t) = Fmin(t) / Fm(0) : Quantum Yield of Non-Regulated Energy Loss at time t
+        Y(NPQ)(t) = Fmin(t) / Fm(t) - Fmin(t) / Fm(0) : Quantum Yield of Regulated Heat Dissipation at time t
+        Y(II)(t) = (Fm(t) - Fmin(t)) / Fm(t) : Quantum Yield of Photochemical Energy Conversion at time t
 
     Args:
         fluo_result (pd.Series): Fluorescence data as a pd.Series from mxlpy simulation.
@@ -1028,6 +1036,97 @@ def create_mca_fig(
     plt.tight_layout()
 
     return fig, (ax1, ax2)
+
+
+# def create_pamfit(
+#     pfd: str | None,
+#     model: Model,
+#     parameter_to_fit: list[str],
+# ):
+#     fluo_data = pd.read_csv("Data/fluo_col0_1.csv", index_col=0)
+
+#     # Convert index to time in seconds
+#     fluo_data.index = pd.to_timedelta(fluo_data.index)
+#     fluo_data.index = fluo_data.index - fluo_data.index[0]
+#     fluo_data.index = fluo_data.index.total_seconds()
+
+#     # Prepare a list to hold new rows
+#     new_dict = {}
+
+#     for index, row in fluo_data.iterrows():
+#         for key, val in zip(["Time", "Fluo", "PAR"], [index, row["F1"], row["PAR"]]):
+#             if key not in new_dict:
+#                 new_dict[key] = [val]
+#             else:
+#                 new_dict[key].append(val)
+
+#             # Add Fm vals to F
+#         new_dict["Time"].append(index + 0.8)
+#         new_dict["Fluo"].append(row["Fm'1"])
+#         new_dict["PAR"].append(5000)
+
+#     # Create a new DataFrame from the list of rows
+#     cleaned_df = pd.DataFrame.from_dict(new_dict)
+#     # Set 'Time' as index and sort to ensure correct order
+#     cleaned_df = cleaned_df.set_index("Time").sort_index()
+#     cleaned_df["PAR"] = cleaned_df["PAR"].replace(0, 40)
+#     cleaned_df["rel. Fluo"] = cleaned_df["Fluo"] / max(cleaned_df["Fluo"])
+#     print(cleaned_df)
+#     # cleaned_df.index = cleaned_df.index + 60 * 30  # adjust time to account for dark adaptation period
+#     # print(cleaned_df)
+
+#     prtc_list = []
+#     for index, row in cleaned_df.iterrows():
+#         if cleaned_df.index.get_loc(index) == 0:
+#             prtc_list.append((index, {pfd: 40}))
+#         else:
+#             prtc_list.append(
+#                 (
+#                     index - cleaned_df.index[cleaned_df.index.get_loc(index) - 1],
+#                     {pfd: row["PAR"]},
+#                 )
+#             )
+
+#     prtc = make_protocol(
+#         prtc_list[1:]
+#     )  # skip first entry as it is only for dark adaptation
+
+#     # print(prtc)
+
+#     # s = Simulator(model=model)
+
+#     # y0 = (
+#     #     s.simulate(60 * 30)
+#     #     .get_result()
+#     #     .get_variables(include_derived_variables=False, include_readouts=False)
+#     #     .iloc[-1]
+#     #     .to_dict()
+#     # )
+
+#     # res = (
+#     #     s.simulate_protocol(prtc, time_points_per_step=100).get_result().get_variables()
+#     # )
+
+#     # print(res)
+
+#     # parameter_dict = {
+#     #     param: model._parameters[param].value for param in parameter_to_fit
+#     # }
+
+#     # print(fit.protocol_time_course(
+#     #     model=model,
+#     #     p0=parameter_dict,
+#     #     data=cleaned_df[["Fluo"]],
+#     #     protocol=prtc,
+#     #     y0=y0,
+#     # ))
+
+#     fig, ax = plt.subplots()
+
+#     # ax.plot(res.index, res["Fluo"])
+#     ax.plot(cleaned_df["rel. Fluo"])
+
+#     return
 
 
 def save_matplotlib_figure(fig: plt.Figure, file_prepend: str, figcat: str) -> None:
