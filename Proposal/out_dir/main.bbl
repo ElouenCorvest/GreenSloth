@@ -1,0 +1,2177 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{banerjeeMathematicalModelingModels2021}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c3485f80754de2c6e3d3ed041cfc4524}{%
+           family={Banerjee},
+           familyi={B\bibinitperiod},
+           given={Sandip},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton}%
+      }
+      \list{publisher}{1}{%
+        {Chapman and Hall/CRC}%
+      }
+      \strng{namehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{fullhash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{bibnamehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{authorbibnamehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{authornamehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{authorfullhash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{2}
+      \field{isbn}{978-1-351-02294-1}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{shorttitle}{Mathematical {{Modeling}}}
+      \field{title}{Mathematical {{Modeling}}: {{Models}}, {{Analysis}} and {{Applications}}}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1201/9781351022941
+      \endverb
+    \endentry
+    \entry{demaziereModellingNuclearReactor2020}{book}{}
+      \name{author}{1}{}{%
+        {{hash=dece9392251f156f2e026670e9acc498}{%
+           family={Demazière},
+           familyi={D\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Academic press}%
+      }
+      \strng{namehash}{dece9392251f156f2e026670e9acc498}
+      \strng{fullhash}{dece9392251f156f2e026670e9acc498}
+      \strng{bibnamehash}{dece9392251f156f2e026670e9acc498}
+      \strng{authorbibnamehash}{dece9392251f156f2e026670e9acc498}
+      \strng{authornamehash}{dece9392251f156f2e026670e9acc498}
+      \strng{authorfullhash}{dece9392251f156f2e026670e9acc498}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Modelling of Nuclear Reactor Multiphysics: From Local Balance Equations to Macroscopic Models in Neutronics and Thermal-Hydraulics is an accessible guide to the advanced methods used to model nuclear reactor systems. The book addresses the frontier discipline of neutronic/thermal-hydraulic modelling of nuclear reactor cores, presenting the main techniques in a generic manner and for practical reactor calculations. The modelling of nuclear reactor systems is one of the most challenging tasks in complex system modelling, due to the many different scales and intertwined physical phenomena involved. The nuclear industry as well as the research institutes and universities heavily rely on the use of complex numerical codes. All the commercial codes are based on using different numerical tools for resolving the various physical fields, and to some extent the different scales, whereas the latest research platforms attempt to adopt a more integrated approach in resolving multiple scales and fields of physics. The book presents the main algorithms used in such codes for neutronic and thermal-hydraulic modelling, providing the details of the underlying methods, together with their assumptions and limitations. Because of the rapidly expanding use of coupled calculations for performing safety analyses, the analysists should be equally knowledgeable in all fields (i.e. neutron transport, fluid dynamics, heat transfer)}
+      \field{isbn}{978-0-12-815070-2}
+      \field{langid}{english}
+      \field{shorttitle}{Modelling of Nuclear Reactor Multi-Physics}
+      \field{title}{Modelling of Nuclear Reactor Multi-Physics: From Local Balance Equations to Macroscopic Models in Neutronics and Thermal-Hydraulics}
+      \field{year}{2020}
+    \endentry
+    \entry{wangerskyLotkaVolterraPopulationModels1978}{article}{}
+      \name{author}{1}{}{%
+        {{hash=19f80ebc8fe9e3b2962105d806135be6}{%
+           family={Wangersky},
+           familyi={W\bibinitperiod},
+           given={Peter\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Annual Reviews}%
+      }
+      \strng{namehash}{19f80ebc8fe9e3b2962105d806135be6}
+      \strng{fullhash}{19f80ebc8fe9e3b2962105d806135be6}
+      \strng{bibnamehash}{19f80ebc8fe9e3b2962105d806135be6}
+      \strng{authorbibnamehash}{19f80ebc8fe9e3b2962105d806135be6}
+      \strng{authornamehash}{19f80ebc8fe9e3b2962105d806135be6}
+      \strng{authorfullhash}{19f80ebc8fe9e3b2962105d806135be6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{jstor}
+      \field{issn}{0066-4162}
+      \field{journaltitle}{Annual Review of Ecology and Systematics}
+      \field{title}{Lotka-{{Volterra Population Models}}}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{9}
+      \field{year}{1978}
+      \field{urldateera}{ce}
+      \field{pages}{189\bibrangedash 218}
+      \range{pages}{30}
+      \verb{eprint}
+      \verb 2096748
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/H37SSKX9/Wangersky - 1978 - Lotka-Volterra Population Models.pdf
+      \endverb
+    \endentry
+    \entry{cornish-bowdenOneHundredYears2015}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b3d48738c367123a1aa68c5646954099}{%
+           family={{Cornish-Bowden}},
+           familyi={C\bibinitperiod},
+           given={Athel},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3d48738c367123a1aa68c5646954099}
+      \strng{fullhash}{b3d48738c367123a1aa68c5646954099}
+      \strng{bibnamehash}{b3d48738c367123a1aa68c5646954099}
+      \strng{authorbibnamehash}{b3d48738c367123a1aa68c5646954099}
+      \strng{authornamehash}{b3d48738c367123a1aa68c5646954099}
+      \strng{authorfullhash}{b3d48738c367123a1aa68c5646954099}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{22130209}
+      \field{journaltitle}{Perspectives in Science}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{title}{One Hundred Years of {{Michaelis}}--{{Menten}} Kinetics}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{4}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{3\bibrangedash 9}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.pisc.2014.12.002
+      \endverb
+    \endentry
+    \entry{matuszynskaMathematicalModelNonphotochemical2016}{article}{}
+      \name{author}{4}{}{%
+        {{hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1dcaa257ee57cbe6b26592bd32f601e7}{%
+           family={Heidari},
+           familyi={H\bibinitperiod},
+           given={Somayyeh},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ba942574d568ac9ea28d19400142975c}{%
+           family={Jahns},
+           familyi={J\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c5225f689e33ff0b6a10ca12994762a9}{%
+           family={Ebenhöh},
+           familyi={E\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{fullhash}{f001a61b0fa18028008f57f7f0c9fdad}
+      \strng{bibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authorbibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authornamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authorfullhash}{f001a61b0fa18028008f57f7f0c9fdad}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00052728}
+      \field{journaltitle}{Biochimica et Biophysica Acta (BBA) - Bioenergetics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{A Mathematical Model of Non-Photochemical Quenching to Study Short-Term Light Memory in Plants}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{1857}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{1860\bibrangedash 1869}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.bbabio.2016.09.003
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/3HCBRNVR/Matuszyńska et al. - 2016 - A mathematical model of non-photochemical quenching to study short-term light memory in plants.pdf
+      \endverb
+    \endentry
+    \entry{liImpactIonFluxes2021}{article}{}
+      \name{author}{6}{}{%
+        {{hash=122748fbd1766f07a1685dde181113ca}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f6e5ce96a013bece3f8a940164278b65}{%
+           family={Svoboda},
+           familyi={S\bibinitperiod},
+           given={Vaclav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=4446234402b2a4f4744bd23152899fd3}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Geoffry},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3f834d4c6e8474aa8e6de775bf19156a}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bc3448d19cc5dff851b030be9927290f}{%
+           family={Kunz},
+           familyi={K\bibinitperiod},
+           given={Hans-Henning},
+           giveni={H\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=764c7d6e3f465cc877cc66ad8417805b}{%
+           family={Kirchhoff},
+           familyi={K\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{fullhash}{d4ea44a8177d0c556783f9868fcfc41e}
+      \strng{bibnamehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{authorbibnamehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{authornamehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{authorfullhash}{d4ea44a8177d0c556783f9868fcfc41e}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2055-0278}
+      \field{journaltitle}{Nature Plants}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{7}
+      \field{title}{Impact of Ion Fluxes across Thylakoid Membranes on Photosynthetic Electron Transport and Photoprotection}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{7}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{979\bibrangedash 988}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1038/s41477-021-00947-5
+      \endverb
+    \endentry
+    \entry{voncaemmererSteadystateModelsPhotosynthesis2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=dc57f9ad9eb869ccab6c25998f0b611f}{%
+           family={Von\bibnamedelima Caemmerer},
+           familyi={V\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Susanne},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{fullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{bibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authorbibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authornamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authorfullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract In the challenge to increase photosynthetic rate per leaf area mathematical models of photosynthesis can be used to help interpret gas exchange measurements made under different environmental conditions and predict underlying photosynthetic biochemistry. To do this successfully it is important to improve the modelling of temperature dependencies of CO 2 assimilation and gain better understanding of internal CO 2 diffusion limitations. Despite these shortcomings steady-state models of photosynthesis provide simple easy to use tools for thought experiments to explore photosynthetic pathway changes such as redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared. , In the challenge to increase photosynthetic rate per leaf area steady state models of photosynthesis provide not only tools for gas exchange analysis but also for thought experiments that can explore photosynthetic pathway changes. These include redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{title}{Steady-state Models of Photosynthesis}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{1617\bibrangedash 1630}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/pce.12098
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/S3CNFDHV/Von Caemmerer - 2013 - Steady‐state models of photosynthesis.pdf
+      \endverb
+    \endentry
+    \entry{zhuEphotosynthesisComprehensiveDynamic2013}{article}{}
+      \name{author}{4}{}{%
+        {{hash=da4e410a3f997e20954d804e2e13863d}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xin-Guang},
+           giveni={X\bibinithyphendelim G\bibinitperiod}}}%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d0eafac73c07bf45598624558806c107}{%
+           family={Ort},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=4469354fd9d89f3003587b2ee63cc123}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Stephen\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{fullhash}{a56d443bc4cf693f701a6fa3a4f5760e}
+      \strng{bibnamehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{authorbibnamehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{authornamehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{authorfullhash}{a56d443bc4cf693f701a6fa3a4f5760e}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{ABSTRACTPhotosynthesis is arguably the most researched of all plant processes. A dynamic model of leaf photosynthesis that includes each discrete process from light capture to carbohydrate synthesis,e-photosynthesis, is described. It was developed by linking and extending our previous models of photosystem II (PSII) energy transfer and photosynthetic C3 carbon metabolism to include electron transfer processes around photosystem I (PSI), ion transfer between the lumen and stroma, ATP synthesis and NADP reduction to provide a complete representation. Different regulatory processes linking the light and dark reactions are also included: Rubisco activation via Rubisco activase, pH and xanthophyll cycle-dependent non-photochemical quenching mechanisms, as well as the regulation of enzyme activities via the ferredoxin-theoredoxin system. Although many further feedback and feedforward controls undoubtedly exist, it is shown thate-photosynthesis effectively mimics the typical kinetics of leaf CO2uptake, O2evolution, chlorophyll fluorescence emission, lumen and stromal pH, and membrane potential following perturbations in light, [CO2] and [O2] observed in intact C3 leaves. The model provides a framework for guiding engineering of improved photosynthetic efficiency, for evaluating multiple non-invasive measures used in emerging phenomics facilities, and for quantitative assessment of strengths and weaknesses within the understanding of photosynthesis as an integrated process.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shorttitle}{{\emph{E}}-photosynthesis}
+      \field{title}{{\emph{E}}-photosynthesis: A Comprehensive Dynamic Mechanistic Model of {{C3}} Photosynthesis: From Light Capture to Sucrose Synthesis}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{1711\bibrangedash 1727}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/pce.12025
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/QJYH8I4R/Zhu et al. - 2013 - e‐photosynthesis a comprehensive dynamic mechanistic model of C3 photosynthesis from light.pdf
+      \endverb
+    \endentry
+    \entry{vanaalstMxlPyPythonPackage2025}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=4f76235a3348017a927865d10d198939}{%
+           family={Van\bibnamedelima Aalst},
+           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Marvin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d12364d4106e9d1d2a684be2aff9a054}{%
+           family={Nies},
+           familyi={N\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=659a2c45e097106c53a0febd0a5f0a79}{%
+           family={Pfennig},
+           familyi={P\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory}%
+      }
+      \strng{namehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{fullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{bibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorbibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authornamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorfullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{AbstractSummaryRecent advances in artificial intelligence have accelerated the adoption of ML in biology, enabling powerful predictive models across diverse applications. However, in scientific research, the need for interpretability and mechanistic insight remains crucial. To address this, we introduce MxlPy, a Python package that combines mechanistic modelling with ML to deliver explainable, data-informed solutions. MxlPy facilitates mechanistic learning, an emerging approach that integrates the transparency of mathematical models with the flexibility of data-driven methods. By streamlining tasks such as data integration, model formulation, output analysis, and surrogate modelling, MxlPy enhances the modelling experience without sacrificing interpretability. Designed for both computational biologists and interdisciplinary researchers, it supports the development of accurate, efficient, and explainable models, making it a valuable tool for advancing bioinformatics, systems biology, and biomedical research.AvailabilityMxlPy source code is freely available athttps://github.com/Computational-Biology-Aachen/MxlPy. The full documentation with features and examples can be found herehttps://computational-biology-aachen.github.io/MxlPy.}
+      \field{eprinttype}{Cold Spring Harbor Laboratory}
+      \field{month}{5}
+      \field{title}{{{MxlPy}} - {{Python Package}} for {{Mechanistic Learning}} in {{Life Science}}}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1101/2025.05.06.652335
+      \endverb
+    \endentry
+    \entry{hoopsCOPASICOmplexPAthway2006}{article}{}
+      \name{author}{10}{}{%
+        {{hash=7c17ff2ceda28a19163a289c20805ca2}{%
+           family={Hoops},
+           familyi={H\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d677a6f06b3e04ba7b1954e84ee7b874}{%
+           family={Sahle},
+           familyi={S\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a8635e76665175be87da49d0b93a8489}{%
+           family={Gauges},
+           familyi={G\bibinitperiod},
+           given={Ralph},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8a8d440af2bf1505aa5e096d34e7f4a0}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Christine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=47e09a5928e83f8427f7ae9e608fa7c8}{%
+           family={Pahle},
+           familyi={P\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=091e45763dc90dd978a291c3af7ae91e}{%
+           family={Simus},
+           familyi={S\bibinitperiod},
+           given={Natalia},
+           giveni={N\bibinitperiod}}}%
+        {{hash=79fc4ec0c2c35cfb3c280274657418c7}{%
+           family={Singhal},
+           familyi={S\bibinitperiod},
+           given={Mudita},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d3945b8e6764532b23deebba43b764b5}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=075686383394e8aa7ef64f9716c609c6}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0c20583cd23296c713186315536d63d5}{%
+           family={Kummer},
+           familyi={K\bibinitperiod},
+           given={Ursula},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{fullhash}{fe6995e7c4feb2ed5e447d585221f4ad}
+      \strng{bibnamehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{authorbibnamehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{authornamehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{authorfullhash}{fe6995e7c4feb2ed5e447d585221f4ad}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Motivation: Simulation and modeling is becoming a standard approach to understand complex biochemical processes. Therefore, there is a big need for software tools that allow access to diverse simulation and modeling methods as well as support for the usage of these methods. Results: Here, we present COPASI, a platform-independent and user-friendly biochemical simulator that offers several unique features. We discuss numerical issues with these features; in particular, the criteria to switch between stochastic and deterministic simulation methods, hybrid deterministic--stochastic methods, and the importance of random number generator numerical resolution in stochastic simulation. Availability: The complete software is available in binary (executable) for MS Windows, OS X, Linux (Intel) and Sun Solaris (SPARC), as well as the full source code under an open source license from . Contact: ~mendes@vbi.vt.edu}
+      \field{issn}{1367-4811, 1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{24}
+      \field{title}{{{COPASI}}---a {{COmplex PAthway SImulator}}}
+      \field{urlday}{28}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{22}
+      \field{year}{2006}
+      \field{urldateera}{ce}
+      \field{pages}{3067\bibrangedash 3074}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btl485
+      \endverb
+    \endentry
+    \entry{choiTelluriumExtensiblePythonbased2018}{article}{}
+      \name{author}{7}{}{%
+        {{hash=1b297aa4b6ffc09c4dfd7a5da818a9db}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Kiri},
+           giveni={K\bibinitperiod}}}%
+        {{hash=61952e00b50aec1d9a479cf15448e14e}{%
+           family={Medley},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi Kyle},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=b87e748fc5f8cc888134495dd9de4f4a}{%
+           family={König},
+           familyi={K\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=31b88ebf802b577fbcce8b2f9207a5dd}{%
+           family={Stocking},
+           familyi={S\bibinitperiod},
+           given={Kaylene},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d528b2794cae07afdc3cb64e7df39877}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Lucian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=35839c47196a22eb8f1f703ec3fd983e}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Stanley},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f2b12c964777bc274dd523fc1d3f2ccd}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={Herbert\bibnamedelima M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{fullhash}{30eb1e3a596c72ef26010acc0750dac1}
+      \strng{bibnamehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{authorbibnamehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{authornamehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{authorfullhash}{30eb1e3a596c72ef26010acc0750dac1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{03032647}
+      \field{journaltitle}{Biosystems}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{shorttitle}{Tellurium}
+      \field{title}{Tellurium: {{An}} Extensible Python-Based Modeling Environment for Systems and Synthetic Biology}
+      \field{urlday}{28}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{171}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{74\bibrangedash 79}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.biosystems.2018.07.006
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/4AQRTM34/Choi et al. - 2018 - Tellurium An extensible python-based modeling environment for systems and synthetic biology.pdf
+      \endverb
+    \endentry
+    \entry{huckaSystemsBiologyMarkup2003}{article}{}
+      \name{author}{43}{}{%
+        {{hash=b815ed5912efce36d6966309f612406b}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1f376e491733fc48bdf3616089b5394b}{%
+           family={Finney},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=538dcf4c6c48bfee91f42a815633d34e}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=5bc676b6622ab9f27ba77a8f5ce9d17a}{%
+           family={Bolouri},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4a74964e0795d339fed69d7574247abd}{%
+           family={Doyle},
+           familyi={D\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b524b91ba10309ab4bc17202de3f683a}{%
+           family={Kitano},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9e4ec55bf15bb85cd5389303da85834a}{%
+           family={Arkin},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=de47df23036589b64c112f24755e7aa6}{%
+           family={Bornstein},
+           familyi={B\bibinitperiod},
+           given={B.\bibnamedelimi J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d967c984fc8d86e74608866eacb22d37}{%
+           family={Bray},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d4f9cb312410033fdae99dc9241ac8bf}{%
+           family={{Cornish-Bowden}},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d5abe83885137f628b88c893a8128ad9}{%
+           family={Cuellar},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a16be28f78b61de1556d345380a9c07a}{%
+           family={Dronov},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=21654aa5e326d7b6921e51f59bbcc73b}{%
+           family={Gilles},
+           familyi={G\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7f089cd1b7865d3f0fc3acbb7e8ae5ae}{%
+           family={Ginkel},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4281dbaa2586d64dae840de64bd78639}{%
+           family={Gor},
+           familyi={G\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=e744c8828fe7d07caf0c227348b271a2}{%
+           family={Goryanin},
+           familyi={G\bibinitperiod},
+           given={I.\bibnamedelimi I.},
+           giveni={I\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=aff669e320451c33cd9e0bdc9b91e528}{%
+           family={Hedley},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=ce5d7e95f72e2fe9b83114e925e98921}{%
+           family={Hodgman},
+           familyi={H\bibinitperiod},
+           given={T.\bibnamedelimi C.},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=faea0730333f02f3ab0d9846c3e06705}{%
+           family={Hofmeyr},
+           familyi={H\bibinitperiod},
+           given={J.-H.},
+           giveni={J\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=7b0a0c2253277d04e5502f99c80eaa94}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={P.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dc3bfe16d37f7cdf641555708274a2f1}{%
+           family={Juty},
+           familyi={J\bibinitperiod},
+           given={N.\bibnamedelimi S.},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=487b930873b724f48e9a7c6a42decd09}{%
+           family={Kasberger},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=e11e62cb228a1d68240c7b9876a103b7}{%
+           family={Kremling},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d2a868fa9837fcefbe25c9b0a32087be}{%
+           family={Kummer},
+           familyi={K\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+        {{hash=b944aad8d5180e389cd6a7b1b17b3dff}{%
+           family={Le\bibnamedelima Novère},
+           familyi={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=5d4244126970986c1e5154503d3707f6}{%
+           family={Loew},
+           familyi={L\bibinitperiod},
+           given={L.\bibnamedelimi M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ccb0db6024a2c6cb83a6c160613d4d9e}{%
+           family={Lucio},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=15bad006371671ec5a577b7cbfb38d27}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0e8be824f2ec3e9f36cca162b042a9e9}{%
+           family={Minch},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=3c3c7efdce1fc38b1525830435deb877}{%
+           family={Mjolsness},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7f834c4bcf8181bb5bddc5d72942bf40}{%
+           family={Nakayama},
+           familyi={N\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6f46301f980e2cd5d195b89acb0b59ce}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={M.\bibnamedelimi R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=6e245bc48ac6570c868de670d676e7fb}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={P.\bibnamedelimi F.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=99259b91fc59cba7863481844ceb53a5}{%
+           family={Sakurada},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=83912ba6dddfb9445369ba62763baa03}{%
+           family={Schaff},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=12ac89636adee7d3063c9f9be8ae66f1}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=1505cc0c9ad24dea0bc1facd1952285c}{%
+           family={Shimizu},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=1f5232ff2f1045f0513d3b91e61ba3f0}{%
+           family={Spence},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi D.},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=793936a767ec080b6115f8ca168e6eef}{%
+           family={Stelling},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e8bc87fd9a78a7d5203999be8022da4c}{%
+           family={Takahashi},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=14bee8d336130f88e263ebbe3c7d5433}{%
+           family={Tomita},
+           familyi={T\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f7e8e8b463eb9f6c33faebd6367a9696}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3702f1c146e64a6c91fc47b81ea59fc7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press (OUP)}%
+      }
+      \strng{namehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{fullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \strng{bibnamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authorbibnamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authornamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authorfullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Motivation: Molecular biotechnology now makes it possible to build elaborate systems models, but the systems biology community needs information standards if models are to be shared, evaluated and developed cooperatively. Results: We summarize the Systems Biology Markup Language (SBML) Level 1, a free, open, XML-based format for representing biochemical reaction networks. SBML is a software-independent language for describing models common to research in many areas of computational biology, including cell signaling pathways, metabolic pathways, gene regulation, and others. Availability: The specification of SBML Level 1 is freely available from http://www.sbml.org/ Contact: sysbio-team@caltech.edu * To whom correspondence should be addressed.}
+      \field{issn}{1367-4811, 1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{4}
+      \field{shorttitle}{The Systems Biology Markup Language ({{SBML}})}
+      \field{title}{The Systems Biology Markup Language ({{SBML}}): A Medium Forrepresentation and Exchange of Biochemical Network Models}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{19}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \field{pages}{524\bibrangedash 531}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btg015
+      \endverb
+    \endentry
+    \entry{SBMLorgEssentialPublications}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{SBML is a representation format, based on XML, for communicating and storing computational models of biological processes. It can represent many different classes of biological phenomena, including metabolic networks, cell signaling pathways, regulatory networks, infectious diseases, and many others.}
+      \field{howpublished}{https://sbml.org/documents/publications/}
+      \field{journaltitle}{SBML.org}
+      \field{langid}{american}
+      \field{shorttitle}{{{SBML}}.Org}
+      \field{title}{{{SBML}}.Org: {{Essential}} Publications about {{SBML}}}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/6FEXPALD/publications.html
+      \endverb
+    \endentry
+    \entry{rochePublicDataArchiving2015}{article}{}
+      \name{author}{4}{}{%
+        {{hash=a4104cfa653c5223681192d878b0496f}{%
+           family={Roche},
+           familyi={R\bibinitperiod},
+           given={Dominique\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=1b66f669df6f1e71107c2c6527e5c82e}{%
+           family={Kruuk},
+           familyi={K\bibinitperiod},
+           given={Loeske\bibnamedelimb E.\bibnamedelimi B.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=e95b2f8e8cee11047379072c745c6b1b}{%
+           family={Lanfear},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=087d2d4287f23affb39850f65adc05aa}{%
+           family={Binning},
+           familyi={B\bibinitperiod},
+           given={Sandra\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d9f16c2a3a9f49e416df65ec256d8e18}
+      \strng{fullhash}{04d63021806dd27761e2261e68da3b3e}
+      \strng{bibnamehash}{d9f16c2a3a9f49e416df65ec256d8e18}
+      \strng{authorbibnamehash}{d9f16c2a3a9f49e416df65ec256d8e18}
+      \strng{authornamehash}{d9f16c2a3a9f49e416df65ec256d8e18}
+      \strng{authorfullhash}{04d63021806dd27761e2261e68da3b3e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1545-7885}
+      \field{journaltitle}{PLOS Biology}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{11}
+      \field{shorttitle}{Public {{Data Archiving}} in {{Ecology}} and {{Evolution}}}
+      \field{title}{Public {{Data Archiving}} in {{Ecology}} and {{Evolution}}: {{How Well Are We Doing}}?}
+      \field{urlday}{28}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{13}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{e1002295}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pbio.1002295
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/BUCJYYGM/Roche et al. - 2015 - Public Data Archiving in Ecology and Evolution How Well Are We Doing.pdf
+      \endverb
+    \endentry
+    \entry{wilkinsonFAIRGuidingPrinciples2016}{article}{}
+      \name{author}{53}{}{%
+        {{hash=e88185c2eca4405ce11cb8920f485660}{%
+           family={Wilkinson},
+           familyi={W\bibinitperiod},
+           given={Mark\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=93badcbcd9ff0747849763affb474199}{%
+           family={Dumontier},
+           familyi={D\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cda28834d0f69262ef00bb56bd87a0c0}{%
+           family={Aalbersberg},
+           familyi={A\bibinitperiod},
+           given={IJsbrand\bibnamedelima Jan},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c8bd3ce56531164a76d2447bea864837}{%
+           family={Appleton},
+           familyi={A\bibinitperiod},
+           given={Gabrielle},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f12336d71cec892ed279b160d6fcd07d}{%
+           family={Axton},
+           familyi={A\bibinitperiod},
+           given={Myles},
+           giveni={M\bibinitperiod}}}%
+        {{hash=24f9e2bf2d8c89090eef143a51d01653}{%
+           family={Baak},
+           familyi={B\bibinitperiod},
+           given={Arie},
+           giveni={A\bibinitperiod}}}%
+        {{hash=372112f8c145373974f902b8035baa7f}{%
+           family={Blomberg},
+           familyi={B\bibinitperiod},
+           given={Niklas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=311117127e85a09450298e1cb378cc6d}{%
+           family={Boiten},
+           familyi={B\bibinitperiod},
+           given={Jan-Willem},
+           giveni={J\bibinithyphendelim W\bibinitperiod}}}%
+        {{hash=f129ce02ba4ebee20af2cd4b3f869092}{%
+           family={Da\bibnamedelima Silva\bibnamedelima Santos},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Luiz\bibnamedelima Bonino},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=e8f011b361a44c99e0b3cd105b7553dc}{%
+           family={Bourne},
+           familyi={B\bibinitperiod},
+           given={Philip\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=f9488da8da5659df63bf99117fa2f9ee}{%
+           family={Bouwman},
+           familyi={B\bibinitperiod},
+           given={Jildau},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e180982f46493f6cb439a7bbd53f1af}{%
+           family={Brookes},
+           familyi={B\bibinitperiod},
+           given={Anthony\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=4bba4464ec5239427fac65cbdc01ac51}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7a865493d8d32c6c8389526ac3db1094}{%
+           family={Crosas},
+           familyi={C\bibinitperiod},
+           given={Mercè},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fb366b6058a04fe1ea1c863ef8c4dfad}{%
+           family={Dillo},
+           familyi={D\bibinitperiod},
+           given={Ingrid},
+           giveni={I\bibinitperiod}}}%
+        {{hash=5564ab842d98ada0438556f362c580d0}{%
+           family={Dumon},
+           familyi={D\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=db3d00c1b751ab8f17377a6bf2efaa58}{%
+           family={Edmunds},
+           familyi={E\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d6fb79f1c7b2c722d8da4e7a3722ff95}{%
+           family={Evelo},
+           familyi={E\bibinitperiod},
+           given={Chris\bibnamedelima T.},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=a453f75d20f5c037ff3fd7b51bfaa4e6}{%
+           family={Finkers},
+           familyi={F\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=dc4c620883ee689cae65514ada231031}{%
+           family={{Gonzalez-Beltran}},
+           familyi={G\bibinitperiod},
+           given={Alejandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=469caa523876395d326def24d8bdac8d}{%
+           family={Gray},
+           familyi={G\bibinitperiod},
+           given={Alasdair\bibnamedelima J.G.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b2d7e1f159093aa2ea8379d9b6bc6911}{%
+           family={Groth},
+           familyi={G\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=fae216475918e7d5a3fd11e334229e70}{%
+           family={Goble},
+           familyi={G\bibinitperiod},
+           given={Carole},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9925b6a1596ccb7afcbbb01088b03876}{%
+           family={Grethe},
+           familyi={G\bibinitperiod},
+           given={Jeffrey\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=a0f707f5c85369ff12d6de8401c06be8}{%
+           family={Heringa},
+           familyi={H\bibinitperiod},
+           given={Jaap},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b69e20dcbe2a5f2e47ea8c48356fbdde}{%
+           family={'T\bibnamedelima Hoen},
+           familyi={'\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Peter\bibnamedelima A.C},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=9dd97174300b10ac2034b39183863158}{%
+           family={Hooft},
+           familyi={H\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+        {{hash=74d3522e91542051f26a4f98e94e2dc2}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=dc80a1a1784786b7fda18de16a5e8ae0}{%
+           family={Kok},
+           familyi={K\bibinitperiod},
+           given={Ruben},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3309ce5cd9060784c66cdc407cda4727}{%
+           family={Kok},
+           familyi={K\bibinitperiod},
+           given={Joost},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b41307e9ec9e7a7330d83c3ada394f22}{%
+           family={Lusher},
+           familyi={L\bibinitperiod},
+           given={Scott\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=9981013b5d636d7d01a6c304a9987904}{%
+           family={Martone},
+           familyi={M\bibinitperiod},
+           given={Maryann\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=5428e75345796ac8e0bfe94e02203521}{%
+           family={Mons},
+           familyi={M\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0820d0abfb09b8a8d078b1d62c4cbca9}{%
+           family={Packer},
+           familyi={P\bibinitperiod},
+           given={Abel\bibnamedelima L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=f5e0b4d9215464126ab0ea279dcd42ca}{%
+           family={Persson},
+           familyi={P\bibinitperiod},
+           given={Bengt},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a5b9fa79dbb410a262d0944983ad71df}{%
+           family={{Rocca-Serra}},
+           familyi={R\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2344e24f2e1e899651e65b125b76751e}{%
+           family={Roos},
+           familyi={R\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=316b714b7565eb727a8e04f4d7410187}{%
+           family={Van\bibnamedelima Schaik},
+           familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Rene},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1547ffdade7927d77c2e093fa8e4a751}{%
+           family={Sansone},
+           familyi={S\bibinitperiod},
+           given={Susanna-Assunta},
+           giveni={S\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=50211e54acbb1f0a8b95712201e8e5c5}{%
+           family={Schultes},
+           familyi={S\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a2c7d4bcdecd1b3de24af9fff656ad59}{%
+           family={Sengstag},
+           familyi={S\bibinitperiod},
+           given={Thierry},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b94dcda5ebae27c0012282aa255271d6}{%
+           family={Slater},
+           familyi={S\bibinitperiod},
+           given={Ted},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b4e243341e196cfc3361dbce9bd32d5e}{%
+           family={Strawn},
+           familyi={S\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=44a68b189975ed6286a098d883dda6ef}{%
+           family={Swertz},
+           familyi={S\bibinitperiod},
+           given={Morris\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6d16b02cf7ec69e3e95adecbb4e27cba}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5dbd2cddb3f7916132278d8feea78529}{%
+           family={Van\bibnamedelimb Der\bibnamedelima Lei},
+           familyi={V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Johan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=50b81f0b8a94812f6d020763ebc033ef}{%
+           family={Van\bibnamedelima Mulligen},
+           familyi={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod}}}%
+        {{hash=34ae9ef8db900714e7a946ad3b1e482a}{%
+           family={Velterop},
+           familyi={V\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2cbf23b7864d72cafcd29753f1ffa48d}{%
+           family={Waagmeester},
+           familyi={W\bibinitperiod},
+           given={Andra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=acf94d0e2887f580cae18ae08141005d}{%
+           family={Wittenburg},
+           familyi={W\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7166c9ffe9aea2997923b3e54f99d253}{%
+           family={Wolstencroft},
+           familyi={W\bibinitperiod},
+           given={Katherine},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3313b0fb30c52802abe615a883198713}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=086ef7669a7dc6d647b7a650d7da0a15}{%
+           family={Mons},
+           familyi={M\bibinitperiod},
+           given={Barend},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{f324cd0f485d0aaf63321d014f1f638f}
+      \strng{fullhash}{b82aadb86e05a22060e85bc5ae811853}
+      \strng{bibnamehash}{f324cd0f485d0aaf63321d014f1f638f}
+      \strng{authorbibnamehash}{f324cd0f485d0aaf63321d014f1f638f}
+      \strng{authornamehash}{f324cd0f485d0aaf63321d014f1f638f}
+      \strng{authorfullhash}{b82aadb86e05a22060e85bc5ae811853}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract There is an urgent need to improve the infrastructure supporting the reuse of scholarly data. A diverse set of stakeholders---representing academia, industry, funding agencies, and scholarly publishers---have come together to design and jointly endorse a concise and measureable set of principles that we refer to as the FAIR Data Principles. The intent is that these may act as a guideline for those wishing to enhance the reusability of their data holdings. Distinct from peer initiatives that focus on the human scholar, the FAIR Principles put specific emphasis on enhancing the ability of machines to automatically find and use the data, in addition to supporting its reuse by individuals. This Comment is the first formal publication of the FAIR Principles, and includes the rationale behind them, and some exemplar implementations in the community.}
+      \field{issn}{2052-4463}
+      \field{journaltitle}{Scientific Data}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{The {{FAIR Guiding Principles}} for Scientific Data Management and Stewardship}
+      \field{urlday}{28}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{3}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{160018}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/sdata.2016.18
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/XJG9WQW7/Wilkinson et al. - 2016 - The FAIR Guiding Principles for scientific data management and stewardship.pdf
+      \endverb
+    \endentry
+    \entry{sauroFAIRCUREGuidelines2025}{article}{}
+      \name{author}{51}{}{%
+        {{hash=f2b12c964777bc274dd523fc1d3f2ccd}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={Herbert\bibnamedelima M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0b17e9634f9e6939ccfb5a4f93731397}{%
+           family={Agmon},
+           familyi={A\bibinitperiod},
+           given={Eran},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5ef26aaf7d19ee6c86e9384b4a364d2f}{%
+           family={Blinov},
+           familyi={B\bibinitperiod},
+           given={Michael\bibnamedelima L.},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=e0a414a795ffc336e536019ffbc0d55c}{%
+           family={Gennari},
+           familyi={G\bibinitperiod},
+           given={John\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=7215589f14fef9348532f5fad6525654}{%
+           family={Hellerstein},
+           familyi={H\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod}}}%
+        {{hash=276c475058ad930715ac35488e5d5d8a}{%
+           family={Heydarabadipour},
+           familyi={H\bibinitperiod},
+           given={Adel},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1e8395cdb6d6a428ca5a8bc584f31f52}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1265818d851c20ff439e8cb42919156d}{%
+           family={Jardine},
+           familyi={J\bibinitperiod},
+           given={Bartholomew\bibnamedelima E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=cc8974567f2a170cc25992389174a7f0}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Elebeoba},
+           giveni={E\bibinitperiod}}}%
+        {{hash=91e930aebdf6dc292b95cfa71ab873c1}{%
+           family={Nickerson},
+           familyi={N\bibinitperiod},
+           given={David\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=015511171fb48156686514f68fa443c4}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Lucian\bibnamedelima P.},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=c29f7b920aa1659722641ed669a03e28}{%
+           family={Bader},
+           familyi={B\bibinitperiod},
+           given={Gary\bibnamedelima D.},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=98a2410210f9902110c82219a0a90e13}{%
+           family={Bergmann},
+           familyi={B\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=4954735c76998815d37d7018061ba1dc}{%
+           family={Boyle},
+           familyi={B\bibinitperiod},
+           given={Patrick\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=226ca405f7e7e806dead85aa92ec3c47}{%
+           family={Dräger},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fa7cd19e945913638a215e36f5c75bbe}{%
+           family={Faeder},
+           familyi={F\bibinitperiod},
+           given={James\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=34827b4d04a8bc6a38a7c876a855afda}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Song},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6cbdf8a1c60367f1a70356c1a7ab05d3}{%
+           family={Freire},
+           familyi={F\bibinitperiod},
+           given={Juliana},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b4bbeffacc161b602ce6b1641fd5e130}{%
+           family={Fröhlich},
+           familyi={F\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f4e7b9dfb16e82902561bee7552b5f6c}{%
+           family={Glazier},
+           familyi={G\bibinitperiod},
+           given={James\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=41e876f187cc1eb1fa6bb4b3a7001f11}{%
+           family={Gorochowski},
+           familyi={G\bibinitperiod},
+           given={Thomas\bibnamedelima E.},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=5c7ea24633750659367a1532f77e9b28}{%
+           family={Helikar},
+           familyi={H\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7c17ff2ceda28a19163a289c20805ca2}{%
+           family={Hoops},
+           familyi={H\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a64fb374aba2e43e73e0f21655119dd9}{%
+           family={Imoukhuede},
+           familyi={I\bibinitperiod},
+           given={Princess},
+           giveni={P\bibinitperiod}}}%
+        {{hash=8a5358660234d59ae2c33d6a0c42661e}{%
+           family={Keating},
+           familyi={K\bibinitperiod},
+           given={Sarah\bibnamedelima M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c7b321cb4574e5353f1399c5c3950654}{%
+           family={Konig},
+           familyi={K\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=03ba65cd7c9ac33b68ad015634c84d4a}{%
+           family={Laubenbacher},
+           familyi={L\bibinitperiod},
+           given={Reinhard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1b69dbbe3f9ac90095047b9b464b86ee}{%
+           family={Loew},
+           familyi={L\bibinitperiod},
+           given={Leslie\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=662b23e622be235adbc32302affc4f33}{%
+           family={Lopez},
+           familyi={L\bibinitperiod},
+           given={Carlos\bibnamedelima F.},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=ef1a71a0e0bc80e987ecc5c877e18751}{%
+           family={Lytton},
+           familyi={L\bibinitperiod},
+           given={William\bibnamedelima W.},
+           giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=cf92af654ff9d3bf8b1ae7d4cba2b36f}{%
+           family={McCulloch},
+           familyi={M\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=075686383394e8aa7ef64f9716c609c6}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=318c3216c133200b418b9447f2b84fae}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Chris\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=735deb3118d31c9123a5967b493cf210}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Jerry\bibnamedelima G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=b03f93a52450798ddb271c37cd944203}{%
+           family={Mulugeta},
+           familyi={M\bibinitperiod},
+           given={Lealem},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a33f4f2dc586d8fd81e83c54b456699b}{%
+           family={Niarakis},
+           familyi={N\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=eaa706220f6cbb2dbcf7194fcc6223bf}{%
+           family={{van Niekerk}},
+           familyi={v\bibinitperiod},
+           given={David\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c3c0607469180548b3b8d3c429654a31}{%
+           family={Olivier},
+           familyi={O\bibinitperiod},
+           given={Brett\bibnamedelima G.},
+           giveni={B\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=f876b3e402823fbf7322fffab1ee71cf}{%
+           family={Patrie},
+           familyi={P\bibinitperiod},
+           given={Alexander\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=16e7b162edba07d6ba3a99eb78c945fb}{%
+           family={Quardokus},
+           familyi={Q\bibinitperiod},
+           given={Ellen\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b5d661f097596a6994869ef63dab5261}{%
+           family={Radde},
+           familyi={R\bibinitperiod},
+           given={Nicole},
+           giveni={N\bibinitperiod}}}%
+        {{hash=7d7f2b49c27b2328f7daae77ec1f95ea}{%
+           family={Rohwer},
+           familyi={R\bibinitperiod},
+           given={Johann\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d677a6f06b3e04ba7b1954e84ee7b874}{%
+           family={Sahle},
+           familyi={S\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2a4866da036efbc955bc982731eeddbb}{%
+           family={Schaff},
+           familyi={S\bibinitperiod},
+           given={James\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=c19c29fcf4bbb6aef297b8bbcc00b869}{%
+           family={Sego},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6500d45fbdd464d311f71d68718f0713}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Janis},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0245435aff263c30b872b37e92ed4890}{%
+           family={Snoep},
+           familyi={S\bibinitperiod},
+           given={Jacky\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=1e6100dc15c2229765652fa3569b2bfe}{%
+           family={Vadigepalli},
+           familyi={V\bibinitperiod},
+           given={Rajanikanth},
+           giveni={R\bibinitperiod}}}%
+        {{hash=96b198c45c6c788c0166ef002086e19d}{%
+           family={Wiley},
+           familyi={W\bibinitperiod},
+           given={H.\bibnamedelimi Steve},
+           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=8590ecf55f43d8a0d8c55e5ea33f9c7d}{%
+           family={Waltemath},
+           familyi={W\bibinitperiod},
+           given={Dagmar},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2cdf050bb8e6e46ee0a1159168159e0d}{%
+           family={Moraru},
+           familyi={M\bibinitperiod},
+           given={Ion},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebf1d13e209ec8857058f0bf8583f4b5}
+      \strng{fullhash}{9f97ca902ba2dc0a72f0a8c92160e826}
+      \strng{bibnamehash}{ebf1d13e209ec8857058f0bf8583f4b5}
+      \strng{authorbibnamehash}{ebf1d13e209ec8857058f0bf8583f4b5}
+      \strng{authornamehash}{ebf1d13e209ec8857058f0bf8583f4b5}
+      \strng{authorfullhash}{9f97ca902ba2dc0a72f0a8c92160e826}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Guidelines for managing scientific data have been established under the FAIR principles requiring that data be Findable, Accessible, Interoperable, and Reusable. In many scientific disciplines, especially computational biology, both data and models are key to progress. For this reason, and recognizing that such models are a very special type of "data", we argue that computational models, especially mechanistic models prevalent in medicine, physiology and systems biology, deserve a complementary set of guidelines. We propose the CURE principles, emphasizing that models should be Credible, Understandable, Reproducible, and Extensible. We delve into each principle, discussing verification, validation, and uncertainty quantification for model credibility; the clarity of model descriptions and annotations for understandability; adherence to standards and open science practices for reproducibility; and the use of open standards and modular code for extensibility and reuse. We outline recommended and baseline requirements for each aspect of CURE, aiming to enhance the impact and trustworthiness of computational models, particularly in biomedical applications where credibility is paramount. Our perspective underscores the need for a more disciplined approach to modeling, aligning with emerging trends such as Digital Twins and emphasizing the importance of data and modeling standards for interoperability and reuse. Finally, we emphasize that given the non-trivial effort required to implement the guidelines, the community moves to automate as many of the guidelines as possible.}
+      \field{issn}{2331-8422}
+      \field{journaltitle}{ArXiv}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shorttitle}{From {{FAIR}} to {{CURE}}}
+      \field{title}{From {{FAIR}} to {{CURE}}: {{Guidelines}} for {{Computational Models}} of {{Biological Systems}}}
+      \field{year}{2025}
+      \field{pages}{arXiv:2502.15597v1}
+      \range{pages}{-1}
+    \endentry
+    \entry{CitationsCommentFAIR}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.webofscience.com/wos/woscc/summary/9c1c0dab-0d91-4cf2-9009-874ff09eaec6-0184c41f53/date-descending/1}
+      \field{title}{Citations of {{Comment}}: {{The FAIR Guiding Principles}} for Scientific Data Management and Stewardship -- 7,841 -- {{Web}} of {{Science Core Collection}}}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/HCS2ST2B/1.html
+      \endverb
+    \endentry
+    \entry{CitationReport1475}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.webofscience.com/wos/woscc/summary/aebfb3a0-6cfd-4ca6-9a3c-104bc60c1ee6-0187df4b2d/5787b316-f80a-4f4e-ada2-ef631e25ff12-0187df3faf/relevance/1}
+      \field{title}{Citation Report - 1,475 - {{Web}} of {{Science Core Collection}}}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/LH9IAQWV/7220d219-ab05-49be-9814-598310a4ddd8-0187dfee23.html
+      \endverb
+    \endentry
+    \entry{malik-sheriffBioModels15Years2019}{article}{}
+      \name{author}{24}{}{%
+        {{hash=29982aa982c7a94227358bc68e0133af}{%
+           family={{Malik-Sheriff}},
+           familyi={M\bibinitperiod},
+           given={Rahuman\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=26b7cd33e008135efb521b2944967572}{%
+           family={Glont},
+           familyi={G\bibinitperiod},
+           given={Mihai},
+           giveni={M\bibinitperiod}}}%
+        {{hash=69217092be08393ea564798b69bb05f9}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Tung\bibnamedelimb V\bibnamedelima N},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=72d96da796ed34664b54e744583e73a6}{%
+           family={Tiwari},
+           familyi={T\bibinitperiod},
+           given={Krishna},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d889292fd131541f5a8ae68ab8c68116}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={Matthew\bibnamedelima G},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=37f520f184c21dd3006af769f9b2dc8d}{%
+           family={Xavier},
+           familyi={X\bibinitperiod},
+           given={Ashley},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0084e620d056b217024534b0a3f09cb6}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Manh\bibnamedelima T},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=5fcef334b6b94112caca3fc198f6c07b}{%
+           family={Men},
+           familyi={M\bibinitperiod},
+           given={Jinghao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=91e6a7a3492da80f39257b670f93bebc}{%
+           family={Maire},
+           familyi={M\bibinitperiod},
+           given={Matthieu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8bfd2a128edfe1a579e767951a046f9d}{%
+           family={Kananathan},
+           familyi={K\bibinitperiod},
+           given={Sarubini},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a2fcadb5612762b61fbe6fa92f835d4f}{%
+           family={Fairbanks},
+           familyi={F\bibinitperiod},
+           given={Emma\bibnamedelima L},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=76e14cdbb74c6f6f8757f518cfebeec2}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Johannes\bibnamedelima P},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=05d362c6aa56186e906c2db08f9b61f5}{%
+           family={Arankalle},
+           familyi={A\bibinitperiod},
+           given={Chinmay},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3a86813cc395cd24618e667c52213fa7}{%
+           family={Varusai},
+           familyi={V\bibinitperiod},
+           given={Thawfeek\bibnamedelima M},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c49a346c03c9914615fe6961f43817cb}{%
+           family={{Knight-Schrijver}},
+           familyi={K\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=da32ce59ebe295c8c0c7b1e010237b74}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=b06c13338432aea2a6a8f1cff3ca5ed3}{%
+           family={{Dueñas-Roca}},
+           familyi={D\bibinitperiod},
+           given={Corina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=741a536a5cf838c8ae4b093123ce3308}{%
+           family={Dass},
+           familyi={D\bibinitperiod},
+           given={Gaurhari},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8a5358660234d59ae2c33d6a0c42661e}{%
+           family={Keating},
+           familyi={K\bibinitperiod},
+           given={Sarah\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=bca36f1209855115fe8372ed0428f2fc}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Young\bibnamedelima M},
+           giveni={Y\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=97a152d54698a9992217a03f54398d8d}{%
+           family={Buso},
+           familyi={B\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod}}}%
+        {{hash=c9a1d4a9d6b7041a27739b4f6b4af4dd}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=46f3e48d5c3a1410b18eadac8585468d}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a1d11d1a0d9cd50b99cbb45fc204e933}{%
+           family={Hermjakob},
+           familyi={H\bibinitperiod},
+           given={Henning},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press (OUP)}%
+      }
+      \strng{namehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{fullhash}{9309269b8715884182c7dd969371f8d4}
+      \strng{bibnamehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{authorbibnamehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{authornamehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{authorfullhash}{9309269b8715884182c7dd969371f8d4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{AbstractComputational modelling has become increasingly common in life science research. To provide a platform to support universal sharing, easy accessibility and model reproducibility, BioModels (https://www.ebi.ac.uk/biomodels/), a repository for mathematical models, was established in 2005. The current BioModels platform allows submission of models encoded in diverse modelling formats, including SBML, CellML, PharmML, COMBINE archive, MATLAB, Mathematica, R, Python or C++. The models submitted to BioModels are curated to verify the computational representation of the biological process and the reproducibility of the simulation results in the reference publication. The curation also involves encoding models in standard formats and annotation with controlled vocabularies following MIRIAM (minimal information required in the annotation of biochemical models)~guidelines. BioModels now accepts large-scale submission of auto-generated computational models. With gradual growth in content over 15 years, BioModels currently hosts about 2000 models from the published literature. With about 800 curated models, BioModels has become the world's largest repository of curated models and emerged as the third most used data resource after PubMed and Google Scholar among the scientists who use modelling in their research. Thus, BioModels benefits modellers by providing access to reliable and semantically enriched curated models in standard formats that are easy to share, reproduce and reuse.}
+      \field{issn}{0305-1048, 1362-4962}
+      \field{journaltitle}{Nucleic Acids Research}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{{{BioModels}}---15 Years of Sharing Computational Models in Life Science}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/nar/gkz1055
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/CA3WFNJR/Malik-Sheriff et al. - 2019 - BioModels—15 years of sharing computational models in life science.pdf
+      \endverb
+    \endentry
+    \entry{novereMinimumInformationRequested2005}{article}{}
+      \name{author}{16}{}{%
+        {{hash=c744817623dab7fac8a90f9e76c4e30e}{%
+           family={Novère},
+           familyi={N\bibinitperiod},
+           given={Nicolas\bibnamedelima Le},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=0ceae8deab33a4d7ca172b445ed61597}{%
+           family={Finney},
+           familyi={F\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=46f3e48d5c3a1410b18eadac8585468d}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a141df0e3d670c50d21f24b7a819245a}{%
+           family={Bhalla},
+           familyi={B\bibinitperiod},
+           given={Upinder\bibnamedelima S.},
+           giveni={U\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=b0fb4ba78e3921c205e02e07e10a0a99}{%
+           family={Campagne},
+           familyi={C\bibinitperiod},
+           given={Fabien},
+           giveni={F\bibinitperiod}}}%
+        {{hash=356996336669713514fa88992711b9db}{%
+           family={{Collado-Vides}},
+           familyi={C\bibinitperiod},
+           given={Julio},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9b33ecd8f44769942a7983c0b254c13f}{%
+           family={Crampin},
+           familyi={C\bibinitperiod},
+           given={Edmund\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6186568d9d48fbcca024b8012c5e26e5}{%
+           family={Halstead},
+           familyi={H\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=55491e99b013f41a4ac447b208c14ee5}{%
+           family={Klipp},
+           familyi={K\bibinitperiod},
+           given={Edda},
+           giveni={E\bibinitperiod}}}%
+        {{hash=075686383394e8aa7ef64f9716c609c6}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f83d46a95dc8e7cd6c31f1e9d6c404d4}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Poul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7b29d47f618b216cbae3c599ded0abee}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=fdb0d36392bf6aaa10ad136dffb7aaea}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0245435aff263c30b872b37e92ed4890}{%
+           family={Snoep},
+           familyi={S\bibinitperiod},
+           given={Jacky\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=9080dfd67dd3bbf70cb644622abdf478}{%
+           family={Spence},
+           familyi={S\bibinitperiod},
+           given={Hugh\bibnamedelima D.},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=ac7611b766ce72b8cbed01e28e9e1705}{%
+           family={Wanner},
+           familyi={W\bibinitperiod},
+           given={Barry\bibnamedelima L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{74bd7f73e521dbffde260d92430ad02f}
+      \strng{fullhash}{2ad0e92e7671ea4a2ba1e056039e0e1c}
+      \strng{bibnamehash}{74bd7f73e521dbffde260d92430ad02f}
+      \strng{authorbibnamehash}{74bd7f73e521dbffde260d92430ad02f}
+      \strng{authornamehash}{74bd7f73e521dbffde260d92430ad02f}
+      \strng{authorfullhash}{2ad0e92e7671ea4a2ba1e056039e0e1c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Most of the published quantitative models in biology are lost for the community because they are either not made available or they are insufficiently characterized to allow them to be reused. The lack of a standard description format, lack of stringent reviewing and authors' carelessness are the main causes for incomplete model descriptions. With today's increased interest in detailed biochemical models, it is necessary to define a minimum quality standard for the encoding of those models. We propose a set of rules for curating quantitative models of biological systems. These rules define procedures for encoding and annotating models represented in machine-readable form. We believe their application will enable users to (i) have confidence that curated models are an accurate reflection of their associated reference descriptions, (ii) search collections of curated models with precision, (iii) quickly identify the biological phenomena that a given curated model or model constituent represents and (iv) facilitate model reuse and composition into large subcellular models.}
+      \field{issn}{1546-1696}
+      \field{journaltitle}{Nature Biotechnology}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Minimum Information Requested in the Annotation of Biochemical Models ({{MIRIAM}})}
+      \field{urlday}{12}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{23}
+      \field{year}{2005}
+      \field{urldateera}{ce}
+      \field{pages}{1509\bibrangedash 1515}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1038/nbt1156
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/ZFUNTT3V/Novère et al. - 2005 - Minimum information requested in the annotation of biochemical models (MIRIAM).pdf
+      \endverb
+      \keyw{Agriculture,Bioinformatics,Biomedical Engineering/Biotechnology,Biomedicine,Biotechnology,general,Life Sciences}
+    \endentry
+    \entry{tiwariReproducibilitySystemsBiology2021}{article}{}
+      \name{author}{14}{}{%
+        {{hash=72d96da796ed34664b54e744583e73a6}{%
+           family={Tiwari},
+           familyi={T\bibinitperiod},
+           given={Krishna},
+           giveni={K\bibinitperiod}}}%
+        {{hash=8bfd2a128edfe1a579e767951a046f9d}{%
+           family={Kananathan},
+           familyi={K\bibinitperiod},
+           given={Sarubini},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d889292fd131541f5a8ae68ab8c68116}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={Matthew\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=76e14cdbb74c6f6f8757f518cfebeec2}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Johannes\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=0fe64cb0b20a72c2d691139c2b93391b}{%
+           family={Sharif\bibnamedelima Shohan},
+           familyi={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Mohammad\bibnamedelima Umer},
+           giveni={M\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+        {{hash=37f520f184c21dd3006af769f9b2dc8d}{%
+           family={Xavier},
+           familyi={X\bibinitperiod},
+           given={Ashley},
+           giveni={A\bibinitperiod}}}%
+        {{hash=91e6a7a3492da80f39257b670f93bebc}{%
+           family={Maire},
+           familyi={M\bibinitperiod},
+           given={Matthieu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a1385af57f1e42eaa46c3299f35a601f}{%
+           family={Zyoud},
+           familyi={Z\bibinitperiod},
+           given={Ahmad},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5fcef334b6b94112caca3fc198f6c07b}{%
+           family={Men},
+           familyi={M\bibinitperiod},
+           given={Jinghao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1a8e627f59bdf529eb647fe44a943fc3}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Szeyi},
+           giveni={S\bibinitperiod}}}%
+        {{hash=69217092be08393ea564798b69bb05f9}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Tung\bibnamedelimb V.\bibnamedelimi N.},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=26b7cd33e008135efb521b2944967572}{%
+           family={Glont},
+           familyi={G\bibinitperiod},
+           given={Mihai},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a1d11d1a0d9cd50b99cbb45fc204e933}{%
+           family={Hermjakob},
+           familyi={H\bibinitperiod},
+           given={Henning},
+           giveni={H\bibinitperiod}}}%
+        {{hash=29982aa982c7a94227358bc68e0133af}{%
+           family={{Malik-Sheriff}},
+           familyi={M\bibinitperiod},
+           given={Rahuman\bibnamedelima S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{f1362a61e103d18664d7f88b5703a96c}
+      \strng{fullhash}{c114937385a8e784b239f3c89aef2ba9}
+      \strng{bibnamehash}{f1362a61e103d18664d7f88b5703a96c}
+      \strng{authorbibnamehash}{f1362a61e103d18664d7f88b5703a96c}
+      \strng{authornamehash}{f1362a61e103d18664d7f88b5703a96c}
+      \strng{authorfullhash}{c114937385a8e784b239f3c89aef2ba9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Reproducibility of scientific results is a key element of science and credibility. The lack of reproducibility across many scientific fields has emerged as an important concern. In this piece, we assess mathematical model reproducibility and propose a scorecard for improving reproducibility in this field.}
+      \field{issn}{1744-4292}
+      \field{journaltitle}{Molecular Systems Biology}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{Reproducibility in Systems Biology Modelling}
+      \field{volume}{17}
+      \field{year}{2021}
+      \field{pages}{e9982}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.15252/msb.20209982
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/KYL5LH9D/Tiwari et al. - 2021 - Reproducibility in systems biology modelling.pdf
+      \endverb
+      \keyw{Data Curation,Humans,Models Theoretical,Reproducibility of Results,Systems Biology}
+    \endentry
+    \entry{kanehisaKEGGKyotoEncyclopedia2000}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3c035bf18bd0c7c3f9a5b1faba57c5c4}{%
+           family={Kanehisa},
+           familyi={K\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c035bf18bd0c7c3f9a5b1faba57c5c4}
+      \strng{fullhash}{3c035bf18bd0c7c3f9a5b1faba57c5c4}
+      \strng{bibnamehash}{3c035bf18bd0c7c3f9a5b1faba57c5c4}
+      \strng{authorbibnamehash}{3c035bf18bd0c7c3f9a5b1faba57c5c4}
+      \strng{authornamehash}{3c035bf18bd0c7c3f9a5b1faba57c5c4}
+      \strng{authorfullhash}{3c035bf18bd0c7c3f9a5b1faba57c5c4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{13624962}
+      \field{journaltitle}{Nucleic Acids Research}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shorttitle}{{{KEGG}}}
+      \field{title}{{{KEGG}}: {{Kyoto Encyclopedia}} of {{Genes}} and {{Genomes}}}
+      \field{urlday}{19}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{28}
+      \field{year}{2000}
+      \field{urldateera}{ce}
+      \field{pages}{27\bibrangedash 30}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1093/nar/28.1.27
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/IZZXKEV5/Kanehisa - 2000 - KEGG Kyoto Encyclopedia of Genes and Genomes.pdf
+      \endverb
+    \endentry
+    \entry{MeasuringDigitalDevelopment}{misc}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{ITU's Measuring digital development: Facts and Figures series presents annual global, regional and income-group estimates for key connectivity indicators. The 2025 edition shows that almost three-quarters of the world's population are now online. Yet progress is slowing, and 2.2 billion people remain offline - most of them in low and middle income countries. Mobile broadband coverage is nearly universal, but quality and affordability gaps persist. 5G now reaches more than half of the global population and accounts for more than one third of all mobile broadband subscriptions, although coverage remains concentrated in high-income countries. Gender and urban-rural divides continue to narrow but endure, and broadband services remain out of reach for many.}
+      \field{journaltitle}{ITU}
+      \field{langid}{american}
+      \field{shorttitle}{Measuring Digital Development}
+      \field{title}{Measuring Digital Development: {{Facts}} and {{Figures}} 2025}
+      \field{urlday}{19}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/SJWLAGWR/d-ind-ict_mdd-2025-3.html
+      \endverb
+    \endentry
+    \entry{DataReportalGlobalDigital}{misc}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{abstract}{All the numbers you need to understand how people all over the world are using the internet, mobile devices and apps, social media, and e-commerce.}
+      \field{howpublished}{https://datareportal.com}
+      \field{journaltitle}{DataReportal -- Global Digital Insights}
+      \field{langid}{british}
+      \field{title}{{{DataReportal}} -- {{Global Digital Insights}}}
+      \field{urlday}{19}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/W75Q5866/datareportal.com.html
+      \endverb
+    \endentry
+    \entry{nawirImpactWebsiteUsability2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=506969a623ed742042e268ce8098d032}{%
+           family={Nawir},
+           familyi={N\bibinitperiod},
+           given={Fadliyani},
+           giveni={F\bibinitperiod}}}%
+        {{hash=65fb1f8c3e11dffa4d938c29d70034fd}{%
+           family={Hendrawan},
+           familyi={H\bibinitperiod},
+           given={Satya\bibnamedelima Arisena},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f10589ec63ecee89437c9c674a4beebf}
+      \strng{fullhash}{f10589ec63ecee89437c9c674a4beebf}
+      \strng{bibnamehash}{f10589ec63ecee89437c9c674a4beebf}
+      \strng{authorbibnamehash}{f10589ec63ecee89437c9c674a4beebf}
+      \strng{authornamehash}{f10589ec63ecee89437c9c674a4beebf}
+      \strng{authorfullhash}{f10589ec63ecee89437c9c674a4beebf}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This study investigates the impact of website usability and mobile optimization on customer satisfaction and sales conversion rates in e-commerce businesses in Indonesia. Utilizing a quantitative approach, data were collected from 170 respondents using a Likert scale ranging from 1 to 5. The analysis was conducted using Structural Equation Modeling-Partial Least Squares (SEM-PLS 3). The results indicate that all hypothesized relationships are positive and significant. Specifically, improvements in website usability and mobile optimization significantly enhance customer satisfaction, which in turn positively influences the sales conversion rate. The findings underscore the critical importance of optimizing website usability and mobile interfaces to boost customer satisfaction and drive higher sales conversions in the competitive e-commerce landscape of Indonesia.}
+      \field{issn}{3025-566X, 3026-6041}
+      \field{journaltitle}{The Eastasouth Journal of Information System and Computer Science}
+      \field{month}{8}
+      \field{number}{01}
+      \field{title}{The {{Impact}} of {{Website Usability}} and {{Mobile Optimization}} on {{Customer Satisfaction}} and {{Sales Conversion Rates}} in {{E-commerce Businesses}} in {{Indonesia}}}
+      \field{urlday}{19}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{2}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{15\bibrangedash 30}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.58812/esiscs.v2i01.324
+      \endverb
+    \endentry
+    \entry{beairdPrinciplesBeautifulWeb2020}{book}{}
+      \name{author}{2}{}{%
+        {{hash=701dcb02e0915e497ad6db9dc3e506e4}{%
+           family={Beaird},
+           familyi={B\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1441a038aee57fbffc3997d8ae301891}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Collingwood}%
+      }
+      \list{publisher}{1}{%
+        {SitePoint}%
+      }
+      \strng{namehash}{effb9178b6bf735aaf1cb026c89e5fc8}
+      \strng{fullhash}{effb9178b6bf735aaf1cb026c89e5fc8}
+      \strng{bibnamehash}{effb9178b6bf735aaf1cb026c89e5fc8}
+      \strng{authorbibnamehash}{effb9178b6bf735aaf1cb026c89e5fc8}
+      \strng{authornamehash}{effb9178b6bf735aaf1cb026c89e5fc8}
+      \strng{authorfullhash}{effb9178b6bf735aaf1cb026c89e5fc8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Principles of Beautiful Web Design is the ideal book for anyone who wants to design stunning websites that provide a great user experience. Perhaps you're a developer who wants to understand how to make your applications more visually appealing, or you're a novice who wants to start on the path to becoming a designer. This book will teach you how to: Understand what makes "good design," from discovery through to implementation Use color effectively, develop color schemes, and create a palette Create pleasing layouts using grids, the rule of thirds, and symmetry Employ textures: lines, points, shapes, volumes, and depth Apply typography to make ordinary designs look great Choose, edit, and position effective imagery This easy-to-follow guide is illustrated with beautiful, full-color examples, and will lead you through the process of creating great designs from start to finish. The fourth edition of this bestselling book has been greatly revised and now features: Updated and expanded coverage responsive web design techniques A new sample project New sections on pattern libraries and how design fits on modern app development workflows Common user-interface patterns and resources. -- Provided by publisher}
+      \field{annotation}{OCLC: 1180259357}
+      \field{edition}{Fourth edition}
+      \field{isbn}{978-1-925836-36-3}
+      \field{langid}{english}
+      \field{title}{The Principles of Beautiful {{Web}} Design}
+      \field{year}{2020}
+    \endentry
+    \entry{altschulBasicLocalAlignment1990}{article}{}
+      \name{author}{5}{}{%
+        {{hash=b927ed90e6cf748b2b81e18cb1886f8c}{%
+           family={Altschul},
+           familyi={A\bibinitperiod},
+           given={Stephen\bibnamedelima F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=1c2560e77e0430d3a44f0f96961c9539}{%
+           family={Gish},
+           familyi={G\bibinitperiod},
+           given={Warren},
+           giveni={W\bibinitperiod}}}%
+        {{hash=c13772644daf4bc5872dadebc400007c}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Webb},
+           giveni={W\bibinitperiod}}}%
+        {{hash=0df3272f32e5082671c327a5b8a0f352}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Eugene\bibnamedelima W.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=cbc45a55c63335eebae2bcd2c7739c80}{%
+           family={Lipman},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{fullhash}{44d562514527c37cb1da4ff38faa11ab}
+      \strng{bibnamehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{authorbibnamehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{authornamehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{authorfullhash}{44d562514527c37cb1da4ff38faa11ab}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00222836}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{3}
+      \field{title}{Basic Local Alignment Search Tool}
+      \field{urlday}{19}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{215}
+      \field{year}{1990}
+      \field{urldateera}{ce}
+      \field{pages}{403\bibrangedash 410}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/S0022-2836(05)80360-2
+      \endverb
+    \endentry
+    \entry{kingBiGGModelsPlatform2016}{article}{}
+      \name{author}{9}{}{%
+        {{hash=28d450c30d5b17f10fb57452732b037d}{%
+           family={King},
+           familyi={K\bibinitperiod},
+           given={Zachary\bibnamedelima A.},
+           giveni={Z\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4b387f0b209244bc29066da946e58edc}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=226ca405f7e7e806dead85aa92ec3c47}{%
+           family={Dräger},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3069b852b6dc505d4df1b95f93e326d3}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=84ba5dbb3d6cda9df8ecb136ee196232}{%
+           family={Federowicz},
+           familyi={F\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=92e7180320e3d9859daf41d0d2cd94b1}{%
+           family={Lerman},
+           familyi={L\bibinitperiod},
+           given={Joshua\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=b05043062488d7f7270498dc64290c72}{%
+           family={Ebrahim},
+           familyi={E\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=671aeb8decdb8c2284aae5e2f2c9342b}{%
+           family={Palsson},
+           familyi={P\bibinitperiod},
+           given={Bernhard\bibnamedelima O.},
+           giveni={B\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=61beaf2f99876923aa52a2c5ad1b9c7f}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Nathan\bibnamedelima E.},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e3031c85da87521904b1ca189348824}
+      \strng{fullhash}{a1b3ef21b51dedf34d8f4e718b1b162e}
+      \strng{bibnamehash}{4e3031c85da87521904b1ca189348824}
+      \strng{authorbibnamehash}{4e3031c85da87521904b1ca189348824}
+      \strng{authornamehash}{4e3031c85da87521904b1ca189348824}
+      \strng{authorfullhash}{a1b3ef21b51dedf34d8f4e718b1b162e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0305-1048, 1362-4962}
+      \field{journaltitle}{Nucleic Acids Research}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{D1}
+      \field{shorttitle}{{{BiGG Models}}}
+      \field{title}{{{BiGG Models}}: {{A}} Platform for Integrating, Standardizing and Sharing Genome-Scale Models}
+      \field{urlday}{21}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{44}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{D515\bibrangedash D522}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/nar/gkv1049
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/GMFKY7MP/King et al. - 2016 - BiGG Models A platform for integrating, standardizing and sharing genome-scale models.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

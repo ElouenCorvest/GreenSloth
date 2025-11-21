@@ -1,0 +1,57 @@
+\setlength{\fboxrule}{0.4pt}
+
+\newcounter{theo}[section] \setcounter{theo}{0}
+\renewcommand{\thetheo}{\arabic{section}.\arabic{theo}}
+\newenvironment{theo}[2][]{%
+\refstepcounter{theo}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=Emerald!20]
+{\strut Example~\thetheo};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=Blue]
+{\strut \textcolor{white}{Example~\thetheo:~#1}};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=Emerald,%blue!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+\label{#2}}{\end{mdframed}}
+
+\thispagestyle{empty}
+
+\vspace*{-5\baselineskip}
+\hspace*{0.4\textwidth}\includegraphics[width=0.7\textwidth]{Figures/rwth_jp_computational_life_science_en_rgb.png}\\\vspace{1.5cm}
+
+
+\vfill
+
+
+\begin{center}
+\Large{Proposal}\\
+\begin{bfseries}
+    \begin{Huge}
+        My Proposed Contribution to Science \par
+    \end{Huge}
+    \LARGE{Elou\"en Corvest}\\[1ex]
+\end{bfseries}
+\vfill
+
+
+
+
+% \begin{large}
+%     \begin{tabular}{ll}
+%         Thesis advisor and first examiner: & Prof. Dr. Anna Matuszy\'nska \\
+%         Second examiner: & Prof. Dr. Lisa Fürtauer \\
+%         Registration date: & 30.05.2022 \\
+%         Submission date: & 30.08.2022
+%     \end{tabular}
+% \end{large}
+\end{center}

@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+
+\input{Preamble/Packages.tex}
+\input{Preamble/NewCommands.tex}
+
+\begin{document}
+\selectlanguage{english}
+\pagenumbering{roman}
+
+\input{Titelpage}
+
+\newpage
+
+% Copy below section template for section before TOC
+% \newcommand{\secname}{\color{red}REPLACE ME}
+% \section*{\secname}
+% \addcontentsline{toc}{section}{\secname}
+% \input{CHANGE PATH TO SECTION .tex}
+
+\tableofcontents
+
+\newcounter{romannumbers}
+\setcounter{romannumbers}{\arabic{page}}
+\newpage
+
+\pagenumbering{arabic}
+
+% Copy the following to create a new section
+% \newcommand{\secname}{\color{red}REPLACE ME}
+% \section{\secname}
+% \input{CHANGE PATH TO SECTION .tex}
+% \newpage
+
+\begin{multicols}{2}
+\section{Models are the Past, Present, and Future}
+\input{Sections/modelspastpresentfuture.tex}
+\section{A Real Solution}
+\input{Sections/whatnow.tex}
+
+\section{Conclusion}
+\input{Sections/conclusion.tex}
+
+\end{multicols}
+\newpage
+
+\pagenumbering{roman}
+\setcounter{page}{\arabic{romannumbers} + 1}
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+\end{document}

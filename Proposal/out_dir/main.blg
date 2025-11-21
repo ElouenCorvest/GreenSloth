@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'out_dir/main.blg'
+[32] biber:340> INFO - === Fri Nov 21, 2025, 14:55:30
+[39] Biber.pm:419> INFO - Reading 'out_dir/main.bcf'
+[66] Biber.pm:979> INFO - Found 28 citekeys in bib section 0
+[71] Biber.pm:4419> INFO - Processing section 0
+[76] Biber.pm:4610> INFO - Looking for bibtex file 'GreenSloth.bib' for section 0
+[86] bibtex.pm:1713> INFO - LaTeX decoding ...
+[286] bibtex.pm:1519> INFO - Found BibTeX data source 'GreenSloth.bib'
+[481] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[481] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[481] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[481] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[490] bbl.pm:660> INFO - Writing 'out_dir/main.bbl' with encoding 'UTF-8'
+[500] bbl.pm:763> INFO - Output to out_dir/main.bbl
