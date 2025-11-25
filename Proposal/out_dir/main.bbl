@@ -2171,6 +2171,554 @@
       \verb /home/elouencorvest/Zotero/storage/GMFKY7MP/King et al. - 2016 - BiGG Models A platform for integrating, standardizing and sharing genome-scale models.pdf
       \endverb
     \endentry
+    \entry{kuenziPredictingDrugResponse2020}{article}{}
+      \name{author}{8}{}{%
+        {{hash=d6c0e95bc7416c16c4cd7f67f4f7aa0c}{%
+           family={Kuenzi},
+           familyi={K\bibinitperiod},
+           given={Brent\bibnamedelima M.},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=3dc455f892e823d50606b6e7f20e6790}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Jisoo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=af5535e1c9c0595e1ba0ec07212e4761}{%
+           family={Fong},
+           familyi={F\bibinitperiod},
+           given={Samson\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=2079e9dcc4e9622ca8bbb18bd83b6730}{%
+           family={Sanchez},
+           familyi={S\bibinitperiod},
+           given={Kyle\bibnamedelima S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=9f705de55f142b19ee96c9466ba521f9}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=00a00efde1210d89f155a17bbc330f73}{%
+           family={Kreisberg},
+           familyi={K\bibinitperiod},
+           given={Jason\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=4110e2c106851274d8af7b534f7a748e}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Jianzhu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a254a95c2343f55d44f87bb01073e5fa}{%
+           family={Ideker},
+           familyi={I\bibinitperiod},
+           given={Trey},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{cb613511371fc5165914d451730139f3}
+      \strng{fullhash}{9cee94b7eb425ab0f64691ec9e69fa79}
+      \strng{bibnamehash}{cb613511371fc5165914d451730139f3}
+      \strng{authorbibnamehash}{cb613511371fc5165914d451730139f3}
+      \strng{authornamehash}{cb613511371fc5165914d451730139f3}
+      \strng{authorfullhash}{9cee94b7eb425ab0f64691ec9e69fa79}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Most drugs entering clinical trials fail, often related to an incomplete understanding of the mechanisms governing drug response. Machine learning techniques hold immense promise for better drug response predictions, but most have not reached clinical practice due to their lack of interpretability and their focus on monotherapies. We address these challenges by developing DrugCell, an interpretable deep learning model of human cancer cells trained on the responses of 1,235 tumor cell lines to 684 drugs. Tumor genotypes induce states in cellular subsystems that are integrated with drug structure to predict response to therapy and, simultaneously, learn biological mechanisms underlying the drug response. DrugCell predictions are accurate in cell lines and also stratify clinical outcomes. Analysis of DrugCell mechanisms leads directly to the design of synergistic drug combinations, which we validate systematically by combinatorial CRISPR, drug-drug screening in~vitro, and patient-derived xenografts. DrugCell provides a blueprint for constructing interpretable models for predictive medicine.}
+      \field{issn}{1878-3686}
+      \field{journaltitle}{Cancer Cell}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{5}
+      \field{title}{Predicting {{Drug Response}} and {{Synergy Using}} a {{Deep Learning Model}} of {{Human Cancer Cells}}}
+      \field{volume}{38}
+      \field{year}{2020}
+      \field{pages}{672\bibrangedash 684.e6}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/j.ccell.2020.09.014
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/REBBUPV3/Kuenzi et al. - 2020 - Predicting Drug Response and Synergy Using a Deep Learning Model of Human Cancer Cells.pdf
+      \endverb
+      \keyw{Antineoplastic Agents,cancer,Cell Line Tumor,Computational Biology,Databases Factual,Deep Learning,Drug Screening Assays Antitumor,Drug Synergism,drug synergy,Genotype,Humans,interpretable deep learning,machine learning,Neoplasms,network modeling,Patient-Specific Modeling,precision medicine}
+    \endentry
+    \entry{theodorisTransferLearningEnables2023}{article}{}
+      \name{author}{11}{}{%
+        {{hash=db9bb3bc0604199de17ce7fd678a551d}{%
+           family={Theodoris},
+           familyi={T\bibinitperiod},
+           given={Christina\bibnamedelima V.},
+           giveni={C\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=91c798495eb64a5e7ee8f04fe8a36c00}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Ling},
+           giveni={L\bibinitperiod}}}%
+        {{hash=31374d66ede2f6080a15fadcef088436}{%
+           family={Chopra},
+           familyi={C\bibinitperiod},
+           given={Anant},
+           giveni={A\bibinitperiod}}}%
+        {{hash=61558ceeb38ed81350c7787b14753062}{%
+           family={Chaffin},
+           familyi={C\bibinitperiod},
+           given={Mark\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7000dfde3ec299b959c6b08cfa003c88}{%
+           family={Al\bibnamedelima Sayed},
+           familyi={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Zeina\bibnamedelima R.},
+           giveni={Z\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=44b105d010aee14a2cb3ae7d14ba4caa}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Matthew\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ec5f1921e4fa00025af2b0aefa9be7b6}{%
+           family={Mantineo},
+           familyi={M\bibinitperiod},
+           given={Helene},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d414ad5f541163967a35db57965529dd}{%
+           family={Brydon},
+           familyi={B\bibinitperiod},
+           given={Elizabeth\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7f09613e1486d45804d75d555079625d}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Zexian},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ce053aa23e50f63feec80cc5cd4dad0d}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={X.\bibnamedelimi Shirley},
+           giveni={X\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f66439929a95109d7912306caa769bcd}{%
+           family={Ellinor},
+           familyi={E\bibinitperiod},
+           given={Patrick\bibnamedelima T.},
+           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{34b91c78d6352e0e0c737491fd55667f}
+      \strng{fullhash}{213647b357b295bb9d7078d33195a752}
+      \strng{bibnamehash}{34b91c78d6352e0e0c737491fd55667f}
+      \strng{authorbibnamehash}{34b91c78d6352e0e0c737491fd55667f}
+      \strng{authornamehash}{34b91c78d6352e0e0c737491fd55667f}
+      \strng{authorfullhash}{213647b357b295bb9d7078d33195a752}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Mapping gene networks requires large amounts of transcriptomic data to learn the connections between genes, which impedes discoveries in settings with limited data, including rare diseases and diseases affecting clinically inaccessible tissues. Recently, transfer learning has revolutionized fields such as natural language understanding1,2 and computer vision3 by leveraging deep learning models pretrained on large-scale general datasets that can then be fine-tuned towards a vast array of downstream tasks with limited task-specific data. Here, we developed a context-aware, attention-based deep learning model, Geneformer, pretrained on a large-scale corpus of about 30\,million single-cell transcriptomes to enable context-specific predictions in settings with limited data in network biology. During pretraining, Geneformer gained a fundamental understanding of network dynamics, encoding network hierarchy in the attention weights of the model in a completely self-supervised manner. Fine-tuning towards a diverse panel of downstream tasks relevant to chromatin and network dynamics using limited task-specific data demonstrated that Geneformer consistently boosted predictive accuracy. Applied to disease modelling with limited patient data, Geneformer identified candidate therapeutic targets for cardiomyopathy. Overall, Geneformer represents a pretrained deep learning model from which fine-tuning towards a broad range of downstream applications can be pursued to accelerate discovery of key network regulators and candidate therapeutic targets.}
+      \field{issn}{1476-4687}
+      \field{journaltitle}{Nature}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{7965}
+      \field{title}{Transfer Learning Enables Predictions in Network Biology}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{618}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{616\bibrangedash 624}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1038/s41586-023-06139-9
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/QALXBN6P/Theodoris et al. - 2023 - Transfer learning enables predictions in network biology.pdf
+      \endverb
+      \keyw{Cardiomyopathies,Computational models,Gene regulatory networks,Machine learning,Regulatory networks}
+    \endentry
+    \entry{ohmFocusingFineTuningUnderstanding2024}{article}{}
+      \name{author}{1}{}{%
+        {{hash=42a4e45a62db90fb26313d916de20e5c}{%
+           family={Ohm},
+           familyi={O\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{42a4e45a62db90fb26313d916de20e5c}
+      \strng{fullhash}{42a4e45a62db90fb26313d916de20e5c}
+      \strng{bibnamehash}{42a4e45a62db90fb26313d916de20e5c}
+      \strng{authorbibnamehash}{42a4e45a62db90fb26313d916de20e5c}
+      \strng{authornamehash}{42a4e45a62db90fb26313d916de20e5c}
+      \strng{authorfullhash}{42a4e45a62db90fb26313d916de20e5c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Those who design and deploy generative AI models, such as Large Language Models like GPT-4 or image diffusion models like Stable Diffusion, can shape model behavior in four distinct stages: pretraining, fine-tuning, in-context learning, and input and output filtering. The four stages differ among many dimensions, including cost, access, and persistence of change. Pretraining is always very expensive and in-context learning is nearly costless. Pretraining and fine-tuning change the model in a more persistent manner, while in-context learning and filters make less durable alterations. These are but two of many such distinctions reviewed in this Essay. Legal scholars, policymakers, and judges need to understand the differences between the four stages as they try to shape and direct what these models do. Although legal and policy interventions can (and probably will) occur during all four stages, many will best be directed at the fine-tuning stage. Fine-tuning will often represent the best balance between power, precision, and disruption of the approaches.}
+      \field{issn}{1938-0976}
+      \field{journaltitle}{Science and Technology Law Review}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shorttitle}{Focusing {{On Fine-Tuning}}}
+      \field{title}{Focusing {{On Fine-Tuning}}: {{Understanding The Four Pathways For Shaping Generative AI}}}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{25}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.52214/stlr.v25i2.12762
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/TSJVKEII/Ohm - 2024 - Focusing On Fine-Tuning Understanding The Four Pathways For Shaping Generative AI.pdf
+      \endverb
+    \endentry
+    \entry{singhapooFineTuningAIModels2025}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=f7a33bbc1c94ebebcefa0fa4c857a84e}{%
+           family={Singhapoo},
+           familyi={S\bibinitperiod},
+           given={Kritsada},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1c25b2089ef28f06c4e3d46d2173b031}{%
+           family={Inthanil},
+           familyi={I\bibinitperiod},
+           given={Akarachai},
+           giveni={A\bibinitperiod}}}%
+        {{hash=882e192488feb393278c57d94b654232}{%
+           family={Pillai},
+           familyi={P\bibinitperiod},
+           given={Attapon},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{392ff5199a236a6798dfce4337e60556}
+      \strng{fullhash}{392ff5199a236a6798dfce4337e60556}
+      \strng{bibnamehash}{392ff5199a236a6798dfce4337e60556}
+      \strng{authorbibnamehash}{392ff5199a236a6798dfce4337e60556}
+      \strng{authornamehash}{392ff5199a236a6798dfce4337e60556}
+      \strng{authorfullhash}{392ff5199a236a6798dfce4337e60556}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper looks at fine-tuning AI models when there are limited resources. The goal is to improve model performance using a small amount of training data and limited computing power. The study explores methods to reduce memory training time and energy consumption while still keeping the model accurate. The experiments were done using the LLaMA 3.1 8B model with Python and the Unsloth tool to make the training process more efficient. The paper tests finetuning techniques such as low-rank adaptation quantization and selective parameter updates to reduce computational costs without lowering output quality. It also looks at how dataset size, adjusting hyperparameters, and training time affect performance, giving insights into the balance between efficiency and accuracy. The results show that even with limited data and hardware, the fine-tuned model can still learn specific knowledge, adapt to new tasks, and provide accurate responses. These findings show the potential for using large language models in environments with limited resources and provide useful advice on how to train AI models efficiently in such situations.}
+      \field{booktitle}{2025 11th {{International Conference}} on {{Engineering}}, {{Applied Sciences}}, and {{Technology}} ({{ICEAST}})}
+      \field{issn}{2768-4857}
+      \field{month}{5}
+      \field{title}{Fine-{{Tuning AI Models}} with {{Limited Resources}}}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{148\bibrangedash 151}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/ICEAST64767.2025.11088202
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/NHDIA9XF/Singhapoo et al. - 2025 - Fine-Tuning AI Models with Limited Resources.pdf
+      \endverb
+      \keyw{Accuracy,Adaptation models,AI,Artificial intelligence,Computational efficiency,Computational modeling,Data models,Fine-Tuning,Limited Resources,Memory management,Quantization (signal),Training,Training data}
+    \endentry
+    \entry{lanhamAIAgentsAction2025}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d1d55c9b691197222763893d5b0f743e}{%
+           family={Lanham},
+           familyi={L\bibinitperiod},
+           given={Micheal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Shelter Island, NY}%
+      }
+      \list{publisher}{1}{%
+        {Manning Publications}%
+      }
+      \strng{namehash}{d1d55c9b691197222763893d5b0f743e}
+      \strng{fullhash}{d1d55c9b691197222763893d5b0f743e}
+      \strng{bibnamehash}{d1d55c9b691197222763893d5b0f743e}
+      \strng{authorbibnamehash}{d1d55c9b691197222763893d5b0f743e}
+      \strng{authornamehash}{d1d55c9b691197222763893d5b0f743e}
+      \strng{authorfullhash}{d1d55c9b691197222763893d5b0f743e}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In AI Agents in Action, you'll learn how to build production-ready assistants, multi-agent systems, and behavioral agents. You'll master the essential parts of an agent, including retrieval-augmented knowledge and memory, while you create multi-agent applications that can use software tools, plan tasks autonomously, and learn from experience. As you explore the many interesting examples, you'll work with state-of-the-art tools like OpenAI Assistants API, GPT Nexus, LangChain, Prompt Flow, AutoGen, and CrewAI}
+      \field{edition}{First edition}
+      \field{isbn}{978-1-63343-634-3}
+      \field{langid}{english}
+      \field{title}{{{AI}} Agents in Action}
+      \field{year}{2025}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/C6Z5ZUHL/Lanham - 2025 - AI agents in action.pdf
+      \endverb
+    \endentry
+    \entry{chenHowChatGPTsBehavior2024}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4722d1c517fb1393cd8f82862ffc9746}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Lingjiao},
+           giveni={L\bibinitperiod}}}%
+        {{hash=00dc518b94dfa6349c86e70661a1a5ef}{%
+           family={Zaharia},
+           familyi={Z\bibinitperiod},
+           given={Matei},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1b868d50048a635fa27ffa744323fa41}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The MIT Press}%
+      }
+      \strng{namehash}{a4e726228d1a1c5296ab3556cae89810}
+      \strng{fullhash}{a4e726228d1a1c5296ab3556cae89810}
+      \strng{bibnamehash}{a4e726228d1a1c5296ab3556cae89810}
+      \strng{authorbibnamehash}{a4e726228d1a1c5296ab3556cae89810}
+      \strng{authornamehash}{a4e726228d1a1c5296ab3556cae89810}
+      \strng{authorfullhash}{a4e726228d1a1c5296ab3556cae89810}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{GPT-3.5 and GPT-4 are the two most widely used large language model (LLM) services. However, when and how these models are updated over time is opaque. Here, we evaluate the March 2023 and June 2023 versions of GPT-3.5 and GPT-4 on several diverse tasks: 1) math problems, 2) sensitive/dangerous questions, 3) opinion surveys, 4) multi-hop knowledge-intensive questions, 5) generating code, 6) U.S. Medical License tests, and 7) visual reasoning. We find that the performance and behavior of both GPT-3.5 and GPT-4 can vary greatly over time. For example, GPT-4 (March 2023) was reasonable at identifying prime vs. composite numbers (84\% accuracy) but GPT-4 (June 2023) was poor on these same questions (51\% accuracy). This is partly explained by a drop in GPT-4's amenity to follow chain-of-thought prompting. Interestingly, GPT-3.5 was much better in June than in March in this task. GPT-4 became less willing to answer sensitive questions and opinion survey questions in June than in March. GPT-4 performed better at multi-hop questions in June than in March, while GPT-3.5's performance dropped on this task. Both GPT-4 and GPT-3.5 had more formatting mistakes in code generation in June than in March. We provide evidence that GPT-4's ability to follow user instructions has decreased over time, which is one common factor behind the many behavior drifts. Overall, our findings show that the behavior of the `same' LLM service can change substantially in a relatively short amount of time, highlighting the need for continuous monitoring of LLMs.}
+      \field{issn}{2644-2353,}
+      \field{journaltitle}{Harvard Data Science Review}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{How {{Is ChatGPT}}'s {{Behavior Changing Over Time}}?}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{6}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1162/99608f92.5317da47
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/MI69BTMY/Chen et al. - 2024 - How Is ChatGPT’s Behavior Changing Over Time.pdf
+      \endverb
+    \endentry
+    \entry{wuSustainableAIEnvironmental}{article}{}
+      \name{author}{25}{}{%
+        {{hash=ecfcd63e3355514161783ebe821cd42d}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Carole-Jean},
+           giveni={C\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=479706c2ed6a4ddc47d6d5d290ecb492}{%
+           family={Raghavendra},
+           familyi={R\bibinitperiod},
+           given={Ramya},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f0849c97164c16fd75df73410c5db135}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Udit},
+           giveni={U\bibinitperiod}}}%
+        {{hash=ba5122142098739e3e4330f086ebc45f}{%
+           family={Acun},
+           familyi={A\bibinitperiod},
+           given={Bilge},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8e9acd82fd99596427bc7203d1ca556a}{%
+           family={Ardalani},
+           familyi={A\bibinitperiod},
+           given={Newsha},
+           giveni={N\bibinitperiod}}}%
+        {{hash=0fc8a18db58efd3a1b829f536b5de678}{%
+           family={Maeng},
+           familyi={M\bibinitperiod},
+           given={Kiwan},
+           giveni={K\bibinitperiod}}}%
+        {{hash=cc5d7964bcff6211367bed0c85f6eb5c}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Gloria},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c956a0cbaa1ce43ed476cddcf98cc897}{%
+           family={Behram},
+           familyi={B\bibinitperiod},
+           given={Fiona\bibnamedelima Aga},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=326b88b90f8cb87df4c3daab563d8239}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7502036639260f99790290feda12ec00}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d41895e4fca09a2ffb0c95190f6d6aca}{%
+           family={Gschwind},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f96ca4fd59c34a2562e9a5dde70a1287}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Anurag},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b13aa2bad5258fa5ef7a733f2d305a49}{%
+           family={Ott},
+           familyi={O\bibinitperiod},
+           given={Myle},
+           giveni={M\bibinitperiod}}}%
+        {{hash=16e1a8619dbd497d663f2826c9009aca}{%
+           family={Melnikov},
+           familyi={M\bibinitperiod},
+           given={Anastasia},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2499e63435eed12a242cf416ef474e2a}{%
+           family={Candido},
+           familyi={C\bibinitperiod},
+           given={Salvatore},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d423f545c47a8c65a465fcd5649bcbbc}{%
+           family={Brooks},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=93fe4ee5367badd822e112322753c865}{%
+           family={Chauhan},
+           familyi={C\bibinitperiod},
+           given={Geeta},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c271e6dd638994066846eb0ec13895d1}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=24ae660e31ad1fd2c67a30f517342c52}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Hsien-Hsin\bibnamedelima S},
+           giveni={H\bibinithyphendelim H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=4796885d9bc8f4256d5899c71df2e2e0}{%
+           family={Akyildiz},
+           familyi={A\bibinitperiod},
+           given={Bugra},
+           giveni={B\bibinitperiod}}}%
+        {{hash=249298af2fc35dab4c986d84399e22ea}{%
+           family={Balandat},
+           familyi={B\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4a27a3fc7c2e8cf8a844a8ecd54e919d}{%
+           family={Spisak},
+           familyi={S\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7a7083b0c44429fbbc6a9c989384b44e}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Ravi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f843a1cfdb301a1b002437308c086c72}{%
+           family={Rabbat},
+           familyi={R\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1604abdffcd9ec6480bbf40324709e75}{%
+           family={Hazelwood},
+           familyi={H\bibinitperiod},
+           given={Kim},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{739307d91209c5fa1c41a10846683ce7}
+      \strng{fullhash}{74be1c5339a5037e44b7c872efc87c4d}
+      \strng{bibnamehash}{739307d91209c5fa1c41a10846683ce7}
+      \strng{authorbibnamehash}{739307d91209c5fa1c41a10846683ce7}
+      \strng{authornamehash}{739307d91209c5fa1c41a10846683ce7}
+      \strng{authorfullhash}{74be1c5339a5037e44b7c872efc87c4d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper explores the environmental impact of the super-linear growth trends for AI from a holistic perspective, spanning Data, Algorithms, and System Hardware. We characterize the carbon footprint of AI computing by examining the model development cycle across industry-scale machine learning use cases and, at the same time, considering the life cycle of system hardware. Taking a step further, we capture the operational and manufacturing carbon footprint of AI computing and present an end-to-end analysis for what and how hardware-software design and at-scale optimization can help reduce the overall carbon footprint of AI. Based on the industry experience and lessons learned, we share the key challenges and chart out important development directions across the many dimensions of AI. We hope the key messages and insights presented in this paper can inspire the community to advance the field of AI in an environmentally-responsible manner.}
+      \field{langid}{english}
+      \field{title}{Sustainable {{AI}}: {{Environmental Implications}}, {{Challenges}} and {{Opportunities}}}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/RSKPX8MA/Wu et al. - Sustainable AI Environmental Implications, Challenges and Opportunities.pdf
+      \endverb
+    \endentry
+    \entry{pattersonCarbonEmissionsLarge}{article}{}
+      \name{author}{9}{}{%
+        {{hash=64f58317379ddd1a24e0e6cba85ae78c}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=fa1b97983892cfef89de6a1b63f97bcc}{%
+           family={Gonzalez},
+           familyi={G\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+        {{hash=841a83a4bb5e622d6e1bde4818879016}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Quoc},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=8b0338921cb1b7773c2e58d76fd85d2e}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4a0a460f145d999fdf51b3d49b9e5a8a}{%
+           family={Munguia},
+           familyi={M\bibinitperiod},
+           given={Lluis-Miquel},
+           giveni={L\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=15a3cabf7c44e8cbdb8419e4a4c26057}{%
+           family={Rothchild},
+           familyi={R\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=07665baeb96d27e2487ae9b7ff6c48d9}{%
+           family={So},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=095cf8111ecdc58ffb35d96100b43040}{%
+           family={Texier},
+           familyi={T\bibinitperiod},
+           given={Maud},
+           giveni={M\bibinitperiod}}}%
+        {{hash=62f954323339abeba6c6a240e9d2855b}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b3c2b2b185248740d5a9d106250800f}
+      \strng{fullhash}{e2528a6d9a18e142eff20b8dfffdcab2}
+      \strng{bibnamehash}{8b3c2b2b185248740d5a9d106250800f}
+      \strng{authorbibnamehash}{8b3c2b2b185248740d5a9d106250800f}
+      \strng{authornamehash}{8b3c2b2b185248740d5a9d106250800f}
+      \strng{authorfullhash}{e2528a6d9a18e142eff20b8dfffdcab2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The computation demand for machine learning (ML) has grown rapidly recently, which comes with a number of costs. Estimating the energy cost helps measure its environmental impact and finding greener strategies, yet it is challenging without detailed information. We calculate the energy use and carbon footprint of several recent large models---T5, Meena, GShard, Switch Transformer, and GPT-3---and refine earlier estimates for the neural architecture search that found Evolved Transformer. We highlight the following opportunities to improve energy efficiency and CO2 equivalent emissions (CO2e): \ding{108} Large but sparsely activated DNNs can consume {$<$}1/10th the energy of large, dense DNNs without sacrificing accuracy despite using as many or even more parameters. \ding{108} Geographic location matters for ML workload scheduling since the fraction of carbon-free energy and resulting CO2e vary \textasciitilde 5X-10X, even within the same country and the same organization. We are now optimizing where and when large models are trained. \ding{108} Specific datacenter infrastructure matters, as Cloud datacenters can be \textasciitilde 1.4-2X more energy efficient than typical datacenters, and the ML-oriented accelerators inside them can be \textasciitilde 2-5X more effective than off-the-shelf systems. Remarkably, the choice of DNN, datacenter, and processor can reduce the carbon footprint up to \textasciitilde 100-1000X. These large factors also make retroactive estimates of energy cost difficult. To avoid miscalculations, we believe ML papers requiring large computational resources should make energy consumption and CO2e explicit when practical. We are working to be more transparent about energy use and CO2e in our future research. To help reduce the carbon footprint of ML, we believe energy usage and CO2e should be a key metric in evaluating models, and we are collaborating with MLPerf developers to include energy usage during training and inference in this industry standard benchmark.}
+      \field{langid}{english}
+      \field{title}{Carbon {{Emissions}} and {{Large Neural Network Training}}}
+      \verb{file}
+      \verb /home/elouencorvest/Zotero/storage/B6VNQEKN/Patterson et al. - Carbon Emissions and Large Neural Network Training.pdf
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

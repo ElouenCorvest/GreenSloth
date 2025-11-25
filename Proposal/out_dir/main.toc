@@ -14,5 +14,13 @@
 \contentsline {subsection}{\numberline {2.3}Model Comparison \& Validation}{7}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Database}{8}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Website}{8}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Conclusion}{9}{section.3}%
-\contentsline {section}{References}{iii}{section.3}%
+\contentsline {section}{\numberline {3}Future Prospects}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Collaboration and Community Involvement}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Web Design}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Introducing \glsxtrshort {ai} into \greensloth {}}{10}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Personification of each Model}{10}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Limited \glsxtrshort {ai} Reviewer}{11}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Speaking to the Agents}{11}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Ethical Considerations}{12}{subsubsection.3.3.4}%
+\contentsline {section}{\numberline {4}Conclusion}{12}{section.4}%
+\contentsline {section}{References}{iii}{section.4}%

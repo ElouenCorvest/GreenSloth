@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  21 NOV 2025 16:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  25 NOV 2025 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1421,7 +1421,7 @@ Package hyperref Info: Link coloring OFF on input line 6.
 
  (./Titelpage.tex
 \c@theo=\count559
-<Figures/rwth_jp_computational_life_science_en_rgb.png, id=70, 1559.8275pt x 379.4175pt>
+<Figures/rwth_jp_computational_life_science_en_rgb.png, id=102, 1559.8275pt x 379.4175pt>
 File: Figures/rwth_jp_computational_life_science_en_rgb.png Graphic file (type png)
 <use Figures/rwth_jp_computational_life_science_en_rgb.png>
 Package pdftex.def Info: Figures/rwth_jp_computational_life_science_en_rgb.png  used on input line 30.
@@ -1443,94 +1443,116 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd))
+ (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 20.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+))
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
 \c@romannumbers=\count560
- [2]
+ [2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 35--35
 []\OT1/cmr/bx/n/14.4 Models are the Past,
  []
 
 (./Sections/modelspastpresentfuture.tex [1]
-<Figures/fair_usage.pdf, id=139, 722.7pt x 361.35pt>
+<Figures/fair_usage.pdf, id=181, 722.7pt x 361.35pt>
 File: Figures/fair_usage.pdf Graphic file (type pdf)
 <use Figures/fair_usage.pdf>
 Package pdftex.def Info: Figures/fair_usage.pdf  used on input line 23.
 (pdftex.def)             Requested size: 318.66948pt x 159.33633pt.
-<Figures/photosynthesis_model_query.pdf, id=147, 462.52798pt x 346.89601pt>
+<Figures/photosynthesis_model_query.pdf, id=189, 462.52798pt x 346.89601pt>
 File: Figures/photosynthesis_model_query.pdf Graphic file (type pdf)
 <use Figures/photosynthesis_model_query.pdf>
 Package pdftex.def Info: Figures/photosynthesis_model_query.pdf  used on input line 34.
 (pdftex.def)             Requested size: 318.66948pt x 239.01443pt.
 ) [2] [3 <./Figures/fair_usage.pdf> <./Figures/photosynthesis_model_query.pdf>] (./Sections/whatnow.tex
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 1.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
-File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-)
-<Figures/GreenSloth_Plan.pdf, id=287, 1243.40218pt x 588.17256pt>
+<Figures/GreenSloth_Plan.pdf, id=328, 1243.40218pt x 588.17256pt>
 File: Figures/GreenSloth_Plan.pdf Graphic file (type pdf)
 <use Figures/GreenSloth_Plan.pdf>
 Package pdftex.def Info: Figures/GreenSloth_Plan.pdf  used on input line 9.
 (pdftex.def)             Requested size: 562.2286pt x 265.95859pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 10.
- [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+ [4]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
 []\OT1/cmr/m/n/10.95 To help the users of mod-els more,
  []
 
 [5 <./Figures/GreenSloth_Plan.pdf>]
-<Figures/modelling.pdf, id=311, 1728.22801pt x 1221.07707pt>
+<Figures/modelling.pdf, id=351, 1728.22801pt x 1221.07707pt>
 File: Figures/modelling.pdf Graphic file (type pdf)
 <use Figures/modelling.pdf>
 Package pdftex.def Info: Figures/modelling.pdf  used on input line 24.
 (pdftex.def)             Requested size: 318.66948pt x 225.15044pt.
- [6] [7 <./Figures/modelling.pdf>] [8]) (./Sections/conclusion.tex) [9]
-Overfull \hbox (8.6946pt too wide) in paragraph at lines 51--51
+ [6] [7 <./Figures/modelling.pdf>] [8]) (./Sections/futureprospects.tex [9]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 19.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\glsxtrshort' on input line 19.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\greensloth' on input line 19.
+
+[10]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\glsxtrshort' on input line 31.
+
+<Figures/ChatExample.pdf, id=412, 443.81955pt x 237.94742pt>
+File: Figures/ChatExample.pdf Graphic file (type pdf)
+<use Figures/ChatExample.pdf>
+Package pdftex.def Info: Figures/ChatExample.pdf  used on input line 45.
+(pdftex.def)             Requested size: 318.66948pt x 170.84999pt.
+[11]) (./Sections/conclusion.tex) [12 <./Figures/ChatExample.pdf>]
+Overfull \hbox (8.6946pt too wide) in paragraph at lines 54--54
 []\OT1/cmr/m/it/10.95 SBML.Org: Es-sen-tial Pub-li-ca-tions about SBML\OT1/cmr/m/n/10.95 . https://sbml.org/documents/publications/. 
  []
 
 [3]
-Overfull \hbox (136.16505pt too wide) in paragraph at lines 51--51
+Overfull \hbox (136.16505pt too wide) in paragraph at lines 54--54
 \OT1/cmr/m/it/10.95 Stew-ard-ship -- 7,841 -- Web of Sci-ence Core Col-lec-tion\OT1/cmr/m/n/10.95 . https://www.webofscience.com/wos/woscc/summary/9c1c0dab-
  []
 
 
-Overfull \hbox (148.22815pt too wide) in paragraph at lines 51--51
+Overfull \hbox (148.22815pt too wide) in paragraph at lines 54--54
 []\OT1/cmr/m/it/10.95 Citation Re-port - 1,475 - Web of Sci-ence Core Col-lec-tion\OT1/cmr/m/n/10.95 . https://www.webofscience.com/wos/woscc/summary/aebfb3a0-
  []
 
 
-Overfull \hbox (67.64934pt too wide) in paragraph at lines 51--51
+Overfull \hbox (67.64934pt too wide) in paragraph at lines 54--54
 \OT1/cmr/m/n/10.95 6cfd-4ca6-9a3c-104bc60c1ee6-0187df4b2d/5787b316-f80a-4f4e-ada2-ef631e25ff12-0187df3faf/relevance/1. 
  []
 
-[4] (out_dir/main.aux)
+[4] [5] (out_dir/main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4C582861EE15552E6C7207D9E47D7173;2282.
+(rerunfilecheck)             Checksum: 1E501B5D0D78C18CA2527B54AC2AB9C9;3708.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49274 strings out of 474222
- 998927 string characters out of 5748733
- 2009195 words of memory out of 5000000
- 70755 multiletter control sequences out of 15000+600000
- 571911 words of font info for 77 fonts, out of 8000000 for 9000
+ 49455 strings out of 474222
+ 1003581 string characters out of 5748733
+ 2010796 words of memory out of 5000000
+ 70911 multiletter control sequences out of 15000+600000
+ 573544 words of font info for 79 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 114i,8n,112p,2470b,2045s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,8n,112p,2470b,2088s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on out_dir/main.pdf (13 pages, 399705 bytes).
+Output written on out_dir/main.pdf (17 pages, 424338 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
- 313 compressed objects within 4 object streams
- 63 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 

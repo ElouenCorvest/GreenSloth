@@ -2403,6 +2403,15 @@
     <bcf:citekey order="35" intorder="1">altschulBasicLocalAlignment1990</bcf:citekey>
     <bcf:citekey order="36" intorder="1">kanehisaKEGGKyotoEncyclopedia2000</bcf:citekey>
     <bcf:citekey order="37" intorder="1">kingBiGGModelsPlatform2016</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">kuenziPredictingDrugResponse2020</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">theodorisTransferLearningEnables2023</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">ohmFocusingFineTuningUnderstanding2024</bcf:citekey>
+    <bcf:citekey order="40" intorder="2">singhapooFineTuningAIModels2025</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">lanhamAIAgentsAction2025</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">lanhamAIAgentsAction2025</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">chenHowChatGPTsBehavior2024</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">wuSustainableAIEnvironmental</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">pattersonCarbonEmissionsLarge</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
