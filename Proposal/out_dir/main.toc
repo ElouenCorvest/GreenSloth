@@ -2,25 +2,25 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Models are the Past, Present, and Future}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Creation (Past)}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Presentation (Present)}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}Presentation (Present)}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Sharing (Future)}{2}{subsection.1.3}%
-\contentsline {section}{\numberline {2}A Real Solution}{4}{section.2}%
+\contentsline {section}{\numberline {2}A Real Solution}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}The Promise}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Model Creation Pipeline}{6}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Model Code}{6}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2}Model Creation Pipeline}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Model Code}{4}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Glossaries}{6}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Gather Information}{7}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3}Gather Information}{6}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Packaging it up}{7}{subsubsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.3}Model Comparison \& Validation}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Database}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Database}{7}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Website}{8}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Future Prospects}{9}{section.3}%
+\contentsline {section}{\numberline {3}Future Prospects}{8}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Collaboration and Community Involvement}{9}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Web Design}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Introducing \glsxtrshort {ai} into \greensloth {}}{10}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Personification of each Model}{10}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Limited \glsxtrshort {ai} Reviewer}{11}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Speaking to the Agents}{11}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Ethical Considerations}{12}{subsubsection.3.3.4}%
-\contentsline {section}{\numberline {4}Conclusion}{12}{section.4}%
-\contentsline {section}{References}{iii}{section.4}%
+\contentsline {subsection}{\numberline {3.2}Web Design}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Introducing \glsxtrshort {ai} into \greensloth {}}{9}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Personification of each Model}{9}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Limited \glsxtrshort {ai} Reviewer}{10}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Speaking to the Agents}{10}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Ethical Considerations}{10}{subsubsection.3.3.4}%
+\contentsline {section}{\numberline {4}Conclusion}{11}{section.4}%
+\contentsline {section}{References}{ii}{section.4}%

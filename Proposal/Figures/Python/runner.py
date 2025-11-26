@@ -81,15 +81,52 @@ model_query = model_query.loc[2000:2024]
 
 fig, ax = plt.subplots()
 
-ax.bar([i for i in range(len(model_query))], model_query["Count"], tick_label=model_query.index, color=["#ff616b" if year%2 == 0 else "#000831" for year in model_query.index])
-ax.tick_params(axis="x", labelrotation=45)
+x_vals = [i for i in range(len(model_query))]
+height_diff = [model_query["Count"].iloc[i] - model_query["Count"].iloc[i - 1] if i > 0 else 0 for i in range(len(model_query))]
 
-ax.set_ylabel(textwrap.fill("Number of Publications with \"photosynthesis model\" query", width=40, break_long_words=False), fontsize="large")
-ax.text(0.2, 0.8, f"Total: {model_query.sum().values[0]}", transform=ax.transAxes, ha="center", va="center", size="large", fontweight="bold")
+for idx in range(len(model_query.index)):
+    
+    if height_diff[idx] < 0:
+        color = "#F8503A"
+    else:
+        color = "#6BBF59"
+    
+    ymin = model_query.index[idx]
+    ywidth = 0.5
+    
+    if idx != 0:
+        ax.bar(
+            x=model_query.index[idx],
+            height=height_diff[idx],
+            bottom=model_query["Count"].iloc[idx - 1],
+            color=color
+        )
+        
+        bottom_val = model_query["Count"].iloc[idx - 1]
+        
+    else:
+        bottom_val = model_query["Count"].iloc[idx]
+    
+    ax.bar(
+        x=model_query.index[idx],
+        height=0,
+        bottom=bottom_val,
+        color=color,
+        edgecolor="black",
+        linewidth=2
+    )
+    
 
 for side in ["top", "right"]:
     ax.spines[side].set_visible(False)
+    
+ax.set_ylim(350, 1500)
+ax.set_yticks(range(400, 1600, 100))
+ax.set_ylabel(textwrap.fill("Number of Publications with \"photosynthesis model\" query", width=40, break_long_words=False), fontsize="large")
 
+ax.set_xticks(model_query.index, minor=True)
+ax.set_xlabel("Year", fontsize="large")
+ax.text(0.8, 0.1, f"Total: {model_query.sum().values[0]}", transform=ax.transAxes, ha="center", va="center", size="large", fontweight="bold")
 
 plt.tight_layout()
 plt.savefig(Path(__file__).parent / ".." / "photosynthesis_model_query.pdf", dpi=600)
