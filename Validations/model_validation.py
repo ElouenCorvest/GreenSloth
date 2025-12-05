@@ -9,12 +9,13 @@ import pandas as pd
 from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 from mdutils.mdutils import MdUtils
-from mxlpy import Model, Simulator, make_protocol, mca, plot, scan, units
+from mxlpy import Model, Simulator, make_protocol, mca, plot, scan, units, fit
 from scipy.signal import find_peaks, peak_prominences
 from sympy import Integer, Pow
 from sympy.physics.units import Unit, bar
 from sympy.printing.latex import LatexPrinter
 import os
+from lmfit import Parameters, minimize
 
 
 # Custom Latex Printer to handle units with negative integer exponents properly (Still need to be improved for more complex cases)
@@ -544,6 +545,67 @@ def calc_pam_vals(
 
     return Fm, NPQ, Fmin, quant_yields
 
+def calc_pam_vals2(
+    fluo_result: pd.Series, protocol: pd.DataFrame, pfd_str: str, sat_pulse: float = 2000, do_relative: bool = False
+) -> tuple[pd.Series, pd.Series]:
+    """Calculate PAM values from fluorescence data.
+
+    Use the fluorescence data from a PAM protocol to calculate Fm, NPQ. To find the Fm values, the protocol used for simulation is seperated into ranges between each saturating pulse. Then the maximum fluorescence value within each range is taken as Fm. Thes are then used to calculate NPQ.
+
+    Args:
+        fluo_result (pd.Series): Fluorescence data as a pd.Series from mxlpy simulation.
+        protocol (pd.DataFrame): PAM protocol used for simulation. Created using make_protocol from mxlpy.
+        pfd_str (str): The name of the PPFD parameter in the protocol.
+        sat_pulse (float, optional): The threshold for saturating pulse in the protocol. Defaults to 2000.
+
+    Returns:
+        tuple[pd.Series, pd.Series]: Fm and NPQ as pd.Series
+    """    
+    
+    F = fluo_result.copy()
+    F.name = "Fluorescence"
+    
+    peaks = protocol[protocol[pfd_str] >= sat_pulse].copy()
+    peaks.index = peaks.index.total_seconds()
+    peaks = peaks.reset_index()
+    
+    Fm = {
+        "start": [],
+        "end": [],
+        "time": [],
+        "value": []
+    }
+
+    for idx, (time, _) in peaks.iterrows():
+        if idx == 0:
+            start_time = 0
+        else:
+            start_time = time - (time - peaks["Timedelta"].iloc[idx - 1]) / 2
+            
+        if idx == len(peaks) - 1:
+            end_time = fluo_result.index[-1]
+        else:
+            end_time = time + (peaks["Timedelta"].iloc[idx + 1] - time) / 2
+            
+        Fm["start"].append(start_time)
+        Fm["end"].append(end_time)
+        Fm_slice = fluo_result.loc[start_time:end_time]
+        Fm["time"].append(Fm_slice.idxmax())
+        Fm["value"].append(Fm_slice.max())
+        
+    Fm = pd.DataFrame(Fm).set_index("time")
+    Fm = Fm["value"]
+    Fm.name = "Flourescence Peaks (Fm)"
+    
+    if do_relative:
+        F = F / Fm.iloc[0]
+        Fm = Fm / Fm.iloc[0]
+    
+    # Calculate NPQ
+    NPQ = (Fm.iloc[0] - Fm) / Fm if len(Fm) > 0 else pd.Series(dtype=float)
+    NPQ.name = "Non-Photochemical Quenching (NPQ)"
+    
+    return F, Fm, NPQ
 
 def create_pam_fig(
     model: Model,
@@ -1036,98 +1098,6 @@ def create_mca_fig(
     plt.tight_layout()
 
     return fig, (ax1, ax2)
-
-
-# def create_pamfit(
-#     pfd: str | None,
-#     model: Model,
-#     parameter_to_fit: list[str],
-# ):
-#     fluo_data = pd.read_csv("Data/fluo_col0_1.csv", index_col=0)
-
-#     # Convert index to time in seconds
-#     fluo_data.index = pd.to_timedelta(fluo_data.index)
-#     fluo_data.index = fluo_data.index - fluo_data.index[0]
-#     fluo_data.index = fluo_data.index.total_seconds()
-
-#     # Prepare a list to hold new rows
-#     new_dict = {}
-
-#     for index, row in fluo_data.iterrows():
-#         for key, val in zip(["Time", "Fluo", "PAR"], [index, row["F1"], row["PAR"]]):
-#             if key not in new_dict:
-#                 new_dict[key] = [val]
-#             else:
-#                 new_dict[key].append(val)
-
-#             # Add Fm vals to F
-#         new_dict["Time"].append(index + 0.8)
-#         new_dict["Fluo"].append(row["Fm'1"])
-#         new_dict["PAR"].append(5000)
-
-#     # Create a new DataFrame from the list of rows
-#     cleaned_df = pd.DataFrame.from_dict(new_dict)
-#     # Set 'Time' as index and sort to ensure correct order
-#     cleaned_df = cleaned_df.set_index("Time").sort_index()
-#     cleaned_df["PAR"] = cleaned_df["PAR"].replace(0, 40)
-#     cleaned_df["rel. Fluo"] = cleaned_df["Fluo"] / max(cleaned_df["Fluo"])
-#     print(cleaned_df)
-#     # cleaned_df.index = cleaned_df.index + 60 * 30  # adjust time to account for dark adaptation period
-#     # print(cleaned_df)
-
-#     prtc_list = []
-#     for index, row in cleaned_df.iterrows():
-#         if cleaned_df.index.get_loc(index) == 0:
-#             prtc_list.append((index, {pfd: 40}))
-#         else:
-#             prtc_list.append(
-#                 (
-#                     index - cleaned_df.index[cleaned_df.index.get_loc(index) - 1],
-#                     {pfd: row["PAR"]},
-#                 )
-#             )
-
-#     prtc = make_protocol(
-#         prtc_list[1:]
-#     )  # skip first entry as it is only for dark adaptation
-
-#     # print(prtc)
-
-#     # s = Simulator(model=model)
-
-#     # y0 = (
-#     #     s.simulate(60 * 30)
-#     #     .get_result()
-#     #     .get_variables(include_derived_variables=False, include_readouts=False)
-#     #     .iloc[-1]
-#     #     .to_dict()
-#     # )
-
-#     # res = (
-#     #     s.simulate_protocol(prtc, time_points_per_step=100).get_result().get_variables()
-#     # )
-
-#     # print(res)
-
-#     # parameter_dict = {
-#     #     param: model._parameters[param].value for param in parameter_to_fit
-#     # }
-
-#     # print(fit.protocol_time_course(
-#     #     model=model,
-#     #     p0=parameter_dict,
-#     #     data=cleaned_df[["Fluo"]],
-#     #     protocol=prtc,
-#     #     y0=y0,
-#     # ))
-
-#     fig, ax = plt.subplots()
-
-#     # ax.plot(res.index, res["Fluo"])
-#     ax.plot(cleaned_df["rel. Fluo"])
-
-#     return
-
 
 def save_matplotlib_figure(fig: plt.Figure, file_prepend: str, figcat: str) -> None:
     """Save matplotlib figure of model validation fig in 'Figures' directory as a svg.
