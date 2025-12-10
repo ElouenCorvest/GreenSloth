@@ -1,0 +1,65 @@
+\usepackage[utf8]{inputenc}
+
+%Math packages
+\usepackage{amsmath,amssymb} %Enables better math functions
+\setlength{\jot}{10pt}
+\usepackage{derivative} %Enables the derivative functions
+\usepackage[version=4]{mhchem} %Enables easier chemical reactions
+\usepackage{upgreek} %non-italic greek symbols
+\usepackage{stmaryrd} %lightning symbol
+\usepackage{lipsum}
+
+
+%Format packages
+\usepackage[a4paper,left=12.5mm,right=12.5mm,top=20mm,bottom=25mm]{geometry} %Sets the margin to a nice format
+\usepackage[font = small,labelfont=bf]{caption} %Sets the figure captions as bold
+\DeclareCaptionType{Atable}[Table][List of Appendix Tables]
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{enumitem} %Better enumeration
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+\usepackage{xcolor}
+
+\onehalfspacing
+\setlength{\parindent}{10pt}
+
+%Bibliography packages
+\usepackage[english, german]{babel}
+\usepackage{csquotes,xpatch}% recommended
+\usepackage[backend=biber, citestyle = numeric-comp, sorting=none, url=false, date=year]{biblatex}
+
+\addbibresource[]{GreenSloth.bib}
+
+%Title page
+\usepackage[dvipsnames]{xcolor}
+\usepackage[right]{eurosym}
+\usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+\usepackage[framemethod=TikZ]{mdframed}
+
+%Acronyms
+\usepackage[toc=false,nopostdot=false]{glossaries-extra}
+\input{Preamble/Acronyms.tex}
+\input{Preamble/Variables.tex}
+\usepackage{supertabular}
+\usepackage{array}
+
+
+%Figures
+\usepackage{tikz}
+
+%Math tools
+\usepackage{mathtools}
+
+%Tables
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+
+%Ref package
+\usepackage[hidelinks]{hyperref}
+\usepackage{nameref}

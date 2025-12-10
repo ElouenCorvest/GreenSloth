@@ -1,0 +1,56 @@
+The \greensloth{} project is a promising step into having a more transparent bridge between model authors and model users. By providing a platform where models can be shared, explored, and understood in depth, it fosters a more collaborative and efficient scientific community. The starting blocks of this project, have already been laid out. 
+
+It has started as a master thesis to allow a proof of concept, with several aspects reported beforehand already implemented. The next steps will involve expanding the platform's capabilities, by involving more people into the project. This includes reaching out to potential users for feedback, collaborating with other researchers to integrate additional models, and continuously improving the user interface and experience.
+
+\subsection{Collaboration and Community Involvement}
+
+\greensloth{} aims to be a community-driven project. By encouraging contributions from researchers, developers, and users alike, it seeks to create a vibrant ecosystem where knowledge is shared freely. This collaborative approach will not only enhance the platform's functionality but also ensure that it remains relevant and useful to its user base.
+
+A system of model uploading will be established, to enable any model builder to contribute their models to the platform. However, as \greensloth{} focuses on transparency and understanding, the models will need to meet certain criteria before being accepted. These criteria will be made clear to potential contributors, and further be refined based on community feedback. For this, the \greensloth[GreenSlothUtils] package will be further expanded on, to reflect the changes in the criteria of the platform. This package shall fascilitate the process of preparing models for upload to \greensloth{}, which in turn will also help make the models more transparent for publication. Contributing to \greensloth{} will thus not only benefit the community, but also the model authors themselves.
+
+Furthermore, regular workshops will be held at interested groups to introduce \greensloth{} and gather feedback. These workshops will serve the community, by introducing them to modelling, and \greensloth{} as a tool to explore models, but also help the \greensloth{} team to understand the needs and preferences of its users better and as a way to promote the platform. Therefore, feedback from these workshops will be crucial in shaping the future development of \greensloth{} and its part in the scientific community.
+
+\subsection{Web Design}
+
+The web design of \greensloth{} will be continuously improved to enhance user experience. This includes refining the layout, improving navigation, and ensuring that the platform is accessible to users with varying levels of technical expertise. User feedback will play a key role in guiding these improvements, ensuring that the platform remains user-friendly and intuitive. However, a key imporvement to this platfform's design, can be made with a collaboration with web designers, to ensure a modern and appealing look for the platform.
+
+Inviting students from web design courses to contribute to the platform's design could be a mutually beneficial approach. This would provide students with real-world experience while also bringing fresh perspectives and ideas to the \greensloth{} project. The importance of desing is often overlooked in scientific tools, as they wish to only provide functionality. However, a well-designed platform can significantly enhance user engagement and satisfaction, making it easier for users to navigate and utilize the available resources effectively. This is where the xpertise of web design students can be invaluable, and the introduction of inter-disciplinary collaborations, is the ground basis of what \greensloth{} is about.
+
+\subsection{Introducing \glsxtrshort{ai} into \greensloth{}}
+
+With the stark rise of \gls{ai} tools in recent years, it is worth considering how to integrate these tools into \greensloth{}. Introducing \gls{ai} functionalities into science-based work has already been explored. From the visible neural network used by DrugCell~\cite{kuenziPredictingDrugResponse2020} that is also available as a web portal, to the context-aware, attention-based deep learning model Geneformer that enables context-specific predictions in network biology~\cite{theodorisTransferLearningEnables2023}. Therefore, introducing \gls{ai} into \greensloth{} can open up new avenues for enhancing user experience and model interaction.
+
+\subsubsection{Personification of each Model}
+
+One potential avenue is to create a personalized assistant for each model hosted on the platform. This assistant could help users navigate the model, answer questions, and provide insights based on the model's structure and parameters.
+
+As \greensloth{} focuses on transparency and documentation, a model needs to be described in depth. This is already a great start to create the personal \gls{ai} interface for each model, as a dataset of questions and answers can be generated from the model's documentation. This dataset can then be used to fine-tune an already existing \gls{llm}, creating a specialized assistant that is knowledgeable about the specific model~\cite{ohmFocusingFineTuningUnderstanding2024,singhapooFineTuningAIModels2025}. 
+
+To further enhance the capabilities of the personalized assistant, the base \gls{ai} model can be trained on reading and understanding the model code. As all models in \greensloth{} will be written using MxLpy, this provides a consistent framework for the \gls{ai} to learn from. By analyzing the code, the assistant can gain a deeper understanding of the model's functionality, allowing it to provide more accurate and relevant responses to user queries. Furthermore, letting the assistant perform code executions, can allow it to provide dynamic responses based on the model's behavior, further enhancing its utility. Therefore, creating agentic assistants for each model~\cite{lanhamAIAgentsAction2025}.
+
+\subsubsection{Limited \glsxtrshort{ai} Reviewer}
+
+As the quality of the documentation of each model is of incredible importance for \greensloth{}, an \gls{ai} agent to help review the documentation could be implemented. This tool would help the model author to follow the guidelines provided in the \greensloth[GreenSlothUtils] package, by providing feedback on the clarity, completeness, and overall quality of the documentation. Additionally, the \gls{ai} agent can directly assess and suggest corrections to the MxLpy implementation of the model, ensuring good formatting and correctness. This will not only streamline the model creation process but also help ensure that all models uploaded to \greensloth{} have the necessary information for effective use and understanding by others.
+
+Furthermore, enabling the \gls{ai} reviewer to use the provided code, can enable a semi-automatic way of validating the model, using the already curated test cases defined for \greensloth{} \cleverref[~\nameref*{sec:modelComparison}]{Section}{sec:modelComparison}.
+
+Additionally, giving access to communication between the Reviewer and the model agents, enables the provision of insights on how to improve the model based on similar ones already present in the \greensloth{} database. Will it be from annotation suggestions, to structural changes, the possibilities are vast.
+
+\subsubsection{Speaking to the Agents}
+
+The main way the user can access this \gls{ai} functionality, is through a chat interface. This interface is already a common way to interact with \glspl{llm}, which is intuitive and familiar to many. This enables a very natural way for users to explore \greensloth{} and find the models that cater to their needs. By asking questions about the models, users can directly gain insights into their structure, parameters, and behavior. Furthermore, as is common an agentic \gls{ai} systems, a network of communication is built between all agents~\cite{lanhamAIAgentsAction2025}. This enables the user to "talk" to one agent about its model, but if the agent finds it cannot answer the users query, it can reach out to other model agents in the \greensloth{} network to find one that can \figref[]{fig:chatExample}.
+
+\begin{figure*}[!htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/ChatExample.pdf}
+    \captionprof{An Example of having each Model as \glsxtrshort{ai} agents}{A schematic example on how a chat with a model-trained \glsxtrfull{ai} agent could look like. The user can ask a question regarding the model, which the \glsxtrshort{ai} agent answers by using its knowledge from the model documentation and code. Additionally, if the agent finds it cannot answer the users query, it can reach out to other model agents in the \greensloth{} network to find one that can.}
+    \label{fig:chatExample}
+\end{figure*}
+
+Additionally, adding an agent controller that is connected to all models at once, and therefore retains minimal knowledge of all models, can enable a more dynamic search and exploration of models in general. The controller can route user queries to the appropriate model agents, and provide recommendations based on user interests. This provides a new starting point for users to interact with \greensloth{}, which enables a more dynamic search and exploration of models, already refining what the user is looking for beforehand.
+
+\subsubsection{Ethical Considerations}
+
+While the possibilities with \gls{ai} are vast, it is important to consider the ethical implications of using such tools. \greensloth{} will never become an \gls{ai} tool, however, it will only use \gls{ai} to enhance the user experience, and therefore strengthening the bridge between model authors and users. Transparency of \gls{ai} usage will be key, and the authorship of models and their content will always remain with the human authors. Furthermore, great care will be taken to ensure that the \gls{ai} agents provide accurate and reliable information, and do not mislead users in any way, as has been observed with public \glspl{llm}~\cite{chenHowChatGPTsBehavior2024}. However, as the \gls{ai} agents will be fine-tuned to the specific models, and \greensloth{} puts an important focus on transparency and documentation, these risks can be mitigated to a large extent. 
+
+Another issue with \gls{ai} tools, is their ecological impact. Training large \glspl{llm} can have a significant carbon footprint~\cite{wuSustainableAIEnvironmental}, for example the training of OpenAI's GPT-3 cost 552.1 tonnes of green house gas emissions, which equates to 3 times the emission of a jet plane round trip between San Francisco and New York~\cite{pattersonCarbonEmissionsLarge}. However, by fine-tuning already existing models, rather than training new ones from scratch, the environmental impact of this project can be greatly reduced. Furthermore, as the \gls{ai} agents will be specialized to their respective models, they can be kept relatively small, further reducing their environmental impact. A number of other factors can also be implemented to reduce the environmental impact of \gls{ai} usage in \greensloth{}, however, as this is a rapidly evolving field, these strategies will need to be continuously updated and refined during the project's development.
