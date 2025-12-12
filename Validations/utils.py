@@ -1,5 +1,7 @@
 import pandas as pd
-from mxlpy import Model
+from mxlpy import Model, mca, plot, Simulator, make_protocol
+import matplotlib.pyplot as plt
+from matplotlib.colors import Normalize
 
 def calc_co2_conc(pco2: float, H_cp_co2: float = 3.4e-4):
     """Calculate the CO2 concentration based on CO2 partial pressure and Henry's law constant.
@@ -31,7 +33,7 @@ def mM_to_µmol_per_m2(conc_mM: float, corr_factor: float = 0.0112):
 
 def calc_pam_vals2(
     fluo_result: pd.Series, protocol: pd.DataFrame, pfd_str: str, sat_pulse: float = 2000, do_relative: bool = False
-) -> tuple[pd.Series, pd.Series]:
+) -> tuple[pd.Series, pd.Series, pd.Series]:
     """Calculate PAM values from fluorescence data.
 
     Use the fluorescence data from a PAM protocol to calculate Fm, NPQ. To find the Fm values, the protocol used for simulation is seperated into ranges between each saturating pulse. Then the maximum fluorescence value within each range is taken as Fm. Thes are then used to calculate NPQ.
@@ -113,6 +115,44 @@ def create_pamprotocol_from_data(
         
     return fit_protocol
 
+def pam_sim(
+    fit_protocol: list[tuple[float, dict]],
+    model: Model,
+    pfd_str: str,
+    dark_adaptation_time: float = 60*30,
+    dark_pfd: float = 40,
+):
+    s = Simulator(model=model)
+    
+    s.update_parameter(pfd_str, dark_pfd)
+    res_prior = None
+    time_points = 0
+    while res_prior is None and time_points < 1e5:
+        time_points += 1000
+        s.simulate(dark_adaptation_time, steps=time_points)
+        res_prior = s.get_result()
+        
+    if res_prior is None:
+        print("No result from dark simulation")
+        return None
+    
+    
+    dark_y0 = s.get_result().get_new_y0()
+    
+    s.clear_results()
+    s.update_variables(dark_y0)
+        
+    res = None
+    time_points = 0
+    prtc = make_protocol(fit_protocol)
+    
+    while res is None and time_points < 1e5:
+        time_points += 1000
+        s.simulate_protocol(prtc, time_points_per_step=time_points)
+        res = s.get_result()
+    
+    return res
+
 def param_recursion(
     model: Model,
     search_str: str,
@@ -157,7 +197,7 @@ def param_recursion(
         else:
             param_recursion(model, arg, order=order+1, dict_out=dict_out, max_order=max_order)
 
-def find_params_to_fit(
+def find_params_to_fit_byorder(
     to_fit_str: str,
     model: Model,
     max_order: int = 5,
@@ -171,12 +211,81 @@ def find_params_to_fit(
     """    
     dict_out = {}
     param_recursion(model, to_fit_str, order=1, dict_out=dict_out, max_order=max_order)
-
-    print(f"Parameters influencing {to_fit_str}:")
-    for key, lst_args in dict_out.items():
-        if lst_args != []:
-            prt_str = f"{key}: "
-            prt_str += ", ".join(set(lst_args))
-            print(prt_str)
-            
-    print()
+    max_order_length = max([len(v) for v in dict_out.values()])
+    
+    vars_rcoeffs, flux_rcoeffs = mca.response_coefficients(
+        model=model,
+        to_scan=None,
+        normalized=True,
+    )
+    
+    for rcoeffs in [vars_rcoeffs, flux_rcoeffs]:
+        if to_fit_str not in rcoeffs.index:
+            continue
+        
+        correct_coeffs = rcoeffs.loc[to_fit_str]
+    
+    fig, axs = plt.subplot_mosaic(
+        mosaic=[[f"Order {i+1}", "cbar"] for i in range(max_order)],
+        width_ratios=[1, 0.2],
+        figsize=(6, max_order * 4)
+    )
+    
+    for i in range(max_order):
+        order_str = f"Order {i+1}"
+        lst_params = dict_out.get(order_str, [])
+        plot.heatmap(
+            ax=axs[order_str],
+            df=correct_coeffs[lst_params].to_frame(),
+            invert_yaxis=False,
+            annotate=True,
+            norm=Normalize(vmin=-1, vmax=1),
+            cax=axs["cbar"] if i == 0 else None,
+            colorbar=False if i != 0 else True,
+        )
+        axs[order_str].set_xticks([])
+        axs[order_str].set_title(order_str)
+        
+    plt.tight_layout()
+    
+    plt.show()
+    
+def find_params_to_fit_byelasticities(
+    to_fit_str: str,
+    model: Model,
+    max_num: int = 30,
+    omit_strs: None | list[str] = None,
+):   
+    # dict_out = {}
+    # param_recursion(model, to_fit_str, order=1, dict_out=dict_out, max_order=max_order)
+    # max_order_length = max([len(v) for v in dict_out.values()])
+    
+    vars_rcoeffs, flux_rcoeffs = mca.response_coefficients(
+        model=model,
+        to_scan=None,
+        normalized=True,
+    )
+    
+    for rcoeffs in [vars_rcoeffs, flux_rcoeffs]:
+        if to_fit_str not in rcoeffs.index:
+            continue
+        
+        correct_coeffs = rcoeffs.loc[to_fit_str]
+        
+    sorted_coeffs = correct_coeffs.abs().sort_values(ascending=False)
+    if omit_strs is not None:
+        sorted_coeffs = sorted_coeffs[[i for i in sorted_coeffs.index if i not in omit_strs]]
+    sorted_coeffs = sorted_coeffs.iloc[:max_num]
+    
+    fig, ax, _ =plot.heatmap(
+        df=sorted_coeffs.to_frame(),
+        invert_yaxis=True,
+        annotate=True,
+    )
+    
+    ax.set_xticks([])
+    # axs[order_str].set_title(order_str)
+        
+    plt.tight_layout()
+    
+    plt.show()

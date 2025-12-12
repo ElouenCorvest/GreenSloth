@@ -1,48 +1,12 @@
 from mxlpy import Model, Simulator, make_protocol
-from utils import calc_pam_vals2, create_pamprotocol_from_data
+from utils import calc_pam_vals2, create_pamprotocol_from_data, pam_sim
 from lmfit import minimize, Parameters
 import pandas as pd
 from pathlib import Path
 import matplotlib.pyplot as plt
 import copy
 import numpy as np
-
-def pamfit_sim(
-    fit_protocol: list[tuple[float, dict]],
-    model: Model,
-    pfd_str: str,
-):
-    s = Simulator(model=model)
-    
-    s.update_parameter(pfd_str, 40)
-    res_prior = None
-    time_points = 0
-    while res_prior is None and time_points < 1e5:
-        time_points += 1000
-        s.simulate(60*30)
-        res_prior = s.get_result()
-        
-    if res_prior is None:
-        print("No result from dark simulation")
-        return None
-    
-    
-    dark_y0 = s.get_result().get_new_y0()
-    
-    s.clear_results()
-    s.update_variables(dark_y0)
-        
-    res = None
-    time_points = 0
-    prtc = make_protocol(fit_protocol)
-    
-    while res is None and time_points < 1e5:
-        time_points += 1000
-        print(time_points)
-        s.simulate_protocol(prtc, time_points_per_step=time_points)
-        res = s.get_result()
-    
-    return res
+from model_validation import save_matplotlib_figure
 
 def pamfit_func_lstsq(
     params,
@@ -63,7 +27,7 @@ def pamfit_func_lstsq(
     model_new = copy.deepcopy(model)
     model_new.update_parameters(params.valuesdict())
     
-    res = pamfit_sim(
+    res = pam_sim(
         fit_protocol=fit_protocol,
         model=model_new,
         pfd_str=pfd_str,
@@ -80,6 +44,7 @@ def pamfit_func_lstsq(
     mean = fit_data["NPQ3"].mean()
     std = fit_data["NPQ3"].std()
     diff = (NPQ.values - mean) / std - (fit_data["NPQ3"].values - mean) / std
+    # diff = NPQ.values - fit_data["NPQ3"].values
 
     return diff
 
@@ -91,6 +56,9 @@ def create_pamfit(
     fluo_data = pd.read_csv(Path(__file__).parent / "Data/fluo_col0_1.csv", index_col=0) # Taken from https://doi.org/10.1111/nph.18534
     # Data taken with Maxi Imaging-PAM (Walz, Germany) using Col-0 Arabidopsis thaliana plants.
     # SP standard length = 720ms Maximal setting is standard (level 10) = 5000 µmol m-2 s-1 on IMAG-MAX/L TODO: Check if it is correct
+    fluo_data["F1"] = fluo_data["F1"] / fluo_data["Fm'1"].iloc[0]
+    fluo_data["Fm'1"] = fluo_data["Fm'1"] / fluo_data["Fm'1"].iloc[0]
+    fluo_data["NPQ3"] = (fluo_data["Fm'1"].iloc[0] - fluo_data["Fm'1"]) / fluo_data["Fm'1"]
     
     sp_lenth = 720 / 1000  # seconds
     sp_intensity = 5000  # µmol m-2 s-1
@@ -133,7 +101,7 @@ def create_pamfit(
         sp_pluse=sp_intensity # 5000 µmol m-2 s-1 on IMAG-MAX/L
     )
     
-    plot_pamfit(
+    fig, axs = plot_pamfit(
         model=model,
         new_params=out.params,
         pfd_str=pfd_str,
@@ -141,6 +109,14 @@ def create_pamfit(
         fluo_data=fluo_data,
         sp_lenth=sp_lenth,
     )
+    
+    name = "fitAbs_StandardScale"
+    
+    plt.savefig(Path(__file__).parent / "test2" / f"{name}.png", dpi=300)
+    
+    with open(Path(__file__).parent / "test2" / f"{name}_params.csv", "w") as f:
+        df_params = pd.DataFrame.from_dict({param: [out.params[param].value] for param in out.params})
+        df_params.to_csv(f, index=False)
     
     return out.params
     
@@ -155,13 +131,13 @@ def plot_pamfit(
     fitted_model = copy.deepcopy(model)
     fitted_model.update_parameters(new_params.valuesdict())
     
-    res = pamfit_sim(
+    res = pam_sim(
         fit_protocol=fit_protocol,
         model=fitted_model,
         pfd_str=pfd_str,
     )
     res = res.get_variables()
-    F, Fm, NPQ = calc_pam_vals2(res["Fluo"], protocol=make_protocol(fit_protocol), pfd_str=pfd_str, do_relative=False)
+    F, Fm, NPQ = calc_pam_vals2(res["Fluo"], protocol=make_protocol(fit_protocol), pfd_str=pfd_str, do_relative=True)
     
     data_color = "#84569F"
     fitted_color = "#C9E3A0"
@@ -180,14 +156,14 @@ def plot_pamfit(
     axs["NPQ"].plot(fluo_data["NPQ3"], label="Measured NPQ", lw=1, marker="s", color=data_color)
     
     # OG model version
-    res_old = pamfit_sim(
+    res_old = pam_sim(
         fit_protocol=fit_protocol,
         model=model,
         pfd_str=pfd_str,
     )
     
     res_old = res_old.get_variables()
-    F_old, Fm_old, NPQ_old = calc_pam_vals2(res_old["Fluo"], protocol=make_protocol(fit_protocol), pfd_str=pfd_str)
+    F_old, Fm_old, NPQ_old = calc_pam_vals2(res_old["Fluo"], protocol=make_protocol(fit_protocol), pfd_str=pfd_str, do_relative=True)
     
     axs["Diff"].plot(fluo_data.index, NPQ / fluo_data["NPQ3"].values, label="Fitted / Measured", lw=1, marker="o", color=fitted_color)
     axs["Diff"].plot(fluo_data.index, NPQ_old / fluo_data["NPQ3"].values, label="OG Model / Measured", lw=1, marker="x", color=og_color)
@@ -200,4 +176,4 @@ def plot_pamfit(
     axs["NPQ"].legend()
     axs["Diff"].legend()
     
-    plt.show()
+    return fig, axs

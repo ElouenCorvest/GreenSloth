@@ -8,6 +8,7 @@ import pandas as pd
 from matplotlib.lines import Line2D
 from mxlpy import Model, scan, units
 from sympy.physics.units import Unit, bar
+from utils import mM_to_µmol_per_m2, calc_co2_conc
 
 def _calc_ass(vc: float, gammastar: float, r_light: float, co2: float):
     """Calculate carbon assimilation based on the min-W approach, as introduced by Farquhar, von Caemmerer and Berry in 1980 and "reevaluated" by Lochoki and McGrath in 2025 (https://doi.org/10.1101/2025.03.11.642611).
