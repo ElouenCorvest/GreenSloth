@@ -2,6 +2,8 @@ from mxlpy import Model, Simulator, make_protocol
 import pandas as pd
 import matplotlib.pyplot as plt
 import neonutilities as nu
+import copy
+from model_validation import custom_latex
 
 def create_day_simulation_fig(
     model: Model,
@@ -27,6 +29,8 @@ def create_day_simulation_fig(
         tuple[plt.Figure, plt.Axes]: Figure and axis of the day simulation plot
     """
 
+    model = copy.deepcopy(model)
+    
     # TODO: Check for case if result = None
     # TODO: Seperate Simulation results to check if given name is in variables or fluxes or parameters or readouts or surrogates
 
@@ -71,7 +75,12 @@ def create_day_simulation_fig(
     day_prtc = make_protocol(
         [(60, {pfd: row["PARMean"]}) for index, row in day_data.iterrows()]
     )
-    s.simulate_protocol(day_prtc)
+    res_prior = None
+    time_points = 0
+    while res_prior is None and time_points < 1e4:
+        time_points += 100
+        s.simulate_protocol(day_prtc, time_points_per_step=time_points)
+        res_prior = s.get_result()
 
     # Get results and set index to datetime
     res = s.get_result()
@@ -123,7 +132,7 @@ def create_day_simulation_fig(
     if vc is not None:
         yax_list[0].plot(res_dict["Vc"]["data"], color=vc_color)
         yax_list[0].set_ylabel(
-            rf"Rubisco Carboxylase Activity [${res_dict['Vc']['unit']}$]",
+            rf"Rubisco Carboxylase Activity [${custom_latex(res_dict['Vc']['unit'])}$]",
             color=vc_color,
         )
     else:

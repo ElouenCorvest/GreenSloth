@@ -3,6 +3,7 @@ from matplotlib.patches import Rectangle
 from mxlpy import Model, Simulator, make_protocol, plot
 from utils import calc_pam_vals2, pam_sim
 import pandas as pd
+import copy
 
 def make_pam_protocol(
     pfd_str: str,
@@ -74,7 +75,8 @@ def make_pam_protocol(
 def create_pam_fig(
     model: Model,
     pfd_str: str,
-    flourescence_str: str,
+    flourescence_str: str | None,
+    npq_str: str | None,
     dark_light: float = 40,
     sat_pulse: float = 3000,
 ) -> tuple[plt.Figure, tuple[plt.Axes, plt.Axes]]:
@@ -90,13 +92,15 @@ def create_pam_fig(
     Returns:
         tuple[plt.Figure, tuple[plt.Axes, plt.Axes]]: A tuple containing the figure and the axes.
     """
+    
+    model = copy.deepcopy(model)
 
     # Make pam protocol for mxlpy simulation
     pam_prtc, shading = make_pam_protocol(pfd_str=pfd_str, dark_light=dark_light, pulse_intensity=sat_pulse)
     
     # Simulate pam protocol
     res = pam_sim(
-        fit_protocol=pam_prtc,
+        fit_protocol=make_protocol(pam_prtc),
         model=model,
         pfd_str=pfd_str,
         dark_pfd=dark_light,
@@ -107,38 +111,57 @@ def create_pam_fig(
     
     else:
         res = res.get_combined()
-    
-    # Calculate PAM values
-    F, Fm, NPQ = calc_pam_vals2(
-        fluo_result=res[flourescence_str],
-        protocol=make_protocol(pam_prtc),
-        pfd_str=pfd_str,
-        sat_pulse=2000,
-        do_relative=True,
-    )
+        
+    if npq_str is None:
+        # Calculate PAM values
+        F, Fm, NPQ = calc_pam_vals2(
+            fluo_result=res[flourescence_str],
+            protocol=make_protocol(pam_prtc),
+            pfd_str=pfd_str,
+            sat_pulse=2000,
+            do_relative=True,
+        )
+    else:
+        NPQ = res[npq_str]
+        F = res[flourescence_str] if flourescence_str is not None else None
+        Fm = None
     
     fig, axs = plt.subplot_mosaic([["Fluo"]], figsize=(10, 4))
 
     # colors
-    flou_color = "#ff8c00"
+    flou_color = "#C83E4D"
+    NPQ_color = "#2D936C"
     
     # Plot fluorescence data and Fm points
-    axs["Fluo"].plot(F, color=flou_color, lw=2, zorder=10, label="Fluorescence (F)")
-    axs["Fluo"].plot(Fm, color=flou_color, lw=0, marker="^", markersize=4, label="Fm", zorder=10)
+    if F is not None:
+        axs["Fluo"].plot(F, color=flou_color, lw=2, zorder=10, label="Fluorescence (F)")
+        axs["Fluo"].plot(Fm, color=flou_color, lw=0, marker="^", markersize=4, label="Fm", zorder=10)
+        axs["Fluo"].set_xlim(0, max(F.index))
     
     # Set axis limits and labels
     axs["Fluo"].set_ylim(0, 1.1)
     axs["Fluo"].set_ylabel("Relative Fluorescence (a.u.)", color=flou_color, fontdict={"fontweight": "bold"})
-    axs["Fluo"].set_xlim(0, max(F.index))
+    for spines in ["top", "right"]:
+        axs["Fluo"].spines[spines].set_visible(False)
+    axs["Fluo"].spines["left"].set_color(flou_color)
+    axs["Fluo"].tick_params(axis="y", colors=flou_color)
     axs["Fluo"].set_xlabel("Time [min]")
     xticks = [0, 4 * 60, 24 * 60, 44 * 60]
     axs["Fluo"].set_xticks(xticks, labels=[str(x / 60) for x in xticks])
     
     # Plot NPQ on secondary y-axis
     ax_npq = axs["Fluo"].twinx()
-    ax_npq.set_ylabel("NPQ", color="#1f77b4", fontdict={"fontweight": "bold"})
+    ax_npq.set_ylabel("NPQ", color=NPQ_color, fontdict={"fontweight": "bold"})
+    for spines in ["top", "left"]:
+        ax_npq.spines[spines].set_visible(False)
+    ax_npq.spines["right"].set_color(NPQ_color)
+    ax_npq.tick_params(axis="y", colors=NPQ_color)
     ax_npq.set_ylim(0, max(NPQ) + 0.1)
-    ax_npq.plot(NPQ, color="#1f77b4", lw=2, marker="o", markersize=4, label="NPQ", zorder=10)
+    if npq_str is None:
+        markersize = 4
+    else:
+        markersize = 0
+    ax_npq.plot(NPQ, color=NPQ_color, lw=2, marker="o", markersize=markersize, label="NPQ", zorder=10)
         
     
     rect_height = 0.1

@@ -59,8 +59,6 @@ def inject_fvcb(
     Returns:
         tuple(model, co2, vc, pco2, H_cp_co2, gammastar, r_light, A): Injected model and variable names
     """
-    # Copy inputted model to avoid modifying the original one
-    model = copy.deepcopy(model)
 
     # If either co2 or vc is None, return without modifications
     if co2 is None or vc is None or A is not None:
@@ -206,6 +204,8 @@ def create_fvcb_fig(
     Returns:
         _type_: _description_
     """
+    
+    model = copy.deepcopy(model)
 
     # Range of pco2 to scan
     pco2_array = np.linspace(1, 800, 100)

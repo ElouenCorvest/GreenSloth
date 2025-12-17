@@ -53,6 +53,7 @@ def calc_pam_vals2(
     
     peaks = protocol[protocol[pfd_str] >= sat_pulse].copy()
     peaks.index = peaks.index.total_seconds()
+    peaks.index.name = "Timedelta"
     peaks = peaks.reset_index()
     
     Fm = {
@@ -144,11 +145,10 @@ def pam_sim(
         
     res = None
     time_points = 0
-    prtc = make_protocol(fit_protocol)
     
     while res is None and time_points < 1e5:
         time_points += 1000
-        s.simulate_protocol(prtc, time_points_per_step=time_points)
+        s.simulate_protocol(fit_protocol, time_points_per_step=time_points)
         res = s.get_result()
     
     return res
@@ -270,14 +270,17 @@ def find_params_to_fit_byelasticities(
         if to_fit_str not in rcoeffs.index:
             continue
         
-        correct_coeffs = rcoeffs.loc[to_fit_str]
+        correct_coeffs = rcoeffs.loc[to_fit_str].to_frame()
         
-    sorted_coeffs = correct_coeffs.abs().sort_values(ascending=False)
+    correct_coeffs["Abs"] = correct_coeffs[to_fit_str].abs()
+    correct_coeffs = correct_coeffs.sort_values(by="Abs", ascending=False)
+        
+    sorted_coeffs = correct_coeffs[to_fit_str]
     if omit_strs is not None:
         sorted_coeffs = sorted_coeffs[[i for i in sorted_coeffs.index if i not in omit_strs]]
     sorted_coeffs = sorted_coeffs.iloc[:max_num]
     
-    fig, ax, _ =plot.heatmap(
+    fig, ax, _ = plot.heatmap(
         df=sorted_coeffs.to_frame(),
         invert_yaxis=True,
         annotate=True,

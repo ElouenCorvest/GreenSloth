@@ -1,6 +1,7 @@
 from mxlpy import Model, Simulator, make_protocol
 from utils import calc_pam_vals2, create_pamprotocol_from_data, pam_sim
 from lmfit import minimize, Parameters
+from lmfit import Model as LmfitModel
 import pandas as pd
 from pathlib import Path
 import matplotlib.pyplot as plt
@@ -13,7 +14,9 @@ def pamfit_func_lstsq(
     model: Model,
     fit_data: pd.DataFrame,
     pfd_str: str,
-    debug: bool = False,
+    flourescence_str: str,
+    relative: bool = True,
+    standard_scale: bool = True
 ):
     # Create Pam Protocol
     fit_protocol = create_pamprotocol_from_data(
@@ -28,7 +31,7 @@ def pamfit_func_lstsq(
     model_new.update_parameters(params.valuesdict())
     
     res = pam_sim(
-        fit_protocol=fit_protocol,
+        fit_protocol=make_protocol(fit_protocol),
         model=model_new,
         pfd_str=pfd_str,
     )
@@ -38,101 +41,49 @@ def pamfit_func_lstsq(
         return np.ones(len(fit_data)) * 1e6
     
     res = res.get_variables()
-    F, Fm, NPQ = calc_pam_vals2(res["Fluo"], protocol=make_protocol(fit_protocol), pfd_str=pfd_str, do_relative=False)
-    
-    # TODO: Standardize difference to account for different scales inform
-    mean = fit_data["NPQ3"].mean()
-    std = fit_data["NPQ3"].std()
-    diff = (NPQ.values - mean) / std - (fit_data["NPQ3"].values - mean) / std
-    # diff = NPQ.values - fit_data["NPQ3"].values
-
-    return diff
-
-def create_pamfit(
-    model: Model,
-    pfd_str: str,
-    pam_params_to_fit: list[str]
-):
-    fluo_data = pd.read_csv(Path(__file__).parent / "Data/fluo_col0_1.csv", index_col=0) # Taken from https://doi.org/10.1111/nph.18534
-    # Data taken with Maxi Imaging-PAM (Walz, Germany) using Col-0 Arabidopsis thaliana plants.
-    # SP standard length = 720ms Maximal setting is standard (level 10) = 5000 µmol m-2 s-1 on IMAG-MAX/L TODO: Check if it is correct
-    fluo_data["F1"] = fluo_data["F1"] / fluo_data["Fm'1"].iloc[0]
-    fluo_data["Fm'1"] = fluo_data["Fm'1"] / fluo_data["Fm'1"].iloc[0]
-    fluo_data["NPQ3"] = (fluo_data["Fm'1"].iloc[0] - fluo_data["Fm'1"]) / fluo_data["Fm'1"]
-    
-    sp_lenth = 720 / 1000  # seconds
-    sp_intensity = 5000  # µmol m-2 s-1
-    
-    #Convert index to time in seconds
-    fluo_data.index = pd.to_timedelta(fluo_data.index)
-    fluo_data.index = fluo_data.index - fluo_data.index[0]
-    fluo_data.index = fluo_data.index.total_seconds()
-    
-    initial_params = Parameters()
-    for param in pam_params_to_fit:
-        val = model.get_raw_parameters()[param].value
-        initial_params.add(param, value=val, vary=True, min=0)
-        #max=val*1.5, min=val*0.5
-    
-    params = initial_params
-    for _ in range(1):
-        out = minimize(
-            fcn=pamfit_func_lstsq,
-            params=params,
-            args=(model, fluo_data, pfd_str, True),
-            method="leastsq",
-        )
-    
-        if out.success:
-            print("Optimization successful")
-            print(out.params)
-            
-        params = out.params
-        
-    fitted_model = copy.deepcopy(model)
-    fitted_model.update_parameters(out.params.valuesdict())
-    
-    # Create Pam Protocol
-    fit_protocol = create_pamprotocol_from_data(
-        data=fluo_data,
-        par_column="PAR",
+    F, Fm, NPQ = calc_pam_vals2(
+        fluo_result=res[flourescence_str],
+        protocol=make_protocol(fit_protocol),
         pfd_str=pfd_str,
-        time_sp=sp_lenth, #720ms SP to seconds
-        sp_pluse=sp_intensity # 5000 µmol m-2 s-1 on IMAG-MAX/L
+        sat_pulse=5000,
+        do_relative=relative
     )
     
     fig, axs = plot_pamfit(
         model=model,
-        new_params=out.params,
+        new_params=model_new.get_raw_parameters(),
         pfd_str=pfd_str,
         fit_protocol=fit_protocol,
-        fluo_data=fluo_data,
-        sp_lenth=sp_lenth,
+        fluo_data=fit_data,
+        sp_lenth=720 / 1000,
     )
     
-    name = "fitAbs_StandardScale"
+    plt.show()
     
-    plt.savefig(Path(__file__).parent / "test2" / f"{name}.png", dpi=300)
+    # TODO: Standardize difference to account for different scales inform
+    mean = fit_data["NPQ3"].mean()
+    std = fit_data["NPQ3"].std()
     
-    with open(Path(__file__).parent / "test2" / f"{name}_params.csv", "w") as f:
-        df_params = pd.DataFrame.from_dict({param: [out.params[param].value] for param in out.params})
-        df_params.to_csv(f, index=False)
-    
-    return out.params
+    if standard_scale:
+        diff = (NPQ.values - mean) / std - (fit_data["NPQ3"].values - mean) / std
+    else:
+        diff = NPQ.values - fit_data["NPQ3"].values
+
+    return diff
     
 def plot_pamfit(
     model: Model,
-    new_params: Parameters,
+    new_params: dict,
     pfd_str: str,
     fit_protocol: list[tuple[float, dict]],
     fluo_data: pd.DataFrame,
     sp_lenth: float,
 ):
     fitted_model = copy.deepcopy(model)
-    fitted_model.update_parameters(new_params.valuesdict())
+    fitted_model.update_parameters(new_params)
     
     res = pam_sim(
-        fit_protocol=fit_protocol,
+        fit_protocol=make_protocol(fit_protocol),
         model=fitted_model,
         pfd_str=pfd_str,
     )
@@ -157,7 +108,7 @@ def plot_pamfit(
     
     # OG model version
     res_old = pam_sim(
-        fit_protocol=fit_protocol,
+        fit_protocol=make_protocol(fit_protocol),
         model=model,
         pfd_str=pfd_str,
     )
@@ -176,4 +127,116 @@ def plot_pamfit(
     axs["NPQ"].legend()
     axs["Diff"].legend()
     
+    return fig, axs
+
+def pamfit_lmmodel(
+    npq_x: pd.Series,
+    npq_y_mean: pd.Series,
+    model: Model,
+    fit_protocol_dict: dict,
+    pfd_str: str,
+    flourescence_str: str,
+    relative: bool,
+    sat_pulse: float,
+    **params
+):
+    fit_protocol = pd.DataFrame(fit_protocol_dict)
+    fit_protocol.index.name = "Timedelta"
+    model = copy.deepcopy(model)
+    model.update_parameters(params)
+    
+    res = pam_sim(
+        fit_protocol=fit_protocol,
+        model=model,
+        pfd_str=pfd_str,
+    )
+    
+    if res is None:
+        return np.ones(len(npq_x)) * 1e6
+    
+    res = res.get_combined()
+    
+    F, Fm, NPQ = calc_pam_vals2(
+        fluo_result=res[flourescence_str],
+        protocol=fit_protocol,
+        pfd_str=pfd_str,
+        sat_pulse=sat_pulse,
+        do_relative=relative
+    )
+    
+    return NPQ.values - npq_y_mean
+
+def create_pamfit(
+    model: Model,
+    pfd_str: str,
+    flourescence_str: str,
+    pam_params_to_fit: list[str],
+    relative: bool = True,
+    standard_scale: bool = True
+):
+    fluo_data = pd.read_csv(Path(__file__).parent / "Data/fluo_col0_1.csv", index_col=0) # Taken from https://doi.org/10.1111/nph.18534
+    # Data taken with Maxi Imaging-PAM (Walz, Germany) using Col-0 Arabidopsis thaliana plants.
+    # SP standard length = 720ms Maximal setting is standard (level 10) = 5000 µmol m-2 s-1 on IMAG-MAX/L TODO: Check if it is correct
+    fluo_data["F1"] = fluo_data["F1"] / fluo_data["Fm'1"].iloc[0]
+    fluo_data["Fm'1"] = fluo_data["Fm'1"] / fluo_data["Fm'1"].iloc[0]
+    fluo_data["NPQ3"] = (fluo_data["Fm'1"].iloc[0] - fluo_data["Fm'1"]) / fluo_data["Fm'1"]
+    
+    sp_lenth = 720 / 1000  # seconds
+    sp_intensity = 5000  # µmol m-2 s-1
+    
+    #Convert index to time in seconds
+    fluo_data.index = pd.to_timedelta(fluo_data.index)
+    fluo_data.index = fluo_data.index - fluo_data.index[0]
+    fluo_data.index = fluo_data.index.total_seconds()
+    
+    # Complete standard scaling if required
+    data_mean = fluo_data["NPQ3"].mean() if standard_scale else 0
+    data_std = fluo_data["NPQ3"].std() if standard_scale else 1
+    fluo_data["NPQ_standard"] = (fluo_data["NPQ3"] - data_mean) / data_std if standard_scale else fluo_data["NPQ3"]
+    
+    # Create Pam Protocol
+    fit_protocol = create_pamprotocol_from_data(
+        data=fluo_data,
+        par_column="PAR",
+        pfd_str=pfd_str,
+        time_sp=sp_lenth, #720ms SP to seconds
+        sp_pluse=sp_intensity # 5000 µmol m-2 s-1 on IMAG-MAX/L
+    )
+
+    fit_model = LmfitModel(
+        func=pamfit_lmmodel,
+        independent_vars=["npq_x", "npq_y_mean", "model", "fit_protocol_dict", "pfd_str", "flourescence_str", "relative","sat_pulse"],
+    )
+    
+    initial_params = Parameters()
+    for param in pam_params_to_fit:
+        val = model.get_raw_parameters()[param].value
+        initial_params.add(param, value=val, vary=True, min=0)
+        #max=val*1.5, min=val*0.5
+    
+    result = fit_model.fit(
+        data=fluo_data["NPQ_standard"].values,
+        params=initial_params,
+        weights=1 / data_std,
+        npq_x=fluo_data["NPQ_standard"].index,
+        npq_y_mean=data_mean,
+        model=model,
+        fit_protocol_dict=make_protocol(fit_protocol).to_dict(),
+        pfd_str=pfd_str,
+        flourescence_str=flourescence_str,
+        relative=relative,
+        sat_pulse=sp_intensity,
+    )
+    best_params = result.best_values
+    print(best_params)
+    
+    fig, axs = plot_pamfit(
+        model=model,
+        new_params=best_params,
+        pfd_str=pfd_str,
+        fit_protocol=fit_protocol,
+        fluo_data=fluo_data,
+        sp_lenth=sp_lenth,
+    )
+
     return fig, axs
