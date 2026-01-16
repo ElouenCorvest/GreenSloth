@@ -1,0 +1,102 @@
+------- Update on 2026-01-16 11:26:10.930598 -------
+
+```math
+{Et} =  \frac{{\frac{{{vmax_v_RuBisCO_c}}}{{{kcat_v_RuBisCO_c}}}}}{{{V_m}}}
+```
+```math
+{I2_0} =  {PPFD} \cdot {s}
+```
+```math
+{I1_0} =  \frac{{{I2_0} \cdot {PhiPSII_LL}}}{{{PhiPSI_LL}}}
+```
+```math
+{km_v_RuBisCO_c_RUBP_extra} =  {km_v_RuBisCO_c_RUBP} \cdot \left( 1 + \frac{{{PGA}}}{{{ki_v_RuBisCO_c_PGA}}} + \frac{{{NADP_st}}}{{{ki_v_RuBisCO_c_NADP_st}}} + \frac{{{ADP_st}}}{{{ki_v_RuBisCO_c_ADP_st}}} + \frac{{{Pi_st}}}{{{ki_v_RuBisCO_c_Pi_st}}} \right)
+```
+```math
+{f_rubp} =  \frac{{{Et} + {km_v_RuBisCO_c_RUBP_extra} + {RUBP} - \sqrt{{ \left( {Et} + {km_v_RuBisCO_c_RUBP_extra} + {RUBP} \right)^{{2}} - 4 {RUBP} \cdot {Et} }}}}{{2 {Et}}}
+```
+```math
+{Ract_eq} =  \mathrm{{non\_rect\_hyperbole}} \left( {PPFD}, {alpha_ppfd_rub}, {V0_ppfd_rub}, {theta_ppfd_rub} \right) \cdot \mathrm{{non\_rect\_hyperbole}} \left( {CO2}, {alpha_co2}, {V0_co2}, {theta_co2} \right)
+```
+```math
+{chi} =  \frac{{{f_cyc}}}{{1 + {f_cyc} + {PhiPSII_LL}}}
+```
+```math
+{I1} =  \left( 1 + {chi} \right) {I1_0}
+```
+```math
+{f_cyc} =  \mathrm{{max}} \left( 0, -1 + 15^{{\frac{{{v_ATPsynth}}}{{{J_ATP}}} - \frac{{{v_FNR}}}{{{J_NADPH}}}}} \right)
+```
+```math
+{I2} =  \left( \frac{{1}}{{{PhiPSII_LL}}} - {chi} \right) {I2_0} \cdot {PhiPSII_LL}
+```
+```math
+{J2} =  {I2} \cdot {PhiPSII}
+```
+```math
+{J1} =  \frac{{{J2}}}{{1}} - {f_cyc}
+```
+```math
+{f_pseudocyc} =  {f_pseudocycNR} + 4 {O2} \cdot \left( 1 - \frac{{{v_FNR}}}{{{J_NADPH}}} \right)
+```
+```math
+{J_NADPH_steady} =  \frac{{\frac{{{J1} \cdot \left( 1 - {f_cyc} - {f_pseudocyc} \right)}}{{2}}}}{{1000}}
+```
+```math
+{J_ATP_steady} =  \frac{{\frac{{{J2} + \left( 1 - {fq} \rig{h}t) {J1} + 2 {fq} \cdot {J1} + 2 {f_cyc} \cdot {f_nd{h}} \cdot {J1}}}{{{h}}}}}{{1000}}
+```
+```math
+{gs_steady} =  \mathrm{{max}} \left( {gs0}, \frac{{{chi_beta} \cdot \left( {tau0} + {f_rubp} \right) \left( {phi} + {pi_e} \right)}}{{1 + {chi_beta} \cdot \left( {tau0} + {f_rubp} \right) \frac{{1}}{{{Kh}}} \cdot {Ds}}} \right)
+```
+
+------- Start on 2026-01-16 11:25:36.432066 -------
+
+```math
+{Et} =  \frac{{\frac{{{vmax_v_RuBisCO_c}}}{{{kcat_v_RuBisCO_c}}}}}{{{V_m}}}
+```
+```math
+{I2_0} =  {PPFD} \cdot {s}
+```
+```math
+{I1_0} =  \frac{{{I2_0} \cdot {PhiPSII_LL}}}{{{PhiPSI_LL}}}
+```
+```math
+{km_v_RuBisCO_c_RUBP_extra} =  {km_v_RuBisCO_c_RUBP} \cdot \left( 1 + \frac{{{PGA}}}{{{ki_v_RuBisCO_c_PGA}}} + \frac{{{NADP_st}}}{{{ki_v_RuBisCO_c_NADP_st}}} + \frac{{{ADP_st}}}{{{ki_v_RuBisCO_c_ADP_st}}} + \frac{{{Pi_st}}}{{{ki_v_RuBisCO_c_Pi_st}}} \right)
+```
+```math
+{f_rubp} =  \frac{{{Et} + {km_v_RuBisCO_c_RUBP_extra} + {RUBP} - \sqrt{{ \left( {Et} + {km_v_RuBisCO_c_RUBP_extra} + {RUBP} \right)^{{2}} - 4 {RUBP} \cdot {Et} }}}}{{2 {Et}}}
+```
+```math
+{Ract_eq} =  \mathrm{{non\_rect\_hyperbole}} \left( {PPFD}, {alpha_ppfd_rub}, {V0_ppfd_rub}, {theta_ppfd_rub} \right) \cdot \mathrm{{non\_rect\_hyperbole}} \left( {CO2}, {alpha_co2}, {V0_co2}, {theta_co2} \right)
+```
+```math
+{chi} =  \frac{{{f_cyc}}}{{1 + {f_cyc} + {PhiPSII_LL}}}
+```
+```math
+{I1} =  \left( 1 + {chi} \right) {I1_0}
+```
+```math
+{f_cyc} =  \mathrm{{max}} \left( 0, -1 + 15^{{\frac{{{v_ATPsynth}}}{{{J_ATP}}} - \frac{{{v_FNR}}}{{{J_NADPH}}}}} \right)
+```
+```math
+{I2} =  \left( \frac{{1}}{{{PhiPSII_LL}}} - {chi} \right) {I2,0} \cdot {PhiPSII_LL}
+```
+```math
+{J2} =  {I2} \cdot {PhiPSII}
+```
+```math
+{J1} =  \frac{{{J2}}}{{1}} - {f_cyc}
+```
+```math
+{f_pseudocyc} =  {f_pseudocycNR} + 4 {O2} \cdot \left( 1 - \frac{{{v_FNR}}}{{{J_NADPH}}} \right)
+```
+```math
+{J_NADPH_steady} =  \frac{{\frac{{{J1} \cdot \left( 1 - {f_cyc} - {f_pseudocyc} \right)}}{{2}}}}{{1000}}
+```
+```math
+{J_ATP_steady} =  \frac{{\frac{{{J2} + \left( 1 - {fq} \rig{h}t) {J1} + 2 {fq} \cdot {J1} + 2 {f_cyc} \cdot {f_nd{h}} \cdot {J1}}}{{{h}}}}}{{1000}}
+```
+```math
+{gs_steady} =  \mathrm{{max}} \left( {gs0}, \frac{{{chi_beta} \cdot \left( {tau0} + {f_rubp} \right) \left( {phi} + {pi_e} \right)}}{{1 + {chi_beta} \cdot \left( {tau0} + {f_rubp} \right) \frac{{1}}{{{Kh}}} \cdot {Ds}}} \right)
+```
+

@@ -1,0 +1,18 @@
+Short Description,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
+Rate of RuBisCO activation,$v_{R_\mathrm{act}}$,$R_{\mathrm{act}\ t+\mathrm{d}t}$,,Ract_rate,
+Rate of the total ATP production,$v_{J_\mathrm{NADPH}}$,$J_{\mathrm{NADPH}\ t+\mathrm{d}t}$,,v_J_NADPH,
+Rate of total ATP production,$v_{J_\mathrm{ATP}}$,$J_{\mathrm{ATP}\ t+\mathrm{d}t}$,,v_J_ATP,
+Rate of the stomatal conductance of water vapour to the atmosphere,$v_{g_\mathrm{S}}$,$g_{\mathrm{S}\ t+\mathrm{d}t}$,,v_gs,
+Rate of RuBisCo Carboxylase,$v_{\mathrm{RuBisCO|Carboxylase}}$,$V_C$,R00024,v_RuBisCO_c,19
+Rate of RuBisCO Oxygenase,$v_{\mathrm{RuBisCO|Oxy}}$,$V_O$,R03140,rubisco_oxygenase,
+Rate of glycine decarboxylase,$v_{\mathrm{GDC}}$,$\mathrm{GDC}$,R03425,glycine_decarboxylase,
+Rate of PRKase,$v_{\mathrm{PRKase}}$,$\mathrm{RuP_{Phosp}}$,R01523,v_PRKase,22
+Combined rate of PGK1ase (R01523) and GAPDHase (R01603,$v_{\mathrm{PGAreduc}}$,$\mathrm{PR}$,,v_pgareduction,
+Simplified rate of Carbohydrate Synthesis,$v_{\mathrm{carbsyn}}$,$\mathrm{CS}$,,v_carbohydrate_synthesis,
+Simplified reductive pentose phosphate pathway,$v_{\mathrm{rpp}}$,$\mathrm{RPP}$,,v_rpp,
+Rate of carbonic anhydrase,$v_{\mathrm{CAase}}$,$\mathrm{CA}$,,v_co2_hydration,
+Respiration in the light,$R_\mathrm{light}$,$R_\mathrm{LIGHT}$,,v_RLight,
+Reaction mediated by FNR,$v_{\mathrm{FNR}}$,$v_\mathrm{NADPH}$,R01195,v_FNR,10
+Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,$v_\mathrm{ATP}$,R00086,v_ATPsynth,3
+Rate of $\mathrm{CO_2}$ dissolution in aqueous media within the leaf,$v_{\mathrm{CO_{2|diss}}}$,$\mathrm{CO_2 dissolution}$,,CO2_dissolution,
+Rate of $\mathrm{CO_2}$ stomatal diffusion,$v_{\mathrm{CO_{2|stomdiff}}}$,$\mathrm{CO_2 stomatal diffusion}$,,CO2_stomatal_diffusion,

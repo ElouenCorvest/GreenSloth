@@ -1,0 +1,18 @@
+------- Update on 2026-01-16 10:51:47.705801 -------
+
+ADP_st = remove_math(derived_comps_table, r'$\mathrm{ADP}$')
+NADP_st = remove_math(derived_comps_table, r'$\mathrm{NADP}$')
+Pi_st = remove_math(derived_comps_table, r'$\mathrm{P_i}$')
+PhiPSII = remove_math(derived_comps_table, r'$Y\mathrm{(II)}$')
+A = remove_math(derived_comps_table, r'$A$')
+O2 = remove_math(derived_comps_table, r'$O_2$')
+
+------- Start on 2026-01-16 10:48:27.848499 -------
+
+ADP_st = remove_math(derived_comps_table, r'')
+NADP_st = remove_math(derived_comps_table, r'')
+Pi_st = remove_math(derived_comps_table, r'')
+PhiPSII = remove_math(derived_comps_table, r'')
+A = remove_math(derived_comps_table, r'$A$')
+O2 = remove_math(derived_comps_table, r'$O_2$')
+

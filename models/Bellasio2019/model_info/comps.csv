@@ -1,0 +1,14 @@
+Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
+Carbon Dioxide,$\left[\mathrm{CO_2}\right]$,$\left[\mathrm{CO_2}\right]$,C00011,CO2,
+Bicarbonate,$\left[\mathrm{HCO_3^-}\right]$,$\left[\mathrm{HCO_3^-}\right]$,,HCO3,
+"Ribulose 1,5-bisphosphate",$\mathrm{RUBP}$,$\left[\mathrm{RuBP}\right]$,C01182,RUBP,34
+3-phosphoglyceric acid,$\mathrm{PGA}$,$\left[\mathrm{PGA}\right]$,C00197,PGA,21
+Dihydroxyacetone phosphate,$\mathrm{DHAP}$,$\left[\mathrm{DHAP}\right]$,C00111,DHAP,24
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,$\left[\mathrm{ATP}\right]$,C00002,ATP_st,2
+Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,$\left[\mathrm{NADPH}\right]$,C00005,NADPH_st,19
+Ribulose 5-phosphate,$\mathrm{RU5P}$,$\left[\mathrm{RuP}\right]$,C00199,RU5P,35
+RuBisCO activation state,$R_{\mathrm{act}}$,$R_{\mathrm{act}}$,EC 4.1.1.39,Ract,
+Total NADPH production,$J_\mathrm{NADPH}$,$J_\mathrm{NADPH}$,,J_NADPH,
+Total ATP production,$J_\mathrm{ATP}$,$J_\mathrm{ATP}$,,J_ATP,
+Intercellular $\mathrm{CO_2}$ concentration,$C_\mathrm{i}$,$C_\mathrm{i}$,,Ci,
+Stomatal conductance of water vapour to the atmosphere,$g_\mathrm{S}$,$g_\mathrm{S}$,,gs,

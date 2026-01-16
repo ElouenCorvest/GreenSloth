@@ -1,0 +1,38 @@
+------- Update on 2026-01-16 11:01:21.700597 -------
+
+Et = remove_math(derived_params_table, r'$E_\mathrm{T}$')
+I2_0 = remove_math(derived_params_table, r'$I_\mathrm{2,0}$')
+I1_0 = remove_math(derived_params_table, r'$I_\mathrm{1,0}$')
+km_v_RuBisCO_c_RUBP_extra = remove_math(derived_params_table, r'$K_{\mathrm{m\ RuBP}}^\'$')
+f_rubp = remove_math(derived_params_table, r'$f\left(\mathrm{RuBP}\right)$')
+Ract_eq = remove_math(derived_params_table, r'$R_\mathrm{act\ eq}$')
+chi = remove_math(derived_params_table, r'$\chi$')
+I1 = remove_math(derived_params_table, r'$I_1$')
+f_cyc = remove_math(derived_params_table, r'$f_\mathrm{Cyc}$')
+I2 = remove_math(derived_params_table, r'$I_2$')
+J2 = remove_math(derived_params_table, r'$J_2$')
+J1 = remove_math(derived_params_table, r'$J_1$')
+f_pseudocyc = remove_math(derived_params_table, r'$f_\mathrm{Pseudocyc}$')
+J_NADPH_steady = remove_math(derived_params_table, r'$J_\mathrm{NADPH}$')
+J_ATP_steady = remove_math(derived_params_table, r'$J_\mathrm{ATP}$')
+gs_steady = remove_math(derived_params_table, r'$g_\mathrm{S}$')
+
+------- Start on 2026-01-16 10:48:27.849135 -------
+
+Et = remove_math(derived_params_table, r'$E_\mathrm{T}$')
+I2,0 = remove_math(derived_params_table, r'$I_\mathrm{2,0}$')
+I1,0 = remove_math(derived_params_table, r'$I_\mathrm{1,0}$')
+km_v_RuBisCO_c_RUBP_extra = remove_math(derived_params_table, r'$K_{\mathrm{m\ RuBP}}^'$')
+f_rubp = remove_math(derived_params_table, r'$f\left(\mathrm{RuBP}\right)$')
+Ract_eq = remove_math(derived_params_table, r'$R_\mathrm{act\ eq}$')
+chi = remove_math(derived_params_table, r'$\chi$')
+I1 = remove_math(derived_params_table, r'$I_1$')
+f_cyc = remove_math(derived_params_table, r'$f_\mathrm{Cyc}$')
+I2 = remove_math(derived_params_table, r'$I_2$')
+J2 = remove_math(derived_params_table, r'$J_2$')
+J1 = remove_math(derived_params_table, r'$J_1$')
+f_pseudocyc = remove_math(derived_params_table, r'$f_\mathrm{Pseudocyc}$')
+J_NADPH_steady = remove_math(derived_params_table, r'$J_\mathrm{NADPH}$')
+J_ATP_steady = remove_math(derived_params_table, r'$J_\mathrm{ATP}$')
+gs_steady = remove_math(derived_params_table, r'$g_\mathrm{S}$')
+

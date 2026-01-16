@@ -1,0 +1,32 @@
+------- Update on 2026-01-16 10:50:06.366020 -------
+
+CO2 = remove_math(comps_table, r'$\left[\mathrm{CO_2}\right]$')
+HCO3 = remove_math(comps_table, r'$\left[\mathrm{HCO_3^-}\right]$')
+RUBP = remove_math(comps_table, r'$\left[\mathrm{RuBP}\right]$')
+PGA = remove_math(comps_table, r'$\left[\mathrm{PGA}\right]$')
+DHAP = remove_math(comps_table, r'$\left[\mathrm{DHAP}\right]$')
+ATP_st = remove_math(comps_table, r'$\left[\mathrm{ATP}\right]$')
+NADPH_st = remove_math(comps_table, r'$\left[\mathrm{NADPH}\right]$')
+RU5P = remove_math(comps_table, r'$\left[\mathrm{RuP}\right]$')
+Ract = remove_math(comps_table, r'$R_{\mathrm{act}}$')
+J_NADPH = remove_math(comps_table, r'$J_\mathrm{NADPH}$')
+J_ATP = remove_math(comps_table, r'$J_\mathrm{ATP}$')
+Ci = remove_math(comps_table, r'$C_\mathrm{i}$')
+gs = remove_math(comps_table, r'$g_\mathrm{S}$')
+
+------- Start on 2026-01-16 10:48:27.845388 -------
+
+CO2 = remove_math(comps_table, r'$\left[\mathrm{CO_2}\right]$')
+HCO3 = remove_math(comps_table, r'$\left[\mathrm{HCO_3^-}\right]$')
+RUBP = remove_math(comps_table, r'$\left[\mathrm{RuBP}\right]$')
+PGA = remove_math(comps_table, r'$\left[\mathrm{PGA}\right]$')
+DHAP = remove_math(comps_table, r'$\left[\mathrm{DHAP}\right]$')
+ATP_st = remove_math(comps_table, r'$\left[\mathrm{ATP}\right]$')
+NADPH_st = remove_math(comps_table, r'$\left[\mathrm{NADPH}\right]$')
+RU5P = remove_math(comps_table, r'$\left[\mathrm{RuP}\right]$')
+Ract = remove_math(comps_table, r'$R_{\mathrm{act}}$')
+J_NADPH = remove_math(comps_table, r'$J_\mathrm{NADPH}$')
+J_ATP = remove_math(comps_table, r'$J_\mathrm{ATP}$')
+Ci = remove_math(comps_table, r'$C_\mathrm{i}}$')
+gs = remove_math(comps_table, r'$g_\mathrm{S}$')
+
