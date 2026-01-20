@@ -34,7 +34,7 @@ def Bellasio2019() -> Model:
             "fq": 1,
             "f_ndh": 0,
             "h": 4,
-            "Ca": 400,
+            "Ca": 350,
             "alpha_ppfd_rub": 0.0018,
             "V0_ppfd_rub": 0.16,
             "theta_ppfd_rub": 0.95,
@@ -101,7 +101,8 @@ def Bellasio2019() -> Model:
             "NADP_tot": 0.5,
         }
     )
-    m.add_variables(
+
+    m.add_variables(
         {
             "CO2": InitialAssignment(fn=co2_initial, args=['Ca', 'Kh_co2'], unit="REPLACE"),
             "HCO3": Variable(0.1327, unit="REPLACE"),
@@ -118,7 +119,8 @@ def Bellasio2019() -> Model:
             "gs": Variable(0.334934046786077, unit="REPLACE"),
         }
     )
-    m = include_derived_quantities(m)
+
+    m = include_derived_quantities(m)
     m = include_rates(m)
 
     return m
