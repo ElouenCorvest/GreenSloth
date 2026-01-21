@@ -104,7 +104,7 @@ CO2_stomatal_diffusion = remove_math(rates_table, r'$\mathrm{CO_2 stomatal diffu
 AP_tot = remove_math(params_table, r'$A_\mathrm{Tot}$')
 Pi_tot = remove_math(params_table, r'$[P_\mathrm{i}]$')
 p_o2 = remove_math(params_table, r'$\mathrm{p\ O_2}$')
-Kh_o2 = remove_math(params_table, r'$K_\mathrm{h}\ \mathrm{O_2}')
+Kh_o2 = remove_math(params_table, r'$K_\mathrm{h}\ \mathrm{O_2}$')
 V_m = remove_math(params_table, r'Volume M')
 PPFD = remove_math(params_table, r'$I_\mathrm{inc}$')
 RLight = remove_math(params_table, r'$R_\mathrm{LIGHT}$')
@@ -172,7 +172,7 @@ km_v_ATPsynth_Pi_st = remove_math(params_table, r'$K_\mathrm{m}\ \mathrm{P_i}$')
 km_v_ATPsynth_ATP_st = remove_math(params_table, r'$K_\mathrm{m}\ \mathrm{ATP}$')
 Kj_ATP = remove_math(params_table, r'$K_\mathrm{J}\ \mathrm{ATP}$')
 gm = remove_math(params_table, r'$g_\mathrm{M}$')
-Kh_co2 = remove_math(params_table, r'$K_\mathrm{h}\ \mathrm{CO_2}')
+Kh_co2 = remove_math(params_table, r'$K_\mathrm{h}\ \mathrm{CO_2}$')
 Kd = remove_math(params_table, r'$K_\mathrm{d}$')
 Ki = remove_math(params_table, r'$K_\mathrm{i}$')
 tau0 = remove_math(params_table, r'$\tau_0$')
@@ -189,7 +189,7 @@ NADP_tot = remove_math(params_table, r'$NAD_\mathrm{Tot}$')
 Et = remove_math(derived_params_table, r'$E_\mathrm{T}$')
 I2_0 = remove_math(derived_params_table, r'$I_\mathrm{2,0}$')
 I1_0 = remove_math(derived_params_table, r'$I_\mathrm{1,0}$')
-km_v_RuBisCO_c_RUBP_extra = remove_math(derived_params_table, r'$K_{\mathrm{m\ RuBP}}^\'$')
+km_v_RuBisCO_c_RUBP_extra = remove_math(derived_params_table, r'$K_{\mathrm{m\ RuBP}}^\prime$')
 f_rubp = remove_math(derived_params_table, r'$f\left(\mathrm{RuBP}\right)$')
 Ract_eq = remove_math(derived_params_table, r'$R_\mathrm{act\ eq}$')
 chi = remove_math(derived_params_table, r'$\chi$')
@@ -211,7 +211,7 @@ mdFile.new_header(1, model_title)
 
 mdFile.new_header(2, "Summary")
 
-mdFile.new_paragraph(f"""[{model_title}]({model_doi})
+mdFile.new_paragraph(f"""The [{model_title}]({model_doi}) model is a generalized C<sub>3</sub> leaf-photosynthesis model, that includes simplified representations of the light and dark reactions and a stomatal behaviour submodule. A lot of its implementation is based on past work by the same author and is mainly inspired by the common Farquhar-von Caemmerer-Berry model. The light reactions are modified from Yin et al. (2004) and include the potential rate sof ATP and NADPH production based on light intensity.
 
                      """)
 
@@ -655,7 +655,7 @@ mdFile.new_paragraph(rf"""
                      
 <img style='float: center' src='figures/{model_title.lower()}_demon_fitting.svg' alt='PAM Fitting' width='600'/>
 
-Sample fitting to experimental NPQ data. The NPQ data used is taken from experimental work published in ([https://doi.org/10.1111/nph.18534](https://doi.org/10.1111/nph.18534)) and was aquired using Maxi Imaging-PAM (Walz, Germany) using Col-0 Arabidopsis thaliana plants. It is assumed that the experiment follows the default PAM protocol of the machine, as no other experimental protocol has been given. Therefore, the protocol of each simulation follows the data given, where the length of one saturating pulse is set to 720 ms at a light intensity of 5000 µmol m⁻² s⁻¹. The light protocol consists of a dark adaptation period of 30 minutes at a light intensity of 40 µmol m⁻² s⁻¹ to acclimate the simulation conditions. Then the actual protocol starts with several 
+Sample fitting to experimental NPQ data. The NPQ data used is taken from experimental work published in ([https://doi.org/10.1111/nph.18534](https://doi.org/10.1111/nph.18534)) and was aquired using Maxi Imaging-PAM (Walz, Germany) using Col-0 Arabidopsis thaliana plants. It is assumed that the experiment follows the default PAM protocol of the machine, as no other experimental protocol has been given. Therefore, the protocol of each simulation follows the data given, where the length of one saturating pulse is set to 720 ms at a light intensity of 5000 µmol m⁻² s⁻¹. The light protocol consists of a dark adaptation period of 30 minutes to acclimate the simulation conditions. Then the actual protocol starts with a longer phase of high actinic light (903 µmol m⁻² s⁻¹) for approximately 10 minutes, followed by a lower actinic light of (90 µmol m⁻² s⁻¹) for 10 minutes, and then 5 minutes of a dark period. During each phase, saturating pulses are given approximately every 60 seconds. As the experimental data also provides exact time points for each pulse, these were taken as reference for the protocol and not the general time intervals. In the experimental work, the dark period consists of actual darkness, whereas in the simulation a low light intensity of 40 µmol m⁻² s⁻¹ is used to avoid numerical issues. The fitting is performed using the `lmfit`package in Python with the leastsquare method. On top of that, a standard scaling towards the experimental data is done, to keep the fitting results in the same order of magnitude. To help fitting converge, weights are applied to the data points, which are defined as the reciprocal of the standard deviation. These settings set are not to be taken as set in stone, as fitting is a highly experimental process and differing settings might be required depending on the model and data used. These settings are a basic starting point for fitting data to a model. The hardest and most impactful decision while fitting is the choice of parameters to fit. There are many ways to find which parmaters may be most impactful to fit, such as sensitivity analysis or metabolic control analysis. However, either way experimenting with different parameter sets is always required to find the best fitting practice, which differs for each model and also data to fit to.
 
 **Assumptions:**
 
@@ -665,7 +665,7 @@ Sample fitting to experimental NPQ data. The NPQ data used is taken from experim
 
 **Notes:**
 
-As this model does not contain a representation of Flourescence or NPQ output, this can not be shown.
+As this model does not contain a representation of Flourescence or NPQ output, the model cannot be fitted to the data.
 
 </details>
 """)

@@ -7,7 +7,7 @@
 ## Summary
 
 
-[Bellasio2019](https://doi.org/10.1007/s11120-018-0601-1)
+The [Bellasio2019](https://doi.org/10.1007/s11120-018-0601-1) model is a generalized C<sub>3</sub> leaf-photosynthesis model, that includes simplified representations of the light and dark reactions and a stomatal behaviour submodule. A lot of its implementation is based on past work by the same author and is mainly inspired by the common Farquhar-von Caemmerer-Berry model. The light reactions are modified from Yin et al. (2004) and include the potential rate sof ATP and NADPH production based on light intensity.
 
                      
 ## Installation
@@ -135,8 +135,8 @@ A =  v_{\mathrm{RuBisCO \vert Carboxylase}} - 0.5 v_{\mathrm{RuBisCO \vert Oxy}}
 |Total adenylates|$AP_\mathrm{Tot}$|$A_\mathrm{Tot}$|$1.5$|$\mathrm{mM}$|AP_tot|Wang et al. 2014|
 |Total inorganic phosphorus|$\mathrm{P_i}$|$[P_\mathrm{i}]$|$15$|$\mathrm{mM}$|Pi_tot|Lilley et al. 1977|
 |$\mathrm{O_2}$ partial pressure (gas)|$p(\mathrm{O_2})$|$\mathrm{p\ O_2}$|$210000$|$\mathrm{\mu bar}$|p_o2||
-|$\mathrm{O_2}$ volatility|$K_\mathrm{h\|O_2}$|$K_\mathrm{h}\ \mathrm{O_2}|$833300$|$\mathrm{\mu bar mM^{-1}}$|Kh_o2|Warneck and Williams 2012|
-|Mesophyll volume per $\mathrm{m^2}$ of leaf|$V_\mathrm{M}$|Volume M|$0.03$|$dm^3\ m^{-2}$|V_m||
+|$\mathrm{O_2}$ volatility|$K_\mathrm{h\|O_2}$|$K_\mathrm{h}\ \mathrm{O_2}$|$833300$|$\mathrm{\mu bar mM^{-1}}$|Kh_o2|Warneck and Williams 2012|
+|Mesophyll volume per $\mathrm{m^2}$ of leaf|$V_\mathrm{M}$|Volume M|$0.03$|$\mathrm{dm^3\ m^{-2}}$|V_m||
 |Incident radiation|$\mathrm{PPFD}$|$I_\mathrm{inc}$|$1500$|$\mathrm{\mu\ mol\ m^{-2}\ s^{-1}}$|PPFD||
 |Respiration in the light|$R_\mathrm{light}$|$R_\mathrm{LIGHT}$|$0.001$|$\mathrm{\mu\ mol\ m^{-2}\ s^{-1}}$|RLight||
 |Lumped energy conversion coefficient|$s_\mathrm{ener}$|$s$|$0.43$|$\mathrm{electrons\ quanta^{-1}}$|s|Bellasio et al. 2016|
@@ -149,7 +149,7 @@ A =  v_{\mathrm{RuBisCO \vert Carboxylase}} - 0.5 v_{\mathrm{RuBisCO \vert Oxy}}
 |Fraction of electron flow through the Q-cycle|$f_\mathrm{Q}$|$f_\mathrm{Q}$|$1$||fq|Yin et al. 2004|
 |Fraction of electron flow through the NDH complex|$f_\mathrm{NDH}$|$f_\mathrm{NDH}$|$0$||f_ndh|Yamori and Shikanai 2016|
 |Number of protons per ATP|$h$|$h$|$4$|$\mathrm{protons ATP^{-1}}$|h|Yin and Struik 2012|
-|Atmospheric $\amthrm{CO_2}$ concentration|$C_\mathrm{a}$|$C_\mathrm{a}$|$400$|$\mathrm{\mu bar}$|Ca||
+|Atmospheric $\mathrm{CO_2}$ concentration|$C_\mathrm{a}$|$C_\mathrm{a}$|$400$|$\mathrm{\mu bar}$|Ca||
 |Initial slope of PPFD hyperbola in regard of RuBisCO|$\alpha_\mathrm{PPFD\|RuBisCO}$|$\alpha_\mathrm{V}$|$0.0018$||alpha_ppfd_rub||
 |Y-intercept of PPFD hyperbola in regard of RuBisCO|$V_\mathrm{0\|PPFD\|RuBisCO}$|$V_{0}$|$0.16$||V0_ppfd_rub||
 |Curvature of PPFD hyperbola in regard of RuBisCO|$\theta_\mathrm{PPFD\|RuBisCO}$|$\theta_\mathrm{V}$|$0.95$||theta_ppfd_rub||
@@ -202,8 +202,8 @@ A =  v_{\mathrm{RuBisCO \vert Carboxylase}} - 0.5 v_{\mathrm{RuBisCO \vert Oxy}}
 |Michealis-Menten constant for Pi in ATPsynthase|$K_\mathrm{m\|ATPsynthase\|Pi}$|$K_\mathrm{m}\ \mathrm{P_i}$|$0.3$|$\mathrm{mM}$|km_v_ATPsynth_Pi_st|Santamarina et al. 2002|
 |Michealis-Menten constant for ATP in ATPsynthase|$K_\mathrm{m\|ATPsynthase\|ATP}$|$K_\mathrm{m}\ \mathrm{ATP}$|$0.3$|$\mathrm{mM}$|km_v_ATPsynth_ATP_st|Santamarina et al. 2002|
 |Time constant for induction of ATPsynthase|$K_\mathrm{J\|ATPsynthase\|ATP}$|$K_\mathrm{J}\ \mathrm{ATP}$|$200$|$\mathrm{s}$|Kj_ATP|Bellasio et al. 2017|
-|Mesophyll conductance to $\mathrm{CO_2}$|$g_\mathrm{M}$|$g_\mathrm{M}$|$0.5$|$\mathrm{mol\ m^{-2}\ s^{-1}$|gm|Flexas et al. 2008|
-|$\mathrm{CO_2}$ volatility|$K_\mathrm{h\|CO_2}$|$K_\mathrm{h}\ \mathrm{CO_2}|$30303.0303030303$|$\mathrm{\mu bar mM^{-1}}$|Kh_co2|van der Heijden et al. 2015|
+|Mesophyll conductance to $\mathrm{CO_2}$|$g_\mathrm{M}$|$g_\mathrm{M}$|$0.5$|$\mathrm{mol\ m^{-2}\ s^{-1}}$|gm|Flexas et al. 2008|
+|$\mathrm{CO_2}$ volatility|$K_\mathrm{h\|CO_2}$|$K_\mathrm{h}\ \mathrm{CO_2}$|$30303.0303030303$|$\mathrm{\mu bar mM^{-1}}$|Kh_co2|van der Heijden et al. 2015|
 |Time constant for decrease in $g_\mathrm{S}$|$K_{\mathrm{d}\|g_\mathrm{S}}$|$K_\mathrm{d}$|$150$|$\mathrm{s}$|Kd|McAusland et al. 2016|
 |Time constant for increase in $g_\mathrm{S}$|$K_{\mathrm{i}\|g_\mathrm{S}}$|$K_\mathrm{i}$|$900$|$\mathrm{s}$|Ki|McAusland et al. 2016|
 |Value of $\tau$ in the dark|$\tau_0$|$\tau_0$|$-0.1$|$\mathrm{mM}$|tau0||
@@ -222,7 +222,7 @@ A =  v_{\mathrm{RuBisCO \vert Carboxylase}} - 0.5 v_{\mathrm{RuBisCO \vert Oxy}}
 |Total concentration of RuBisCO catalytic sites|$E_\mathrm{RuBisCO\|Total}$|$E_\mathrm{T}$|Et|
 |Light absorbed by PSII when $f_\mathrm{Cyc} = 0$|$I_\mathrm{2\|0}$|$I_\mathrm{2,0}$|I2_0|
 |Light absorbed by PSI when $f_\mathrm{Cyc} = 0$|$I_\mathrm{1\|0}$|$I_\mathrm{1,0}$|I1_0|
-|Michealis-Menten constant for RuBP in RuBisCO carboxylation|$K_{\mathrm{m\|RuBisCO\|RuBP}}^\'$|$K_{\mathrm{m\ RuBP}}^\'$|km_v_RuBisCO_c_RUBP_extra|
+|Michealis-Menten constant for RuBP in RuBisCO carboxylation|$K_{\mathrm{m\|RuBisCO\|RuBP}}^\prime$|$K_{\mathrm{m\ RuBP}}^\prime$|km_v_RuBisCO_c_RUBP_extra|
 |Function that relatives RuBP concentration to concentration of RuBisCO active sites|$f\left(\mathrm{RUBP}\right)$|$f\left(\mathrm{RuBP}\right)$|f_rubp|
 |Steady state value of the RuBisCO activation state ($R_\mathrm{act}$)|$R_\mathrm{act\|steady}$|$R_\mathrm{act\ eq}$|Ract_eq|
 |Quantity that reduces PSI when the cyclic electron flow is engaged|$\chi$|$\chi$|chi|
@@ -252,10 +252,10 @@ I_\mathrm{2 \vert 0} =  \mathrm{PPFD} \cdot s_\mathrm{ener}
 I_\mathrm{1 \vert 0} =  \frac{I_\mathrm{2 \vert 0} \cdot \Phi (\mathrm{II})_0}{\Phi (\mathrm{I})_0}
 ```
 ```math
-K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\' =  K_\mathrm{m \vert RuBisCO \vert RUBP} \cdot \left( 1 + \frac{\mathrm{PGA}}{K_\mathrm{i \vert RuBisCO \vert PGA}} + \frac{\mathrm{NADP}_\mathrm{st}}{K_\mathrm{i \vert RuBisCO \vert NADP}} + \frac{\mathrm{ADP_{st}}}{K_\mathrm{i \vert RuBisCO \vert ADP}} + \frac{\mathrm{P}_\mathrm{i,\ st}}{K_\mathrm{i \vert RuBisCO \vert ADP}} \right)
+K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\prime =  K_\mathrm{m \vert RuBisCO \vert RUBP} \cdot \left( 1 + \frac{\mathrm{PGA}}{K_\mathrm{i \vert RuBisCO \vert PGA}} + \frac{\mathrm{NADP}_\mathrm{st}}{K_\mathrm{i \vert RuBisCO \vert NADP}} + \frac{\mathrm{ADP_{st}}}{K_\mathrm{i \vert RuBisCO \vert ADP}} + \frac{\mathrm{P}_\mathrm{i,\ st}}{K_\mathrm{i \vert RuBisCO \vert ADP}} \right)
 ```
 ```math
-f\left(\mathrm{RUBP}\right) =  \frac{E_\mathrm{RuBisCO \vert Total} + K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\' + \mathrm{RUBP} - \sqrt{ \left( E_\mathrm{RuBisCO \vert Total} + K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\' + \mathrm{RUBP} \right)^{2} - 4 \mathrm{RUBP} \cdot E_\mathrm{RuBisCO \vert Total} }}{2 E_\mathrm{RuBisCO \vert Total}}
+f\left(\mathrm{RUBP}\right) =  \frac{E_\mathrm{RuBisCO \vert Total} + K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\prime + \mathrm{RUBP} - \sqrt{ \left( E_\mathrm{RuBisCO \vert Total} + K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\prime + \mathrm{RUBP} \right)^{2} - 4 \mathrm{RUBP} \cdot E_\mathrm{RuBisCO \vert Total} }}{2 E_\mathrm{RuBisCO \vert Total}}
 ```
 ```math
 R_\mathrm{act \vert steady} =  \mathrm{non\_rect\_hyperbole} \left( \mathrm{PPFD}, \alpha_\mathrm{PPFD \vert RuBisCO}, V_\mathrm{0 \vert PPFD \vert RuBisCO}, \theta_\mathrm{PPFD \vert RuBisCO} \right) \cdot \mathrm{non\_rect\_hyperbole} \left( \left[\mathrm{CO_2}\right], \alpha_\mathrm{CO_2 \vert RuBisCO}, V_\mathrm{0 \vert CO_2 \vert RuBisCO}, \theta_\mathrm{CO_2 \vert RuBisCO} \right)
@@ -335,7 +335,7 @@ v_{J_\mathrm{NADPH}} = \left\{ \begin{array}{cl} \frac{J_\mathrm{ATP \vert stead
 v_{g_\mathrm{S}} = \left\{ \begin{array}{cl} \frac{g_\mathrm{S \vert steady} - g_\mathrm{S}}{K_{\mathrm{d} \vert g_\mathrm{S}}} & : \ g_\mathrm{S} \geq g_\mathrm{S \vert steady} \\ \frac{g_\mathrm{S \vert steady} - g_\mathrm{S}}{K_{\mathrm{i} \vert g_\mathrm{S}}} & : \ g_\mathrm{S} < g_\mathrm{S \vert steady} \end{array} \right.
 ```
 ```math
-v_{\mathrm{RuBisCO \vert Carboxylase}} =  \frac{V_\mathrm{max \vert RuBisCO} \cdot R_{\mathrm{act}} \cdot f\left(\mathrm{RUBP}\right) \cdot \mathrm{RUBP} \cdot \left[\mathrm{CO_2}\right]}{\left( K_\mathrm{m \vert RuBisCO \vert CO_2} \cdot \left( 1 + \frac{\mathrm{O_2}}{K_\mathrm{m \vert RuBisCO \vert O_2}} \right) + \left[\mathrm{CO_2}\right] \right) \left( K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\' + \mathrm{RUBP} \right)}
+v_{\mathrm{RuBisCO \vert Carboxylase}} =  \frac{V_\mathrm{max \vert RuBisCO} \cdot R_{\mathrm{act}} \cdot f\left(\mathrm{RUBP}\right) \cdot \mathrm{RUBP} \cdot \left[\mathrm{CO_2}\right]}{\left( K_\mathrm{m \vert RuBisCO \vert CO_2} \cdot \left( 1 + \frac{\mathrm{O_2}}{K_\mathrm{m \vert RuBisCO \vert O_2}} \right) + \left[\mathrm{CO_2}\right] \right) \left( K_{\mathrm{m \vert RuBisCO \vert RuBP}}^\prime + \mathrm{RUBP} \right)}
 ```
 ```math
 v_{\mathrm{RuBisCO \vert Oxy}} =  \frac{v_{\mathrm{RuBisCO \vert Carboxylase}} \cdot 2 \frac{1}{2 \frac{S_\mathrm{C \vert O}}{K_\mathrm{h \vert O_2}} \cdot K_\mathrm{h \vert CO_2}} \cdot \mathrm{O_2}}{\left[\mathrm{CO_2}\right]}
@@ -559,7 +559,7 @@ A sample metabolic control analysis (MCA) of typical photosynthesis variables an
 | -----------                   | -----------       |
 | $\mathrm{PSII}$             | $\mathrm{PPFD}$ |
 | $\mathrm{PSI}$              | None |
-| $\mathrm{RuBisCO \vert C}$  | None |
+| $\mathrm{RuBisCO \vert C}$  | $k_\mathrm{cat \vert RuBisCO}$ |
 | $\mathrm{cytb6f}$           | None              |
 | $\mathrm{ATPsynthase}$      | None              |
 
@@ -579,5 +579,27 @@ A sample metabolic control analysis (MCA) of typical photosynthesis variables an
 | $\mathrm{PC_{ox}}$    | None          |
 | $\mathrm{ATP}$          | $\mathrm{ATP_{st}}$    |
 | $\mathrm{NADPH}$        | $\mathrm{NADPH}_\mathrm{st}$  |
+
+</details>
+
+
+
+                     
+<details>
+<summary>PAM Fitting</summary>
+                     
+<img style='float: center' src='figures/bellasio2019_demon_fitting.svg' alt='PAM Fitting' width='600'/>
+
+Sample fitting to experimental NPQ data. The NPQ data used is taken from experimental work published in ([https://doi.org/10.1111/nph.18534](https://doi.org/10.1111/nph.18534)) and was aquired using Maxi Imaging-PAM (Walz, Germany) using Col-0 Arabidopsis thaliana plants. It is assumed that the experiment follows the default PAM protocol of the machine, as no other experimental protocol has been given. Therefore, the protocol of each simulation follows the data given, where the length of one saturating pulse is set to 720 ms at a light intensity of 5000 µmol m⁻² s⁻¹. The light protocol consists of a dark adaptation period of 30 minutes to acclimate the simulation conditions. Then the actual protocol starts with a longer phase of high actinic light (903 µmol m⁻² s⁻¹) for approximately 10 minutes, followed by a lower actinic light of (90 µmol m⁻² s⁻¹) for 10 minutes, and then 5 minutes of a dark period. During each phase, saturating pulses are given approximately every 60 seconds. As the experimental data also provides exact time points for each pulse, these were taken as reference for the protocol and not the general time intervals. In the experimental work, the dark period consists of actual darkness, whereas in the simulation a low light intensity of 40 µmol m⁻² s⁻¹ is used to avoid numerical issues. The fitting is performed using the `lmfit`package in Python with the leastsquare method. On top of that, a standard scaling towards the experimental data is done, to keep the fitting results in the same order of magnitude. To help fitting converge, weights are applied to the data points, which are defined as the reciprocal of the standard deviation. These settings set are not to be taken as set in stone, as fitting is a highly experimental process and differing settings might be required depending on the model and data used. These settings are a basic starting point for fitting data to a model. The hardest and most impactful decision while fitting is the choice of parameters to fit. There are many ways to find which parmaters may be most impactful to fit, such as sensitivity analysis or metabolic control analysis. However, either way experimenting with different parameter sets is always required to find the best fitting practice, which differs for each model and also data to fit to.
+
+**Assumptions:**
+
+- If no Flourescence and NPQ output is present in the model, it can not be shown in the results.
+- If Flourescence is present, $F_\mathrm{m}$ is found by using the protocol used in the simulation to find each saturating pulse. A period between each pulse is taken and the maximum Flourescence value during the pulse is taken as $F_\mathrm{m}$.
+- If $F_\mathrm{m}$ is found and NPQ is not present, NPQ is calculated using the formula: $NPQ_t = \frac{F_{\mathrm{m}\vert t=0} - F_{\mathrm{m} \vert t}}{F_{\mathrm{m} \vert t}}$
+
+**Notes:**
+
+As this model does not contain a representation of Flourescence or NPQ output, the model cannot be fitted to the data.
 
 </details>

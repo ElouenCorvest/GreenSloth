@@ -2,8 +2,8 @@ Short Description,Common Abbr.,Paper Abbr.,Value,Unit,Python Var,Reference
 Total adenylates,$AP_\mathrm{Tot}$,$A_\mathrm{Tot}$,$1.5$,$\mathrm{mM}$,AP_tot,Wang et al. 2014
 Total inorganic phosphorus,$\mathrm{P_i}$,$[P_\mathrm{i}]$,$15$,$\mathrm{mM}$,Pi_tot,Lilley et al. 1977
 $\mathrm{O_2}$ partial pressure (gas),$p(\mathrm{O_2})$,$\mathrm{p\ O_2}$,$210000$,$\mathrm{\mu bar}$,p_o2,
-$\mathrm{O_2}$ volatility,$K_\mathrm{h|O_2}$,$K_\mathrm{h}\ \mathrm{O_2},$833300$,$\mathrm{\mu bar mM^{-1}}$,Kh_o2,Warneck and Williams 2012
-Mesophyll volume per $\mathrm{m^2}$ of leaf,$V_\mathrm{M}$,Volume M,$0.03$,$dm^3\ m^{-2}$,V_m,
+$\mathrm{O_2}$ volatility,$K_\mathrm{h|O_2}$,$K_\mathrm{h}\ \mathrm{O_2}$,$833300$,$\mathrm{\mu bar mM^{-1}}$,Kh_o2,Warneck and Williams 2012
+Mesophyll volume per $\mathrm{m^2}$ of leaf,$V_\mathrm{M}$,Volume M,$0.03$,$\mathrm{dm^3\ m^{-2}}$,V_m,
 Incident radiation,$\mathrm{PPFD}$,$I_\mathrm{inc}$,$1500$,$\mathrm{\mu\ mol\ m^{-2}\ s^{-1}}$,PPFD,
 Respiration in the light,$R_\mathrm{light}$,$R_\mathrm{LIGHT}$,$0.001$,$\mathrm{\mu\ mol\ m^{-2}\ s^{-1}}$,RLight,
 Lumped energy conversion coefficient,$s_\mathrm{ener}$,$s$,$0.43$,$\mathrm{electrons\ quanta^{-1}}$,s,Bellasio et al. 2016
@@ -16,7 +16,7 @@ Fraction of electron flow used by nitrate assimilation,$f_\mathrm{PseudocycNR}$,
 Fraction of electron flow through the Q-cycle,$f_\mathrm{Q}$,$f_\mathrm{Q}$,$1$,,fq,Yin et al. 2004
 Fraction of electron flow through the NDH complex,$f_\mathrm{NDH}$,$f_\mathrm{NDH}$,$0$,,f_ndh,Yamori and Shikanai 2016
 Number of protons per ATP,$h$,$h$,$4$,$\mathrm{protons ATP^{-1}}$,h,Yin and Struik 2012
-Atmospheric $\amthrm{CO_2}$ concentration,$C_\mathrm{a}$,$C_\mathrm{a}$,$400$,$\mathrm{\mu bar}$,Ca,
+Atmospheric $\mathrm{CO_2}$ concentration,$C_\mathrm{a}$,$C_\mathrm{a}$,$400$,$\mathrm{\mu bar}$,Ca,
 Initial slope of PPFD hyperbola in regard of RuBisCO,$\alpha_\mathrm{PPFD|RuBisCO}$,$\alpha_\mathrm{V}$,$0.0018$,,alpha_ppfd_rub,
 Y-intercept of PPFD hyperbola in regard of RuBisCO,$V_\mathrm{0|PPFD|RuBisCO}$,$V_{0}$,$0.16$,,V0_ppfd_rub,
 Curvature of PPFD hyperbola in regard of RuBisCO,$\theta_\mathrm{PPFD|RuBisCO}$,$\theta_\mathrm{V}$,$0.95$,,theta_ppfd_rub,
@@ -69,8 +69,8 @@ Michealis-Menten constant for ADP in ATPsynthase,$K_\mathrm{m|ATPsynthase|ADP}$,
 Michealis-Menten constant for Pi in ATPsynthase,$K_\mathrm{m|ATPsynthase|Pi}$,$K_\mathrm{m}\ \mathrm{P_i}$,$0.3$,$\mathrm{mM}$,km_v_ATPsynth_Pi_st,Santamarina et al. 2002
 Michealis-Menten constant for ATP in ATPsynthase,$K_\mathrm{m|ATPsynthase|ATP}$,$K_\mathrm{m}\ \mathrm{ATP}$,$0.3$,$\mathrm{mM}$,km_v_ATPsynth_ATP_st,Santamarina et al. 2002
 Time constant for induction of ATPsynthase,$K_\mathrm{J|ATPsynthase|ATP}$,$K_\mathrm{J}\ \mathrm{ATP}$,$200$,$\mathrm{s}$,Kj_ATP,Bellasio et al. 2017
-Mesophyll conductance to $\mathrm{CO_2}$,$g_\mathrm{M}$,$g_\mathrm{M}$,$0.5$,$\mathrm{mol\ m^{-2}\ s^{-1}$,gm,Flexas et al. 2008
-$\mathrm{CO_2}$ volatility,$K_\mathrm{h|CO_2}$,$K_\mathrm{h}\ \mathrm{CO_2},$30303.0303030303$,$\mathrm{\mu bar mM^{-1}}$,Kh_co2,van der Heijden et al. 2015
+Mesophyll conductance to $\mathrm{CO_2}$,$g_\mathrm{M}$,$g_\mathrm{M}$,$0.5$,$\mathrm{mol\ m^{-2}\ s^{-1}}$,gm,Flexas et al. 2008
+$\mathrm{CO_2}$ volatility,$K_\mathrm{h|CO_2}$,$K_\mathrm{h}\ \mathrm{CO_2}$,$30303.0303030303$,$\mathrm{\mu bar mM^{-1}}$,Kh_co2,van der Heijden et al. 2015
 Time constant for decrease in $g_\mathrm{S}$,$K_{\mathrm{d}|g_\mathrm{S}}$,$K_\mathrm{d}$,$150$,$\mathrm{s}$,Kd,McAusland et al. 2016
 Time constant for increase in $g_\mathrm{S}$,$K_{\mathrm{i}|g_\mathrm{S}}$,$K_\mathrm{i}$,$900$,$\mathrm{s}$,Ki,McAusland et al. 2016
 Value of $\tau$ in the dark,$\tau_0$,$\tau_0$,$-0.1$,$\mathrm{mM}$,tau0,

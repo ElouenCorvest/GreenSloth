@@ -2,7 +2,7 @@ Short Description,Common Abbr.,Paper Abbr.,Python Var
 Total concentration of RuBisCO catalytic sites,$E_\mathrm{RuBisCO|Total}$,$E_\mathrm{T}$,Et
 Light absorbed by PSII when $f_\mathrm{Cyc} = 0$,$I_\mathrm{2|0}$,"$I_\mathrm{2,0}$",I2_0
 Light absorbed by PSI when $f_\mathrm{Cyc} = 0$,$I_\mathrm{1|0}$,"$I_\mathrm{1,0}$",I1_0
-Michealis-Menten constant for RuBP in RuBisCO carboxylation,$K_{\mathrm{m|RuBisCO|RuBP}}^\'$,$K_{\mathrm{m\ RuBP}}^\'$,km_v_RuBisCO_c_RUBP_extra
+Michealis-Menten constant for RuBP in RuBisCO carboxylation,$K_{\mathrm{m|RuBisCO|RuBP}}^\prime$,$K_{\mathrm{m\ RuBP}}^\prime$,km_v_RuBisCO_c_RUBP_extra
 Function that relatives RuBP concentration to concentration of RuBisCO active sites,$f\left(\mathrm{RUBP}\right)$,$f\left(\mathrm{RuBP}\right)$,f_rubp
 Steady state value of the RuBisCO activation state ($R_\mathrm{act}$),$R_\mathrm{act|steady}$,$R_\mathrm{act\ eq}$,Ract_eq
 Quantity that reduces PSI when the cyclic electron flow is engaged,$\chi$,$\chi$,chi
