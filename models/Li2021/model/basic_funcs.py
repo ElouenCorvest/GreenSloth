@@ -1,34 +1,21 @@
-def value(x: float):
-    return x
-
-
-def neg_value(x: float):
-    return -x
-
-
-def two_value(x: float):
-    return 2 * x
-
-
-def neg_two_value(x: float):
-    return -2 * x
-
-
-def value1_divided_value2(x: float, y: float):
-    return x / y
-
-
-def neg_value1_divided_value2(x: float, y: float):
+def neg_div(x: float, y: float) -> float:
     return -x / y
 
+def mul(x: float, y: float) -> float:
+    return x * y
 
-def neg_two_value1_divided_value2(x: float, y: float):
-    return -2 * x / y
+def value(x: float) -> float:
+    return x
 
+def moiety_1(concentration: float, total: float) -> float:
+    return total - concentration
 
-def neg_fourteen_thirds_value(x: float):
-    return -14 / 3 * x
+def twice(x: float) -> float:
+    return x * 2
 
+def div(x: float, y: float) -> float:
+    return x / y
 
-def fourteenthirds_value1_divided_value2(x: float, y: float):
-    return 14 / 3 * x / y
+def neg(x: float) -> float:
+    return -x
+

@@ -445,6 +445,8 @@ mdFile.new_paragraph(fr"""
 
 mdFile.new_header(3, "Figures")
 
+mdFile.new_paragraph("""You can find the recreation of the figures from the original publication below. Due to differing copyright reasons the original figures cannot be included in this README file. Instead, the comparision has to be made using the original publication.""")
+
 mdFile.new_paragraph(rf"""
                      
 <details>
@@ -452,7 +454,7 @@ mdFile.new_paragraph(rf"""
                      
 <img style='float: center' src='figures/{model_title.lower()}_fig3.svg' alt='Figure 3' width='600'/>
 
-Simulated ${A}$-${PPFD}$ (left) and  ${A}$-${Ca}$ (right) response curves under two different oxygen partial pressures (${O2}$ = 210000, orange, and = 20000, blue). The simulation was run to a quasi steady-state (1800 s) at each value of ${Ca}$ or ${PPFD}$. The ${Ca}$ response curve was simulated at a ${PPFD}$ of 1500 µmol m⁻² s⁻¹, while the ${PPFD}$ response curve was simulated at a ${Ca}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top row shows the assimilation rate ${A}$, the middle row the stomatal conductance (${gs}$), and the bottom row the ${NADPH_st}$ production rate ${v_FNR}$.
+Simulated ${A}$- ${PPFD}$ (left) and ${A}$- ${Ca}$ (right) response curves under two different oxygen partial pressures (${O2}$ = 210000, orange, and = 20000, blue). The simulation was run to a quasi steady-state (1800 s) at each value of ${Ca}$ or ${PPFD}$. The ${Ca}$ response curve was simulated at a ${PPFD}$ of 1500 µmol m⁻² s⁻¹, while the ${PPFD}$ response curve was simulated at a ${Ca}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top row shows the assimilation rate ${A}$, the middle row the stomatal conductance (${gs}$), and the bottom row the ${NADPH_st}$ production rate ${v_FNR}$.
 
 The recreation of this figure was done effortlessly with only a few issues. The original figure does not specify how long the simulations were run; therefore, it was assumed to follow the length of simulation detailed in Figure 4. Additionally, the original figure shows an ${A}$-${Ci}$ response curve on the right; it could be inferred that they either meant ${A}$-${Ca}$ or assumed ${Ci}$ to be equal to ${Ca}$. In this recreation, ${A}$-${Ca}$ was chosen. This causes issues with the x-axis values in the right plots; however, since the lines still follow the same trend, the recreation remains valid.
 </details>
@@ -465,7 +467,7 @@ mdFile.new_paragraph(rf"""
                      
 <img style='float: center' src='figures/{model_title.lower()}_fig4.svg' alt='Figure 4' width='600'/>
 
-Simulated ${A}$-${PPFD}$ (left) and  ${A}$-${Ca}$ (right) response curves under two different oxygen partial pressures (${p_o2} = 210000 \mathrm{{\mu bar}}$, orange, and ${p_o2} = 20000 \mathrm{{\mu bar}}$, blue). The simulation was run to a quasi steady-state (1800 s) at each value of ${Ca}$ or ${PPFD}$. The ${Ca}$ response curve was simulated at a ${PPFD}$ of 1500 µmol m⁻² s⁻¹, while the ${PPFD}$ response curve was simulated at a ${Ca}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top and middle row show the concentrations of ${RUBP}$ and ${PGA}$, respectively. These concentrations were given in µmol m⁻² by multiplying their volumetric concentrations by the chloroplast volume per leaf area ({V_m}). The bottom row shows the relative RuBisCO activity by multiplying ${Ract}$ and ${f_rubp}$.
+Simulated ${A}$-${PPFD}$ (left) and  ${A}$-${Ca}$ (right) response curves under two different oxygen partial pressures (${p_o2} = 210000 \mathrm{{\mu bar}}$, orange, and ${p_o2} = 20000 \mathrm{{\mu bar}}$, blue). The simulation was run to a quasi steady-state (1800 s) at each value of ${Ca}$ or ${PPFD}$. The ${Ca}$ response curve was simulated at a ${PPFD}$ of 1500 µmol m⁻² s⁻¹, while the ${PPFD}$ response curve was simulated at a ${Ca}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top and middle row show the concentrations of ${RUBP}$ and ${PGA}$, respectively. These concentrations were given in µmol m⁻² by multiplying their volumetric concentrations by the chloroplast volume per leaf area (${V_m}$). The bottom row shows the relative RuBisCO activity by multiplying ${Ract}$ and ${f_rubp}$.
 
 
 The recreation of this figure was done effortlessly with only a few issues. The original figure shows an ${A}$-${Ci}$ response curve on the right; it could be inferred that they either meant ${A}$-${Ca}$ or assumed ${Ci}$ to be equal to ${Ca}$. In this recreation, ${A}$-${Ca}$ was chosen. This causes issues with the x-axis values in the right plots; however, since the lines still follow the same trend, the recreation remains valid.

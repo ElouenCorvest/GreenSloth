@@ -16,7 +16,7 @@ Short Description,Common Abbr.,Paper Abbr.,Value,Unit,Python Var,Reference
 ,,,$1$,,fq,
 ,,,$0$,,f_ndh,
 ,,,$4$,,h,
-,,,$400$,,Ca,
+,,,$350$,,Ca,
 ,,,$0.0018$,,alpha_ppfd_rub,
 ,,,$0.16$,,V0_ppfd_rub,
 ,,,$0.95$,,theta_ppfd_rub,

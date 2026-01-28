@@ -1,14 +1,14 @@
 Short Description,Common Abbr.,Python Var,KEGG ID,Glossary ID,Reference
 Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,v_PSII,R09503,1,"Matuszynska2016, Saadat2021, Li2021"
 Oxidation of the PQ pool through cytochrome and PTOX,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,v_PQ,,2,"Matuszynska2016, Saadat2021"
-Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,v_ATPsynth,R00086,3,"Matuszynska2016, Saadat2021, Li2021"
+Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,v_ATPsynth,R00086,3,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019"
 Activation of ATPsynthase by light,$v_{\mathrm{ATPactivity}}$,v_ATPact,,4,Matuszynska2016
 Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,v_Leak,,5,"Matuszynska2016, Saadat2021"
 ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,v_ATPcons,,6,"Matuszynska2016, Saadat2021"
 Xanthophyll cycle,$v_{\mathrm{Xcyc}}$,v_Xcyc,R10070,7,Matuszynska2016
 Protonation of psbS protein,$v_{\mathrm{Psbs^P}}$,v_PsbSP,,8,"Matuszynska2016, Saadat2021"
 Rate of the b6f complex,$v_{\mathrm{b6f}}$,v_b6f,R03817,9,"Saadat2021, Li2021"
-Reaction mediated by FNR,$v_{\mathrm{FNR}}$,v_FNR,R01195,10,"Saadat2021, Li2021"
+Reaction mediated by FNR,$v_{\mathrm{FNR}}$,v_FNR,R01195,10,"Saadat2021, Li2021, Bellasio2019"
 Ferredoxin-plastoquinone reductase,$v_{\mathrm{FQR}}$,v_FQR,,11,Saadat2021
 Reduction of PQ pool by NADH reductase,$v_{\mathrm{NDH}}$,v_NDH,,12,"Saadat2021, Li2021"
 Cyclic electron flow,$v_{\mathrm{Cyc}}$,v_Cyc,EC 7.1.1.10,13,Saadat2021
@@ -17,10 +17,10 @@ State transitions from PSI to PSII,$v_{\mathrm{St12}}$,v_St12,,15,Saadat2021
 De-epoxidation of violaxanthin,$v_{\mathrm{Deepox}}$,v_Deepox,R10070,16,"Saadat2021, Li2021"
 Epoxidation of violaxanthin,$v_{\mathrm{Epox}}$,v_Epox,R10070,17,Saadat2021
 Deprotonation of psbS protein,$v_{\mathrm{Psbs^D}}$,v_PsbSD,,18,Saadat2021
-Rate of RuBisCo Carboxylase,$v_{\mathrm{RuBisCO|Carboxylase}}$,v_RuBisCO_c,R00024,19,Saadat2021
+Rate of RuBisCo Carboxylase,$v_{\mathrm{RuBisCO|Carboxylase}}$,v_RuBisCO_c,R00024,19,"Saadat2021, Bellasio2019"
 Rate of FBPase,$v_{\mathrm{FBPase}}$,v_FBPase,R00762,20,Saadat2021
 Rate of SBPase,$v_{\mathrm{SBPase}}$,v_SBPase,R01845,21,Saadat2021
-Rate of PRKase,$v_{\mathrm{PRKase}}$,v_PRKase,R01523,22,Saadat2021
+Rate of PRKase,$v_{\mathrm{PRKase}}$,v_PRKase,R01523,22,"Saadat2021, Bellasio2019"
 Export of PGA,"$v_{\mathrm{PGA,\ ex}}$",v_pga_ex,,23,Saadat2021
 Export of DHAP,"$v_{\mathrm{DHAP,\ ex}}$",v_dhap_ex,,24,Saadat2021
 Export of GAP,"$v_{\mathrm{GAP,\ ex}}$",v_gap_ex,,25,Saadat2021
@@ -58,3 +58,16 @@ Rate of PSII recombination,$v_\mathrm{PSII|recomb}$,vPSII_recomb,,56,Li2021
 Number of charge seperations in PSII per second,$\mathrm{PSI_{ChSep}}$,PSI_ChSep,,57,Li2021
 Rate of PC oxidiation by PSI,$v_\mathrm{PSI|PCoxid}$,v_PSI_PCoxid,,58,Li2021
 The rate for a simplified Calvin-Benson Cycle,$v_\mathrm{CBB}$,v_CBB,,59,Li2021
+Rate of RuBisCO activation,$v_{R_\mathrm{act}}$,Ract_rate,,60,Bellasio2019
+Rate of the total ATP production,$v_{J_\mathrm{NADPH}}$,v_J_NADPH,,61,Bellasio2019
+Rate of total ATP production,$v_{J_\mathrm{ATP}}$,v_J_ATP,,62,Bellasio2019
+Rate of the stomatal conductance of water vapour to the atmosphere,$v_{g_\mathrm{S}}$,v_gs,,63,Bellasio2019
+Rate of RuBisCO Oxygenase,$v_{\mathrm{RuBisCO|Oxy}}$,rubisco_oxygenase,R03140,64,Bellasio2019
+Rate of glycine decarboxylase,$v_{\mathrm{GDC}}$,glycine_decarboxylase,R03425,65,Bellasio2019
+Combined rate of PGK1ase (R01523) and GAPDHase (R01603,$v_{\mathrm{PGAreduc}}$,v_pgareduction,,66,Bellasio2019
+Simplified rate of Carbohydrate Synthesis,$v_{\mathrm{carbsyn}}$,v_carbohydrate_synthesis,,67,Bellasio2019
+Simplified reductive pentose phosphate pathway,$v_{\mathrm{rpp}}$,v_rpp,,68,Bellasio2019
+Rate of carbonic anhydrase,$v_{\mathrm{CAase}}$,v_co2_hydration,,69,Bellasio2019
+Respiration in the light,$R_\mathrm{light}$,v_RLight,,70,Bellasio2019
+Rate of $\mathrm{CO_2}$ dissolution in aqueous media within the leaf,$v_{\mathrm{CO_{2|diss}}}$,CO2_dissolution,,71,Bellasio2019
+Rate of $\mathrm{CO_2}$ stomatal diffusion,$v_{\mathrm{CO_{2|stomdiff}}}$,CO2_stomatal_diffusion,,72,Bellasio2019

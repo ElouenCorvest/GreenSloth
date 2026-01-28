@@ -238,7 +238,7 @@ def get_li2021(
         chloride(str_stroma): 0.04
     })
     model.add_parameters({
-        "PAR": 50,
+        n.pfd(): 50,
         "k_recomb": 0.33,
         "triplet_yield": 0.45,
         "triplet_to_singletO2_yield": 1,
@@ -284,7 +284,7 @@ def get_li2021(
         n.total_carotenoids(): 1,
     #     "k_CBC": InitialAssignment(    
     #     fn=calc_kCBB,
-    #     args=["PAR"]
+    #     args=[n.pfd()]
     # )
     })
     
@@ -292,7 +292,7 @@ def get_li2021(
     model.add_derived(
         "k_CBC",
         fn=calc_kCBB,
-        args=["PAR"]
+        args=[n.pfd()]
     )
     
     # Derived
@@ -334,7 +334,7 @@ def get_li2021(
     model.add_derived(
         "light_per_L",
         fn=_light_per_L,
-        args=["PAR"]
+        args=[n.pfd()]
     )
     model.add_derived(
         "driving_force_Cl",
@@ -374,7 +374,7 @@ def get_li2021(
     model.add_derived(
         "kCBB",
         fn=calc_kCBB,
-        args=["PAR"]
+        args=[n.pfd()]
     )
     model.add_derived(
         "delta_pH",

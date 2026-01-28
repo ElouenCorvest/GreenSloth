@@ -14,5 +14,5 @@ Short Description,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
 ,,,,v_RLight,
 ,,,,v_FNR,
 ,,,,v_ATPsynth,
-,,,,CO2 dissolution,
-,,,,CO2 stomatal diffusion,
+,,,,CO2_dissolution,
+,,,,CO2_stomatal_diffusion,

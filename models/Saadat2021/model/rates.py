@@ -1,4 +1,4 @@
-from mxlpy import Model, Derived
+from mxlpy import Model, Derived, units
 import numpy as np
 from typing import cast
 

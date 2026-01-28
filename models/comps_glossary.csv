@@ -1,12 +1,12 @@
 Name,Common Abbr.,KEGG ID,Python Var,Glossary ID,Reference
 Plastoquinol,$\mathrm{PQH}_2$,C16693,PQH_2,1,"Matuszynska2016, Saadat2021, Li2021"
-Stromal ATP concentration,$\mathrm{ATP_{st}}$,C00002,ATP_st,2,"Matuszynska2016, Saadat2021, Li2021"
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,C00002,ATP_st,2,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019"
 Lumenal Proton concentration,$\mathrm{H_{lu}}$,C00080,H_lumen,3,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of psbS protein,$\mathrm{psbS}$,K03542 ,psbS,4,"Matuszynska2016, Saadat2021"
 Violaxanthin,$\mathrm{Vx}$,C08614,Vx,5,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of active ATPase protein,$\mathrm{ATPase}^*$,M00157,ATPase_ac,6,Matuszynska2016
 Plastoquinone,$\mathrm{PQ}$,C02061,PQ,7,"Matuszynska2016, Saadat2021, Li2021"
-Stromal ADP concentration,$\mathrm{ADP_{st}}$,C00008,ADP_st,8,"Matuszynska2016, Saadat2021, Li2021"
+Stromal ADP concentration,$\mathrm{ADP_{st}}$,C00008,ADP_st,8,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019"
 Concentration of protonated psbS protein,$\mathrm{psbS^P}$,K03542,PsbSP,9,"Matuszynska2016, Saadat2021, Li2021"
 Zeaxanthin concentration,$\mathrm{Zx}$,C06098,Zx,10,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of inactive ATPase protein,$\mathrm{ATPase}$,M00157,ATPase_inac,11,Matuszynska2016
@@ -17,12 +17,12 @@ Photoinhibited state of PSII,$\mathrm{B_3}$,M00161,B3,15,"Matuszynska2016, Saada
 Lumen pH,$\mathrm{pH}_\mathrm{lu}$,C00080,pH_lumen,16,"Matuszynska2016, Saadat2021, Li2021"
 Oxidized Plastocyanine,$\mathrm{PC}_\mathrm{ox}$,C03162,PC_ox,17,"Saadat2021, Li2021"
 Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,C00139,Fd_ox,18,"Saadat2021, Li2021"
-Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,C00005,NADPH_st,19,"Saadat2021, Li2021"
+Stromal NADPH concentration,$\mathrm{NADPH}_\mathrm{st}$,C00005,NADPH_st,19,"Saadat2021, Li2021, Bellasio2019"
 Phosphorylated fraction of light harvesting complexes,$\mathrm{LHC}$,map00196,LHC,20,Saadat2021
-3-phosphoglyceric acid,$\mathrm{PGA}$,C00197,PGA,21,Saadat2021
+3-phosphoglyceric acid,$\mathrm{PGA}$,C00197,PGA,21,"Saadat2021, Bellasio2019"
 "2,3-biphosphoglyceric acid",$\mathrm{BPGA}$,C01159,BPGA,22,Saadat2021
 Glyceraldehyde 3-phosphate,$\mathrm{GAP}$,C00118,GAP,23,Saadat2021
-Dihydroxyacetone phosphate,$\mathrm{DHAP}$,C00111,DHAP,24,Saadat2021
+Dihydroxyacetone phosphate,$\mathrm{DHAP}$,C00111,DHAP,24,"Saadat2021, Bellasio2019"
 "Fructose 1,6-bisphosphate",$\mathrm{FBP}$,C00354,FBP,25,Saadat2021
 Fructose 6-phosphate,$\mathrm{F6P}$,C00085,F6P,26,Saadat2021
 Glucose 6-phosphate,$\mathrm{G6P}$,C00092,G6P,27,Saadat2021
@@ -32,12 +32,12 @@ Sedoheptulose 7-phosphate,$\mathrm{S7P}$,C05382,S7P,30,Saadat2021
 Erythrose 4-phosphate,$\mathrm{E4P}$,C00279,E4P,31,Saadat2021
 Xylulose 5-phosphate,$\mathrm{X5P}$,C00231,X5P,32,Saadat2021
 Ribose 5-phosphate,$\mathrm{R5P}$,C00117,R5P,33,Saadat2021
-"Ribulose 1,5-bisphosphate",$\mathrm{RUBP}$,C01182,RUBP,34,Saadat2021
-Ribulose 5-phosphate,$\mathrm{RU5P}$,C00199,RU5P,35,Saadat2021
+"Ribulose 1,5-bisphosphate",$\mathrm{RUBP}$,C01182,RUBP,34,"Saadat2021, Bellasio2019"
+Ribulose 5-phosphate,$\mathrm{RU5P}$,C00199,RU5P,35,"Saadat2021, Bellasio2019"
 Reduced Plastocyanine,$\mathrm{PC}_\mathrm{red}$,C03025,PC_red,36,"Saadat2021, Li2021"
 Reduced Ferrodoxin,$\mathrm{Fd}_\mathrm{red}$,C00138,Fd_red,37,"Saadat2021, Li2021"
-Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,C00006,NADP_st,38,"Saadat2021, Li2021"
-Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",C00009,Pi_st,39,Saadat2021
+Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,C00006,NADP_st,38,"Saadat2021, Li2021, Bellasio2019"
+Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",C00009,Pi_st,39,"Saadat2021, Bellasio2019"
 Inhibition factor of the triose phosphate translocators,$\mathrm{IF}_\mathrm{3P}$,K01803,IF_3P,40,Saadat2021
 Monodehydroascorbate radicals,$\mathrm{MDA}$,C01041,MDA,41,Saadat2021
 Hydrogen Peroxide,$\mathrm{H_2O_2}$,C00027,H2O2,42,Saadat2021
@@ -67,6 +67,15 @@ Reduced primary quinone of PSII,$\mathrm{Q_{A|red}}$,,QA_red,65,Li2021
 The total proton motive force,$\mathrm{PMF}$,,PMF,66,Li2021
 Nonphotochemical quenching,$\mathrm{NPQ}$,,NPQ,67,Li2021
 Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,,Prot_ATPsynth,68,Li2021
-Efficiency of PSII,$\Phi \mathrm{PSII}$,,PhiPSII,69,Li2021
+Efficiency of PSII,$\Phi \mathrm{PSII}$,,PhiPSII,69,"Li2021, Bellasio2019"
 Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,C00007,singO2,70,Li2021
 Stromal Proton concentration,$\mathrm{H_{st}}$,C00080,H_st,71,Li2021
+Carbon Dioxide,$\left[\mathrm{CO_2}\right]$,C00011,CO2,72,Bellasio2019
+Bicarbonate,$\left[\mathrm{HCO_3^-}\right]$,,HCO3,73,Bellasio2019
+RuBisCO activation state,$R_{\mathrm{act}}$,EC 4.1.1.39,Ract,74,Bellasio2019
+Total NADPH production,$J_\mathrm{NADPH}$,,J_NADPH,75,Bellasio2019
+Total ATP production,$J_\mathrm{ATP}$,,J_ATP,76,Bellasio2019
+Intercellular $\mathrm{CO_2}$ concentration,$C_\mathrm{i}$,,Ci,77,Bellasio2019
+Stomatal conductance of water vapour to the atmosphere,$g_\mathrm{S}$,,gs,78,Bellasio2019
+$\mathrm{CO}_2$ assimilation,$A$,,A,79,Bellasio2019
+Oxygen Concentration,$\mathrm{O_2}$,,O2,80,Bellasio2019

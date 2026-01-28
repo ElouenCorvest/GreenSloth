@@ -1,0 +1,168 @@
+Short Description,Common Abbr.,Paper Abbr.,Value,Unit,Python Var,Reference
+Photon Flux Density,$\mathrm{PFD}$,$\mathrm{PFD}$,$100.0$,$\mathrm{\mu mol}\ \mathrm{m}^{-2}\ \mathrm{s}^{-1}$,PPFD,
+,$\mathrm{CO}_2$,$\mathrm{CO}_2$,$0.2$,$\mathrm{mM}$,CO2,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+"External oxygen pool, corresponds to 250μM.",$\mathrm{O}_{2_\mathrm{ext}}$,$\mathrm{O}_2^\mathrm{ex}$,$8.0$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,O2_lumen,https://doi.org/10.1098/rstb.2013.0223
+Stromal pH of a dark adapted state,$\mathrm{pH}_\mathrm{st}$,$\mathrm{pH}_\mathrm{stroma}$,$7.9$,,pH_stroma,https://doi.org/10.1098/rstb.2013.0223
+,,$\mathrm{H}_\mathrm{stroma}$,,,H_stroma,
+Buffering protons constant of lumen,$b_\mathrm{H}$,$b_\mathrm{H}$,$100.0$,,bH,https://doi.org/10.1098/rstb.2013.0223
+Faraday constant,$F$,$F$,$96.485$,$\mathrm{kJ}$,F,
+,$E^0\mathrm{(PC/PC^-)}$,$E^0\mathrm{(PC/PC^-)}$,$0.380$,$\mathrm{V}$,E0_PC,https://doi.org/10.1098/rstb.2013.0223
+,$E^0\mathrm{(P_{700}^+/P_{700})}$,$E^0\mathrm{(P_{700}^+/P_{700})}$,$0.48$,$\mathrm{V}$,E0_P700,https://doi.org/10.1098/rstb.2013.0223
+,$E^0\mathrm{(FA/FA^-)}$,$E^0\mathrm{(FA/FA^-)}$,$-0.55$,$\mathrm{V}$,E0_FA,https://doi.org/10.1098/rstb.2013.0223
+,$E^0\mathrm{(Fd/Fd^-)}$,$E^0\mathrm{(Fd/Fd^-)}$,$-0.43$,$\mathrm{V}$,E0_Fd,https://doi.org/10.1098/rstb.2013.0223
+,$E^0\mathrm{(NADP^+/NADPH)}$,$E^0\mathrm{(NADP^+/NADPH)}$,$-0.113$,$\mathrm{V}$,E0_NADP,https://doi.org/10.1098/rstb.2013.0223
+Conversion factor of ATP and NADPH,$\mathrm{convf}$,$\mathrm{convf}$,$3.2 \times 10^{-3}$,,convf,
+Universal gas constant,$R$,$R$,$0.0083$,$\mathrm{J}\ \mathrm{K}^{-1}\ \mathrm{mol}^{-1}$,R,
+Temperature,$T$,$T$,$298.0$,$\mathrm{K}$,T,
+Relative pool of xanthophylls,$\mathrm{X}^{\mathrm{tot}}$,$\mathrm{X}^{\mathrm{tot}}$,$1.0$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,Carotenoids_tot,https://doi.org/10.1016/j.bbabio.2016.09.003
+Total ferrodoxin pool,$\mathrm{Fd}^{\mathrm{tot}}$,$\mathrm{Fd}^{\mathrm{tot}}$,$5.0$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,Fd_tot,
+Total plastocyanine pool,$\mathrm{PC}^{\mathrm{tot}}$,$\mathrm{PC}^{\mathrm{tot}}$,$4.0$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,PC_tot,https://doi.org/10.1098/rstb.2013.0223
+Relative pool of PsbS,$\mathrm{PsbS}^{\mathrm{tot}}$,$\mathrm{PsbS}^{\mathrm{tot}}$,$1.0$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,PSBS_tot,https://doi.org/10.1016/j.bbabio.2016.09.003
+,,,,,LHC_tot,
+Fitted quencher factor corresponding to base quenching not associated with protonation or zeaxanthin,$\gamma_0$,$\gamma_0$,$0.1$,,gamma0,https://doi.org/10.1016/j.bbabio.2016.09.003
+Fitted quencher factor corresponding to fast quenching due to protonation,$\gamma_1$,$\gamma_1$,$0.25$,,gamma1,https://doi.org/10.1016/j.bbabio.2016.09.003
+Fitted quencher factor corresponding to fastest possible quenching,$\gamma_2$,$\gamma_2$,$0.6$,,gamma2,https://doi.org/10.1016/j.bbabio.2016.09.003
+Fitted quencher factor corresponding to slow quenching of Zx present despite lack of protonation,$\gamma_3$,$\gamma_3$,$0.15$,,gamma3,https://doi.org/10.1016/j.bbabio.2016.09.003
+Half-saturation constant (relative conc. of Zx) for quenching,$K_\mathrm{ZSat}$,$K_\mathrm{ZSat}$,$0.12$,,kZSat,https://doi.org/10.1016/j.bbabio.2016.09.003
+,$E^0\mathrm{(QA/QA^-)}$,$E^0\mathrm{(QA/QA^-)}$,$-0.140$,$\mathrm{V}$,E0_QA,https://doi.org/10.1098/rstb.2013.0223
+,$E^0\mathrm{(PQ/PQH_2)}$,$E^0\mathrm{(PQ/PQH_2)}$,$0.354$,$\mathrm{V}$,E0_PQ,https://doi.org/10.1098/rstb.2013.0223
+Total plastoquinone pool,$\mathrm{PQ}^{\mathrm{tot}}$,$\mathrm{PQ}^{\mathrm{tot}}$,$17.5$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,PQ_tot,https://doi.org/10.1098/rstb.2013.0223
+Relative cross section of PSII,$\sigma _\mathrm{II} ^0$,$\sigma _\mathrm{II} ^0$,$0.1$,,staticAntII,https://doi.org/10.1073/pnas.1319164111
+Relative cross section of PSI-LHCl supercomplex,$\sigma _\mathrm{I} ^0$,$\sigma _\mathrm{I} ^0$,$0.37$,,staticAntI,https://doi.org/10.1073/pnas.1319164111
+Relative total concentration of thioredoxin,$\mathrm{Thioredoxin}^{\mathrm{tot}}$,$\mathrm{thioredoxin}_\mathrm{tot}$,$1$,,Thioredoxin_tot,
+Estimated maximal concentration of CBB enzymes,$\mathrm{Enz}_{\mathrm{cbb}_\mathrm{tot}}$,$e_{\mathrm{cbb}_\mathrm{tot}}$,$6$,$\mathrm{mM}$,E_total,
+Total NADP pool,$\mathrm{NADP}^{\mathrm{tot}}$,$\mathrm{NADP}^{\mathrm{tot}}$,$0.8$,$\mathrm{mM}$,NADP_tot,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Total adenosine phosphate pool,$\mathrm{AP}^{\mathrm{tot}}$,$\mathrm{AP}^{\mathrm{tot}}$,$2.55$,$\mathrm{mM}$,AP_tot,Increased from Bionumbers
+Total Phosphate pool,$\mathrm{P}^{\mathrm{tot}}$,$\mathrm{P}^{\mathrm{tot}}$,$17.05$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,Pi_tot,
+Rate constant of ferrodoxin thioredoxin reductase,$k_{\mathrm{fdtrredase}}$,$k_{\mathrm{fd}_{\mathrm{tr}_\mathrm{reductase}}}$,$1$,$\mathrm{s}^{-1}$,kf_v_FdTrReduc,Estimated
+Rate constant of CBB activation,$k_{\mathrm{ecbb|act}}$,$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{activation}}}$,$1$,,kf_v_Eact,Estimated
+Rate constant of CBB relaxation,$k_{\mathrm{ecbb|rel}}$,$k_{\mathrm{e}_{\mathrm{cbb}_\mathrm{relaxation}}}$,$0.1$,$\mathrm{s}^{-1}$,kf_v_Einact,Estimated
+Total concentration of reduced and oxidized ascorbate,$\mathrm{Ascorbate}^{\mathrm{tot}}$,$\mathrm{Ascorbate}_{\mathrm{total}}$,$10$,$\mathrm{mM}$,ASC_tot,
+Total concentration of reduced and oxidized glutathione,$\mathrm{Gluthation}^{\mathrm{tot}}$,$\mathrm{Gluthation}_{\mathrm{total}}$,$10$,$\mathrm{mM}$,Glutathion_tot,
+Rate constant of ATP synthase,$k_\mathrm{ATPsynth}$,$k_\mathrm{ATPsynthase}$,$20.0$,$\mathrm{s}^{-1}$,kf_v_ATPsynth,https://doi.org/10.1098/rstb.2013.0223
+Ratio of protons to ATP in ATP synthase,$\mathrm{HPR}$,$\mathrm{HPR}$,$\frac{14}{3}$,,HPR,https://doi.org/10.1098/rstb.2013.0223
+"Internal pool of phosphates, required to calculate ATP equilibrium",$\mathrm{Pi}_\mathrm{mol}$,$\mathrm{Pi}_\mathrm{mol}$,$0.01$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,Pi_mol,
+Standard Gibbs free energy change of ATP formation,$\Delta _\mathrm{f} G^\circ_\mathrm{ATP}$,$\Delta G_{0_{ATP}}$,$30.6$,$\mathrm{kJ}\ \mathrm{mol}^{-1}$,DeltaG0_ATP,https://doi.org/10.1098/rstb.2013.0223
+,$k_\mathrm{Cytb6f}$,$k_\mathrm{Cytb6f}$,$2.5$,$\left(\mathrm{mol\ Chl}\right)^2 \ \mathrm{mmol}^{-2}\ \mathrm{s}^{-1}$ ,kcat_v_b6f,https://doi.org/10.1098/rstb.2013.0223
+Hill-coefficient for PsbS protonation,${\mathrm{nH}_\mathrm{PsbS}}$,$\mathrm{k}_{\mathrm{Hill}_\mathrm{L}}$,$3.0$,,kh_v_PsbSP,https://doi.org/10.1016/j.bbabio.2016.09.003
+Rate of PsbS protonation,$k_\mathrm{Protonation}$,$k_\mathrm{Protonation}$,$0.0096$,$\mathrm{s}^{-1}$,kf_v_PsbSP,https://doi.org/10.1016/j.bbabio.2016.09.003
+"pKa of PsbS activation, kept the same as for VDA",$K_\mathrm{pHSatLHC}$,$K_\mathrm{pHSatLHC}$,$5.8$,,ksat_v_PsbSP,https://doi.org/10.1016/j.bbabio.2016.09.003
+Rate of PsbS deprotonation,$k_\mathrm{Deprotonation}$,$k_\mathrm{Deprotonation}$,$0.0096$,$\mathrm{s}^{-1}$,kf_v_PsbSD,https://doi.org/10.1016/j.bbabio.2016.09.003
+Reaction rate constant of cyclic electron flow,$k_\mathrm{cyc}$,$k_\mathrm{cyc}$,$1.0$,$\mathrm{s}^{-1}$,kf_v_Cyc,
+Rate constant of de-epoxidation of violaxanthin,$k_\mathrm{kDeepoxV}$,$k_\mathrm{DeepoxV}$,$0.0024$,$\mathrm{s}^{-1}$,kf_v_Deepox,https://doi.org/10.1016/j.bbabio.2016.09.003
+Hill-coefficient for de-epoxidase acitivity,${\mathrm{nH}_\mathrm{X}}$,$\mathrm{k}_{\mathrm{Hill}_\mathrm{X}}$,$5$,,kh_v_Deepox,https://doi.org/10.1016/j.bbabio.2016.09.003
+"Half-saturation pH for de-epoxidase activity, highest activity at pH 5.8",$K_\mathrm{pHSat}$,$K_\mathrm{pHSat}$,$5.8$,,ksat_v_Deepox,https://doi.org/10.1016/j.bbabio.2016.09.003
+Rate constant of epoxidation of violaxanthin,$k_\mathrm{kEpoxZ}$,$k_\mathrm{EpoxZ}$,$0.00024$,$\mathrm{s}^{-1}$,kf_v_Epox,https://doi.org/10.1016/j.bbabio.2016.09.003
+,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}$,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{F}}}$,$1.56$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,km_v_FNR_Fd_red,https://doi.org/10.1098/rstb.2013.0223
+,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}$,$K_{\mathrm{M}_{\mathrm{FNR}_\mathrm{N}}}$,$0.22$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,km_v_FNR_NADP_st,https://doi.org/10.1098/rstb.2013.0223
+,$\mathrm{EFNR}$,$\mathrm{EFNR}$,$3.0$,,Enz0_v_FNR,
+Catalytic constant of FNRase,$k_{\mathrm{cat}|\mathrm{FNRase}}$,$k_{\mathrm{cat}_\mathrm{FNR}}$,$500.0$,$\mathrm{s}^{-1}$,kcat_v_FNR,https://doi.org/10.1046/j.1432-1033.2003.03566.x
+,$k_\mathrm{NDH}$,$k_\mathrm{NDH}$,$0.002$,$\mathrm{s}^{-1}$,kf_v_NDH,https://doi.org/10.1098/rstb.2013.0223
+PSII reaction centres,$\mathrm{PSII}^{\mathrm{tot}}$,$\mathrm{PSII}^{\mathrm{tot}}$,$2.5$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,PSII_total,https://doi.org/10.1098/rstb.2013.0223
+PSI reaction centres,$\mathrm{PSI}^{\mathrm{tot}}$,$\mathrm{PSI}^{\mathrm{tot}}$,$2.5$,$\mathrm{mmol} \left(\mathrm{mol\ Chl}\right)^{-1}$,PSI_total,https://doi.org/10.1098/rstb.2013.0223
+Base rate of non-radiative decay,$k_{H_0}$,$k_{H_0}$,$5 \times 10^8$,$\mathrm{s}^{-1}$,kH0,
+,$k_{\mathrm{PQ}_\mathrm{red}}$,$k_{\mathrm{PQ}_\mathrm{red}}$,$250.0$,$\left(\mathrm{mol\ Chl}\right)\ \mathrm{mmol}^{-1}\ \mathrm{s}^{-1}$ ,kPQred,https://doi.org/10.1098/rstb.2013.0223
+,$k_\mathrm{PCox}$,$k_\mathrm{PCox}$,$2500.0$,$\left(\mathrm{mol\ Chl}\right)\ \mathrm{mmol}^{-1}\ \mathrm{s}^{-1}$ ,kPCox,https://doi.org/10.1098/rstb.2013.0223
+,$k_{\mathrm{Fd}_\mathrm{red}}$,$k_{\mathrm{Fd}_\mathrm{red}}$,$2.5 \times 10^5$,$\left(\mathrm{mol\ Chl}\right)\ \mathrm{mmol}^{-1}\ \mathrm{s}^{-1}$ ,kFdred,https://doi.org/10.1098/rstb.2013.0223
+Rate constant for photochemistry,$k_2$,$k_2$,$5 \times 10^9$,$\mathrm{s}^{-1}$,k2,
+Rate of non-radiative decay,$k_H$,$k_H$,$5 \times 10^9$,$\mathrm{s}^{-1}$,kH,https://doi.org/10.1098/rstb.2013.0223
+Rate of fluorescence,$k_F$,$k_F$,$6.25 \times 10^8$,$\mathrm{s}^{-1}$,kF,
+Estimated rate constant for summarized hydrogen peroxide production,$k_{\mathrm{Mehler}}$,$k_{\mathrm{Mehler}}$,$1.0$,$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$,kMehler,
+,,,,,Enz0_v_Fdred,
+,,,,,kcat_v_Fdred,
+Rate constant of proton leak,$k_\mathrm{Leak}$,$k_\mathrm{leak}$,$10.0$,$\mathrm{s}^{-1}$,kf_v_Leak,https://doi.org/10.1098/rstb.2013.0223
+,$k_\mathrm{PTOX}$,$k_\mathrm{PTOX}$,$0.01$,$\left(\mathrm{mol\ Chl}\right)\ \mathrm{mmol}^{-1}\ \mathrm{s}^{-1}$ ,kPTOX,https://doi.org/10.1098/rstb.2013.0223
+Rate of phosphorylation of state transition from PSII to PSI,$k_\mathrm{Stt7}$,$k_\mathrm{Stt7}$,$0.0035$,$\mathrm{s}^{-1}$,kStt7,https://doi.org/10.1098/rstb.2013.0223
+Switch point (half-activity of Stt7) for 20% PQ oxidised,$K_{\mathrm{M}_\mathrm{ST}}$,$K_{\mathrm{M}_\mathrm{ST}}$,$0.2$,,km_v_St12,https://doi.org/10.1098/rstb.2013.0223
+Hill coefficient of State transtion from PSII to PSI,$n_\mathrm{ST}$,$n_\mathrm{ST}$,$2.0$,,n_ST,https://doi.org/10.1098/rstb.2013.0223
+Rate of dephosphorylation of state transition from PSI to PSII,$k_\mathrm{Pph1}$,$k_\mathrm{Pph1}$,$0.0013$,$\mathrm{s}^{-1}$,kPph1,https://doi.org/10.1098/rstb.2013.0223
+,,,,,Enz0_rubisco,
+Base $V_\mathrm{max}$ of RuBisCO,"$V_{\mathrm{max,\ base}_{\mathrm{RuBisCO}}}$",$V_{1_{\mathrm{base}}}$,$0.34 \cdot 8$,$\mathrm{mM}\ s^{-1}$,kcat_v_RuBisCO_c,
+Michaelis Menten constant of RuBisCO for RUBP,$K_{\mathrm{m}|\mathrm{RuBisCO}|\mathrm{RUBP}}$,$K_{\mathrm{m}1}$,$0.02$,$\mathrm{mM}$,km_v_RuBisCO_c_RUBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Michaelis Menten constant of RuBisCO for CO2,$K_{\mathrm{m}|\mathrm{RuBisCO}|\mathrm{CO_2}}$,$K_{\mathrm{mCO2}}$,$0.0107$,$\mathrm{mM}$,km_v_RuBisCO_c_CO2,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of RuBisCO by PGA,$K_{i|\mathrm{RuBisCO}|\mathrm{PGA}}$,$K_{\mathrm{i}11}$,$0.04$,$\mathrm{mM}$,ki_v_RuBisCO_c_PGA,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of RuBisCO by FBP,$K_{i|\mathrm{RuBisCO}|\mathrm{FBP}}$,$K_{\mathrm{i}12}$,$0.04$,$\mathrm{mM}$,ki_v_RuBisCO_c_FBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of RuBisCO by SBP,$K_{i|\mathrm{RuBisCO}|\mathrm{SBP}}$,$K_{\mathrm{i}13}$,$0.075$,$\mathrm{mM}$,ki_v_RuBisCO_c_SBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of RuBisCO by Pi,$K_{i|\mathrm{RuBisCO}|\mathrm{Pi}}$,$K_{\mathrm{i}14}$,$0.9$,$\mathrm{mM}$,ki_v_RuBisCO_c_Pi_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of RuBisCO by NADPH,$K_{i|\mathrm{RuBisCO}|\mathrm{NADPH}}$,$K_{\mathrm{i}15}$,$0.07$,$\mathrm{mM}$,ki_v_RuBisCO_c_NADPH_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_PGK1ase,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of PGK1ase,$K_\mathrm{PGK1ase}$,$q_2$,$3.1 \times 10^{-4}$,,keq_v_PGK1ase,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_BPGAdehynase,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of BPGA dehydrogenase,$K_\mathrm{BPGAdehynase}$,$q_3$,$1.6 \times 10^{7}$,,keq_v_BPGAdehynase,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_TPIase,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of TPIase,$K_\mathrm{TPIase}$,$q_4$,$22.0$,,keq_v_TPIase,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_Aldolase_FBP,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of Aldolase of GAP and DHAP to FBP,$K_\mathrm{Aldolase_{FBP}}$,$q_5$,$7.1$,$\mathrm{mM}^{-1}$,keq_v_Aldolase_FBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_Aldolase_SBP,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of Aldolase of E4P and DHAP to SBP,$K_\mathrm{Aldolase_{SBP}}$,$q_8$,$13.0$,$\mathrm{mM}^{-1}$,keq_v_Aldolase_SBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+,,,,,Enz0_v_FBPase,
+Base $V_\mathrm{max}$ of FBPase,"$V_{\mathrm{max,\ base}_{\mathrm{FBPase}}}$",$V_{6_{\mathrm{base}}}$,$1.6$,$\mathrm{mM}\ s^{-1}$,kcat_v_FBPase,
+Michaelis Menten constant of FBPase,$K_{\mathrm{m}|\mathrm{FBPase}}$ ,$K_{\mathrm{m}6}$,$0.03$,$\mathrm{mM}$,km_v_FBPase_s,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of FBPase by F6P,$K_{i|\mathrm{FBPase}|\mathrm{F6P}}$,$K_{\mathrm{i}61}$,$0.7$,$\mathrm{mM}$,ki_v_FBPase_F6P,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of FBPase by Pi,$K_{i|\mathrm{FBPase}|\mathrm{Pi}}$,$K_{\mathrm{i}62}$,$12.0$,$\mathrm{mM}$,ki_v_FBPase_Pi_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_TKase_E4P,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of TKase of GAP and F6P to X5P and E4P,$K_\mathrm{TKase_{E4P}}$,$q_7$,$0.084$,,keq_v_TKase_E4P,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_TKase_R5P,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of TKase of GAP and S7P to X5P and R5P,$K_\mathrm{TKase_{R5P}}$,$q_{10}$,$0.85$,,keq_v_TKase_R5P,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+,,,,,Enz0_v_SBPase,
+Base $V_\mathrm{max}$ of SBPase,"$V_{\mathrm{max,\ base}_{\mathrm{SBPase}}}$",$V_{9_{\mathrm{base}}}$,$0.32$,$\mathrm{mM}\ s^{-1}$,kcat_v_SBPase,
+Michaelis Menten constant of SBPase,$K_{\mathrm{m}|\mathrm{SBPase}}$ ,$K_{\mathrm{m}9}$,$0.013$,$\mathrm{mM}$,km_v_SBPase_s,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of SBPase by Pi,$K_{i|\mathrm{SBPase}|\mathrm{Pi}}$,$K_{\mathrm{i}9}$,$12.0$,$\mathrm{mM}$,ki_v_SBPase_Pi_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_Rpiase,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of Rpiase,$K_\mathrm{Rpiase}$,$q_{11}$,$0.4$,,keq_v_Rpiase,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_RPEase,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of RPEase,$K_\mathrm{RPEase}$,$q_{12}$,$0.67$,,keq_v_RPEase,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+,,,,,Enz0_v_PRKase,
+Base $V_\mathrm{max}$ of PRKase,"$V_{\mathrm{max,\ base}_{\mathrm{PRKase}}}$",$V_{13_{\mathrm{base}}}$,$7.9992$,$\mathrm{mM}\ s^{-1}$,kcat_v_PRKase,
+Michaelis Menten constant of PRKase for RU5P,$K_{\mathrm{m}|\mathrm{PRKase}|\mathrm{RU5P}}$,$K_{\mathrm{m}131}$,$0.05$,$\mathrm{mM}$,km_v_PRKase_RU5P,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Michaelis Menten constant of PRKase for ATP,$K_{\mathrm{m}|\mathrm{PRKase}|\mathrm{ATP}}$,$K_{\mathrm{m}132}$,$0.05$,$\mathrm{mM}$,km_v_PRKase_ATP_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of Ru5P of PRKase by PGA,$K_{i|\mathrm{PRKase}|\mathrm{PGA}}$,$K_{\mathrm{i}131}$,$2.0$,$\mathrm{mM}$,ki_v_PRKase_PGA,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of Ru5P of PRKase by RuBP,$K_{i|\mathrm{PRKase}|\mathrm{RuBP}}$,$K_{\mathrm{i}132}$,$0.7$,$\mathrm{mM}$,ki_v_PRKase_RUBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of Ru5P of PRKase by Pi,$K_{i|\mathrm{PRKase}|\mathrm{Pi}}$,$K_{\mathrm{i}133}$,$4.0$,$\mathrm{mM}$,ki_v_PRKase_Pi_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Uncompetitive inhibition constant of ATP of PRKase by ADP,$K_{i|\mathrm{unc}|\mathrm{PRKase}|\mathrm{Pi}}$,$K_{\mathrm{i}134}$,$2.5$,$\mathrm{mM}$,ki_v_PRKase_4,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Competitive inhibition constant of ATP of PRKase by ADP,$K_{i|\mathrm{com}|\mathrm{PRKase}|\mathrm{Pi}}$,$K_{\mathrm{i}135}$,$0.4$,$\mathrm{mM}$,ki_v_PRKase_5,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_PGIase,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of PGIase,$K_\mathrm{PGIase}$,$q_{14}$,$2.3$,,keq_v_PGIase,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Arbituary fast rate constant,$k_\mathrm{fast}$,$k$,$8 \times 10^8$,$\mathrm{mM}$,kre_v_PGMase,https://doi.org/10.1093/jexbot/51.suppl_1.319
+Equilibrium constant of PGMase,$K_\mathrm{PGMase}$,$q_{15}$,$0.058$,,keq_v_PGMase,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+External phosphate,$\mathrm{P}_\mathrm{ext}$,$\mathrm{P}_\mathrm{ext}$,$0.5$,$\mathrm{mM}$,Pi_ext,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Dissociation constant for the complex formed by phosphate translocator and PGA,$K_{\mathrm{diss}|\mathrm{PGA}}$ ,$K_{\mathrm{pga}}$,$0.25$,$\mathrm{mM}$,km_v_pga_ex,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Dissociation constant for the complex formed by phosphate translocator and GAP,$K_{\mathrm{diss}|\mathrm{GAP}}$ ,$K_{\mathrm{gap}}$,$0.075$,$\mathrm{mM}$,km_v_gap_ex,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Dissociation constant for the complex formed by phosphate translocator and DHAP,$K_{\mathrm{diss}|\mathrm{DHAP}}$ ,$K_{\mathrm{dhap}}$,$0.077$,$\mathrm{mM}$,km_v_dhap_ex,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Dissociation constant for the complex formed by phosphate translocator and external orthophosphate,$K_{\mathrm{diss}|\mathrm{P_{ext}}}$ ,$K_{\mathrm{pxt}}$,$0.74$,$\mathrm{mM}$,km_N_translocator_Pi_ext,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Dissociation constant for the complex formed by phosphate translocator and Pi,$K_{\mathrm{diss}|\mathrm{Pi}}$ ,$K_{\mathrm{pi}}$,$0.63$,$\mathrm{mM}$,km_N_translocator_Pi_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+$V_\mathrm{max}$ of Export,$V_{\mathrm{max}_{\mathrm{ex}}}$,$V_{\mathrm{ex}}$,$2.0$,$\mathrm{mM}\ s^{-1}$,kcat_N_translocator,
+,,,,,Enz0_N_translocator,
+,,,,,Enz0_v_starch,
+Michaelis Menten constant of Starch production for G1P,$K_{\mathrm{m}|\mathrm{Starch}|\mathrm{G1P}}$,$K_{\mathrm{mst}1}$,$0.08$,$\mathrm{mM}$,km_v_starch_G1P,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Michaelis Menten constant of Starch production for ATP,$K_{\mathrm{m}|\mathrm{Starch}|\mathrm{ATP}}$,$K_{\mathrm{mst}2}$,$0.08$,$\mathrm{mM}$,km_v_starch_ATP_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Inhibition constant of ATP of Starch production by ADP,$K_{i|\mathrm{Starch}|\mathrm{ADP}}$,$K_{\mathrm{ist}}$,$10.0$,$\mathrm{mM}$,ki_v_starch,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Activation factor of Starch production by PGA,$K_{\mathrm{act}|\mathrm{Starch}|\mathrm{PGA}}$,$K_{\mathrm{ast1}}$,$0.1$,,ki_v_starch_PGA,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Activation factor of Starch production by F6P,$K_{\mathrm{act}|\mathrm{Starch}|\mathrm{F6P}}$,$K_{\mathrm{ast2}}$,$0.02$,,ki_v_starch_F6P,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Activation factor of Starch production by FBP,$K_{\mathrm{act}|\mathrm{Starch}|\mathrm{FBP}}$,$K_{\mathrm{ast3}}$,$0.02$,,ki_v_starch_FBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Base $V_\mathrm{max}$ of Starch Synthase,"$V_{\mathrm{max,\ base}_{\mathrm{Starch}}}$",$V_{\mathrm{st}_{\mathrm{base}}}$,$0.32$,$\mathrm{mM}\ s^{-1}$,kcat_v_starch,
+Rate constant for the spontaneous disproportion of MDA,$k_3$,$k3$,$500.0$,$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$,kf_v_3ASC,https://doi.org/10.1104/pp.108.133223
+Concentration of monodehydroascorbate reductase,$\mathrm{MDAR}_0$,$\mathrm{MDAR}_0$,$2 \times 10^{-3}$,$\mathrm{mM}$,Enz0_v_MDAreduct,https://doi.org/10.1186/s12918-015-0239-y
+Turnover rate of monodehydroascorbate reductase,$k_{\mathrm{cat|MDAR}}$,$k_{\mathrm{cat}_{\mathrm{MDAR}}}$,$300.0$,$\mathrm{s}^{-1}$,kcat_v_MDAreduct,https://doi.org/10.1186/s12918-015-0239-y
+Michaelis-menten constant of monodehydroascorbate for the conversion to NADPH,$K_{\mathrm{m|MDAR|NADPH}}$,$K_{\mathrm{m}_{\mathrm{MDAR-NADPH}}}$,$23 \times 10^{-3}$,$\mathrm{mM}$,km_v_MDAreduct_NADPH_st,https://doi.org/10.1186/s12918-015-0239-y
+Michaelis-menten constant of monodehydroascorbate for the conversion to MDA,$K_{\mathrm{m|MDAR|MDA}}$,$K_{\mathrm{m}_{\mathrm{MDAR-MDA}}}$,$1.4 \times 10^{-3}$,$\mathrm{mM}$,km_v_MDAreduct_MDA,https://doi.org/10.1186/s12918-015-0239-y
+,$kf_1$,$kf1$,$10000.0$,,kf1,Estimated
+,$kr_1$,$kr1$,$220.0$,,kr1,BRENDA database
+,$kf_2$,$kf2$,$10000.0$,,kf2,Estimated
+,$kr_2$,$kr2$,$4000.0$,,kr2,BRENDA database
+,$kf_3$,$kf3$,$2510.0$,,kf3,BRENDA database
+,$kf_4$,$kf4$,$10000.0$,,kf4,Estimated
+,$kr_4$,$kr4$,$4000.0$,,kr4,BRENDA database
+,$kf_5$,$kf5$,$2510.0$,,kf5,BRENDA database
+Concentration of ascorbate peroxidase,$XT$,$XT$,$0.07$,,XT,https://doi.org/10.1104/pp.108.133223
+Concentration of gluthatione reductase,$\mathrm{GR}_0$,$\mathrm{GR}_0$,$1.4 \times 10^{-3}$,$\mathrm{mM}$,Enz0_v_GR,https://doi.org/10.1104/pp.108.133223
+Turnover rate of gluthation reductase,$k_{\mathrm{cat|GR}}$,$k_{\mathrm{cat}_{\mathrm{GR}}}$,$595$,$\mathrm{s}^{-1}$,kcat_v_GR,https://doi.org/10.1104/pp.108.133223
+Michaelis Menten constant of NADPH,$K_{\mathrm{m|NADPH}}$,$K_{\mathrm{m}_{\mathrm{NADPH}}}$,$3 \times 10^{-3}$,$\mathrm{mM}$,km_v_GR_NADPH_st,https://doi.org/10.1104/pp.108.133223
+Michaelis Menten constant of oxidized gluthation,$K_{\mathrm{m|GSSG}}$,$K_{\mathrm{m}_{\mathrm{GSSG}}}$,$0.2$,$\mathrm{mM}$,km_v_GR_GSSG,https://doi.org/10.1104/pp.108.133223
+Michaelis Menten constant of dehydroascorbate,$K_{\mathrm{m|DHA}}$,$K_{\mathrm{m}_{\mathrm{DHA}}}$,$70 \times 10^{-3}$,$\mathrm{mM}$,km_v_DHAR_DHA,https://doi.org/10.1104/pp.108.133223
+Michaelis Menten constant of reduced gluthation,$K_{\mathrm{m|GSH}}$,$K_{\mathrm{m}_{\mathrm{GSH}}}$,$2.5$,$\mathrm{mM}$,km_v_DHAR_GSH,https://doi.org/10.1104/pp.108.133223
+Dissociation constant of dehydroascorbate reductase,$K_{\mathrm{diss|DHAR}}$,$K$,$0.5$,$\mathrm{mM}^2$,K,https://doi.org/10.1104/pp.108.133223
+Concentration of dehydroascorbate reductase,$\mathrm{DHAR}_0$,$\mathrm{DHAR}_0$,$1.7 \times 10^{-3}$,$\mathrm{mM}$,Enz0_v_DHAR,https://doi.org/10.1104/pp.108.133223
+Turnover rate of dehydroascorbate reductase,$k_{\mathrm{cat|DHAR}}$,$k_{\mathrm{cat}_{\mathrm{DHAR}}}$,$142$,$\mathrm{s}^{-1}$,kcat_v_DHAR,https://doi.org/10.1104/pp.108.133223
+General consumption rate of ATP,$k_{\mathrm{ex}_{\mathrm{ATP}}}$,$k_{\mathrm{ex}_{\mathrm{atp}}}$,$0.2$,$\mathrm{s}^{-1}$,kf_v_ATPcons,Estimated
+General consumption rate of NADPH,$k_{\mathrm{ex}_{\mathrm{NADPH}}}$,$k_{\mathrm{ex}_{\mathrm{nadph}}}$,$0.2$,$\mathrm{s}^{-1}$,kf_v_NADPHcons,Estimated
