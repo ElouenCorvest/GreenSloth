@@ -1,0 +1,9 @@
+\newcommand{\rate}[1]{v_{\mathrm{#1}}} %\rate takes argument 'x' to put it into v_x in mathmode, while x stays non-italic
+\newcommand{\indexni}[2]{#1 _{\mathrm{#2}}} %Create a normal character with a non italic index
+\newcommand{\indexnig}[2]{\mathit{#1} _{\mathrm{#2}}} %Create a greek character with a non italic index
+\renewcommand{\arraystretch}{1.5}
+\newcommand\standardstate{{\circ\kern-0.495em-}}
+\newcommand{\cleverref}[3][]{\hyperref[#3]{(see #2~\ref*{#3}#1)}}
+\newcommand{\figref}[2][]{\cleverref[#1]{Fig.}{#2}}
+\newcommand{\greensloth}[1][GreenSloth]{{\fontfamily{phv}\selectfont\color[HTML]{4c6841}\textbf{#1}}}
+\newcommand{\captionprof}[2]{\caption[#1]{\textbf{#1}\\ #2}}

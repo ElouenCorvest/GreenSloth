@@ -1,0 +1,105 @@
+\subsection{Model Packaging}
+
+\subsection{Model Demonstrations}\label{sec:model-demonstrations}
+
+\subsubsection{Daylight Simulation}
+
+\subsubsection{FvCB Addon}
+
+\subsubsection{Standard PAM Simulation}
+
+\subsubsection{MCA of Photosynthesis}
+
+\subsubsection{Fitting of Flourescence and NPQ}
+
+\subsection{GreenSlothUtils}
+The \greensloth[GreenSlothUtils] package, written in Python, contains several utility functions to assist in packaging an already written kinetic \gls{ode} model into a more code-readable and ready for uploading to the \greensloth{} website format. The functions included in this package vary in their complexity, from simple directory creation to rewriting model files. While \greensloth[GreenSlothUtils] has been written in a packge format, there is no intention to upload to package sharing services such as PyPI. However, the package is intended to be uses as a local package to assist in contribution to the \greensloth{} website, therefore the GitHub repository is publically available at \url{https://github.com/ElouenCorvest/GreenSlothUtils.git}.
+
+\subsubsection{Documentation}
+
+All the functions included in the package are documented in the GitHub repository, however some key functions are also documented below to showcase their utility in this project. This biggest upside of this package is the ability to quickly create a new model directory with all the necessary files and format for uploading to \greensloth{}. For ease of access, the functions required for this are combined inside a \gls{cli}.
+
+Easily the most important part of the \gls{cli} of \greensloth[GreenSlothUtils] is the \verb|--help| command~\cleverref[]{Code-Block}{code:greenslothutils-help}, which gives an overview of all the possible commands and options available in the package. Each of the other commands also include a \verb|--help| option to give more specific information about the specific command.
+
+\begin{figure*}
+\begin{lstlisting}[style=bashstyle, caption={\textbf{The help command of the CLI of \greensloth[GreenSlothUtils]}}, label={code:greenslothutils-help}]
+$ GreenSloth-init --help
+
+Usage: GreenSloth-init [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  compare-gloss-to-model    Compares glosses to model
+  from-model-to-gloss       Generate temporary Glosses from model info.
+  initialize                Create '<model-name>' directory.
+  latex-from-model          Write LaTex from Model
+  python-from-gloss         Write Python Variables from Glossaries
+  update-glosses-from-main  Update glosses from main
+\end{lstlisting}
+\end{figure*}
+
+Using these commands following a specific order allows for a quick and easy creation of a new model directory.
+
+\emph{1. Create the directory}\\
+First, the \verb|initialize| command is used to create a new and complete model directory with the correct name and structure~\cleverref[]{Code-Block}{code:greenslothutils-init}. One required argument is the name of the model, of which the directory should be named after. In the \greensloth{} ecosystem, the name of the model is the first author's last name followed by the year of publication, e.g., \texttt{Corvest2000}. This command also includes one optional argument, \verb|--path|, which allows the user to specify where the new model directory should be created. If no path is given, the directory is created in the current working directory. The directory created contains various different sub-directories and files, all pre-formatted to the \greensloth{} website standards~\cleverref[]{Directory Tree}{dir:greenslothutils-init}.
+
+\begin{figure*}
+\begin{lstlisting}[style=bashstyle, caption={\textbf{The initialize command of the CLI of \greensloth[GreenSlothUtils]}}, label={code:greenslothutils-init}]
+$ GreenSloth-init initialize --help
+
+Usage: GreenSloth-init initialize [OPTIONS] <model-name>
+
+  Create '<model-name>' directory.
+
+Options:
+  -p, --path TEXT  Path to create model directory. Defaults to path here.
+  --help           Show this message and exit.
+\end{lstlisting}
+\end{figure*}
+
+\begin{center}  
+    \begin{minipage}{\linewidth}
+        \dirtree{%
+            .1 Corvest2000/.
+            .2 figures/.
+            .3 demonstrations.ipynb.
+            .3 paper\_figures.ipynb.
+            .2 model/.
+            .3 basic\_funcs.py.
+            .3 derived\_quantities.py.
+            .3 \_\_init\_\_.py.
+            .3 rates.py.
+            .2 model\_info/.
+            .3 comps.csv.
+            .3 derived\_comps.csv.
+            .3 derived\_params.csv.
+            .3 params.csv.
+            .3 rates.csv.
+            .2 README\_script.py.
+        }
+        \bigskip % Adds a little space before the caption
+        \captionof{dirset}{\textbf{Example directory structure created by the \texttt{initialize} command of \greensloth[GreenSlothUtils].}}
+        \label{dir:greenslothutils-init}
+    \end{minipage}
+\end{center}
+
+The \verb|figures| directory consists of two Jupyter Notebooks. The \verb|demonstrations.ipynb| includes all Model Demonstrations for the model, already written out, with each demonstration having its own cell. The creator of the model simply has to replace the \verb|None| values of each string representation of model parts needed for the demonstration. For more information on what the demonstrations entail, please refer to \hyperref[sec:model-demonstrations]{Section \ref*{sec:model-demonstrations}}. The \verb|paper_figures.ipynb| is a blank notebook intended to be used to recreate the figures of the model's publication. Both notebooks already include necessary imports and helper functions to quickly get started. If the model is correctly implemented inside the \verb|model| directory, the importing of the model should work.
+
+The \verb|model| directory consists of the actual \gls{ode} model implementation in Python. For ease of use, \greensloth{} ecosystem sets using the \verb|mxlpy|~\cite{vanaalstMxlPyPythonPackage2025} package as a standard for writing kinetic \gls{ode} models in Python. This has been chosen due to its ease of use, speed, and continuous support from the maintainers. The most important file of the \verb|model| directory is the \verb|__init__.py| file, which contains the main model initialization. As a strong recommendation, the actual parts of the model, such as the rates, basic functions, and derived quantities, should be written in separate files, as shown in \cleverref[]{Directory Tree}{dir:greenslothutils-init}. This allows for better code readability and easier debugging. To help with formatting a model written using \verb|mxlpy|, the \greensloth[GreenSlothUtils] package contains a subpackage, \verb|greenslothutils.mxlpy_formatter|, which contains several functions to assist in rewriting a model into the correct format for \greensloth{}.
+
+The \verb|model_info| directory contains all the necessary information about the model in a \verb|.csv| format. This includes the variables, derived varaibles and parameters, parameters, and rates of the model. Each of these files follow a specific format, where a short description, the publication depiction, the \greensloth{} depiction, and the variable used in Python code. Additionally, the variables and rates also include a column of KEGG IDs and Glossary Indeces to assist in linking the model to existing databases and the \greensloth{} overarching glossary. The parameters, on the other hand, also include a column for units, values and sources given in the publication. These \verb|.csv| files are used to automatically generate the glossary entries of the model when uploading to the \greensloth{} website, therefore it is important that they are correctly filled out. To assist in this process, functions have been created, that extract the valuable information from an existing model implementation in \verb|mxlpy| into the tables, already seperating them into the correct columns. But more on those functions later.
+
+Finally, the \verb|README_script.py| file is a template script intended to be used to write the model's README file for the \greensloth{} website and in general the model's documentation. This script includes several prefilled sections, such as tables extracted from the prior mentioned \verb|model_info| directory, a generic installation guide, and the assumptions and brief description of the model demonstrations. The user simply has to fill in the specific details of the model, such as a short summary, \LaTeX version of the equations used, the recreation of the publication figures, and notes to the demonstrations. Writing the README in this Python script format allows for easier accessing of repeating information, such as specific variables or parameters, without having to manually find them and replace them in a written Markdown file. Make a few changes in the script, run it, and the README file is ready to go.
+
+\emph{2. Extract Information from the Model}\\
+Once the directory is created and the model is completedly implemented, the next step is to extract necessary information from the model into the \verb|model_info| tables. This is done using several commands of the \greensloth[GreenSlothUtils] \gls{cli}.
+
+
+\subsection{Website}
+
+\subsection{Additional Methods}
+
+\subsubsection{Usage of AI}
+To stay completely transparent during this thesis, it has to be noted that several \gls{ai} tools have been used to assist in the code writing, documentation, and text writing process. Several \glspl{llm} have been used, including Gemini (Google) to help with finding models, ideas and writing code snippets for visualisation. Additionally, GitHub Copilot has been used to assist in code writing, mainly to streamline the writing and debugging process. The exact parts of this thesis that have been assisted by \gls{ai} tools cannot be exactly determined, as the suggestions are mainly used to inspire and speed up the writing process. However, every part of this thesis has been critically evaluated and edited by the author to ensure scientific and real accuracy and quality.

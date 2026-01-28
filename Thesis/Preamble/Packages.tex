@@ -1,0 +1,121 @@
+\usepackage[utf8]{inputenc}
+
+%Bibliography packages
+\usepackage[english, german]{babel}
+
+\addto\captionsenglish{%
+  \renewcommand{\lstlistingname}{Code-Block}%
+  \renewcommand{\lstlistlistingname}{List of Code-Blocks}%
+}
+
+
+
+\usepackage{csquotes,xpatch}% recommended
+\usepackage[backend=biber, citestyle = numeric-comp, sorting=none, url=false, date=year]{biblatex}
+\addbibresource[]{GreenSloth.bib}
+
+%Math packages
+\usepackage{amsmath,amssymb} %Enables better math functions
+\setlength{\jot}{10pt}
+\usepackage{derivative} %Enables the derivative functions
+\usepackage[version=4]{mhchem} %Enables easier chemical reactions
+\usepackage{upgreek} %non-italic greek symbols
+\usepackage{stmaryrd} %lightning symbol
+\usepackage{lipsum}
+
+
+%Format packages
+\usepackage[a4paper,left=12.5mm,right=12.5mm,top=20mm,bottom=25mm]{geometry} %Sets the margin to a nice format
+\usepackage[font = small,labelfont=bf]{caption} %Sets the figure captions as bold
+
+\DeclareCaptionType{Atable}[Table][List of Appendix Tables]
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{enumitem} %Better enumeration
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\captionsetup[lstlisting]{
+    name=Code-Block, % Changes "Listing" to "Code-Block"
+    format=plain,      % plain or hang (hang indents second lines)
+    font={small},   % small font size, italic text
+    labelfont=bf,      % "Listing 1" will be bold
+    labelsep=colon,    % uses ":" instead of "." or "-"
+    justification=justified, % justifies the caption
+}
+
+% Create a new float type for directory trees
+\DeclareCaptionType{dirset}[Directory Tree][List of Directory Trees]
+% Style it exactly like your listings
+\captionsetup[dirset]{
+    name=Directory Tree,
+    format=plain,
+    font={small},
+    labelfont=bf,
+    labelsep=colon,
+    justification=justified,
+}
+
+% Define colors for a "terminal" feel
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{bashstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegray},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{green!50!black},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=bash
+}
+
+\usepackage{dirtree}
+
+\onehalfspacing
+\setlength{\parindent}{10pt}
+
+%Title page
+\usepackage[dvipsnames]{xcolor}
+\usepackage[right]{eurosym}
+\usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+\usepackage[framemethod=TikZ]{mdframed}
+
+%Acronyms
+\usepackage[toc=false,nopostdot=false]{glossaries-extra}
+\input{Preamble/Acronyms.tex}
+\input{Preamble/Variables.tex}
+\usepackage{supertabular}
+\usepackage{array}
+
+
+%Figures
+\usepackage{tikz}
+
+%Math tools
+\usepackage{mathtools}
+
+%Tables
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+
+%Ref package
+\usepackage[hidelinks]{hyperref}
+\usepackage{nameref}

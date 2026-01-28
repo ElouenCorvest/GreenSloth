@@ -1,0 +1,74 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{vanaalstMxlPyPythonPackage2025}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=4f76235a3348017a927865d10d198939}{%
+           family={Van\bibnamedelima Aalst},
+           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Marvin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d12364d4106e9d1d2a684be2aff9a054}{%
+           family={Nies},
+           familyi={N\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=659a2c45e097106c53a0febd0a5f0a79}{%
+           family={Pfennig},
+           familyi={P\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory}%
+      }
+      \strng{namehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{fullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{bibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorbibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authornamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorfullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{AbstractSummaryRecent advances in artificial intelligence have accelerated the adoption of ML in biology, enabling powerful predictive models across diverse applications. However, in scientific research, the need for interpretability and mechanistic insight remains crucial. To address this, we introduce MxlPy, a Python package that combines mechanistic modelling with ML to deliver explainable, data-informed solutions. MxlPy facilitates mechanistic learning, an emerging approach that integrates the transparency of mathematical models with the flexibility of data-driven methods. By streamlining tasks such as data integration, model formulation, output analysis, and surrogate modelling, MxlPy enhances the modelling experience without sacrificing interpretability. Designed for both computational biologists and interdisciplinary researchers, it supports the development of accurate, efficient, and explainable models, making it a valuable tool for advancing bioinformatics, systems biology, and biomedical research.AvailabilityMxlPy source code is freely available athttps://github.com/Computational-Biology-Aachen/MxlPy. The full documentation with features and examples can be found herehttps://computational-biology-aachen.github.io/MxlPy.}
+      \field{eprinttype}{Cold Spring Harbor Laboratory}
+      \field{month}{5}
+      \field{title}{{{MxlPy}} - {{Python Package}} for {{Mechanistic Learning}} in {{Life Science}}}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1101/2025.05.06.652335
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
