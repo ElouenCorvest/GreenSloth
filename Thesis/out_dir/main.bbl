@@ -68,6 +68,21 @@
       \verb 10.1101/2025.05.06.652335
       \endverb
     \endentry
+    \entry{LatexifypyGeneratesLaTeX}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{shorttitle}
+      \field{shorttitle}{Latexify-Py}
+      \field{title}{Latexify-Py: {{Generates LaTeX}} Math Description from {{Python}} Functions.}
+      \field{urlday}{29}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/KVSFRKWI/latexify_py.html
+      \endverb
+      \keyw{equation,latex,math,mathematics,Scientific/Engineering - Mathematics,Software Development - Code Generators,tex,Text Processing - Markup - LaTeX}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

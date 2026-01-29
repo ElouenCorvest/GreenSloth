@@ -1,5 +1,8 @@
 \babel@toc {german}{}\relax 
 \babel@toc {english}{}\relax 
+\contentsline {section}{Acknowledgements}{i}{section*.1}%
+\contentsline {section}{Abstract}{ii}{section*.2}%
+\contentsline {section}{List of Code-Blocks}{iv}{section*.4}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Material and Methods}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Model Packaging}{2}{subsection.2.1}%
@@ -11,9 +14,9 @@
 \contentsline {subsubsection}{\numberline {2.2.5}Fitting of Flourescence and NPQ}{2}{subsubsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.3}GreenSlothUtils}{2}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Documentation}{2}{subsubsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.4}Website}{4}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Additional Methods}{4}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Usage of AI}{4}{subsubsection.2.5.1}%
-\contentsline {section}{\numberline {3}Results}{5}{section.3}%
-\contentsline {section}{\numberline {4}Discussion}{6}{section.4}%
-\contentsline {section}{References}{ii}{section.4}%
+\contentsline {subsection}{\numberline {2.4}Website}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Additional Methods}{8}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Usage of AI}{8}{subsubsection.2.5.1}%
+\contentsline {section}{\numberline {3}Results}{9}{section.3}%
+\contentsline {section}{\numberline {4}Discussion}{10}{section.4}%
+\contentsline {section}{References}{v}{section.4}%
