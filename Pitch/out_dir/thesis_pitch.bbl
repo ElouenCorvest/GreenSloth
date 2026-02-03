@@ -1,0 +1,1755 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/apasortcite//global/global}
+    \entry{stirbet_photosynthesis_2020}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8879a5b0dc1580f38f38ab1375a6ba17}{%
+           family={Stirbet},
+           familyi={S\bibinitperiod},
+           given={Alexandrina},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=836b8d0c7db9ec7711e1cd7cd699cc18}{%
+           family={Lazár},
+           familyi={L\bibinitperiod},
+           given={Dušan},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=884de5812490e3fa8a876e5f73e54cf6}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Ya},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3a18533a8b2d06c9251d2e6d7ae94438}{%
+           family={Govindjee},
+           familyi={G\bibinitperiod},
+           given={Govindjee},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{fullhash}{7d6d1904587729b023312ee666978480}
+      \strng{bibnamehash}{7d6d1904587729b023312ee666978480}
+      \strng{authorbibnamehash}{7d6d1904587729b023312ee666978480}
+      \strng{authornamehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{authorfullhash}{7d6d1904587729b023312ee666978480}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Background With limited agricultural land and increasing human population, it is essential to enhance overall photosynthesis and thus productivity. Oxygenic photosynthesis begins with light absorption, followed by excitation energy transfer to the reaction centres, primary photochemistry, electron and proton transport, {NADPH} and {ATP} synthesis, and then {CO}2 fixation (Calvin–Benson cycle, as well as Hatch–Slack cycle). Here we cover some of the discoveries related to this process, such as the existence of two light reactions and two photosystems connected by an electron transport ‘chain’ (the Z-scheme), chemiosmotic hypothesis for {ATP} synthesis, water oxidation clock for oxygen evolution, steps for carbon fixation, and finally the diverse mechanisms of regulatory processes, such as ‘state transitions’ and ‘non-photochemical quenching’ of the excited state of chlorophyll a. Scope In this review, we emphasize that mathematical modelling is a highly valuable tool in understanding and making predictions regarding photosynthesis. Different mathematical models have been used to examine current theories on diverse photosynthetic processes; these have been validated through simulation(s) of available experimental data, such as chlorophyll a fluorescence induction, measured with fluorometers using continuous (or modulated) exciting light, and absorbance changes at 820 nm (ΔA820) related to redox changes in P700, the reaction centre of photosystem I. Conclusions We highlight here the important role of modelling in deciphering and untangling complex photosynthesis processes taking place simultaneously, as well as in predicting possible ways to obtain higher biomass and productivity in plants, algae and cyanobacteria.}
+      \field{day}{14}
+      \field{issn}{0305-7364, 1095-8290}
+      \field{journaltitle}{Annals of Botany}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{4}
+      \field{shorttitle}{Photosynthesis}
+      \field{title}{Photosynthesis: basics, history and modelling}
+      \field{urlday}{11}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{126}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{511\bibrangedash 537}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1093/aob/mcz171
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/2Z2PKQ5M/Stirbet et al. - 2020 - Photosynthesis basics, history and modelling.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/aob/article/126/4/511/5602694
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/aob/article/126/4/511/5602694
+      \endverb
+    \endentry
+    \entry{murchie_agriculture_2009}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9ac37861b188039df3b4ac8ce8544c3e}{%
+           family={Murchie},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi H.},
+           giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f714b7b0f0372e45a3094dd2f68d2718}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d1c2ebb90f21c72030836c7a4662653a}{%
+           family={Horton},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c82dc23f51affb0da729fcf8c5664ae2}
+      \strng{fullhash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{bibnamehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{authorbibnamehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{authornamehash}{c82dc23f51affb0da729fcf8c5664ae2}
+      \strng{authorfullhash}{234e7bdf83b8f10471e845fea5072d8e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Contents Summary 532 I. Introduction 533 {II}. World demand and future food production 533 {III}. Photosynthesis from an agricultural perspective 533 {IV}. Routes to improving the mechanism of photosynthesis 535 V. Photosynthesis in the field: potential and actual rates 537 {VI}. Optimization of photosynthesis as a highly dynamic responsive process 539 {VII}. Principles governing dynamic responses of photosynthesis to the environment 539 {VIII}. The chloroplast as sensor and integrator – photoacclimation of photosynthesis 544 {IX}. Concluding remarks: crops for future climates 546 References 548}
+      \field{issn}{0028-646X, 1469-8137}
+      \field{journaltitle}{New Phytologist}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{3}
+      \field{shortjournal}{New Phytologist}
+      \field{title}{Agriculture and the new challenges for photosynthesis research}
+      \field{urlday}{4}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{181}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{532\bibrangedash 552}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1111/j.1469-8137.2008.02705.x
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/EVSNFA97/Murchie et al. - 2009 - Agriculture and the new challenges for photosynthesis research.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://nph.onlinelibrary.wiley.com/doi/10.1111/j.1469-8137.2008.02705.x
+      \endverb
+      \verb{url}
+      \verb https://nph.onlinelibrary.wiley.com/doi/10.1111/j.1469-8137.2008.02705.x
+      \endverb
+    \endentry
+    \entry{long_can_2006}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=4469354fd9d89f3003587b2ee63cc123}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Stephen\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8a7549cacb8fd03a17007748738399b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xin‐Guang},
+           giveni={X\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4e1d1626f5e9b29a1160d56e4298a69d}{%
+           family={Naidu},
+           familyi={N\bibinitperiod},
+           given={Shawna\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0eafac73c07bf45598624558806c107}{%
+           family={Ort},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5b51cc943417608135332cc590a84357}
+      \strng{fullhash}{96434040326461d348b142ddc3c2c8be}
+      \strng{bibnamehash}{96434040326461d348b142ddc3c2c8be}
+      \strng{authorbibnamehash}{96434040326461d348b142ddc3c2c8be}
+      \strng{authornamehash}{5b51cc943417608135332cc590a84357}
+      \strng{authorfullhash}{96434040326461d348b142ddc3c2c8be}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{ABSTRACT} The yield potential ( Y p ) of a grain crop is the seed mass per unit ground area obtained under optimum growing conditions without weeds, pests and diseases. It is determined by the product of the available light energy and by the genetically determined properties: efficiency of light capture ( ɛ i ), the efficiency of conversion of the intercepted light into biomass ( ɛ c ) and the proportion of biomass partitioned into grain ( η ). Plant breeding brings η and ɛ i close to their theoretical maxima, leaving ɛ c , primarily determined by photosynthesis, as the only remaining major prospect for improving Y p . Leaf photosynthetic rate, however, is poorly correlated with yield when different genotypes of a crop species are compared. This led to the viewpoint that improvement of leaf photosynthesis has little value for improving Y p . By contrast, the many recent experiments that compare the growth of a genotype in current and future projected elevated [{CO} 2 ] environments show that increase in leaf photosynthesis is closely associated with similar increases in yield. Are there opportunities to achieve similar increases by genetic manipulation? Six potential routes of increasing ɛ c by improving photosynthetic efficiency were explored, ranging from altered canopy architecture to improved regeneration of the acceptor molecule for {CO} 2 . Collectively, these changes could improve ɛ c and, therefore, Y p by c . 50\%. Because some changes could be achieved by transgenic technology, the time of the development of commercial cultivars could be considerably less than by conventional breeding and potentially, within 10–15 years.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Plant Cell \& Environment}
+      \field{title}{Can improvement in photosynthesis increase crop yields?}
+      \field{urlday}{4}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{29}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{315\bibrangedash 330}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1111/j.1365-3040.2005.01493.x
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/2VQDMT4M/Long et al. - 2006 - Can improvement in photosynthesis increase crop yields.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1365-3040.2005.01493.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1365-3040.2005.01493.x
+      \endverb
+    \endentry
+    \entry{ingenhousz_experiments_1779}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bb220c4fbe772444c59e17ef74488562}{%
+           family={Ingenhousz},
+           familyi={I\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {P. Elmsly,}%
+        {H. Payne}%
+      }
+      \strng{namehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{fullhash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{bibnamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authorbibnamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authornamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authorfullhash}{bb220c4fbe772444c59e17ef74488562}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{langid}{english}
+      \field{note}{Google-Books-{ID}: {JUMZAAAAYAAJ}}
+      \field{pagetotal}{402}
+      \field{shorttitle}{Experiments Upon Vegetables, Discovering Their Great Power of Purifying the Common Air in the Sun-shine, and of Injuring it in the Shade and at Night}
+      \field{title}{Experiments Upon Vegetables, Discovering Their Great Power of Purifying the Common Air in the Sun-shine, and of Injuring it in the Shade and at Night: To which is Joined, a New Method of Examining the Accurate Degree of Salubrity of the Atmosphere}
+      \field{year}{1779}
+      \field{dateera}{ce}
+    \endentry
+    \entry{zhu_ephotosynthesis_2013}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e8a7549cacb8fd03a17007748738399b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xin‐Guang},
+           giveni={X\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0eafac73c07bf45598624558806c107}{%
+           family={Ort},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4469354fd9d89f3003587b2ee63cc123}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Stephen\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2db10e4c52561676f5b0a773cc18e20a}
+      \strng{fullhash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \strng{bibnamehash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \strng{authorbibnamehash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \strng{authornamehash}{2db10e4c52561676f5b0a773cc18e20a}
+      \strng{authorfullhash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{{ABSTRACTPhotosynthesis} is arguably the most researched of all plant processes. A dynamic model of leaf photosynthesis that includes each discrete process from light capture to carbohydrate synthesis,e‐photosynthesis, is described. It was developed by linking and extending our previous models of photosystem {II} ({PSII}) energy transfer and photosynthetic C3 carbon metabolism to include electron transfer processes around photosystem I ({PSI}), ion transfer between the lumen and stroma, {ATP} synthesis and {NADP} reduction to provide a complete representation. Different regulatory processes linking the light and dark reactions are also included: Rubisco activation via Rubisco activase, {pH} and xanthophyll cycle‐dependent non‐photochemical quenching mechanisms, as well as the regulation of enzyme activities via the ferredoxin‐theoredoxin system. Although many further feedback and feedforward controls undoubtedly exist, it is shown thate‐photosynthesis effectively mimics the typical kinetics of leaf {CO}2uptake, O2evolution, chlorophyll fluorescence emission, lumen and stromal {pH}, and membrane potential following perturbations in light, [{CO}2] and [O2] observed in intact C3 leaves. The model provides a framework for guiding engineering of improved photosynthetic efficiency, for evaluating multiple non‐invasive measures used in emerging phenomics facilities, and for quantitative assessment of strengths and weaknesses within the understanding of photosynthesis as an integrated process.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{note}{Publisher: Wiley}
+      \field{number}{9}
+      \field{shortjournal}{Plant Cell \& Environment}
+      \field{shorttitle}{\textit{e}‐photosynthesis}
+      \field{title}{\textit{e}‐photosynthesis: a comprehensive dynamic mechanistic model of C3 photosynthesis: from light capture to sucrose synthesis}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1711\bibrangedash 1727}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/pce.12025
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/QJYH8I4R/Zhu et al. - 2013 - e‐photosynthesis a comprehensive dynamic mechanistic model of C3 photosynthesis from light.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/pce.12025
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/pce.12025
+      \endverb
+    \endentry
+    \entry{hucka_systems_2003}{article}{}
+      \name{author}{43}{}{%
+        {{un=0,uniquepart=base,hash=b815ed5912efce36d6966309f612406b}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f376e491733fc48bdf3616089b5394b}{%
+           family={Finney},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=538dcf4c6c48bfee91f42a815633d34e}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5bc676b6622ab9f27ba77a8f5ce9d17a}{%
+           family={Bolouri},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a74964e0795d339fed69d7574247abd}{%
+           family={Doyle},
+           familyi={D\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b524b91ba10309ab4bc17202de3f683a}{%
+           family={Kitano},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e4ec55bf15bb85cd5389303da85834a}{%
+           family={Arkin},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de47df23036589b64c112f24755e7aa6}{%
+           family={Bornstein},
+           familyi={B\bibinitperiod},
+           given={B.\bibnamedelimi J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d967c984fc8d86e74608866eacb22d37}{%
+           family={Bray},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4f9cb312410033fdae99dc9241ac8bf}{%
+           family={Cornish-Bowden},
+           familyi={C\bibinithyphendelim B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5abe83885137f628b88c893a8128ad9}{%
+           family={Cuellar},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a16be28f78b61de1556d345380a9c07a}{%
+           family={Dronov},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=21654aa5e326d7b6921e51f59bbcc73b}{%
+           family={Gilles},
+           familyi={G\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f089cd1b7865d3f0fc3acbb7e8ae5ae}{%
+           family={Ginkel},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4281dbaa2586d64dae840de64bd78639}{%
+           family={Gor},
+           familyi={G\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e744c8828fe7d07caf0c227348b271a2}{%
+           family={Goryanin},
+           familyi={G\bibinitperiod},
+           given={I.\bibnamedelimi I.},
+           giveni={I\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aff669e320451c33cd9e0bdc9b91e528}{%
+           family={Hedley},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce5d7e95f72e2fe9b83114e925e98921}{%
+           family={Hodgman},
+           familyi={H\bibinitperiod},
+           given={T.\bibnamedelimi C.},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=faea0730333f02f3ab0d9846c3e06705}{%
+           family={Hofmeyr},
+           familyi={H\bibinitperiod},
+           given={J.-H.},
+           giveni={J\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7b0a0c2253277d04e5502f99c80eaa94}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={P.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc3bfe16d37f7cdf641555708274a2f1}{%
+           family={Juty},
+           familyi={J\bibinitperiod},
+           given={N.\bibnamedelimi S.},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=487b930873b724f48e9a7c6a42decd09}{%
+           family={Kasberger},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e11e62cb228a1d68240c7b9876a103b7}{%
+           family={Kremling},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d2a868fa9837fcefbe25c9b0a32087be}{%
+           family={Kummer},
+           familyi={K\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b944aad8d5180e389cd6a7b1b17b3dff}{%
+           family={Le\bibnamedelima Novère},
+           familyi={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d4244126970986c1e5154503d3707f6}{%
+           family={Loew},
+           familyi={L\bibinitperiod},
+           given={L.\bibnamedelimi M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccb0db6024a2c6cb83a6c160613d4d9e}{%
+           family={Lucio},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=15bad006371671ec5a577b7cbfb38d27}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0e8be824f2ec3e9f36cca162b042a9e9}{%
+           family={Minch},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c3c7efdce1fc38b1525830435deb877}{%
+           family={Mjolsness},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f834c4bcf8181bb5bddc5d72942bf40}{%
+           family={Nakayama},
+           familyi={N\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f46301f980e2cd5d195b89acb0b59ce}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={M.\bibnamedelimi R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6e245bc48ac6570c868de670d676e7fb}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={P.\bibnamedelimi F.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=99259b91fc59cba7863481844ceb53a5}{%
+           family={Sakurada},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=83912ba6dddfb9445369ba62763baa03}{%
+           family={Schaff},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=12ac89636adee7d3063c9f9be8ae66f1}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1505cc0c9ad24dea0bc1facd1952285c}{%
+           family={Shimizu},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f5232ff2f1045f0513d3b91e61ba3f0}{%
+           family={Spence},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi D.},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=793936a767ec080b6115f8ca168e6eef}{%
+           family={Stelling},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8bc87fd9a78a7d5203999be8022da4c}{%
+           family={Takahashi},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=14bee8d336130f88e263ebbe3c7d5433}{%
+           family={Tomita},
+           familyi={T\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f7e8e8b463eb9f6c33faebd6367a9696}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3702f1c146e64a6c91fc47b81ea59fc7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{fullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \strng{bibnamehash}{b7f6325021a93430960136669be0362c}
+      \strng{authorbibnamehash}{b7f6325021a93430960136669be0362c}
+      \strng{authornamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authorfullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Motivation: Molecular biotechnology now makes it possible to build elaborate systems models, but the systems biology community needs information standards if models are to be shared, evaluated and developed cooperatively. Results: We summarize the Systems Biology Markup Language ({SBML}) Level 1, a free, open, {XML}-based format for representing biochemical reaction networks. {SBML} is a software-independent language for describing models common to research in many areas of computational biology, including cell signaling pathways, metabolic pathways, gene regulation, and others. Availability: The specification of {SBML} Level 1 is freely available from http://www.sbml.org/ Contact: sysbio-team@caltech.edu * To whom correspondence should be addressed.}
+      \field{day}{1}
+      \field{issn}{1367-4811, 1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{note}{Publisher: Oxford University Press ({OUP})}
+      \field{number}{4}
+      \field{shorttitle}{The systems biology markup language ({SBML})}
+      \field{title}{The systems biology markup language ({SBML}): a medium forrepresentation and exchange of biochemical network models}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{19}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{524\bibrangedash 531}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btg015
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/bioinformatics/article/19/4/524/218599
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/bioinformatics/article/19/4/524/218599
+      \endverb
+    \endentry
+    \entry{malik-sheriff_biomodels15_2019}{article}{}
+      \name{author}{24}{}{%
+        {{un=0,uniquepart=base,hash=29982aa982c7a94227358bc68e0133af}{%
+           family={Malik-Sheriff},
+           familyi={M\bibinithyphendelim S\bibinitperiod},
+           given={Rahuman\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=26b7cd33e008135efb521b2944967572}{%
+           family={Glont},
+           familyi={G\bibinitperiod},
+           given={Mihai},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=69217092be08393ea564798b69bb05f9}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Tung\bibnamedelimb V\bibnamedelima N},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72d96da796ed34664b54e744583e73a6}{%
+           family={Tiwari},
+           familyi={T\bibinitperiod},
+           given={Krishna},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d889292fd131541f5a8ae68ab8c68116}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={Matthew\bibnamedelima G},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37f520f184c21dd3006af769f9b2dc8d}{%
+           family={Xavier},
+           familyi={X\bibinitperiod},
+           given={Ashley},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0084e620d056b217024534b0a3f09cb6}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Manh\bibnamedelima T},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fcef334b6b94112caca3fc198f6c07b}{%
+           family={Men},
+           familyi={M\bibinitperiod},
+           given={Jinghao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91e6a7a3492da80f39257b670f93bebc}{%
+           family={Maire},
+           familyi={M\bibinitperiod},
+           given={Matthieu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8bfd2a128edfe1a579e767951a046f9d}{%
+           family={Kananathan},
+           familyi={K\bibinitperiod},
+           given={Sarubini},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a2fcadb5612762b61fbe6fa92f835d4f}{%
+           family={Fairbanks},
+           familyi={F\bibinitperiod},
+           given={Emma\bibnamedelima L},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=76e14cdbb74c6f6f8757f518cfebeec2}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Johannes\bibnamedelima P},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05d362c6aa56186e906c2db08f9b61f5}{%
+           family={Arankalle},
+           familyi={A\bibinitperiod},
+           given={Chinmay},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3a86813cc395cd24618e667c52213fa7}{%
+           family={Varusai},
+           familyi={V\bibinitperiod},
+           given={Thawfeek\bibnamedelima M},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c49a346c03c9914615fe6961f43817cb}{%
+           family={Knight-Schrijver},
+           familyi={K\bibinithyphendelim S\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=da32ce59ebe295c8c0c7b1e010237b74}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b06c13338432aea2a6a8f1cff3ca5ed3}{%
+           family={Dueñas-Roca},
+           familyi={D\bibinithyphendelim R\bibinitperiod},
+           given={Corina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=741a536a5cf838c8ae4b093123ce3308}{%
+           family={Dass},
+           familyi={D\bibinitperiod},
+           given={Gaurhari},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a5358660234d59ae2c33d6a0c42661e}{%
+           family={Keating},
+           familyi={K\bibinitperiod},
+           given={Sarah\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bca36f1209855115fe8372ed0428f2fc}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Young\bibnamedelima M},
+           giveni={Y\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97a152d54698a9992217a03f54398d8d}{%
+           family={Buso},
+           familyi={B\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9a1d4a9d6b7041a27739b4f6b4af4dd}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=46f3e48d5c3a1410b18eadac8585468d}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a1d11d1a0d9cd50b99cbb45fc204e933}{%
+           family={Hermjakob},
+           familyi={H\bibinitperiod},
+           given={Henning},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{fullhash}{9309269b8715884182c7dd969371f8d4}
+      \strng{bibnamehash}{4955e2349713aee34c3ac960eea3fa6d}
+      \strng{authorbibnamehash}{4955e2349713aee34c3ac960eea3fa6d}
+      \strng{authornamehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{authorfullhash}{9309269b8715884182c7dd969371f8d4}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{AbstractComputational} modelling has become increasingly common in life science research. To provide a platform to support universal sharing, easy accessibility and model reproducibility, {BioModels} (https://www.ebi.ac.uk/biomodels/), a repository for mathematical models, was established in 2005. The current {BioModels} platform allows submission of models encoded in diverse modelling formats, including {SBML}, {CellML}, {PharmML}, {COMBINE} archive, {MATLAB}, Mathematica, R, Python or C++. The models submitted to {BioModels} are curated to verify the computational representation of the biological process and the reproducibility of the simulation results in the reference publication. The curation also involves encoding models in standard formats and annotation with controlled vocabularies following {MIRIAM} (minimal information required in the annotation of biochemical models) guidelines. {BioModels} now accepts large-scale submission of auto-generated computational models. With gradual growth in content over 15 years, {BioModels} currently hosts about 2000 models from the published literature. With about 800 curated models, {BioModels} has become the world’s largest repository of curated models and emerged as the third most used data resource after {PubMed} and Google Scholar among the scientists who use modelling in their research. Thus, {BioModels} benefits modellers by providing access to reliable and semantically enriched curated models in standard formats that are easy to share, reproduce and reuse.}
+      \field{day}{8}
+      \field{issn}{0305-1048, 1362-4962}
+      \field{journaltitle}{Nucleic Acids Research}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{note}{Publisher: Oxford University Press ({OUP})}
+      \field{title}{{BioModels}—15 years of sharing computational models in life science}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/nar/gkz1055
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/CA3WFNJR/Malik-Sheriff et al. - 2019 - BioModels—15 years of sharing computational models in life science.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz1055/5614569
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz1055/5614569
+      \endverb
+    \endentry
+    \entry{van_aalst_mxlpy_2025}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=4f76235a3348017a927865d10d198939}{%
+           family={Van\bibnamedelima Aalst},
+           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Marvin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d12364d4106e9d1d2a684be2aff9a054}{%
+           family={Nies},
+           familyi={N\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=659a2c45e097106c53a0febd0a5f0a79}{%
+           family={Pfennig},
+           familyi={P\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory}%
+      }
+      \strng{namehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{fullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{bibnamehash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{authorbibnamehash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{authornamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorfullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{AbstractSummaryRecent} advances in artificial intelligence have accelerated the adoption of {ML} in biology, enabling powerful predictive models across diverse applications. However, in scientific research, the need for interpretability and mechanistic insight remains crucial. To address this, we introduce {MxlPy}, a Python package that combines mechanistic modelling with {ML} to deliver explainable, data-informed solutions. {MxlPy} facilitates mechanistic learning, an emerging approach that integrates the transparency of mathematical models with the flexibility of data-driven methods. By streamlining tasks such as data integration, model formulation, output analysis, and surrogate modelling, {MxlPy} enhances the modelling experience without sacrificing interpretability. Designed for both computational biologists and interdisciplinary researchers, it supports the development of accurate, efficient, and explainable models, making it a valuable tool for advancing bioinformatics, systems biology, and biomedical research.{AvailabilityMxlPy} source code is freely available athttps://github.com/Computational-Biology-Aachen/{MxlPy}. The full documentation with features and examples can be found herehttps://computational-biology-aachen.github.io/{MxlPy}.}
+      \field{day}{10}
+      \field{month}{5}
+      \field{title}{{MxlPy} - Python Package for Mechanistic Learning in Life Science}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1101/2025.05.06.652335
+      \endverb
+      \verb{urlraw}
+      \verb http://biorxiv.org/lookup/doi/10.1101/2025.05.06.652335
+      \endverb
+      \verb{url}
+      \verb http://biorxiv.org/lookup/doi/10.1101/2025.05.06.652335
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{none/global//global/global}
+    \entry{stirbet_photosynthesis_2020}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8879a5b0dc1580f38f38ab1375a6ba17}{%
+           family={Stirbet},
+           familyi={S\bibinitperiod},
+           given={Alexandrina},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=836b8d0c7db9ec7711e1cd7cd699cc18}{%
+           family={Lazár},
+           familyi={L\bibinitperiod},
+           given={Dušan},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=884de5812490e3fa8a876e5f73e54cf6}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Ya},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3a18533a8b2d06c9251d2e6d7ae94438}{%
+           family={Govindjee},
+           familyi={G\bibinitperiod},
+           given={Govindjee},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{fullhash}{7d6d1904587729b023312ee666978480}
+      \strng{bibnamehash}{7d6d1904587729b023312ee666978480}
+      \strng{authorbibnamehash}{7d6d1904587729b023312ee666978480}
+      \strng{authornamehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{authorfullhash}{7d6d1904587729b023312ee666978480}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Background With limited agricultural land and increasing human population, it is essential to enhance overall photosynthesis and thus productivity. Oxygenic photosynthesis begins with light absorption, followed by excitation energy transfer to the reaction centres, primary photochemistry, electron and proton transport, {NADPH} and {ATP} synthesis, and then {CO}2 fixation (Calvin–Benson cycle, as well as Hatch–Slack cycle). Here we cover some of the discoveries related to this process, such as the existence of two light reactions and two photosystems connected by an electron transport ‘chain’ (the Z-scheme), chemiosmotic hypothesis for {ATP} synthesis, water oxidation clock for oxygen evolution, steps for carbon fixation, and finally the diverse mechanisms of regulatory processes, such as ‘state transitions’ and ‘non-photochemical quenching’ of the excited state of chlorophyll a. Scope In this review, we emphasize that mathematical modelling is a highly valuable tool in understanding and making predictions regarding photosynthesis. Different mathematical models have been used to examine current theories on diverse photosynthetic processes; these have been validated through simulation(s) of available experimental data, such as chlorophyll a fluorescence induction, measured with fluorometers using continuous (or modulated) exciting light, and absorbance changes at 820 nm (ΔA820) related to redox changes in P700, the reaction centre of photosystem I. Conclusions We highlight here the important role of modelling in deciphering and untangling complex photosynthesis processes taking place simultaneously, as well as in predicting possible ways to obtain higher biomass and productivity in plants, algae and cyanobacteria.}
+      \field{day}{14}
+      \field{issn}{0305-7364, 1095-8290}
+      \field{journaltitle}{Annals of Botany}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{4}
+      \field{shorttitle}{Photosynthesis}
+      \field{title}{Photosynthesis: basics, history and modelling}
+      \field{urlday}{11}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{126}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{511\bibrangedash 537}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1093/aob/mcz171
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/2Z2PKQ5M/Stirbet et al. - 2020 - Photosynthesis basics, history and modelling.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/aob/article/126/4/511/5602694
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/aob/article/126/4/511/5602694
+      \endverb
+    \endentry
+    \entry{murchie_agriculture_2009}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9ac37861b188039df3b4ac8ce8544c3e}{%
+           family={Murchie},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi H.},
+           giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f714b7b0f0372e45a3094dd2f68d2718}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d1c2ebb90f21c72030836c7a4662653a}{%
+           family={Horton},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c82dc23f51affb0da729fcf8c5664ae2}
+      \strng{fullhash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{bibnamehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{authorbibnamehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{authornamehash}{c82dc23f51affb0da729fcf8c5664ae2}
+      \strng{authorfullhash}{234e7bdf83b8f10471e845fea5072d8e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Contents Summary 532 I. Introduction 533 {II}. World demand and future food production 533 {III}. Photosynthesis from an agricultural perspective 533 {IV}. Routes to improving the mechanism of photosynthesis 535 V. Photosynthesis in the field: potential and actual rates 537 {VI}. Optimization of photosynthesis as a highly dynamic responsive process 539 {VII}. Principles governing dynamic responses of photosynthesis to the environment 539 {VIII}. The chloroplast as sensor and integrator – photoacclimation of photosynthesis 544 {IX}. Concluding remarks: crops for future climates 546 References 548}
+      \field{issn}{0028-646X, 1469-8137}
+      \field{journaltitle}{New Phytologist}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{3}
+      \field{shortjournal}{New Phytologist}
+      \field{title}{Agriculture and the new challenges for photosynthesis research}
+      \field{urlday}{4}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{181}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{532\bibrangedash 552}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1111/j.1469-8137.2008.02705.x
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/EVSNFA97/Murchie et al. - 2009 - Agriculture and the new challenges for photosynthesis research.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://nph.onlinelibrary.wiley.com/doi/10.1111/j.1469-8137.2008.02705.x
+      \endverb
+      \verb{url}
+      \verb https://nph.onlinelibrary.wiley.com/doi/10.1111/j.1469-8137.2008.02705.x
+      \endverb
+    \endentry
+    \entry{long_can_2006}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=4469354fd9d89f3003587b2ee63cc123}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Stephen\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8a7549cacb8fd03a17007748738399b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xin‐Guang},
+           giveni={X\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4e1d1626f5e9b29a1160d56e4298a69d}{%
+           family={Naidu},
+           familyi={N\bibinitperiod},
+           given={Shawna\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0eafac73c07bf45598624558806c107}{%
+           family={Ort},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5b51cc943417608135332cc590a84357}
+      \strng{fullhash}{96434040326461d348b142ddc3c2c8be}
+      \strng{bibnamehash}{96434040326461d348b142ddc3c2c8be}
+      \strng{authorbibnamehash}{96434040326461d348b142ddc3c2c8be}
+      \strng{authornamehash}{5b51cc943417608135332cc590a84357}
+      \strng{authorfullhash}{96434040326461d348b142ddc3c2c8be}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{ABSTRACT} The yield potential ( Y p ) of a grain crop is the seed mass per unit ground area obtained under optimum growing conditions without weeds, pests and diseases. It is determined by the product of the available light energy and by the genetically determined properties: efficiency of light capture ( ɛ i ), the efficiency of conversion of the intercepted light into biomass ( ɛ c ) and the proportion of biomass partitioned into grain ( η ). Plant breeding brings η and ɛ i close to their theoretical maxima, leaving ɛ c , primarily determined by photosynthesis, as the only remaining major prospect for improving Y p . Leaf photosynthetic rate, however, is poorly correlated with yield when different genotypes of a crop species are compared. This led to the viewpoint that improvement of leaf photosynthesis has little value for improving Y p . By contrast, the many recent experiments that compare the growth of a genotype in current and future projected elevated [{CO} 2 ] environments show that increase in leaf photosynthesis is closely associated with similar increases in yield. Are there opportunities to achieve similar increases by genetic manipulation? Six potential routes of increasing ɛ c by improving photosynthetic efficiency were explored, ranging from altered canopy architecture to improved regeneration of the acceptor molecule for {CO} 2 . Collectively, these changes could improve ɛ c and, therefore, Y p by c . 50\%. Because some changes could be achieved by transgenic technology, the time of the development of commercial cultivars could be considerably less than by conventional breeding and potentially, within 10–15 years.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Plant Cell \& Environment}
+      \field{title}{Can improvement in photosynthesis increase crop yields?}
+      \field{urlday}{4}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{29}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{315\bibrangedash 330}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1111/j.1365-3040.2005.01493.x
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/2VQDMT4M/Long et al. - 2006 - Can improvement in photosynthesis increase crop yields.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1365-3040.2005.01493.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1365-3040.2005.01493.x
+      \endverb
+    \endentry
+    \entry{ingenhousz_experiments_1779}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bb220c4fbe772444c59e17ef74488562}{%
+           family={Ingenhousz},
+           familyi={I\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {P. Elmsly,}%
+        {H. Payne}%
+      }
+      \strng{namehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{fullhash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{bibnamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authorbibnamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authornamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authorfullhash}{bb220c4fbe772444c59e17ef74488562}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{langid}{english}
+      \field{note}{Google-Books-{ID}: {JUMZAAAAYAAJ}}
+      \field{pagetotal}{402}
+      \field{shorttitle}{Experiments Upon Vegetables, Discovering Their Great Power of Purifying the Common Air in the Sun-shine, and of Injuring it in the Shade and at Night}
+      \field{title}{Experiments Upon Vegetables, Discovering Their Great Power of Purifying the Common Air in the Sun-shine, and of Injuring it in the Shade and at Night: To which is Joined, a New Method of Examining the Accurate Degree of Salubrity of the Atmosphere}
+      \field{year}{1779}
+      \field{dateera}{ce}
+    \endentry
+    \entry{zhu_ephotosynthesis_2013}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e8a7549cacb8fd03a17007748738399b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xin‐Guang},
+           giveni={X\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0eafac73c07bf45598624558806c107}{%
+           family={Ort},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4469354fd9d89f3003587b2ee63cc123}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Stephen\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2db10e4c52561676f5b0a773cc18e20a}
+      \strng{fullhash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \strng{bibnamehash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \strng{authorbibnamehash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \strng{authornamehash}{2db10e4c52561676f5b0a773cc18e20a}
+      \strng{authorfullhash}{f16b32aab41c8b6e926bc5762e3c9a0f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{{ABSTRACTPhotosynthesis} is arguably the most researched of all plant processes. A dynamic model of leaf photosynthesis that includes each discrete process from light capture to carbohydrate synthesis,e‐photosynthesis, is described. It was developed by linking and extending our previous models of photosystem {II} ({PSII}) energy transfer and photosynthetic C3 carbon metabolism to include electron transfer processes around photosystem I ({PSI}), ion transfer between the lumen and stroma, {ATP} synthesis and {NADP} reduction to provide a complete representation. Different regulatory processes linking the light and dark reactions are also included: Rubisco activation via Rubisco activase, {pH} and xanthophyll cycle‐dependent non‐photochemical quenching mechanisms, as well as the regulation of enzyme activities via the ferredoxin‐theoredoxin system. Although many further feedback and feedforward controls undoubtedly exist, it is shown thate‐photosynthesis effectively mimics the typical kinetics of leaf {CO}2uptake, O2evolution, chlorophyll fluorescence emission, lumen and stromal {pH}, and membrane potential following perturbations in light, [{CO}2] and [O2] observed in intact C3 leaves. The model provides a framework for guiding engineering of improved photosynthetic efficiency, for evaluating multiple non‐invasive measures used in emerging phenomics facilities, and for quantitative assessment of strengths and weaknesses within the understanding of photosynthesis as an integrated process.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{note}{Publisher: Wiley}
+      \field{number}{9}
+      \field{shortjournal}{Plant Cell \& Environment}
+      \field{shorttitle}{\textit{e}‐photosynthesis}
+      \field{title}{\textit{e}‐photosynthesis: a comprehensive dynamic mechanistic model of C3 photosynthesis: from light capture to sucrose synthesis}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1711\bibrangedash 1727}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/pce.12025
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/QJYH8I4R/Zhu et al. - 2013 - e‐photosynthesis a comprehensive dynamic mechanistic model of C3 photosynthesis from light.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/pce.12025
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/pce.12025
+      \endverb
+    \endentry
+    \entry{hucka_systems_2003}{article}{}
+      \name{author}{43}{}{%
+        {{un=0,uniquepart=base,hash=b815ed5912efce36d6966309f612406b}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f376e491733fc48bdf3616089b5394b}{%
+           family={Finney},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=538dcf4c6c48bfee91f42a815633d34e}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5bc676b6622ab9f27ba77a8f5ce9d17a}{%
+           family={Bolouri},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a74964e0795d339fed69d7574247abd}{%
+           family={Doyle},
+           familyi={D\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b524b91ba10309ab4bc17202de3f683a}{%
+           family={Kitano},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e4ec55bf15bb85cd5389303da85834a}{%
+           family={Arkin},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de47df23036589b64c112f24755e7aa6}{%
+           family={Bornstein},
+           familyi={B\bibinitperiod},
+           given={B.\bibnamedelimi J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d967c984fc8d86e74608866eacb22d37}{%
+           family={Bray},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4f9cb312410033fdae99dc9241ac8bf}{%
+           family={Cornish-Bowden},
+           familyi={C\bibinithyphendelim B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5abe83885137f628b88c893a8128ad9}{%
+           family={Cuellar},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a16be28f78b61de1556d345380a9c07a}{%
+           family={Dronov},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=21654aa5e326d7b6921e51f59bbcc73b}{%
+           family={Gilles},
+           familyi={G\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f089cd1b7865d3f0fc3acbb7e8ae5ae}{%
+           family={Ginkel},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4281dbaa2586d64dae840de64bd78639}{%
+           family={Gor},
+           familyi={G\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e744c8828fe7d07caf0c227348b271a2}{%
+           family={Goryanin},
+           familyi={G\bibinitperiod},
+           given={I.\bibnamedelimi I.},
+           giveni={I\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aff669e320451c33cd9e0bdc9b91e528}{%
+           family={Hedley},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce5d7e95f72e2fe9b83114e925e98921}{%
+           family={Hodgman},
+           familyi={H\bibinitperiod},
+           given={T.\bibnamedelimi C.},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=faea0730333f02f3ab0d9846c3e06705}{%
+           family={Hofmeyr},
+           familyi={H\bibinitperiod},
+           given={J.-H.},
+           giveni={J\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7b0a0c2253277d04e5502f99c80eaa94}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={P.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc3bfe16d37f7cdf641555708274a2f1}{%
+           family={Juty},
+           familyi={J\bibinitperiod},
+           given={N.\bibnamedelimi S.},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=487b930873b724f48e9a7c6a42decd09}{%
+           family={Kasberger},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e11e62cb228a1d68240c7b9876a103b7}{%
+           family={Kremling},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d2a868fa9837fcefbe25c9b0a32087be}{%
+           family={Kummer},
+           familyi={K\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b944aad8d5180e389cd6a7b1b17b3dff}{%
+           family={Le\bibnamedelima Novère},
+           familyi={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d4244126970986c1e5154503d3707f6}{%
+           family={Loew},
+           familyi={L\bibinitperiod},
+           given={L.\bibnamedelimi M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccb0db6024a2c6cb83a6c160613d4d9e}{%
+           family={Lucio},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=15bad006371671ec5a577b7cbfb38d27}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0e8be824f2ec3e9f36cca162b042a9e9}{%
+           family={Minch},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c3c7efdce1fc38b1525830435deb877}{%
+           family={Mjolsness},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f834c4bcf8181bb5bddc5d72942bf40}{%
+           family={Nakayama},
+           familyi={N\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f46301f980e2cd5d195b89acb0b59ce}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={M.\bibnamedelimi R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6e245bc48ac6570c868de670d676e7fb}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={P.\bibnamedelimi F.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=99259b91fc59cba7863481844ceb53a5}{%
+           family={Sakurada},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=83912ba6dddfb9445369ba62763baa03}{%
+           family={Schaff},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=12ac89636adee7d3063c9f9be8ae66f1}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1505cc0c9ad24dea0bc1facd1952285c}{%
+           family={Shimizu},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f5232ff2f1045f0513d3b91e61ba3f0}{%
+           family={Spence},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi D.},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=793936a767ec080b6115f8ca168e6eef}{%
+           family={Stelling},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8bc87fd9a78a7d5203999be8022da4c}{%
+           family={Takahashi},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=14bee8d336130f88e263ebbe3c7d5433}{%
+           family={Tomita},
+           familyi={T\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f7e8e8b463eb9f6c33faebd6367a9696}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3702f1c146e64a6c91fc47b81ea59fc7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{fullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \strng{bibnamehash}{b7f6325021a93430960136669be0362c}
+      \strng{authorbibnamehash}{b7f6325021a93430960136669be0362c}
+      \strng{authornamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authorfullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Motivation: Molecular biotechnology now makes it possible to build elaborate systems models, but the systems biology community needs information standards if models are to be shared, evaluated and developed cooperatively. Results: We summarize the Systems Biology Markup Language ({SBML}) Level 1, a free, open, {XML}-based format for representing biochemical reaction networks. {SBML} is a software-independent language for describing models common to research in many areas of computational biology, including cell signaling pathways, metabolic pathways, gene regulation, and others. Availability: The specification of {SBML} Level 1 is freely available from http://www.sbml.org/ Contact: sysbio-team@caltech.edu * To whom correspondence should be addressed.}
+      \field{day}{1}
+      \field{issn}{1367-4811, 1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{note}{Publisher: Oxford University Press ({OUP})}
+      \field{number}{4}
+      \field{shorttitle}{The systems biology markup language ({SBML})}
+      \field{title}{The systems biology markup language ({SBML}): a medium forrepresentation and exchange of biochemical network models}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{19}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{524\bibrangedash 531}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btg015
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/bioinformatics/article/19/4/524/218599
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/bioinformatics/article/19/4/524/218599
+      \endverb
+    \endentry
+    \entry{malik-sheriff_biomodels15_2019}{article}{}
+      \name{author}{24}{}{%
+        {{un=0,uniquepart=base,hash=29982aa982c7a94227358bc68e0133af}{%
+           family={Malik-Sheriff},
+           familyi={M\bibinithyphendelim S\bibinitperiod},
+           given={Rahuman\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=26b7cd33e008135efb521b2944967572}{%
+           family={Glont},
+           familyi={G\bibinitperiod},
+           given={Mihai},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=69217092be08393ea564798b69bb05f9}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Tung\bibnamedelimb V\bibnamedelima N},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=72d96da796ed34664b54e744583e73a6}{%
+           family={Tiwari},
+           familyi={T\bibinitperiod},
+           given={Krishna},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d889292fd131541f5a8ae68ab8c68116}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={Matthew\bibnamedelima G},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37f520f184c21dd3006af769f9b2dc8d}{%
+           family={Xavier},
+           familyi={X\bibinitperiod},
+           given={Ashley},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0084e620d056b217024534b0a3f09cb6}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Manh\bibnamedelima T},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fcef334b6b94112caca3fc198f6c07b}{%
+           family={Men},
+           familyi={M\bibinitperiod},
+           given={Jinghao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91e6a7a3492da80f39257b670f93bebc}{%
+           family={Maire},
+           familyi={M\bibinitperiod},
+           given={Matthieu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8bfd2a128edfe1a579e767951a046f9d}{%
+           family={Kananathan},
+           familyi={K\bibinitperiod},
+           given={Sarubini},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a2fcadb5612762b61fbe6fa92f835d4f}{%
+           family={Fairbanks},
+           familyi={F\bibinitperiod},
+           given={Emma\bibnamedelima L},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=76e14cdbb74c6f6f8757f518cfebeec2}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Johannes\bibnamedelima P},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05d362c6aa56186e906c2db08f9b61f5}{%
+           family={Arankalle},
+           familyi={A\bibinitperiod},
+           given={Chinmay},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3a86813cc395cd24618e667c52213fa7}{%
+           family={Varusai},
+           familyi={V\bibinitperiod},
+           given={Thawfeek\bibnamedelima M},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c49a346c03c9914615fe6961f43817cb}{%
+           family={Knight-Schrijver},
+           familyi={K\bibinithyphendelim S\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=da32ce59ebe295c8c0c7b1e010237b74}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b06c13338432aea2a6a8f1cff3ca5ed3}{%
+           family={Dueñas-Roca},
+           familyi={D\bibinithyphendelim R\bibinitperiod},
+           given={Corina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=741a536a5cf838c8ae4b093123ce3308}{%
+           family={Dass},
+           familyi={D\bibinitperiod},
+           given={Gaurhari},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a5358660234d59ae2c33d6a0c42661e}{%
+           family={Keating},
+           familyi={K\bibinitperiod},
+           given={Sarah\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bca36f1209855115fe8372ed0428f2fc}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Young\bibnamedelima M},
+           giveni={Y\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97a152d54698a9992217a03f54398d8d}{%
+           family={Buso},
+           familyi={B\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9a1d4a9d6b7041a27739b4f6b4af4dd}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=46f3e48d5c3a1410b18eadac8585468d}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a1d11d1a0d9cd50b99cbb45fc204e933}{%
+           family={Hermjakob},
+           familyi={H\bibinitperiod},
+           given={Henning},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{fullhash}{9309269b8715884182c7dd969371f8d4}
+      \strng{bibnamehash}{4955e2349713aee34c3ac960eea3fa6d}
+      \strng{authorbibnamehash}{4955e2349713aee34c3ac960eea3fa6d}
+      \strng{authornamehash}{f2f3225af0aa8345f80d57350ae8fa1f}
+      \strng{authorfullhash}{9309269b8715884182c7dd969371f8d4}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{AbstractComputational} modelling has become increasingly common in life science research. To provide a platform to support universal sharing, easy accessibility and model reproducibility, {BioModels} (https://www.ebi.ac.uk/biomodels/), a repository for mathematical models, was established in 2005. The current {BioModels} platform allows submission of models encoded in diverse modelling formats, including {SBML}, {CellML}, {PharmML}, {COMBINE} archive, {MATLAB}, Mathematica, R, Python or C++. The models submitted to {BioModels} are curated to verify the computational representation of the biological process and the reproducibility of the simulation results in the reference publication. The curation also involves encoding models in standard formats and annotation with controlled vocabularies following {MIRIAM} (minimal information required in the annotation of biochemical models) guidelines. {BioModels} now accepts large-scale submission of auto-generated computational models. With gradual growth in content over 15 years, {BioModels} currently hosts about 2000 models from the published literature. With about 800 curated models, {BioModels} has become the world’s largest repository of curated models and emerged as the third most used data resource after {PubMed} and Google Scholar among the scientists who use modelling in their research. Thus, {BioModels} benefits modellers by providing access to reliable and semantically enriched curated models in standard formats that are easy to share, reproduce and reuse.}
+      \field{day}{8}
+      \field{issn}{0305-1048, 1362-4962}
+      \field{journaltitle}{Nucleic Acids Research}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{note}{Publisher: Oxford University Press ({OUP})}
+      \field{title}{{BioModels}—15 years of sharing computational models in life science}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/nar/gkz1055
+      \endverb
+      \verb{file}
+      \verb Full Text:/home/elouen/Zotero/storage/CA3WFNJR/Malik-Sheriff et al. - 2019 - BioModels—15 years of sharing computational models in life science.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz1055/5614569
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz1055/5614569
+      \endverb
+    \endentry
+    \entry{van_aalst_mxlpy_2025}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=4f76235a3348017a927865d10d198939}{%
+           family={Van\bibnamedelima Aalst},
+           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Marvin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d12364d4106e9d1d2a684be2aff9a054}{%
+           family={Nies},
+           familyi={N\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=659a2c45e097106c53a0febd0a5f0a79}{%
+           family={Pfennig},
+           familyi={P\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory}%
+      }
+      \strng{namehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{fullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{bibnamehash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{authorbibnamehash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{authornamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorfullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{AbstractSummaryRecent} advances in artificial intelligence have accelerated the adoption of {ML} in biology, enabling powerful predictive models across diverse applications. However, in scientific research, the need for interpretability and mechanistic insight remains crucial. To address this, we introduce {MxlPy}, a Python package that combines mechanistic modelling with {ML} to deliver explainable, data-informed solutions. {MxlPy} facilitates mechanistic learning, an emerging approach that integrates the transparency of mathematical models with the flexibility of data-driven methods. By streamlining tasks such as data integration, model formulation, output analysis, and surrogate modelling, {MxlPy} enhances the modelling experience without sacrificing interpretability. Designed for both computational biologists and interdisciplinary researchers, it supports the development of accurate, efficient, and explainable models, making it a valuable tool for advancing bioinformatics, systems biology, and biomedical research.{AvailabilityMxlPy} source code is freely available athttps://github.com/Computational-Biology-Aachen/{MxlPy}. The full documentation with features and examples can be found herehttps://computational-biology-aachen.github.io/{MxlPy}.}
+      \field{day}{10}
+      \field{month}{5}
+      \field{title}{{MxlPy} - Python Package for Mechanistic Learning in Life Science}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1101/2025.05.06.652335
+      \endverb
+      \verb{urlraw}
+      \verb http://biorxiv.org/lookup/doi/10.1101/2025.05.06.652335
+      \endverb
+      \verb{url}
+      \verb http://biorxiv.org/lookup/doi/10.1101/2025.05.06.652335
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

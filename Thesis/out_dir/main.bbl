@@ -19,6 +19,615 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{bellasioGeneralisedDynamicModel2019}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c2b6d8c6c271e5d6b6ed74d4b7c913d1}{%
+           family={Bellasio},
+           familyi={B\bibinitperiod},
+           given={Chandra},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{fullhash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{bibnamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{authorbibnamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{authornamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{authorfullhash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0166-8595, 1573-5079}
+      \field{journaltitle}{Photosynthesis Research}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{1}
+      \field{title}{A Generalised Dynamic Model of Leaf-Level {{C3}} Photosynthesis Combining Light and Dark Reactions with Stomatal Behaviour}
+      \field{urlday}{3}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{141}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{99\bibrangedash 118}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/s11120-018-0601-1
+      \endverb
+    \endentry
+    \entry{fuenteMathematicalModelSimulate2024}{article}{}
+      \name{author}{6}{}{%
+        {{hash=28d3e2fc360d8802816619fd3ca91a9c}{%
+           family={Fuente},
+           familyi={F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ca70c8ad8c1d96c31f54cd6582f7370f}{%
+           family={Orlando},
+           familyi={O\bibinitperiod},
+           given={Marcelo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fc12939209aa13d20ab9492317148b03}{%
+           family={Bailleul},
+           familyi={B\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6b279aeef4426caad2b2d5e115485646}{%
+           family={Jullien},
+           familyi={J\bibinitperiod},
+           given={Ludovic},
+           giveni={L\bibinitperiod}}}%
+        {{hash=836b8d0c7db9ec7711e1cd7cd699cc18}{%
+           family={Lazár},
+           familyi={L\bibinitperiod},
+           given={Dušan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=fff2981816b4d276966e1c467a899c34}{%
+           family={Nedbal},
+           familyi={N\bibinitperiod},
+           given={Ladislav},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{c914c3765d44d71fced66cc41b54642e}
+      \strng{fullhash}{bc020321fdc58273335a8d600ae9aaaf}
+      \strng{bibnamehash}{c914c3765d44d71fced66cc41b54642e}
+      \strng{authorbibnamehash}{c914c3765d44d71fced66cc41b54642e}
+      \strng{authornamehash}{c914c3765d44d71fced66cc41b54642e}
+      \strng{authorfullhash}{bc020321fdc58273335a8d600ae9aaaf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{09819428}
+      \field{journaltitle}{Plant Physiology and Biochemistry}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{title}{A Mathematical Model to Simulate the Dynamics of Photosynthetic Light Reactions under Harmonically Oscillating Light}
+      \field{urlday}{3}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{217}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{109138}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.plaphy.2024.109138
+      \endverb
+    \endentry
+    \entry{matuszynskaMathematicalModelNonphotochemical2016}{article}{}
+      \name{author}{4}{}{%
+        {{hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1dcaa257ee57cbe6b26592bd32f601e7}{%
+           family={Heidari},
+           familyi={H\bibinitperiod},
+           given={Somayyeh},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ba942574d568ac9ea28d19400142975c}{%
+           family={Jahns},
+           familyi={J\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c5225f689e33ff0b6a10ca12994762a9}{%
+           family={Ebenhöh},
+           familyi={E\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{fullhash}{f001a61b0fa18028008f57f7f0c9fdad}
+      \strng{bibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authorbibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authornamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authorfullhash}{f001a61b0fa18028008f57f7f0c9fdad}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00052728}
+      \field{journaltitle}{Biochimica et Biophysica Acta (BBA) - Bioenergetics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{A Mathematical Model of Non-Photochemical Quenching to Study Short-Term Light Memory in Plants}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{1857}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{1860\bibrangedash 1869}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.bbabio.2016.09.003
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/3HCBRNVR/Matuszyńska et al. - 2016 - A mathematical model of non-photochemical quenching to study short-term light memory in plants.pdf
+      \endverb
+    \endentry
+    \entry{saadatComputationalAnalysisAlternative2021}{article}{}
+      \name{author}{7}{}{%
+        {{hash=2a74656d89b5725d20933a71df067c97}{%
+           family={Saadat},
+           familyi={S\bibinitperiod},
+           given={Nima\bibnamedelima P.},
+           giveni={N\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=d12364d4106e9d1d2a684be2aff9a054}{%
+           family={Nies},
+           familyi={N\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4f76235a3348017a927865d10d198939}{%
+           family={Van\bibnamedelima Aalst},
+           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Marvin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cbce93bc7ed8a21ee7a507d3647dcc4d}{%
+           family={Hank},
+           familyi={H\bibinitperiod},
+           given={Brandon},
+           giveni={B\bibinitperiod}}}%
+        {{hash=ac74c458c6513067ee249fca3dd89f8c}{%
+           family={Demirtas},
+           familyi={D\bibinitperiod},
+           given={Büsra},
+           giveni={B\bibinitperiod}}}%
+        {{hash=c5225f689e33ff0b6a10ca12994762a9}{%
+           family={Ebenhöh},
+           familyi={E\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+        {{hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{941934626bb8b4fba1906f91c60bb1e0}
+      \strng{fullhash}{adbdf8bc2e96a20b165e0a6403d3fa93}
+      \strng{bibnamehash}{941934626bb8b4fba1906f91c60bb1e0}
+      \strng{authorbibnamehash}{941934626bb8b4fba1906f91c60bb1e0}
+      \strng{authornamehash}{941934626bb8b4fba1906f91c60bb1e0}
+      \strng{authorfullhash}{adbdf8bc2e96a20b165e0a6403d3fa93}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{During photosynthesis, organisms respond to their energy demand and ensure the supply of energy and redox equivalents that sustain metabolism. Hence, the photosynthetic apparatus can, and in fact should, be treated as an integrated supply-demand system. Any imbalance in the energy produced and consumed can lead to adverse reactions, such as the production of reactive oxygen species (ROS). Reaction centres of both photosystems are known sites of ROS production. Here, we investigate in particular the central role of Photosystem I (PSI) in this tightly regulated system. Using a computational approach we have expanded a previously published mechanistic model of C3 photosynthesis by including ROS producing and scavenging reactions around PSI. These include two water to water reactions mediated by Plastid terminal oxidase (PTOX) and Mehler and the ascorbate-glutathione (ASC-GSH) cycle, as a main non-enzymatic antioxidant. We have used this model to predict flux distributions through alternative electron pathways under various environmental stress conditions by systematically varying light intensity and enzymatic activity of key reactions. In particular, we studied the link between ROS formation and activation of pathways around PSI as potential scavenging mechanisms. This work shines light on the role of alternative electron pathways in photosynthetic acclimation and investigates the effect of environmental perturbations on PSI activity in the context of metabolic productivity.}
+      \field{issn}{1664-462X}
+      \field{journaltitle}{Frontiers in Plant Science}
+      \field{month}{10}
+      \field{title}{Computational {{Analysis}} of {{Alternative Photosynthetic Electron Flows Linked With Oxidative Stress}}}
+      \field{urlday}{3}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{12}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{750580}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fpls.2021.750580
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/6CTZSTUU/Saadat et al. - 2021 - Computational Analysis of Alternative Photosynthetic Electron Flows Linked With Oxidative Stress.pdf
+      \endverb
+    \endentry
+    \entry{nationalecologicalobservatorynetworkneonPhotosyntheticallyActiveRadiation2023}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=12f9ef353bff98502827ca11e137f337}{%
+           family={{National Ecological Observatory Network (NEON)}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {National Ecological Observatory Network (NEON)}%
+      }
+      \strng{namehash}{12f9ef353bff98502827ca11e137f337}
+      \strng{fullhash}{12f9ef353bff98502827ca11e137f337}
+      \strng{bibnamehash}{12f9ef353bff98502827ca11e137f337}
+      \strng{authorbibnamehash}{12f9ef353bff98502827ca11e137f337}
+      \strng{authornamehash}{12f9ef353bff98502827ca11e137f337}
+      \strng{authorfullhash}{12f9ef353bff98502827ca11e137f337}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Photosynthetically Active Radiation (PAR), available as one- and thirty-minute averages of 1 Hz observations. PAR represents the radiation at wavelengths between 400-700 nm (visible light), which constitutes the energy that drives photosynthesis. Latency: Data collected in any given month are published during the second full week of the following month.}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{shorttitle}{Photosynthetically Active Radiation ({{PAR}}) ({{DP1}}.00024.001)}
+      \field{title}{Photosynthetically Active Radiation ({{PAR}}) ({{DP1}}.00024.001): {{RELEASE-2023}}}
+      \field{urlday}{1}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{293.0 GB}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.48443/VZFH-7675
+      \endverb
+      \keyw{meteorological station,photosynthetic photon flux density (PPFD),photosynthetically active radiation (PAR),solar radiation,tower,tower profile}
+    \endentry
+    \entry{lunchNeonutilitiesPackageAccessing}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=98153d28e7a60a273813f049d49aa9c5}{%
+           family={Lunch},
+           familyi={L\bibinitperiod},
+           given={Claire},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{98153d28e7a60a273813f049d49aa9c5}
+      \strng{fullhash}{98153d28e7a60a273813f049d49aa9c5}
+      \strng{bibnamehash}{98153d28e7a60a273813f049d49aa9c5}
+      \strng{authorbibnamehash}{98153d28e7a60a273813f049d49aa9c5}
+      \strng{authornamehash}{98153d28e7a60a273813f049d49aa9c5}
+      \strng{authorfullhash}{98153d28e7a60a273813f049d49aa9c5}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{shorttitle}{Neonutilities}
+      \field{title}{Neonutilities: {{A}} Package for Accessing and Wrangling Data Generated and Published by the {{National Ecological Observatory Network}}.}
+      \field{urlday}{1}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/9SEYA3UF/NEON-utilities-python.html
+      \endverb
+    \endentry
+    \entry{philipPysunnoaaPythonImplementation}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=641d0b452f41e85651e26b57ecae8bad}{%
+           family={Philip},
+           familyi={P\bibinitperiod},
+           given={Santosh},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{641d0b452f41e85651e26b57ecae8bad}
+      \strng{fullhash}{641d0b452f41e85651e26b57ecae8bad}
+      \strng{bibnamehash}{641d0b452f41e85651e26b57ecae8bad}
+      \strng{authorbibnamehash}{641d0b452f41e85651e26b57ecae8bad}
+      \strng{authornamehash}{641d0b452f41e85651e26b57ecae8bad}
+      \strng{authorfullhash}{641d0b452f41e85651e26b57ecae8bad}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{shorttitle}{Pysunnoaa}
+      \field{title}{Pysunnoaa: Python Implementation of {{NOAA}}'s {{Solar Position Calculators}}}
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/9N7A4P6L/pysunnoaa.html
+      \endverb
+    \endentry
+    \entry{voncaemmererSteadystateModelsPhotosynthesis2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=dc57f9ad9eb869ccab6c25998f0b611f}{%
+           family={Von\bibnamedelima Caemmerer},
+           familyi={V\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Susanne},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{fullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{bibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authorbibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authornamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authorfullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract In the challenge to increase photosynthetic rate per leaf area mathematical models of photosynthesis can be used to help interpret gas exchange measurements made under different environmental conditions and predict underlying photosynthetic biochemistry. To do this successfully it is important to improve the modelling of temperature dependencies of CO 2 assimilation and gain better understanding of internal CO 2 diffusion limitations. Despite these shortcomings steady-state models of photosynthesis provide simple easy to use tools for thought experiments to explore photosynthetic pathway changes such as redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared. , In the challenge to increase photosynthetic rate per leaf area steady state models of photosynthesis provide not only tools for gas exchange analysis but also for thought experiments that can explore photosynthetic pathway changes. These include redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{title}{Steady-state Models of Photosynthesis}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{1617\bibrangedash 1630}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/pce.12098
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/S3CNFDHV/Von Caemmerer - 2013 - Steady‐state models of photosynthesis.pdf
+      \endverb
+    \endentry
+    \entry{laiskC3PhotosynthesisSilico2007}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6830215f94122e7c4935ce8e331cda5d}{%
+           family={Laisk},
+           familyi={L\bibinitperiod},
+           given={Agu},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2b1200f9cebe1f6e844f3c40097385cb}{%
+           family={Eichelmann},
+           familyi={E\bibinitperiod},
+           given={Hillar},
+           giveni={H\bibinitperiod}}}%
+        {{hash=49e9b07e82af2b9b1796fa66c9b184fd}{%
+           family={Oja},
+           familyi={O\bibinitperiod},
+           given={Vello},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{ea1270bd441f7908baabb0e8fe944821}
+      \strng{fullhash}{ea1270bd441f7908baabb0e8fe944821}
+      \strng{bibnamehash}{ea1270bd441f7908baabb0e8fe944821}
+      \strng{authorbibnamehash}{ea1270bd441f7908baabb0e8fe944821}
+      \strng{authornamehash}{ea1270bd441f7908baabb0e8fe944821}
+      \strng{authorfullhash}{ea1270bd441f7908baabb0e8fe944821}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0166-8595, 1573-5079}
+      \field{journaltitle}{Photosynthesis Research}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{C3 Photosynthesis in Silico}
+      \field{urlday}{1}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{90}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{45\bibrangedash 66}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1007/s11120-006-9109-1
+      \endverb
+    \endentry
+    \entry{sanderCompilationHenrysLaw2023}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2a00b963a7c8e6cc25a66979c69be35d}{%
+           family={Sander},
+           familyi={S\bibinitperiod},
+           given={Rolf},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a00b963a7c8e6cc25a66979c69be35d}
+      \strng{fullhash}{2a00b963a7c8e6cc25a66979c69be35d}
+      \strng{bibnamehash}{2a00b963a7c8e6cc25a66979c69be35d}
+      \strng{authorbibnamehash}{2a00b963a7c8e6cc25a66979c69be35d}
+      \strng{authornamehash}{2a00b963a7c8e6cc25a66979c69be35d}
+      \strng{authorfullhash}{2a00b963a7c8e6cc25a66979c69be35d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract. Many atmospheric chemicals occur in the gas phase as well as in liquid cloud droplets and aerosol particles. Therefore, it is necessary to understand their distribution between the phases. According to Henry's law, the equilibrium ratio between the abundances in the gas phase and in the aqueous phase is constant for a dilute solution. Henry's law constants of trace gases of potential importance in environmental chemistry have been collected and converted into a uniform format. The compilation contains 46 434 values of Henry's law constants for 10 173 species, collected from 995 references. It is also available on the internet at https://www.henrys-law.org (last access: October 2023). This article is a living review that supersedes the now obsolete publication by Sander (2015).}
+      \field{issn}{1680-7324}
+      \field{journaltitle}{Atmospheric Chemistry and Physics}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{19}
+      \field{title}{Compilation of {{Henry}}'s Law Constants (Version 5.0.0) for Water as Solvent}
+      \field{urlday}{1}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{23}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{10901\bibrangedash 12440}
+      \range{pages}{1540}
+      \verb{doi}
+      \verb 10.5194/acp-23-10901-2023
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/AMIGGJT2/Sander - 2023 - Compilation of Henry's law constants (version 5.0.0) for water as solvent.pdf
+      \endverb
+    \endentry
+    \entry{vonbismarckLightAcclimationInteracts2023}{article}{}
+      \name{author}{14}{}{%
+        {{hash=b6b18c906e8d61d39cbc04ee88fd4489}{%
+           family={Von\bibnamedelima Bismarck},
+           familyi={V\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Thekla},
+           giveni={T\bibinitperiod}}}%
+        {{hash=be4231a229cba97092ee7b908c220ca5}{%
+           family={Korkmaz},
+           familyi={K\bibinitperiod},
+           given={Kübra},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b2d080f4c28ce6bf6b63303471e3a29a}{%
+           family={Ru{ß}},
+           familyi={R\bibinitperiod},
+           given={Jeremy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e8df15a894efd49e663672b653ad285d}{%
+           family={Skurk},
+           familyi={S\bibinitperiod},
+           given={Kira},
+           giveni={K\bibinitperiod}}}%
+        {{hash=19547aed00658d2fb4a1403ed85bdeae}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Elias},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d48b729fb1d6af04cfcdf0fd48935e0a}{%
+           family={Correa\bibnamedelima Galvis},
+           familyi={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Viviana},
+           giveni={V\bibinitperiod}}}%
+        {{hash=b4b01ef1322908e16e1701f6b115f6b6}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={Jeffrey\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6104dcd1b6cab4e80a1748eabfe50a87}{%
+           family={Strand},
+           familyi={S\bibinitperiod},
+           given={Deserah\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=df37b531f8ef41c997aaabe57215ca2c}{%
+           family={Köhl},
+           familyi={K\bibinitperiod},
+           given={Karin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b102835341b0a5cb77b439ae8b1b2bed}{%
+           family={Eirich},
+           familyi={E\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=60f327ba691ac4fc822aec65fb553572}{%
+           family={Finkemeier},
+           familyi={F\bibinitperiod},
+           given={Iris},
+           giveni={I\bibinitperiod}}}%
+        {{hash=ba942574d568ac9ea28d19400142975c}{%
+           family={Jahns},
+           familyi={J\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7f3d9ece9653f447e39d0cc6494ab286}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a6c593dd14914fe86d382244cd571424}{%
+           family={Armbruster},
+           familyi={A\bibinitperiod},
+           given={Ute},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{c195289b34747b97619b3e7cfad61803}
+      \strng{fullhash}{ce0d3912fcabcecddc64431d363e35a4}
+      \strng{bibnamehash}{c195289b34747b97619b3e7cfad61803}
+      \strng{authorbibnamehash}{c195289b34747b97619b3e7cfad61803}
+      \strng{authornamehash}{c195289b34747b97619b3e7cfad61803}
+      \strng{authorfullhash}{ce0d3912fcabcecddc64431d363e35a4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Summary Understanding photosynthesis in natural, dynamic light environments requires knowledge of long-term acclimation, short-term responses, and their mechanistic interactions. To approach the latter, we systematically determined and characterized light-environmental effects on thylakoid ion transport-mediated short-term responses during light fluctuations. For this, Arabidopsis thaliana wild-type and mutants of the Cl - channel VCCN1 and the K + exchange antiporter KEA3 were grown under eight different light environments and characterized for photosynthesis-associated parameters and factors in steady state and during light fluctuations. For a detailed characterization of selected light conditions, we monitored ion flux dynamics at unprecedented high temporal resolution by a modified spectroscopy approach. Our analyses reveal that daily light intensity sculpts photosynthetic capacity as a main acclimatory driver with positive and negative effects on the function of KEA3 and VCCN1 during high-light phases, respectively. Fluctuations in light intensity boost the accumulation of the photoprotective pigment zeaxanthin (Zx). We show that KEA3 suppresses Zx accumulation during the day, which together with its direct proton transport activity accelerates photosynthetic transition to lower light intensities. In summary, both light-environment factors, intensity and variability, modulate the function of thylakoid ion transport in dynamic photosynthesis with distinct effects on lumen pH, Zx accumulation, photoprotection, and photosynthetic efficiency.}
+      \field{issn}{0028-646X, 1469-8137}
+      \field{journaltitle}{New Phytologist}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Light Acclimation Interacts with Thylakoid Ion Transport to Govern the Dynamics of Photosynthesis in {{Arabidopsis}}}
+      \field{urlday}{1}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{237}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{160\bibrangedash 176}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/nph.18534
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/KYCMRACA/Von Bismarck et al. - 2023 - Light acclimation interacts with thylakoid ion transport to govern the dynamics of photosynthesis in.pdf
+      \endverb
+    \endentry
+    \entry{newvilleLMFITNonLinearLeastSquares2025}{misc}{}
+      \name{author}{9}{}{%
+        {{hash=60eb67cc225c58ee93309a22b68a3776}{%
+           family={Newville},
+           familyi={N\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=93eded467362a8cd4c21beba3241ec4e}{%
+           family={Otten},
+           familyi={O\bibinitperiod},
+           given={Renee},
+           giveni={R\bibinitperiod}}}%
+        {{hash=462884b594079727b08caef52f52dbc9}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=dfabb44e56626079a667aa417d0be276}{%
+           family={Stensitzki},
+           familyi={S\bibinitperiod},
+           given={Till},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b3544e37e93fe37857a95bcd9123b084}{%
+           family={Ingargiola},
+           familyi={I\bibinitperiod},
+           given={Antonino},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bd8012c08b56f00c9e5dd391dfedc2b3}{%
+           family={Allan},
+           familyi={A\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5a89059e007ab5ba3b752ddd556c99fd}{%
+           family={Fox},
+           familyi={F\bibinitperiod},
+           given={Austin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0ce20e877865880f0c63db03c27576aa}{%
+           family={Carter},
+           familyi={C\bibinitperiod},
+           given={Faustin},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ec3d43ebb42cbb3973f491714378c6d0}{%
+           family={Rawlik},
+           familyi={R\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d0edb7062599196080d69e60ff0afa0}
+      \strng{fullhash}{1d82fda01aece33a807ea138c37443bc}
+      \strng{bibnamehash}{7d0edb7062599196080d69e60ff0afa0}
+      \strng{authorbibnamehash}{7d0edb7062599196080d69e60ff0afa0}
+      \strng{authornamehash}{7d0edb7062599196080d69e60ff0afa0}
+      \strng{authorfullhash}{1d82fda01aece33a807ea138c37443bc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Mostly maintenance and small bug fixes: capture and ignore std\_dev=0 warnings from uncertainties package better ensure that parameter values and sterr are floats, not np.floats fix Doniach formula in docstring (\#966) add bose and fermi lineshapes, and BoseModel and FermiModel (with tests) remove deprecated disp argument for ampgo fix typos in README.rst fix typos in doc update to latest SciPy/NumPy version update pre-commit and CI hooks update zenodo link several fixes for deprecations and test failures do not test for warnings from upstream code that might change or be suppressed or altered update license name for PyPI compatibiilty}
+      \field{howpublished}{Zenodo}
+      \field{month}{7}
+      \field{shorttitle}{{{LMFIT}}}
+      \field{title}{{{LMFIT}}: {{Non-Linear Least-Squares Minimization}} and {{Curve-Fitting}} for {{Python}}}
+      \field{urlday}{2}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.5281/ZENODO.598352
+      \endverb
+    \endentry
     \entry{vanaalstMxlPyPythonPackage2025}{misc}{}
       \name{author}{4}{}{%
         {{hash=4f76235a3348017a927865d10d198939}{%
@@ -69,8 +678,8 @@
       \endverb
     \endentry
     \entry{LatexifypyGeneratesLaTeX}{misc}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{shorttitle}
       \field{shorttitle}{Latexify-Py}
       \field{title}{Latexify-Py: {{Generates LaTeX}} Math Description from {{Python}} Functions.}

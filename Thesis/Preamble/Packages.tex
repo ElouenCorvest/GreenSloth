@@ -8,8 +8,6 @@
   \renewcommand{\lstlistlistingname}{List of Code-Blocks}%
 }
 
-
-
 \usepackage{csquotes,xpatch}% recommended
 \usepackage[backend=biber, citestyle = numeric-comp, sorting=none, url=false, date=year]{biblatex}
 \addbibresource[]{GreenSloth.bib}
@@ -22,7 +20,6 @@
 \usepackage{upgreek} %non-italic greek symbols
 \usepackage{stmaryrd} %lightning symbol
 \usepackage{lipsum}
-
 
 %Format packages
 \usepackage[a4paper,left=12.5mm,right=12.5mm,top=20mm,bottom=25mm]{geometry} %Sets the margin to a nice format
@@ -94,10 +91,6 @@
 \usepackage[toc,page]{appendix}
 \usepackage[framemethod=TikZ]{mdframed}
 
-%Acronyms
-\usepackage[toc=false,nopostdot=false]{glossaries-extra}
-\input{Preamble/Acronyms.tex}
-\input{Preamble/Variables.tex}
 \usepackage{supertabular}
 \usepackage{array}
 
@@ -107,6 +100,9 @@
 
 %Math tools
 \usepackage{mathtools}
+\usepackage{siunitx}
+\DeclareSIUnit[quantity-product = {}]
+    \molar{\text{M}}
 
 %Tables
 \usepackage{booktabs}
@@ -119,3 +115,17 @@
 %Ref package
 \usepackage[hidelinks]{hyperref}
 \usepackage{nameref}
+
+%Acronyms
+\usepackage[toc=false,nopostdot=false,abbreviations,nonumberlist]{glossaries-extra}
+\newglossary*{variable}{List of Variables}
+\newglossary[hls]{hidden}{hid}{hio}{Hidden Glossary}
+\setabbreviationstyle[variable]{long-short}
+\glssetcategoryattribute{species}{regular}{false}
+\glssetcategoryattribute{species}{italic}{true}
+\glssetcategoryattribute{plant}{noindex}{true}
+\setabbreviationstyle[species]{long-only-short-only}
+\makeglossaries
+\input{Preamble/Acronyms.tex}
+\input{Preamble/Variables.tex}
+\input{Preamble/Species.tex}

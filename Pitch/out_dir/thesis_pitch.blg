@@ -1,0 +1,19 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'out_dir/thesis_pitch.blg'
+[33] biber:340> INFO - === Mon Feb  2, 2026, 08:42:24
+[41] Biber.pm:419> INFO - Reading 'out_dir/thesis_pitch.bcf'
+[72] Biber.pm:979> INFO - Found 8 citekeys in bib section 0
+[80] Biber.pm:4419> INFO - Processing section 0
+[85] Biber.pm:4610> INFO - Looking for bibtex file 'Preamble/GreenSloth.bib' for section 0
+[86] bibtex.pm:1713> INFO - LaTeX decoding ...
+[102] bibtex.pm:1519> INFO - Found BibTeX data source 'Preamble/GreenSloth.bib'
+[183] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[183] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[183] Biber.pm:4239> INFO - Sorting list 'none/apasortcite//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[183] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[194] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[194] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[194] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[194] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[200] bbl.pm:660> INFO - Writing 'out_dir/thesis_pitch.bbl' with encoding 'UTF-8'
+[213] bbl.pm:763> INFO - Output to out_dir/thesis_pitch.bbl

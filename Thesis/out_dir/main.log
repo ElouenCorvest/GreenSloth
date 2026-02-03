@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  29 JAN 2026 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  3 FEB 2026 16:36
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/main.tex
+**/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/main
 (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -510,14 +510,14 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count433
 \c@continuedfloat=\count434
 )
-Package caption Info: Option `declare type' requires the `newfloat' package on input line 31.
+Package caption Info: Option `declare type' requires the `newfloat' package on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/newfloat/newfloat.sty
 Package: newfloat 2023/10/01 v1.2 Defining new floating environments (AR)
 )
-Package newfloat Info: New float `Atable' with options `' on input line 31.
+Package newfloat Info: New float `Atable' with options `' on input line 28.
 \c@Atable=\count435
 \newfloat@ftype=\count436
-Package newfloat Info: float type `Atable'=8 on input line 31.
+Package newfloat Info: float type `Atable'=8 on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
@@ -646,9 +646,9 @@ File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
-Package newfloat Info: New float `dirset' with options `' on input line 50.
+Package newfloat Info: New float `dirset' with options `' on input line 47.
 \c@dirset=\count457
-Package newfloat Info: float type `dirset'=16 on input line 50.
+Package newfloat Info: float type `dirset'=16 on input line 47.
  (/usr/share/texlive/texmf-dist/tex/generic/dirtree/dirtree.sty
 Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
  (/usr/share/texlive/texmf-dist/tex/generic/dirtree/dirtree.tex `dirtree' v0.32, 2012/12/11 (jcc)
@@ -968,301 +968,205 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 \c@mdf@env@ii=\count491
 \c@mdf@zref@counter=\count492
 Package zref Info: New property: mdf@pagevalue on input line 895.
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
-Package: glossaries-extra 2023/09/29 v1.53 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks41
-\XKV@tempa@toks=\toks42
-)
-\XKV@depth=\count493
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
-Package: glossaries 2023/09/29 v4.53 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
-Package: mfirstuc 2022/10/14 v2.08 (NLCT)
-\@glsmfirst=\toks43
-\@glsmrest=\toks44
-) (/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty
-Package: xfor 2009/02/05 v1.05 (NLCT)
-) (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
-Package: datatool-base 2019/09/27 v2.32 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
-Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count494
-) (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
-Package: datatool-fp 2019/09/27 v2.32 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
-Package: fp 1995/04/02
- `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
-Package: defpattern 1994/10/12
-\actioncount=\count495
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
-Package: fp-basic 1996/05/13
-\FP@xs=\count496
-\FP@xia=\count497
-\FP@xib=\count498
-\FP@xfa=\count499
-\FP@xfb=\count500
-\FP@rega=\count501
-\FP@regb=\count502
-\FP@regs=\count503
-\FP@times=\count504
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
-Package: fp-addons 1995/03/15
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
-Package: fp-snap 1995/04/05
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
-Package: fp-exp 1995/04/03
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
-Package: fp-trigo 1995/04/14
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
-Package: fp-pas 1994/08/29
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
-Package: fp-random 1995/02/23
-\FPseed=\count505
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
-Package: fp-eqn 1995/04/03
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
-Package: fp-upn 1996/10/21
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
-Package: fp-eval 1995/04/03
-)))
-\@dtl@toks=\toks45
-\@dtl@tmpcount=\count506
-\dtl@tmplength=\skip167
-\dtl@sortresult=\count507
-\@dtl@numgrpsepcount=\count508
-\@dtl@datatype=\count509
-\dtl@codeA=\count510
-\dtl@codeB=\count511
-\@dtl@foreach@level=\count512
-) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
-Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
- (/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-german/glossaries-german.ldf
-File: glossaries-german.ldf 2014/11/23 v1.0
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-english/glossaries-english.ldf
-File: glossaries-english.ldf 2014/11/23 v1.0
-)
-\gls@level=\count513
-\@gls@tmpb=\toks46
-\gls@tmplen=\skip168
-\glskeylisttok=\toks47
-\glslabeltok=\toks48
-\glsshorttok=\toks49
-\glslongtok=\toks50
- (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
-Package: glossary-hypernav 2023/09/29 v4.53 (NLCT)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
-Package: glossary-list 2023/09/29 v4.53 (NLCT)
-\glslistdottedwidth=\skip169
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
-Package: glossary-long 2023/09/29 v4.53 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
-\LTleft=\skip170
-\LTright=\skip171
-\LTpre=\skip172
-\LTpost=\skip173
-\LTchunksize=\count514
-\LTcapwidth=\dimen305
-\LT@head=\box120
-\LT@firsthead=\box121
-\LT@foot=\box122
-\LT@lastfoot=\box123
-\LT@gbox=\box124
-\LT@cols=\count515
-\LT@rows=\count516
-\c@LT@tables=\count517
-\c@LT@chunks=\count518
-\LT@p@ftn=\toks51
-)
-\glsdescwidth=\skip174
-\glspagelistwidth=\skip175
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
-Package: glossary-super 2023/09/29 v4.53 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
-\c@tracingst=\count519
-\ST@wd=\dimen306
-\ST@rightskip=\skip176
-\ST@leftskip=\skip177
-\ST@parfillskip=\skip178
-\ST@pageleft=\dimen307
-\ST@headht=\dimen308
-\ST@tailht=\dimen309
-\ST@pagesofar=\dimen310
-\ST@pboxht=\dimen311
-\ST@lineht=\dimen312
-\ST@prevht=\dimen313
-\ST@toadd=\dimen314
-\ST@dimen=\dimen315
-\ST@pbox=\box125
-)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
-Package: glossary-tree 2023/09/29 v4.53 (NLCT)
-\glstreeindent=\skip179
-))
-\@glsxtr@leveloffset=\count520
-\glsxtrresourcecount=\count521
-\@glsxtrnewgls@inner=\count522
-\glsshortpltok=\toks52
-\glslongpltok=\toks53
- (/usr/share/texlive/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def
-File: glossaries-extra-abbrstyles.def 2023/06/28 v1.52 (NLCT)
-)
-\mglselementindex=\count523
-) (./Preamble/Acronyms.tex) (./Preamble/Variables.tex) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+\c@tracingst=\count493
+\ST@wd=\dimen305
+\ST@rightskip=\skip167
+\ST@leftskip=\skip168
+\ST@parfillskip=\skip169
+\ST@pageleft=\dimen306
+\ST@headht=\dimen307
+\ST@tailht=\dimen308
+\ST@pagesofar=\dimen309
+\ST@pboxht=\dimen310
+\ST@lineht=\dimen311
+\ST@prevht=\dimen312
+\ST@toadd=\dimen313
+\ST@dimen=\dimen314
+\ST@pbox=\box120
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen316
-\ar@mcellbox=\box126
-\extrarowheight=\dimen317
-\NC@list=\toks54
-\extratabsurround=\skip180
-\backup@length=\skip181
-\ar@cellbox=\box127
+\col@sep=\dimen315
+\ar@mcellbox=\box121
+\extrarowheight=\dimen316
+\NC@list=\toks41
+\extratabsurround=\skip170
+\backup@length=\skip171
+\ar@cellbox=\box122
 ) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
  (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count524
-\l_MT_multwidth_dim=\dimen318
-\origjot=\skip182
-\l_MT_shortvdotswithinadjustabove_dim=\dimen319
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen320
-\l_MT_above_intertext_sep=\dimen321
-\l_MT_below_intertext_sep=\dimen322
-\l_MT_above_shortintertext_sep=\dimen323
-\l_MT_below_shortintertext_sep=\dimen324
-\xmathstrut@box=\box128
-\xmathstrut@dim=\dimen325
+\g_MT_multlinerow_int=\count494
+\l_MT_multwidth_dim=\dimen317
+\origjot=\skip172
+\l_MT_shortvdotswithinadjustabove_dim=\dimen318
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen319
+\l_MT_above_intertext_sep=\dimen320
+\l_MT_below_intertext_sep=\dimen321
+\l_MT_above_shortintertext_sep=\dimen322
+\l_MT_below_shortintertext_sep=\dimen323
+\xmathstrut@box=\box123
+\xmathstrut@dim=\dimen324
+) (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2024-01-25 v3.3.10 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count495
+\l__siunitx_number_exponent_fixed_int=\count496
+\l__siunitx_number_min_decimal_int=\count497
+\l__siunitx_number_min_integer_int=\count498
+\l__siunitx_number_round_precision_int=\count499
+\l__siunitx_number_lower_threshold_int=\count500
+\l__siunitx_number_upper_threshold_int=\count501
+\l__siunitx_number_group_first_int=\count502
+\l__siunitx_number_group_size_int=\count503
+\l__siunitx_number_group_minimum_int=\count504
+\l__siunitx_angle_tmp_dim=\dimen325
+\l__siunitx_angle_marker_box=\box124
+\l__siunitx_angle_unit_box=\box125
+\l__siunitx_compound_count_int=\count505
+ (/usr/share/texlive/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+)
+\l__siunitx_table_tmp_box=\box126
+\l__siunitx_table_tmp_dim=\dimen326
+\l__siunitx_table_column_width_dim=\dimen327
+\l__siunitx_table_integer_box=\box127
+\l__siunitx_table_decimal_box=\box128
+\l__siunitx_table_uncert_box=\box129
+\l__siunitx_table_before_box=\box130
+\l__siunitx_table_after_box=\box131
+\l__siunitx_table_before_dim=\dimen328
+\l__siunitx_table_carry_dim=\dimen329
+\l__siunitx_unit_tmp_int=\count506
+\l__siunitx_unit_position_int=\count507
+\l__siunitx_unit_total_int=\count508
 ) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen326
-\lightrulewidth=\dimen327
-\cmidrulewidth=\dimen328
-\belowrulesep=\dimen329
-\belowbottomsep=\dimen330
-\aboverulesep=\dimen331
-\abovetopsep=\dimen332
-\cmidrulesep=\dimen333
-\cmidrulekern=\dimen334
-\defaultaddspace=\dimen335
-\@cmidla=\count525
-\@cmidlb=\count526
-\@aboverulesep=\dimen336
-\@belowrulesep=\dimen337
-\@thisruleclass=\count527
-\@lastruleclass=\count528
-\@thisrulewidth=\dimen338
+\heavyrulewidth=\dimen330
+\lightrulewidth=\dimen331
+\cmidrulewidth=\dimen332
+\belowrulesep=\dimen333
+\belowbottomsep=\dimen334
+\aboverulesep=\dimen335
+\abovetopsep=\dimen336
+\cmidrulesep=\dimen337
+\cmidrulekern=\dimen338
+\defaultaddspace=\dimen339
+\@cmidla=\count509
+\@cmidlb=\count510
+\@aboverulesep=\dimen340
+\@belowrulesep=\dimen341
+\@thisruleclass=\count511
+\@lastruleclass=\count512
+\@thisrulewidth=\dimen342
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen339
-\TX@old@table=\dimen340
-\TX@old@col=\dimen341
-\TX@target=\dimen342
-\TX@delta=\dimen343
-\TX@cols=\count529
-\TX@ftn=\toks55
+\TX@col@width=\dimen343
+\TX@old@table=\dimen344
+\TX@old@col=\dimen345
+\TX@target=\dimen346
+\TX@delta=\dimen347
+\TX@cols=\count513
+\TX@ftn=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip183
-\multirow@cntb=\count530
-\multirow@dima=\skip184
-\bigstrutjot=\dimen344
+\multirow@colwidth=\skip173
+\multirow@cntb=\count514
+\multirow@dima=\skip174
+\bigstrutjot=\dimen348
 ) (/usr/share/texlive/texmf-dist/tex/latex/tabularray/tabularray.sty
 Package: tabularray 2023-03-01 v2023A Typeset tabulars and arrays with LaTeX3
-\l__tblr_a_int=\count531
-\l__tblr_c_int=\count532
-\l__tblr_r_int=\count533
-\l__tblr_d_dim=\dimen345
-\l__tblr_h_dim=\dimen346
-\l__tblr_o_dim=\dimen347
-\l__tblr_p_dim=\dimen348
-\l__tblr_q_dim=\dimen349
-\l__tblr_r_dim=\dimen350
-\l__tblr_s_dim=\dimen351
-\l__tblr_t_dim=\dimen352
-\l__tblr_v_dim=\dimen353
-\l__tblr_w_dim=\dimen354
-\l__tblr_a_box=\box129
-\l__tblr_b_box=\box130
-\l__tblr_c_box=\box131
-\l__tblr_d_box=\box132
-\g__tblr_table_count_int=\count534
-\c@rownum=\count535
-\c@colnum=\count536
-\c@rowcount=\count537
-\c@colcount=\count538
-\abovesep=\dimen355
-\belowsep=\dimen356
-\leftsep=\dimen357
-\rightsep=\dimen358
-\g_tblr_level_int=\count539
-\g__tblr_data_row_key_count_int=\count540
-\g__tblr_data_column_key_count_int=\count541
-\g__tblr_data_cell_key_count_int=\count542
-\g__tblr_array_int=\count543
-\l__tblr_key_count_int=\count544
-\l__tblr_key_quotient_int=\count545
-\l__tblr_key_quotient_two_int=\count546
-\l__tblr_key_remainder_int=\count547
-\g__tblr_data_str_value_count_int=\count548
-\rulewidth=\dimen359
-\l__tblr_strut_dp_dim=\dimen360
-\l__tblr_strut_ht_dim=\dimen361
-\g__tblr_cell_wd_dim=\dimen362
-\g__tblr_cell_ht_dim=\dimen363
-\g__tblr_cell_head_dim=\dimen364
-\g__tblr_cell_foot_dim=\dimen365
-\l__column_target_dim=\dimen366
-\l__tblr_caption_box=\box133
-\l__tblr_caption_left_box=\box134
-\l__tblr_row_head_box=\box135
-\l__tblr_row_foot_box=\box136
-\l__tblr_row_head_foot_dim=\dimen367
-\tablewidth=\dimen368
-\l__tblr_table_firsthead_box=\box137
-\l__tblr_table_middlehead_box=\box138
-\l__tblr_table_lasthead_box=\box139
-\l__tblr_table_firstfoot_box=\box140
-\l__tblr_table_middlefoot_box=\box141
-\l__tblr_table_lastfoot_box=\box142
-\l__tblr_remain_height_dim=\dimen369
-\l__tblr_long_from_int=\count549
-\l__tblr_long_to_int=\count550
-\l__tblr_curr_i_int=\count551
-\l__tblr_prev_i_int=\count552
-\l__tblr_table_page_int=\count553
-\l__tblr_table_head_box=\box143
-\l__tblr_table_foot_box=\box144
-\l__tblr_table_head_foot_dim=\dimen370
-\l__tblr_table_head_body_foot_dim=\dimen371
-\l__tblr_table_box=\box145
-\l__tblr_table_hlines_box=\box146
-\l__tblr_hline_box=\box147
-\l__tblr_row_box=\box148
-\l__tblr_col_o_wd_dim=\dimen372
-\l__tblr_col_b_wd_dim=\dimen373
-\l__tblr_hline_leftskip_dim=\dimen374
-\l__tblr_hline_rightskip_dim=\dimen375
-\l__tblr_row_ht_dim=\dimen376
-\l__tblr_row_dp_dim=\dimen377
-\l__tblr_row_abovesep_dim=\dimen378
-\l__tblr_row_belowsep_dim=\dimen379
-\l__tblr_row_vlines_box=\box149
-\l__tblr_vline_box=\box150
-\l__tblr_cell_box=\box151
-\l__row_upper_dim=\dimen380
-\l__row_lower_dim=\dimen381
-\l__row_vpace_dim=\dimen382
-\l__tblr_vline_aboveskip_dim=\dimen383
-\l__tblr_vline_belowskip_dim=\dimen384
-\l__tblr_cell_wd_dim=\dimen385
-\l__tblr_cell_ht_dim=\dimen386
-\l__tblr_diag_box=\box152
+\l__tblr_a_int=\count515
+\l__tblr_c_int=\count516
+\l__tblr_r_int=\count517
+\l__tblr_d_dim=\dimen349
+\l__tblr_h_dim=\dimen350
+\l__tblr_o_dim=\dimen351
+\l__tblr_p_dim=\dimen352
+\l__tblr_q_dim=\dimen353
+\l__tblr_r_dim=\dimen354
+\l__tblr_s_dim=\dimen355
+\l__tblr_t_dim=\dimen356
+\l__tblr_v_dim=\dimen357
+\l__tblr_w_dim=\dimen358
+\l__tblr_a_box=\box132
+\l__tblr_b_box=\box133
+\l__tblr_c_box=\box134
+\l__tblr_d_box=\box135
+\g__tblr_table_count_int=\count518
+\c@rownum=\count519
+\c@colnum=\count520
+\c@rowcount=\count521
+\c@colcount=\count522
+\abovesep=\dimen359
+\belowsep=\dimen360
+\leftsep=\dimen361
+\rightsep=\dimen362
+\g_tblr_level_int=\count523
+\g__tblr_data_row_key_count_int=\count524
+\g__tblr_data_column_key_count_int=\count525
+\g__tblr_data_cell_key_count_int=\count526
+\g__tblr_array_int=\count527
+\l__tblr_key_count_int=\count528
+\l__tblr_key_quotient_int=\count529
+\l__tblr_key_quotient_two_int=\count530
+\l__tblr_key_remainder_int=\count531
+\g__tblr_data_str_value_count_int=\count532
+\rulewidth=\dimen363
+\l__tblr_strut_dp_dim=\dimen364
+\l__tblr_strut_ht_dim=\dimen365
+\g__tblr_cell_wd_dim=\dimen366
+\g__tblr_cell_ht_dim=\dimen367
+\g__tblr_cell_head_dim=\dimen368
+\g__tblr_cell_foot_dim=\dimen369
+\l__column_target_dim=\dimen370
+\l__tblr_caption_box=\box136
+\l__tblr_caption_left_box=\box137
+\l__tblr_row_head_box=\box138
+\l__tblr_row_foot_box=\box139
+\l__tblr_row_head_foot_dim=\dimen371
+\tablewidth=\dimen372
+\l__tblr_table_firsthead_box=\box140
+\l__tblr_table_middlehead_box=\box141
+\l__tblr_table_lasthead_box=\box142
+\l__tblr_table_firstfoot_box=\box143
+\l__tblr_table_middlefoot_box=\box144
+\l__tblr_table_lastfoot_box=\box145
+\l__tblr_remain_height_dim=\dimen373
+\l__tblr_long_from_int=\count533
+\l__tblr_long_to_int=\count534
+\l__tblr_curr_i_int=\count535
+\l__tblr_prev_i_int=\count536
+\l__tblr_table_page_int=\count537
+\l__tblr_table_head_box=\box146
+\l__tblr_table_foot_box=\box147
+\l__tblr_table_head_foot_dim=\dimen374
+\l__tblr_table_head_body_foot_dim=\dimen375
+\l__tblr_table_box=\box148
+\l__tblr_table_hlines_box=\box149
+\l__tblr_hline_box=\box150
+\l__tblr_row_box=\box151
+\l__tblr_col_o_wd_dim=\dimen376
+\l__tblr_col_b_wd_dim=\dimen377
+\l__tblr_hline_leftskip_dim=\dimen378
+\l__tblr_hline_rightskip_dim=\dimen379
+\l__tblr_row_ht_dim=\dimen380
+\l__tblr_row_dp_dim=\dimen381
+\l__tblr_row_abovesep_dim=\dimen382
+\l__tblr_row_belowsep_dim=\dimen383
+\l__tblr_row_vlines_box=\box152
+\l__tblr_vline_box=\box153
+\l__tblr_cell_box=\box154
+\l__row_upper_dim=\dimen384
+\l__row_lower_dim=\dimen385
+\l__row_vpace_dim=\dimen386
+\l__tblr_vline_aboveskip_dim=\dimen387
+\l__tblr_vline_belowskip_dim=\dimen388
+\l__tblr_cell_wd_dim=\dimen389
+\l__tblr_cell_ht_dim=\dimen390
+\l__tblr_diag_box=\box155
 ) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
  (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
@@ -1276,11 +1180,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count554
+\c@section@level=\count538
 )
-\@linkdim=\dimen387
-\Hy@linkcounter=\count555
-\Hy@pagecounter=\count556
+\@linkdim=\dimen391
+\Hy@linkcounter=\count539
+\Hy@pagecounter=\count540
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -1288,7 +1192,7 @@ Now handling font encoding PD1 ...
 ) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count557
+\Hy@SavedSpaceFactor=\count541
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1301,17 +1205,17 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count558
+\c@Hy@tempcnt=\count542
 LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen388
+\XeTeXLinkMargin=\dimen392
  (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count559
-\Field@Width=\dimen389
-\Fld@charsize=\dimen390
+\Fld@menulength=\count543
+\Field@Width=\dimen393
+\Fld@charsize=\dimen394
 Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
@@ -1323,9 +1227,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count560
-\c@Item=\count561
-\c@Hfootnote=\count562
+\Hy@abspage=\count544
+\c@Item=\count545
+\c@Hfootnote=\count546
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -1334,9 +1238,9 @@ File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\HyAnn@Count=\count563
-\Fld@listcount=\count564
-\c@bookmark@seq@number=\count565
+\HyAnn@Count=\count547
+\Fld@listcount=\count548
+\c@bookmark@seq@number=\count549
  (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -1344,13 +1248,159 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip185
-)) (./Preamble/NewCommands.tex)
+\Hy@SectionHShift=\skip175
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+Package: glossaries-extra 2023/09/29 v1.53 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks43
+\XKV@tempa@toks=\toks44
+)
+\XKV@depth=\count550
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2023/09/29 v4.53 (NLCT)
+ (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2022/10/14 v2.08 (NLCT)
+\@glsmfirst=\toks45
+\@glsmrest=\toks46
+) (/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2019/09/27 v2.32 (NLCT)
+ (/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count551
+) (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2019/09/27 v2.32 (NLCT)
+ (/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+ `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count552
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count553
+\FP@xia=\count554
+\FP@xib=\count555
+\FP@xfa=\count556
+\FP@xfb=\count557
+\FP@rega=\count558
+\FP@regb=\count559
+\FP@regs=\count560
+\FP@times=\count561
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count562
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks47
+\@dtl@tmpcount=\count563
+\dtl@tmplength=\skip176
+\dtl@sortresult=\count564
+\@dtl@numgrpsepcount=\count565
+\@dtl@datatype=\count566
+\dtl@codeA=\count567
+\dtl@codeB=\count568
+\@dtl@foreach@level=\count569
+) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
+ (/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-german/glossaries-german.ldf
+File: glossaries-german.ldf 2014/11/23 v1.0
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-english/glossaries-english.ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
+)
+\gls@level=\count570
+\@gls@tmpb=\toks48
+\gls@tmplen=\skip177
+\glskeylisttok=\toks49
+\glslabeltok=\toks50
+\glsshorttok=\toks51
+\glslongtok=\toks52
+ (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
+Package: glossary-hypernav 2023/09/29 v4.53 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+Package: glossary-list 2023/09/29 v4.53 (NLCT)
+\glslistdottedwidth=\skip178
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+Package: glossary-long 2023/09/29 v4.53 (NLCT)
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip179
+\LTright=\skip180
+\LTpre=\skip181
+\LTpost=\skip182
+\LTchunksize=\count571
+\LTcapwidth=\dimen395
+\LT@head=\box156
+\LT@firsthead=\box157
+\LT@foot=\box158
+\LT@lastfoot=\box159
+\LT@gbox=\box160
+\LT@cols=\count572
+\LT@rows=\count573
+\c@LT@tables=\count574
+\c@LT@chunks=\count575
+\LT@p@ftn=\toks53
+)
+\glsdescwidth=\skip183
+\glspagelistwidth=\skip184
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+Package: glossary-super 2023/09/29 v4.53 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+Package: glossary-tree 2023/09/29 v4.53 (NLCT)
+\glstreeindent=\skip185
+))
+\@glsxtr@leveloffset=\count576
+\glsxtrresourcecount=\count577
+\@glsxtrnewgls@inner=\count578
+\glsshortpltok=\toks54
+\glslongpltok=\toks55
+ (/usr/share/texlive/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def
+File: glossaries-extra-abbrstyles.def 2023/06/28 v1.52 (NLCT)
+)
+\mglselementindex=\count579
+)
+\glswrite=\write5
+\glo@main@file=\write6
+\openout6 = `main.glo'.
+
+Package glossaries Info: Writing glossary file main.glo on input line 129.
+\glo@abbreviations@file=\write7
+\openout7 = `main.glo-abr'.
+
+Package glossaries Info: Writing glossary file main.glo-abr on input line 129.
+\glo@variable@file=\write8
+\openout8 = `main.variable-glo'.
+
+Package glossaries Info: Writing glossary file main.variable-glo on input line 129.
+\glo@hidden@file=\write9
+\openout9 = `main.hio'.
+
+Package glossaries Info: Writing glossary file main.hio on input line 129.
+ (./Preamble/Acronyms.tex) (./Preamble/Variables.tex) (./Preamble/Species.tex)) (./Preamble/NewCommands.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'german'.
- (out_dir/main.aux)
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -1388,7 +1438,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (out_dir/main.bbl)
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.bbl)
 Package biblatex Info: Reference section=0 on input line 6.
 Package biblatex Info: Reference segment=0 on input line 6.
 
@@ -1396,16 +1446,16 @@ Package chemgreek Info: Activating mapping `upgreek' on line 6.
 
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count566
-\scratchdimen=\dimen391
-\scratchbox=\box153
-\nofMPsegments=\count567
-\nofMParguments=\count568
+\scratchcounter=\count580
+\scratchdimen=\dimen396
+\scratchbox=\box161
+\nofMPsegments=\count581
+\nofMParguments=\count582
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count569
-\MPscratchDim=\dimen392
-\MPnumerator=\count570
-\makeMPintoPDFobject=\count571
+\MPscratchCnt=\count583
+\MPscratchDim=\dimen397
+\MPnumerator=\count584
+\makeMPintoPDFobject=\count585
 \everyMPtoPDFconversion=\toks57
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1456,14 +1506,22 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count572
+\c@lstlisting=\count586
+ (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-german.trsl
+File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 6.
+ (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 6.
  (/usr/share/texlive/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
 Package hyperref Info: Link coloring OFF on input line 6.
- (out_dir/main.out) (out_dir/main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.out) (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.out)
+\@outlinefile=\write10
+\openout10 = `main.out'.
 
  (./Titelpage.tex
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 53.
@@ -1482,80 +1540,106 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 65.
  (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-<Figures/rwth_jp_computational_life_science_en_rgb.png, id=86, 1559.8275pt x 379.4175pt>
+<Figures/rwth_jp_computational_life_science_en_rgb.png, id=106, 1559.8275pt x 379.4175pt>
 File: Figures/rwth_jp_computational_life_science_en_rgb.png Graphic file (type png)
 <use Figures/rwth_jp_computational_life_science_en_rgb.png>
 Package pdftex.def Info: Figures/rwth_jp_computational_life_science_en_rgb.png  used on input line 90.
 (pdftex.def)             Requested size: 421.1024pt x 102.42671pt.
  [1
 
+\openout5 = `main.ist'.
+
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/rwth_jp_computational_life_science_en_rgb.png>])
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.24 \newpage
-              [1] [2] (out_dir/main.toc)
-\tf@toc=\write6
-\openout6 = `main.toc'.
+              [1] [2] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.toc)
+\tf@toc=\write11
+\openout11 = `main.toc'.
 
- [3] (out_dir/main.lol
+ [3] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.gls-abr) (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.variable-gls [4]) [5] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.lol
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
 )
-\tf@lol=\write7
-\openout7 = `main.lol'.
+\tf@lol=\write12
+\openout12 = `main.lol'.
 
-\c@romannumbers=\count573
- [4] [1] (./Sections/materialandmethods.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+\c@romannumbers=\count587
+ [6] [1] (./Sections/materialandmethods.tex [2] [3]
+
+Package siunitx Warning: Unit macro \bar has been deprecated in this release.
+(siunitx)                
+(siunitx)                The BIPM have removed this unit from the SI Brochure.
+(siunitx)                You should define it yourself using \DeclareSIUnit in
+(siunitx)                your source. The current definition is
+(siunitx)                
+(siunitx)                \DeclareSIUnit\bar{bar}
+
+[4{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 25.
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 26.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 96.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 97.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 111.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 83.
+(caption)                particular \caption on input line 154.
 See the caption package documentation for explanation.
 
-Package hyperref Info: bookmark level for unknown dirset defaults to 0 on input line 83.
+Package hyperref Info: bookmark level for unknown dirset defaults to 0 on input line 154.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 83.
-[2] [3{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 5533) in paragraph at lines 99--100
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 154.
+[6] [7]
+Underfull \hbox (badness 5533) in paragraph at lines 170--171
 []\OT1/cmr/m/n/10.95 di-rec-tory. The op-tion [][]\OT1/cmtt/m/n/10.95 --extract-option []\OT1/cmr/m/n/10.95 al-
  []
 
-[4] [5] [6] [7]) [8] [9] [10] [5] (out_dir/main.aux)
+[8] [9] [10] [11] [12]) [13] [14] [15]
+Overfull \hbox (36.29538pt too wide) in paragraph at lines 81--81
+[]\OT1/cmr/m/n/10.95 National Eco-log-i-cal Ob-ser-va-tory Net-work (NEON). \OT1/cmr/m/it/10.95 Pho-to-syn-thet-i-cally Ac-tive Ra-di-a-tion (PAR) (DP1.00024.001):
+ []
+
+[7] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 155A59328EC18A215C4020D91AE20E37;2694.
+(rerunfilecheck)             Checksum: 5010597AD098A954AB1F096046DC4BDD;3165.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51019 strings out of 474222
- 1016488 string characters out of 5748733
- 2397477 words of memory out of 5000000
- 72395 multiletter control sequences out of 15000+600000
- 578456 words of font info for 100 fonts, out of 8000000 for 9000
+ 56354 strings out of 474222
+ 1171890 string characters out of 5748733
+ 2497833 words of memory out of 5000000
+ 77625 multiletter control sequences out of 15000+600000
+ 580431 words of font info for 107 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 114i,6n,125p,2471b,2006s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on out_dir/main.pdf (16 pages, 267578 bytes).
+ 114i,11n,125p,2480b,2021s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{glo:epipremnum} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:arabidopsis} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:chlamydomonas} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on /home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.pdf (23 pages, 367422 bytes).
 PDF statistics:
- 431 PDF objects out of 1000 (max. 8388607)
- 379 compressed objects within 4 object streams
- 141 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 672 compressed objects within 7 object streams
+ 211 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 
