@@ -10,5 +10,10 @@
         "tags": {
             "Part of Photosynthesis": ["PSII", "ATP Synthase", "Cytochrome b6f", "PQ Cycle", "PC", "FNR", "PSI", "CBB Cycle"]
         }
+    },
+    "Bellasio2019": {
+        "DOI": "https://doi.org/10.1007/s11120-018-0601-1",
+        "tags": {
+        }
     }
 }

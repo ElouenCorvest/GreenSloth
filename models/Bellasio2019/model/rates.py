@@ -4,8 +4,8 @@ import numpy as np
 from typing import cast
     
 from .basic_funcs import (
-    one_div,
     value,
+    one_div,
 )
 
 def ract_gs_time_dependance(x, x_steady, inc, dec):

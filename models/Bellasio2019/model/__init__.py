@@ -1,4 +1,3 @@
-
 from mxlpy import Model, Variable, InitialAssignment
 from .derived_quantities import include_derived_quantities
 from .rates import include_rates

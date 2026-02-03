@@ -7,8 +7,9 @@
 ## Summary
 
 
-The [Bellasio2019](https://doi.org/10.1007/s11120-018-0601-1) model is a generalized C<sub>3</sub> leaf-photosynthesis model, that includes simplified representations of the light and dark reactions and a stomatal behaviour submodule. A lot of its implementation is based on past work by the same author and is mainly inspired by the common Farquhar-von Caemmerer-Berry model. The light reactions are modified from Yin et al. (2004) and include the potential rate sof ATP and NADPH production based on light intensity.
+The [Bellasio2019](https://doi.org/10.1007/s11120-018-0601-1) model is a generalized C<sub>3</sub> leaf-photosynthesis model, that includes simplified representations of the light and dark reactions and a stomatal behaviour submodule. A lot of its implementation is based on past work by the same author and is mainly inspired by the common Farquhar-von Caemmerer-Berry model. The light reactions are modified from Yin et al. (2004) and include the potential rates of ATP and NADPH production based on light intensity. This model has been created with the simple user in mind, and the author has made an effort to show its simplicity, by giving access to a Microsoft Excel Workbook containing the entire model. To showcase the model's capabilities, the author creates common steady-state carbon assimilation curves, against intercellular CO<sub>2</sub> concentration and light intensity, and compares them to experimental data from the literature. As many models of photosynthesis rely on purely stead-state assumptions, this model is also validated in dynamic conditons, showing for example the response of the model to a fluctuation of ambient oxygen concentration.
 
+This model was created to stay as simple as possible, while still being able to accurately represent the main features of C<sub>3</sub> photosynthesis. As such, it can be used as a base for more complex models, or as a starting block in larger models of plant physiology. While giving access to the entire model in an Excel Workbook format is transparent and great, the execution of said practice has been inefficient in this instance. The entire mathematicla description of the model is also given in the Apendix of the publication, however there are missing or different equations between the publication and the Excel Workbook, which can lead to confusion. On top of that, the simulation protocols used for each figure are only given in small details, which leads to further confusion when trying to reproduce the results and see which equations are correct or not.
                      
 ## Installation
 
@@ -149,7 +150,7 @@ A =  v_{\mathrm{RuBisCO \vert Carboxylase}} - 0.5 v_{\mathrm{RuBisCO \vert Oxy}}
 |Fraction of electron flow through the Q-cycle|$f_\mathrm{Q}$|$f_\mathrm{Q}$|$1$||fq|Yin et al. 2004|
 |Fraction of electron flow through the NDH complex|$f_\mathrm{NDH}$|$f_\mathrm{NDH}$|$0$||f_ndh|Yamori and Shikanai 2016|
 |Number of protons per ATP|$h$|$h$|$4$|$\mathrm{protons ATP^{-1}}$|h|Yin and Struik 2012|
-|Atmospheric $\mathrm{CO_2}$ concentration|$C_\mathrm{a}$|$C_\mathrm{a}$|$400$|$\mathrm{\mu bar}$|Ca||
+|Atmospheric $\mathrm{CO_2}$ concentration|$C_\mathrm{a}$|$C_\mathrm{a}$|$350$|$\mathrm{\mu bar}$|Ca||
 |Initial slope of PPFD hyperbola in regard of RuBisCO|$\alpha_\mathrm{PPFD\|RuBisCO}$|$\alpha_\mathrm{V}$|$0.0018$||alpha_ppfd_rub||
 |Y-intercept of PPFD hyperbola in regard of RuBisCO|$V_\mathrm{0\|PPFD\|RuBisCO}$|$V_{0}$|$0.16$||V0_ppfd_rub||
 |Curvature of PPFD hyperbola in regard of RuBisCO|$\theta_\mathrm{PPFD\|RuBisCO}$|$\theta_\mathrm{V}$|$0.95$||theta_ppfd_rub||
@@ -380,6 +381,8 @@ v_{\mathrm{CO_{2 \vert stomdiff}}} =  \frac{g_\mathrm{S} \cdot \left( C_\mathrm{
 ### Figures
 
 
+You can find the recreation of the figures from the original publication below. Due to differing copyright reasons the original figures cannot be included in this README file. Instead, the comparision has to be made using the original publication.
+
 
                      
 <details>
@@ -387,7 +390,7 @@ v_{\mathrm{CO_{2 \vert stomdiff}}} =  \frac{g_\mathrm{S} \cdot \left( C_\mathrm{
                      
 <img style='float: center' src='figures/bellasio2019_fig3.svg' alt='Figure 3' width='600'/>
 
-Simulated $A$-$\mathrm{PPFD}$ (left) and  $A$-$C_\mathrm{a}$ (right) response curves under two different oxygen partial pressures ($\mathrm{O_2}$ = 210000, orange, and = 20000, blue). The simulation was run to a quasi steady-state (1800 s) at each value of $C_\mathrm{a}$ or $\mathrm{PPFD}$. The $C_\mathrm{a}$ response curve was simulated at a $\mathrm{PPFD}$ of 1500 µmol m⁻² s⁻¹, while the $\mathrm{PPFD}$ response curve was simulated at a $C_\mathrm{a}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top row shows the assimilation rate $A$, the middle row the stomatal conductance ($g_\mathrm{S}$), and the bottom row the $\mathrm{NADPH}_\mathrm{st}$ production rate $v_{\mathrm{FNR}}$.
+Simulated $A$- $\mathrm{PPFD}$ (left) and $A$- $C_\mathrm{a}$ (right) response curves under two different oxygen partial pressures ($\mathrm{O_2}$ = 210000, orange, and = 20000, blue). The simulation was run to a quasi steady-state (1800 s) at each value of $C_\mathrm{a}$ or $\mathrm{PPFD}$. The $C_\mathrm{a}$ response curve was simulated at a $\mathrm{PPFD}$ of 1500 µmol m⁻² s⁻¹, while the $\mathrm{PPFD}$ response curve was simulated at a $C_\mathrm{a}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top row shows the assimilation rate $A$, the middle row the stomatal conductance ($g_\mathrm{S}$), and the bottom row the $\mathrm{NADPH}_\mathrm{st}$ production rate $v_{\mathrm{FNR}}$.
 
 The recreation of this figure was done effortlessly with only a few issues. The original figure does not specify how long the simulations were run; therefore, it was assumed to follow the length of simulation detailed in Figure 4. Additionally, the original figure shows an $A$-$C_\mathrm{i}$ response curve on the right; it could be inferred that they either meant $A$-$C_\mathrm{a}$ or assumed $C_\mathrm{i}$ to be equal to $C_\mathrm{a}$. In this recreation, $A$-$C_\mathrm{a}$ was chosen. This causes issues with the x-axis values in the right plots; however, since the lines still follow the same trend, the recreation remains valid.
 </details>
@@ -400,7 +403,7 @@ The recreation of this figure was done effortlessly with only a few issues. The 
                      
 <img style='float: center' src='figures/bellasio2019_fig4.svg' alt='Figure 4' width='600'/>
 
-Simulated $A$-$\mathrm{PPFD}$ (left) and  $A$-$C_\mathrm{a}$ (right) response curves under two different oxygen partial pressures ($p(\mathrm{O_2}) = 210000 \mathrm{\mu bar}$, orange, and $p(\mathrm{O_2}) = 20000 \mathrm{\mu bar}$, blue). The simulation was run to a quasi steady-state (1800 s) at each value of $C_\mathrm{a}$ or $\mathrm{PPFD}$. The $C_\mathrm{a}$ response curve was simulated at a $\mathrm{PPFD}$ of 1500 µmol m⁻² s⁻¹, while the $\mathrm{PPFD}$ response curve was simulated at a $C_\mathrm{a}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top and middle row show the concentrations of $\mathrm{RUBP}$ and $\mathrm{PGA}$, respectively. These concentrations were given in µmol m⁻² by multiplying their volumetric concentrations by the chloroplast volume per leaf area (V_\mathrm{M}). The bottom row shows the relative RuBisCO activity by multiplying $R_{\mathrm{act}}$ and $f\left(\mathrm{RUBP}\right)$.
+Simulated $A$-$\mathrm{PPFD}$ (left) and  $A$-$C_\mathrm{a}$ (right) response curves under two different oxygen partial pressures ($p(\mathrm{O_2}) = 210000 \mathrm{\mu bar}$, orange, and $p(\mathrm{O_2}) = 20000 \mathrm{\mu bar}$, blue). The simulation was run to a quasi steady-state (1800 s) at each value of $C_\mathrm{a}$ or $\mathrm{PPFD}$. The $C_\mathrm{a}$ response curve was simulated at a $\mathrm{PPFD}$ of 1500 µmol m⁻² s⁻¹, while the $\mathrm{PPFD}$ response curve was simulated at a $C_\mathrm{a}$ of 400 µmol mol⁻¹. Other parameters and initial conditions were not changed from the default values used in the model. The top and middle row show the concentrations of $\mathrm{RUBP}$ and $\mathrm{PGA}$, respectively. These concentrations were given in µmol m⁻² by multiplying their volumetric concentrations by the chloroplast volume per leaf area ($V_\mathrm{M}$). The bottom row shows the relative RuBisCO activity by multiplying $R_{\mathrm{act}}$ and $f\left(\mathrm{RUBP}\right)$.
 
 
 The recreation of this figure was done effortlessly with only a few issues. The original figure shows an $A$-$C_\mathrm{i}$ response curve on the right; it could be inferred that they either meant $A$-$C_\mathrm{a}$ or assumed $C_\mathrm{i}$ to be equal to $C_\mathrm{a}$. In this recreation, $A$-$C_\mathrm{a}$ was chosen. This causes issues with the x-axis values in the right plots; however, since the lines still follow the same trend, the recreation remains valid.

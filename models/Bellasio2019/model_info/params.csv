@@ -16,7 +16,7 @@ Fraction of electron flow used by nitrate assimilation,$f_\mathrm{PseudocycNR}$,
 Fraction of electron flow through the Q-cycle,$f_\mathrm{Q}$,$f_\mathrm{Q}$,$1$,,fq,Yin et al. 2004
 Fraction of electron flow through the NDH complex,$f_\mathrm{NDH}$,$f_\mathrm{NDH}$,$0$,,f_ndh,Yamori and Shikanai 2016
 Number of protons per ATP,$h$,$h$,$4$,$\mathrm{protons ATP^{-1}}$,h,Yin and Struik 2012
-Atmospheric $\mathrm{CO_2}$ concentration,$C_\mathrm{a}$,$C_\mathrm{a}$,$400$,$\mathrm{\mu bar}$,Ca,
+Atmospheric $\mathrm{CO_2}$ concentration,$C_\mathrm{a}$,$C_\mathrm{a}$,$350$,$\mathrm{\mu bar}$,Ca,
 Initial slope of PPFD hyperbola in regard of RuBisCO,$\alpha_\mathrm{PPFD|RuBisCO}$,$\alpha_\mathrm{V}$,$0.0018$,,alpha_ppfd_rub,
 Y-intercept of PPFD hyperbola in regard of RuBisCO,$V_\mathrm{0|PPFD|RuBisCO}$,$V_{0}$,$0.16$,,V0_ppfd_rub,
 Curvature of PPFD hyperbola in regard of RuBisCO,$\theta_\mathrm{PPFD|RuBisCO}$,$\theta_\mathrm{V}$,$0.95$,,theta_ppfd_rub,
