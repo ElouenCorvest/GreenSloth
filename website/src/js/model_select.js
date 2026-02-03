@@ -20,7 +20,7 @@ for (const [name, info] of Object.entries(modelInfo)) {
     modelSelector.appendChild(modelRow);
 
     const modelImg = document.createElement("img");
-    modelImg.setAttribute("src", `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${name}/${name}_scheme.svg`);
+    modelImg.setAttribute("src", `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${name}/${name}_scheme.svg`);
     modelRow.appendChild(modelImg);
 
     const modelTitle = document.createElement("h1");

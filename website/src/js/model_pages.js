@@ -917,7 +917,7 @@ compareModalBodySchemes.appendChild(compareModalBodySchemesLeftContainer)
 var compareModalBodySchemesLeftImg = document.createElement("img")
 compareModalBodySchemesLeftImg.id = "compare-schemes-left"
 compareModalBodySchemesLeftImg.classList.add("compare-schemes", "model-scheme")
-compareModalBodySchemesLeftImg.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
+compareModalBodySchemesLeftImg.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/${modelName}_scheme.svg`
 compareModalBodySchemesLeftContainer.appendChild(compareModalBodySchemesLeftImg)
 
 // Right Scheme
@@ -1326,7 +1326,7 @@ modelSummaryBlock.appendChild(modelSummaryBlockSchemeBlock)
 
 // Insert Model Scheme
 var modelSummaryBlockScheme = document.createElement("img")
-modelSummaryBlockScheme.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/e626f80fcd4f34c6ec468c17fb9e2b192d3a4ed2/models/${modelName}/${modelName}_scheme.svg`
+modelSummaryBlockScheme.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${modelName}/${modelName}_scheme.svg`
 modelSummaryBlockScheme.classList.add("model-scheme")
 modelSummaryBlockSchemeBlock.appendChild(modelSummaryBlockScheme)
 
