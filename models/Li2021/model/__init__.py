@@ -56,24 +56,26 @@ def Li2021() -> Model:
             "Carotenoids_tot": 1,
         }
     )
-    m.add_variables(
+
+    m.add_variables(
         {
             "QA_red": Variable(0, unit="REPLACE"),
             "PQH_2": Variable(0, unit="REPLACE"),
             "pH_lumen": Variable(7.8, unit="REPLACE"),
             "Dy": Variable(0, unit="REPLACE"),
-            "K__lumen": Variable(0.1, unit="REPLACE"),
+            "K_lumen": Variable(0.1, unit="REPLACE"),
             "PC_ox": Variable(0, unit="REPLACE"),
             "P700_ox": Variable(0, unit="REPLACE"),
             "Zx": Variable(0, unit="REPLACE"),
             "singletO2": Variable(0, unit="REPLACE"),
             "Fd_red": Variable(0, unit="REPLACE"),
             "NADPH_st": Variable(1.5, unit="REPLACE"),
-            "Cl__lumen": Variable(0.04, unit="REPLACE"),
-            "Cl__stroma": Variable(0.04, unit="REPLACE"),
+            "Cl_lumen": Variable(0.04, unit="REPLACE"),
+            "Cl_stroma": Variable(0.04, unit="REPLACE"),
         }
     )
-    m = include_derived_quantities(m)
+
+    m = include_derived_quantities(m)
     m = include_rates(m)
 
     return m

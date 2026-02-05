@@ -1,10 +1,10 @@
 Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
 Inactive PSII quencher,$Q_\mathrm{inact}$,$FQ_{inact}$,,Q_inactive,
-,,$PQH_2$,,PQH_2,1
+Plastoquinol,$\mathrm{PQH}_2$,$PQH_2$,C16693,PQH_2,1
 Fraction of PSI donors per PCII that are not available for the linear electron transport,$\mathrm{PSI_{red}}$,$PI_{red}$,,PSI_red,
-,,$ADP$,,ADP_st_stroma,8
+Stromal ADP concentration,$\mathrm{ADP_{st}}$,$ADP$,C00008,ADP_st,8
 Reaction centers of PSII that are closed,$\mathrm{RCII_{closed}}$,$RCII_{closed}$,,RCII_closed,
 Reaction centers of PSII that are open,$\mathrm{RCII_{open}}$,$RCII_{open}$,,RCII_open,
-,,$ChlF$,,Fluo,58
-,,$NPQ$,,NPQ,67
-,,$O_2$,,O2,80
+Flourescence,$\mathrm{Fluo}$,$ChlF$,,Fluo,58
+Nonphotochemical quenching,$\mathrm{NPQ}$,$NPQ$,,NPQ,67
+Oxygen Concentration,$\mathrm{O_2}$,$O_2$,,O2,80

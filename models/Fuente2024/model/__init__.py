@@ -13,13 +13,13 @@ from .derived_quantities import (
     include_derived_quantities,
 )
 from .rates import (
-    _v1,
-    _v2,
+    _v_PSII_PQ,
+    _v_PQH2_PSI,
     _v3,
-    _v5,
-    _v7,
+    _v_ATPsynth,
+    _v_Leak,
     _v_PSI,
-    _v_PSII,
+    _v_PSII_O2,
     include_rates,
     mass_action_1s,
 )
@@ -66,25 +66,25 @@ def initial_equations(initial_guess: Iterable, param_dict: dict) -> list[float]:
     RCII_closed = _rcii_closed(k1p=k1p, PQ_ox=PQ_ox, sigma_PSII=sigma_PSII, light=light, k1m=k1m, PQ_red=PQ_red)
     RCII_open = _rcii_open(k1p=k1p, PQ_ox=PQ_ox, sigma_PSII=sigma_PSII, k1m=k1m, PQ_red=PQ_red)
     
-    v_psii = _v_PSII(stoic_PSII=stoic_PSII, sigma_PSII=sigma_PSII, light=light, RCII_closed=RCII_closed)
+    v_PSII_O2 = _v_PSII_O2(stoic_PSII=stoic_PSII, sigma_PSII=sigma_PSII, light=light, RCII_closed=RCII_closed)
     v_ps1 = _v_PSI(stoic_PSI=stoic_PSI, sigma_PSI=sigma_PSI, light=light, PSI_ox=PSI_ox, L_PSI=L_PSI)
-    v1 = _v1(k1p=k1p, RCII_closed=RCII_closed, PQ_ox=PQ_ox, k1m=k1m, RCII_open=RCII_open, PQ_red=PQ_red)
-    v2 = _v2(k2p=k2p, PQ_red=PQ_red, PSI_ox=PSI_ox, k2m=k2m, PQ_ox=PQ_ox, PSI_red=PSI_red)
+    v_PSII_PQ = _v_PSII_PQ(k1p=k1p, RCII_closed=RCII_closed, PQ_ox=PQ_ox, k1m=k1m, RCII_open=RCII_open, PQ_red=PQ_red)
+    v_PQH2_PSI = _v_PQH2_PSI(k2p=k2p, PQ_red=PQ_red, PSI_ox=PSI_ox, k2m=k2m, PQ_ox=PQ_ox, PSI_red=PSI_red)
     v3 = _v3(k3=k3, h_lumen=h_lumen, Q_active=Q_active, K_NPQ=K_NPQ, n=n_NPQ)
     v4 = mass_action_1s(Q_active, k4)
-    v5 = _v5(k5=k5, ADP=ADP, ATP=ATP, H_stroma=h_stroma, H_lumen=h_lumen, cEqP=cEqP)
-    v6 = mass_action_1s(ATP, k6)
-    v7 = _v7(k7=k7, H_lumen=h_lumen, H_stroma=h_stroma)
-    vX = mass_action_1s(PSI_red, k_X)
+    v_ATPsynth = _v_ATPsynth(k5=k5, ADP=ADP, ATP=ATP, H_stroma=h_stroma, H_lumen=h_lumen, cEqP=cEqP)
+    v_ATPcons = mass_action_1s(ATP, k6)
+    v_Leak = _v_Leak(k7=k7, H_lumen=h_lumen, H_stroma=h_stroma)
+    v_PQ = mass_action_1s(PSI_red, k_X)
     
     alpha = bH / (N_A * V_lumen)
     beta = 14/3 * bH * V_stroma / V_lumen
     
     dqactive_dt = v3 - v4
-    dpqox_dt = 1/2 * (v2 - v1) + vX
-    dpsiox_dt = v_ps1 - v2
-    dhlumen_dt = alpha * v_psii + alpha * v2 - beta * v5 - bH * v7
-    datp_dt = v5 - v6
+    dpqox_dt = 1/2 * (v_PQH2_PSI - v_PSII_PQ) + v_PQ
+    dpsiox_dt = v_ps1 - v_PQH2_PSI
+    dhlumen_dt = alpha * v_PSII_O2 + alpha * v_PQH2_PSI - beta * v_ATPsynth - bH * v_Leak
+    datp_dt = v_ATPsynth - v_ATPcons
     # print(dqactive_dt)
     
     return [dqactive_dt, dpqox_dt, dpsiox_dt, dhlumen_dt, datp_dt]

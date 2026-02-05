@@ -54,7 +54,7 @@ def include_derived_quantities(m: Model):
     )
 
     m.add_derived(
-        name="ADP_st_stroma",
+        name="ADP_st",
         fn=moiety_1,
         args=['ATP_st', 'AP_tot'],
     )

@@ -233,26 +233,26 @@ def include_rates(m: Model):
     m.add_reaction(
         name="v_KEA",
         fn=_v_KEA,
-        args=['QA_red', 'pH_lumen', 'K__lumen', 'H_lumen', 'H_stroma', 'K__stroma', 'k_KEA'],
-        stoichiometry={"K__lumen": Derived(fn=value, args=['lumen_protons_per_turnover'], unit=None), "pH_lumen": Derived(fn=div, args=['lumen_protons_per_turnover', 'buffering_capacity'], unit=None), }
+        args=['QA_red', 'pH_lumen', 'K_lumen', 'H_lumen', 'H_stroma', 'K__stroma', 'k_KEA'],
+        stoichiometry={"K_lumen": Derived(fn=value, args=['lumen_protons_per_turnover'], unit=None), "pH_lumen": Derived(fn=div, args=['lumen_protons_per_turnover', 'buffering_capacity'], unit=None), }
     )
     m.add_reaction(
         name="v_K_channel",
         fn=_v_K_channel,
-        args=['K__lumen', 'Dy', 'K__stroma', 'perm_K'],
-        stoichiometry={"K__lumen": Derived(fn=neg, args=['lumen_protons_per_turnover'], unit=None), "Dy": Derived(fn=neg, args=['Volts_per_charge'], unit=None), }
+        args=['K_lumen', 'Dy', 'K__stroma', 'perm_K'],
+        stoichiometry={"K_lumen": Derived(fn=neg, args=['lumen_protons_per_turnover'], unit=None), "Dy": Derived(fn=neg, args=['Volts_per_charge'], unit=None), }
     )
     m.add_reaction(
         name="v_VCCN1",
         fn=_v_VCCN1,
-        args=['Cl__lumen', 'Cl__stroma', 'driving_force_Cl', 'k_VCCN1'],
-        stoichiometry={"Cl__lumen": Derived(fn=value, args=['lumen_protons_per_turnover'], unit=None), "Cl__stroma": Derived(fn=neg_point_one_val, args=['lumen_protons_per_turnover'], unit=None), "Dy": Derived(fn=neg, args=['Volts_per_charge'], unit=None), }
+        args=['Cl_lumen', 'Cl_stroma', 'driving_force_Cl', 'k_VCCN1'],
+        stoichiometry={"Cl_lumen": Derived(fn=value, args=['lumen_protons_per_turnover'], unit=None), "Cl_stroma": Derived(fn=neg_point_one_val, args=['lumen_protons_per_turnover'], unit=None), "Dy": Derived(fn=neg, args=['Volts_per_charge'], unit=None), }
     )
     m.add_reaction(
         name="v_CLCE",
         fn=_v_CLCE,
-        args=['Cl__lumen', 'Cl__stroma', 'H_lumen', 'H_stroma', 'driving_force_Cl', 'pmf', 'k_CLCE'],
-        stoichiometry={"Cl__lumen": Derived(fn=twice, args=['lumen_protons_per_turnover'], unit=None), "Cl__stroma": Derived(fn=neg_point_two_val, args=['lumen_protons_per_turnover'], unit=None), "pH_lumen": Derived(fn=div, args=['lumen_protons_per_turnover', 'buffering_capacity'], unit=None), "Dy": Derived(fn=neg_thrice, args=['Volts_per_charge'], unit=None), }
+        args=['Cl_lumen', 'Cl_stroma', 'H_lumen', 'H_stroma', 'driving_force_Cl', 'pmf', 'k_CLCE'],
+        stoichiometry={"Cl_lumen": Derived(fn=twice, args=['lumen_protons_per_turnover'], unit=None), "Cl_stroma": Derived(fn=neg_point_two_val, args=['lumen_protons_per_turnover'], unit=None), "pH_lumen": Derived(fn=div, args=['lumen_protons_per_turnover', 'buffering_capacity'], unit=None), "Dy": Derived(fn=neg_thrice, args=['Volts_per_charge'], unit=None), }
     )
     m.add_reaction(
         name="v_leak",

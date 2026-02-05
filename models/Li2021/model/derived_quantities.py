@@ -102,7 +102,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="driving_force_Cl",
         fn=_driving_force_Cl,
-        args=['Cl__stroma', 'Cl__lumen', 'Dy'],
+        args=['Cl_stroma', 'Cl_lumen', 'Dy'],
     )
 
     m.add_derived(

@@ -55,23 +55,76 @@ derived_params_table, derived_params_table_tolist, derived_params_table_list = g
 
 # -- Compounds --
 
-
+Q_active = remove_math(comps_table, r'$FQ_{act}$')
+PQ = remove_math(comps_table, r'$PQ$')
+PSI_ox = remove_math(comps_table, r'$PI_{ox}$')
+H_lumen = remove_math(comps_table, r'$H_L$')
+ATP_st = remove_math(comps_table, r'$ATP$')
 
 # -- Derived Compounds --
 
-
+Q_inactive = remove_math(derived_comps_table, r'$FQ_{inact}$')
+PQH_2 = remove_math(derived_comps_table, r'$PQH_2$')
+PSI_red = remove_math(derived_comps_table, r'$PI_{red}$')
+ADP_st = remove_math(derived_comps_table, r'$ADP$')
+RCII_closed = remove_math(derived_comps_table, r'$RCII_{closed}$')
+RCII_open = remove_math(derived_comps_table, r'$RCII_{open}$')
+Fluo = remove_math(derived_comps_table, r'$ChlF$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+O2 = remove_math(derived_comps_table, r'$O_2$')
 
 # -- Rates --
 
-
+v_PSII_O2 = remove_math(rates_table, r'$v_\mathrm{PSII}$')
+v_PSI = remove_math(rates_table, r'$v_\mathrm{PSI}$')
+v_PSII_PQ = remove_math(rates_table, r'$v_1$')
+v_PQH2_PSI = remove_math(rates_table, r'$v_2$')
+v3 = remove_math(rates_table, r'$v_3$')
+v4 = remove_math(rates_table, r'$v_4$')
+v_ATPsynth = remove_math(rates_table, r'$v_5$')
+v_ATPcons = remove_math(rates_table, r'$v_6$')
+v_Leak = remove_math(rates_table, r'$v_7$')
+v_PQ = remove_math(rates_table, r'$v_\mathrm{X}$')
 
 # -- Parameters --
 
-
+stoic_PSII = remove_math(params_table, r'$nPSII$')
+stoic_PSI = remove_math(params_table, r'$nPSI$')
+PQ_tot = remove_math(params_table, r'$PQ_{tot}$')
+H_stroma = remove_math(params_table, r'$[H^+]_{stroma}$')
+AP_tot = remove_math(params_table, r'$A_{tot}$')
+V_lumen = remove_math(params_table, r'$V_L$')
+V_stroma = remove_math(params_table, r'$V_S$')
+sigma_PSI_0 = remove_math(params_table, r'$\sigma _I$')
+k1p = remove_math(params_table, r'$k_1^+$')
+k1m = remove_math(params_table, r'$k_1^-$')
+k2p = remove_math(params_table, r'$k_2^+$')
+k2m = remove_math(params_table, r'$k_2^-$')
+k3 = remove_math(params_table, r'$k_3$')
+k4 = remove_math(params_table, r'$k_4$')
+k5 = remove_math(params_table, r'$k_5$')
+k6 = remove_math(params_table, r'$k_6$')
+k7 = remove_math(params_table, r'$k_7$')
+k_X = remove_math(params_table, r'$k_X$')
+L_PSI = remove_math(params_table, r'$L_{1/2}$')
+bH = remove_math(params_table, r'$b_H$')
+NPQ_max = remove_math(params_table, r'$FQ_{max}$')
+cEqP = remove_math(params_table, r'$cEqP$')
+keq_NPQ = remove_math(params_table, r'$K_Q$')
+n_NPQ = remove_math(params_table, r'$n$')
+N_A = remove_math(params_table, r'$\mathrm{N_A}$')
+PPFD = remove_math(params_table, r'$u_0$')
+PPFD_add = remove_math(params_table, r'$u_1$')
+f = remove_math(params_table, r'$f$')
+PSI_total = remove_math(params_table, r'$PSI_{tot}$')
+Fluo_0 = remove_math(params_table, r'$\frac{F_0}{F_\mathrm{v}}$')
+Q_total = remove_math(params_table, r'$FQ_{tot}$')
+time = r"\mathrm{time}"
 
 # --- Derived Parameters ---
 
-
+osc_light = remove_math(derived_params_table, r'$Light$')
+sigma_PSII = remove_math(derived_params_table, r'$\sigma _{II}$')
 
 ###### Making README File ######
 
@@ -81,8 +134,11 @@ mdFile.new_header(1, model_title)
 
 mdFile.new_header(2, "Summary")
 
-mdFile.new_paragraph(f"""[{model_title}]({model_doi})
+mdFile.new_paragraph(f"""The [{model_title}]({model_doi}) model is a kinetic model of photosynthesis that is based on Occam's razor, aiming to provide the minimal complexity to describe the core processes of this model. In this case, the model focuses on the dynamic light oscillation and its responses on the photosynthetic machinery. It focuses only on the light-dependent reactions, including simplified versions of photosystem II, photosystem I, the Plastoquinone pool, and proton and ATP concentration in the lumen and stroma. On top of that, it shows the activation of non-photochemical quenching (NPQ), the dynamics of chlorophyll fluorescence, and the rate of oxygen evolution.
+                     
+The model includes the oscillating light intensity as a sinusoidal function, where the amplitude and frequency are adjustable parameters. To allow for easier comparision to other models, that often see light intensity as a constant value, the oscillation is defined around a base light intensity. However, the strength of having light with a specific frequency lies in the additional information and therefore analysis possibilities that can be performed. In this case, the model is used to create Bode plots of the response of fluorescence to light oscillations and comparing these results to experimental data from *Chlamydomonas reinhardtii*.
 
+This simple model stays true to its name and the authors aim to provide a base model that can be easily extended, while still showing a new approach to photosynthesis modelling. Their work shows that even with a simple model, new insights can be gained by using dynamic light protocols, which may have been overlooked in traditional steady-state models. To further extend the usability of the model, the authors provide a detailed notebook written in the Wolfram language, which also shows how to recreate some of the publication's figures.
                      """)
 
 mdFile.new_header(2, "Installation")
@@ -107,7 +163,21 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>ODE System</summary>
 
-
+```math 
+{ode(H_lumen)} = \frac{{{bH}}}{{{V_lumen} {N_A}}} \cdot {v_PSII_O2} + \frac{{{bH}}}{{{V_lumen} {N_A}}} \cdot {v_PQH2_PSI} + \frac{{\frac{{-14}}{{3}} \cdot {V_stroma}}}{{{V_lumen}}} \cdot {bH} \cdot {v_ATPsynth} - {v_Leak}
+```
+```math 
+{ode(PSI_ox)} = - {v_PQH2_PSI} + {v_PSI}
+```
+```math 
+{ode(PQ)} = 0.5 \cdot {v_PQH2_PSI} - 0.5 \cdot {v_PSII_PQ} + {v_PQ}
+```
+```math 
+{ode(Q_active)} = {v3} - {v4}
+```
+```math 
+{ode(ATP_st)} = {v_ATPsynth} - {v_ATPcons}
+```
 
 </details>
                      """)
@@ -121,7 +191,33 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary> Calculations </summary>
 
-
+```math
+{Q_inactive} =  {Q_total} - {Q_active}
+```
+```math
+{PQH_2} =  {PQ_tot} - {PQ}
+```
+```math
+{PSI_red} =  {PSI_total} - {PSI_ox}
+```
+```math
+{ADP_st} =  {AP_tot} - {ATP_st}
+```
+```math
+{RCII_closed} =  \frac{{1}}{{1 + \frac{{{k1p} \cdot {PQ}}}{{{sigma_PSII} \cdot {osc_light} + {k1m} \cdot {PQH_2}}}}}
+```
+```math
+{RCII_open} =  \frac{{{k1p} \cdot {PQ}}}{{{sigma_PSII} + {k1m} \cdot {PQH_2} + {k1p} \cdot {PQ}}}
+```
+```math
+{Fluo} =  {Fluo_0} + {RCII_closed} \cdot {sigma_PSII}
+```
+```math
+{NPQ} =  \frac{{{NPQ_max} \cdot {Q_active}}}{{1 - {NPQ_max} \cdot {Q_active}}}
+```
+```math
+{O2} =  \frac{{{PSI_total} \cdot \left( {k1p} \cdot {RCII_closed} \cdot {PQ} - {k1m} \cdot \left( 1 - {RCII_closed} \right) {PQH_2} \right)}}{{4}}
+```
 
 </details>
 
@@ -140,7 +236,12 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>Equations of derived parameters</summary>
 
-
+```math
+{osc_light} =  {PPFD} + {PPFD_add} \cdot \cos \le{f}t( 2 \mathrm{{np}}.\mathrm{{pi}} {f} \cdot {time} \right)
+```
+```math
+{sigma_PSII} =  1 - {NPQ_max} \cdot {Q_active}
+```
 
 </details>
 
@@ -155,12 +256,40 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>Rate equations</summary>
 
-
+```math
+{v_PSII_O2} =  {stoic_PSII} \cdot {sigma_PSII} \cdot {osc_light} \cdot \left( 1 - {RCII_closed} \right)
+```
+```math
+{v_PSI} =  \frac{{{stoic_PSI} \cdot {sigma_PSI_0} \cdot {L_PSI} \cdot {osc_light}}}{{{L_PSI} + {osc_light}}} \cdot \left( {stoic_PSI} - {PSI_ox} \right)
+```
+```math
+{v_PSII_PQ} =  {k1p} \cdot {RCII_closed} \cdot {PQ} - {k1m} \cdot {RCII_open} \cdot {PQH_2}
+```
+```math
+{v_PQH2_PSI} =  {k2p} \cdot {PQH_2} \cdot {PSI_ox} - {k2m} \cdot {PQ} \cdot {PSI_red}
+```
+```math
+{v3} =  \frac{{{k3} \cdot \left( 1 - {Q_active} \right)}}{{1 + \left( \frac{{{keq_NPQ}}}{{{H_lumen}}} \right)^{{{n_NPQ}}}}}
+```
+```math
+{v4} =  {k4} \cdot {Q_active}
+```
+```math
+{v_ATPsynth} =  {k5} \cdot \left( {ADP_st} - \frac{{{ATP_st} \cdot \left( \frac{{{H_stroma}}}{{{H_lumen}}} \right)^{{\frac{{14}}{{3}}}}}}{{{cEqP}}} \right)
+```
+```math
+{v_ATPcons} =  {k6} \cdot {ATP_st}
+```
+```math
+{v_Leak} =  {k7} \cdot \left( {H_lumen} - {H_stroma} \right)
+```
+```math
+{v_PQ} =  {k_X} \cdot {PQH_2}
+```
 
 </details>
-
-                     """)
-
+"""
+)
 mdFile.new_header(3, "Figures")
 
 mdFile.new_paragraph("""You can find the recreation of the figures from the original publication below. Due to differing copyright reasons the original figures cannot be included in this README file. Instead, the comparision has to be made using the original publication.""")
@@ -184,7 +313,7 @@ mdFile.new_paragraph(rf"""
                      
 <img style='float: center' src='figures/{model_title.lower()}_demon_daysimulation.svg' alt='Day Simulation' width='600'/>
 
-Sample simulation of a day cycle (06:00 to 20:00) using real Photosynthetically active radiation (PAR) data from Kansas, USA on June 19, 2023. The data was obtained from the National Ecological Observatory Network (NEON) data portal ([https://doi.org/10.48443/vzfh-7675])(https://doi.org/10.48443/vzfh-7675) and is used to create a protocol for the light intensity (${PPFD}$) over the course of the day, in a minute interval. The simulation is run using the default parameters and initial conditions of the model, and the RuBisCO carboxylation rate (${v_RuBisCO_c}$), ${ATP_st}$ and ${NADPH_st}$ ratio, and Flourescence results is plotted over the course of the day, if possible. The results do not represent actual plant behavior, but show the capabilities of the model to simulate complex and more realistic light protocols.
+Sample simulation of a day cycle (06:00 to 20:00) using real Photosynthetically active radiation (PAR) data from Kansas, USA on June 19, 2023. The data was obtained from the National Ecological Observatory Network (NEON) data portal ([https://doi.org/10.48443/vzfh-7675])(https://doi.org/10.48443/vzfh-7675) and is used to create a protocol for the light intensity ($\mathrm{{PPFD}}$) over the course of the day, in a minute interval. The simulation is run using the default parameters and initial conditions of the model, and the RuBisCO carboxylation rate ($v_\mathrm{{RuBisCO|carbox}}$), $\mathrm{{ATP_{{st}}}}$ and $\mathrm{{NADPH_{{st}}}}$ ratio, and Flourescence results is plotted over the course of the day, if possible. The results do not represent actual plant behavior, but show the capabilities of the model to simulate complex and more realistic light protocols.
 
 **Notes:**
 

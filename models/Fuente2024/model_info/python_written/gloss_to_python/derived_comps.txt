@@ -1,0 +1,12 @@
+------- Start on 2026-02-03 14:32:35.910512 -------
+
+Q_inactive = remove_math(derived_comps_table, r'$FQ_{inact}$')
+PQH_2 = remove_math(derived_comps_table, r'$PQH_2$')
+PSI_red = remove_math(derived_comps_table, r'$PI_{red}$')
+ADP_st = remove_math(derived_comps_table, r'$ADP$')
+RCII_closed = remove_math(derived_comps_table, r'$RCII_{closed}$')
+RCII_open = remove_math(derived_comps_table, r'$RCII_{open}$')
+Fluo = remove_math(derived_comps_table, r'$ChlF$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+O2 = remove_math(derived_comps_table, r'$O_2$')
+
