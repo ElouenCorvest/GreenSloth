@@ -301,30 +301,6 @@
       \verb /home/elouencorvestnew/Zotero/storage/9SEYA3UF/NEON-utilities-python.html
       \endverb
     \endentry
-    \entry{philipPysunnoaaPythonImplementation}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=641d0b452f41e85651e26b57ecae8bad}{%
-           family={Philip},
-           familyi={P\bibinitperiod},
-           given={Santosh},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{641d0b452f41e85651e26b57ecae8bad}
-      \strng{fullhash}{641d0b452f41e85651e26b57ecae8bad}
-      \strng{bibnamehash}{641d0b452f41e85651e26b57ecae8bad}
-      \strng{authorbibnamehash}{641d0b452f41e85651e26b57ecae8bad}
-      \strng{authornamehash}{641d0b452f41e85651e26b57ecae8bad}
-      \strng{authorfullhash}{641d0b452f41e85651e26b57ecae8bad}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{shorttitle}{Pysunnoaa}
-      \field{title}{Pysunnoaa: Python Implementation of {{NOAA}}'s {{Solar Position Calculators}}}
-      \verb{file}
-      \verb /home/elouencorvestnew/Zotero/storage/9N7A4P6L/pysunnoaa.html
-      \endverb
-    \endentry
     \entry{voncaemmererSteadystateModelsPhotosynthesis2013}{article}{}
       \name{author}{1}{}{%
         {{hash=dc57f9ad9eb869ccab6c25998f0b611f}{%
@@ -339,8 +315,8 @@
       \strng{authorbibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
       \strng{authornamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
       \strng{authorfullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Abstract In the challenge to increase photosynthetic rate per leaf area mathematical models of photosynthesis can be used to help interpret gas exchange measurements made under different environmental conditions and predict underlying photosynthetic biochemistry. To do this successfully it is important to improve the modelling of temperature dependencies of CO 2 assimilation and gain better understanding of internal CO 2 diffusion limitations. Despite these shortcomings steady-state models of photosynthesis provide simple easy to use tools for thought experiments to explore photosynthetic pathway changes such as redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared. , In the challenge to increase photosynthetic rate per leaf area steady state models of photosynthesis provide not only tools for gas exchange analysis but also for thought experiments that can explore photosynthetic pathway changes. These include redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared.}
@@ -389,8 +365,8 @@
       \strng{authorbibnamehash}{ea1270bd441f7908baabb0e8fe944821}
       \strng{authornamehash}{ea1270bd441f7908baabb0e8fe944821}
       \strng{authorfullhash}{ea1270bd441f7908baabb0e8fe944821}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0166-8595, 1573-5079}
@@ -425,8 +401,8 @@
       \strng{authorbibnamehash}{2a00b963a7c8e6cc25a66979c69be35d}
       \strng{authornamehash}{2a00b963a7c8e6cc25a66979c69be35d}
       \strng{authorfullhash}{2a00b963a7c8e6cc25a66979c69be35d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Abstract. Many atmospheric chemicals occur in the gas phase as well as in liquid cloud droplets and aerosol particles. Therefore, it is necessary to understand their distribution between the phases. According to Henry's law, the equilibrium ratio between the abundances in the gas phase and in the aqueous phase is constant for a dilute solution. Henry's law constants of trace gases of potential importance in environmental chemistry have been collected and converted into a uniform format. The compilation contains 46 434 values of Henry's law constants for 10 173 species, collected from 995 references. It is also available on the internet at https://www.henrys-law.org (last access: October 2023). This article is a living review that supersedes the now obsolete publication by Sander (2015).}
@@ -691,6 +667,46 @@
       \verb /home/elouencorvestnew/Zotero/storage/KVSFRKWI/latexify_py.html
       \endverb
       \keyw{equation,latex,math,mathematics,Scientific/Engineering - Mathematics,Software Development - Code Generators,tex,Text Processing - Markup - LaTeX}
+    \endentry
+    \entry{lochockiWidelyUsedVariants2025a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7bc1e5b8b92a41abac44c89c004cb3f3}{%
+           family={Lochocki},
+           familyi={L\bibinitperiod},
+           given={Edward\bibnamedelima B},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=71171fd62a48c8a1b667a6eb5d0f15d8}{%
+           family={McGrath},
+           familyi={M\bibinitperiod},
+           given={Justin\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{fullhash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{bibnamehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{authorbibnamehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{authornamehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{authorfullhash}{3befd5a647a5fcd70a806158df8eba3a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract The Farquhar-von-Caemmerer-Berry (FvCB) model is the most widely-used mechanistic model of C3 net CO2 assimilation, and it plays a significant role in plant physiology, ecology, climate science, and Earth system modeling. As use of the model has grown, multiple variants have appeared across publications. Although many of these are commonly used, there has not been a detailed investigation of existing variants and their impacts on results and interpretations. Here we summarize the types of variants and their prevalence in the literature, and we present a comprehensive comparison of differences between them. A key finding is that a common variant that uses the minimum of assimilation rates rather than the minimum of carboxylation rates, which we call the ``min-A variant,'' makes different predictions than the original ``min-W variant,'' yet appears in approximately half of highly-cited publications and software tools that use the FvCB model. Another concern is that although leaf biochemistry restricts the range of CO2 partial pressures where limitations due to triose phosphate utilization (TPU) can occur, this restriction is commonly omitted from the model's equations. Among other potential issues, these variations can introduce errors exceeding 20\% when estimating photosynthetic parameter values from CO2 response curves. It is therefore important to be aware of this source of error when fitting the model, to avoid using the min-A variant, and to include the biochemically-derived CO2 threshold for TPU limitations.}
+      \field{issn}{2517-5025}
+      \field{journaltitle}{in silico Plants}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Widely {{Used Variants}} of the {{Farquhar-von-Caemmerer-Berry Model Can Cause Errors}} in {{Parameter Estimation}}}
+      \field{urlday}{5}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{diaf014}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/insilicoplants/diaf014
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

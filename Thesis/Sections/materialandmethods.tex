@@ -1,6 +1,6 @@
 \subsection{Models}
 
-To make a good demonstration of the capabilities of \greensloth{}, five kinetic \gls{ode} models of photosynthesis have been chosen to take part in this thesis. These five models, while all showing photosynthesis, vary in their complexity and execution. Some are based on each other, while others stand alone. In the following, a brief description of each model is given. These short summaries are the ones used on the \greensloth{} website.
+To make a good demonstration of the capabilities of \greensloth{}, five kinetic \gls{ode} models of photosynthesis have been chosen to take part in this thesis. These five models, while all showing photosynthesis, vary in their complexity and execution. Some are based on each other, while others stand alone. In the following, a brief description of each model is given. These short summaries are the ones used on the \greensloth{} website. Additionally, the models are validated by trying to recreate the figures of the original publication, as close as possible. Due to permissions and licensing issues, the original figures will not be present in this thesis nor \greensloth{}. However, the publication is rightfully cited and so, the user can easily find the original figures, if they have access to the publication.
 
 \subsubsection{Bellasio2019}
 The Bellasio2019~\cite{bellasioGeneralisedDynamicModel2019} model is a generalized C\textsubscript{3} leaf-photosynthesis model, that includes simplified representations of the light and dark reactions and a stomatal behavior submodule. A lot of its implementation is based on past work by the same author and is mainly inspired by the common \gls{fvcb} model. The light reactions are modified from Yin et al. (2004) and include the potential rates of ATP and NADPH production based on light intensity. This model has been created with the simple user in mind, and the author has made an effort to show its simplicity, by giving access to a Microsoft Excel Workbook containing the entire model. To showcase the model's capabilities, the author creates common steady-state carbon assimilation curves, against intercellular CO2 concentration and light intensity, and compares them to experimental data from the literature. As many models of photosynthesis rely on purely stead-state assumptions, this model is also validated in dynamic conditions, showing for example the response of the model to a fluctuation of ambient oxygen concentration.
@@ -33,7 +33,7 @@ Overall, the model has one advantage over other photosynthesis models, as it als
 \subsection{Model Demonstrations}\label{sec:model-demonstrations}
 
 \subsubsection{Daylight Simulation}
-The \gls{ppfd} data in a 1-minute resolution used for the daylight simulation demonstration is taken from \gls{neon} at the KONZ site, located in Kansas, USA (39.10077, -96.56307)~\cite{nationalecologicalobservatorynetworkneonPhotosyntheticallyActiveRadiation2023}, using the \verb|neonutilities| package~\cite{lunchNeonutilitiesPackageAccessing}. As only a day is shown in the simulation, only data from the 19th of June 2023 is taken into account. Using a solar calculator package, \verb|pysunnoaa|~\cite{philipPysunnoaaPythonImplementation}, the sunrise and sunset times can be calculated using the geographical location and date to pinpoint the actual solar day of the location. The filtered data is then used as an input for the \gls{ppfd} parameter in the daylight simulation demonstration for every model. The protocol is constructed by simulating each point of \gls{ppfd} data for 60 seconds. Three different outputs are shown in this demonstration: the \gls{vc}, the \gls{atp} and \gls{nadph} ratio, and the \gls{F} yield. If these outputs are not available in the model at hand, the plot is still displayed with the corresponding y-axis label, struck through.
+The \gls{ppfd} data in a 1-minute resolution used for the daylight simulation demonstration is taken from \gls{neon} at the KONZ site, located in Kansas, USA (39.10077, -96.56307)~\cite{nationalecologicalobservatorynetworkneonPhotosyntheticallyActiveRadiation2023}, using the \verb|neonutilities| package~\cite{lunchNeonutilitiesPackageAccessing}. As only a day is shown in the simulation, only data from the 19th of June 2023 is taken into account. To limit the data to only the part of day that has sunlight, and a decent amount at that, the data is filtered to only include data that has a \gls{ppfd} value higher and equal than \qty{40}{\micro\mol\per\square\meter\per\second}. This threshold is chosen as it has shown to allow most models to still simulate the photosynthetic machinery, while still being a decent representation of the actual daylight conditions. The filtered data is then used as an input for the \gls{ppfd} parameter in the daylight simulation demonstration for every model. The protocol is constructed by simulating each point of \gls{ppfd} data for 60 seconds. Three different outputs are shown in this demonstration: the \gls{vc}, the \gls{atp} and \gls{nadph} ratio, and the \gls{F} yield. If these outputs are not available in the model at hand, the plot is still displayed with the corresponding y-axis label, struck through.
 
 \subsubsection{FvCB Add-on}
 The basis of the \gls{fvcb} add-on demonstration is based on the min-$W$ variant. If the supplied model already has a \gls{A}, then a generic FvCB simulation is done and compared to the results from von Caemmerer (2013)~\cite{voncaemmererSteadystateModelsPhotosynthesis2013}. If there is no available instance of \gls{A}, the two main and mandatory connection points for the add-on are the \gls{vc} and a quantity that represents \gls{co2}. If these two connection points are not available in the model, the simulation will not run, and only the general \gls{fvcb} output will be shown.
@@ -130,31 +130,32 @@ Options:
 \end{lstlisting}
 \end{figure*}
 
-\begin{center}  
-    \begin{minipage}{\linewidth}
+\begin{figure}[ht]
+    \centering
+    \begin{minipage}{0.3\textwidth}
         \dirtree{%
-            .1 Corvest2000/.
-            .2 figures/.
-            .3 demonstrations.ipynb.
-            .3 paper\_figures.ipynb.
-            .2 model/.
-            .3 basic\_funcs.py.
-            .3 derived\_quantities.py.
-            .3 \_\_init\_\_.py.
-            .3 rates.py.
-            .2 model\_info/.
-            .3 comps.csv.
-            .3 derived\_comps.csv.
-            .3 derived\_params.csv.
-            .3 params.csv.
-            .3 rates.csv.
-            .2 README\_script.py.
-        }
-        \bigskip % Adds a little space before the caption
-        \captionof{dirset}{\textbf{Example directory structure created by the \texttt{initialize} command of \greensloth[GreenSlothUtils].}}
-        \label{dir:greenslothutils-init}
+              .1 Corvest2000/.
+              .2 figures/.
+              .3 demonstrations.ipynb.
+              .3 paper\_figures.ipynb.
+              .2 model/.
+              .3 basic\_funcs.py.
+              .3 derived\_quantities.py.
+              .3 \_\_init\_\_.py.
+              .3 rates.py.
+              .2 model\_info/.
+              .3 comps.csv.
+              .3 derived\_comps.csv.
+              .3 derived\_params.csv.
+              .3 params.csv.
+              .3 rates.csv.
+              .2 README\_script.py.
+          }
     \end{minipage}
-\end{center}
+    \captionof{dirset}{\textbf{Example directory structure created by the \texttt{initialize} command of \greensloth[GreenSlothUtils].}}
+    \label{dir:greenslothutils-init}
+\end{figure}
+
 
 The \verb|figures| directory consists of two Jupyter Notebooks. The \verb|demonstrations.ipynb| includes all Model Demonstrations for the model, already written out, with each demonstration having its own cell. The creator of the model simply has to replace the \verb|None| values of each string representation of model parts needed for the demonstration. For more information on what the demonstrations entail, please refer to \hyperref[sec:model-demonstrations]{Section \ref*{sec:model-demonstrations}}. The \verb|paper_figures.ipynb| is a blank notebook intended to be used to recreate the figures of the model's publication. Both notebooks already include necessary imports and helper functions to quickly get started. If the model is correctly implemented inside the \verb|model| directory, the importing of the model should work.
 

@@ -1,0 +1,16 @@
+[workspace]
+authors = ["ElouenCorvest <elouen2000@gmail.com>"]
+channels = ["conda-forge"]
+name = "python"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "*"
+reportlab = "*"
+svglib = ">=1.6.0,<2"
+
+
+

@@ -2,7 +2,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{Acknowledgements}{i}{section*.1}%
 \contentsline {section}{Abstract}{ii}{section*.2}%
-\contentsline {section}{List of Code-Blocks}{vi}{section*.8}%
+\contentsline {section}{List of Code-Blocks}{vii}{section*.8}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {section}{\numberline {2}Material and Methods}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Models}{2}{subsection.2.1}%
@@ -11,10 +11,10 @@
 \contentsline {subsubsection}{\numberline {2.1.3}Li2021}{3}{subsubsection.2.1.3}%
 \contentsline {subsubsection}{\numberline {2.1.4}Matuszynska2016}{3}{subsubsection.2.1.4}%
 \contentsline {subsubsection}{\numberline {2.1.5}Saadat2021}{3}{subsubsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.2}Model Demonstrations}{3}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Daylight Simulation}{3}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2}Model Demonstrations}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Daylight Simulation}{4}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}FvCB Add-on}{4}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Standard PAM Simulation}{4}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3}Standard PAM Simulation}{5}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}MCA of Photosynthesis}{5}{subsubsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.5}Fitting of NPQ}{5}{subsubsection.2.2.5}%
 \contentsline {subsection}{\numberline {2.3}GreenSlothUtils}{6}{subsection.2.3}%
@@ -23,5 +23,18 @@
 \contentsline {subsection}{\numberline {2.5}Additional Methods}{13}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}Usage of AI}{13}{subsubsection.2.5.1}%
 \contentsline {section}{\numberline {3}Results}{14}{section.3}%
-\contentsline {section}{\numberline {4}Discussion}{15}{section.4}%
-\contentsline {section}{References}{vii}{section.4}%
+\contentsline {subsection}{\numberline {3.1}Model Validations}{14}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Bellasio2019}{17}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Fuente2024}{17}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Li2021}{17}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Matuszynska2016}{17}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Saadat2021}{17}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Model Demonstrations}{17}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Daylight Simulation}{17}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}FvCB Add-on}{17}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Standard PAM Simulation}{17}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}MCA of Photosynthesis}{17}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Fitting of NPQ}{17}{subsubsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.3}Website}{17}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Discussion}{22}{section.4}%
+\contentsline {section}{References}{viii}{section.4}%
