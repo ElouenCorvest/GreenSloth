@@ -42,6 +42,14 @@ def calc_kCBB(PAR):
 def _delta_pH_inVolts(delta_pH: float):
     return 0.06 * delta_pH
 
+def _ql(QA_red: float):
+    return 1 - QA_red
+
+def _ql_act(qL: float):
+    return qL**3 / (qL**3 + 0.15**3)
+
+def _pH_act(pH_lumen: float):
+    return 1 / (10 ** (1 * (pH_lumen - 6.0)) + 1)
 
 def include_derived_quantities(m: Model):
     
@@ -158,6 +166,23 @@ def include_derived_quantities(m: Model):
         fn=_delta_pH_inVolts,
         args=['delta_pH'],
     )
-
+    
+    m.add_derived(
+        name="qL",
+        fn=_ql,
+        args=["QA_red"],
+    )
+    
+    m.add_derived(
+        name="qL_act",
+        fn=_ql_act,
+        args=["qL"],
+    )
+    
+    m.add_derived(
+        name="pH_act",
+        fn=_pH_act,
+        args=["pH_lumen"],
+    )
 
     return m

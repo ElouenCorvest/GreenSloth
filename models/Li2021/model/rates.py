@@ -80,7 +80,6 @@ def _v_Mehler(Fd_red, Fd_ox):
     return 4 * 0.000265 * Fd_red / (Fd_red + Fd_ox)
 
 def _v_CBB_NADPH(NADPH_pool, NADP_pool, t, k_CBC):
-    # print(f"{NADPH_pool=}, {NADP_pool=}, {t=}, {k_CBC=}")
     return (
         k_CBC
         * (1.0 - np.exp(-t / 600))
@@ -88,10 +87,7 @@ def _v_CBB_NADPH(NADPH_pool, NADP_pool, t, k_CBC):
         / (np.log(3.5 / 1.25))
     )
 
-def _v_KEA(QAm, pH_lumen, K_lumen, H_lumen, H_stroma, K_stroma, k_KEA):
-    qL = 1 - QAm
-    qL_act = qL**3 / (qL**3 + 0.15**3)
-    pH_act = 1 / (10 ** (1 * (pH_lumen - 6.0)) + 1)
+def _v_KEA(qL_act, pH_act, K_lumen, H_lumen, H_stroma, K_stroma, k_KEA):
     f_KEA_act = qL_act * pH_act
     return k_KEA * (H_lumen * K_stroma - H_stroma * K_lumen) * f_KEA_act
 
@@ -233,7 +229,7 @@ def include_rates(m: Model):
     m.add_reaction(
         name="v_KEA",
         fn=_v_KEA,
-        args=['QA_red', 'pH_lumen', 'K_lumen', 'H_lumen', 'H_stroma', 'K__stroma', 'k_KEA'],
+        args=["qL_act", 'pH_act', 'K_lumen', 'H_lumen', 'H_stroma', 'K__stroma', 'k_KEA'],
         stoichiometry={"K_lumen": Derived(fn=value, args=['lumen_protons_per_turnover'], unit=None), "pH_lumen": Derived(fn=div, args=['lumen_protons_per_turnover', 'buffering_capacity'], unit=None), }
     )
     m.add_reaction(

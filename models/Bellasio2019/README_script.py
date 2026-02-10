@@ -492,20 +492,6 @@ The recreation of this figure was only partly achieved. Both upper rows show tre
 mdFile.new_paragraph(rf"""
                      
 <details>
-<summary>Figure 5</summary>
-                     
-<img style='float: center' src='figures/{model_title.lower()}_fig5.svg' alt='Figure 5' width='600'/>
-
-Response curves to a transition from low to high light (left) and from high to low light (right). The low light intensity was 50 µmol m⁻² s⁻¹, while the high light intensity was 1500 µmol m⁻² s⁻¹. Acclimation was simulated for $1000 \mathrm{s}$ at the respective light intensities before switching to the other light intensity. This switch is the zero point on the x-axis. The parameters of the model were changed better to reflect the experimental conditions of a measurement cuvette therefore the following parameters were changed: ${Ca} = 350 \mathrm{{\mu mol\ mol^{{-1}}}}$, ${vmax_v_RuBisCO_c} = 0.18 \mathrm{{mmol\ m^{{-2}}\ s^{{-1}}}}$, ${chi_beta} = 0.8 \mathrm{{mol\ air\ MPa^{{-1}}}}$, ${tau0} = -0.12$, ${Ki} = 3600 \mathrm{{s}}$, and ${Kd} = 1200 \mathrm{{s}}$. All other parameters were not changed from the default values used in the model. The top row shows the assimilation rate ${A}$ and the rate of {ATP_st} and {NADPH_st} synthesis (${v_ATPsynth}$ and ${v_FNR}$ respectively). The middle shows row the stomatal conductance (${gs}$), the RuBisCO activation state (${Ract}), and ${f_rubp}$. Lastly, the bottom row shows the ratio of ${ATP_st}$ and ${NADPH_st}$ to their respective totals.
-
-The recreation of this figure was only partly achieved. Both upper rows show trends very similar to the original figure; however, the right plots show a gradual but stark decrease in the recreation, whereas in the original figure, it is a sudden drop immediately after the light switch. The other four plots show distinct differences in values and trends, especially in the concentrations of ${Pi_st}$ and ${PGA}$, as well as in the ratio of ${NADPH_st}$. The cause of these discrepancies could not be determined; however, it is speculated that some parameter values or initial conditions were not accurately represented in the original caption, or that the use of different numerical solvers could have affected the results. Furthermore, true steady-state can not be achieved with the recreated version of the model, and so the shortest duration that shows least of change at the end is used. Even though the recreation is not perfect, it still captures the same information as the original figure and therefore is still deemed valid.
-
-</details>
-""")
-
-mdFile.new_paragraph(rf"""
-                     
-<details>
 <summary>Figure 6</summary>
                      
 <img style='float: center' src='paper_figures/{model_title.lower()}_fig6.svg' alt='Figure 6' width='600'/>
