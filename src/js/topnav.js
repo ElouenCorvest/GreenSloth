@@ -40,7 +40,7 @@ topnavBarCenter.appendChild(topnavBarCenterHome)
 // Center Model Select
 var topnavBarCenterModelSelect = document.createElement("a")
 topnavBarCenterModelSelect.classList.add("tablinks", "topnav-link")
-topnavBarCenterModelSelect.href = siteUrl + "/src/html/models_select.php"
+topnavBarCenterModelSelect.href = siteUrl + "/models_select.html"
 topnavBarCenterModelSelect.innerHTML = "Models"
 topnavBarCenter.appendChild(topnavBarCenterModelSelect)
 
@@ -63,6 +63,13 @@ var githubLogo = document.createElement("span")
 githubLogo.classList.add("githubLogo")
 topnavBarCenterGithub.prepend(githubLogo)
 
+// Center Compare
+var topnavBarCenterCompare = document.createElement("a")
+topnavBarCenterCompare.classList.add("tablinks", "topnav-link")
+topnavBarCenterCompare.href = siteUrl + "/Compare.html"
+topnavBarCenterCompare.innerHTML = "Compare"
+topnavBarCenter.appendChild(topnavBarCenterCompare)
+
 // Center HowToUse
 var topnavBarCenterHowToUse = document.createElement("a")
 topnavBarCenterHowToUse.classList.add("tablinks", "topnav-link")
@@ -73,7 +80,7 @@ topnavBarCenter.appendChild(topnavBarCenterHowToUse)
 // Center Contribution
 var topnavBarCenterContribution = document.createElement("a")
 topnavBarCenterContribution.classList.add("tablinks", "topnav-link")
-topnavBarCenterContribution.href = siteUrl + "/src/html/AboutUs.php"
+topnavBarCenterContribution.href = siteUrl + "/AboutUs.html"
 topnavBarCenterContribution.innerHTML = "About Us"
 topnavBarCenter.appendChild(topnavBarCenterContribution)
 
@@ -91,7 +98,7 @@ topnavBarTop.appendChild(topnavBarRight)
 
 // Center Text when small media query
 var topnavBarRightText = document.createElement("h3")
-topnavBarRightText.innerHTML = "Gordon Research Conference"
+topnavBarRightText.innerHTML = ""
 topnavBarRight.appendChild(topnavBarRightText)
 
 // Small Media Query Nav Links

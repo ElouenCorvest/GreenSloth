@@ -2,6 +2,7 @@ import Papa from "papaparse";
 import { marked } from 'marked';
 import modelData from "../js/models.json"
 import vennDiagramm from "../img/venn_diagramm.svg?raw"
+import { informationPointer } from "./utils.js";
 import Swiper from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
 import chroma from "chroma-js"
@@ -125,6 +126,7 @@ function createInfoTable(response) {
             tableHTML += "</tr>";
         });
         tableHTML += "</tbody>";
+
         document.getElementById(`modelAttr${pointObject[key]}Table`).innerHTML = tableHTML;
 
         // Tell MathJax to re-render LaTeX
@@ -939,41 +941,33 @@ compareModalBodySchemesRightImg.id = "compare-schemes-right"
 compareModalBodySchemesRightImg.classList.add("compare-schemes", "model-scheme")
 compareModalBodySchemesRightContainer.appendChild(compareModalBodySchemesRightImg)
 
-//////////////// INFORMATION ////////////////
-// Parent container
-const compareModalBodyInformation = document.getElementById("compare-body-information")
+    //////////////// INFORMATION ////////////////
+    // Parent container
+    const compareModalBodyInformation = document.getElementById("compare-body-information")
 
-// Left Side
-var compareModalBodyInformationLeft = document.createElement("div")
-compareModalBodyInformationLeft.id = "compare-information-left"
-compareModalBodyInformationLeft.classList.add("compare-information")
-compareModalBodyInformationLeft.addEventListener("mouseleave", function() {
-    const allInfoBox = document.getElementsByClassName("compare-information-box")
-    for (let element of allInfoBox) {
-        element.classList.remove("active", "inactive")
-    }
-})
-compareModalBodyInformation.appendChild(compareModalBodyInformationLeft)
+    // Left Side
+    var compareModalBodyInformationLeft = document.createElement("div")
+    compareModalBodyInformationLeft.id = "compare-information-left"
+    compareModalBodyInformationLeft.classList.add("compare-information")
+    compareModalBodyInformationLeft.addEventListener("mouseleave", function() {
+        const allInfoBox = document.getElementsByClassName("compare-information-box")
+        for (let element of allInfoBox) {
+            element.classList.remove("active", "inactive")
+        }
+    })
+    compareModalBodyInformation.appendChild(compareModalBodyInformationLeft)
 
-// Right Side
-var compareModalBodyInformationRight = document.createElement("div")
-compareModalBodyInformationRight.id = "compare-information-right"
-compareModalBodyInformationRight.classList.add("compare-information")
-compareModalBodyInformationRight.addEventListener("mouseleave", function() {
-    const allInfoBox = document.getElementsByClassName("compare-information-box")
-    for (let element of allInfoBox) {
-        element.classList.remove("active", "inactive")
-    }
-})
-compareModalBodyInformation.appendChild(compareModalBodyInformationRight)
-
-const informationPointer = {
-    "ODEs": "compsData",
-    "Derived Compounds": "derivedCompsData",
-    "Parameters": "paramsData",
-    "Derived Parameters": "derivedParamsData",
-    "Rates": "ratesData"
-}
+    // Right Side
+    var compareModalBodyInformationRight = document.createElement("div")
+    compareModalBodyInformationRight.id = "compare-information-right"
+    compareModalBodyInformationRight.classList.add("compare-information")
+    compareModalBodyInformationRight.addEventListener("mouseleave", function() {
+        const allInfoBox = document.getElementsByClassName("compare-information-box")
+        for (let element of allInfoBox) {
+            element.classList.remove("active", "inactive")
+        }
+    })
+    compareModalBodyInformation.appendChild(compareModalBodyInformationRight)
 
 // Make rows for both sides
 const sides = ["left", "right"]
@@ -1001,7 +995,7 @@ sides.forEach(side => {
         parentElement.appendChild(infoBox)
 
         var infoBoxTitle = document.createElement("h3")
-        infoBoxTitle.innerText = key
+        infoBoxTitle.innerText = key        
         infoBox.appendChild(infoBoxTitle)
 
         var infoBoxValue = document.createElement("p")
@@ -1052,16 +1046,79 @@ topnav.id = "topnav"
 appendCommentedElement(layoutWrapper, topnav, "The TopNav")
 
 const wrapper = document.createElement("div")
-wrapper.id = "wrapper"
+wrapper.id = "wrapper-model"
 appendCommentedElement(layoutWrapper, wrapper, "The Wrapper")
 
+const sideBarElement = document.createElement("nav")
+sideBarElement.id = "model-sidebar"
+sideBarElement.classList.add("sidebar")
+appendCommentedElement(wrapper, sideBarElement, "The Sidebar")
+
 const contentElement = document.createElement("div")
-contentElement.id = "content"
+contentElement.id = "model-content"
 appendCommentedElement(wrapper, contentElement, "The Content")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Header
+// Sidebar
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const sideBarTitle = document.createElement("h3")
+// sideBarTitle.classList.add("modelText")
+sideBarTitle.innerHTML = "Contents"
+sideBarElement.appendChild(sideBarTitle)
+
+const sideBarList = document.createElement("ul")
+sideBarElement.appendChild(sideBarList)
+
+// Back to Top
+var sideBarListItem = document.createElement("li")
+var listItemLink = document.createElement("a")
+listItemLink.innerHTML = "Back to Top"
+listItemLink.href = "#model-header"
+listItemLink.addEventListener("click", function() {
+    const allSideBarLinks = document.querySelectorAll("#model-sidebar a")
+    for (const item of allSideBarLinks) {
+        if (item === this) {
+            item.classList.add("active")
+        } else {
+            item.classList.remove("active")
+        }
+    }
+})
+sideBarListItem.appendChild(listItemLink)
+sideBarList.appendChild(sideBarListItem)
+
+// Compare
+var sideBarListItem = document.createElement("li")
+var listItemLink = document.createElement("a")
+listItemLink.innerHTML = "Compare"
+listItemLink.href = "../Compare.html?select=ad" + modelName
+sideBarListItem.appendChild(listItemLink)
+sideBarList.appendChild(sideBarListItem)
+
+// Summary
+var sideBarListItem = document.createElement("li")
+var listItemLink = document.createElement("a")
+listItemLink.innerHTML = "Summary"
+listItemLink.href = `#modelAttrSummary`
+listItemLink.addEventListener("click", function() {
+    const allSideBarLinks = document.querySelectorAll("#model-sidebar a")
+    for (const item of allSideBarLinks) {
+        if (item === this) {
+            item.classList.add("active")
+        } else {
+            item.classList.remove("active")
+        }
+    }
+})
+sideBarListItem.appendChild(listItemLink)
+sideBarList.appendChild(sideBarListItem)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Content
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Header
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Create Model Header
 var modelHeader = document.createElement("div")
 modelHeader.id = "model-header"
@@ -1106,11 +1163,8 @@ githubLogo.classList.add("githubLogo")
 modelHeaderButtonBarGithubLogoText.prepend(githubLogo)
 
 // Insert Model Button Bar Compare Button
-var modelHeaderButtonBarCompare = document.createElement("button")
-modelHeaderButtonBarCompare.onclick = function() {
-    compareModal.classList.toggle("hidden")
-    this.classList.toggle("active")
-}
+var modelHeaderButtonBarCompare = document.createElement("a")
+modelHeaderButtonBarCompare.href = "../Compare.html?select=" + modelName
 modelHeaderButtonBarCompare.append("Compare")
 modelHeaderButtonBar.appendChild(modelHeaderButtonBarCompare)
 
@@ -1121,195 +1175,15 @@ modelHeaderButtonBarLastUpdate.style = "flex-grow: 1; margin: 0; font-size: 0.7e
 updateLastModified(modelHeaderButtonBarLastUpdate)
 modelHeaderButtonBarGithub.appendChild(modelHeaderButtonBarLastUpdate)
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Create Model Info Selector
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Insert Model Info Selector
-var modelInfoSelector = document.createElement("div")
-modelInfoSelector.id = "model-info-selector"
-appendCommentedElement(contentElement, modelInfoSelector, "The Model Info Selector")
+    ///////////////////////////////////////////////////////
+    // Model Summary Block
+    ///////////////////////////////////////////////////////
 
-// Insert Model Info Dropdown
-var modelInfoSelectorDropdown = document.createElement("select")
-modelInfoSelectorDropdown.classList.add("clickable")
-modelInfoSelectorDropdown.id = "model-info-selector-dropdown"
-modelInfoSelectorDropdown.addEventListener("change", function() {
-    const chosenSection = modelInfoSelectorDropdown.value
-    if (chosenSection != "") {
-        galleryTop.slideTo(chosenSection)
-    }
-})
-appendCommentedElement(modelInfoSelector, modelInfoSelectorDropdown, "The Model Info Dropdown")
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Create Swiper Thumbs Div
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Insert Swiper Thumbs Div
-var swiperThumbDiv = document.createElement("div")
-swiperThumbDiv.classList.add("swiper-container", "gallery-thumbs")
-appendCommentedElement(modelInfoSelector, swiperThumbDiv, "The Swiper Thumb Div")
-
-// Insert Swiper Thumbs Wrapper
-var swiperThumbWrapper = document.createElement("div")
-swiperThumbWrapper.classList.add("swiper-wrapper")
-appendCommentedElement(swiperThumbDiv, swiperThumbWrapper, "The Swiper Thumb Wrapper")
-
-// Insert Swiper Thumbs Summary
-var swiperThumbSummary = document.createElement("div")
-swiperThumbSummary.classList.add("swiper-slide", "clickable")
-swiperThumbSummary.innerHTML = "Summary"
-appendCommentedElement(swiperThumbWrapper, swiperThumbSummary, "The Swiper Thumb Summary")
-
-// Insert Model Info Select Summary
-var modelInfoSelectorDropdownOptionSummary = document.createElement("option")
-modelInfoSelectorDropdownOptionSummary.innerHTML = "Summary"
-modelInfoSelectorDropdownOptionSummary.value = modelInfoSelectorDropdown.childNodes.length
-modelInfoSelectorDropdown.appendChild(modelInfoSelectorDropdownOptionSummary)
-
-// Tab Container Buttons
-const modelInfoCats = {
-    ODE: "ODE System",
-    DerivedComps: "Derived Quantities",
-    Params: "Parameters",
-    DerivedParams: "Derived Parameters",
-    Rates: "Rates",
-    Figures: "Figures"
-}
-
-// Insert Swiper Thumbs
-for (const [key, value] of Object.entries(modelInfoCats)) {
-    var swiperThumb = document.createElement("div")
-    swiperThumb.classList.add("clickable", "swiper-slide")
-    swiperThumb.innerHTML = value
-    appendCommentedElement(swiperThumbWrapper, swiperThumb, `The Swiper Thumb ${key}`)
-
-    var modelInfoSelectorDropdownOption = document.createElement("option")
-    modelInfoSelectorDropdownOption.innerHTML = value
-    modelInfoSelectorDropdownOption.value = modelInfoSelectorDropdown.childNodes.length
-    modelInfoSelectorDropdown.appendChild(modelInfoSelectorDropdownOption)
-}
-
-///////////////////////////////////////////////////////
-// Create Swiper Div
-///////////////////////////////////////////////////////
-// Insert Swiper Div
-var swiperDiv = document.createElement("div")
-swiperDiv.classList.add("swiper", "gallery-top")
-appendCommentedElement(contentElement, swiperDiv, "The Swiper Div")
-
-// Insert Swiper Buttons Row
-var swiperButtons = document.createElement("div")
-swiperButtons.id = "swiper-model-buttons"
-appendCommentedElement(swiperDiv, swiperButtons, "The Swiper Buttons")
-
-// Insert Swiper Prev Arrow
-var swiperPrev = document.createElement("span")
-swiperPrev.classList.add("swiper-button")
-swiperPrev.addEventListener("click", function() {
-    var numSlides = galleryTop.slides.length
-    var thisSlideIndex = galleryTop.activeIndex
-    if (thisSlideIndex == 0) {
-        var newSlideIndex = numSlides - 1
-    } else {
-        var newSlideIndex = thisSlideIndex - 1
-    }
-    galleryTop.slideTo(newSlideIndex)
-})
-appendCommentedElement(swiperButtons, swiperPrev, "The Swiper Prev Arrow")
-
-var swiperPrevArrow = document.createElement("span")
-swiperPrevArrow.classList.add("arrowUp")
-swiperPrevArrow.id = "swiper-model-button-prev"
-swiperPrev.appendChild(swiperPrevArrow)
-
-// Insert Swiper Next Arrow
-var swiperNext = document.createElement("div")
-swiperNext.classList.add("swiper-button")
-swiperNext.addEventListener("click", function() {
-    var numSlides = galleryTop.slides.length
-    var thisSlideIndex = galleryTop.activeIndex
-    if (thisSlideIndex == numSlides - 1) {
-        var newSlideIndex = 0
-    } else {
-        var newSlideIndex = thisSlideIndex + 1
-    }
-    galleryTop.slideTo(newSlideIndex)
-})
-appendCommentedElement(swiperButtons, swiperNext, "The Swiper Next Arrow")
-
-var swiperNextArrow = document.createElement("span")
-swiperNextArrow.classList.add("arrowUp")
-swiperNextArrow.id = "swiper-model-button-next"
-swiperNext.appendChild(swiperNextArrow)
-
-// Insert Swiper Wrapper
-var swiperWrapper = document.createElement("div")
-swiperWrapper.classList.add("swiper-wrapper", "swiper-wrapper-models")
-appendCommentedElement(swiperDiv, swiperWrapper, "The Swiper Wrapper")
-
-// Insert Swiper Slide Summary
-var swiperSummary = document.createElement("div")
-swiperSummary.classList.add("swiper-slide", "swiper-slide-models")
-appendCommentedElement(swiperWrapper, swiperSummary, "The Swiper Slide Summary")
-
-// Insert Swiper Slides
-for (const [key, value] of Object.entries(modelInfoCats)) {
-    var swiperSlide = document.createElement("div")
-    swiperSlide.classList.add("swiper-slide", "swiper-slide-models", "modelTabContent")
-    swiperSlide.id = `modelAttr${key}`
-    appendCommentedElement(swiperWrapper, swiperSlide, `The Swiper Slide ${key}`)
-
-    if (key != "Figures") {
-        var modelAttrTableDiv = document.createElement("div")
-        modelAttrTableDiv.classList.add("model-attr-table-div")
-        swiperSlide.appendChild(modelAttrTableDiv)
-
-        var modelAttrTable = document.createElement("table")
-        modelAttrTable.id = `modelAttr${key}Table`
-        modelAttrTableDiv.appendChild(modelAttrTable)
-
-        var modelAttrMath = document.createElement("div")
-        modelAttrMath.id = `modelAttr${key}Math`
-        modelAttrMath.classList.add("modelAttrMath")
-        swiperSlide.appendChild(modelAttrMath)
-    }
-}
-
-///////////////////////////////////////////////////////
-// Init Swiper
-///////////////////////////////////////////////////////
-Swiper.use([Navigation, Thumbs]);
-var galleryThumbs = new Swiper('.gallery-thumbs', {
-    spaceBetween: 10,
-    slidesPerView: 'auto', // <- makes slide width match content
-    freeMode: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    // no loop here
-  });  
-
-var galleryTop = new Swiper('.gallery-top', {
-    spaceBetween: 10,
-    loop: true,
-    loopedSlides: 5,
-    autoHeight: true,
-    allowTouchMove: false,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    thumbs: {
-        swiper: galleryThumbs,
-    },
-});
-
-///////////////////////////////////////////////////////
-// Model Summary Block
-///////////////////////////////////////////////////////
 // Insert Model Summary Block
-var modelSummaryBlock = document.createElement("div")
-modelSummaryBlock.id = "model-summary-block"
-appendCommentedElement(swiperSummary, modelSummaryBlock, "The Model Summary")
+var modelSummaryBlock = document.createElement("section")
+modelSummaryBlock.id = "modelAttrSummary"
+modelSummaryBlock.classList.add("modelTabContent")
+appendCommentedElement(contentElement, modelSummaryBlock, "The Model Summary")
 
 // Insert Model Scheme Block
 var modelSummaryBlockSchemeBlock = document.createElement("div")
@@ -1344,40 +1218,71 @@ modelSummaryBlockText.appendChild(modelSummaryBlockTextTitle)
 var modelSummaryBlockTextText = document.createElement("p")
 modelSummaryBlockText.appendChild(modelSummaryBlockTextText)
 
-// Add at End
-// Get this models Info and input into right places
+// Insert model categories
+const modelInfoCats = {
+    ODE: "ODE System",
+    DerivedComps: "Derived Quantities",
+    Params: "Parameters",
+    DerivedParams: "Derived Parameters",
+    Rates: "Rates",
+    Figures: "Figures"
+}
+
+for (const [key, value] of Object.entries(modelInfoCats)) {
+    var modelAttrSection = document.createElement("section")
+    modelAttrSection.classList.add("modelTabContent")
+    modelAttrSection.id = `modelAttr${key}`
+    appendCommentedElement(contentElement, modelAttrSection, `Model ${key}`)
+
+    var modelAttrTitle = document.createElement("h2")
+    modelAttrTitle.innerHTML = value
+    modelAttrSection.appendChild(modelAttrTitle)
+
+    //  Sidebar
+    var listItem = document.createElement("li")
+    var listItemLink = document.createElement("a")
+    listItemLink.innerHTML = value
+    listItemLink.href = `#modelAttr${key}`
+    listItemLink.addEventListener("click", function() {
+        const allSideBarLinks = document.querySelectorAll("#model-sidebar a")
+        for (const item of allSideBarLinks) {
+            if (item === this) {
+                item.classList.add("active")
+            } else {
+                item.classList.remove("active")
+            }
+        }
+    })
+    listItem.appendChild(listItemLink)
+    sideBarList.appendChild(listItem)
+
+    if (key != "Figures") {
+        var modelAttrTableDiv = document.createElement("div")
+        modelAttrTableDiv.classList.add("model-attr-table-div")
+        modelAttrSection.appendChild(modelAttrTableDiv)
+
+        
+
+        var modelAttrTable = document.createElement("table")
+        modelAttrTable.id = `modelAttr${key}Table`
+        modelAttrTableDiv.appendChild(modelAttrTable)
+
+        var modelAttrMath = document.createElement("div")
+        modelAttrMath.id = `modelAttr${key}Math`
+        modelAttrMath.classList.add("modelAttrMath")
+        modelAttrSection.appendChild(modelAttrMath)
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// End
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 getModelInfo(modelName)
     .then(response => {
         createInfoTable(response);
-        createInfoList(response, "left", informationPointer)
-
-        const filteredGlossCompsAbbr = filterGlossIDAbbr(response["compsData"])
-        const filteredGlossDerivedCompsAbbr = filterGlossIDAbbr(response["derivedCompsData"])
-        const filteredGlossCombinedAbbr = {...filteredGlossCompsAbbr, ...filteredGlossDerivedCompsAbbr}
-        var leftVariables = document.getElementById("compare-variables-left")
-        for (const [key, value] of Object.entries(filteredGlossCombinedAbbr)) {
-            var newP = document.createElement("p")
-            newP.innerText = value
-            leftVariables.appendChild(newP)
-        }
-
-        const filteredGlossCompsPythonVar = filterGlossIDPythonVar(response["compsData"])
-        const filteredGlossDerivedCompsPythonVar = filterGlossIDPythonVar(response["derivedCompsData"])
-        const filteredGlossCombined = {...filteredGlossCompsPythonVar, ...filteredGlossDerivedCompsPythonVar}
-        // Compare Modal Heading Select Option Creator
-        const compareModalBodySimulationSelect = document.getElementById("compare-simulation-select")
-        const availableVars = Object.values(filteredGlossCombined)
-        availableVars.forEach(element => {
-            var varOption = document.createElement("option")
-            varOption.value = element
-            varOption.innerHTML = element
-            compareModalBodySimulationSelect.appendChild(varOption)
-        })
-
-        MathJax.typeset()
-
-        galleryTop.update()
-    });
+        // createInfoList(response, "left", informationPointer);
+    })
 
 getMdFile().then(response => {
     // Insert Summary
@@ -1395,7 +1300,6 @@ getMdFile().then(response => {
         } catch {
             continue
         }
-
     }
 
     // Insert Figures
@@ -1424,7 +1328,6 @@ getMdFile().then(response => {
                     siblings[i].classList.toggle("hidden")
                 }
             }
-            galleryTop.update()
         });
         modelAttrFiguresContainer.appendChild(modelAttrFiguresContainerHead)
 
@@ -1452,9 +1355,6 @@ getMdFile().then(response => {
         modelAttrFiguresContainerContent.innerHTML += figureText
 
     }
-
-    galleryTop.update()
-
 })
 
 // At the very End

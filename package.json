@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^6.3.5"
+    "glob": "^13.0.3",
+    "vite": "^6.3.5",
+    "vite-plugin-virtual-html": "^1.2.7"
   },
   "dependencies": {
     "@nivo/core": "^0.99.0",

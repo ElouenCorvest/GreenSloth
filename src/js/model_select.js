@@ -28,7 +28,7 @@ for (const [name, info] of Object.entries(modelInfo)) {
     modelRow.appendChild(modelTitle);
 
     const modelLink = document.createElement("a");
-    modelLink.href = `${name}.php`
+    modelLink.href = `/model/${name}.html`
     modelRow.appendChild(modelLink);
     
     const linkSpanner = document.createElement("span");
