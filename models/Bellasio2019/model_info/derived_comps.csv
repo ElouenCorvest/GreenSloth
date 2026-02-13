@@ -1,7 +1,0 @@
-Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
-Stromal ADP concentration,$\mathrm{ADP_{st}}$,$\mathrm{ADP}$,C00008,ADP_st,8
-Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,$\mathrm{NADP}$,C00006,NADP_st,38
-Stromal concentration of orthophosphate,"$\mathrm{P}_\mathrm{i,\ st}$",$\mathrm{P_i}$,C00009,Pi_st,39
-Efficiency of PSII,$\Phi \mathrm{PSII}$,$Y\mathrm{(II)}$,,PhiPSII,69
-$\mathrm{CO}_2$ assimilation,$A$,$A$,,A,79
-Oxygen Concentration,$\mathrm{O_2}$,$O_2$,,O2,80

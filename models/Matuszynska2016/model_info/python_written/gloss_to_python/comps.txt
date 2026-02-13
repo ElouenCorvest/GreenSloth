@@ -1,9 +1,0 @@
-------- Start on 2025-06-10 13:56:55.701460 -------
-
-PQH_2 = remove_math(comps_table, r'$\mathrm{PQH}_2$')
-H_lu = remove_math(comps_table, r'$\mathrm{H}$')
-ATPase_ac = remove_math(comps_table, r'$\mathrm{ATPase}^*$')
-ATP_st = remove_math(comps_table, r'$\mathrm{ATP}$')
-psbS = remove_math(comps_table, r'$\mathrm{PsbS}$')
-Vx = remove_math(comps_table, r'$\mathrm{Vx}$')
-
