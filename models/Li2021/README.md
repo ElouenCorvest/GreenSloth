@@ -47,10 +47,10 @@
 <summary>ODE System</summary>
 
 ```math 
-\frac{\mathrm{d}\mathrm{PC}_\mathrm{red}}{\mathrm{d}t} = v_{\mathrm{b6f}} - v_\mathrm{PSI|PCoxid}
+\frac{\mathrm{d}\mathrm{PC}_\mathrm{red}}{\mathrm{d}t} = v_{\mathrm{b6f}} - v_\mathrm{PSI \vert PCoxid}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{PC}_\mathrm{ox}}{\mathrm{d}t} = - v_{\mathrm{b6f}} + v_\mathrm{PSI|PCoxid}
+\frac{\mathrm{d}\mathrm{PC}_\mathrm{ox}}{\mathrm{d}t} = - v_{\mathrm{b6f}} + v_\mathrm{PSI \vert PCoxid}
 ```
 ```math 
 \frac{\mathrm{d}\mathrm{PQH}_2}{\mathrm{d}t} = - 0.5 \cdot v_{\mathrm{b6f}} + 0.5 \cdot v_{\mathrm{NDH}} + 0.5 \cdot v_\mathrm{PRG5} + 0.5 \cdot v_{\mathrm{PSII}}
@@ -59,10 +59,10 @@
 \frac{\mathrm{d}\mathrm{PQ}}{\mathrm{d}t} = 0.5 \cdot v_{\mathrm{b6f}} - 0.5 \cdot v_{\mathrm{NDH}} - 0.5 \cdot v_\mathrm{PRG5} - 0.5 \cdot v_{\mathrm{PSII}}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{pH}_\mathrm{lu}}{\mathrm{d}t} = \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot \left( -2 \cdot v_{\mathrm{b6f}} - 2 \cdot v_{\mathrm{NDH}} + \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} + v_\mathrm{ClCe} + v_\mathrm{KEA3} - \mathrm{PSII_{ChSep}} + v_\mathrm{PSII|recomb} \right)
+\frac{\mathrm{d}\mathrm{pH}_\mathrm{lu}}{\mathrm{d}t} = \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot \left( -2 \cdot v_{\mathrm{b6f}} - 2 \cdot v_{\mathrm{NDH}} + \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} + v_\mathrm{ClCe} + v_\mathrm{KEA3} - \mathrm{PSII_{ChSep}} + v_\mathrm{PSII \vert recomb} \right)
 ```
 ```math 
-\frac{\mathrm{d}\Delta \Psi _{\mathrm{thylakoid}}}{\mathrm{d}t} = vpc \cdot \left( v_{\mathrm{b6f}} + 2 \cdot v_{\mathrm{NDH}} - \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} - v_\mathrm{ClCe} + \mathrm{PSII_{ChSep}} - v_\mathrm{PSII|recomb} - v_\mathrm{VCCN1} - v_\mathrm{VKC} + \mathrm{PSI_{ChSep}} \right)
+\frac{\mathrm{d}\Delta \Psi _{\mathrm{thylakoid}}}{\mathrm{d}t} = vpc \cdot \left( v_{\mathrm{b6f}} + 2 \cdot v_{\mathrm{NDH}} - \frac{14}{3} \cdot v_{\mathrm{ATPsynthase}} - v_\mathrm{ClCe} + \mathrm{PSII_{ChSep}} - v_\mathrm{PSII \vert recomb} - v_\mathrm{VCCN1} - v_\mathrm{VKC} + \mathrm{PSI_{ChSep}} \right)
 ```
 ```math 
 \frac{\mathrm{d}\mathrm{Fd}_\mathrm{red}}{\mathrm{d}t} = - v_{\mathrm{NDH}} - v_\mathrm{PRG5} + \mathrm{PSI_{ChSep}} - v_{\mathrm{FNR}} - v_{\mathrm{Mehler}}
@@ -89,16 +89,16 @@
 \frac{\mathrm{d}\mathrm{K}^{+}_{\mathrm{st}}}{\mathrm{d}t} = - 1 ipt_\mathrm{st} \cdot v_\mathrm{KEA3} + ipt_\mathrm{st} \cdot v_\mathrm{VKC}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Q_{A|red}}}{\mathrm{d}t} = - v_{\mathrm{PSII}} + \mathrm{PSII_{ChSep}} - v_\mathrm{PSII|recomb}
+\frac{\mathrm{d}\mathrm{Q_{A \vert red}}}{\mathrm{d}t} = - v_{\mathrm{PSII}} + \mathrm{PSII_{ChSep}} - v_\mathrm{PSII \vert recomb}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Q_{A|ox}}}{\mathrm{d}t} = v_{\mathrm{PSII}} - \mathrm{PSII_{ChSep}} + v_\mathrm{PSII|recomb}
+\frac{\mathrm{d}\mathrm{Q_{A \vert ox}}}{\mathrm{d}t} = v_{\mathrm{PSII}} - \mathrm{PSII_{ChSep}} + v_\mathrm{PSII \vert recomb}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Y_2}}{\mathrm{d}t} = - v_\mathrm{PSI|PCoxid} + \mathrm{PSI_{ChSep}}
+\frac{\mathrm{d}\mathrm{Y_2}}{\mathrm{d}t} = - v_\mathrm{PSI \vert PCoxid} + \mathrm{PSI_{ChSep}}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{Y_0}}{\mathrm{d}t} = v_\mathrm{PSI|PCoxid} - \mathrm{PSI_{ChSep}}
+\frac{\mathrm{d}\mathrm{Y_0}}{\mathrm{d}t} = v_\mathrm{PSI \vert PCoxid} - \mathrm{PSI_{ChSep}}
 ```
 ```math 
 \frac{\mathrm{d}\mathrm{NADPH}_\mathrm{st}}{\mathrm{d}t} = 0.5 \cdot v_{\mathrm{FNR}} - 0.5 \cdot v_\mathrm{CBB}
@@ -135,19 +135,19 @@
 \mathrm{PMF} =  \Delta \Psi _{\mathrm{thylakoid}} + 0.06 \cdot \left( \mathrm{pH}_\mathrm{st} - \mathrm{pH}_\mathrm{lu} \right)
 ```
 ```math
-\mathrm{psbS^P} =  \frac{1}{10^{3 \cdot \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a|PsbS}} \right)} + 1}
+\mathrm{psbS^P} =  \frac{1}{10^{3 \cdot \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a \vert PsbS}} \right)} + 1}
 ```
 ```math
 \mathrm{NPQ} =  0.4 \cdot \mathrm{NPQ_{max}} \cdot \mathrm{psbS^P} \cdot \mathrm{Zx} + 0.5 \cdot \mathrm{NPQ_{max}} \cdot \mathrm{psbS^P} + 0.1 \cdot \mathrm{NPQ_{max}} \cdot \mathrm{Zx}
 ```
 ```math
-\mathrm{Prot_{ATPsynth}} =  \mathrm{Act_{ATPsynth}} \cdot \left( 1 - \frac{1}{10^{\frac{\left( \mathrm{PMF} - 0.132 \right) \cdot 1.5}{0.06}} + 1} \right) \mathrm{HPR} \cdot V_\mathrm{max|ATPsynth} + \left( 1 - \mathrm{Act_{ATPsynth}} \right) \left( 1 - \frac{1}{10^{\frac{\left( \mathrm{PMF} - 0.204 \right) \cdot 1.5}{0.06}} + 1} \right) \mathrm{HPR} \cdot V_\mathrm{max|ATPsynth}
+\mathrm{Prot_{ATPsynth}} =  \mathrm{Act_{ATPsynth}} \cdot \left( 1 - \frac{1}{10^{\frac{\left( \mathrm{PMF} - 0.132 \right) \cdot 1.5}{0.06}} + 1} \right) \mathrm{HPR} \cdot V_\mathrm{max \vert ATPsynth} + \left( 1 - \mathrm{Act_{ATPsynth}} \right) \left( 1 - \frac{1}{10^{\frac{\left( \mathrm{PMF} - 0.204 \right) \cdot 1.5}{0.06}} + 1} \right) \mathrm{HPR} \cdot V_\mathrm{max \vert ATPsynth}
 ```
 ```math
-\Phi \mathrm{PSII} =  \frac{1}{1 + \frac{1 + \mathrm{NPQ}}{4.88 \cdot \mathrm{Q_{A|ox}}}}
+\Phi \mathrm{PSII} =  \frac{1}{1 + \frac{1 + \mathrm{NPQ}}{4.88 \cdot \mathrm{Q_{A \vert ox}}}}
 ```
 ```math
-^1\mathrm{O_2} =  v_\mathrm{PSII|recomb} \cdot \Phi _{\mathrm{triplet}} \cdot \Phi _{\mathrm{^1O_2}}
+^1\mathrm{O_2} =  v_\mathrm{PSII \vert recomb} \cdot \Phi _{\mathrm{triplet}} \cdot \Phi _{\mathrm{^1O_2}}
 ```
 ```math
 \mathrm{H_{st}} =  10^{-\mathrm{pH}_\mathrm{st}}
@@ -225,13 +225,13 @@
 ppPSII =  0.84 \cdot \frac{\mathrm{PAR}}{0.7}
 ```
 ```math
-K_\mathrm{b6f} =  10^{\frac{E_\mathrm{m|PC|pH7} - \left( E_\mathrm{m|PQH2|pH7} - 0.06 \cdot \left( \mathrm{pH}_\mathrm{lu} - 7.0 \right) \right) - \mathrm{PMF}}{0.06}}
+K_\mathrm{b6f} =  10^{\frac{E_\mathrm{m \vert PC \vert pH7} - \left( E_\mathrm{m \vert PQH2 \vert pH7} - 0.06 \cdot \left( \mathrm{pH}_\mathrm{lu} - 7.0 \right) \right) - \mathrm{PMF}}{0.06}}
 ```
 ```math
-k_\mathrm{b6f} =  \left( 1 - \frac{1}{10^{\mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a|reg}}} + 1} \right) c_{\mathrm{b6f}} \cdot V_\mathrm{max|b6f}
+k_\mathrm{b6f} =  \left( 1 - \frac{1}{10^{\mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a \vert reg}}} + 1} \right) c_{\mathrm{b6f}} \cdot V_\mathrm{max \vert b6f}
 ```
 ```math
-K_\mathrm{NDH1} =  10^{\frac{E_\mathrm{m|PQH2|pH7} - 0.06 \cdot \left( \mathrm{pH}_\mathrm{st} - 7.0 \right) - E_\mathrm{m|Fd} - \mathrm{PMF} \cdot 2}{0.06}}
+K_\mathrm{NDH1} =  10^{\frac{E_\mathrm{m \vert PQH2 \vert pH7} - 0.06 \cdot \left( \mathrm{pH}_\mathrm{st} - 7.0 \right) - E_\mathrm{m \vert Fd} - \mathrm{PMF} \cdot 2}{0.06}}
 ```
 ```math
 \mathrm{Act_{ATPsynth}} =  0.2 + 0.8 \cdot \frac{\left( \frac{t}{165} \right)^{4}}{\left( \frac{t}{165} \right)^{4} + 1}
@@ -240,7 +240,7 @@ K_\mathrm{NDH1} =  10^{\frac{E_\mathrm{m|PQH2|pH7} - 0.06 \cdot \left( \mathrm{p
 \mathrm{PSII_{ChSep}} =  \sigma _\mathrm{II} ^0 \cdot ppPSII \cdot \Phi \mathrm{PSII}
 ```
 ```math
-v_\mathrm{PSII|recomb} =  k_\mathrm{recomb} \cdot \mathrm{Q_{A|red}} \cdot 10^{\frac{\Delta \Psi _{\mathrm{thylakoid}} + 0.06 \cdot \left( 7.0 - \mathrm{pH}_\mathrm{lu} \right)}{0.06}}
+v_\mathrm{PSII \vert recomb} =  k_\mathrm{recomb} \cdot \mathrm{Q_{A \vert red}} \cdot 10^{\frac{\Delta \Psi _{\mathrm{thylakoid}} + 0.06 \cdot \left( 7.0 - \mathrm{pH}_\mathrm{lu} \right)}{0.06}}
 ```
 ```math
 {\mathrm{Cl}^- _{\mathrm{df}}} =  0.06 \cdot \log_{10} \left( \frac{\mathrm{Cl}^{-}_{\mathrm{st}}}{\mathrm{Cl}^{-}_{\mathrm{lu}}} \right) + \Delta \Psi _{\mathrm{thylakoid}}
@@ -284,10 +284,10 @@ v_{\mathrm{b6f}} =  \frac{\mathrm{PQH}_2}{\mathrm{PQH}_2 + \mathrm{PQ}} \cdot \m
 v_{\mathrm{NDH}} =  k_\mathrm{NDH1} \cdot \mathrm{Fd}_\mathrm{red} \cdot \mathrm{PQ} - \frac{k_\mathrm{NDH1}}{K_\mathrm{NDH1}} \cdot \mathrm{Fd}_\mathrm{ox} \cdot \mathrm{PQH}_2
 ```
 ```math
-v_\mathrm{PRG5} =  \frac{V_\mathrm{max|PGR} \cdot \frac{\mathrm{Fd}_\mathrm{red}^{4}}{\mathrm{Fd}_\mathrm{red}^{4} + 0.1^{4}} \cdot \mathrm{PQ}}{\mathrm{PQ} + \mathrm{PQH}_2}
+v_\mathrm{PRG5} =  \frac{V_\mathrm{max \vert PGR} \cdot \frac{\mathrm{Fd}_\mathrm{red}^{4}}{\mathrm{Fd}_\mathrm{red}^{4} + 0.1^{4}} \cdot \mathrm{PQ}}{\mathrm{PQ} + \mathrm{PQH}_2}
 ```
 ```math
-v_{\mathrm{Deepox}} =  \mathrm{Vx} \cdot V_\mathrm{max|VDE} \frac{1}{10^{nh_\mathrm{VDE} \cdot \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a|VDE}} \right)} + 1} - \mathrm{Zx} \cdot k_\mathrm{kEpoxZ}
+v_{\mathrm{Deepox}} =  \mathrm{Vx} \cdot V_\mathrm{max \vert VDE} \frac{1}{10^{nh_\mathrm{VDE} \cdot \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a \vert VDE}} \right)} + 1} - \mathrm{Zx} \cdot k_\mathrm{kEpoxZ}
 ```
 ```math
 v_{\mathrm{ATPsynthase}} = \left\{ 
@@ -304,7 +304,7 @@ v_\mathrm{VCCN1} =  \frac{k_\mathrm{VCCN1} \cdot \left( 332 \cdot {\mathrm{Cl}^-
 v_\mathrm{ClCe} =  \frac{k_\mathrm{ClCe} \cdot \left( {\mathrm{Cl}^- _{\mathrm{df}}} \cdot 2 + \mathrm{PMF} \right) \cdot \left( \mathrm{Cl}^{-}_{\mathrm{st}} + \mathrm{Cl}^{-}_{\mathrm{lu}} \right) \cdot \left( \mathrm{H_{lu}} + \mathrm{H_{st}} \right)}{4}
 ```
 ```math
-v_\mathrm{KEA3} =  k_\mathrm{KEA3} \cdot \left( \mathrm{H_{lu}} \cdot \mathrm{K}^{+}_{\mathrm{st}} - \mathrm{H_{st}} \cdot \mathrm{K}^{+}_{\mathrm{lu}} \right) \frac{\left( 1 - \mathrm{Q_{A|red}} \right)^{3}}{\left( 1 - \mathrm{Q_{A|red}} \right)^{3} + 0.15^{3}} \cdot \frac{1}{10^{\left( \mathrm{pH}_\mathrm{lu} - 6.0 \right)} + 1}
+v_\mathrm{KEA3} =  k_\mathrm{KEA3} \cdot \left( \mathrm{H_{lu}} \cdot \mathrm{K}^{+}_{\mathrm{st}} - \mathrm{H_{st}} \cdot \mathrm{K}^{+}_{\mathrm{lu}} \right) \frac{\left( 1 - \mathrm{Q_{A \vert red}} \right)^{3}}{\left( 1 - \mathrm{Q_{A \vert red}} \right)^{3} + 0.15^{3}} \cdot \frac{1}{10^{\left( \mathrm{pH}_\mathrm{lu} - 6.0 \right)} + 1}
 ```
 ```math
 v_\mathrm{VKC} =  \frac{\mathrm{P_{K^+}} \cdot \left( -0.06 \cdot \log_{10} \left( \frac{\mathrm{K}^{+}_{\mathrm{st}}}{\mathrm{K}^{+}_{\mathrm{lu}}} \right) + \Delta \Psi _{\mathrm{thylakoid}} \right) \cdot \left( \mathrm{K}^{+}_{\mathrm{lu}} + \mathrm{K}^{+}_{\mathrm{st}} \right)}{2}
@@ -313,19 +313,19 @@ v_\mathrm{VKC} =  \frac{\mathrm{P_{K^+}} \cdot \left( -0.06 \cdot \log_{10} \lef
 \mathrm{PSII_{ChSep}} =  \mathrm{PSII_{ChSep}}
 ```
 ```math
-v_\mathrm{PSII|recomb} =  v_\mathrm{PSII|recomb}
+v_\mathrm{PSII \vert recomb} =  v_\mathrm{PSII \vert recomb}
 ```
 ```math
-v_{\mathrm{PSII}} =  \mathrm{Q_{A|red}} \cdot \mathrm{PQ} \cdot k_\mathrm{QA} - \mathrm{PQH}_2 \cdot \mathrm{Q_{A|ox}} \cdot \frac{k_\mathrm{QA}}{K_\mathrm{QA}}
+v_{\mathrm{PSII}} =  \mathrm{Q_{A \vert red}} \cdot \mathrm{PQ} \cdot k_\mathrm{QA} - \mathrm{PQH}_2 \cdot \mathrm{Q_{A \vert ox}} \cdot \frac{k_\mathrm{QA}}{K_\mathrm{QA}}
 ```
 ```math
 \mathrm{PSI_{ChSep}} =  \mathrm{Y_0} \cdot ppPSII \cdot \sigma _\mathrm{I} ^0 \cdot \mathrm{Fd}_\mathrm{ox}
 ```
 ```math
-v_\mathrm{PSI|PCoxid} =  \mathrm{PC}_\mathrm{red} \cdot k_\mathrm{PC|P700} \cdot \mathrm{Y_2}
+v_\mathrm{PSI \vert PCoxid} =  \mathrm{PC}_\mathrm{red} \cdot k_\mathrm{PC \vert P700} \cdot \mathrm{Y_2}
 ```
 ```math
-v_{\mathrm{FNR}} =  k_\mathrm{Fd|NADP} \cdot \mathrm{NADP}_\mathrm{st} \cdot \mathrm{Fd}_\mathrm{red}
+v_{\mathrm{FNR}} =  k_\mathrm{Fd \vert NADP} \cdot \mathrm{NADP}_\mathrm{st} \cdot \mathrm{Fd}_\mathrm{red}
 ```
 ```math
 v_\mathrm{CBB} =  \frac{k_\mathrm{CBB} \cdot \left( 1 - \exp \left( \frac{-t}{600} \right) \right) \left( \ln \left( \frac{\mathrm{NADPH}_\mathrm{st}}{\mathrm{NADP}_\mathrm{st}} \right) - \ln 1.25 \right)}{\ln \left( \frac{3.5}{1.25} \right)}
@@ -338,3 +338,140 @@ v_{\mathrm{Mehler}} =  \frac{4 \cdot 0.000265 \cdot \mathrm{Fd}_\mathrm{red}}{\m
 
                      
 ### Figures
+
+### Demonstrations
+
+
+
+                     
+<details>
+<summary>Day Simulation</summary>
+                     
+<img style='float: center' src='figures/li2021_demon_daysimulation.svg' alt='Day Simulation' width='600'/>
+
+Sample simulation of a day cycle using real Photosynthetic Photon Flux Density (PPFD) data from Kansas, USA on June 19, 2023. The data was obtained from the National Ecological Observatory Network (NEON) data portal and is used to create a protocol for the light intensity PPFD over the course of the day, in a minute interval. The data used is filtered to only show a PPFD that equals or is higher than $40 \mathrm{µmol\ m^{−2}\ s^{−1}}$. This threshold is chosen as it has shown to allow most models to still simulate the photosynthetic machinery, while still being a decent representation of the actual daylight conditions. The simulation is run using the default parameters and initial conditions of each model, and the RuBisCO carboxylation rate (vRuBisCO), Adenosine Triphosphate (ATP) and Nicotinamide Adenine Dinucleotide Phosphate (NADPH) ratio, and fluorescence (F) results is plotted over the course of the day, if possible. The results do not represent actual plant behavior, but show the capabilities of the model to simulate complex and more realistic light protocols.
+
+**Notes:**
+
+</details>
+
+
+
+                     
+<details>
+<summary>FvCB Submodule</summary>
+                     
+<img style='float: center' src='figures/li2021_demon_fvcb.svg' alt='FvCB Submodule' width='600'/>
+
+Comparison of modelled carbon assimilation (A) and RuBisCO carboxylation rate (vRuBisCO) against the Farquhar, von Caemmerer, and Berry (FvCB) model. The FvCB model is calculated using the min-W approach as described by Lochoki and McGrath (2025). To be able to simulate A, there are two mandatory quantities that need to be present in the model: carbon dioxide (CO2) concentration and vRuBisCO. If one of these parameters is missing, the FvCB model will still be shown, but no comparison with the model will be possible. Other parameters that are required to calculate the FvCB model will be added as parameters with default values if they are not present in the model. The simulation is then run until steady-state, or quasi-steady-state if not otherwise possible, for different intercellular CO2 concentration (Ci) partial pressure. The carbon assimilation shown does not represent actual values but rather a theoretical curve to compare the kinetic model to the popular FvCB model.
+
+**Assumptions:**
+
+- If no CO<sub>2</sub> concentration nor rate of rubisco carboxylation ($v_\mathrm{c}$) is present in the model, no comparison will be shown
+- Infinite mesophyll conductance, therefore intercellular CO<sub>2</sub> partial pressure equals chloroplast partial pressure ($\mathrm{C_i} = \mathrm{C_c}$)
+- If no $\mathrm{C_i}$ is present in the model, it will be added as a parameter assuming an initial value of CO<sub>2</sub> concentration divided by Henry's law constant for CO<sub>2</sub> ($H_\mathrm{s}^{cp}$)
+- If no $H_\mathrm{s}^{cp}$ is present in the model, it will be added as a parameter with a value of $3.4 \times 10^{-4}\ \mathrm{mmol\ Pa^ {-1}}$ [[2]](https://doi.org/10.5194/acp-23-10901-2023)
+- If no CO<sub>2</sub> compensation point in the absence of non-photorespiratory CO<sub>2</sub> release ($\Gamma ^*$) is present in the model, it will be added as a parameter with a value of $38.6\ \mathrm{\mu bar}$ [[1]](https://doi.org/10.1101/2025.03.11.642611)
+- If no $R_\mathrm{light}$ is present in the model, it will be added as a parameter with a value of $1\ \mathrm{\mu mol\ m^{-2}\ s^{-1}}$ [[1]](https://doi.org/10.1101/2025.03.11.642611)
+- If no $A$ is present in the model, it will be added as a derived variable following the FvCB equation [[1]](https://doi.org/10.1101/2025.03.11.642611): $v_\mathrm{c} \cdot \left(1 - \frac{\Gamma ^*}{C_i}\right) - R_\mathrm{light}$
+- To be able to compare with original FvCB curves, the model needs to have $v_\mathrm{c}$ following the same units as the FvCB model ($\mathrm{\mu mol\ m^{-2}\ s^{-1}}$). The `mM_to_µmol_per_m2` can be used to convert from mM to $\mathrm{\mu mol\ m^{-2}}$ assuming a volume factor of $0.0112\ \mathrm{L\ m^{-2}}$ in the stroma [[3]](https://doi.org/10.1007/s11120-006-9109-1). If the given units are in mM, the conversion will be done automatically, by adding a derived parameter with the converted values.
+
+**Notes:**
+
+| Parameter                 | In Model          |
+| -----------               | -----------       |
+| $\mathrm{CO}_2$         | None          |
+| $v_\mathrm{c}$          | None  |
+| $\mathrm{C_i}$          | None          |
+| $H_\mathrm{s}^{cp}$   | None              |
+| $\Gamma ^*$               | None              |
+| $R_\mathrm{light}$      | None        |
+| $A$                       | None            |
+
+
+</details>
+
+
+
+                     
+<details>
+<summary>PAM Simulation</summary>
+                     
+<img style='float: center' src='figures/li2021_demon_pam.svg' alt='PAM Simulation' width='600'/>
+
+Sample simulation of a common Pulse Amplitude Modulation (PAM) protocol to show fluctuations of fluorescence (F) and Non-Photochemical Quenching (NPQ) using saturating pulses. The simulation protocol is as follows: A dark adaptation period that simulates for 30 minutes at a dark light intensity ($40 \mathrm{µmol\ m^{−2}\ s^{−1}}$), then the actual protocol starts. The protocol consists of 22 periods with each being 2 minutes of length. That period consists of a specific light intensity of the respective type of period and ends with a saturating pulse with a length of 0.8 s and a light intensity of $3000 \mathrm{µmol\ m^{−2}\ s^{−1}}$. First, two dark periods with light intensity of $40 \mathrm{µmol\ m^{−2}\ s^{−1}}$, followed by ten light periods with light intensity of 1000 µmol m−2 s−1, then ten dark periods again. The simulation is run using the default parameters and initial conditions of each model.
+
+**Assumptions:**
+
+- If no Flourescence and NPQ output is present in the model, it can not be shown in the results.
+- If Flourescence is present, $F_\mathrm{m}$ is found by using the protocol used in the simulation to find each saturating pulse. A period between each pulse is taken and the maximum Flourescence value during the pulse is taken as $F_\mathrm{m}$.
+- If $F_\mathrm{m}$ is found and NPQ is not present, NPQ is calculated using the formula: $NPQ_t = \frac{F_{\mathrm{m}\vert t=0} - F_{\mathrm{m} \vert t}}{F_{\mathrm{m} \vert t}}$
+
+**Notes:**
+
+</details>
+
+
+
+                     
+<details>
+<summary>Photosynthesis MCA</summary>
+                     
+<img style='float: center' src='figures/li2021_demon_mca.svg' alt='Photosynthesis MCA' width='600'/>
+
+A sample Metabolic Control Analysis (MCA) of typical photosynthesis variables and fluxes. A control coefficient analysis is to be performed, therefore each parameter represents a single coefficient of the photosynthesis rate. The rates chosen should represent  RuBisCO carboxylation rate (vRuBisCO), PSII rate (vPSII), PSI rate (vPSI), Cytb6f rate (vb6f) and ATP synthase rate (vATPSynth). The variables chosen should represent  carbon dioxide (CO2) concentration, Ribulose-1,5-bisphosphate (RuBP), oxidised plastoquinone (PQox), oxidised plastocyanin (PCox), denosine Triphosphate (ATP), and Nicotinamide Adenine Dinucleotide Phosphate (NADPH). For each parameter to be scanned, the model is simulated to steady-state, with a displacement of $\pm 0.01\%$ of each respective parameter. The control coefficients are then calculated for each variable and flux by the following formula: $C_{p}^{x} = \frac{x_\mathrm{upper} - x_\mathrm{lower}}{2 \cdot \mathrm{disp} \cdot p}$, where $C_{p}^{x}$ is the control coefficient of parameter $p$ on variable or flux $x$, and $\mathrm{disp}$ is the displacement value. $x_\mathrm{upper}$ and $x_\mathrm{lower}$ are the steady-state result of $x$ at either $+\mathrm{disp}$ and $-\mathrm{disp}$ respectively. It has to be noted that the (MCA) results can be very dependent on the other values of the parameters in the model, therefore the results shown here are only representative of the default parameter set of the model.
+
+**Assumptions:**
+
+- Steady-State needs to be achievable for the model to perform the MCA.
+- The parameters for each coefficient, rates, and variables chosen need to be representative of the respective process.
+- If a parameter, rate, or variable is not present in the model, the respective coefficient will be greyed out in the Heatmap.
+
+**Notes:**
+
+| Coefficient                   | In Model          |
+| -----------                   | -----------       |
+| $\mathrm{PSII}$             | None|
+| $\mathrm{PSI}$              | None |
+| $\mathrm{RuBisCO \vert C}$  | None |
+| $\mathrm{cytb6f}$           | None              |
+| $\mathrm{ATPsynthase}$      | None              |
+
+| Flux                          | In Model          |
+| -----------                   | -----------       |
+| $\mathrm{PSII}$             | None |
+| $\mathrm{PSI}$              | None |
+| $\mathrm{RuBisCO \vert C}$  | None |
+| $\mathrm{cytb6f}$           | None              |
+| $\mathrm{ATPsynthase}$      | None              |
+
+| Variable                  | In Model      |
+| -----------               | -----------   |
+| $\mathrm{CO_2}$         | None       |
+| $\mathrm{RUBP}$         | None      |
+| $\mathrm{PQ_{ox}}$    | None          |
+| $\mathrm{PC_{ox}}$    | None          |
+| $\mathrm{ATP}$          | None    |
+| $\mathrm{NADPH}$        | None  |
+
+</details>
+
+
+
+                     
+<details>
+<summary>PAM Fitting</summary>
+                     
+<img style='float: center' src='figures/li2021_demon_fitting.svg' alt='PAM Fitting' width='600'/>
+
+Sample fitting to experimental Non-Photochemical Quenching (NPQ) data. The NPQ data used is taken from experimental work published in von Bismarck (2022) and was acquired using Maxi Imaging-PAM (Walz, Germany) using Col-0 Arabidopsis thaliana (A. thaliana) plants. It is assumed that the experiment follows the default PAM protocol of the machine, as no other experimental protocol has been given. Therefore, the protocol of each simulation follows the data given, where the length of one saturating pulse is set to 720 µs at a light intensity of $5000 \mathrm{µmol\ m^{−2}\ s^{−1}}$. The light protocol consists of a dark adaptation period of 30 minutes to acclimate the simulation conditions. Then the actual protocol starts with a longer phase of high actinic light ($903 \mathrm{µmol\ m^{−2}\ s^{−1}}$) for approximately 10 minutes, followed by a lower actinic light of ($90 \mathrm{µmol\ m^{−2}\ s^{−1}}$) for 10 minutes, and then 5 minutes of a dark period. During each phase, saturating pulses are given approximately every 60 seconds. As the experimental data also provides exact time points for each pulse, these were taken as reference for the protocol and not the general time intervals. In the experimental work, the dark period consists of actual darkness, whereas in the simulation a low light intensity of $40 \mathrm{µmol\ m^{−2}\ s^{−1}}$ is used to avoid numerical issues. The fitting is performed using the lmfit package in Python with the leastsquare method. On top of that, a standard scaling towards the experimental data is done, to keep the fitting results in the same order of magnitude. To help the fitting converge, weights are applied to the data points, which are defined as the reciprocal of the standard deviation. These settings set are not to be taken as set in stone, as fitting is a highly experimental process and differing settings might be required depending on the model and data used. These settings are a basic starting point for fitting data to a model. The hardest and most impactful decision while fitting is the choice of parameters to fit. There are many ways to find which parameters may be most impactful to fit, such as sensitivity analysis or metabolic control analysis. However, either way experimenting with different parameter sets is always required to find the best fitting practice, which differs for each model and also data to fit to.
+
+**Assumptions:**
+
+- If no Flourescence and NPQ output is present in the model, it can not be shown in the results.
+- If Flourescence is present, $F_\mathrm{m}$ is found by using the protocol used in the simulation to find each saturating pulse. A period between each pulse is taken and the maximum Flourescence value during the pulse is taken as $F_\mathrm{m}$.
+- If $F_\mathrm{m}$ is found and NPQ is not present, NPQ is calculated using the formula: $NPQ_t = \frac{F_{\mathrm{m}\vert t=0} - F_{\mathrm{m} \vert t}}{F_{\mathrm{m} \vert t}}$
+
+**Notes:**
+
+</details>
