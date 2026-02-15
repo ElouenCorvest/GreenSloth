@@ -50,8 +50,6 @@ function selectChange(selectElement) {
         .then(response => {
             const demonstrations = response.demonstrations
             
-            
-
             for (let i = 0; i < demonstrations.length; i++) {
                 var demonInfo = demonstrations[i]
                 var demonImgSrc = demonInfo.imgSrc
