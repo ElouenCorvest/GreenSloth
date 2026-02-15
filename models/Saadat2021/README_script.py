@@ -378,8 +378,6 @@ mdFile = MdUtils(file_name=f"{Path(__file__).parents[0]}/README.md")  # noqa: N8
 
 mdFile.new_header(1, model_title)
 
-mdFile.new_header(2, "Summary")
-
 mdFile.new_paragraph(f"""The [{model_title}]({model_doi}) model builds upon previous models, particularly the Matuszynska2019 model, by incorporating and modifying various reactions and aspects of photosynthesis. Overall, the model can be divided into three modules: the ascorbate-glutathione cycle, the Calvin-Benson-Bassham (CBB) cycle and thioredoxin reductase-regulated reactions, and the photosynthetic electron transport chain (PETC).
                      
 The model is primarily used to investigate the electron flows around PSI and their relevance to photosynthetic efficiency. Several different analyses have been conducted to validate the model in both steady-state and dynamic environment conditions. The most interesting is the direct comparison of a knockout mutant of the protein PGR5. This protein is known to catalyse the reduction of plastoquinone by ferredoxin. The results of this comparison align with experimental values, which are, however, not presented in the publication but are referenced. Additionally, it is noted that the results should not be interpreted as accurate quantitative data, but rather as a proof of concept for the model.
@@ -813,7 +811,7 @@ mdFile.new_paragraph(rf"""
 <details>
 <summary>Figure 2</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/{model_title.lower()}_fig2.svg'>
+<img style='display: block; margin: 0 auto' src='figures/{model_title.lower()}_fig2.svg'>
 
 Simulated fluorescence (red) and non-photochemical quenching trace (dashed) of a pulse-amplitude modulation (PAM) experiment of a generic photosynthetic organism without cyclic electron flow (CEF). The PAM protocol begins with a dark-adapted plant at a photosynthetic photon flux density (PPFD) of 40 µmol m<sup>-2</sup> s<sup>-1</sup> for the first 4 minutes. Then a light period was simulated using a PPFD of 1000 µmol m<sup>-2</sup> s<sup>-1</sup> for 20 minutes, followed by another dark period with a PPFD of 40 µmol m<sup>-2</sup> s<sup>-1</sup> for the rest of the simulation until 2500 seconds have passed in total. During the entire simulation, a short (0.8 seconds in the simulation) pulse using a PPFD of 5000 µmol m<sup>-2</sup> s<sup>-1</sup> was used every 2 minutes to induce the fluorescence peaks. The values of these peaks could then be used to calculate the NPQ of the simulated plant during this simulation. To recreate an organism without a CEF, the simulation uses a version of the model where the CEF reaction rate constant is set to 0.
 
@@ -826,7 +824,7 @@ mdFile.new_paragraph(fr"""
 <details>
 <summary>Figure 3</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/{model_title.lower()}_fig3.svg'>
+<img style='display: block; margin: 0 auto' src='figures/{model_title.lower()}_fig3.svg'>
 
 Steady-state fluxes (A) and concentration pool fraction (B) of the model depending on varying photosynthetic photon flux density (PPFD). In Figure A, the PSI rate, the linear electron flow (LEF), and the cyclic electron flow (CEF), as well as the Mehler and plastoquinol terminal oxidase (PTOX), are represented. The LEF is calculated by multiplying the rate of PSII by two. At the same time, the rest can be directly accessed through the model. In figure B, the fraction of the total pool of adenosine triphosphate (ATP), reduced nicotinamide adenine dinucleotide phosphate (NADPH), reduced ferrodoxin (Fdred), reduced plastoquinone (PQred), and reduced plastocyanine (PCred), as well as the concentration of hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>).
 
@@ -839,7 +837,7 @@ mdFile.new_paragraph(rf"""
 <details>
 <summary>Figure 4</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/{model_title.lower()}_fig4.svg'>
+<img style='display: block; margin: 0 auto' src='figures/{model_title.lower()}_fig4.svg'>
 
 High light (photosynthetic photon flux density (PPFD) of 1000 µmol m<sup>-2</sup> s<sup>-1</sup>) steady-state simulations of differing PGR5 activity. In Figure A, the PSI rate, the linear electron flow (LEF), and the cyclic electron flow (CEF), as well as  
 the concentration of hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>), are depicted. In contrast, Figure B shows the fraction of the total pool of adenosine triphosphate (ATP), reduced nicotinamide adenine dinucleotide phosphate (NADPH), reduced ferredoxin (Fdred), reduced plastoquinone (PQred), and reduced plastocyanin (PCred). All data have been plotted against the log<sub>2</sub> change in PRG5, as depicted in the model, by varying the CEF reaction rate constant used in the simulation.
@@ -854,7 +852,7 @@ mdFile.new_paragraph(rf"""
 <details>
 <summary>Figure 5</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/{model_title.lower()}_fig5.svg'>
+<img style='display: block; margin: 0 auto' src='figures/{model_title.lower()}_fig5.svg'>
 
 Simulation of fluctuating light in a wild-type and PGR5-Knockout mutant of the model. Figure A depicts the fraction of the total pool of reduced ferrodoxin (Fdred), and Figure B the rate of RuBisCO over the simulation time. The simulation was done for a total of 600 seconds with 60 second intervals that change the used photosynthetic photon flux density (PPFD) between 600 µmol m<sup>-2</sup> s<sup>-1</sup> and 40 µmol m<sup>-2</sup> s<sup>-1</sup> in the light and dark pahse, repectively. To simulate a PGR5-Knockout mutant, the cyclic electron flow (CEF) reaction rate constant is set to 0.
 
@@ -868,7 +866,7 @@ mdFile.new_paragraph(rf"""
 <details>
 <summary>Figure 6</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/{model_title.lower()}_fig6.svg'>
+<img style='display: block; margin: 0 auto' src='figures/{model_title.lower()}_fig6.svg'>
 
 Metabolic Control Analysis of the effect of specific parameters on fluxes (left) and concentrations (right) in low (top) and high light (bottom). The parameters (bottom of each plot) used are the total PSII pool (PS2) and PSI (PS1), and the rate constant of the cytochrome b<sub>6</sub> (b<sub>6</sub>f), the cyclic electron flow (PGR5), the Mehler reaction (Mehler), RuBisCO cyrboxylase (RuBisCO), FBPase, SBPase,  monodehydroascorbate reductase (MDAR), the dehydroascorbate reductase (DHAR). The fluxes analysed are the rate of the values depicted on the vertical axis of the left side. The concentrations are depicted on the vertical axis of the right side. The top heatmaps were calculated using a photosynthetic photon flux density (PPFD) of 1000 µmol m<sup>-2</sup> s<sup>-1</sup> while the bottom had 100 µmol m<sup>-2</sup> s<sup>-1</sup>. All heatmaps were simulated by perturbing the parameters by &pm; 1% and comparing the effect on the steady-state values of each analysed component.
 
@@ -882,7 +880,7 @@ mdFile.new_paragraph(rf"""
 <details>
 <summary>Figure 7</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/{model_title.lower()}_fig7.svg'>
+<img style='display: block; margin: 0 auto' src='figures/{model_title.lower()}_fig7.svg'>
 
 Surface plots of steady-state simulations depending on differing PGR5 activity and photosynthetic photon flux density (PPFD). Both plots feature the range of PGR5 activity in a log<sub>2</sub>-fold change and the PPFD on the x and y-axis, respectively. The former is simulated by changing the value of the cyclic electron flow (CEF) rate constant. The left plot shows the linear electron flow (LEF), calculated by multiplying the rate of PSII by 2, and the right plot shows the concentration of hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>).
 

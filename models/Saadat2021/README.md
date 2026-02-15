@@ -4,8 +4,6 @@
 
 # Saadat2021
 
-## Summary
-
 
 The [Saadat2021](https://doi.org/10.3389/fpls.2021.750580) model builds upon previous models, particularly the Matuszynska2019 model, by incorporating and modifying various reactions and aspects of photosynthesis. Overall, the model can be divided into three modules: the ascorbate-glutathione cycle, the Calvin-Benson-Bassham (CBB) cycle and thioredoxin reductase-regulated reactions, and the photosynthetic electron transport chain (PETC).
                      
@@ -412,10 +410,10 @@ Fluo =  \frac{\mathrm{PSII_{cross}} \cdot k_F \cdot \mathrm{B_0}}{k_F + k_2 + k_
 |Dissociation constant for the complex formed by phosphate translocator and PGA|$K_{\mathrm{diss}\|\mathrm{PGA}}$ |$K_{\mathrm{pga}}$|$0.25$|$\mathrm{mM}$|km_v_pga_ex|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
 |Dissociation constant for the complex formed by phosphate translocator and GAP|$K_{\mathrm{diss}\|\mathrm{GAP}}$ |$K_{\mathrm{gap}}$|$0.075$|$\mathrm{mM}$|km_v_gap_ex|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
 |Dissociation constant for the complex formed by phosphate translocator and DHAP|$K_{\mathrm{diss}\|\mathrm{DHAP}}$ |$K_{\mathrm{dhap}}$|$0.077$|$\mathrm{mM}$|km_v_dhap_ex|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
-|Dissociation constant for the complex formed by phosphate translocator and external orthophosphate|$K_{\mathrm{diss}\|\mathrm{P_{ext}}}$ |$K_{\mathrm{pxt}}$|$0.74$|$\mathrm{mM}$|km_N_translocator_Pi_ext|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
-|Dissociation constant for the complex formed by phosphate translocator and Pi|$K_{\mathrm{diss}\|\mathrm{Pi}}$ |$K_{\mathrm{pi}}$|$0.63$|$\mathrm{mM}$|km_N_translocator_Pi_st|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
-|$V_\mathrm{max}$ of Export|$V_{\mathrm{max}_{\mathrm{ex}}}$|$V_{\mathrm{ex}}$|$2.0$|$\mathrm{mM}\ s^{-1}$|kcat_N_translocator||
-||||||Enz0_N_translocator||
+|Dissociation constant for the complex formed by phosphate translocator and external orthophosphate|$K_{\mathrm{diss}\|\mathrm{P_{ext}}}$ |$K_{\mathrm{pxt}}$|$0.74$|$\mathrm{mM}$|km_IF_3P_Pi_ext|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
+|Dissociation constant for the complex formed by phosphate translocator and Pi|$K_{\mathrm{diss}\|\mathrm{Pi}}$ |$K_{\mathrm{pi}}$|$0.63$|$\mathrm{mM}$|km_IF_3P_Pi_st|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
+|$V_\mathrm{max}$ of Export|$V_{\mathrm{max}_{\mathrm{ex}}}$|$V_{\mathrm{ex}}$|$2.0$|$\mathrm{mM}\ s^{-1}$|kcat_IF_3P||
+||||||Enz0_IF_3P||
 ||||||Enz0_v_starch||
 |Michaelis Menten constant of Starch production for G1P|$K_{\mathrm{m}\|\mathrm{Starch}\|\mathrm{G1P}}$|$K_{\mathrm{mst}1}$|$0.08$|$\mathrm{mM}$|km_v_starch_G1P|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
 |Michaelis Menten constant of Starch production for ATP|$K_{\mathrm{m}\|\mathrm{Starch}\|\mathrm{ATP}}$|$K_{\mathrm{mst}2}$|$0.08$|$\mathrm{mM}$|km_v_starch_ATP_st|[[1]](https://doi.org/10.1111/j.1432-1033.1988.tb14242.x)|
@@ -737,7 +735,7 @@ You can find the recreation of the figures from the original publication below. 
 <details>
 <summary>Figure 2</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/saadat2021_fig2.svg'>
+<img style='display: block; margin: 0 auto' src='figures/saadat2021_fig2.svg'>
 
 Simulated fluorescence (red) and non-photochemical quenching trace (dashed) of a pulse-amplitude modulation (PAM) experiment of a generic photosynthetic organism without cyclic electron flow (CEF). The PAM protocol begins with a dark-adapted plant at a photosynthetic photon flux density (PPFD) of 40 µmol m<sup>-2</sup> s<sup>-1</sup> for the first 4 minutes. Then a light period was simulated using a PPFD of 1000 µmol m<sup>-2</sup> s<sup>-1</sup> for 20 minutes, followed by another dark period with a PPFD of 40 µmol m<sup>-2</sup> s<sup>-1</sup> for the rest of the simulation until 2500 seconds have passed in total. During the entire simulation, a short (0.8 seconds in the simulation) pulse using a PPFD of 5000 µmol m<sup>-2</sup> s<sup>-1</sup> was used every 2 minutes to induce the fluorescence peaks. The values of these peaks could then be used to calculate the NPQ of the simulated plant during this simulation. To recreate an organism without a CEF, the simulation uses a version of the model where the CEF reaction rate constant is set to 0.
 
@@ -750,7 +748,7 @@ This model can successfully show the theoretical PAM result on a generic photosy
 <details>
 <summary>Figure 3</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/saadat2021_fig3.svg'>
+<img style='display: block; margin: 0 auto' src='figures/saadat2021_fig3.svg'>
 
 Steady-state fluxes (A) and concentration pool fraction (B) of the model depending on varying photosynthetic photon flux density (PPFD). In Figure A, the PSI rate, the linear electron flow (LEF), and the cyclic electron flow (CEF), as well as the Mehler and plastoquinol terminal oxidase (PTOX), are represented. The LEF is calculated by multiplying the rate of PSII by two. At the same time, the rest can be directly accessed through the model. In figure B, the fraction of the total pool of adenosine triphosphate (ATP), reduced nicotinamide adenine dinucleotide phosphate (NADPH), reduced ferrodoxin (Fdred), reduced plastoquinone (PQred), and reduced plastocyanine (PCred), as well as the concentration of hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>).
 
@@ -763,7 +761,7 @@ This figure presents results similar to those in the experimental data, which ar
 <details>
 <summary>Figure 4</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/saadat2021_fig4.svg'>
+<img style='display: block; margin: 0 auto' src='figures/saadat2021_fig4.svg'>
 
 High light (photosynthetic photon flux density (PPFD) of 1000 µmol m<sup>-2</sup> s<sup>-1</sup>) steady-state simulations of differing PGR5 activity. In Figure A, the PSI rate, the linear electron flow (LEF), and the cyclic electron flow (CEF), as well as  
 the concentration of hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>), are depicted. In contrast, Figure B shows the fraction of the total pool of adenosine triphosphate (ATP), reduced nicotinamide adenine dinucleotide phosphate (NADPH), reduced ferredoxin (Fdred), reduced plastoquinone (PQred), and reduced plastocyanin (PCred). All data have been plotted against the log<sub>2</sub> change in PRG5, as depicted in the model, by varying the CEF reaction rate constant used in the simulation.
@@ -778,7 +776,7 @@ This recreation of the figure is also deemed successful, as the plots follow sim
 <details>
 <summary>Figure 5</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/saadat2021_fig5.svg'>
+<img style='display: block; margin: 0 auto' src='figures/saadat2021_fig5.svg'>
 
 Simulation of fluctuating light in a wild-type and PGR5-Knockout mutant of the model. Figure A depicts the fraction of the total pool of reduced ferrodoxin (Fdred), and Figure B the rate of RuBisCO over the simulation time. The simulation was done for a total of 600 seconds with 60 second intervals that change the used photosynthetic photon flux density (PPFD) between 600 µmol m<sup>-2</sup> s<sup>-1</sup> and 40 µmol m<sup>-2</sup> s<sup>-1</sup> in the light and dark pahse, repectively. To simulate a PGR5-Knockout mutant, the cyclic electron flow (CEF) reaction rate constant is set to 0.
 
@@ -792,7 +790,7 @@ This figure illustrates the significance of CEF in the carbon fixation process o
 <details>
 <summary>Figure 6</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/saadat2021_fig6.svg'>
+<img style='display: block; margin: 0 auto' src='figures/saadat2021_fig6.svg'>
 
 Metabolic Control Analysis of the effect of specific parameters on fluxes (left) and concentrations (right) in low (top) and high light (bottom). The parameters (bottom of each plot) used are the total PSII pool (PS2) and PSI (PS1), and the rate constant of the cytochrome b<sub>6</sub> (b<sub>6</sub>f), the cyclic electron flow (PGR5), the Mehler reaction (Mehler), RuBisCO cyrboxylase (RuBisCO), FBPase, SBPase,  monodehydroascorbate reductase (MDAR), the dehydroascorbate reductase (DHAR). The fluxes analysed are the rate of the values depicted on the vertical axis of the left side. The concentrations are depicted on the vertical axis of the right side. The top heatmaps were calculated using a photosynthetic photon flux density (PPFD) of 1000 µmol m<sup>-2</sup> s<sup>-1</sup> while the bottom had 100 µmol m<sup>-2</sup> s<sup>-1</sup>. All heatmaps were simulated by perturbing the parameters by &pm; 1% and comparing the effect on the steady-state values of each analysed component.
 
@@ -806,7 +804,7 @@ This figure shows the control of select parameters on concentrations and fluxes 
 <details>
 <summary>Figure 7</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/saadat2021_fig7.svg'>
+<img style='display: block; margin: 0 auto' src='figures/saadat2021_fig7.svg'>
 
 Surface plots of steady-state simulations depending on differing PGR5 activity and photosynthetic photon flux density (PPFD). Both plots feature the range of PGR5 activity in a log<sub>2</sub>-fold change and the PPFD on the x and y-axis, respectively. The former is simulated by changing the value of the cyclic electron flow (CEF) rate constant. The left plot shows the linear electron flow (LEF), calculated by multiplying the rate of PSII by 2, and the right plot shows the concentration of hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>).
 
