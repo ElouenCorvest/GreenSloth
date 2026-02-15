@@ -235,7 +235,7 @@ mdFile.new_paragraph(fr"""
 <summary>Equations of derived parameters</summary>
 
 ```math
-{osc_light} =  {PPFD} + {PPFD_add} \cdot \cos \le{f}t( 2 \mathrm{{np}}.\mathrm{{pi}} {f} \cdot {time} \right)
+{osc_light} =  {PPFD} + {PPFD_add} \cdot \cos \left( 2 \cdot \pi \cdot {f} \cdot {time} \right)
 ```
 ```math
 {sigma_PSII} =  1 - {NPQ_max} \cdot {Q_active}

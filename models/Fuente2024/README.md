@@ -159,7 +159,7 @@ Q_\mathrm{inact} =  \mathrm{Q_{tot}} - Q_\mathrm{act}
 <summary>Equations of derived parameters</summary>
 
 ```math
-\mathrm{PPFD_{osc}} =  \mathrm{PPFD} + \mathrm{PPFD_{add}} \cdot \cos \left( 2 \mathrm{np}.\mathrm{pi} f \cdot \mathrm{time} \right)
+\mathrm{PPFD_{osc}} =  \mathrm{PPFD} + \mathrm{PPFD_{add}} \cdot \cos \left( 2 \cdot \pi \cdot f \cdot \mathrm{time} \right)
 ```
 ```math
 \sigma _\mathrm{PSII} =  1 - \mathrm{NPQ_{max}} \cdot Q_\mathrm{act}
