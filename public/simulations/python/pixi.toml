@@ -1,0 +1,17 @@
+[workspace]
+authors = ["ElouenCorvest <elouen2000@gmail.com>"]
+channels = ["conda-forge"]
+name = "python"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.14.3,<3.15"
+assimulo = ">=3.7.3,<4"
+
+[pypi-dependencies]
+pygithub = ">=2.8.1, <3"
+requests = ">=2.32.5, <3"
+mxlpy = ">=0.30.0, <0.31"

@@ -1,5 +1,5 @@
 import modelData from "../js/models.json"
-import { getModelInfo, getSiblings, filterGlossIDAbbr, filterGlossIDPythonVar, getTwoModelInfo, createInfoList, informationPointer, getFullModelInfo, getSim, getBothSims } from "../js/utils.js"
+import { getModelInfo, getSiblings, filterGlossIDAbbr, filterGlossIDPythonVar, getTwoModelInfo, createInfoList, informationPointer, getFullModelInfo, getSim, getBothSims, getMdFile } from "../js/utils.js"
 import chroma from "chroma-js"
 import vennDiagramm from "../img/venn_diagramm.svg?raw"
 import Plotly from 'plotly.js-dist'
@@ -29,10 +29,53 @@ function selectChange(selectElement) {
 
     const schemeThis = document.getElementById("compare-schemes-" + side)
     schemeThis.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${selectElement.value}/${selectElement.value}_scheme.svg`
+
+    const selectBoxDemon = document.getElementById(`compare-demonstrations-select-${side}`)
+    selectBoxDemon.innerHTML = ""
+
+    var defaultVal = document.createElement("option");
+    defaultVal.value = "";
+    defaultVal.innerHTML = "Select Demonstration"
+    selectBoxDemon.appendChild(defaultVal)
+
+    const demonContainer = document.getElementById(`compare-demonstrations-container-${side}`)
+    demonContainer.innerHTML = ""
     
     getModelInfo(selectElement.value)
         .then(response => {
             createInfoList(response, side, informationPointer)
+        })
+
+    getMdFile(selectElement.value)
+        .then(response => {
+            const demonstrations = response.demonstrations
+            
+            
+
+            for (let i = 0; i < demonstrations.length; i++) {
+                var demonInfo = demonstrations[i]
+                var demonImgSrc = demonInfo.imgSrc
+                var demonTitle = demonInfo.title
+                var demonText = demonInfo.text
+
+                var demoOption = document.createElement("option")
+                demoOption.value = demonTitle
+                demoOption.innerHTML = demonTitle
+                selectBoxDemon.appendChild(demoOption)
+
+                var demonBox = document.createElement("div")
+                demonBox.id = `compare-demonstrations-${side}-box-${demonTitle.toLowerCase().replace(/\s/g, '')}`
+                demonBox.classList.add("compare-demonstrations-box", "hidden")
+
+                var demonstrationImg = document.createElement("img")
+                demonstrationImg.id = `compare-demonstrations-${side}-img-${demonTitle.toLowerCase().replace(/\s/g, '')}`
+                demonstrationImg.classList.add("compare-demonstrations-img")
+                demonstrationImg.src = `https://raw.githubusercontent.com/ElouenCorvest/GreenSloth/refs/heads/main/models/${selectElement.value}/${demonImgSrc}`
+                demonBox.appendChild(demonstrationImg)
+                demonContainer.appendChild(demonBox)
+
+                demonBox.innerHTML += demonText
+            }
         })
 
     var simSelectBox = document.getElementById("compare-simulation-select")
@@ -186,7 +229,7 @@ function changeCompareTabs(tabClicked) {
 
 // Create Compare Tabs
 const compareTabs = document.getElementById("compare-tabs")
-const compareTabChoices = ["Variables", "Simulation", "Information", "Schemes"]
+const compareTabChoices = ["Variables", "Simulation", "Information", "Demonstrations", "Schemes"]
 compareTabChoices.forEach(choice => {
     var compareTab = document.createElement("button");
     compareTab.id = `compare-tab-${choice.toLowerCase()}`
@@ -389,35 +432,50 @@ function varCompare() {
     const leftModelSelect = document.getElementById("compare-model-left-select")
     const rightModelSelect = document.getElementById("compare-model-right-select")
 
-
+    if (varSelectBox.value == "") {
+        plotVariables(plot, [{"x": 0, "y": 0}])
+        return
+    }
 
     if (leftModelSelect.value == "" && rightModelSelect.value == "") {
         return
     } else if (leftModelSelect.value != "" && rightModelSelect.value != "") {
         const bothSims = getBothSims(leftModelSelect.value, rightModelSelect.value, pfd)
         bothSims.then(res =>{
+            
             const simLeftModel = res[0]
             const simRightModel = res[1]
 
-            simLeftModel[chosenVar]["type"] = "line"
-            simLeftModel[chosenVar]["name"] = leftModelSelect.value
-            simLeftModel[chosenVar]["line"] = {color: leftColor}
-            simRightModel[chosenVar]["type"] = "line"
-            simRightModel[chosenVar]["name"] = rightModelSelect.value
-            simRightModel[chosenVar]["line"] = {color: rightColor}
+            const simLeftData = {
+                "x": Object.keys(simLeftModel[chosenVar]),
+                "y": Object.values(simLeftModel[chosenVar]),
+                "type": "line",
+                "name": leftModelSelect.value,
+                "line": {color: leftColor}
+            }
 
-            const data = [simLeftModel[chosenVar], simRightModel[chosenVar]]
+            const simRightData = {
+                "x": Object.keys(simRightModel[chosenVar]),
+                "y": Object.values(simRightModel[chosenVar]),
+                "type": "line",
+                "name": rightModelSelect.value,
+                "line": {color: rightColor}
+            }
+
+            const data = [simLeftData, simRightData]
 
             plotVariables(plot, data)
         })
     } else if (leftModelSelect.value != "" && rightModelSelect.value == "") {
         const thisSim = getSim(`/simulations/${leftModelSelect.value}/${pfd}.json`)
         thisSim.then(res => {
-            const data = res[chosenVar]
-
-            data["type"] = "line"
-            data["name"] = leftModelSelect.value
-            data["line"] = {color: leftColor}
+            const data = {
+                "x": Object.keys(res[chosenVar]),
+                "y": Object.values(res[chosenVar]),
+                "type": "line",
+                "name": leftModelSelect.value,
+                "line": {color: leftColor}
+            }
 
             plotVariables(plot, [data])
         })
@@ -582,6 +640,60 @@ sides.forEach(side => {
         infoBox.appendChild(infoBoxValue)
     }
 })
+
+//////////////// Demonstrations ////////////////
+
+function selectChangeDemonstrations(selectElement) {
+    const leftDemonSelect = document.getElementById("compare-demonstrations-select-left")
+    const rightDemonSelect = document.getElementById("compare-demonstrations-select-right")
+    
+    
+    if (selectElement == leftDemonSelect) {
+        var side = "left"
+    } else {
+        var side = "right"
+    }
+    const demonContainer = document.getElementById(`compare-demonstrations-container-${side}`)
+
+    const allCompareBlocks = demonContainer.children
+    console.log(typeof allCompareBlocks)
+    const selectedValue = selectElement.value.toLowerCase().replace(/\s/g, '')
+    for (let block of allCompareBlocks) {
+         block.classList.add("hidden")
+        if (block.id.includes(selectedValue)) {
+            block.classList.remove("hidden")
+        }
+    }
+}
+
+// Parent container
+const compareBodyDemonstrations = document.getElementById("compare-body-demonstrations")
+
+for (const side of ["left", "right"]) {
+    var parentElement = document.createElement("div")
+    parentElement.id = `compare-demonstrations-${side}`
+    parentElement.classList.add("compare-demonstrations")
+    compareBodyDemonstrations.appendChild(parentElement)
+
+    var selectBox = document.createElement("select")
+    selectBox.id = `compare-demonstrations-select-${side}`
+    selectBox.classList.add("compare-demonstrations-selectbox")
+    selectBox.addEventListener("change", function() {
+        selectChangeDemonstrations(this)
+    })
+    parentElement.appendChild(selectBox)
+
+    var defaultVal = document.createElement("option");
+    defaultVal.value = "";
+    defaultVal.innerHTML = "Select Demonstration"
+    selectBox.appendChild(defaultVal)
+
+    var demonstrationContainer = document.createElement("div")
+    demonstrationContainer.id = `compare-demonstrations-container-${side}`
+    demonstrationContainer.classList.add("compare-demonstrations-container")
+    parentElement.appendChild(demonstrationContainer)
+
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // End

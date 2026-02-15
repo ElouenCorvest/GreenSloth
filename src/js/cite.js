@@ -1,11 +1,7 @@
 // Cite Modal
 var citeModal = document.getElementById("citeModal")
 
-document.addEventListener("DOMContetLoaded", () => {
-    console.log("hello")
-})
 var openCiteModals = document.getElementsByClassName("open-cite-modal")
-console.log(openCiteModals)
 
 for (let element of openCiteModals) {
     element.addEventListener("click", function() {

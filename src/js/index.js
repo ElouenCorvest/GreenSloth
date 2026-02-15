@@ -81,28 +81,28 @@ for (let i = 0; i < tabContainer.children.length; i++) {
 
 // Photosynthesis Scheme - Set the links
 var schemePsii = document.getElementById("scheme-psii")
-schemePsii.setAttribute("href", "../src/html/models_select.php?appar=PSII")
+schemePsii.setAttribute("href", "/models_select.html?appar=PSII")
 
 var schemeCytb6f = document.getElementById("scheme-cytb6f")
-schemeCytb6f.setAttribute("href", "../src/html/models_select.php?appar=Cytb6f")
+schemeCytb6f.setAttribute("href", "/models_select.html?appar=Cytb6f")
 
 var schemePsi = document.getElementById("scheme-psi")
-schemePsi.setAttribute("href", "../src/html/models_select.php?appar=PSI")
+schemePsi.setAttribute("href", "/models_select.html?appar=PSI")
 
 var schemeAtpsynth = document.getElementById("scheme-atpsynth")
-schemeAtpsynth.setAttribute("href", "../src/html/models_select.php?appar=ATPSynth")
+schemeAtpsynth.setAttribute("href", "/models_select.html?appar=ATPSynth")
 
 var schemeCBB = document.getElementById("scheme-cbb")
-schemeCBB.setAttribute("href", "../src/html/models_select.php?appar=CBB")
+schemeCBB.setAttribute("href", "/models_select.html?appar=CBB")
 
 var schemeFNR = document.getElementById("scheme-fnr")
-schemeFNR.setAttribute("href", "../src/html/models_select.php?appar=FNR")
+schemeFNR.setAttribute("href", "/models_select.html?appar=FNR")
 
 var schemeOEC = document.getElementById("scheme-oec")
-schemeOEC.setAttribute("href", "../src/html/models_select.php?appar=OEC")
+schemeOEC.setAttribute("href", "/models_select.html?appar=OEC")
 
-var schemeOEC = document.getElementById("scheme-pq")
-schemeOEC.setAttribute("href", "../src/html/models_select.php?appar=PQ")
+var schemePq = document.getElementById("scheme-pq")
+schemePq.setAttribute("href", "/models_select.html?appar=PQ")
 
-var schemeOEC = document.getElementById("scheme-pc")
-schemeOEC.setAttribute("href", "../src/html/models_select.php?appar=PC")
+var schemePc = document.getElementById("scheme-pc")
+schemePc.setAttribute("href", "/models_select.html?appar=PC")

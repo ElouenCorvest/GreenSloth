@@ -918,11 +918,12 @@ input {
   margin-bottom: 1em;
 }
 
-#compare-body-information, #compare-body-schemes {
+#compare-body-information, #compare-body-schemes, #compare-body-demonstrations {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2.5em;
+  justify-items: center;
 }
 
 #compare-body-variables {
@@ -1139,6 +1140,51 @@ input {
       padding-top: 1em;
     }
   }
+}
+
+.compare-demonstrations {
+  width: 100%; 
+  display: flex;
+  flex-direction: column; /* Changed to column so selectbox stays on top of the container */
+  align-items: center;    /* Centers the selectbox and container horizontally */
+  gap: 1.5em;
+}
+
+.compare-demonstrations-selectbox {
+  width: fit-content;
+  min-width: 150px;
+  padding: 0.6em 1.5em;
+  text-align: center;
+}
+
+.compare-demonstrations-container {
+  width: 100%; /* Ensure it fills the .compare-demonstrations parent */
+  max-width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+
+  img {
+    max-width: 100%; /* Keeps image from leaking out of the column */
+    height: auto;
+    display: block;
+    justify-self: center;
+  }
+
+  p {
+    width: 100%;
+    text-align: justify;
+    margin: 0;
+    word-break: break-word; /* Breaks long words if necessary */
+    overflow-wrap: break-word; /* Modern standard for wrapping */
+    white-space: normal; /* Ensures it doesn't try to stay on one line */
+  }
+}
+
+.compare-demonstrations-box {
+  width: 100%;
 }
 
 /* About Us Page */
@@ -1973,7 +2019,7 @@ input {
 
 /* Model Info Figures */
 
-#modelAttrFigures {
+.model-attr-figures {
   display: flex;
   flex-direction: column;
   gap: 1em;

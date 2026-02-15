@@ -106,25 +106,31 @@ if (searchParams.has("appar")) {
 function tagSelection() {
     var activeTags = document.querySelectorAll('.tag.active')
     var activeModels = []
-    activeTags.forEach(activeTag => {
+
+    for (let i = 0; i < activeTags.length; i++) {
+        var activeTag = activeTags[i]
         var catId = activeTag.parentElement.id.replace("tags-category-", "")
         catId = catId.replace("-row", "")
-        console.log(catId)
         var tagId = activeTag.id.replace(`tag-button-${catId}-`, "")
-        console.log(tagId)
-        if (activeTags.length <= 1) {
+        if (i == 0) {
             activeModels = activeModels.concat(simpleTags[catId][tagId])
         } else {
             var newActiveModels = []
+            console.log(activeModels)
+            console.log(simpleTags[catId][tagId])
             activeModels.forEach(modelName => {
-                if (!(modelName in simpleTags[catId][tagId])) {
+                if (simpleTags[catId][tagId].includes(modelName)) {
+                    console.log("hello")
                     newActiveModels.push(modelName)
                 }
             })
+            console.log(newActiveModels)
             activeModels = [...newActiveModels]
         }
-    })
+    }
 
+    
+    console.log(activeModels)
     if (activeTags.length !== 0) {
         document.querySelectorAll('.model-row').forEach(row => {
             row.classList.add("hidden")
