@@ -1,3 +1,13 @@
+------- Update on 2026-02-15 10:40:41.975613 -------
+
+light_per_L = remove_math(derived_params_table, r'$\mathrm{light\_per\_L}$')
+kCBB = remove_math(derived_params_table, r'$k_{CBC}$')
+driving_force_Cl = remove_math(derived_params_table, r'$v$')
+delta_pH = remove_math(derived_params_table, r'$\mathrm{\Delta pH}$')
+delta_pH_inVolts = remove_math(derived_params_table, r'$\mathrm{\Delta pH / V}$')
+qL_act = remove_math(derived_params_table, r'$qL_{act}$')
+pH_act = remove_math(derived_params_table, r'$pH_{act}$')
+
 ------- Start on 2025-06-13 11:41:14.514984 -------
 
 ppPSII = remove_math(derived_params_table, r'$\mathrm{light\_per\_L}$')

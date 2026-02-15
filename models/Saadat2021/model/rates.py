@@ -356,18 +356,18 @@ def include_rates(m: Model):
     m.add_reaction(
         name="v_Eact",
         fn=mass_action_2s,
-        args=["E_inactive", "TRX_red", "kf_v_Eact"],
+        args=["E_CBB_inactive", "TRX_red", "kf_v_Eact"],
         stoichiometry={
-            "E_inactive": -5,
+            "E_CBB_inactive": -5,
             "TRX_ox": 5,
         },
     )
     m.add_reaction(
         name="v_Einact",
         fn=mass_action_1s,
-        args=["E_active", "kf_v_Einact"],
+        args=["E_CBB_active", "kf_v_Einact"],
         stoichiometry={
-            "E_inactive": 5,
+            "E_CBB_inactive": 5,
         },
     )
     m.add_reaction(
@@ -717,7 +717,7 @@ def include_rates(m: Model):
     m.add_reaction(
         name="v_pga_ex",
         fn=_rate_out,
-        args=["PGA", "N_translocator", "vmax_v_pga_ex", "km_v_pga_ex"],
+        args=["PGA", "IF_3P", "vmax_v_pga_ex", "km_v_pga_ex"],
         stoichiometry={
             "PGA": -1,
         },
@@ -725,7 +725,7 @@ def include_rates(m: Model):
     m.add_reaction(
         name="v_gap_ex",
         fn=_rate_out_2,
-        args=["GAP", "N_translocator", "vmax_v_pga_ex", "km_v_gap_ex"],
+        args=["GAP", "IF_3P", "vmax_v_pga_ex", "km_v_gap_ex"],
         stoichiometry={
             "GAP": -1,
         },
@@ -733,7 +733,7 @@ def include_rates(m: Model):
     m.add_reaction(
         name="v_dhap_ex",
         fn=_rate_out_2,
-        args=["DHAP", "N_translocator", "vmax_v_pga_ex", "km_v_dhap_ex"],
+        args=["DHAP", "IF_3P", "vmax_v_pga_ex", "km_v_dhap_ex"],
         stoichiometry={
             "DHAP": -1,
         },

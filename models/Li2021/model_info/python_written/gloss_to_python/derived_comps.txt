@@ -1,3 +1,35 @@
+------- Update on 2026-02-15 10:51:43.382340 -------
+
+QA = remove_math(derived_comps_table, r'$qL$')
+Y0 = remove_math(derived_comps_table, r'$P700$')
+PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
+PC_red = remove_math(derived_comps_table, r'$\mathrm{PC}$')
+Fd_ox = remove_math(derived_comps_table, r'$\mathrm{Fd_{ox}}$')
+NADP_st = remove_math(derived_comps_table, r'$\mathrm{NADP}^+$')
+Vx = remove_math(derived_comps_table, r'$\mathrm{Vx}$')
+PsbSP = remove_math(derived_comps_table, r'$PsbS\_H$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+PhiPSII = remove_math(derived_comps_table, r'$\Phi \mathrm{PSII}$')
+H_lumen = remove_math(derived_comps_table, r'$H_{lumen}$')
+pmf = remove_math(derived_comps_table, r'$pmf$')
+H_st = remove_math(derived_comps_table, r'$H_{stroma}$')
+
+------- Update on 2026-02-15 10:40:41.974646 -------
+
+QA_ox = remove_math(derived_comps_table, r'$qL$')
+Y0 = remove_math(derived_comps_table, r'$P700$')
+PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
+PC_red = remove_math(derived_comps_table, r'$\mathrm{PC}$')
+Fd_ox = remove_math(derived_comps_table, r'$\mathrm{Fd_{ox}}$')
+NADP_st = remove_math(derived_comps_table, r'$\mathrm{NADP}^+$')
+Vx = remove_math(derived_comps_table, r'$\mathrm{Vx}$')
+PsbSP = remove_math(derived_comps_table, r'$PsbS\_H$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+PhiPSII = remove_math(derived_comps_table, r'$\Phi \mathrm{PSII}$')
+H_lumen = remove_math(derived_comps_table, r'$H_{lumen}$')
+pmf = remove_math(derived_comps_table, r'$pmf$')
+H_st = remove_math(derived_comps_table, r'$H_{stroma}$')
+
 ------- Start on 2025-06-13 11:41:14.514051 -------
 
 H_lu = remove_math(derived_comps_table, r'$H_{lumen}$')

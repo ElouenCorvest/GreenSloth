@@ -1,9 +1,14 @@
 Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,$H_{lumen}$,C00080,H_lu,3
-The total proton motive force,$\mathrm{PMF}$,$pmf$,,PMF,66
+Oxidised primary quinone of PSII,$\mathrm{Q_{A|ox}}$,$qL$,,QA,64
+Ground state of PSI (P700),$\mathrm{Y_0}$,$P700$,M00163,Y0,55
+Plastoquinone,$\mathrm{PQ}$,$\mathrm{PQ}$,C02061,PQ,7
+Reduced Plastocyanine,$\mathrm{PC}_\mathrm{red}$,$\mathrm{PC}$,C03025,PC_red,36
+Oxidized Ferrodoxin,$\mathrm{Fd}_\mathrm{ox}$,$\mathrm{Fd_{ox}}$,C00139,Fd_ox,18
+Stromal NADP concentration,$\mathrm{NADP}_\mathrm{st}$,$\mathrm{NADP}^+$,C00006,NADP_st,38
+Violaxanthin,$\mathrm{Vx}$,$\mathrm{Vx}$,C08614,Vx,5
 Concentration of protonated psbS protein,$\mathrm{psbS^P}$,$PsbS\_H$,K03542,PsbSP,9
 Nonphotochemical quenching,$\mathrm{NPQ}$,$NPQ$,,NPQ,67
-Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,$\mathrm{d\_protons\_to\_ATP}$,,Prot_ATPsynth,68
 Efficiency of PSII,$\Phi \mathrm{PSII}$,$\Phi \mathrm{PSII}$,,PhiPSII,69
-Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,$^1\mathrm{O_2}$,C00007,singO2,70
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,$H_{lumen}$,C00080,H_lumen,3
+The total proton motive force,$\mathrm{pmf}$,$pmf$,,pmf,66
 Stromal Proton concentration,$\mathrm{H_{st}}$,$H_{stroma}$,C00080,H_st,71

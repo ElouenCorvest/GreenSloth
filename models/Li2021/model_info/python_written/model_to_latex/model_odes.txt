@@ -1,3 +1,45 @@
+------- Update on 2026-02-15 10:55:20.971656 -------
+
+```math 
+{ode(singO2)} = {phi_triplet} {phi_1O2} \cdot {vPSII_recomb}
+```
+```math 
+{ode(QA_red)} = - {vPSII_recomb} + {vPSII_ChSep} - {v_PSII} + {v_PQ}
+```
+```math 
+{ode(pH_lumen)} = \frac{{{ipt_lu}}}{{{b_H}}} \cdot {vPSII_recomb} + \frac{{-{ipt_lu}}}{{{b_H}}} \cdot {vPSII_ChSep} + \frac{{-2 {ipt_lu}}}{{{b_H}}} \cdot {v_b6f} + \frac{{-2 {ipt_lu}}}{{{b_H}}} \cdot {v_NDH} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_KEA3} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_ClCe} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_Leak} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_pmf_protons_activity}
+```
+```math 
+{ode(Dpsi)} = - {vpc} \cdot {vPSII_recomb} + {vpc} \cdot {vPSII_ChSep} + {vpc} \cdot {v_b6f} + {vpc} \cdot 2 \cdot {v_NDH} + {vpc} \cdot -3 \cdot {v_ClCe} - {vpc} \cdot {v_Leak} - {vpc} \cdot {v_pmf_protons_activity} + {vpc} \cdot {PSI_ChSep} - {vpc} \cdot {v_VKC} - {vpc} \cdot {v_VCCN1}
+```
+```math 
+{ode(PQH_2)} = 0.5 \cdot {v_PSII} - 0.5 \cdot {v_PQ} - 0.5 \cdot {v_b6f} + 0.5 \cdot {v_NDH} + 0.5 \cdot {v_PGR}
+```
+```math 
+{ode(PC_ox)} = - {v_b6f} + {v_PSI_PCoxid}
+```
+```math 
+{ode(Fd_red)} = - {v_NDH} + {PSI_ChSep} - {v_PGR} - {v_FNR} - {v_Mehler}
+```
+```math 
+{ode(Y2)} = {PSI_ChSep} - {v_PSI_PCoxid}
+```
+```math 
+{ode(NADPH_st)} = 0.5 \cdot {v_FNR} - {v_CBB}
+```
+```math 
+{ode(K_lu)} = {ipt_lu} \cdot {v_KEA3} - {ipt_lu} \cdot {v_VKC}
+```
+```math 
+{ode(Cl_lu)} = {ipt_lu} \cdot 2 \cdot {v_ClCe} + {ipt_lu} \cdot {v_VCCN1}
+```
+```math 
+{ode(Cl_st)} = - 0.2 {ipt_lu} \cdot {v_ClCe} - 0.1 {ipt_lu} \cdot {v_VCCN1}
+```
+```math 
+{ode(Zx)} = - {v_Epox} + {v_Deepox}
+```
+
 ------- Start on 2025-06-13 11:41:22.596572 -------
 
 ```math 

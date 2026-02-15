@@ -1,3 +1,192 @@
+------- Update on 2026-02-15 10:55:20.946476 -------
+
+```math
+{vPSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \left( 7.0 - {pH_lumen} \right)}}{{0.06}}}}
+```
+```math
+{vPSII_ChSep} =  {sigma0_II} \cdot {light_per_L} \cdot {PhiPSII}
+```
+```math
+{v_PSII} =  {QA_red} \cdot {PQ} \cdot {k_QA}
+```
+```math
+{v_PQ} =  \frac{{{PQH_2} \cdot {QA} \cdot {k_QA}}}{{{Keq_QA}}}
+```
+```math
+{v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot \left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) {PC_red} \frac{{\left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f}}}{{10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \left( {pH_lumen} - 7.0 \right) \right) - {pmf}}}{{0.06}}}}}}
+```
+```math
+{v_NDH} =  {k_NDH1} \cdot {Fd_red} \cdot {PQ} - \frac{{{k_NDH1}}}{{10^{{\frac{{{Em_PQH2_pH7} - 0.06 \left( {pH_st} - 7.0 \right) - {Em_Fd} - {pmf} \cdot 2}}{{0.06}}}}}} \cdot {Fd_ox} \cdot {PQH_2}
+```
+```math
+{v_PGR} =  \frac{{{Vmax_PGR} \cdot \frac{{{Fd_red}^{{4}}}}{{{Fd_red}^{{4}} + 0.1^{{4}}}} \cdot {PQ}}}{{{PQ} + {PQH_2}}}
+```
+```math
+{PSI_ChSep} =  {Y0} \cdot {light_per_L} \cdot {sigma0_I} \cdot {Fd_ox}
+```
+```math
+{v_PSI_PCoxid} =  {PC_red} \cdot {k_PCtoP700} \cdot {Y2}
+```
+```math
+{v_FNR} =  {k_FdtoNADP} \cdot {NADP_st} \cdot {Fd_red}
+```
+```math
+{v_Mehler} =  \frac{{4 \cdot 0.000265 {Fd_red}}}{{{Fd_red} + {Fd_ox}}}
+```
+```math
+{v_CBB} =  \frac{{\ma{time}hrm{{kCBB}} \cdo{time} \lef{time}( 1.0 - \exp \lef{time}( \frac{{-{time}}}{{600}} \righ{time}) \righ{time}) \lef{time}( \log \lef{time}( \frac{{{NADPH_s{time}}}}{{{NADP_s{time}}}} \righ{time}) - \log 1.25 \righ{time})}}{{\log \lef{time}( \frac{{3.5}}{{1.25}} \righ{time})}}
+```
+```math
+{v_KEA3} =  {k_KEA3} \cdot \left( {H_lumen} \cdot {K_st} - {H_st} \cdot {K_lu} \right) {qL_act} \cdot {pH_act}
+```
+```math
+{v_VKC} =  \frac{{{P_K} \cdot \left( -0.06 \log_{{10}} \left( \frac{{{K_st}}}{{{K_lu}}} \right) + {Dpsi} \right) \left( {K_lu} + {K_st} \right)}}{{2}}
+```
+```math
+{v_VCCN1} =  \frac{{{k_VCCN1} \cdot \left( 332 {driving_force_Cl}^{{3}} + 30.8 {driving_force_Cl}^{{2}} + 3.6 {driving_force_Cl} \right) \left( {Cl_st} + {Cl_lu} \right)}}{{2}}
+```
+```math
+{v_ClCe} =  \frac{{{k_ClCe} \cdot \left( {driving_force_Cl} \cdot 2 + {pmf} \right) \left( {Cl_st} + {Cl_lu} \right) \left( {H_lumen} + {H_st} \right)}}{{4}}
+```
+```math
+{v_Leak} =  {pmf} \cdot {k_leak} \cdot {H_lumen}
+```
+```math
+{v_pmf_protons_activity} = ERROR because of function "_v_pmf_protons_activity"
+```
+```math
+{v_Epox} =  {Zx} \cdot \mathrm{{k\_E{Zx}}}
+```
+```math
+{v_Deepox} =  {Vx} \cdot \mathrm{{{Vx}max\_{Vx}DE}} \frac{{1}}{{10^{{\mathrm{{nh\_{Vx}DE}} \cdot \left( {pH_lumen} - \mathrm{{pKa\_{Vx}DE}} \right)}} + 1}}
+```
+
+------- Update on 2026-02-15 10:54:37.939027 -------
+
+```math
+{vPSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \left( 7.0 - {pH_lumen} \right)}}{{0.06}}}}
+```
+```math
+{vPSII_ChSep} =  {sigma0_II} \cdot {light_per_L} \cdot {PhiPSII}
+```
+```math
+{v_PSII} =  {QA_red} \cdot {PQ} \cdot {k_QA}
+```
+```math
+{v_PQ} =  \frac{{{PQH_2} \cdot {QA} \cdot {k_QA}}}{{{Keq_QA}}}
+```
+```math
+{v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot \left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) {PC_red} \frac{{\left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f}}}{{10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \left( {pH_lumen} - 7.0 \right) \right) - {pmf}}}{{0.06}}}}}}
+```
+```math
+{v_NDH} =  {k_NDH1} \cdot {Fd_red} \cdot {PQ} - \frac{{{k_NDH1}}}{{10^{{\frac{{{Em_PQH2_pH7} - 0.06 \left( {pH_st} - 7.0 \right) - {Em_Fd} - {pmf} \cdot 2}}{{0.06}}}}}} \cdot {Fd_ox} \cdot {PQH_2}
+```
+```math
+{v_PGR} =  \frac{{{Vmax_PGR} \cdot \frac{{{Fd_red}^{{4}}}}{{{Fd_red}^{{4}} + 0.1^{{4}}}} \cdot {PQ}}}{{{PQ} + {PQH_2}}}
+```
+```math
+{PSI_ChSep} =  {Y0} \cdot {light_per_L} \cdot {sigma0_I} \cdot {Fd_ox}
+```
+```math
+{v_PSI_PCoxid} =  {PC_red} \cdot {k_PCtoP700} \cdot {Y2}
+```
+```math
+{v_FNR} =  {k_FdtoNADP} \cdot {NADP_st} \cdot {Fd_red}
+```
+```math
+{v_Mehler} =  \frac{{4 \cdot 0.000265 {Fd_red}}}{{{Fd_red} + {Fd_ox}}}
+```
+```math
+{v_CBB} =  \frac{{\ma{time}hrm{{kCBB}} \cdo{time} \lef{time}( 1.0 - \exp \lef{time}( \frac{{-{time}}}{{600}} \righ{time}) \righ{time}) \lef{time}( \log \lef{time}( \frac{{{NADPH_s{time}}}}{{{NADP_s{time}}}} \righ{time}) - \log 1.25 \righ{time})}}{{\log \lef{time}( \frac{{3.5}}{{1.25}} \righ{time})}}
+```
+```math
+{v_KEA3} =  {k_KEA3} \cdot \left( {H_lumen} \cdot {K_st} - {H_stroma} \cdot {K_lu} \right) {qL_act} \cdot {pH_act}
+```
+```math
+{v_VKC} =  \frac{{{P_K} \cdot \left( -0.06 \log_{{10}} \left( \frac{{{K_st}}}{{{K_lu}}} \right) + {Dpsi} \right) \left( {K_lu} + {K_st} \right)}}{{2}}
+```
+```math
+{v_VCCN1} =  \frac{{{k_VCCN1} \cdot \left( 332 {driving_force_Cl}^{{3}} + 30.8 {driving_force_Cl}^{{2}} + 3.6 {driving_force_Cl} \right) \left( {Cl_st} + {Cl_lu} \right)}}{{2}}
+```
+```math
+{v_ClCe} =  \frac{{{k_ClCe} \cdot \left( {driving_force_Cl} \cdot 2 + {pmf} \right) \left( {Cl_st} + {Cl_lu} \right) \left( {H_lumen} + {H_stroma} \right)}}{{4}}
+```
+```math
+{v_Leak} =  {pmf} \cdot {k_leak} \cdot {H_lumen}
+```
+```math
+{v_pmf_protons_activity} = ERROR because of function "_v_pmf_protons_activity"
+```
+```math
+{v_Epox} =  {Zx} \cdot \mathrm{{k\_E{Zx}}}
+```
+```math
+{v_Deepox} =  {Vx} \cdot \mathrm{{{Vx}max\_{Vx}DE}} \frac{{1}}{{10^{{\mathrm{{nh\_{Vx}DE}} \cdot \left( {pH_lumen} - \mathrm{{pKa\_{Vx}DE}} \right)}} + 1}}
+```
+
+------- Update on 2026-02-15 10:47:58.694195 -------
+
+```math
+{vPSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \left( 7.0 - {pH_lumen} \right)}}{{0.06}}}}
+```
+```math
+{vPSII_ChSep} =  {sigma0_II} \cdot {light_per_L} \cdot {Phi2}
+```
+```math
+{v_PSII} =  {QA_red} \cdot {PQ} \cdot {k_QA}
+```
+```math
+{v_PQ} =  \frac{{{PQH_2} \cdot {QA} \cdot {k_QA}}}{{{Keq_QA}}}
+```
+```math
+{v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot \left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) {PC_red} \frac{{\left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f}}}{{10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \left( {pH_lumen} - 7.0 \right) \right) - {pmf}}}{{0.06}}}}}}
+```
+```math
+{v_NDH} =  {k_NDH1} \cdot {Fd_red} \cdot {PQ} - \frac{{{k_NDH1}}}{{10^{{\frac{{{Em_PQH2_pH7} - 0.06 \left( {pH_st} - 7.0 \right) - {Em_Fd} - {pmf} \cdot 2}}{{0.06}}}}}} \cdot {Fd_ox} \cdot {PQH_2}
+```
+```math
+{v_PGR} =  \frac{{{Vmax_PGR} \cdot \frac{{{Fd_red}^{{4}}}}{{{Fd_red}^{{4}} + 0.1^{{4}}}} \cdot {PQ}}}{{{PQ} + {PQH_2}}}
+```
+```math
+{PSI_ChSep} =  {P700_red} \cdot {light_per_L} \cdot {sigma0_I} \cdot {Fd_ox}
+```
+```math
+{v_PSI_PCoxid} =  {PC_red} \cdot {k_PCtoP700} \cdot {Y2}
+```
+```math
+{v_FNR} =  {k_FdtoNADP} \cdot {NADP_st} \cdot {Fd_red}
+```
+```math
+{v_Mehler} =  \frac{{4 \cdot 0.000265 {Fd_red}}}{{{Fd_red} + {Fd_ox}}}
+```
+```math
+{v_CBB} =  \frac{{\ma{time}hrm{{kCBB}} \cdo{time} \lef{time}( 1.0 - \exp \lef{time}( \frac{{-{time}}}{{600}} \righ{time}) \righ{time}) \lef{time}( \log \lef{time}( \frac{{{NADPH_s{time}}}}{{{NADP_s{time}}}} \righ{time}) - \log 1.25 \righ{time})}}{{\log \lef{time}( \frac{{3.5}}{{1.25}} \righ{time})}}
+```
+```math
+{v_KEA3} =  {k_KEA3} \cdot \left( {H_lumen} \cdot {K_st} - {H_stroma} \cdot {K_lu} \right) {qL_act} \cdot {pH_act}
+```
+```math
+{v_VKC} =  \frac{{{P_K} \cdot \left( -0.06 \log_{{10}} \left( \frac{{{K_st}}}{{{K_lu}}} \right) + {Dpsi} \right) \left( {K_lu} + {K_st} \right)}}{{2}}
+```
+```math
+{v_VCCN1} =  \frac{{{k_VCCN1} \cdot \left( 332 {driving_force_Cl}^{{3}} + 30.8 {driving_force_Cl}^{{2}} + 3.6 {driving_force_Cl} \right) \left( {Cl_st} + {Cl_lu} \right)}}{{2}}
+```
+```math
+{v_ClCe} =  \frac{{{k_ClCe} \cdot \left( {driving_force_Cl} \cdot 2 + {pmf} \right) \left( {Cl_st} + {Cl_lu} \right) \left( {H_lumen} + {H_stroma} \right)}}{{4}}
+```
+```math
+{v_Leak} =  {pmf} \cdot {k_leak} \cdot {H_lumen}
+```
+```math
+{v_pmf_protons_activity} = ERROR because of function "_v_pmf_protons_activity"
+```
+```math
+{v_Epox} =  {Zx} \cdot \mathrm{{k\_E{Zx}}}
+```
+```math
+{v_Deepox} =  {Vx} \cdot \mathrm{{{Vx}max\_{Vx}DE}} \frac{{1}}{{10^{{\mathrm{{nh\_{Vx}DE}} \cdot \left( {pH_lumen} - \mathrm{{pKa\_{Vx}DE}} \right)}} + 1}}
+```
+
 ------- Start on 2025-06-13 11:41:22.563688 -------
 
 ```math

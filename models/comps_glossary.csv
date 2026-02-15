@@ -64,7 +64,7 @@ Stromal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{st}}$,C00698,Cl_st,62,Li2021
 Transthylakoid electric field,$\Delta \Psi _{\mathrm{thylakoid}}$,,Dpsi,63,Li2021
 Oxidised primary quinone of PSII,$\mathrm{Q_{A|ox}}$,,QA_ox,64,Li2021
 Reduced primary quinone of PSII,$\mathrm{Q_{A|red}}$,,QA_red,65,Li2021
-The total proton motive force,$\mathrm{PMF}$,,PMF,66,Li2021
+The total proton motive force,$\mathrm{pmf}$,,pmf,66,Li2021
 Nonphotochemical quenching,$\mathrm{NPQ}$,,NPQ,67,Li2021
 Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,,Prot_ATPsynth,68,Li2021
 Efficiency of PSII,$\Phi \mathrm{PSII}$,,PhiPSII,69,"Li2021, Bellasio2019"

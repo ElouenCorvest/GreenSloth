@@ -388,9 +388,9 @@ def include_derived_quantities(m: Model):
     )
 
     m.add_derived(
-        name="E_active",
+        name="E_CBB_active",
         fn=moiety_1,
-        args=["E_inactive", "E_total"],
+        args=["E_CBB_inactive", "E_total"],
     )
 
     m.add_derived(
@@ -486,7 +486,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="Enz0_rubisco_active",
         fn=mul,
-        args=["Enz0_rubisco", "E_active"],
+        args=["Enz0_rubisco", "E_CBB_active"],
     )
 
     m.add_derived(
@@ -498,7 +498,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="Enz0_v_FBPase_active",
         fn=mul,
-        args=["Enz0_v_FBPase", "E_active"],
+        args=["Enz0_v_FBPase", "E_CBB_active"],
     )
 
     m.add_derived(
@@ -510,7 +510,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="Enz0_v_SBPase_active",
         fn=mul,
-        args=["Enz0_v_SBPase", "E_active"],
+        args=["Enz0_v_SBPase", "E_CBB_active"],
     )
 
     m.add_derived(
@@ -522,7 +522,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="Enz0_v_PRKase_active",
         fn=mul,
-        args=["Enz0_v_PRKase", "E_active"],
+        args=["Enz0_v_PRKase", "E_CBB_active"],
     )
 
     m.add_derived(
@@ -534,20 +534,20 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="vmax_v_pga_ex",
         fn=mass_action_1s,
-        args=["kcat_N_translocator", "Enz0_N_translocator"],
+        args=["kcat_IF_3P", "Enz0_IF_3P"],
     )
 
     m.add_derived(
-        name="N_translocator",
+        name="IF_3P",
         fn=_rate_translocator,
         args=[
             "Pi_st",
             "PGA",
             "GAP",
             "DHAP",
-            "km_N_translocator_Pi_ext",
+            "km_IF_3P_Pi_ext",
             "Pi_ext",
-            "km_N_translocator_Pi_st",
+            "km_IF_3P_Pi_st",
             "km_v_pga_ex",
             "km_v_gap_ex",
             "km_v_dhap_ex",
@@ -557,7 +557,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="Enz0_v_starch_active",
         fn=mul,
-        args=["Enz0_v_starch", "E_active"],
+        args=["Enz0_v_starch", "E_CBB_active"],
     )
 
     m.add_derived(

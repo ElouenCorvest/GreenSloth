@@ -1,3 +1,45 @@
+------- Update on 2026-02-15 10:55:20.951190 -------
+
+```math
+{QA} =  {QA_total} - {QA_red}
+```
+```math
+{Y0} =  {P700_total} - {Y2}
+```
+```math
+{PQ} =  {PQ_tot} - {PQH_2}
+```
+```math
+{PC_red} =  {PC_tot} - {PC_ox}
+```
+```math
+{Fd_ox} =  {Fd_tot} - {Fd_red}
+```
+```math
+{NADP_st} =  {NADP_tot} - {NADPH_st}
+```
+```math
+{Vx} =  {Carotenoids_tot} - {Zx}
+```
+```math
+{PsbSP} =  \frac{{1}}{{10^{{3 \left( {pH_lumen} - {pKa_PsbS} \right)}} + 1}}
+```
+```math
+{NPQ} =  0.4 {NPQ_max} \cdot {PsbSP} {Zx} + 0.5 {NPQ_max} \cdot {PsbSP} + 0.1 {NPQ_max} {Zx}
+```
+```math
+{PhiPSII} =  \frac{{1}}{{1 + \frac{{1 + {NPQ}}}{{4.88 {QA}}}}}
+```
+```math
+{H_lumen} =  10^{{-1 {pH_lumen}}}
+```
+```math
+{pmf} =  {Dpsi} + 0.06 \left( {pH_st} - {pH_lumen} \right)
+```
+```math
+{H_st} =  10^{{-1 {pH_st}}}
+```
+
 ------- Start on 2025-06-13 11:41:22.566463 -------
 
 ```math

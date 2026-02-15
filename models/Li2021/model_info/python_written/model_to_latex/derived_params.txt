@@ -1,3 +1,27 @@
+------- Update on 2026-02-15 10:55:20.953715 -------
+
+```math
+{light_per_L} =  \frac{{0.84 {PPFD}}}{{0.7}}
+```
+```math
+{kCBB} =  60 \frac{{{PPFD}}}{{{PPFD} + 250}}
+```
+```math
+{driving_force_Cl} =  0.06 \log_{{10}} \left( \frac{{{Cl_st}}}{{{Cl_lu}}} \right) + {Dpsi}
+```
+```math
+{delta_pH} =  {pH_st} - {pH_lumen}
+```
+```math
+{delta_pH_inVolts} =  0.06 {delta_pH}
+```
+```math
+{qL_act} =  \frac{{{QA}^{{3}}}}{{{QA}^{{3}} + 0.15^{{3}}}}
+```
+```math
+{pH_act} =  \frac{{1}}{{10^{{1 \left( {pH_lumen} - 6.0 \right)}} + 1}}
+```
+
 ------- Start on 2025-06-13 11:41:22.569090 -------
 
 ```math

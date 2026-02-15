@@ -1,9 +1,8 @@
 Short Description,Common Abbr.,Paper Abbr.,Python Var
-PAR photons per PSII,$ppPSII$,$\mathrm{light\_per\_L}$,ppPSII
-Equilibrium constant of Cytochrome b6f,$K_\mathrm{b6f}$,$Keq_{b6f}$,K_b6f
-Rate constant of Cytochrome b6f,$k_\mathrm{b6f}$,$k_{b6f}$,k_b6f
-Equilibrium constant of NDH1,$K_\mathrm{NDH1}$,$Keq_{NDH}$,K_NDH1
-ATPsynthase activity,$\mathrm{Act_{ATPsynth}}$,$\mathrm{ATP\_synthase\_actvt}$,Act_ATPsynth
-Number of charge seperations in PSII per second,$\mathrm{PSII_{ChSep}}$,$PSII_{charge}$,PSII_ChSep
-Rate of PSII recombination,$v_\mathrm{PSII|recomb}$,$PSII_{recom}$,PSII_recomb
-Driving force of Cl-,${\mathrm{Cl}^- _{\mathrm{df}}}$,$\mathrm{driving\_force\_Cl}$,Cl_df
+PAR photons per PSII,$\mathrm{light\_per\_L}$,$\mathrm{light\_per\_L}$,light_per_L
+Simplified rate constant of CBB cycle,$k_\mathrm{CBB}$,$k_{CBC}$,kCBB
+Driving force of $\mathrm{Cl^-}$ across the thylakoid membrane,$\mathrm{Cl_{df}}$,$v$,driving_force_Cl
+Difference between pH in lumen and stroma,$\mathrm{\Delta pH}$,$\mathrm{\Delta pH}$,delta_pH
+pH Difference in Volts,$\mathrm{\Delta pH / V}$,$\mathrm{\Delta pH / V}$,delta_pH_inVolts
+KEA3 regulation by NADPH,$\mathrm{qL_{act}$,$qL_{act}$,qL_act
+KEA3 regulation by lumen pH,$\mathrm{pH_{lu|act}$,$pH_{act}$,pH_act

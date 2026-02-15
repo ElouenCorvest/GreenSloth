@@ -131,10 +131,10 @@ def Saadat2021() -> Model:
             "km_v_pga_ex": 0.25,
             "km_v_gap_ex": 0.075,
             "km_v_dhap_ex": 0.077,
-            "km_N_translocator_Pi_ext": 0.74,
-            "km_N_translocator_Pi_st": 0.63,
-            "kcat_N_translocator": 2.0,
-            "Enz0_N_translocator": 1.0,
+            "km_IF_3P_Pi_ext": 0.74,
+            "km_IF_3P_Pi_st": 0.63,
+            "kcat_IF_3P": 2.0,
+            "Enz0_IF_3P": 1.0,
             "Enz0_v_starch": 1.0,
             "km_v_starch_G1P": 0.08,
             "km_v_starch_ATP_st": 0.08,
@@ -211,7 +211,7 @@ def Saadat2021() -> Model:
             "DHA": 1.0296456279861962e-11,
             "GSSG": 4.99986167652437e-12,
             "TRX_ox": 0.9334426859846461,
-            "E_inactive": 3.6023635680406634,
+            "E_CBB_inactive": 3.6023635680406634,
         }
     )
 

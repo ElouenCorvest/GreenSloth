@@ -129,10 +129,10 @@ External phosphate,$\mathrm{P}_\mathrm{ext}$,$\mathrm{P}_\mathrm{ext}$,$0.5$,$\m
 Dissociation constant for the complex formed by phosphate translocator and PGA,$K_{\mathrm{diss}|\mathrm{PGA}}$ ,$K_{\mathrm{pga}}$,$0.25$,$\mathrm{mM}$,km_v_pga_ex,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
 Dissociation constant for the complex formed by phosphate translocator and GAP,$K_{\mathrm{diss}|\mathrm{GAP}}$ ,$K_{\mathrm{gap}}$,$0.075$,$\mathrm{mM}$,km_v_gap_ex,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
 Dissociation constant for the complex formed by phosphate translocator and DHAP,$K_{\mathrm{diss}|\mathrm{DHAP}}$ ,$K_{\mathrm{dhap}}$,$0.077$,$\mathrm{mM}$,km_v_dhap_ex,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
-Dissociation constant for the complex formed by phosphate translocator and external orthophosphate,$K_{\mathrm{diss}|\mathrm{P_{ext}}}$ ,$K_{\mathrm{pxt}}$,$0.74$,$\mathrm{mM}$,km_N_translocator_Pi_ext,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
-Dissociation constant for the complex formed by phosphate translocator and Pi,$K_{\mathrm{diss}|\mathrm{Pi}}$ ,$K_{\mathrm{pi}}$,$0.63$,$\mathrm{mM}$,km_N_translocator_Pi_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
-$V_\mathrm{max}$ of Export,$V_{\mathrm{max}_{\mathrm{ex}}}$,$V_{\mathrm{ex}}$,$2.0$,$\mathrm{mM}\ s^{-1}$,kcat_N_translocator,
-,,,,,Enz0_N_translocator,
+Dissociation constant for the complex formed by phosphate translocator and external orthophosphate,$K_{\mathrm{diss}|\mathrm{P_{ext}}}$ ,$K_{\mathrm{pxt}}$,$0.74$,$\mathrm{mM}$,km_IF_3P_Pi_ext,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+Dissociation constant for the complex formed by phosphate translocator and Pi,$K_{\mathrm{diss}|\mathrm{Pi}}$ ,$K_{\mathrm{pi}}$,$0.63$,$\mathrm{mM}$,km_IF_3P_Pi_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
+$V_\mathrm{max}$ of Export,$V_{\mathrm{max}_{\mathrm{ex}}}$,$V_{\mathrm{ex}}$,$2.0$,$\mathrm{mM}\ s^{-1}$,kcat_IF_3P,
+,,,,,Enz0_IF_3P,
 ,,,,,Enz0_v_starch,
 Michaelis Menten constant of Starch production for G1P,$K_{\mathrm{m}|\mathrm{Starch}|\mathrm{G1P}}$,$K_{\mathrm{mst}1}$,$0.08$,$\mathrm{mM}$,km_v_starch_G1P,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
 Michaelis Menten constant of Starch production for ATP,$K_{\mathrm{m}|\mathrm{Starch}|\mathrm{ATP}}$,$K_{\mathrm{mst}2}$,$0.08$,$\mathrm{mM}$,km_v_starch_ATP_st,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x

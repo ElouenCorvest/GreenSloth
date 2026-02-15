@@ -6,15 +6,16 @@ from GreenSlothUtils import gloss_fromCSV, remove_math
 
 ###### Util Functions ######
 
-
-def ode(first_var: str, second_var: str = "t") -> str:
+def ode(
+    first_var: str,
+    second_var: str = "t"
+) -> str:
     for i in [first_var, second_var]:
         if "$" in i:
             msg = f"Your given variable '{i}' has a '$' in it"
             raise ValueError(msg)
 
     return rf"\frac{{\mathrm{{d}}{first_var}}}{{\mathrm{{d}}{second_var}}}"
-
 
 ###### Model Infos ######
 
@@ -29,138 +30,140 @@ model_info = Path(__file__).parent / "model_info"
 python_written = model_info / "python_written"
 
 comps_table, comps_table_tolist, comps_table_list = gloss_fromCSV(
-    path=model_info / "comps.csv", omit_col="Glossary ID"
+    path=model_info / "comps.csv",
+    omit_col="Glossary ID"
 )
 
-derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = (
-    gloss_fromCSV(path=model_info / "derived_comps.csv", omit_col="Glossary ID")
+derived_comps_table, derived_comps_table_tolist, derived_comps_table_list = gloss_fromCSV(
+    path=model_info / "derived_comps.csv",
+    omit_col="Glossary ID"
 )
 
 rates_table, rates_table_tolist, rates_table_list = gloss_fromCSV(
-    path=model_info / "rates.csv", omit_col="Glossary ID"
+    path=model_info / "rates.csv",
+    omit_col="Glossary ID"
 )
 
 params_table, params_table_tolist, params_table_list = gloss_fromCSV(
-    path=model_info / "params.csv", cite_dict=cite_dict
+    path=model_info / "params.csv",
+    cite_dict=cite_dict
 )
 
-derived_params_table, derived_params_table_tolist, derived_params_table_list = (
-    gloss_fromCSV(model_info / "derived_params.csv")
-)
+derived_params_table, derived_params_table_tolist, derived_params_table_list = gloss_fromCSV(model_info / "derived_params.csv")
 
 ###### Variables for ease of access ######
 
 # -- Compounds --
 
-Vx = remove_math(comps_table, r"$\mathrm{Vx}$")
-Zx = remove_math(comps_table, r"$\mathrm{Zx}$")
-ATP_st = remove_math(comps_table, r"$\mathrm{ATP}$")
-ADP_st = remove_math(comps_table, r"$\mathrm{ADP}$")
-K_lu = remove_math(comps_table, r"$\mathrm{K}^{+}_{\mathrm{lumen}}$")
-K_st = remove_math(comps_table, r"$\mathrm{K}^{+}_{\mathrm{stroma}}$")
-Cl_lu = remove_math(comps_table, r"$\mathrm{Cl}^{-}_{\mathrm{lumen}}$")
-Cl_st = remove_math(comps_table, r"$\mathrm{Cl}^{-}_{\mathrm{stroma}}$")
-Dpsi = remove_math(comps_table, r"$\Delta \Psi$")
-QA_ox = remove_math(comps_table, r"$\mathrm{Q_{A}}$")
-QA_red = remove_math(comps_table, r"$\mathrm{Q_{A}}^{-}$")
-PQH_2 = remove_math(comps_table, r"$\mathrm{PQH_2}$")
-PQ = remove_math(comps_table, r"$\mathrm{PQ}$")
-PC_red = remove_math(comps_table, r"$\mathrm{PC}$")
-PC_ox = remove_math(comps_table, r"$\mathrm{PC}^+$")
-Fd_ox = remove_math(comps_table, r"$\mathrm{Fd_{ox}}$")
-Fd_red = remove_math(comps_table, r"$\mathrm{Fd_{red}}$")
-pH_lu = remove_math(comps_table, r"$\mathrm{pH_{lumen}}")
-NADPH_st = remove_math(comps_table, r"$\mathrm{NADPH}$")
-NADP_st = remove_math(comps_table, r"$\mathrm{NADP}^+$")
-Y0 = remove_math(comps_table, r"$\mathrm{P_{700}}$")
-Y2 = remove_math(comps_table, r"$\mathrm{P_{700}}^+$")
+QA_red = remove_math(comps_table, r'$\mathrm{Q_{A}}^{-}$')
+PQH_2 = remove_math(comps_table, r'$\mathrm{PQH_2}$')
+pH_lumen = remove_math(comps_table, r'$\mathrm{pH_{lumen}}$')
+Dpsi = remove_math(comps_table, r'$\Delta \Psi$')
+K_lu = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{lumen}}$')
+PC_ox = remove_math(comps_table, r'$\mathrm{PC}^+$')
+Y2 = remove_math(comps_table, r'$\mathrm{P_{700}}^+$')
+Zx = remove_math(comps_table, r'$\mathrm{Zx}$')
+singO2 = remove_math(comps_table, r'$\mathrm{sing}^{O2}$')
+Fd_red = remove_math(comps_table, r'$\mathrm{Fd_{red}}$')
+NADPH_st = remove_math(comps_table, r'$\mathrm{NADPH}$')
+Cl_lu = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{lumen}}$')
+Cl_st = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{stroma}}$')
 
 # -- Derived Compounds --
 
-H_lu = remove_math(derived_comps_table, r"$H_{lumen}$")
-PMF = remove_math(derived_comps_table, r"$pmf$")
-PsbSP = remove_math(derived_comps_table, r"$PsbS\_H$")
-NPQ = remove_math(derived_comps_table, r"$NPQ$")
-Prot_ATPsynth = remove_math(derived_comps_table, r"$\mathrm{d\_protons\_to\_ATP}$")
-PhiPSII = remove_math(derived_comps_table, r"$\Phi \mathrm{PSII}$")
-singO2 = remove_math(derived_comps_table, r"$^1\mathrm{O_2}$")
-H_st = remove_math(derived_comps_table, r"$H_{stroma}$")
+QA = remove_math(derived_comps_table, r'$qL$')
+Y0 = remove_math(derived_comps_table, r'$P700$')
+PQ = remove_math(derived_comps_table, r'$\mathrm{PQ}$')
+PC_red = remove_math(derived_comps_table, r'$\mathrm{PC}$')
+Fd_ox = remove_math(derived_comps_table, r'$\mathrm{Fd_{ox}}$')
+NADP_st = remove_math(derived_comps_table, r'$\mathrm{NADP}^+$')
+Vx = remove_math(derived_comps_table, r'$\mathrm{Vx}$')
+PsbSP = remove_math(derived_comps_table, r'$PsbS\_H$')
+NPQ = remove_math(derived_comps_table, r'$NPQ$')
+PhiPSII = remove_math(derived_comps_table, r'$\Phi \mathrm{PSII}$')
+H_lumen = remove_math(derived_comps_table, r'$H_{lumen}$')
+pmf = remove_math(derived_comps_table, r'$pmf$')
+H_st = remove_math(derived_comps_table, r'$H_{stroma}$')
 
 # -- Rates --
 
-v_b6f = remove_math(rates_table, r"$v_{b6f}$")
-v_NDH = remove_math(rates_table, r"$v_{NDH}$")
-v_PGR = remove_math(rates_table, r"$v_{PGR}$")
-v_Deepox = remove_math(rates_table, r"$v_{VDE}$")
-v_ATPsynth = remove_math(rates_table, r"$v_{ATPsynthase}$")
-v_VCCN1 = remove_math(rates_table, r"$v_{VCCN1}$")
-v_ClCe = remove_math(rates_table, r"$v_{ClCe}$")
-v_KEA3 = remove_math(rates_table, r"$v_{KEA3}$")
-v_VKC = remove_math(rates_table, r"$v_{K\_channel}$")
-vPSII_ChSep = remove_math(rates_table, r"$PSII_{charge}$")
-vPSII_recomb = remove_math(rates_table, r"$PSII_{recom}$")
-v_PSII = remove_math(rates_table, r"$v_{PSII}$")
-PSI_ChSep = remove_math(rates_table, r"$PSI_{charge}$")
-v_PSI_PCoxid = remove_math(rates_table, r"$PSI_{PC\_oxidiation}$")
-v_FNR = remove_math(rates_table, r"$v_{FNR}$")
-v_CBB = remove_math(rates_table, r"$v_{CBB}$")
-v_Mehler = remove_math(rates_table, r"$v_{Mehler}$")
+vPSII_recomb = remove_math(rates_table, r'$PSII_{recom}$')
+vPSII_ChSep = remove_math(rates_table, r'$PSII_{charge}$')
+v_PSII = remove_math(rates_table, r'$v_{PSII}$')
+v_PQ = remove_math(rates_table, r'$v_{PQ}$')
+v_b6f = remove_math(rates_table, r'$v_{b6f}$')
+v_NDH = remove_math(rates_table, r'$v_{NDH}$')
+v_PGR = remove_math(rates_table, r'$v_{PGR}$')
+PSI_ChSep = remove_math(rates_table, r'$PSI_{charge}$')
+v_PSI_PCoxid = remove_math(rates_table, r'$PSI_{PC\_oxidiation}$')
+v_FNR = remove_math(rates_table, r'')
+v_Mehler = remove_math(rates_table, r'$v_{Mehler}$')
+v_CBB = remove_math(rates_table, r'$v_{CBB}$')
+v_KEA3 = remove_math(rates_table, r'$v_{KEA3}$')
+v_VKC = remove_math(rates_table, r'$v_{K\_channel}$')
+v_VCCN1 = remove_math(rates_table, r'$v_{VCCN1}$')
+v_ClCe = remove_math(rates_table, r'$v_{ClCe}$')
+v_Leak = remove_math(rates_table, r'$v_{leak}$')
+v_pmf_protons_activity = remove_math(rates_table, r'$v_{pmf}$')
+v_Epox = remove_math(rates_table, r'$v_{ZE}$')
+v_Deepox = remove_math(rates_table, r'$v_{VDE}$')
 
 # -- Parameters --
 
-Pi_st = remove_math(params_table, r"$\mathrm{P}_\mathrm{i}$")
-Vmax_b6f = remove_math(params_table, r"$V_{max}\left( \mathrm{b6f} \right)$")
-c_b6f = remove_math(params_table, r"$\mathrm{cytochrome b_6f content}$")
-pKa_reg = remove_math(params_table, r"$\mathrm{pK_{reg}}$")
-Em_PC_pH7 = remove_math(params_table, r"$Em_\mathrm{PC\_pH7}$")
-Em_PQH2_pH7 = remove_math(params_table, r"$Em_\mathrm{PQH2\_pH7}$")
-Em_Fd = remove_math(params_table, r"$Em_{Fd}$")
-k_NDH1 = remove_math(params_table, r"$k_\mathrm{{NDH}}$")
-Vmax_PGR = remove_math(params_table, r"$V_{max}\left( \mathrm{PGR} \right)$")
-Vmax_VDE = remove_math(params_table, r"$V_{max}\left( \mathrm{VDE} \right)$")
-pKa_VDE = remove_math(params_table, r"$\mathrm{pK_{VDE}}$")
-nh_VDE = remove_math(params_table, r"$\mathrm{Hill_{VDE}}$")
-k_EZ = remove_math(params_table, r"$k_\mathrm{ZE}")
-pKa_PsbS = remove_math(params_table, r"$\mathrm{pK_{PsbS}}$")
-DeltaG0_ATP = remove_math(params_table, r"$\Delta G_{\mathrm{ATP}}$")
-HPR = remove_math(params_table, r"$\mathrm{HPR}$")
-Vmax_ATPsynth = remove_math(params_table, r"$V_\mathrm{max|ATPsynth}$")
-F = remove_math(params_table, r"$F$")
-NPQ_max = remove_math(params_table, r"$NPQ_{max}$")
-k_recomb = remove_math(params_table, r"$k_{recomb}$")
-phi_triplet = remove_math(params_table, r"$\Phi _{triplet}$")
-phi_1O2 = remove_math(params_table, r"$\Phi _{O_2}^1$")
-PAR = remove_math(params_table, r"$\mathrm{PAR}$")
-PSII_max = remove_math(params_table, r"")
-sigma0_II = remove_math(params_table, r"$\mathrm{PSII_{antenna_size}}$")
-k_QA = remove_math(params_table, r"$k_\mathrm{{QA}}$")
-K_QA = remove_math(params_table, r"$Keq_{QA \rightarrow PQ}$S")
-vpc = remove_math(params_table, r"$\mathrm{Volts\_per\_charge}$")
-sigma0_I = remove_math(params_table, r"$\mathrm{PSI_{antenna_size}}$")
-ipt_lu = remove_math(params_table, r"$\mathrm{lumen\_protons\_per\_turnover}$")
-b_H = remove_math(params_table, r"$\mathrm{Buffering\ capacity}$")
-ipt_st = remove_math(params_table, r"$\mathrm{stroma\_protons\_per\_turnover}$")
-P_K = remove_math(params_table, r"$\mathrm{Perm_K}$")
-k_VCCN1 = remove_math(params_table, r"$k_{VCCN1}$")
-k_ClCe = remove_math(params_table, r"$k_{CLCE}$")
-k_PCtoP700 = remove_math(params_table, r"$k_{PC\_to\_P700}$")
-k_KEA3 = remove_math(params_table, r"$k_{KEA3}$")
-k_FdtoNADP = remove_math(params_table, r"$k_\mathrm{Fd\_to\_NADP}$")
-k_CBB = remove_math(params_table, r"$k_{CBC}$")
-k_Leak = remove_math(params_table, r"$k_{leak}$")
-pH_st = remove_math(params_table, r"$\mathrm{pH_{stroma}}$")
+PPFD = remove_math(params_table, r'$\mathrm{PAR}$')
+k_recomb = remove_math(params_table, r'$k_{recomb}$')
+phi_triplet = remove_math(params_table, r'$\Phi _{triplet}$')
+phi_1O2 = remove_math(params_table, r'$\Phi _{O_2}^1$')
+sigma0_II = remove_math(params_table, r'$\mathrm{PSII_{antenna_size}}$')
+c_b6f = remove_math(params_table, r'$\mathrm{cytochrome b_6f content}$')
+pKa_reg = remove_math(params_table, r'$\mathrm{pK_{reg}}$')
+Em_PC_pH7 = remove_math(params_table, r'$Em_\mathrm{PC\_pH7}$')
+Em_PQH2_pH7 = remove_math(params_table, r'$Em_\mathrm{PQH2\_pH7}$')
+Vmax_b6f = remove_math(params_table, r'$V_{max}\left( \mathrm{b6f} \right)$')
+pKa_PsbS = remove_math(params_table, r'$\mathrm{pK_{PsbS}}$')
+NPQ_max = remove_math(params_table, r'$NPQ_{max}$')
+pH_st = remove_math(params_table, r'$\mathrm{pH_{stroma}}$')
+Em_Fd = remove_math(params_table, r'$Em_{Fd}$')
+k_NDH1 = remove_math(params_table, r'$k_\mathrm{{NDH}}$')
+Vmax_PGR = remove_math(params_table, r'$V_{max}\left( \mathrm{PGR} \right)$')
+sigma0_I = remove_math(params_table, r'$\mathrm{PSI_{antenna_size}}$')
+k_QA = remove_math(params_table, r'$k_\mathrm{{QA}}$')
+Keq_QA = remove_math(params_table, r'$Keq_{QA \rightarrow PQ}$S')
+k_PCtoP700 = remove_math(params_table, r'$k_{PC\_to\_P700}$')
+k_FdtoNADP = remove_math(params_table, r'$k_\mathrm{Fd\_to\_NADP}$')
+K_st = remove_math(params_table, r'$\mathrm{K}^{+}_{\mathrm{stroma}}$')
+k_KEA3 = remove_math(params_table, r'$k_{KEA3}$')
+P_K = remove_math(params_table, r'$\mathrm{Perm_K}$')
+ipt_lu = remove_math(params_table, r'$\mathrm{lumen\_protons\_per\_turnover}$')
+k_VCCN1 = remove_math(params_table, r'$k_{VCCN1}$')
+k_ClCe = remove_math(params_table, r'$k_{CLCE}$')
+HPR = remove_math(params_table, r'$\mathrm{HPR}$')
+Vmax_ATPsynth = remove_math(params_table, r'$V_\mathrm{max|ATPsynth}$')
+b_H = remove_math(params_table, r'$\mathrm{Buffering\ capacity}$')
+vpc = remove_math(params_table, r'$\mathrm{Volts\_per\_charge}$')
+k_EZ = remove_math(params_table, r'$k_\mathrm{ZE}')
+nh_VDE = remove_math(params_table, r'$\mathrm{Hill_{VDE}}$')
+pKa_VDE = remove_math(params_table, r'$\mathrm{pK_{VDE}}$')
+Vmax_VDE = remove_math(params_table, r'$V_{max}\left( \mathrm{VDE} \right)$')
+k_leak = remove_math(params_table, r'$k_{leak}$')
+QA_total = remove_math(params_table, r'$\mathrm{QA}^{\mathrm{tot}}$')
+PQ_tot = remove_math(params_table, r'$\mathrm{PQ}^{\mathrm{tot}}$')
+P700_total = remove_math(params_table, r'$\mathrm{P700}^{\mathrm{tot}}$')
+PC_tot = remove_math(params_table, r'$\mathrm{PC}^{\mathrm{tot}}$')
+Fd_tot = remove_math(params_table, r'$\mathrm{Fd}^{\mathrm{tot}}$')
+NADP_tot = remove_math(params_table, r'$\mathrm{NADP}^{\mathrm{tot}}$')
+Carotenoids_tot = remove_math(params_table, r'$\mathrm{X}^{\mathrm{tot}}$')
 time = "t"
 
 # --- Derived Parameters ---
 
-ppPSII = remove_math(derived_params_table, r"$\mathrm{light\_per\_L}$")
-K_b6f = remove_math(derived_params_table, r"$Keq_{b6f}$")
-k_b6f = remove_math(derived_params_table, r"$k_{b6f}$")
-K_NDH1 = remove_math(derived_params_table, r"$Keq_{NDH}$")
-Act_ATPsynth = remove_math(derived_params_table, r"$\mathrm{ATP\_synthase\_actvt}$")
-PSII_ChSep = remove_math(derived_params_table, r"$PSII_{charge}$")
-PSII_recomb = remove_math(derived_params_table, r"$PSII_{recom}$")
-Cl_df = remove_math(derived_params_table, r"$\mathrm{driving\_force\_Cl}$")
+light_per_L = remove_math(derived_params_table, r'$\mathrm{light\_per\_L}$')
+kCBB = remove_math(derived_params_table, r'$k_{CBC}$')
+driving_force_Cl = remove_math(derived_params_table, r'$v$')
+delta_pH = remove_math(derived_params_table, r'$\mathrm{\Delta pH}$')
+delta_pH_inVolts = remove_math(derived_params_table, r'$\mathrm{\Delta pH / V}$')
+qL_act = remove_math(derived_params_table, r'$qL_{act}$')
+pH_act = remove_math(derived_params_table, r'$pH_{act}$')
 
 ###### Making README File ######
 
@@ -168,87 +171,76 @@ mdFile = MdUtils(file_name=f"{Path(__file__).parents[0]}/README.md")  # noqa: N8
 
 mdFile.new_header(1, model_title)
 
+mdFile.new_header(2, "Summary")
+
 mdFile.new_paragraph(f"""[{model_title}]({model_doi})
+
+The [{model_title}]({model_doi}) model is a kinetic model of photosynthesis that focuses more on the ion fluxes across the thylakoid membrane and their effect on the proton motive force (PMF). It was built on the Davis2017 model, focuses more on the photosynthetic reactions that are directly linked to the PMF, such as the water splitting at PSII, the plastoquinone oxidation at the Cytochrome b6f complex (Cyt b6f) complex, and more. Other photosynthetic reactions are kept as simple as possible. The Li2021 model adds two potassium ion (K+) and two chloride ion (Cl<sup>-</sup>) ion transport channels to the thylakoid membrane, to investigate their effects on the PMF. To validate the model, the authors compare their simulated results to experimental data from several different experiments. They show that the model can reproduce not only wild type (WT) behavior, but also the behavior of several knockout mutants. The mutants chosen, were the VCCN1, Cl<sup>-</sup> channel (CLCE) and K<sup>+</sup>/H+ antiporter 3 (KEA3) knockouts and any combination thereof. After the validation, the model is then used to investigate the impact these ion channels have on the PMF and the resulting photosynthetic efficiency. Several interesting simulation protocols are used, to showcase the model’s capabilities, such as a light oscillation protocol, a scan of enzyme abundance and more. Overall, this model was created to answer an already existing question in the field of photosynthesis, which is the role of ion fluxes across the thylakoid membrane.
+
+The model itself is not well presented in the publication, but the authors do provide a link to a public GitHub repository where the model is available. It is written in Python, with many comments added to the code. The script includes many different parts of the model and simulation protocols, therefore it is not clear, what is part of the model used in the publication. The script was summarized as much as possible, to only include the parts relevant to the model, but it is not clear if this interpretation is that of the publication. Between the code and the minimal information given in the publication and its supplementary materials, there are still discrepancies, which makes it hard to fully establish the model and its parameters. However, the model shows a good example of why models of photosynthesis are important and versatile, which is why it was included in GreenSloth.
 
                      """)
 
 mdFile.new_header(2, "Installation")
 
-mdFile.new_header(2, "Summary")
+mdFile.new_paragraph(f"""
+All the files needed to run this model are located in [model](./model) folder. To use this model you only need to copy this folder and write the following to import the model in your Python script:
+
+```python
+from model import {model_title}
+```
+
+The packages required to run this model can either be installed by using the `pixi` environment located inside the [pyproject.toml](../pyproject.toml) file or by just installing the `mxlpy` package and all its dependencies.
+                     """)
 
 mdFile.new_header(3, "Compounds")
 
 mdFile.new_header(4, "Part of ODE system")
 
-mdFile.new_table(
-    columns=len(comps_table.columns),
-    rows=len(comps_table_tolist),
-    text=comps_table_list,
-)
+mdFile.new_table(columns = len(comps_table.columns), rows = len(comps_table_tolist), text = comps_table_list)
 
-mdFile.new_paragraph(rf"""
+mdFile.new_paragraph(fr"""
 <details>
 <summary>ODE System</summary>
 
 ```math 
-{ode(PC_red)} = {v_b6f} - {v_PSI_PCoxid}
+{ode(singO2)} = {phi_triplet} {phi_1O2} \cdot {vPSII_recomb}
+```
+```math 
+{ode(QA_red)} = - {vPSII_recomb} + {vPSII_ChSep} - {v_PSII} + {v_PQ}
+```
+```math 
+{ode(pH_lumen)} = \frac{{{ipt_lu}}}{{{b_H}}} \cdot {vPSII_recomb} + \frac{{-{ipt_lu}}}{{{b_H}}} \cdot {vPSII_ChSep} + \frac{{-2 {ipt_lu}}}{{{b_H}}} \cdot {v_b6f} + \frac{{-2 {ipt_lu}}}{{{b_H}}} \cdot {v_NDH} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_KEA3} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_ClCe} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_Leak} + \frac{{{ipt_lu}}}{{{b_H}}} \cdot {v_pmf_protons_activity}
+```
+```math 
+{ode(Dpsi)} = - {vpc} \cdot {vPSII_recomb} + {vpc} \cdot {vPSII_ChSep} + {vpc} \cdot {v_b6f} + {vpc} \cdot 2 \cdot {v_NDH} + {vpc} \cdot -3 \cdot {v_ClCe} - {vpc} \cdot {v_Leak} - {vpc} \cdot {v_pmf_protons_activity} + {vpc} \cdot {PSI_ChSep} - {vpc} \cdot {v_VKC} - {vpc} \cdot {v_VCCN1}
+```
+```math 
+{ode(PQH_2)} = 0.5 \cdot {v_PSII} - 0.5 \cdot {v_PQ} - 0.5 \cdot {v_b6f} + 0.5 \cdot {v_NDH} + 0.5 \cdot {v_PGR}
 ```
 ```math 
 {ode(PC_ox)} = - {v_b6f} + {v_PSI_PCoxid}
 ```
 ```math 
-{ode(PQH_2)} = - 0.5 \cdot {v_b6f} + 0.5 \cdot {v_NDH} + 0.5 \cdot {v_PGR} + 0.5 \cdot {v_PSII}
+{ode(Fd_red)} = - {v_NDH} + {PSI_ChSep} - {v_PGR} - {v_FNR} - {v_Mehler}
 ```
 ```math 
-{ode(PQ)} = 0.5 \cdot {v_b6f} - 0.5 \cdot {v_NDH} - 0.5 \cdot {v_PGR} - 0.5 \cdot {v_PSII}
+{ode(Y2)} = {PSI_ChSep} - {v_PSI_PCoxid}
 ```
 ```math 
-{ode(pH_lu)} = \frac{{{ipt_lu}}}{{{b_H}}} \cdot \left( -2 \cdot {v_b6f} - 2 \cdot {v_NDH} + \frac{{14}}{{3}} \cdot {v_ATPsynth} + {v_ClCe} + {v_KEA3} - {vPSII_ChSep} + {vPSII_recomb} \right)
+{ode(NADPH_st)} = 0.5 \cdot {v_FNR} - {v_CBB}
 ```
 ```math 
-{ode(Dpsi)} = {vpc} \cdot \left( {v_b6f} + 2 \cdot {v_NDH} - \frac{{14}}{{3}} \cdot {v_ATPsynth} - {v_ClCe} + {vPSII_ChSep} - {vPSII_recomb} - {v_VCCN1} - {v_VKC} + {PSI_ChSep} \right)
+{ode(K_lu)} = {ipt_lu} \cdot {v_KEA3} - {ipt_lu} \cdot {v_VKC}
 ```
 ```math 
-{ode(Fd_red)} = - {v_NDH} - {v_PGR} + {PSI_ChSep} - {v_FNR} - {v_Mehler}
+{ode(Cl_lu)} = {ipt_lu} \cdot 2 \cdot {v_ClCe} + {ipt_lu} \cdot {v_VCCN1}
 ```
 ```math 
-{ode(Fd_ox)} = {v_NDH} + {v_PGR} - {PSI_ChSep} + {v_FNR} + {v_Mehler}
+{ode(Cl_st)} = - 0.2 {ipt_lu} \cdot {v_ClCe} - 0.1 {ipt_lu} \cdot {v_VCCN1}
 ```
 ```math 
-{ode(Vx)} = - {v_Deepox}
-```
-```math 
-{ode(Zx)} = {v_Deepox}
-```
-```math 
-{ode(Cl_lu)} = 2 {ipt_lu} \cdot {v_ClCe} + {ipt_lu} \cdot {v_VCCN1}
-```
-```math 
-{ode(Cl_st)} = - 2 {ipt_st} \cdot {v_ClCe} - 1 {ipt_st} \cdot {v_VCCN1}
-```
-```math 
-{ode(K_lu)} = {ipt_lu} \cdot {v_KEA3} - 1 {ipt_lu} \cdot {v_VKC}
-```
-```math 
-{ode(K_st)} = - 1 {ipt_st} \cdot {v_KEA3} + {ipt_st} \cdot {v_VKC}
-```
-```math 
-{ode(QA_red)} = - {v_PSII} + {vPSII_ChSep} - {vPSII_recomb}
-```
-```math 
-{ode(QA_ox)} = {v_PSII} - {vPSII_ChSep} + {vPSII_recomb}
-```
-```math 
-{ode(Y2)} = - {v_PSI_PCoxid} + {PSI_ChSep}
-```
-```math 
-{ode(Y0)} = {v_PSI_PCoxid} - {PSI_ChSep}
-```
-```math 
-{ode(NADPH_st)} = 0.5 \cdot {v_FNR} - 0.5 \cdot {v_CBB}
-```
-```math 
-{ode(NADP_st)} = - 0.5 \cdot {v_FNR} + 0.5 \cdot {v_CBB}
+{ode(Zx)} = - {v_Epox} + {v_Deepox}
 ```
 
 </details>
@@ -256,40 +248,51 @@ mdFile.new_paragraph(rf"""
 
 mdFile.new_header(4, "Conserved quantities")
 
-mdFile.new_table(
-    columns=len(derived_comps_table.columns),
-    rows=len(derived_comps_table_tolist),
-    text=derived_comps_table_list,
-)
+mdFile.new_table(columns = len(derived_comps_table.columns), rows = len(derived_comps_table_tolist), text = derived_comps_table_list)
 
-mdFile.new_paragraph(rf"""
+mdFile.new_paragraph(fr"""
 
 <details>
 <summary> Calculations </summary>
 
 ```math
-{H_lu} =  10^{{-{pH_lu}}}
+{QA} =  {QA_total} - {QA_red}
 ```
 ```math
-{PMF} =  {Dpsi} + 0.06 \cdot \left( {pH_st} - {pH_lu} \right)
+{Y0} =  {P700_total} - {Y2}
 ```
 ```math
-{PsbSP} =  \frac{{1}}{{10^{{3 \cdot \left( {pH_lu} - {pKa_PsbS} \right)}} + 1}}
+{PQ} =  {PQ_tot} - {PQH_2}
 ```
 ```math
-{NPQ} =  0.4 \cdot {NPQ_max} \cdot {PsbSP} \cdot {Zx} + 0.5 \cdot {NPQ_max} \cdot {PsbSP} + 0.1 \cdot {NPQ_max} \cdot {Zx}
+{PC_red} =  {PC_tot} - {PC_ox}
 ```
 ```math
-{Prot_ATPsynth} =  {Act_ATPsynth} \cdot \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.132 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth} + \left( 1 - {Act_ATPsynth} \right) \left( 1 - \frac{{1}}{{10^{{\frac{{\left( {PMF} - 0.204 \right) \cdot 1.5}}{{0.06}}}} + 1}} \right) {HPR} \cdot {Vmax_ATPsynth}
+{Fd_ox} =  {Fd_tot} - {Fd_red}
 ```
 ```math
-{PhiPSII} =  \frac{{1}}{{1 + \frac{{1 + {NPQ}}}{{4.88 \cdot {QA_ox}}}}}
+{NADP_st} =  {NADP_tot} - {NADPH_st}
 ```
 ```math
-{singO2} =  {PSII_recomb} \cdot {phi_triplet} \cdot {phi_1O2}
+{Vx} =  {Carotenoids_tot} - {Zx}
 ```
 ```math
-{H_st} =  10^{{-{pH_st}}}
+{PsbSP} =  \frac{{1}}{{10^{{3 \left( {pH_lumen} - {pKa_PsbS} \right)}} + 1}}
+```
+```math
+{NPQ} =  0.4 {NPQ_max} \cdot {PsbSP} {Zx} + 0.5 {NPQ_max} \cdot {PsbSP} + 0.1 {NPQ_max} {Zx}
+```
+```math
+{PhiPSII} =  \frac{{1}}{{1 + \frac{{1 + {NPQ}}}{{4.88 {QA}}}}}
+```
+```math
+{H_lumen} =  10^{{-1 {pH_lumen}}}
+```
+```math
+{pmf} =  {Dpsi} + 0.06 \left( {pH_st} - {pH_lumen} \right)
+```
+```math
+{H_st} =  10^{{-1 {pH_st}}}
 ```
 
 </details>
@@ -298,48 +301,37 @@ mdFile.new_paragraph(rf"""
 
 mdFile.new_header(3, "Parameters")
 
-mdFile.new_table(
-    columns=len(params_table.columns),
-    rows=len(params_table_tolist),
-    text=params_table_list,
-)
+mdFile.new_table(columns = len(params_table.columns), rows = len(params_table_tolist), text = params_table_list)
 
 mdFile.new_header(4, "Derived Parameters")
 
-mdFile.new_table(
-    columns=len(derived_params_table.columns),
-    rows=len(derived_params_table_tolist),
-    text=derived_params_table_list,
-)
+mdFile.new_table(columns = len(derived_params_table.columns), rows = len(derived_params_table_tolist), text = derived_params_table_list)
 
-mdFile.new_paragraph(rf"""
+mdFile.new_paragraph(fr"""
 
 <details>
 <summary>Equations of derived parameters</summary>
 
 ```math
-{ppPSII} =  0.84 \cdot \frac{{{PAR}}}{{0.7}}
+{light_per_L} =  \frac{{0.84 {PPFD}}}{{0.7}}
 ```
 ```math
-{K_b6f} =  10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \cdot \left( {pH_lu} - 7.0 \right) \right) - {PMF}}}{{0.06}}}}
+{kCBB} =  60 \frac{{{PPFD}}}{{{PPFD} + 250}}
 ```
 ```math
-{k_b6f} =  \left( 1 - \frac{{1}}{{10^{{{pH_lu} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f}
+{driving_force_Cl} =  0.06 \log_{{10}} \left( \frac{{{Cl_st}}}{{{Cl_lu}}} \right) + {Dpsi}
 ```
 ```math
-{K_NDH1} =  10^{{\frac{{{Em_PQH2_pH7} - 0.06 \cdot \left( {pH_st} - 7.0 \right) - {Em_Fd} - {PMF} \cdot 2}}{{0.06}}}}
+{delta_pH} =  {pH_st} - {pH_lumen}
 ```
 ```math
-{Act_ATPsynth} =  0.2 + 0.8 \cdot \frac{{\left( \frac{{{time}}}{{165}} \right)^{{4}}}}{{\left( \frac{{{time}}}{{165}} \right)^{{4}} + 1}}
+{delta_pH_inVolts} =  0.06 {delta_pH}
 ```
 ```math
-{PSII_ChSep} =  {sigma0_II} \cdot {ppPSII} \cdot {PhiPSII}
+{qL_act} =  \frac{{{QA}^{{3}}}}{{{QA}^{{3}} + 0.15^{{3}}}}
 ```
 ```math
-{PSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \cdot \left( 7.0 - {pH_lu} \right)}}{{0.06}}}}
-```
-```math
-{Cl_df} =  0.06 \cdot \log_{{10}} \left( \frac{{{Cl_st}}}{{{Cl_lu}}} \right) + {Dpsi}
+{pH_act} =  \frac{{1}}{{10^{{1 \left( {pH_lumen} - 6.0 \right)}} + 1}}
 ```
 
 </details>
@@ -348,60 +340,36 @@ mdFile.new_paragraph(rf"""
 
 mdFile.new_header(3, "Reaction Rates")
 
-mdFile.new_table(
-    columns=len(rates_table.columns),
-    rows=len(rates_table_tolist),
-    text=rates_table_list,
-)
+mdFile.new_table(columns = len(rates_table.columns), rows = len(rates_table_tolist), text = rates_table_list)
 
-mdFile.new_paragraph(rf"""
+mdFile.new_paragraph(fr"""
 
 <details>
 <summary>Rate equations</summary>
 
 ```math
-{v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot {k_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) \cdot {PC_red} \cdot \frac{{{k_b6f}}}{{{K_b6f}}}
+{vPSII_recomb} =  {k_recomb} \cdot {QA_red} \cdot 10^{{\frac{{{Dpsi} + 0.06 \left( 7.0 - {pH_lumen} \right)}}{{0.06}}}}
 ```
 ```math
-{v_NDH} =  {k_NDH1} \cdot {Fd_red} \cdot {PQ} - \frac{{{k_NDH1}}}{{{K_NDH1}}} \cdot {Fd_ox} \cdot {PQH_2}
+{vPSII_ChSep} =  {sigma0_II} \cdot {light_per_L} \cdot {PhiPSII}
+```
+```math
+{v_PSII} =  {QA_red} \cdot {PQ} \cdot {k_QA}
+```
+```math
+{v_PQ} =  \frac{{{PQH_2} \cdot {QA} \cdot {k_QA}}}{{{Keq_QA}}}
+```
+```math
+{v_b6f} =  \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \cdot {PC_ox} \cdot \left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f} - \left( 1 - \frac{{{PQH_2}}}{{{PQH_2} + {PQ}}} \right) {PC_red} \frac{{\left( 1 - \frac{{1}}{{10^{{{pH_lumen} - {pKa_reg}}} + 1}} \right) {c_b6f} \cdot {Vmax_b6f}}}{{10^{{\frac{{{Em_PC_pH7} - \left( {Em_PQH2_pH7} - 0.06 \left( {pH_lumen} - 7.0 \right) \right) - {pmf}}}{{0.06}}}}}}
+```
+```math
+{v_NDH} =  {k_NDH1} \cdot {Fd_red} \cdot {PQ} - \frac{{{k_NDH1}}}{{10^{{\frac{{{Em_PQH2_pH7} - 0.06 \left( {pH_st} - 7.0 \right) - {Em_Fd} - {pmf} \cdot 2}}{{0.06}}}}}} \cdot {Fd_ox} \cdot {PQH_2}
 ```
 ```math
 {v_PGR} =  \frac{{{Vmax_PGR} \cdot \frac{{{Fd_red}^{{4}}}}{{{Fd_red}^{{4}} + 0.1^{{4}}}} \cdot {PQ}}}{{{PQ} + {PQH_2}}}
 ```
 ```math
-{v_Deepox} =  {Vx} \cdot {Vmax_VDE} \frac{{1}}{{10^{{{nh_VDE} \cdot \left( {pH_lu} - {pKa_VDE} \right)}} + 1}} - {Zx} \cdot {k_EZ}
-```
-```math
-{v_ATPsynth} = \left\{{ 
-  \begin{{array}}{{ c l }}
-    {Prot_ATPsynth} + {PMF} \cdot {k_Leak} \cdot {H_lu} & \quad \textrm{{if }} {ppPSII} > 0 \\
-    {PMF} \cdot {k_Leak} \cdot {H_lu} & \quad \textrm{{else}}
-  \end{{array}}
-\right.
-```
-```math
-{v_VCCN1} =  \frac{{{k_VCCN1} \cdot \left( 332 \cdot {Cl_df}^{{3}} + 30.8 \cdot {Cl_df}^{{2}} + 3.6 \cdot {Cl_df} \right) \cdot \left( {Cl_st} + {Cl_lu} \right)}}{{2}}
-```
-```math
-{v_ClCe} =  \frac{{{k_ClCe} \cdot \left( {Cl_df} \cdot 2 + {PMF} \right) \cdot \left( {Cl_st} + {Cl_lu} \right) \cdot \left( {H_lu} + {H_st} \right)}}{{4}}
-```
-```math
-{v_KEA3} =  {k_KEA3} \cdot \left( {H_lu} \cdot {K_st} - {H_st} \cdot {K_lu} \right) \frac{{\left( 1 - {QA_red} \right)^{{3}}}}{{\left( 1 - {QA_red} \right)^{{3}} + 0.15^{{3}}}} \cdot \frac{{1}}{{10^{{\left( {pH_lu} - 6.0 \right)}} + 1}}
-```
-```math
-{v_VKC} =  \frac{{{P_K} \cdot \left( -0.06 \cdot \log_{{10}} \left( \frac{{{K_st}}}{{{K_lu}}} \right) + {Dpsi} \right) \cdot \left( {K_lu} + {K_st} \right)}}{{2}}
-```
-```math
-{vPSII_ChSep} =  {PSII_ChSep}
-```
-```math
-{vPSII_recomb} =  {PSII_recomb}
-```
-```math
-{v_PSII} =  {QA_red} \cdot {PQ} \cdot {k_QA} - {PQH_2} \cdot {QA_ox} \cdot \frac{{{k_QA}}}{{{K_QA}}}
-```
-```math
-{PSI_ChSep} =  {Y0} \cdot {ppPSII} \cdot {sigma0_I} \cdot {Fd_ox}
+{PSI_ChSep} =  {Y0} \cdot {light_per_L} \cdot {sigma0_I} \cdot {Fd_ox}
 ```
 ```math
 {v_PSI_PCoxid} =  {PC_red} \cdot {k_PCtoP700} \cdot {Y2}
@@ -410,10 +378,34 @@ mdFile.new_paragraph(rf"""
 {v_FNR} =  {k_FdtoNADP} \cdot {NADP_st} \cdot {Fd_red}
 ```
 ```math
-{v_CBB} =  \frac{{{k_CBB} \cdot \left( 1 - \exp \left( \frac{{-{time}}}{{600}} \right) \right) \left( \ln \left( \frac{{{NADPH_st}}}{{{NADP_st}}} \right) - \ln 1.25 \right)}}{{\ln \left( \frac{{3.5}}{{1.25}} \right)}}
+{v_Mehler} =  \frac{{4 \cdot 0.000265 {Fd_red}}}{{{Fd_red} + {Fd_ox}}}
 ```
 ```math
-{v_Mehler} =  \frac{{4 \cdot 0.000265 \cdot {Fd_red}}}{{{Fd_red} + {Fd_ox}}}
+{v_CBB} =  \frac{{\mathrm{{kCBB}} \cdot \left( 1.0 - \exp \left( \frac{{-{time}}}{{600}} \right) \right) \left( \log \left( \frac{{{NADPH_st}}}{{{NADP_st}}} \right) - \log 1.25 \right) }}{{\log \left( \frac{{3.5}}{{1.25}} \right) }}
+```
+```math
+{v_KEA3} =  {k_KEA3} \cdot \left( {H_lumen} \cdot {K_st} - {H_st} \cdot {K_lu} \right) {qL_act} \cdot {pH_act}
+```
+```math
+{v_VKC} =  \frac{{{P_K} \cdot \left( -0.06 \log_{{10}} \left( \frac{{{K_st}}}{{{K_lu}}} \right) + {Dpsi} \right) \left( {K_lu} + {K_st} \right)}}{{2}}
+```
+```math
+{v_VCCN1} =  \frac{{{k_VCCN1} \cdot \left( 332 {driving_force_Cl}^{{3}} + 30.8 {driving_force_Cl}^{{2}} + 3.6 {driving_force_Cl} \right) \left( {Cl_st} + {Cl_lu} \right)}}{{2}}
+```
+```math
+{v_ClCe} =  \frac{{{k_ClCe} \cdot \left( {driving_force_Cl} \cdot 2 + {pmf} \right) \left( {Cl_st} + {Cl_lu} \right) \left( {H_lumen} + {H_st} \right)}}{{4}}
+```
+```math
+{v_Leak} =  {pmf} \cdot {k_leak} \cdot {H_lumen}
+```
+```math
+{v_pmf_protons_activity} = ERROR because of function "_v_pmf_protons_activity"
+```
+```math
+{v_Epox} =  {Zx} \cdot \mathrm{{k\_E{Zx}}}
+```
+```math
+{v_Deepox} =  {Vx} \cdot \mathrm{{{Vx}max\_{Vx}DE}} \frac{{1}}{{10^{{\mathrm{{nh\_{Vx}DE}} \cdot \left( {pH_lumen} - \mathrm{{pKa\_{Vx}DE}} \right)}} + 1}}
 ```
 
 </details>
@@ -422,11 +414,13 @@ mdFile.new_paragraph(rf"""
 
 mdFile.new_header(3, "Figures")
 
-# mdFile.new_paragraph(rf"""
+mdFile.new_paragraph("""You can find the recreation of the figures from the original publication below. Due to differing copyright reasons the original figures cannot be included in this README file. Instead, the comparision has to be made using the original publication.""")
 
+# mdFile.new_paragraph(rf"""
+                     
 # <details>
 # <summary>Figure </summary>
-
+                     
 # <img style='float: center' src=''>
 
 # </details>

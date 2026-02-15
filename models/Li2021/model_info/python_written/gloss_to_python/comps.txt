@@ -1,3 +1,19 @@
+------- Update on 2026-02-15 10:40:41.969928 -------
+
+QA_red = remove_math(comps_table, r'$\mathrm{Q_{A}}^{-}$')
+PQH_2 = remove_math(comps_table, r'$\mathrm{PQH_2}$')
+pH_lumen = remove_math(comps_table, r'$\mathrm{pH_{lumen}}$')
+Dpsi = remove_math(comps_table, r'$\Delta \Psi$')
+K_lu = remove_math(comps_table, r'$\mathrm{K}^{+}_{\mathrm{lumen}}$')
+PC_ox = remove_math(comps_table, r'$\mathrm{PC}^+$')
+Y2 = remove_math(comps_table, r'$\mathrm{P_{700}}^+$')
+Zx = remove_math(comps_table, r'$\mathrm{Zx}$')
+singO2 = remove_math(comps_table, r'$\mathrm{sing}^{O2}$')
+Fd_red = remove_math(comps_table, r'$\mathrm{Fd_{red}}$')
+NADPH_st = remove_math(comps_table, r'$\mathrm{NADPH}$')
+Cl_lu = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{lumen}}$')
+Cl_st = remove_math(comps_table, r'$\mathrm{Cl}^{-}_{\mathrm{stroma}}$')
+
 ------- Start on 2025-06-13 11:41:14.509483 -------
 
 Vx = remove_math(comps_table, r'$\mathrm{Vx}$')

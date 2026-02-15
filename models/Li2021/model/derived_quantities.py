@@ -15,14 +15,14 @@ def calc_kCBB(PAR):
 def _light_per_L(par: float):
     return 0.84 * par / 0.7
 
-def _driving_force_Cl(Cl_stroma: float, Cl_lumen: float, Dy: float):
-    return 0.06 * np.log10(Cl_stroma / Cl_lumen) + Dy
+def _driving_force_Cl(Cl_st: float, Cl_lu: float, Dpsi: float):
+    return 0.06 * np.log10(Cl_st / Cl_lu) + Dpsi
 
-def calc_PsbS_Protonation(pH_lumen: float, pKPsbS: float):
-    return 1 / (10 ** (3 * (pH_lumen - pKPsbS)) + 1)
+def calc_PsbS_Protonation(pH_lumen: float, pKa_PsbS: float):
+    return 1 / (10 ** (3 * (pH_lumen - pKa_PsbS)) + 1)
 
-def calc_NPQ(Z, PsbS_H, max_NPQ):
-    return 0.4 * max_NPQ * PsbS_H * Z + 0.5 * max_NPQ * PsbS_H + 0.1 * max_NPQ * Z
+def calc_NPQ(Z, PsbS_H, NPQ_max):
+    return 0.4 * NPQ_max * PsbS_H * Z + 0.5 * NPQ_max * PsbS_H + 0.1 * NPQ_max * Z
 
 def calc_phi2(NPQ, QA):
     return 1 / (1 + (1 + NPQ) / (4.88 * QA))
@@ -30,34 +30,23 @@ def calc_phi2(NPQ, QA):
 def calc_h(pH):
     return 10 ** (-1 * pH)
 
-def calc_h(pH):
-    return 10 ** (-1 * pH)
 
-def calc_pmf(Dy, pH_lumen, pH_stroma):
-    return Dy + 0.06 * (pH_stroma - pH_lumen)
+def calc_pmf(Dpsi, pH_lumen, pH_st):
+    return Dpsi + 0.06 * (pH_st - pH_lumen)
 
-def calc_kCBB(PAR):
-    return 60 * (PAR / (PAR + 250))
 
 def _delta_pH_inVolts(delta_pH: float):
     return 0.06 * delta_pH
 
-def _ql(QA_red: float):
-    return 1 - QA_red
 
-def _ql_act(qL: float):
-    return qL**3 / (qL**3 + 0.15**3)
+def _ql_act(QA: float):
+    return QA**3 / (QA**3 + 0.15**3)
 
 def _pH_act(pH_lumen: float):
     return 1 / (10 ** (1 * (pH_lumen - 6.0)) + 1)
 
 def include_derived_quantities(m: Model):
-    
-    m.add_derived(
-        name="k_CBC",
-        fn=calc_kCBB,
-        args=['PPFD'],
-    )
+
 
     m.add_derived(
         name="QA",
@@ -66,9 +55,9 @@ def include_derived_quantities(m: Model):
     )
 
     m.add_derived(
-        name="P700_red",
+        name="Y0",
         fn=moiety_1,
-        args=['P700_ox', 'P700_total'],
+        args=['Y2', 'P700_total'],
     )
 
     m.add_derived(
@@ -110,23 +99,23 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="driving_force_Cl",
         fn=_driving_force_Cl,
-        args=['Cl_stroma', 'Cl_lumen', 'Dy'],
+        args=['Cl_st', 'Cl_lu', 'Dpsi'],
     )
 
     m.add_derived(
         name="PsbSP",
         fn=calc_PsbS_Protonation,
-        args=['pH_lumen', 'pKPsbS'],
+        args=['pH_lumen', 'pKa_PsbS'],
     )
 
     m.add_derived(
         name="NPQ",
         fn=calc_NPQ,
-        args=['Zx', 'PsbSP', 'max_NPQ'],
+        args=['Zx', 'PsbSP', 'NPQ_max'],
     )
 
     m.add_derived(
-        name="Phi2",
+        name="PhiPSII",
         fn=calc_phi2,
         args=['NPQ', 'QA'],
     )
@@ -138,15 +127,15 @@ def include_derived_quantities(m: Model):
     )
 
     m.add_derived(
-        name="H_stroma",
+        name="H_st",
         fn=calc_h,
-        args=['pH_stroma'],
+        args=['pH_st'],
     )
 
     m.add_derived(
         name="pmf",
         fn=calc_pmf,
-        args=['Dy', 'pH_lumen', 'pH_stroma'],
+        args=['Dpsi', 'pH_lumen', 'pH_st'],
     )
 
     m.add_derived(
@@ -158,7 +147,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="delta_pH",
         fn=moiety_1,
-        args=['pH_lumen', 'pH_stroma'],
+        args=['pH_lumen', 'pH_st'],
     )
 
     m.add_derived(
@@ -168,15 +157,9 @@ def include_derived_quantities(m: Model):
     )
     
     m.add_derived(
-        name="qL",
-        fn=_ql,
-        args=["QA_red"],
-    )
-    
-    m.add_derived(
         name="qL_act",
         fn=_ql_act,
-        args=["qL"],
+        args=["QA"],
     )
     
     m.add_derived(
