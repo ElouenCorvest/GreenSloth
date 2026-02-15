@@ -427,7 +427,7 @@ The recreation of this figure was only partly achieved. Both upper rows show tre
 <details>
 <summary>Figure 6</summary>
                      
-<img style='float: center' src='paper_figures/bellasio2019_fig6.svg' alt='Figure 6' width='600'/>
+<img style='float: center' src='figures/bellasio2019_fig6.svg' alt='Figure 6' width='600'/>
 
 Response curves to a transition from low to high atmospheric $\mathrm{CO_2}$ concentration $C_\mathrm{a}$ (left) and from high to low atmospheric $C_\mathrm{a}$ (right). The low concentration was 350 µmol mol⁻¹, while the high concentration was 1500 µmol mol⁻¹. Acclimation was simulated for $100000\ \mathrm{s}$ at the respective concentration before switching to the other concentration. This switch is the zero point on the x-axis. The parameters of the model were changed better to reflect the experimental conditions of a measurement cuvette therefore the following parameters were changed: $\mathrm{PPFD} = 1500 \mathrm{\mu mol\ m^{-2}\ s^{-1}}$, $V_\mathrm{max \vert RuBisCO} = 0.18 \mathrm{mmol\ m^{-2}\ s^{-1}}$, $\chi \beta = 0.8 \mathrm{mol\ air\ MPa^{-1}}$, $\tau_0 = -0.12$, $K_{\mathrm{i} \vert g_\mathrm{S}} = 3600 \mathrm{s}$, and $K_{\mathrm{d} \vert g_\mathrm{S}} = 1200 \mathrm{s}$. All other parameters were not changed from the default values used in the model. The top row shows the assimilation rate $A$ and the rate of \mathrm{ATP_{st}} and \mathrm{NADPH}_\mathrm{st} synthesis ($v_{\mathrm{ATPsynthase}}$ and $v_{\mathrm{FNR}}$ respectively). The middle shows row the stomatal conductance ($g_\mathrm{S}$), the RuBisCO activation state ($R_{\mathrm{act}}$), and $f\left(\mathrm{RUBP}\right)$. Lastly, the bottom row shows the ratio of $\mathrm{ATP_{st}}$ and $\mathrm{NADPH}_\mathrm{st}$ to their respective totals.
 
@@ -498,7 +498,7 @@ Comparison of modelled carbon assimilation (A) and RuBisCO carboxylation rate (v
 | $R_\mathrm{light}$      | $R_\mathrm{light}$        |
 | $A$                       | $A$ but unit conversion to $\mathrm{\mu mol\ m^{-2}\ s^{-1}}$            |
 
-To be able to create this figure, three things had to be added to the model: $C_\mathrm{i}_\mathrm{new}$ as a parameter to use it as input that calculates $C_\mathrm{a}$, and $A$ and  $v_{\mathrm{RuBisCO \vert Carboxylase}}$ converted in $\mathrm{\mu mol\ m^{-2}\ s^{-1}}$. As the model does not always reach true steady-state, a quasi-steady-state is used where the model is simulated to $1800\ \mathrm{s}$ if not otherwise possible. The recreated figure shows the same trends as the original FvCB model, especially follwing the Rubisco-limited and light-limited regimes. Some discrepancies can be seen in lower $C_\mathrm{i}$ values and in the general shape of the curve; however, the recreation is still valid.
+To be able to create this figure, three things had to be added to the model: $C_\mathrm{i}^\mathrm{new}$ as a parameter to use it as input that calculates $C_\mathrm{a}$, and $A$ and  $v_{\mathrm{RuBisCO \vert Carboxylase}}$ converted in $\mathrm{\mu mol\ m^{-2}\ s^{-1}}$. As the model does not always reach true steady-state, a quasi-steady-state is used where the model is simulated to $1800\ \mathrm{s}$ if not otherwise possible. The recreated figure shows the same trends as the original FvCB model, especially follwing the Rubisco-limited and light-limited regimes. Some discrepancies can be seen in lower $C_\mathrm{i}$ values and in the general shape of the curve; however, the recreation is still valid.
 
 </details>
 

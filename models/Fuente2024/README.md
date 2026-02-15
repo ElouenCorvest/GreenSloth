@@ -91,7 +91,7 @@ Q_\mathrm{inact} =  \mathrm{Q_{tot}} - Q_\mathrm{act}
 \mathrm{ADP_{st}} =  \mathrm{AP_{tot}} - \mathrm{ATP_{st}}
 ```
 ```math
-\mathrm{RCII_{closed}} =  \frac{1}{1 + \frac{k_1^+ \cdot \mathrm{PQ}}{\sigma _\mathrm{PSII} \cdot \mathrm{PPFD_{osc} + k_1^- \cdot \mathrm{PQH}_2}}
+\mathrm{RCII_{closed}} =  \frac{1}{1 + \frac{k_1^+ \cdot \mathrm{PQ}}{\sigma _\mathrm{PSII} \cdot \mathrm{PPFD_{osc}} + k_1^- \cdot \mathrm{PQH}_2}}
 ```
 ```math
 \mathrm{RCII_{open}} =  \frac{k_1^+ \cdot \mathrm{PQ}}{\sigma _\mathrm{PSII} + k_1^- \cdot \mathrm{PQH}_2 + k_1^+ \cdot \mathrm{PQ}}
@@ -121,25 +121,25 @@ Q_\mathrm{inact} =  \mathrm{Q_{tot}} - Q_\mathrm{act}
 |Lumen volume corresponding to one RCII|$\mathrm{V_{lu}}$|$V_L$|$2.62e-21$|$\mathrm{L RCII^{-1}}$|V_lumen||
 |Stroma volume corresponding to one RCII|$\mathrm{V_{st}}$|$V_S$|$2.09e-20$|$\mathrm{L RCII^{-1}}$|V_stroma||
 |Effective antenna size of PSI|$\sigma _\mathrm{PSI}$|$\sigma _I$|$1$|$\mathrm{\mu mol\ photons\ m^{-2}}$|sigma_PSI_0|Lazár and Pospísil (1999)|
-|Effectively representing reactions involved in the electron transfer RCIIClosed|$k_1^+$|$k_1^+$|$25000$|$\mathrm{s^{-1}$|k1p||
-|The rate-limiting step in all reactions involved in PQH2 → RCIIopen (QA)|$k_1^-$|$k_1^-$|$2500$|$\mathrm{s^{-1}$|k1m||
-|The rate-limiting step in all reactions involved in PQH2 → Piox|$k_2^+$|$k_2^+$|$100$|$\mathrm{s^{-1}$|k2p|Lazár and Jablonský (2009)|
-|The rate-limiting step in all reactions involved in Pired → PQ|$k_2^-$|$k_2^-$|$10$|$\mathrm{s^{-1}$|k2m|Lazár and Jablonský (2009)|
-|NPQ mechanism activation|$k_3$|$k_3$|$0.05$|$\mathrm{s^{-1}$|k3|Ebenhöh et al. (2011)|
-|NPQ mechanism deactivation|$k_4$|$k_4$|$0.004$|$\mathrm{s^{-1}$|k4|Ebenhöh et al. (2011)|
-|ATP formation|$k_5$|$k_5$|$100$|$\mathrm{s^{-1}$|k5||
-|ATP consumption|$k_6$|$k_6$|$10$|$\mathrm{s^{-1}$|k6||
-|H+ leakage and other mechanisms dissipating $\Delta \mathrm{H^+}$|$k_7$|$k_7$|$500$|$\mathrm{s^{-1}$|k7||
-|Oxidation of plastoquinol molecules by the plastid terminal oxidase|$k_\mathrm{PQ}$|$k_X$|$1$|$\mathrm{s^{-1}$|k_X||
-|Half-saturation of PSI|$L_\mathrm{PSI}$|$L_{1/2}$|$10000$|$\mathrm{\mu mol\ photons\m^{-2}\ s^{-1}}$|L_PSI||
+|Effectively representing reactions involved in the electron transfer RCIIClosed|$k_1^+$|$k_1^+$|$25000$|$\mathrm{s^{-1}}$|k1p||
+|The rate-limiting step in all reactions involved in PQH2 → RCIIopen (QA)|$k_1^-$|$k_1^-$|$2500$|$\mathrm{s^{-1}}$|k1m||
+|The rate-limiting step in all reactions involved in PQH2 → Piox|$k_2^+$|$k_2^+$|$100$|$\mathrm{s^{-1}}$|k2p|Lazár and Jablonský (2009)|
+|The rate-limiting step in all reactions involved in Pired → PQ|$k_2^-$|$k_2^-$|$10$|$\mathrm{s^{-1}}$|k2m|Lazár and Jablonský (2009)|
+|NPQ mechanism activation|$k_3$|$k_3$|$0.05$|$\mathrm{s^{-1}}$|k3|Ebenhöh et al. (2011)|
+|NPQ mechanism deactivation|$k_4$|$k_4$|$0.004$|$\mathrm{s^{-1}}$|k4|Ebenhöh et al. (2011)|
+|ATP formation|$k_5$|$k_5$|$100$|$\mathrm{s^{-1}}$|k5||
+|ATP consumption|$k_6$|$k_6$|$10$|$\mathrm{s^{-1}}$|k6||
+|H+ leakage and other mechanisms dissipating $\Delta \mathrm{H^+}$|$k_7$|$k_7$|$500$|$\mathrm{s^{-1}}$|k7||
+|Oxidation of plastoquinol molecules by the plastid terminal oxidase|$k_\mathrm{PQ}$|$k_X$|$1$|$\mathrm{s^{-1}}$|k_X||
+|Half-saturation of PSI|$L_\mathrm{PSI}$|$L_{1/2}$|$10000$|$\mathrm{\mu mol\ photons\ m^{-2}\ s^{-1}}$|L_PSI||
 |pH buffer in the lumen|$b_\mathrm{H}$|$b_H$|$0.01$||bH||
 |Maximal extent of NPQ|$\mathrm{NPQ_{max}}$|$FQ_{max}$|$0.6$||NPQ_max||
 |Proportionality constant|$\mathrm{cEqP}$|$cEqP$|$4.3e-08$||cEqP||
 |pK of the NPQ activation corresponding to pH = 6|$K_\mathrm{eq\|NPQ}$|$K_Q$|$1$|$\mathrm{\mu M}$|keq_NPQ|Pfündel and Dilley (1993)|
 |Hill coefficient characterizing the NPQ activation|$n_\mathrm{NPQ}$|$n$|$5.3$||n_NPQ|Pfündel and Dilley (1993)|
-|Avogadro constant|$\mathrm{N_A}$|$\mathrm{N_A}$|$6.02214076e+17$|$\mathrm{\mu mol^{-1}$|N_A||
-|Base Photosynthetic Photon Flux Density|$\mathrm{PPFD}$|$u_0$|$50$|$\mathrm{\mu mol\ photons\m^{-2}\ s^{-1}}$|PPFD||
-|Amplitude difference of PPFD for oscillating light|$\mathrm{PPFD_{add}}$|$u_1$|$0$|$\mathrm{\mu mol\ photons\m^{-2}\ s^{-1}}$|PPFD_add||
+|Avogadro constant|$\mathrm{N_A}$|$\mathrm{N_A}$|$6.02214076e+17$|$\mathrm{\mu mol^{-1}}$|N_A||
+|Base Photosynthetic Photon Flux Density|$\mathrm{PPFD}$|$u_0$|$50$|$\mathrm{\mu mol\ photons\ m^{-2}\ s^{-1}}$|PPFD||
+|Amplitude difference of PPFD for oscillating light|$\mathrm{PPFD_{add}}$|$u_1$|$0$|$\mathrm{\mu mol\ photons\ m^{-2}\ s^{-1}}$|PPFD_add||
 |Frequency of oscillating light|$f$|$f$|$1$||f||
 |Total PSI|$\mathrm{PSI_{tot}}$|$PSI_{tot}$|$1$||PSI_total||
 |$\frac{F_0}{F_\mathrm{v}}$ Ratio|$\mathrm{Fluo_0}$|$\frac{F_0}{F_\mathrm{v}}$|$0.25$||Fluo_0||
@@ -149,7 +149,7 @@ Q_\mathrm{inact} =  \mathrm{Q_{tot}} - Q_\mathrm{act}
 
 |Short Description|Common Abbr.|Paper Abbr.|Python Var|
 | :---: | :---: | :---: | :---: |
-|Light modulation|$\mathrm{PPFD_{osc}$|$Light$|osc_light|
+|Light modulation|$\mathrm{PPFD_{osc}}$|$Light$|osc_light|
 |Effective antenna size of PSII|$\sigma _\mathrm{PSII}$|$\sigma _{II}$|sigma_PSII|
 
 
@@ -159,7 +159,7 @@ Q_\mathrm{inact} =  \mathrm{Q_{tot}} - Q_\mathrm{act}
 <summary>Equations of derived parameters</summary>
 
 ```math
-\mathrm{PPFD_{osc} =  \mathrm{PPFD} + \mathrm{PPFD_{add}} \cdot \cos \left( 2 \mathrm{np}.\mathrm{pi} f \cdot \mathrm{time} \right)
+\mathrm{PPFD_{osc}} =  \mathrm{PPFD} + \mathrm{PPFD_{add}} \cdot \cos \left( 2 \mathrm{np}.\mathrm{pi} f \cdot \mathrm{time} \right)
 ```
 ```math
 \sigma _\mathrm{PSII} =  1 - \mathrm{NPQ_{max}} \cdot Q_\mathrm{act}
@@ -190,10 +190,10 @@ Q_\mathrm{inact} =  \mathrm{Q_{tot}} - Q_\mathrm{act}
 <summary>Rate equations</summary>
 
 ```math
-v_\mathrm{PSII \vert O_2} =  \mathrm{stoic_{PSII}} \cdot \sigma _\mathrm{PSII} \cdot \mathrm{PPFD_{osc} \cdot \left( 1 - \mathrm{RCII_{closed}} \right)
+v_\mathrm{PSII \vert O_2} =  \mathrm{stoic_{PSII}} \cdot \sigma _\mathrm{PSII} \cdot \mathrm{PPFD_{osc}} \cdot \left( 1 - \mathrm{RCII_{closed}} \right)
 ```
 ```math
-v_{\mathrm{PSI}} =  \frac{\mathrm{stoic_{PSI}} \cdot \sigma _\mathrm{PSI} \cdot L_\mathrm{PSI} \cdot \mathrm{PPFD_{osc}}{L_\mathrm{PSI} + \mathrm{PPFD_{osc}} \cdot \left( \mathrm{stoic_{PSI}} - \mathrm{PSI}_\mathrm{ox} \right)
+v_{\mathrm{PSI}} =  \frac{\mathrm{stoic_{PSI}} \cdot \sigma _\mathrm{PSI} \cdot L_\mathrm{PSI} \cdot \mathrm{PPFD_{osc}}}{L_\mathrm{PSI} + \mathrm{PPFD_{osc}}} \cdot \left( \mathrm{stoic_{PSI}} - \mathrm{PSI}_\mathrm{ox} \right)
 ```
 ```math
 v_\mathrm{PSII \vert PQ} =  k_1^+ \cdot \mathrm{RCII_{closed}} \cdot \mathrm{PQ} - k_1^- \cdot \mathrm{RCII_{open}} \cdot \mathrm{PQH}_2
