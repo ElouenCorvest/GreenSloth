@@ -4,8 +4,6 @@
 
 # Bellasio2019
 
-## Summary
-
 
 The [Bellasio2019](https://doi.org/10.1007/s11120-018-0601-1) model is a generalized C3 leaf-photosynthesis model, that includes simplified representations of the light and dark reactions and a stomatal behavior submodule. A lot of its implementation is based on past work by the same author and is mainly inspired by the common Farquhar-von Caemmerer-Berry model. The light reactions are modified from Yin et al. (2004) and include the potential rates of ATP and NADPH production based on light intensity. This model has been created with the simple user in mind, and the author has made an effort to show its simplicity, by giving access to a Microsoft Excel Workbook containing the entire model. To showcase the model's capabilities, the author creates common steady-state carbon assimilation curves, against intercellular CO2 concentration and light intensity, and compares them to experimental data from the literature. As many models of photosynthesis rely on purely stead-state assumptions, this model is also validated in dynamic conditions, showing for example the response of the model to a fluctuation of ambient oxygen concentration.
 

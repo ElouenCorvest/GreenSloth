@@ -875,20 +875,6 @@ This figure shows the control of select parameters on concentrations and fluxes 
 </details>
 """)
 
-mdFile.new_paragraph(rf"""
-                     
-<details>
-<summary>Figure 7</summary>
-                     
-<img style='display: block; margin: 0 auto' src='figures/{model_title.lower()}_fig7.svg'>
-
-Surface plots of steady-state simulations depending on differing PGR5 activity and photosynthetic photon flux density (PPFD). Both plots feature the range of PGR5 activity in a log<sub>2</sub>-fold change and the PPFD on the x and y-axis, respectively. The former is simulated by changing the value of the cyclic electron flow (CEF) rate constant. The left plot shows the linear electron flow (LEF), calculated by multiplying the rate of PSII by 2, and the right plot shows the concentration of hydrogen peroxide (H<sub>2</sub>O<sub>2</sub>).
-
-This figure indicates that CEF activity should be regulated for optimal efficiency, as it significantly lowers H<sub>2</sub>O<sub>2</sub> levels. The figure recreation could not, at least at this point, be recreated completely. This is not the fault of the model, but rather the integration that varies across different machines. The recreation to this point follows the same path as the publication, but is missing a significant amount of data, as it was not yet possible to simulate the steady state for every point. Therefore, we suggest resimulating by introducing simple assumptions, such as designating a specific time point as a dedicated point where a near-steady state is reached. Still, as the findings coincide with the hypothesis derived from the figures in the publication, we deem this recreation successful.
-
-</details>
-""")
-
 mdFile.new_header(3, "Demonstrations")
 
 mdFile.new_paragraph(rf"""

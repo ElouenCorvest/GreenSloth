@@ -14,8 +14,16 @@ To demonstrate the adaptability of their model, the authors took their calibrate
                      
 ## Installation
 
-## Summary
 
+
+All the files needed to run this model are located in [model](./model) folder. To use this model you only need to copy this folder and write the following to import the model in your Python script:
+
+```python
+from model import Matuszynska2016
+```
+
+The packages required to run this model can either be installed by using the `pixi` environment located inside the [pyproject.toml](../pyproject.toml) file or by just installing the `mxlpy` package and all its dependencies.
+                     
 ### Compounds
 
 #### Part of ODE system
@@ -250,12 +258,14 @@ v_{\mathrm{Psbs^P}} =  k_\mathrm{Protonation} \cdot \frac{\mathrm{H_{lu}}^{\math
 ### Figures
 
 
+You can find the recreation of the figures from the original publication below. Due to differing copyright reasons the original figures cannot be included in this README file. Instead, the comparision has to be made using the original publication.
+
 
                      
 <details>
 <summary>Figure 4</summary>
                      
-<img style='float: center' src='paper_figures/Matuszynska_fig4.svg'>
+<img style='float: center' src='figures/Matuszynska_fig4.svg'>
            
 Pulse Amplitude Modulation (PAM) of wild type *Arabidopsis thaliana* experimentally obtained and simulated through the model for three different setups. The experimental data was collected through a series of 3 replications, where the plant was introduced to three phases. An initial light exposure, relaxation in the dark and a second light exposure. Several different types of data were collected through PAM, where the flourescence emission of a small area on the plant leaf has been monitored, during several applications of saturating pulses of light in increasing inter-pulse intervals. The experimental data shown in this figure are the maximal flourescence ($F_M$) and the ... flourescence ($F_S$), which were both normalized to the first point of the respective data. Several experiments were done, based on the duration of the relaxation phase and the light intensity of the light exposure phase. In this figure, the data for the 15 min, 30 min, 60 min and $100 \mathrm{\mu E m^{-2}s^{-1}}$, $300 \mathrm{\mu E m^{-2}s^{-1}}$, and $900 \mathrm{\mu E m^{-2}s^{-1}}$ light intensity, paired together, were used. This data was used as a comparision to the simulation strength of the model, where the internal parameter '$\mathrm{Fluo}$' was plotted against the time after simualting the model against the same PAM protocol used on the three different experiments. The results of the simulation was also normalized, however in this instance to the maximal value of the flourescence calcuated by the model. The top bar displays the three phases and the prior dark phase to adapt the plant to the dark.
 
@@ -269,7 +279,7 @@ This figure could easily be recreated using the given `modelbase2` version of th
 <details>
 <summary>Figure 5</summary>
                      
-<img style='display: block; margin: 0 auto' src='paper_figures/Matuszynska_fig5.svg'>
+<img style='display: block; margin: 0 auto' src='figures/Matuszynska_fig5.svg'>
 
 Visualisation of lumenal pH ($\mathrm{pH}_\mathrm{lu}$), protonated PsbP ($\mathrm{psbS^P}$), and Zeaxanthin ($\mathrm{Zx}$) of simulated pulse amplitude modulation (PAM) measurements of wild type *Arabidopsis thaliana* and a parameter phase projection of $\mathrm{pH}_\mathrm{lu}$ and the quencher activity ($\mathrm{Q}$) under different light intensities. The simulated PAM protocol included three phases: an initial light exposure, relaxation in the dark and a second light exposure. Both light exposures were done with $100\ \mathrm{\mu E\ m^{-2}\ s^{-1}}$, $300\ \mathrm{\mu E\ m^{-2}\ s^{-1}}$, and $900\ \mathrm{\mu E\ m^{-2}\ s^{-1}}$ and the duration of the phases were $14 min$, $16 min$, and $5 min$ respectively. In the parameter phase projection, the red line indicates steady-state simulation results under light intensities from zero to 1000 in steps of 10, where each big red circle indicates one fo the prior listed light intensities.
 
