@@ -11,6 +11,8 @@
   "devDependencies": {
     "glob": "^13.0.3",
     "vite": "^6.3.5",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-html-config": "^2.0.2",
     "vite-plugin-virtual-html": "^1.2.7"
   },
   "dependencies": {

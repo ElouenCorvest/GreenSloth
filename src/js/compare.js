@@ -271,7 +271,7 @@ compareBodyVariables.appendChild(compareBodyVariablesDiagramm)
 const vennLeft = document.getElementById("venndiagramm-left")
 vennLeft.style.fill = gradient(0).css()
 
-// Get Venn Diagram Left Side
+// Get Venn Diagram Middle Side
 const vennMiddle = document.getElementById("venndiagramm-middle")
 vennMiddle.style.fill = gradient(0.5).css()
 
@@ -291,17 +291,18 @@ var compareBodyVariablesCommonContainer = document.createElement("div")
 compareBodyVariablesCommonContainer.id = "compare-variables-common"
 compareBodyVariables.appendChild(compareBodyVariablesCommonContainer)
 
+// Create Common Variables Explanation
+var compareBodyVariablesCommonText = document.createElement("p")
+compareBodyVariablesCommonText.classList.add("discreetText")
+compareBodyVariablesCommonText.id = "compare-variables-common-text"
+compareBodyVariablesCommonText.innerText = "Click on the overlapping variables to plot them in the Simulation Tab!"
+compareBodyVariablesCommonContainer.appendChild(compareBodyVariablesCommonText)
+
 var compareBodyVariablesCommon = document.createElement("div")
 compareBodyVariablesCommon.classList.add("compare-variables-math")
 compareBodyVariablesCommon.id = "compare-variables-common-math"
 compareBodyVariablesCommon.style.color = gradient(0.5).css()
 compareBodyVariablesCommonContainer.appendChild(compareBodyVariablesCommon)
-
-// Create Common Variables Explanation
-var compareBodyVariablesCommonText = document.createElement("p")
-compareBodyVariablesCommonText.classList.add("discreetText")
-compareBodyVariablesCommonText.id = "compare-variables-common-text"
-compareBodyVariablesCommonContainer.appendChild(compareBodyVariablesCommonText)
 
 //////////////// SIMULATIONS ////////////////
 // Get Simulation Body

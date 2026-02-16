@@ -139,6 +139,11 @@ appendCommentedElement(wrapper, contentElement, "The Content")
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Sidebar
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const sideBarName = document.createElement("h2")
+// sideBarName.classList.add("modelText")
+sideBarName.innerHTML = modelName
+sideBarElement.appendChild(sideBarName)
+
 const sideBarTitle = document.createElement("h3")
 // sideBarTitle.classList.add("modelText")
 sideBarTitle.innerHTML = "Contents"

@@ -66,7 +66,7 @@ topnavBarCenterGithub.prepend(githubLogo)
 // Center Compare
 var topnavBarCenterCompare = document.createElement("a")
 topnavBarCenterCompare.classList.add("tablinks", "topnav-link")
-topnavBarCenterCompare.href = siteUrl + "/Compare.html"
+topnavBarCenterCompare.href = "/Compare.html"
 topnavBarCenterCompare.innerHTML = "Compare"
 topnavBarCenter.appendChild(topnavBarCenterCompare)
 
@@ -77,12 +77,19 @@ topnavBarCenterHowToUse.href = siteUrl + "/#HowToUse"
 topnavBarCenterHowToUse.innerHTML = "How To Use"
 topnavBarCenter.appendChild(topnavBarCenterHowToUse)
 
-// Center Contribution
+// Center AboutUs
 var topnavBarCenterContribution = document.createElement("a")
 topnavBarCenterContribution.classList.add("tablinks", "topnav-link")
 topnavBarCenterContribution.href = siteUrl + "/AboutUs.html"
 topnavBarCenterContribution.innerHTML = "About Us"
 topnavBarCenter.appendChild(topnavBarCenterContribution)
+
+// Center Impressum
+var topnavBarCenterImpressum = document.createElement("a")
+topnavBarCenterImpressum.classList.add("tablinks", "topnav-link")
+topnavBarCenterImpressum.href = siteUrl + "/Impressum.html"
+topnavBarCenterImpressum.innerHTML = "Impressum"
+topnavBarCenter.appendChild(topnavBarCenterImpressum)
 
 // Center Contribution
 // var topnavBarCenterTodos = document.createElement("a")
