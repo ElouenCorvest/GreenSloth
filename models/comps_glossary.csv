@@ -1,12 +1,12 @@
 Name,Common Abbr.,KEGG ID,Python Var,Glossary ID,Reference
-Plastoquinol,$\mathrm{PQH}_2$,C16693,PQH_2,1,"Matuszynska2016, Saadat2021, Li2021"
-Stromal ATP concentration,$\mathrm{ATP_{st}}$,C00002,ATP_st,2,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019"
-Lumenal Proton concentration,$\mathrm{H_{lu}}$,C00080,H_lumen,3,"Matuszynska2016, Saadat2021, Li2021"
+Plastoquinol,$\mathrm{PQH}_2$,C16693,PQH_2,1,"Matuszynska2016, Saadat2021, Li2021, Fuente2024"
+Stromal ATP concentration,$\mathrm{ATP_{st}}$,C00002,ATP_st,2,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019, Fuente2024"
+Lumenal Proton concentration,$\mathrm{H_{lu}}$,C00080,H_lumen,3,"Matuszynska2016, Saadat2021, Li2021, Fuente2024"
 Concentration of psbS protein,$\mathrm{psbS}$,K03542 ,psbS,4,"Matuszynska2016, Saadat2021"
 Violaxanthin,$\mathrm{Vx}$,C08614,Vx,5,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of active ATPase protein,$\mathrm{ATPase}^*$,M00157,ATPase_ac,6,Matuszynska2016
-Plastoquinone,$\mathrm{PQ}$,C02061,PQ,7,"Matuszynska2016, Saadat2021, Li2021"
-Stromal ADP concentration,$\mathrm{ADP_{st}}$,C00008,ADP_st,8,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019"
+Plastoquinone,$\mathrm{PQ}$,C02061,PQ,7,"Matuszynska2016, Saadat2021, Li2021, Fuente2024"
+Stromal ADP concentration,$\mathrm{ADP_{st}}$,C00008,ADP_st,8,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019, Fuente2024"
 Concentration of protonated psbS protein,$\mathrm{psbS^P}$,K03542,PsbSP,9,"Matuszynska2016, Saadat2021, Li2021"
 Zeaxanthin concentration,$\mathrm{Zx}$,C06098,Zx,10,"Matuszynska2016, Saadat2021, Li2021"
 Concentration of inactive ATPase protein,$\mathrm{ATPase}$,M00157,ATPase_inac,11,Matuszynska2016
@@ -56,7 +56,7 @@ Reduced glutathione,$\mathrm{GSH}$,C00051,GSH,54,Saadat2021
 Ground state of PSI (P700),$\mathrm{Y_0}$,M00163,Y0,55,"Saadat2021, Li2021"
 Activated state of PSI (P700*),$\mathrm{Y_1}$,M00163,Y1,56,Saadat2021
 Oxidised state of PSI (P700+),$\mathrm{Y_2}$,M00163,Y2,57,"Saadat2021, Li2021"
-Flourescence,$\mathrm{Fluo}$,,Fluo,58,Saadat2021
+Flourescence,$\mathrm{Fluo}$,,Fluo,58,"Saadat2021, Fuente2024"
 Lumenal K+ concentration,$\mathrm{K}^{+}_{\mathrm{lu}}$,C00238,K_lu,59,Li2021
 Stromal K+ concentration,$\mathrm{K}^{+}_{\mathrm{st}}$,C00238,K_st,60,Li2021
 Lumenal Cl- concentration,$\mathrm{Cl}^{-}_{\mathrm{lu}}$,C00698,Cl_lu,61,Li2021
@@ -65,7 +65,7 @@ Transthylakoid electric field,$\Delta \Psi _{\mathrm{thylakoid}}$,,Dpsi,63,Li202
 Oxidised primary quinone of PSII,$\mathrm{Q_{A|ox}}$,,QA_ox,64,Li2021
 Reduced primary quinone of PSII,$\mathrm{Q_{A|red}}$,,QA_red,65,Li2021
 The total proton motive force,$\mathrm{pmf}$,,pmf,66,Li2021
-Nonphotochemical quenching,$\mathrm{NPQ}$,,NPQ,67,Li2021
+Nonphotochemical quenching,$\mathrm{NPQ}$,,NPQ,67,"Li2021, Fuente2024"
 Amount of protons going to ATPsynthase,$\mathrm{Prot_{ATPsynth}}$,,Prot_ATPsynth,68,Li2021
 Efficiency of PSII,$\Phi \mathrm{PSII}$,,PhiPSII,69,"Li2021, Bellasio2019"
 Number of $^1\mathrm{O_2}$,$^1\mathrm{O_2}$,C00007,singO2,70,Li2021
@@ -78,4 +78,10 @@ Total ATP production,$J_\mathrm{ATP}$,,J_ATP,76,Bellasio2019
 Intercellular $\mathrm{CO_2}$ concentration,$C_\mathrm{i}$,,Ci,77,Bellasio2019
 Stomatal conductance of water vapour to the atmosphere,$g_\mathrm{S}$,,gs,78,Bellasio2019
 $\mathrm{CO}_2$ assimilation,$A$,,A,79,Bellasio2019
-Oxygen Concentration,$\mathrm{O_2}$,,O2,80,Bellasio2019
+Oxygen Concentration,$\mathrm{O_2}$,,O2,80,"Bellasio2019, Fuente2024"
+Activated PSII quencher,$Q_\mathrm{act}$,,Q_active,81,Fuente2024
+The fraction of PSI donors per RCII that are available for the linear electron transport,$\mathrm{PSI}_\mathrm{ox}$,,PSI_ox,82,Fuente2024
+Inactive PSII quencher,$Q_\mathrm{inact}$,,Q_inactive,83,Fuente2024
+Fraction of PSI donors per PCII that are not available for the linear electron transport,$\mathrm{PSI_{red}}$,,PSI_red,84,Fuente2024
+Reaction centers of PSII that are closed,$\mathrm{RCII_{closed}}$,,RCII_closed,85,Fuente2024
+Reaction centers of PSII that are open,$\mathrm{RCII_{open}}$,,RCII_open,86,Fuente2024

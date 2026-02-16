@@ -1,6 +1,6 @@
 Name,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
-Activated PSII quencher,$Q_\mathrm{act}$,$FQ_{act}$,,Q_active,
+Activated PSII quencher,$Q_\mathrm{act}$,$FQ_{act}$,,Q_active,81
 Plastoquinone,$\mathrm{PQ}$,$PQ$,C02061,PQ,7
-The fraction of PSI donors per RCII that are available for the linear electron transport,$\mathrm{PSI}_\mathrm{ox}$,$PI_{ox}$,,PSI_ox,
+The fraction of PSI donors per RCII that are available for the linear electron transport,$\mathrm{PSI}_\mathrm{ox}$,$PI_{ox}$,,PSI_ox,82
 Lumenal Proton concentration,$\mathrm{H_{lu}}$,$H_L$,C00080,H_lumen,3
 Stromal ATP concentration,$\mathrm{ATP_{st}}$,$ATP$,C00002,ATP_st,2

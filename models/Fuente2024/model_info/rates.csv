@@ -1,10 +1,10 @@
 Short Description,Common Abbr.,Paper Abbr.,KEGG ID,Python Var,Glossary ID
-Part of the PSII rate that reduces O2,$v_\mathrm{PSII|O_2}$,$v_\mathrm{PSII}$,R09503,v_PSII_O2,
+Part of the PSII rate that reduces O2,$v_\mathrm{PSII|O_2}$,$v_\mathrm{PSII}$,R09503,v_PSII_O2,73
 ,$v_{\mathrm{PSI}}$,$v_\mathrm{PSI}$,R09542,v_PSI,38
-Part of the PSII rate that reduces PQ,$v_\mathrm{PSII|PQ}$,$v_1$,R09503,v_PSII_PQ,
-Rate at which electrons are transported from PQH2 to the available donors of PSI,$v_\mathrm{PQH_2|PSI}$,$v_2$,,v_PQH2_PSI,
-Rate of quencher activation,$v_\mathrm{Q|act}$,$v_3$,,v3,
-Rate of quencher inactivation,$v_\mathrm{Q|inact}$,$v_4$,,v4,
+Part of the PSII rate that reduces PQ,$v_\mathrm{PSII|PQ}$,$v_1$,R09503,v_PSII_PQ,74
+Rate at which electrons are transported from PQH2 to the available donors of PSI,$v_\mathrm{PQH_2|PSI}$,$v_2$,,v_PQH2_PSI,75
+Rate of quencher activation,$v_\mathrm{Q|act}$,$v_3$,,v3,76
+Rate of quencher inactivation,$v_\mathrm{Q|inact}$,$v_4$,,v4,77
 Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,$v_5$,R00086,v_ATPsynth,3
 ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,$v_6$,,v_ATPcons,6
 Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,$v_7$,,v_Leak,5

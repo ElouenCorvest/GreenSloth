@@ -1,10 +1,10 @@
 Short Description,Common Abbr.,Python Var,KEGG ID,Glossary ID,Reference
 Reduction of PQ due to PSII,$v_{\mathrm{PSII}}$,v_PSII,R09503,1,"Matuszynska2016, Saadat2021, Li2021"
-Oxidation of the PQ pool through cytochrome and PTOX,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,v_PQ,,2,"Matuszynska2016, Saadat2021"
-Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,v_ATPsynth,R00086,3,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019"
+Oxidation of the PQ pool through cytochrome and PTOX,$v_{\mathrm{PQ}_{\mathrm{ox}}}$,v_PQ,,2,"Matuszynska2016, Saadat2021, Fuente2024"
+Production of ATP by ATPsynthase,$v_{\mathrm{ATPsynthase}}$,v_ATPsynth,R00086,3,"Matuszynska2016, Saadat2021, Li2021, Bellasio2019, Fuente2024"
 Activation of ATPsynthase by light,$v_{\mathrm{ATPactivity}}$,v_ATPact,,4,Matuszynska2016
-Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,v_Leak,,5,"Matuszynska2016, Saadat2021"
-ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,v_ATPcons,,6,"Matuszynska2016, Saadat2021"
+Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,v_Leak,,5,"Matuszynska2016, Saadat2021, Fuente2024"
+ATP consuming reaction,$v_{\mathrm{ATP}_{\mathrm{consumption}}}$,v_ATPcons,,6,"Matuszynska2016, Saadat2021, Fuente2024"
 Xanthophyll cycle,$v_{\mathrm{Xcyc}}$,v_Xcyc,R10070,7,Matuszynska2016
 Protonation of psbS protein,$v_{\mathrm{Psbs^P}}$,v_PsbSP,,8,"Matuszynska2016, Saadat2021"
 Rate of the b6f complex,$v_{\mathrm{b6f}}$,v_b6f,R03817,9,"Saadat2021, Li2021"
@@ -36,7 +36,7 @@ Rate of Rpiase,$v_{\mathrm{Rpiase}}$,v_Rpiase,R01056,34,Saadat2021
 Rate of RPEase,$v_{\mathrm{RPEase}}$,v_RPEase,R01529,35,Saadat2021
 Rate of PGIase,$v_{\mathrm{PGIase}}$,v_PGIase,R00771,36,Saadat2021
 Rate of PGMase,$v_{\mathrm{PGMase}}$,v_PGMase,R08639,37,Saadat2021
-,$v_{\mathrm{PSI}}$,v_PSI,R09542,38,Saadat2021
+,$v_{\mathrm{PSI}}$,v_PSI,R09542,38,"Saadat2021, Fuente2024"
 Consumption of NADPH,$v_{\mathrm{NADPH}_\mathrm{consumption}}$,v_NADPHcons,,39,Saadat2021
 Rate of reduction of Fd by the activity of PSI,$v_{\mathrm{Fd}_{\mathrm{red}}}$,v_Fdred,R09542,40,Saadat2021
 ,$v_{\mathrm{FdTrReductase}}$,v_FdTrReduc,R09502,41,Saadat2021
@@ -71,3 +71,8 @@ Rate of carbonic anhydrase,$v_{\mathrm{CAase}}$,v_co2_hydration,,69,Bellasio2019
 Respiration in the light,$R_\mathrm{light}$,v_RLight,,70,Bellasio2019
 Rate of $\mathrm{CO_2}$ dissolution in aqueous media within the leaf,$v_{\mathrm{CO_{2|diss}}}$,CO2_dissolution,,71,Bellasio2019
 Rate of $\mathrm{CO_2}$ stomatal diffusion,$v_{\mathrm{CO_{2|stomdiff}}}$,CO2_stomatal_diffusion,,72,Bellasio2019
+Part of the PSII rate that reduces O2,$v_\mathrm{PSII|O_2}$,v_PSII_O2,R09503,73,Fuente2024
+Part of the PSII rate that reduces PQ,$v_\mathrm{PSII|PQ}$,v_PSII_PQ,R09503,74,Fuente2024
+Rate at which electrons are transported from PQH2 to the available donors of PSI,$v_\mathrm{PQH_2|PSI}$,v_PQH2_PSI,,75,Fuente2024
+Rate of quencher activation,$v_\mathrm{Q|act}$,v3,,76,Fuente2024
+Rate of quencher inactivation,$v_\mathrm{Q|inact}$,v4,,77,Fuente2024
