@@ -1,1 +1,3 @@
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QIf these two connection points are not available in the model, the simulation will not run, and only the general \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Dummy\\+|Dummy's\\+)[0-9]+\\Q output will be shown.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QThis section is separated into the three main aspects that tries to provide: \"Search\", \"Summary\", and \"Comparision\".\\E$"}
+{"rule":"ARTICLE_ADJECTIVE_OF","sentence":"^\\QEach section contains the respective of its names, with\\E$"}

@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'out_dir/main.blg'
-[31] biber:340> INFO - === Thu Feb  5, 2026, 19:33:29
-[38] Biber.pm:419> INFO - Reading 'out_dir/main.bcf'
-[63] Biber.pm:979> INFO - Found 14 citekeys in bib section 0
-[68] Biber.pm:4419> INFO - Processing section 0
-[73] Biber.pm:4610> INFO - Looking for bibtex file 'GreenSloth.bib' for section 0
-[84] bibtex.pm:1713> INFO - LaTeX decoding ...
-[302] bibtex.pm:1519> INFO - Found BibTeX data source 'GreenSloth.bib'
-[369] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[369] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[369] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[369] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[372] bbl.pm:660> INFO - Writing 'out_dir/main.bbl' with encoding 'UTF-8'
-[375] bbl.pm:763> INFO - Output to out_dir/main.bbl
+[30] biber:340> INFO - === Tue Feb 17, 2026, 08:39:20
+[37] Biber.pm:419> INFO - Reading 'out_dir/main.bcf'
+[68] Biber.pm:979> INFO - Found 32 citekeys in bib section 0
+[73] Biber.pm:4419> INFO - Processing section 0
+[78] Biber.pm:4610> INFO - Looking for bibtex file 'GreenSloth.bib' for section 0
+[89] bibtex.pm:1713> INFO - LaTeX decoding ...
+[312] bibtex.pm:1519> INFO - Found BibTeX data source 'GreenSloth.bib'
+[463] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[463] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[463] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[463] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[471] bbl.pm:660> INFO - Writing 'out_dir/main.bbl' with encoding 'UTF-8'
+[478] bbl.pm:763> INFO - Output to out_dir/main.bbl

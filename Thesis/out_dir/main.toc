@@ -1,40 +1,60 @@
 \babel@toc {german}{}\relax 
 \babel@toc {english}{}\relax 
-\contentsline {section}{Acknowledgements}{i}{section*.1}%
-\contentsline {section}{Abstract}{ii}{section*.2}%
-\contentsline {section}{List of Code-Blocks}{vii}{section*.8}%
+\contentsline {section}{Acknowledgements}{ii}{section*.1}%
+\contentsline {section}{Abstract}{iii}{section*.2}%
+\contentsline {section}{List of Visualisations}{ix}{section*.7}%
+\contentsline {subsection}{List of Code-Blocks}{ix}{section*.8}%
+\contentsline {subsection}{List of Figures}{x}{section*.9}%
+\contentsline {subsection}{List of Tables}{x}{section*.10}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Material and Methods}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Models}{2}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Bellasio2019}{2}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Fuente2024}{2}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Li2021}{3}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Matuszynska2016}{3}{subsubsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.5}Saadat2021}{3}{subsubsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.2}Model Demonstrations}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Daylight Simulation}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}FvCB Add-on}{4}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Standard PAM Simulation}{5}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}MCA of Photosynthesis}{5}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Fitting of NPQ}{5}{subsubsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.3}GreenSlothUtils}{6}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Documentation}{6}{subsubsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.4}Website}{13}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Additional Methods}{13}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Usage of AI}{13}{subsubsection.2.5.1}%
-\contentsline {section}{\numberline {3}Results}{14}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Model Validations}{14}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Bellasio2019}{17}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Fuente2024}{17}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Li2021}{17}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Matuszynska2016}{17}{subsubsection.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.1.5}Saadat2021}{17}{subsubsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.2}Model Demonstrations}{17}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Daylight Simulation}{17}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}FvCB Add-on}{17}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Standard PAM Simulation}{17}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}MCA of Photosynthesis}{17}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}Fitting of NPQ}{17}{subsubsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.3}Website}{17}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Discussion}{22}{section.4}%
-\contentsline {section}{References}{viii}{section.4}%
+\contentsline {subsection}{\numberline {1.1}Preamble}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Current Problems and Solutions}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Model Creation}{2}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Model Presentation}{4}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Model Sharing}{4}{subsubsection.1.2.3}%
+\contentsline {section}{\numberline {2}Material and Methods}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Models}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Bellasio2019}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Fuente2024}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Li2021}{6}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Matuszynska2016}{6}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Saadat2021}{7}{subsubsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.2}Model Demonstrations}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Daylight Simulation}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}FvCB Add-on}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Standard PAM Simulation}{8}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}MCA of Photosynthesis}{9}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Fitting of NPQ}{9}{subsubsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.3}GreenSlothUtils}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Documentation}{10}{subsubsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.4}Website}{17}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Development}{17}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Hosting}{17}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Additional Methods}{17}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Hardware}{17}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Simulations}{18}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Usage of AI}{18}{subsubsection.2.5.3}%
+\contentsline {section}{\numberline {3}Results}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Model Validations}{19}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Bellasio2019}{19}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Fuente2024}{20}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Li2021}{27}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Matuszynska2016}{31}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Saadat2021}{31}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Model Demonstrations}{33}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Daylight Simulation}{33}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}FvCB Add-on}{40}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Standard PAM Simulation}{40}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}MCA of Photosynthesis}{43}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Fitting of NPQ}{43}{subsubsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.3}Website}{45}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Discussion}{53}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Model Validations}{53}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Bellasio2019}{53}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Fuente2024}{53}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Li2021}{53}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Matuszynska2016}{53}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Saadat2021}{53}{subsubsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.2}Model Demonstrations}{53}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Website}{53}{subsection.4.3}%
+\contentsline {section}{References}{xi}{subsection.4.3}%

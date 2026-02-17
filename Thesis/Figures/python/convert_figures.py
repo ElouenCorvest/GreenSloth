@@ -1,16 +1,23 @@
-from email.mime import text
 from reportlab.pdfgen import canvas
 from reportlab.graphics import renderPDF
 from svglib.svglib import svg2rlg
 from pathlib import Path
 import math
+import pandas as pd
 
 demon_dict = {}
 fig_dict = {}
+info_dict = {}
 
 for d in (Path(__file__).parents[4] / "GreenSloth" / "models").iterdir():
     if "." in d.name or not d.is_dir():
         continue
+    
+    info_dict[d.name] = {}
+    for file in (d / "model_info").glob("*.csv"):
+        df = pd.read_csv(file)
+        info_dict[d.name][file.stem] = len(df)
+    
     for file in (d / "figures").glob("*.svg"):
         file_name = file.name
         model_name = file_name.split("_")[0]
@@ -24,6 +31,30 @@ for d in (Path(__file__).parents[4] / "GreenSloth" / "models").iterdir():
                 fig_dict[model_name] = {}
             fig_dict[model_name][sim_name] = {"file path": str(file.absolute()), "drawing": svg2rlg(str(file.absolute()))}
 
+info_df = pd.DataFrame(info_dict).T
+name_pointer = {
+    "derived_comps": "Derived Variables",
+    "comps": "Variables",
+    "rates": "Reactions",
+    "params": "Parameters",
+    "derived_params": "Derived Parameters",
+}
+custom_order = ["Variables", "Parameters", "Reactions", "Derived Variables", "Derived Parameters"]
+info_df = info_df.rename(columns=name_pointer)
+info_df = info_df[custom_order]
+info_df = info_df.sort_index()
+info_df["Total"] = info_df.sum(axis=1)
+info_df.to_latex(
+    buf=Path(__file__).parents[2] / "Tables" / "models_info.tex",
+    column_format="lcccccc",
+    longtable=True,
+    caption=(
+        r"\textbf{Summary of Meta-Information of All the Models.}\\The number of variables, parameters, reactions, and derived variables and parameters, and total sum are shown for each model. These values have been extracted directly from the model implementations. A derived quantity, is a quantity that is calculated inside the model. The separation between derived variable and parameter is based on expertise and is not based on a strict rule. However, a main aspect that was considered was with what quantity it was derived from. If the quantity was derived from even a single time-dependent quantity, it is considered a derived variable. The model used are Bellasio2019~\cite{bellasioGeneralisedDynamicModel2019}, Fuente2024~\cite{fuenteMathematicalModelSimulate2024}, Li2021~\cite{liImpactIonFluxes2021}, Matuszynska2016~\cite{matuszynskaMathematicalModelNonphotochemical2016}, and Saadat2021~\cite{saadatComputationalAnalysisAlternative2021}",
+        r"Summary of Meta-Information of All the Models.",
+    ),
+    label="tab:models-meta",
+)
+    
 for model, figs in fig_dict.items():
     for fig, info in figs.items():
         output_path = Path(__file__).parents[1] / "Validations" / f"{model}_{fig}.pdf"

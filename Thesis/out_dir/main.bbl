@@ -19,40 +19,547 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{bellasioGeneralisedDynamicModel2019}{article}{}
-      \name{author}{1}{}{%
-        {{hash=c2b6d8c6c271e5d6b6ed74d4b7c913d1}{%
-           family={Bellasio},
-           familyi={B\bibinitperiod},
-           given={Chandra},
-           giveni={C\bibinitperiod}}}%
+    \entry{stirbetPhotosynthesisBasicsHistory2020}{article}{}
+      \name{author}{4}{}{%
+        {{hash=8879a5b0dc1580f38f38ab1375a6ba17}{%
+           family={Stirbet},
+           familyi={S\bibinitperiod},
+           given={Alexandrina},
+           giveni={A\bibinitperiod}}}%
+        {{hash=836b8d0c7db9ec7711e1cd7cd699cc18}{%
+           family={Lazár},
+           familyi={L\bibinitperiod},
+           given={Dušan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=884de5812490e3fa8a876e5f73e54cf6}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Ya},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=3a18533a8b2d06c9251d2e6d7ae94438}{%
+           family={Govindjee},
+           familyi={G\bibinitperiod},
+           given={Govindjee},
+           giveni={G\bibinitperiod}}}%
       }
-      \strng{namehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
-      \strng{fullhash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
-      \strng{bibnamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
-      \strng{authorbibnamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
-      \strng{authornamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
-      \strng{authorfullhash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{namehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{fullhash}{7d6d1904587729b023312ee666978480}
+      \strng{bibnamehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{authorbibnamehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{authornamehash}{4a8c9eae0243717cce37d524c5707383}
+      \strng{authorfullhash}{7d6d1904587729b023312ee666978480}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Background With limited agricultural land and increasing human population, it is essential to enhance overall photosynthesis and thus productivity. Oxygenic photosynthesis begins with light absorption, followed by excitation energy transfer to the reaction centres, primary photochemistry, electron and proton transport, NADPH and ATP synthesis, and then CO2 fixation (Calvin--Benson cycle, as well as Hatch--Slack cycle). Here we cover some of the discoveries related to this process, such as the existence of two light reactions and two photosystems connected by an electron transport `chain' (the Z-scheme), chemiosmotic hypothesis for ATP synthesis, water oxidation clock for oxygen evolution, steps for carbon fixation, and finally the diverse mechanisms of regulatory processes, such as `state transitions' and `non-photochemical quenching' of the excited state of chlorophyll a. Scope In this review, we emphasize that mathematical modelling is a highly valuable tool in understanding and making predictions regarding photosynthesis. Different mathematical models have been used to examine current theories on diverse photosynthetic processes; these have been validated through simulation(s) of available experimental data, such as chlorophyll a fluorescence induction, measured with fluorometers using continuous (or modulated) exciting light, and absorbance changes at 820 nm ({$\Delta$}A820) related to redox changes in P700, the reaction centre of photosystem I. Conclusions We highlight here the important role of modelling in deciphering and untangling complex photosynthesis processes taking place simultaneously, as well as in predicting possible ways to obtain higher biomass and productivity in plants, algae and cyanobacteria.}
+      \field{issn}{0305-7364, 1095-8290}
+      \field{journaltitle}{Annals of Botany}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{4}
+      \field{shorttitle}{Photosynthesis}
+      \field{title}{Photosynthesis: Basics, History and Modelling}
+      \field{urlday}{11}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{126}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{511\bibrangedash 537}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1093/aob/mcz171
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/2Z2PKQ5M/Stirbet et al. - 2020 - Photosynthesis basics, history and modelling.pdf
+      \endverb
+    \endentry
+    \entry{janssenPhotosynthesisForefrontSustainable2014}{article}{}
+      \name{author}{9}{}{%
+        {{hash=1f8418919dd17b64d6d701a9ee7af551}{%
+           family={Janssen},
+           familyi={J\bibinitperiod},
+           given={Paul\bibnamedelimb J.\bibnamedelimi D.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=4a30616f7c6678ce52bcb3db699af981}{%
+           family={Lambreva},
+           familyi={L\bibinitperiod},
+           given={Maya\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=b02e2d84ae1f5a652bb7b656135b6ab2}{%
+           family={Plumeré},
+           familyi={P\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=674bdd693a0961d0906660425b3b2ff0}{%
+           family={Bartolucci},
+           familyi={B\bibinitperiod},
+           given={Cecilia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4a9bf44a41b92913e9ec6d291ca1da40}{%
+           family={Antonacci},
+           familyi={A\bibinitperiod},
+           given={Amina},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ed5fb499e7e5294b1a61d8e366b3d1d4}{%
+           family={Buonasera},
+           familyi={B\bibinitperiod},
+           given={Katia},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5e1930782b043f8df6e0e80c1bffc121}{%
+           family={Frese},
+           familyi={F\bibinitperiod},
+           given={Raoul\bibnamedelima N.},
+           giveni={R\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=f14832d6898cc3c058c7d964430fa943}{%
+           family={Scognamiglio},
+           familyi={S\bibinitperiod},
+           given={Viviana},
+           giveni={V\bibinitperiod}}}%
+        {{hash=a01a181902c11fdc2cf5de53c0adc395}{%
+           family={Rea},
+           familyi={R\bibinitperiod},
+           given={Giuseppina},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{0fa340dfeaa82e9fca132c452642fa13}
+      \strng{fullhash}{35d408fc2c318c61b7587773c6f38ba6}
+      \strng{bibnamehash}{0fa340dfeaa82e9fca132c452642fa13}
+      \strng{authorbibnamehash}{0fa340dfeaa82e9fca132c452642fa13}
+      \strng{authornamehash}{0fa340dfeaa82e9fca132c452642fa13}
+      \strng{authorfullhash}{35d408fc2c318c61b7587773c6f38ba6}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0166-8595, 1573-5079}
-      \field{journaltitle}{Photosynthesis Research}
+      \field{abstract}{The development of a sustainable bio-based economy has drawn much attention in recent years, and research to find smart solutions to the many inherent challenges has intensified. In nature, perhaps the best example of an authentic sustainable system is oxygenic photosynthesis. The biochemistry of this intricate process is empowered by solar radiation influx and performed by hierarchically organized complexes composed by photoreceptors, inorganic catalysts, and enzymes which define specific niches for optimizing light-to-energy conversion. The success of this process relies on its capability to exploit the almost inexhaustible reservoirs of sunlight, water, and carbon dioxide to transform photonic energy into chemical energy such as stored in adenosine triphosphate. Oxygenic photosynthesis is responsible for most of the oxygen, fossil fuels, and biomass on our planet. So, even after a few billion years of evolution, this process unceasingly supports life on earth, and probably soon also in outer-space, and inspires the development of enabling technologies for a sustainable global economy and ecosystem. The following review covers some of the major milestones reached in photosynthesis research, each reflecting lasting routes of innovation in agriculture, environmental protection, and clean energy production.}
+      \field{issn}{2296-2646}
+      \field{journaltitle}{Frontiers in Chemistry}
+      \field{month}{6}
+      \field{title}{Photosynthesis at the Forefront of a Sustainable Life}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{2}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{36}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fchem.2014.00036
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/MHB8H33P/Janssen et al. - 2014 - Photosynthesis at the forefront of a sustainable life.pdf
+      \endverb
+    \endentry
+    \entry{johnsonPhotosynthesis2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6875f503066ca0bd3ac251fcc3a29e15}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Matthew\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{6875f503066ca0bd3ac251fcc3a29e15}
+      \strng{fullhash}{6875f503066ca0bd3ac251fcc3a29e15}
+      \strng{bibnamehash}{6875f503066ca0bd3ac251fcc3a29e15}
+      \strng{authorbibnamehash}{6875f503066ca0bd3ac251fcc3a29e15}
+      \strng{authornamehash}{6875f503066ca0bd3ac251fcc3a29e15}
+      \strng{authorfullhash}{6875f503066ca0bd3ac251fcc3a29e15}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Photosynthesis sustains virtually all life on planet Earth providing the oxygen we breathe and the food we eat; it forms the basis of global food chains and meets the majority of humankind's current energy needs through fossilized photosynthetic fuels. The process of photosynthesis in plants is based on two reactions that are carried out by separate parts of the chloroplast. The light reactions occur in the chloroplast thylakoid membrane and involve the splitting of water into oxygen, protons and electrons. The protons and electrons are then transferred through the thylakoid membrane to create the energy storage molecules adenosine triphosphate (ATP) and nicotinomide--adenine dinucleotide phosphate (NADPH). The ATP and NADPH are then utilized by the enzymes of the Calvin--Benson cycle (the dark reactions), which converts CO2 into carbohydrate in the chloroplast stroma. The basic principles of solar energy capture, energy, electron and proton transfer and the biochemical basis of carbon fixation are explained and their significance is discussed.}
+      \field{issn}{0071-1365, 1744-1358}
+      \field{journaltitle}{Essays in Biochemistry}
       \field{langid}{english}
-      \field{month}{7}
-      \field{number}{1}
-      \field{title}{A Generalised Dynamic Model of Leaf-Level {{C3}} Photosynthesis Combining Light and Dark Reactions with Stomatal Behaviour}
+      \field{month}{10}
+      \field{number}{3}
+      \field{title}{Photosynthesis}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{60}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{255\bibrangedash 273}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1042/EBC20160016
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/99MRYEWH/Johnson - 2016 - Photosynthesis.pdf
+      \endverb
+    \endentry
+    \entry{FossilFuelShare}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Fossil fuels account for 81.26 percent of total primary energy consumption worldwide.}
+      \field{howpublished}{https://www.statista.com/statistics/1302762/fossil-fuel-share-in-energy-consumption-worldwide/}
+      \field{journaltitle}{Statista}
+      \field{langid}{english}
+      \field{title}{Fossil Fuel Share in Energy Consumption 1965-2024}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/3TPLP4KC/fossil-fuel-share-in-energy-consumption-worldwide.html
+      \endverb
+    \endentry
+    \entry{pisupadtiFuelChemistry2003}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=e329a4f26c8aa5478b12c015cfcd72af}{%
+           family={Pisupadti},
+           familyi={P\bibinitperiod},
+           given={Sarma\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{e329a4f26c8aa5478b12c015cfcd72af}
+      \strng{fullhash}{e329a4f26c8aa5478b12c015cfcd72af}
+      \strng{bibnamehash}{e329a4f26c8aa5478b12c015cfcd72af}
+      \strng{authorbibnamehash}{e329a4f26c8aa5478b12c015cfcd72af}
+      \strng{authornamehash}{e329a4f26c8aa5478b12c015cfcd72af}
+      \strng{authorfullhash}{e329a4f26c8aa5478b12c015cfcd72af}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Encyclopedia of {{Physical Science}} and {{Technology}}}
+      \field{isbn}{978-0-12-227410-7}
+      \field{langid}{english}
+      \field{title}{Fuel {{Chemistry}}}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \field{pages}{253\bibrangedash 274}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/B0-12-227410-5/00933-9
+      \endverb
+    \endentry
+    \entry{ingenhouszExperimentsVegetablesDiscovering1779}{book}{}
+      \name{author}{1}{}{%
+        {{hash=bb220c4fbe772444c59e17ef74488562}{%
+           family={Ingenhousz},
+           familyi={I\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {P. Elmsly, and H. Payne}%
+      }
+      \strng{namehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{fullhash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{bibnamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authorbibnamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authornamehash}{bb220c4fbe772444c59e17ef74488562}
+      \strng{authorfullhash}{bb220c4fbe772444c59e17ef74488562}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{langid}{english}
+      \field{shorttitle}{Experiments {{Upon Vegetables}}, {{Discovering Their Great Power}} of {{Purifying}} the {{Common Air}} in the {{Sun-shine}}, and of {{Injuring}} It in the {{Shade}} and at {{Night}}}
+      \field{title}{Experiments {{Upon Vegetables}}, {{Discovering Their Great Power}} of {{Purifying}} the {{Common Air}} in the {{Sun-shine}}, and of {{Injuring}} It in the {{Shade}} and at {{Night}}: {{To}} Which Is {{Joined}}, a {{New Method}} of {{Examining}} the {{Accurate Degree}} of {{Salubrity}} of the {{Atmosphere}}}
+      \field{year}{1779}
+    \endentry
+    \entry{murchieAgricultureNewChallenges2009}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9ac37861b188039df3b4ac8ce8544c3e}{%
+           family={Murchie},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi H.},
+           giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=f714b7b0f0372e45a3094dd2f68d2718}{%
+           family={Pinto},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d1c2ebb90f21c72030836c7a4662653a}{%
+           family={Horton},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{fullhash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{bibnamehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{authorbibnamehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{authornamehash}{234e7bdf83b8f10471e845fea5072d8e}
+      \strng{authorfullhash}{234e7bdf83b8f10471e845fea5072d8e}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Contents Summary 532 I. Introduction 533 II. World demand and future food production 533 III. Photosynthesis from an agricultural perspective 533 IV. Routes to improving the mechanism of photosynthesis 535 V. Photosynthesis in the field: potential and actual rates 537 VI. Optimization of photosynthesis as a highly dynamic responsive process 539 VII. Principles governing dynamic responses of photosynthesis to the environment 539 VIII. The chloroplast as sensor and integrator -- photoacclimation of photosynthesis 544 IX. Concluding remarks: crops for future climates 546 References 548}
+      \field{issn}{0028-646X, 1469-8137}
+      \field{journaltitle}{New Phytologist}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{3}
+      \field{title}{Agriculture and the New Challenges for Photosynthesis Research}
+      \field{urlday}{4}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{181}
+      \field{year}{2009}
+      \field{urldateera}{ce}
+      \field{pages}{532\bibrangedash 552}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1111/j.1469-8137.2008.02705.x
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/EVSNFA97/Murchie et al. - 2009 - Agriculture and the new challenges for photosynthesis research.pdf
+      \endverb
+    \endentry
+    \entry{longCanImprovementPhotosynthesis2006}{article}{}
+      \name{author}{4}{}{%
+        {{hash=4469354fd9d89f3003587b2ee63cc123}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Stephen\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=da4e410a3f997e20954d804e2e13863d}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xin-Guang},
+           giveni={X\bibinithyphendelim G\bibinitperiod}}}%
+        {{hash=4e1d1626f5e9b29a1160d56e4298a69d}{%
+           family={Naidu},
+           familyi={N\bibinitperiod},
+           given={Shawna\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=d0eafac73c07bf45598624558806c107}{%
+           family={Ort},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b51cc943417608135332cc590a84357}
+      \strng{fullhash}{21cc208d62159423f43e471ce929f2ce}
+      \strng{bibnamehash}{5b51cc943417608135332cc590a84357}
+      \strng{authorbibnamehash}{5b51cc943417608135332cc590a84357}
+      \strng{authornamehash}{5b51cc943417608135332cc590a84357}
+      \strng{authorfullhash}{21cc208d62159423f43e471ce929f2ce}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{ABSTRACT The yield potential ( Y p ) of a grain crop is the seed mass per unit ground area obtained under optimum growing conditions without weeds, pests and diseases. It is determined by the product of the available light energy and by the genetically determined properties: efficiency of light capture ( {$\varepsilon$} i ), the efficiency of conversion of the intercepted light into biomass ( {$\varepsilon$} c ) and the proportion of biomass partitioned into grain ( {$\eta$} ). Plant breeding brings {$\eta$} and {$\varepsilon$} i close to their theoretical maxima, leaving {$\varepsilon$} c , primarily determined by photosynthesis, as the only remaining major prospect for improving Y p . Leaf photosynthetic rate, however, is poorly correlated with yield when different genotypes of a crop species are compared. This led to the viewpoint that improvement of leaf photosynthesis has little value for improving Y p . By contrast, the many recent experiments that compare the growth of a genotype in current and future projected elevated [CO 2 ] environments show that increase in leaf photosynthesis is closely associated with similar increases in yield. Are there opportunities to achieve similar increases by genetic manipulation? Six potential routes of increasing {$\varepsilon$} c by improving photosynthetic efficiency were explored, ranging from altered canopy architecture to improved regeneration of the acceptor molecule for CO 2 . Collectively, these changes could improve {$\varepsilon$} c and, therefore, Y p by c . 50\%. Because some changes could be achieved by transgenic technology, the time of the development of commercial cultivars could be considerably less than by conventional breeding and potentially, within 10--15{$\quad$}years.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Can Improvement in Photosynthesis Increase Crop Yields?}
+      \field{urlday}{4}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{29}
+      \field{year}{2006}
+      \field{urldateera}{ce}
+      \field{pages}{315\bibrangedash 330}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1111/j.1365-3040.2005.01493.x
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/2VQDMT4M/Long et al. - 2006 - Can improvement in photosynthesis increase crop yields.pdf
+      \endverb
+    \endentry
+    \entry{banerjeeMathematicalModelingModels2021}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c3485f80754de2c6e3d3ed041cfc4524}{%
+           family={Banerjee},
+           familyi={B\bibinitperiod},
+           given={Sandip},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton}%
+      }
+      \list{publisher}{1}{%
+        {Chapman and Hall/CRC}%
+      }
+      \strng{namehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{fullhash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{bibnamehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{authorbibnamehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{authornamehash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \strng{authorfullhash}{c3485f80754de2c6e3d3ed041cfc4524}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{2}
+      \field{isbn}{978-1-351-02294-1}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{shorttitle}{Mathematical {{Modeling}}}
+      \field{title}{Mathematical {{Modeling}}: {{Models}}, {{Analysis}} and {{Applications}}}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1201/9781351022941
+      \endverb
+    \endentry
+    \entry{demaziereModellingNuclearReactor2020}{book}{}
+      \name{author}{1}{}{%
+        {{hash=dece9392251f156f2e026670e9acc498}{%
+           family={Demazière},
+           familyi={D\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Academic press}%
+      }
+      \strng{namehash}{dece9392251f156f2e026670e9acc498}
+      \strng{fullhash}{dece9392251f156f2e026670e9acc498}
+      \strng{bibnamehash}{dece9392251f156f2e026670e9acc498}
+      \strng{authorbibnamehash}{dece9392251f156f2e026670e9acc498}
+      \strng{authornamehash}{dece9392251f156f2e026670e9acc498}
+      \strng{authorfullhash}{dece9392251f156f2e026670e9acc498}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Modelling of Nuclear Reactor Multiphysics: From Local Balance Equations to Macroscopic Models in Neutronics and Thermal-Hydraulics is an accessible guide to the advanced methods used to model nuclear reactor systems. The book addresses the frontier discipline of neutronic/thermal-hydraulic modelling of nuclear reactor cores, presenting the main techniques in a generic manner and for practical reactor calculations. The modelling of nuclear reactor systems is one of the most challenging tasks in complex system modelling, due to the many different scales and intertwined physical phenomena involved. The nuclear industry as well as the research institutes and universities heavily rely on the use of complex numerical codes. All the commercial codes are based on using different numerical tools for resolving the various physical fields, and to some extent the different scales, whereas the latest research platforms attempt to adopt a more integrated approach in resolving multiple scales and fields of physics. The book presents the main algorithms used in such codes for neutronic and thermal-hydraulic modelling, providing the details of the underlying methods, together with their assumptions and limitations. Because of the rapidly expanding use of coupled calculations for performing safety analyses, the analysists should be equally knowledgeable in all fields (i.e. neutron transport, fluid dynamics, heat transfer)}
+      \field{isbn}{978-0-12-815070-2}
+      \field{langid}{english}
+      \field{shorttitle}{Modelling of Nuclear Reactor Multi-Physics}
+      \field{title}{Modelling of Nuclear Reactor Multi-Physics: From Local Balance Equations to Macroscopic Models in Neutronics and Thermal-Hydraulics}
+      \field{year}{2020}
+    \endentry
+    \entry{liImpactIonFluxes2021}{article}{}
+      \name{author}{6}{}{%
+        {{hash=122748fbd1766f07a1685dde181113ca}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f6e5ce96a013bece3f8a940164278b65}{%
+           family={Svoboda},
+           familyi={S\bibinitperiod},
+           given={Vaclav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=4446234402b2a4f4744bd23152899fd3}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Geoffry},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3f834d4c6e8474aa8e6de775bf19156a}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bc3448d19cc5dff851b030be9927290f}{%
+           family={Kunz},
+           familyi={K\bibinitperiod},
+           given={Hans-Henning},
+           giveni={H\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=764c7d6e3f465cc877cc66ad8417805b}{%
+           family={Kirchhoff},
+           familyi={K\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{fullhash}{d4ea44a8177d0c556783f9868fcfc41e}
+      \strng{bibnamehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{authorbibnamehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{authornamehash}{fcd45aa93b07a06122d442ee22d03cd0}
+      \strng{authorfullhash}{d4ea44a8177d0c556783f9868fcfc41e}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2055-0278}
+      \field{journaltitle}{Nature Plants}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{7}
+      \field{title}{Impact of Ion Fluxes across Thylakoid Membranes on Photosynthetic Electron Transport and Photoprotection}
       \field{urlday}{3}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
-      \field{volume}{141}
-      \field{year}{2019}
+      \field{volume}{7}
+      \field{year}{2021}
       \field{urldateera}{ce}
-      \field{pages}{99\bibrangedash 118}
-      \range{pages}{20}
+      \field{pages}{979\bibrangedash 988}
+      \range{pages}{10}
       \verb{doi}
-      \verb 10.1007/s11120-018-0601-1
+      \verb 10.1038/s41477-021-00947-5
+      \endverb
+    \endentry
+    \entry{matuszynskaMathematicalModelNonphotochemical2016}{article}{}
+      \name{author}{4}{}{%
+        {{hash=423a25760cff0050e6ff76cb47121b5a}{%
+           family={Matuszyńska},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1dcaa257ee57cbe6b26592bd32f601e7}{%
+           family={Heidari},
+           familyi={H\bibinitperiod},
+           given={Somayyeh},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ba942574d568ac9ea28d19400142975c}{%
+           family={Jahns},
+           familyi={J\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c5225f689e33ff0b6a10ca12994762a9}{%
+           family={Ebenhöh},
+           familyi={E\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{fullhash}{f001a61b0fa18028008f57f7f0c9fdad}
+      \strng{bibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authorbibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authornamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
+      \strng{authorfullhash}{f001a61b0fa18028008f57f7f0c9fdad}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00052728}
+      \field{journaltitle}{Biochimica et Biophysica Acta (BBA) - Bioenergetics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{A Mathematical Model of Non-Photochemical Quenching to Study Short-Term Light Memory in Plants}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{1857}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{1860\bibrangedash 1869}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.bbabio.2016.09.003
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/3HCBRNVR/Matuszyńska et al. - 2016 - A mathematical model of non-photochemical quenching to study short-term light memory in plants.pdf
       \endverb
     \endentry
     \entry{fuenteMathematicalModelSimulate2024}{article}{}
@@ -94,8 +601,8 @@
       \strng{authorbibnamehash}{c914c3765d44d71fced66cc41b54642e}
       \strng{authornamehash}{c914c3765d44d71fced66cc41b54642e}
       \strng{authorfullhash}{bc020321fdc58273335a8d600ae9aaaf}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{09819428}
@@ -115,58 +622,732 @@
       \verb 10.1016/j.plaphy.2024.109138
       \endverb
     \endentry
-    \entry{matuszynskaMathematicalModelNonphotochemical2016}{article}{}
+    \entry{farquharBiochemicalModelPhotosynthetic1980}{article}{}
+      \name{author}{3}{}{%
+        {{hash=3d9749d1fe034c654847350b4bf44ee9}{%
+           family={Farquhar},
+           familyi={F\bibinitperiod},
+           given={G.\bibnamedelimi D.},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=6f1e519d76b34e4896f205be887775a7}{%
+           family={{von Caemmerer}},
+           familyi={v\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d6d9585eb741f77352e628dede1559c5}{%
+           family={Berry},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8736e78d6cc00ee7061503923d78827d}
+      \strng{fullhash}{8736e78d6cc00ee7061503923d78827d}
+      \strng{bibnamehash}{8736e78d6cc00ee7061503923d78827d}
+      \strng{authorbibnamehash}{8736e78d6cc00ee7061503923d78827d}
+      \strng{authornamehash}{8736e78d6cc00ee7061503923d78827d}
+      \strng{authorfullhash}{8736e78d6cc00ee7061503923d78827d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Various aspects of the biochemistry of photosynthetic carbon assimilation in C3 plants are integrated into a form compatible with studies of gas exchange in leaves. These aspects include the kinetic properties of ribulose bisphosphate carboxylase-oxygenase; the requirements of the photosynthetic carbon reduction and photorespiratory carbon oxidation cycles for reduced pyridine nucleotides; the dependence of electron transport on photon flux and the presence of a temperature dependent upper limit to electron transport. The measurements of gas exchange with which the model outputs may be compared include those of the temperature and partial pressure of CO2(p(CO2)) dependencies of quantum yield, the variation of compensation point with temperature and partial pressure of O2(p(O2)), the dependence of net CO2 assimilation rate on p(CO2) and irradiance, and the influence of p(CO2) and irradiance on the temperature dependence of assimilation rate.}
+      \field{issn}{1432-2048}
+      \field{journaltitle}{Planta}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{1}
+      \field{title}{A Biochemical Model of Photosynthetic {{CO2}} Assimilation in Leaves of {{C3}} Species}
+      \field{urlday}{16}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{149}
+      \field{year}{1980}
+      \field{urldateera}{ce}
+      \field{pages}{78\bibrangedash 90}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/BF00386231
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/2TCD6RJB/Farquhar et al. - 1980 - A biochemical model of photosynthetic CO2 assimilation in leaves of C3 species.pdf
+      \endverb
+      \keyw{Electron transport,Leaf model,Light and CO2 assimilation,Photosynthesis (C3),Ribulose bisphosphate carboxylase-oxygenase,Temperature}
+    \endentry
+    \entry{voncaemmererSteadystateModelsPhotosynthesis2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=dc57f9ad9eb869ccab6c25998f0b611f}{%
+           family={Von\bibnamedelima Caemmerer},
+           familyi={V\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Susanne},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{fullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{bibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authorbibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authornamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \strng{authorfullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract In the challenge to increase photosynthetic rate per leaf area mathematical models of photosynthesis can be used to help interpret gas exchange measurements made under different environmental conditions and predict underlying photosynthetic biochemistry. To do this successfully it is important to improve the modelling of temperature dependencies of CO 2 assimilation and gain better understanding of internal CO 2 diffusion limitations. Despite these shortcomings steady-state models of photosynthesis provide simple easy to use tools for thought experiments to explore photosynthetic pathway changes such as redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared. , In the challenge to increase photosynthetic rate per leaf area steady state models of photosynthesis provide not only tools for gas exchange analysis but also for thought experiments that can explore photosynthetic pathway changes. These include redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{title}{Steady-state Models of Photosynthesis}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{1617\bibrangedash 1630}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/pce.12098
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/S3CNFDHV/Von Caemmerer - 2013 - Steady‐state models of photosynthesis.pdf
+      \endverb
+    \endentry
+    \entry{lochockiWidelyUsedVariants2025a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7bc1e5b8b92a41abac44c89c004cb3f3}{%
+           family={Lochocki},
+           familyi={L\bibinitperiod},
+           given={Edward\bibnamedelima B},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=71171fd62a48c8a1b667a6eb5d0f15d8}{%
+           family={McGrath},
+           familyi={M\bibinitperiod},
+           given={Justin\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{fullhash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{bibnamehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{authorbibnamehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{authornamehash}{3befd5a647a5fcd70a806158df8eba3a}
+      \strng{authorfullhash}{3befd5a647a5fcd70a806158df8eba3a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract The Farquhar-von-Caemmerer-Berry (FvCB) model is the most widely-used mechanistic model of C3 net CO2 assimilation, and it plays a significant role in plant physiology, ecology, climate science, and Earth system modeling. As use of the model has grown, multiple variants have appeared across publications. Although many of these are commonly used, there has not been a detailed investigation of existing variants and their impacts on results and interpretations. Here we summarize the types of variants and their prevalence in the literature, and we present a comprehensive comparison of differences between them. A key finding is that a common variant that uses the minimum of assimilation rates rather than the minimum of carboxylation rates, which we call the ``min-A variant,'' makes different predictions than the original ``min-W variant,'' yet appears in approximately half of highly-cited publications and software tools that use the FvCB model. Another concern is that although leaf biochemistry restricts the range of CO2 partial pressures where limitations due to triose phosphate utilization (TPU) can occur, this restriction is commonly omitted from the model's equations. Among other potential issues, these variations can introduce errors exceeding 20\% when estimating photosynthetic parameter values from CO2 response curves. It is therefore important to be aware of this source of error when fitting the model, to avoid using the min-A variant, and to include the biochemically-derived CO2 threshold for TPU limitations.}
+      \field{issn}{2517-5025}
+      \field{journaltitle}{in silico Plants}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Widely {{Used Variants}} of the {{Farquhar-von-Caemmerer-Berry Model Can Cause Errors}} in {{Parameter Estimation}}}
+      \field{urlday}{5}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{diaf014}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/insilicoplants/diaf014
+      \endverb
+    \endentry
+    \entry{zhuEphotosynthesisComprehensiveDynamic2013}{article}{}
       \name{author}{4}{}{%
+        {{hash=da4e410a3f997e20954d804e2e13863d}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xin-Guang},
+           giveni={X\bibinithyphendelim G\bibinitperiod}}}%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d0eafac73c07bf45598624558806c107}{%
+           family={Ort},
+           familyi={O\bibinitperiod},
+           given={Donald\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=4469354fd9d89f3003587b2ee63cc123}{%
+           family={Long},
+           familyi={L\bibinitperiod},
+           given={Stephen\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{fullhash}{a56d443bc4cf693f701a6fa3a4f5760e}
+      \strng{bibnamehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{authorbibnamehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{authornamehash}{334c872fc7d5a9ef07396ec852a073f0}
+      \strng{authorfullhash}{a56d443bc4cf693f701a6fa3a4f5760e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{ABSTRACTPhotosynthesis is arguably the most researched of all plant processes. A dynamic model of leaf photosynthesis that includes each discrete process from light capture to carbohydrate synthesis,e-photosynthesis, is described. It was developed by linking and extending our previous models of photosystem II (PSII) energy transfer and photosynthetic C3 carbon metabolism to include electron transfer processes around photosystem I (PSI), ion transfer between the lumen and stroma, ATP synthesis and NADP reduction to provide a complete representation. Different regulatory processes linking the light and dark reactions are also included: Rubisco activation via Rubisco activase, pH and xanthophyll cycle-dependent non-photochemical quenching mechanisms, as well as the regulation of enzyme activities via the ferredoxin-theoredoxin system. Although many further feedback and feedforward controls undoubtedly exist, it is shown thate-photosynthesis effectively mimics the typical kinetics of leaf CO2uptake, O2evolution, chlorophyll fluorescence emission, lumen and stromal pH, and membrane potential following perturbations in light, [CO2] and [O2] observed in intact C3 leaves. The model provides a framework for guiding engineering of improved photosynthetic efficiency, for evaluating multiple non-invasive measures used in emerging phenomics facilities, and for quantitative assessment of strengths and weaknesses within the understanding of photosynthesis as an integrated process.}
+      \field{issn}{0140-7791, 1365-3040}
+      \field{journaltitle}{Plant, Cell \& Environment}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shorttitle}{{\emph{E}}-photosynthesis}
+      \field{title}{{\emph{E}}-photosynthesis: A Comprehensive Dynamic Mechanistic Model of {{C3}} Photosynthesis: From Light Capture to Sucrose Synthesis}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{36}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{1711\bibrangedash 1727}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/pce.12025
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/QJYH8I4R/Zhu et al. - 2013 - e‐photosynthesis a comprehensive dynamic mechanistic model of C3 photosynthesis from light.pdf
+      \endverb
+    \endentry
+    \entry{bellasioGeneralisedDynamicModel2019}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c2b6d8c6c271e5d6b6ed74d4b7c913d1}{%
+           family={Bellasio},
+           familyi={B\bibinitperiod},
+           given={Chandra},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{fullhash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{bibnamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{authorbibnamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{authornamehash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \strng{authorfullhash}{c2b6d8c6c271e5d6b6ed74d4b7c913d1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0166-8595, 1573-5079}
+      \field{journaltitle}{Photosynthesis Research}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{1}
+      \field{title}{A Generalised Dynamic Model of Leaf-Level {{C3}} Photosynthesis Combining Light and Dark Reactions with Stomatal Behaviour}
+      \field{urlday}{3}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{141}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{99\bibrangedash 118}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/s11120-018-0601-1
+      \endverb
+    \endentry
+    \entry{vanaalstMxlPyPythonPackage2025}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=4f76235a3348017a927865d10d198939}{%
+           family={Van\bibnamedelima Aalst},
+           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Marvin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d12364d4106e9d1d2a684be2aff9a054}{%
+           family={Nies},
+           familyi={N\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=659a2c45e097106c53a0febd0a5f0a79}{%
+           family={Pfennig},
+           familyi={P\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
         {{hash=423a25760cff0050e6ff76cb47121b5a}{%
            family={Matuszyńska},
            familyi={M\bibinitperiod},
            given={Anna},
            giveni={A\bibinitperiod}}}%
-        {{hash=1dcaa257ee57cbe6b26592bd32f601e7}{%
-           family={Heidari},
-           familyi={H\bibinitperiod},
-           given={Somayyeh},
-           giveni={S\bibinitperiod}}}%
-        {{hash=ba942574d568ac9ea28d19400142975c}{%
-           family={Jahns},
-           familyi={J\bibinitperiod},
-           given={Peter},
-           giveni={P\bibinitperiod}}}%
-        {{hash=c5225f689e33ff0b6a10ca12994762a9}{%
-           family={Ebenhöh},
-           familyi={E\bibinitperiod},
-           given={Oliver},
-           giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
-      \strng{fullhash}{f001a61b0fa18028008f57f7f0c9fdad}
-      \strng{bibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
-      \strng{authorbibnamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
-      \strng{authornamehash}{103f9c4c3230c2d01bbaab6c1d5277e5}
-      \strng{authorfullhash}{f001a61b0fa18028008f57f7f0c9fdad}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \list{publisher}{1}{%
+        {Cold Spring Harbor Laboratory}%
+      }
+      \strng{namehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{fullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \strng{bibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorbibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authornamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
+      \strng{authorfullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{00052728}
-      \field{journaltitle}{Biochimica et Biophysica Acta (BBA) - Bioenergetics}
+      \field{abstract}{AbstractSummaryRecent advances in artificial intelligence have accelerated the adoption of ML in biology, enabling powerful predictive models across diverse applications. However, in scientific research, the need for interpretability and mechanistic insight remains crucial. To address this, we introduce MxlPy, a Python package that combines mechanistic modelling with ML to deliver explainable, data-informed solutions. MxlPy facilitates mechanistic learning, an emerging approach that integrates the transparency of mathematical models with the flexibility of data-driven methods. By streamlining tasks such as data integration, model formulation, output analysis, and surrogate modelling, MxlPy enhances the modelling experience without sacrificing interpretability. Designed for both computational biologists and interdisciplinary researchers, it supports the development of accurate, efficient, and explainable models, making it a valuable tool for advancing bioinformatics, systems biology, and biomedical research.AvailabilityMxlPy source code is freely available athttps://github.com/Computational-Biology-Aachen/MxlPy. The full documentation with features and examples can be found herehttps://computational-biology-aachen.github.io/MxlPy.}
+      \field{eprinttype}{Cold Spring Harbor Laboratory}
+      \field{month}{5}
+      \field{title}{{{MxlPy}} - {{Python Package}} for {{Mechanistic Learning}} in {{Life Science}}}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1101/2025.05.06.652335
+      \endverb
+    \endentry
+    \entry{hoopsCOPASICOmplexPAthway2006}{article}{}
+      \name{author}{10}{}{%
+        {{hash=7c17ff2ceda28a19163a289c20805ca2}{%
+           family={Hoops},
+           familyi={H\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d677a6f06b3e04ba7b1954e84ee7b874}{%
+           family={Sahle},
+           familyi={S\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a8635e76665175be87da49d0b93a8489}{%
+           family={Gauges},
+           familyi={G\bibinitperiod},
+           given={Ralph},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8a8d440af2bf1505aa5e096d34e7f4a0}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Christine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=47e09a5928e83f8427f7ae9e608fa7c8}{%
+           family={Pahle},
+           familyi={P\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=091e45763dc90dd978a291c3af7ae91e}{%
+           family={Simus},
+           familyi={S\bibinitperiod},
+           given={Natalia},
+           giveni={N\bibinitperiod}}}%
+        {{hash=79fc4ec0c2c35cfb3c280274657418c7}{%
+           family={Singhal},
+           familyi={S\bibinitperiod},
+           given={Mudita},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d3945b8e6764532b23deebba43b764b5}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=075686383394e8aa7ef64f9716c609c6}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0c20583cd23296c713186315536d63d5}{%
+           family={Kummer},
+           familyi={K\bibinitperiod},
+           given={Ursula},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{fullhash}{fe6995e7c4feb2ed5e447d585221f4ad}
+      \strng{bibnamehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{authorbibnamehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{authornamehash}{38f355d0c6b279db9d44a45179cbf3e1}
+      \strng{authorfullhash}{fe6995e7c4feb2ed5e447d585221f4ad}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Motivation: Simulation and modeling is becoming a standard approach to understand complex biochemical processes. Therefore, there is a big need for software tools that allow access to diverse simulation and modeling methods as well as support for the usage of these methods. Results: Here, we present COPASI, a platform-independent and user-friendly biochemical simulator that offers several unique features. We discuss numerical issues with these features; in particular, the criteria to switch between stochastic and deterministic simulation methods, hybrid deterministic--stochastic methods, and the importance of random number generator numerical resolution in stochastic simulation. Availability: The complete software is available in binary (executable) for MS Windows, OS X, Linux (Intel) and Sun Solaris (SPARC), as well as the full source code under an open source license from . Contact: ~mendes@vbi.vt.edu}
+      \field{issn}{1367-4811, 1367-4803}
+      \field{journaltitle}{Bioinformatics}
       \field{langid}{english}
       \field{month}{12}
-      \field{number}{12}
-      \field{title}{A Mathematical Model of Non-Photochemical Quenching to Study Short-Term Light Memory in Plants}
-      \field{urlday}{21}
+      \field{number}{24}
+      \field{title}{{{COPASI}}---a {{COmplex PAthway SImulator}}}
+      \field{urlday}{28}
       \field{urlmonth}{10}
       \field{urlyear}{2025}
-      \field{volume}{1857}
-      \field{year}{2016}
+      \field{volume}{22}
+      \field{year}{2006}
       \field{urldateera}{ce}
-      \field{pages}{1860\bibrangedash 1869}
-      \range{pages}{10}
+      \field{pages}{3067\bibrangedash 3074}
+      \range{pages}{8}
       \verb{doi}
-      \verb 10.1016/j.bbabio.2016.09.003
+      \verb 10.1093/bioinformatics/btl485
+      \endverb
+    \endentry
+    \entry{choiTelluriumExtensiblePythonbased2018}{article}{}
+      \name{author}{7}{}{%
+        {{hash=1b297aa4b6ffc09c4dfd7a5da818a9db}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Kiri},
+           giveni={K\bibinitperiod}}}%
+        {{hash=61952e00b50aec1d9a479cf15448e14e}{%
+           family={Medley},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi Kyle},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=b87e748fc5f8cc888134495dd9de4f4a}{%
+           family={König},
+           familyi={K\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=31b88ebf802b577fbcce8b2f9207a5dd}{%
+           family={Stocking},
+           familyi={S\bibinitperiod},
+           given={Kaylene},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d528b2794cae07afdc3cb64e7df39877}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Lucian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=35839c47196a22eb8f1f703ec3fd983e}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Stanley},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f2b12c964777bc274dd523fc1d3f2ccd}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={Herbert\bibnamedelima M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{fullhash}{30eb1e3a596c72ef26010acc0750dac1}
+      \strng{bibnamehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{authorbibnamehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{authornamehash}{fdee5621d2227c5334dc3fcc5c20ade8}
+      \strng{authorfullhash}{30eb1e3a596c72ef26010acc0750dac1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{03032647}
+      \field{journaltitle}{Biosystems}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{shorttitle}{Tellurium}
+      \field{title}{Tellurium: {{An}} Extensible Python-Based Modeling Environment for Systems and Synthetic Biology}
+      \field{urlday}{28}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{171}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{74\bibrangedash 79}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.biosystems.2018.07.006
       \endverb
       \verb{file}
-      \verb /home/elouencorvestnew/Zotero/storage/3HCBRNVR/Matuszyńska et al. - 2016 - A mathematical model of non-photochemical quenching to study short-term light memory in plants.pdf
+      \verb /home/elouencorvestnew/Zotero/storage/4AQRTM34/Choi et al. - 2018 - Tellurium An extensible python-based modeling environment for systems and synthetic biology.pdf
+      \endverb
+    \endentry
+    \entry{huckaSystemsBiologyMarkup2003}{article}{}
+      \name{author}{43}{}{%
+        {{hash=b815ed5912efce36d6966309f612406b}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1f376e491733fc48bdf3616089b5394b}{%
+           family={Finney},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=538dcf4c6c48bfee91f42a815633d34e}{%
+           family={Sauro},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi M.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=5bc676b6622ab9f27ba77a8f5ce9d17a}{%
+           family={Bolouri},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4a74964e0795d339fed69d7574247abd}{%
+           family={Doyle},
+           familyi={D\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b524b91ba10309ab4bc17202de3f683a}{%
+           family={Kitano},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9e4ec55bf15bb85cd5389303da85834a}{%
+           family={Arkin},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=de47df23036589b64c112f24755e7aa6}{%
+           family={Bornstein},
+           familyi={B\bibinitperiod},
+           given={B.\bibnamedelimi J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d967c984fc8d86e74608866eacb22d37}{%
+           family={Bray},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d4f9cb312410033fdae99dc9241ac8bf}{%
+           family={{Cornish-Bowden}},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d5abe83885137f628b88c893a8128ad9}{%
+           family={Cuellar},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a16be28f78b61de1556d345380a9c07a}{%
+           family={Dronov},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=21654aa5e326d7b6921e51f59bbcc73b}{%
+           family={Gilles},
+           familyi={G\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7f089cd1b7865d3f0fc3acbb7e8ae5ae}{%
+           family={Ginkel},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4281dbaa2586d64dae840de64bd78639}{%
+           family={Gor},
+           familyi={G\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=e744c8828fe7d07caf0c227348b271a2}{%
+           family={Goryanin},
+           familyi={G\bibinitperiod},
+           given={I.\bibnamedelimi I.},
+           giveni={I\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=aff669e320451c33cd9e0bdc9b91e528}{%
+           family={Hedley},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi J.},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=ce5d7e95f72e2fe9b83114e925e98921}{%
+           family={Hodgman},
+           familyi={H\bibinitperiod},
+           given={T.\bibnamedelimi C.},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=faea0730333f02f3ab0d9846c3e06705}{%
+           family={Hofmeyr},
+           familyi={H\bibinitperiod},
+           given={J.-H.},
+           giveni={J\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=7b0a0c2253277d04e5502f99c80eaa94}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={P.\bibnamedelimi J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dc3bfe16d37f7cdf641555708274a2f1}{%
+           family={Juty},
+           familyi={J\bibinitperiod},
+           given={N.\bibnamedelimi S.},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=487b930873b724f48e9a7c6a42decd09}{%
+           family={Kasberger},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=e11e62cb228a1d68240c7b9876a103b7}{%
+           family={Kremling},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d2a868fa9837fcefbe25c9b0a32087be}{%
+           family={Kummer},
+           familyi={K\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+        {{hash=b944aad8d5180e389cd6a7b1b17b3dff}{%
+           family={Le\bibnamedelima Novère},
+           familyi={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=5d4244126970986c1e5154503d3707f6}{%
+           family={Loew},
+           familyi={L\bibinitperiod},
+           given={L.\bibnamedelimi M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ccb0db6024a2c6cb83a6c160613d4d9e}{%
+           family={Lucio},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=15bad006371671ec5a577b7cbfb38d27}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0e8be824f2ec3e9f36cca162b042a9e9}{%
+           family={Minch},
+           familyi={M\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=3c3c7efdce1fc38b1525830435deb877}{%
+           family={Mjolsness},
+           familyi={M\bibinitperiod},
+           given={E.\bibnamedelimi D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7f834c4bcf8181bb5bddc5d72942bf40}{%
+           family={Nakayama},
+           familyi={N\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6f46301f980e2cd5d195b89acb0b59ce}{%
+           family={Nelson},
+           familyi={N\bibinitperiod},
+           given={M.\bibnamedelimi R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=6e245bc48ac6570c868de670d676e7fb}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={P.\bibnamedelimi F.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=99259b91fc59cba7863481844ceb53a5}{%
+           family={Sakurada},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=83912ba6dddfb9445369ba62763baa03}{%
+           family={Schaff},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=12ac89636adee7d3063c9f9be8ae66f1}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={B.\bibnamedelimi E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=1505cc0c9ad24dea0bc1facd1952285c}{%
+           family={Shimizu},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=1f5232ff2f1045f0513d3b91e61ba3f0}{%
+           family={Spence},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi D.},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=793936a767ec080b6115f8ca168e6eef}{%
+           family={Stelling},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e8bc87fd9a78a7d5203999be8022da4c}{%
+           family={Takahashi},
+           familyi={T\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=14bee8d336130f88e263ebbe3c7d5433}{%
+           family={Tomita},
+           familyi={T\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f7e8e8b463eb9f6c33faebd6367a9696}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3702f1c146e64a6c91fc47b81ea59fc7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press (OUP)}%
+      }
+      \strng{namehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{fullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \strng{bibnamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authorbibnamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authornamehash}{2ed354b93cd2fb46c6d5aef4a2899c6f}
+      \strng{authorfullhash}{8d68ee5b20b43e229440f354035d76c6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Motivation: Molecular biotechnology now makes it possible to build elaborate systems models, but the systems biology community needs information standards if models are to be shared, evaluated and developed cooperatively. Results: We summarize the Systems Biology Markup Language (SBML) Level 1, a free, open, XML-based format for representing biochemical reaction networks. SBML is a software-independent language for describing models common to research in many areas of computational biology, including cell signaling pathways, metabolic pathways, gene regulation, and others. Availability: The specification of SBML Level 1 is freely available from http://www.sbml.org/ Contact: sysbio-team@caltech.edu * To whom correspondence should be addressed.}
+      \field{issn}{1367-4811, 1367-4803}
+      \field{journaltitle}{Bioinformatics}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{4}
+      \field{shorttitle}{The Systems Biology Markup Language ({{SBML}})}
+      \field{title}{The Systems Biology Markup Language ({{SBML}}): A Medium Forrepresentation and Exchange of Biochemical Network Models}
+      \field{urlday}{7}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{19}
+      \field{year}{2003}
+      \field{urldateera}{ce}
+      \field{pages}{524\bibrangedash 531}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1093/bioinformatics/btg015
+      \endverb
+    \endentry
+    \entry{davisHackingThylakoidProton2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5032d8066c2b456874daffb2c50a905b}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Geoffry\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a95f9117b15b78e7352138fd64849b2e}{%
+           family={Rutherford},
+           familyi={R\bibinitperiod},
+           given={A.\bibnamedelimi William},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=7f3d9ece9653f447e39d0cc6494ab286}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3578d58dfea73680a153ddacfd65afad}
+      \strng{fullhash}{3578d58dfea73680a153ddacfd65afad}
+      \strng{bibnamehash}{3578d58dfea73680a153ddacfd65afad}
+      \strng{authorbibnamehash}{3578d58dfea73680a153ddacfd65afad}
+      \strng{authornamehash}{3578d58dfea73680a153ddacfd65afad}
+      \strng{authorfullhash}{3578d58dfea73680a153ddacfd65afad}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{There is considerable interest in improving plant productivity by altering the dynamic responses of photosynthesis in tune with natural conditions. This is exemplified by the `energy-dependent' form of non-photochemical quenching ( q E ), the formation and decay of which can be considerably slower than natural light fluctuations, limiting photochemical yield. In addition, we recently reported that rapidly fluctuating light can produce field recombination-induced photodamage (FRIP), where large spikes in electric field across the thylakoid membrane ({$\Delta$} {$\psi$} ) induce photosystem II recombination reactions that produce damaging singlet oxygen ( 1 O 2 ). Both q E and FRIP are directly linked to the thylakoid proton motive force ( pmf ), and in particular, the slow kinetics of partitioning pmf into its {$\Delta$}pH and {$\Delta$} {$\psi$} components. Using a series of computational simulations, we explored the possibility of `hacking' pmf partitioning as a target for improving photosynthesis. Under a range of illumination conditions, increasing the rate of counter-ion fluxes across the thylakoid membrane should lead to more rapid dissipation of {$\Delta$} {$\psi$} and formation of {$\Delta$}pH. This would result in increased rates for the formation and decay of q E while resulting in a more rapid decline in the amplitudes of {$\Delta$} {$\psi$} -spikes and decreasing 1 O 2 production. These results suggest that ion fluxes may be a viable target for plant breeding or engineering. However, these changes also induce transient, but substantial mismatches in the ATP : NADPH output ratio as well as in the osmotic balance between the lumen and stroma, either of which may explain why evolution has not already accelerated thylakoid ion fluxes. Overall, though the model is simplified, it recapitulates many of the responses seen in vivo , while spotlighting critical aspects of the complex interactions between pmf components and photosynthetic processes. By making the programme available, we hope to enable the community of photosynthesis researchers to further explore and test specific hypotheses. This article is part of the themed issue `Enhancing photosynthesis in crop plants: targets for improvement'.}
+      \field{issn}{0962-8436, 1471-2970}
+      \field{journaltitle}{Philosophical Transactions of the Royal Society B: Biological Sciences}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{1730}
+      \field{shorttitle}{Hacking the Thylakoid Proton Motive Force for Improved Photosynthesis}
+      \field{title}{Hacking the Thylakoid Proton Motive Force for Improved Photosynthesis: Modulating Ion Flux Rates That Control Proton Motive Force Partitioning into {{$\Delta$}} {\emph{{$\psi$}}} and {{$\Delta$pH}}}
+      \field{urlday}{15}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{372}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \field{pages}{20160381}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1098/rstb.2016.0381
+      \endverb
+      \verb{file}
+      \verb /home/elouencorvestnew/Zotero/storage/VQZ4Y96Q/Davis et al. - 2017 - Hacking the thylakoid proton motive force for improved photosynthesis modulating ion flux rates tha.pdf
       \endverb
     \endentry
     \entry{saadatComputationalAnalysisAlternative2021}{article}{}
@@ -213,8 +1394,8 @@
       \strng{authorbibnamehash}{941934626bb8b4fba1906f91c60bb1e0}
       \strng{authornamehash}{941934626bb8b4fba1906f91c60bb1e0}
       \strng{authorfullhash}{adbdf8bc2e96a20b165e0a6403d3fa93}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{During photosynthesis, organisms respond to their energy demand and ensure the supply of energy and redox equivalents that sustain metabolism. Hence, the photosynthetic apparatus can, and in fact should, be treated as an integrated supply-demand system. Any imbalance in the energy produced and consumed can lead to adverse reactions, such as the production of reactive oxygen species (ROS). Reaction centres of both photosystems are known sites of ROS production. Here, we investigate in particular the central role of Photosystem I (PSI) in this tightly regulated system. Using a computational approach we have expanded a previously published mechanistic model of C3 photosynthesis by including ROS producing and scavenging reactions around PSI. These include two water to water reactions mediated by Plastid terminal oxidase (PTOX) and Mehler and the ascorbate-glutathione (ASC-GSH) cycle, as a main non-enzymatic antioxidant. We have used this model to predict flux distributions through alternative electron pathways under various environmental stress conditions by systematically varying light intensity and enzymatic activity of key reactions. In particular, we studied the link between ROS formation and activation of pathways around PSI as potential scavenging mechanisms. This work shines light on the role of alternative electron pathways in photosynthetic acclimation and investigates the effect of environmental perturbations on PSI activity in the context of metabolic productivity.}
@@ -252,8 +1433,8 @@
       \strng{authorbibnamehash}{12f9ef353bff98502827ca11e137f337}
       \strng{authornamehash}{12f9ef353bff98502827ca11e137f337}
       \strng{authorfullhash}{12f9ef353bff98502827ca11e137f337}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Photosynthetically Active Radiation (PAR), available as one- and thirty-minute averages of 1 Hz observations. PAR represents the radiation at wavelengths between 400-700 nm (visible light), which constitutes the energy that drives photosynthesis. Latency: Data collected in any given month are published during the second full week of the following month.}
@@ -287,8 +1468,8 @@
       \strng{authorbibnamehash}{98153d28e7a60a273813f049d49aa9c5}
       \strng{authornamehash}{98153d28e7a60a273813f049d49aa9c5}
       \strng{authorfullhash}{98153d28e7a60a273813f049d49aa9c5}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{shorttitle}{Neonutilities}
@@ -299,46 +1480,6 @@
       \field{urldateera}{ce}
       \verb{file}
       \verb /home/elouencorvestnew/Zotero/storage/9SEYA3UF/NEON-utilities-python.html
-      \endverb
-    \endentry
-    \entry{voncaemmererSteadystateModelsPhotosynthesis2013}{article}{}
-      \name{author}{1}{}{%
-        {{hash=dc57f9ad9eb869ccab6c25998f0b611f}{%
-           family={Von\bibnamedelima Caemmerer},
-           familyi={V\bibinitperiod\bibinitdelim C\bibinitperiod},
-           given={Susanne},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{dc57f9ad9eb869ccab6c25998f0b611f}
-      \strng{fullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
-      \strng{bibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
-      \strng{authorbibnamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
-      \strng{authornamehash}{dc57f9ad9eb869ccab6c25998f0b611f}
-      \strng{authorfullhash}{dc57f9ad9eb869ccab6c25998f0b611f}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Abstract In the challenge to increase photosynthetic rate per leaf area mathematical models of photosynthesis can be used to help interpret gas exchange measurements made under different environmental conditions and predict underlying photosynthetic biochemistry. To do this successfully it is important to improve the modelling of temperature dependencies of CO 2 assimilation and gain better understanding of internal CO 2 diffusion limitations. Despite these shortcomings steady-state models of photosynthesis provide simple easy to use tools for thought experiments to explore photosynthetic pathway changes such as redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared. , In the challenge to increase photosynthetic rate per leaf area steady state models of photosynthesis provide not only tools for gas exchange analysis but also for thought experiments that can explore photosynthetic pathway changes. These include redirecting photorespiratory CO 2 , inserting bicarbonate pumps into C 3 chloroplasts or inserting C 4 photosynthesis into rice. Here a number of models derived from the C 3 model by F arquhar, von C aemmerer and B erry are discussed and compared.}
-      \field{issn}{0140-7791, 1365-3040}
-      \field{journaltitle}{Plant, Cell \& Environment}
-      \field{langid}{english}
-      \field{month}{9}
-      \field{number}{9}
-      \field{title}{Steady-state Models of Photosynthesis}
-      \field{urlday}{21}
-      \field{urlmonth}{10}
-      \field{urlyear}{2025}
-      \field{volume}{36}
-      \field{year}{2013}
-      \field{urldateera}{ce}
-      \field{pages}{1617\bibrangedash 1630}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1111/pce.12098
-      \endverb
-      \verb{file}
-      \verb /home/elouencorvestnew/Zotero/storage/S3CNFDHV/Von Caemmerer - 2013 - Steady‐state models of photosynthesis.pdf
       \endverb
     \endentry
     \entry{laiskC3PhotosynthesisSilico2007}{article}{}
@@ -365,8 +1506,8 @@
       \strng{authorbibnamehash}{ea1270bd441f7908baabb0e8fe944821}
       \strng{authornamehash}{ea1270bd441f7908baabb0e8fe944821}
       \strng{authorfullhash}{ea1270bd441f7908baabb0e8fe944821}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0166-8595, 1573-5079}
@@ -401,8 +1542,8 @@
       \strng{authorbibnamehash}{2a00b963a7c8e6cc25a66979c69be35d}
       \strng{authornamehash}{2a00b963a7c8e6cc25a66979c69be35d}
       \strng{authorfullhash}{2a00b963a7c8e6cc25a66979c69be35d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Abstract. Many atmospheric chemicals occur in the gas phase as well as in liquid cloud droplets and aerosol particles. Therefore, it is necessary to understand their distribution between the phases. According to Henry's law, the equilibrium ratio between the abundances in the gas phase and in the aqueous phase is constant for a dilute solution. Henry's law constants of trace gases of potential importance in environmental chemistry have been collected and converted into a uniform format. The compilation contains 46 434 values of Henry's law constants for 10 173 species, collected from 995 references. It is also available on the internet at https://www.henrys-law.org (last access: October 2023). This article is a living review that supersedes the now obsolete publication by Sander (2015).}
@@ -506,8 +1647,8 @@
       \strng{authorbibnamehash}{c195289b34747b97619b3e7cfad61803}
       \strng{authornamehash}{c195289b34747b97619b3e7cfad61803}
       \strng{authorfullhash}{ce0d3912fcabcecddc64431d363e35a4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Summary Understanding photosynthesis in natural, dynamic light environments requires knowledge of long-term acclimation, short-term responses, and their mechanistic interactions. To approach the latter, we systematically determined and characterized light-environmental effects on thylakoid ion transport-mediated short-term responses during light fluctuations. For this, Arabidopsis thaliana wild-type and mutants of the Cl - channel VCCN1 and the K + exchange antiporter KEA3 were grown under eight different light environments and characterized for photosynthesis-associated parameters and factors in steady state and during light fluctuations. For a detailed characterization of selected light conditions, we monitored ion flux dynamics at unprecedented high temporal resolution by a modified spectroscopy approach. Our analyses reveal that daily light intensity sculpts photosynthetic capacity as a main acclimatory driver with positive and negative effects on the function of KEA3 and VCCN1 during high-light phases, respectively. Fluctuations in light intensity boost the accumulation of the photoprotective pigment zeaxanthin (Zx). We show that KEA3 suppresses Zx accumulation during the day, which together with its direct proton transport activity accelerates photosynthetic transition to lower light intensities. In summary, both light-environment factors, intensity and variability, modulate the function of thylakoid ion transport in dynamic photosynthesis with distinct effects on lumen pH, Zx accumulation, photoprotection, and photosynthetic efficiency.}
@@ -586,8 +1727,8 @@
       \strng{authorbibnamehash}{7d0edb7062599196080d69e60ff0afa0}
       \strng{authornamehash}{7d0edb7062599196080d69e60ff0afa0}
       \strng{authorfullhash}{1d82fda01aece33a807ea138c37443bc}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Mostly maintenance and small bug fixes: capture and ignore std\_dev=0 warnings from uncertainties package better ensure that parameter values and sterr are floats, not np.floats fix Doniach formula in docstring (\#966) add bose and fermi lineshapes, and BoseModel and FermiModel (with tests) remove deprecated disp argument for ampgo fix typos in README.rst fix typos in doc update to latest SciPy/NumPy version update pre-commit and CI hooks update zenodo link several fixes for deprecations and test failures do not test for warnings from upstream code that might change or be suppressed or altered update license name for PyPI compatibiilty}
@@ -604,58 +1745,9 @@
       \verb 10.5281/ZENODO.598352
       \endverb
     \endentry
-    \entry{vanaalstMxlPyPythonPackage2025}{misc}{}
-      \name{author}{4}{}{%
-        {{hash=4f76235a3348017a927865d10d198939}{%
-           family={Van\bibnamedelima Aalst},
-           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
-           given={Marvin},
-           giveni={M\bibinitperiod}}}%
-        {{hash=d12364d4106e9d1d2a684be2aff9a054}{%
-           family={Nies},
-           familyi={N\bibinitperiod},
-           given={Tim},
-           giveni={T\bibinitperiod}}}%
-        {{hash=659a2c45e097106c53a0febd0a5f0a79}{%
-           family={Pfennig},
-           familyi={P\bibinitperiod},
-           given={Tobias},
-           giveni={T\bibinitperiod}}}%
-        {{hash=423a25760cff0050e6ff76cb47121b5a}{%
-           family={Matuszyńska},
-           familyi={M\bibinitperiod},
-           given={Anna},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Cold Spring Harbor Laboratory}%
-      }
-      \strng{namehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
-      \strng{fullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
-      \strng{bibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
-      \strng{authorbibnamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
-      \strng{authornamehash}{cb56be00cc554ed9eb30cf9d7afddcd7}
-      \strng{authorfullhash}{e06c1cc3e7e513908c7a1fa3a330574e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{AbstractSummaryRecent advances in artificial intelligence have accelerated the adoption of ML in biology, enabling powerful predictive models across diverse applications. However, in scientific research, the need for interpretability and mechanistic insight remains crucial. To address this, we introduce MxlPy, a Python package that combines mechanistic modelling with ML to deliver explainable, data-informed solutions. MxlPy facilitates mechanistic learning, an emerging approach that integrates the transparency of mathematical models with the flexibility of data-driven methods. By streamlining tasks such as data integration, model formulation, output analysis, and surrogate modelling, MxlPy enhances the modelling experience without sacrificing interpretability. Designed for both computational biologists and interdisciplinary researchers, it supports the development of accurate, efficient, and explainable models, making it a valuable tool for advancing bioinformatics, systems biology, and biomedical research.AvailabilityMxlPy source code is freely available athttps://github.com/Computational-Biology-Aachen/MxlPy. The full documentation with features and examples can be found herehttps://computational-biology-aachen.github.io/MxlPy.}
-      \field{eprinttype}{Cold Spring Harbor Laboratory}
-      \field{month}{5}
-      \field{title}{{{MxlPy}} - {{Python Package}} for {{Mechanistic Learning}} in {{Life Science}}}
-      \field{urlday}{7}
-      \field{urlmonth}{7}
-      \field{urlyear}{2025}
-      \field{year}{2025}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1101/2025.05.06.652335
-      \endverb
-    \endentry
     \entry{LatexifypyGeneratesLaTeX}{misc}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{shorttitle}
       \field{shorttitle}{Latexify-Py}
       \field{title}{Latexify-Py: {{Generates LaTeX}} Math Description from {{Python}} Functions.}
@@ -668,45 +1760,49 @@
       \endverb
       \keyw{equation,latex,math,mathematics,Scientific/Engineering - Mathematics,Software Development - Code Generators,tex,Text Processing - Markup - LaTeX}
     \endentry
-    \entry{lochockiWidelyUsedVariants2025a}{article}{}
-      \name{author}{2}{}{%
-        {{hash=7bc1e5b8b92a41abac44c89c004cb3f3}{%
-           family={Lochocki},
+    \entry{dattnerModelSelectionOrdinary2023}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=c39a2b37594069d989b8d182db29344c}{%
+           family={Dattner},
+           familyi={D\bibinitperiod},
+           given={Itai},
+           giveni={I\bibinitperiod}}}%
+        {{hash=7cc3160eab39dda49ae6cf3819b9a880}{%
+           family={Gugushvili},
+           familyi={G\bibinitperiod},
+           given={Shota},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3195f5245d878bdf3b414fefe0d87e2e}{%
+           family={Laskorunskyi},
            familyi={L\bibinitperiod},
-           given={Edward\bibnamedelima B},
-           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=71171fd62a48c8a1b667a6eb5d0f15d8}{%
-           family={McGrath},
-           familyi={M\bibinitperiod},
-           given={Justin\bibnamedelima M},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+           given={Oleksandr},
+           giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{3befd5a647a5fcd70a806158df8eba3a}
-      \strng{fullhash}{3befd5a647a5fcd70a806158df8eba3a}
-      \strng{bibnamehash}{3befd5a647a5fcd70a806158df8eba3a}
-      \strng{authorbibnamehash}{3befd5a647a5fcd70a806158df8eba3a}
-      \strng{authornamehash}{3befd5a647a5fcd70a806158df8eba3a}
-      \strng{authorfullhash}{3befd5a647a5fcd70a806158df8eba3a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{19226ead6c3481e9a0056e4f6689a1d3}
+      \strng{fullhash}{19226ead6c3481e9a0056e4f6689a1d3}
+      \strng{bibnamehash}{19226ead6c3481e9a0056e4f6689a1d3}
+      \strng{authorbibnamehash}{19226ead6c3481e9a0056e4f6689a1d3}
+      \strng{authornamehash}{19226ead6c3481e9a0056e4f6689a1d3}
+      \strng{authorfullhash}{19226ead6c3481e9a0056e4f6689a1d3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Abstract The Farquhar-von-Caemmerer-Berry (FvCB) model is the most widely-used mechanistic model of C3 net CO2 assimilation, and it plays a significant role in plant physiology, ecology, climate science, and Earth system modeling. As use of the model has grown, multiple variants have appeared across publications. Although many of these are commonly used, there has not been a detailed investigation of existing variants and their impacts on results and interpretations. Here we summarize the types of variants and their prevalence in the literature, and we present a comprehensive comparison of differences between them. A key finding is that a common variant that uses the minimum of assimilation rates rather than the minimum of carboxylation rates, which we call the ``min-A variant,'' makes different predictions than the original ``min-W variant,'' yet appears in approximately half of highly-cited publications and software tools that use the FvCB model. Another concern is that although leaf biochemistry restricts the range of CO2 partial pressures where limitations due to triose phosphate utilization (TPU) can occur, this restriction is commonly omitted from the model's equations. Among other potential issues, these variations can introduce errors exceeding 20\% when estimating photosynthetic parameter values from CO2 response curves. It is therefore important to be aware of this source of error when fitting the model, to avoid using the min-A variant, and to include the biochemically-derived CO2 threshold for TPU limitations.}
-      \field{issn}{2517-5025}
-      \field{journaltitle}{in silico Plants}
-      \field{langid}{english}
-      \field{month}{8}
-      \field{title}{Widely {{Used Variants}} of the {{Farquhar-von-Caemmerer-Berry Model Can Cause Errors}} in {{Parameter Estimation}}}
-      \field{urlday}{5}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Ordinary differential equations (ODEs) are foundational in modeling intricate dynamics across a gamut of scientific disciplines. Yet, a possibility to represent a single phenomenon through multiple ODE models, driven by different understandings of nuances in internal mechanisms or abstraction levels, presents a model selection challenge. This study introduces a testing-based approach for ODE model selection amidst statistical noise. Rooted in the model misspecification framework, we adapt foundational insights from classical statistical paradigms (Vuong and Hotelling) to the ODE context, allowing for the comparison and ranking of diverse causal explanations without the constraints of nested models. Our simulation studies validate the theoretical robustness of our proposed test, revealing its consistent size and power. Real-world data examples further underscore the algorithm's applicability in practice. To foster accessibility and encourage real-world applications, we provide a user-friendly Python implementation of our model selection algorithm, bridging theoretical advancements with hands-on tools for the scientific community.}
+      \field{shorttitle}{Model {{Selection}} for {{Ordinary Differential Equations}}}
+      \field{title}{Model {{Selection}} for {{Ordinary Differential Equations}}: A {{Statistical Testing Approach}}}
+      \field{urlday}{6}
       \field{urlmonth}{2}
       \field{urlyear}{2026}
-      \field{year}{2025}
+      \field{year}{2023}
       \field{urldateera}{ce}
-      \field{pages}{diaf014}
-      \range{pages}{-1}
       \verb{doi}
-      \verb 10.1093/insilicoplants/diaf014
+      \verb 10.48550/ARXIV.2308.16438
       \endverb
+      \keyw{FOS: Computer and information sciences,Methodology (stat.ME)}
     \endentry
   \enddatalist
 \endrefsection

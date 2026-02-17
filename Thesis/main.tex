@@ -37,10 +37,16 @@
 
 \newpage
 
+\addcontentsline{toc}{section}{List of Visualisations}
+
 \lstlistoflistings
-\addcontentsline{toc}{section}{\lstlistlistingname}
+\addcontentsline{toc}{subsection}{\lstlistlistingname}
 
+\listoffigures
+\addcontentsline{toc}{subsection}{\listfigurename}
 
+\listoftables
+\addcontentsline{toc}{subsection}{\listtablename}
 
 \newcounter{romannumbers}
 \setcounter{romannumbers}{\arabic{page}}
@@ -55,6 +61,7 @@
 % \newpage
 
 \section{Introduction}
+\input{Sections/introduction.tex}
 
 \newpage
 
@@ -69,6 +76,8 @@
 \newpage
 
 \section{Discussion}
+
+\input{Sections/discussion.tex}
 
 \newpage
 

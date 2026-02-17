@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  26 NOV 2025 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  17 FEB 2026 07:54
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/elouencorvest/Documents/GreenSloth_writing/Proposal/main.tex
-(/home/elouencorvest/Documents/GreenSloth_writing/Proposal/main.tex
+**/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/main
+(/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1306,7 +1306,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'german'.
- (out_dir/main.aux)
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/out_dir/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -1408,14 +1408,14 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (out_dir/main.bbl)
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/out_dir/main.bbl)
 Package biblatex Info: Reference section=0 on input line 6.
 Package biblatex Info: Reference segment=0 on input line 6.
  (/usr/share/texlive/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
 Package hyperref Info: Link coloring OFF on input line 6.
- (out_dir/main.out) (out_dir/main.out)
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/out_dir/main.out) (/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/out_dir/main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1443,7 +1443,7 @@ Package pdftex.def Info: Figures/rwth_jp_computational_life_science_en_rgb.png  
 (pdftex.def)             Requested size: 421.1024pt x 102.42671pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/rwth_jp_computational_life_science_en_rgb.png>]) (out_dir/main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/rwth_jp_computational_life_science_en_rgb.png>]) (/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/out_dir/main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1509,7 +1509,7 @@ Overfull \hbox (77.09625pt too wide) in paragraph at lines 54--54
 []\OT1/cmr/m/it/10.95 Citation Re-port - 1,475 - Web of Sci-ence Core Col-lec-tion\OT1/cmr/m/n/10.95 . https://www.webofscience.com/wos/woscc/summary/aebfb3a0-
  []
 
-[3] [4] (out_dir/main.aux)
+[3] [4] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/out_dir/main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1522,14 +1522,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  49472 strings out of 474222
- 1003915 string characters out of 5748733
- 2010805 words of memory out of 5000000
+ 1004839 string characters out of 5748733
+ 2010803 words of memory out of 5000000
  70925 multiletter control sequences out of 15000+600000
  579878 words of font info for 100 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 114i,8n,112p,2470b,2086s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,8n,112p,2469b,2086s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on out_dir/main.pdf (16 pages, 451509 bytes).
+Output written on /home/elouencorvestnew/Documents/GreenSloth_Writing/Proposal/out_dir/main.pdf (16 pages, 451232 bytes).
 PDF statistics:
  562 PDF objects out of 1000 (max. 8388607)
  401 compressed objects within 5 object streams

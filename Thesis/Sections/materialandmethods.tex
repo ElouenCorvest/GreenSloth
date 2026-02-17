@@ -16,6 +16,10 @@ This simple model stays true to its name and the authors aim to provide a base m
 
 \subsubsection{Li2021}
 
+The Li2021~\cite{liImpactIonFluxes2021} model is a kinetic model of photosynthesis that focuses more on the ion fluxes across the thylakoid membrane and their effect on the \gls{pmf}. It was built on the Davis2017 model~\cite{davisHackingThylakoidProton2017}, focuses more on the photosynthetic reactions that are directly linked to the \gls{pmf}, such as the water splitting at \gls{psii}, the plastoquinone oxidation at the \gls{b6f} complex, and more. Other photosynthetic reactions are kept as simple as possible. The Li2021 model adds two \gls{k+} and two \gls{cl-} ion transport channels to the thylakoid membrane, to investigate their effects on the \gls{pmf}. To validate the model, the authors compare their simulated results to experimental data from several different experiments. They show that the model can reproduce not only \gls{wt} behavior, but also the behavior of several knockout mutants. The mutants chosen, were the \gls{vccn1}, \gls{clce} and \gls{kea3} knockouts and any combination thereof. After the validation, the model is then used to investigate the impact these ion channels have on the \gls{pmf} and the resulting photosynthetic efficiency. Several interesting simulation protocols are used, to showcase the model's capabilities, such as a light oscillation protocol, a scan of enzyme abundance and more. Overall, this model was created to answer an already existing question in the field of photosynthesis, which is the role of ion fluxes across the thylakoid membrane.
+
+The model itself is not well presented in the publication, but the authors do provide a link to a public GitHub repository where the model is available. It is written in Python, with many comments added to the code. The script includes many different parts of the model and simulation protocols, therefore it is not clear, what is part of the model used in the publication. The script was summarized as much as possible, to only include the parts relevant to the model, but it is not clear if this interpretation is that of the publication. Between the code and the minimal information given in the publication and its supplementary materials, there are still discrepancies, which makes it hard to fully establish the model and its parameters. However, the model shows a good example of why models of photosynthesis are important and versatile, which is why it was included in \greensloth{}.
+
 \subsubsection{Matuszynska2016}
 The Matuszynska2016~\cite{matuszynskaMathematicalModelNonphotochemical2016} model, a small kinetic model, was developed to delve deeper into the effect of light memory caused by non-photochemical quenching. The systematic investigation of the Xanthophyll cycle, a combination of the pigments of violaxanthin, antheraxanthin, and zeaxanthin, sparked a series of experiments to determine whether plant light memory can be detected in a timescale of minutes to hours through pulse amplitude modulated chlorophyll fluorescence. The model was then created based on these experimental results, providing a comprehensive description of \gls{npq} dynamics and the short-term memory of the \gls{arabidopsis} plant.
 
@@ -281,11 +285,38 @@ To validate the recreation of the \verb|mxlpy| model implementation, it is impor
 The last step in the documentation process is to fill out the \verb|demonstrations.ipynb| Notebook included in the \verb|figures/| directory of the model structure~\cleverref[]{Directory Tree}{dir:greenslothutils-init}. This Notebook already includes all the necessary code to run the model demonstrations described in \hyperref[sec:model-demonstrations]{Section \ref*{sec:model-demonstrations}}. The user simply has to fill in the string representations of the different parts of the model needed for each demonstration. Some demonstrations may need specific pre-work done beforehand, but more details can be found in \hyperref[sec:model-demonstrations]{Section \ref*{sec:model-demonstrations}} and the documentation of \greensloth[GreenSlothUtils]. Once the demonstrations are filled out, a brief description of each demonstration is already included in the \verb|README_script.py| file, where the user simply has to fill in a brief analyses of the demonstration, including how it looks and if something did not work, why.
 
 \emph{8. Finishing touches}\\
-As the \verb|README_script.py| is now filled out with all the necessary information, the last step is to run the script to generate the final \verb|README.md| file for the model. It is recommended to critically evaluate the generated README file for any mistakes or inconsistencies, especially in the regard of any \LaTeX{} representations, as errors in these are very prone to happen. Once the README file is finalised, the model is ready to be included on the \greensloth{} website.
+As the \verb|README_script.py| is now filled out with all the necessary information, the last step is to run the script to generate the final \verb|README.md| file for the model. It is recommended to critically evaluate the generated README file for any mistakes or inconsistencies, especially in the regard of any \LaTeX{} representations, as errors in these are very prone to happen. Once the README file is finalized, the model is ready to be included on the \greensloth{} website.
 
 \subsection{Website}
 
+\subsubsection{Development}
+
+The website was written using the most basic website development tools, namely \gls{html}, \gls{css}, and \gls{js}. Due to a low level of expertise, the development was kept bare-bones. Therefore, no specific framework was used, except the build tool Vite, to enable an easier development and publishing process. The code of the website is available on the \greensloth{} GitHub repository, only in a separate branch: \url{https://github.com/ElouenCorvest/GreenSloth/tree/website#}
+
+Most pages and design of the website are basic and straightforward, however some aspects have been packaged in scripts to make the contribution to the site easier. Every page of a model is written purely in \gls{js}, to allow for consistency. The script takes the information directly from the model info tables and README file, from the model's respective GitHub directory, and generates the page for that model. This allows a much more streamlined contribution process, as every added model is semi-automatically added to the website, without the need for any \gls{html} or \gls{css} knowledge. To enable a level of security, before any model is uploaded, a small \gls{json} file is used as a dictionary to tell the script which models are allowed to be uploaded to the website that additionally use a template \gls{html} file with their respective name.
+
+To compare two models, a separate page is available, which consists of two select boxes, where any of the models on the website can be selected. Here, many different aspects of the models are compared, such as the variables that are common in both models, a simple light simulation of these variables, the meta-information of the models, the two schemes, and the results of the model demonstrations side by side. All the information for this page is taken from the same sources as the pages of each model, except the light simulations. These need to be created for a model, before uploading, however, a python script that takes the included models, extracts them from the official \greensloth{} GitHub repository, and simulates the light response curves for the different light intensities is included in the website repository.
+
+\subsubsection{Hosting}
+
+The website is hosted on an official RWTH Aachen site, which is provided by the university for free. The Vite building tool is used to build the output version of the website, which is then uploaded to the server. The website is supported by the university IT center for the backend operations, while all the content and design is maintained and belong to the Matuszyńska Lab. The latest online version of the website is available at \url{https://greensloth.rwth-aachen.de/}.
+
 \subsection{Additional Methods}
+
+\subsubsection{Hardware}
+
+This entire Thesis and the development of the \greensloth{} ecosystem was done on a single computer. The specifications of this computer are as follows:
+
+\begin{itemize}
+    \item Processor: 	13th Gen Intel\textsuperscript{\textregistered} Core\texttrademark  i7-13700 @ 5.10 GHz
+    \item Memory: 128 GB DDR4 @ 4800 MHz
+    \item Graphics: Dedicated NVIDIA T400 (4 GB GDDR6).
+    \item Operating System: Ubuntu 24.04.3 LTS
+\end{itemize}
+
+\subsubsection{Simulations}
+
+As every model was developed using the \verb|mxlpy| package~\cite{vanaalstMxlPyPythonPackage2025}, all simulations were performed using the built-in simulation functions and their respective default settings. This includes using the Assimulo integrator as the integrator for every simulation.
 
 \subsubsection{Usage of AI}
 To stay completely transparent during this thesis, it has to be noted that several \gls{ai} tools have been used to assist in the code writing, documentation, and text writing process. Several \glspl{llm} have been used, including Gemini (Google) to help with finding models, ideas and writing code snippets for visualisation. Additionally, GitHub Copilot has been used to assist in code writing, mainly to streamline the writing and debugging process. The exact parts of this thesis that have been assisted by \gls{ai} tools cannot be exactly determined, as the suggestions are mainly used to inspire and speed up the writing process. However, every part of this thesis has been critically evaluated and edited by the author to ensure accuracy and quality.

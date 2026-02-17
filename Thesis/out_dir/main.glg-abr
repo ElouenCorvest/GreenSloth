@@ -1,7 +1,7 @@
 This is makeindex, version 2.17 [TeX Live 2023] (kpathsea + Thai support).
 Scanning style file ./main.ist...........................done (27 attributes redefined, 0 ignored).
-Scanning input file main.glo-abr....done (72 entries accepted, 0 rejected).
-Sorting entries....done (495 comparisons).
-Generating output file main.gls-abr....done (79 lines written, 0 warnings).
+Scanning input file main.glo-abr....done (209 entries accepted, 0 rejected).
+Sorting entries.....done (1956 comparisons).
+Generating output file main.gls-abr....done (150 lines written, 0 warnings).
 Output written in main.gls-abr.
 Transcript written in main.glg-abr.
