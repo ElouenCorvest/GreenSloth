@@ -5,7 +5,7 @@ import fs from 'fs';
 /**
  * CONFIGURATION
  */
-const GOOGLE_TAG_ID = 'G-XXXXXXXXXX'; // Replace with your actual ID
+const GOOGLE_TAG_ID = 'G-5DRSGHZ07C'; // Replace with your actual ID
 const IGNORED_SRC_DIRS = ['ignored-dir']; // Folders to ignore inside src/html/
 const EXCLUDE_PUBLIC_DIRS = ['simulations/python']; // Folders to ignore inside public/
 
