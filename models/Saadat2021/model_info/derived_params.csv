@@ -1,25 +1,25 @@
 Short Description,Common Abbr.,Paper Abbr.,Python Var
 Proportional combination of R and T,$RT$,$RT$,RT
-,,,dG_pH
+Shortened term for ease of access,$\Delta G _\mathrm{pH}$,$\Delta G _\mathrm{pH}$,dG_pH
 Equilibrium constant of ,$K_\mathrm{QAPQ}$,"$K_\mathrm{eq, QAPQ}$",keq_PQH_2
 Equilibrium constant of,$K_\mathrm{FNR}$,"$K_\mathrm{eq, FNR}$",keq_v_FNR
-,,,vmax_v_FNR
+Vmax of FNR,$V_{\mathrm{max}|\mathrm{FNR}}$ ,$V_{FNR}$,vmax_v_FNR
 Equilibrium constant of,$K_\mathrm{PCP700}$,"$K_\mathrm{eq, PCP700}$",keq_PCP700
 Equilibrium constant of ,$K_\mathrm{FAFd}$,"$K_\mathrm{eq, FAFd}$",keq_v_Fdred
-,,,vmax_v_Fdred
-,,,vmax_v_pga_ex
-,,,vmax_v_MDAreduct
-,,,vmax_v_GR
-,,,vmax_v_DHAR
+Vmax of Fdred,$V_{\mathrm{max}|\mathrm{Fd_{red}}}$ ,$V_{Fdred}$,vmax_v_Fdred
+Vmax of PGA export,"$V_{\mathrm{max}|\mathrm{PGA,\ ex}}$ ",$V_{pga\_ex}$,vmax_v_pga_ex
+Vmax of MDAreduct,$V_{\mathrm{max}|\mathrm{MDAreduct}}$ ,$V_{mdared}$,vmax_v_MDAreduct
+Vmax of GR,$V_{\mathrm{max}|\mathrm{GR}}$ ,$V_{GR}$,vmax_v_GR
+Vmax of DHAR,$V_{\mathrm{max}|\mathrm{DHAR}}$ ,$V_{DHAR}$,vmax_v_DHAR
 Equilibrium constant of ATPsynthase,$K_\mathrm{ATPsynthase}$,"$K_\mathrm{eq, ATPsynthase}$",keq_v_ATPsynth
 Equilibrium constant of Cytb6f,$K_\mathrm{cytb6f}$,"$K_\mathrm{eq, cytb6f}$",keq_v_b6f
-Amount of active Enzyme,,,E0_rubisco_active
+Amount of active Enzyme of RuBisCO,$E_\mathrm{0|RuBisCO}$,$Enz_{rubisco}$,Enz0_rubisco_active
 Vmax of RuBisCO,$V_{\mathrm{max}|\mathrm{RuBisCO}}$ ,$V_1$,vmax_v_RuBisCO_c
-Amount of active Enzyme,,,E0_v_FBPase_active
+Amount of active Enzyme of FBPase,$E_\mathrm{0|FBPase}$,$Enz_{fbpase}$,Enz0_v_FBPase_active
 Vmax of FBPase,$V_{\mathrm{max}|\mathrm{FBPase}}$ ,$V_6$,vmax_v_FBPase
-Amount of active Enzyme,,,E0_v_SBPase_active
+Amount of active Enzyme of SBPase,$E_\mathrm{0|SBPase}$,$Enz_{sbpase}$,Enz0_v_SBPase_active
 Vmax of SBPase,$V_{\mathrm{max}|\mathrm{SBPase}}$ ,$V_9$,vmax_v_SBPase
-Amount of active Enzyme,,,E0_v_PRKase_active
+Amount of active Enzyme of PRKase,$E_\mathrm{0|PRKase}$,$Enz_{prkase}$,Enz0_v_PRKase_active
 Vmax of PRKase,$V_{\mathrm{max}|\mathrm{PRKase}}$ ,$V_13$,vmax_v_PRKase
-Amount of active Enzyme,,,E0_v_starch_active
+Amount of active Enzyme of Starch,$E_\mathrm{0|Starch}$,$Enz_{starch}$,Enz0_v_starch_active
 Vmax of Starch,$V_{\mathrm{max}|\mathrm{Starch}}$ ,$V_\mathrm{st}$,vmax_v_starch

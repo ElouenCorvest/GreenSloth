@@ -1,0 +1,93 @@
+------- Start on 2026-02-20 00:01:43.641883 -------
+
+```math 
+{ode(TRX_ox)} = - {v_FdTrReduc} + 5 \cdot {v_Eact}
+```
+```math 
+{ode(Fd_ox)} = {v_FdTrReduc} + 2 \cdot {v_Cyc} + 2 \cdot {v_FNR} - {v_Fdred}
+```
+```math 
+{ode(E_CBB_inactive)} = - 5 \cdot {v_Eact} + 5 \cdot {v_Einact}
+```
+```math 
+{ode(H_lumen)} = \frac{{-{HPR}}}{{{bH}}} \cdot {v_ATPsynth} + \frac{{4.0}}{{{bH}}} \cdot {v_b6f} + \frac{{2.0}}{{{bH}}} \cdot {v_PSII} + \frac{{-1.0}}{{{bH}}} \cdot {v_Leak}
+```
+```math 
+{ode(ATP_st)} = {convf} \cdot {v_ATPsynth} - 1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_starch} - {v_ATPcons}
+```
+```math 
+{ode(PC_ox)} = - 2 \cdot {v_b6f} + {v_PSI}
+```
+```math 
+{ode(PQ)} = - {v_Cyc} + {v_b6f} - {v_PSII} - {v_NDH} + {v_PQ}
+```
+```math 
+{ode(psbS)} = - {v_PsbSP} + {v_PsbSD}
+```
+```math 
+{ode(Vx)} = - {v_Deepox} + {v_Epox}
+```
+```math 
+{ode(NADPH_st)} = {convf} \cdot {v_FNR} - 1.0 \cdot {v_BPGAdehynase} - {v_MDAreduct} - {v_GR} - {v_NADPHcons}
+```
+```math 
+{ode(H2O2)} = {convf} \cdot {v_Mehler} - {v_APXase}
+```
+```math 
+{ode(LHC)} = - {v_St12} + {v_St21}
+```
+```math 
+{ode(RUBP)} = 1.0 \cdot {v_PRKase} - 1.0 \cdot {v_RuBisCO_c}
+```
+```math 
+{ode(PGA)} = - 1.0 \cdot {v_PGK1ase} + 2.0 \cdot {v_RuBisCO_c} - {v_pga_ex}
+```
+```math 
+{ode(BPGA)} = 1.0 \cdot {v_PGK1ase} - 1.0 \cdot {v_BPGAdehynase}
+```
+```math 
+{ode(GAP)} = 1.0 \cdot {v_BPGAdehynase} - {v_TPIase} - {v_Aldolase_FBP} - {v_TKase_E4P} - {v_TKase_R5P} - {v_gap_ex}
+```
+```math 
+{ode(DHAP)} = {v_TPIase} - {v_Aldolase_FBP} - {v_Aldolase_SBP} - {v_dhap_ex}
+```
+```math 
+{ode(FBP)} = {v_Aldolase_FBP} - {v_FBPase}
+```
+```math 
+{ode(E4P)} = {v_TKase_E4P} - {v_Aldolase_SBP}
+```
+```math 
+{ode(SBP)} = {v_Aldolase_SBP} - {v_SBPase}
+```
+```math 
+{ode(F6P)} = - {v_TKase_E4P} + {v_FBPase} - {v_PGIase}
+```
+```math 
+{ode(X5P)} = {v_TKase_E4P} + {v_TKase_R5P} - {v_RPEase}
+```
+```math 
+{ode(S7P)} = - {v_TKase_R5P} + {v_SBPase}
+```
+```math 
+{ode(R5P)} = {v_TKase_R5P} - {v_Rpiase}
+```
+```math 
+{ode(RU5P)} = - 1.0 \cdot {v_PRKase} + {v_RPEase} + {v_Rpiase}
+```
+```math 
+{ode(G6P)} = {v_PGIase} - {v_PGMase}
+```
+```math 
+{ode(G1P)} = - 1.0 \cdot {v_starch} + {v_PGMase}
+```
+```math 
+{ode(MDA)} = - 2 \cdot {v_MDAreduct} + 2 \cdot {v_APXase} - 2 \cdot {v_3ASC}
+```
+```math 
+{ode(DHA)} = {v_3ASC} - {v_DHAR}
+```
+```math 
+{ode(GSSG)} = - {v_GR} + {v_DHAR}
+```
+

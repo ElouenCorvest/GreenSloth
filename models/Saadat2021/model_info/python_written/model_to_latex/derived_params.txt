@@ -1,0 +1,75 @@
+------- Start on 2026-02-20 00:01:43.613300 -------
+
+```math
+{RT} =  {T} \cdot {R}
+```
+```math
+{dG_pH} =  \log 10 \cdo{T} {R} {T}
+```
+```math
+{keq_PQH_2} =  \exp \left( \frac{{-\left( -2 \cdot -{E0_QA} {F} + -2 {E0_PQ} {F} + 2 {pH_stroma} \cdot {dG_pH} \right)}}{{{RT}}} \right)
+```
+```math
+{keq_v_FNR} =  \exp \left( \frac{{-\left( -2 \cdot -{E0_{F}d} {F} + -2 {E0_NADP} {F} + {dG_pH} \cdot {pH_stroma} \right)}}{{{RT}}} \right)
+```
+```math
+{vmax_v_FNR} =  {Enz0_v_FNR} \cdot {kcat_v_FNR}
+```
+```math
+{keq_PCP700} =  \exp \le{F}t( \{F}rac{{-\le{F}t( -\le{F}t( -{E0_PC} {F} \right) + -{E0_P700} {F} \right)}}{{{RT}}} \right)
+```
+```math
+{keq_v_Fdred} =  \exp \le{F}t( \{F}rac{{-\le{F}t( -\le{F}t( -{E0_FA} {F} \right) + -\mathrm{{e0\_{F}d}} {F} \right)}}{{{RT}}} \right)
+```
+```math
+{vmax_v_Fdred} =  {Enz0_v_Fdred} \cdot {kcat_v_Fdred}
+```
+```math
+{vmax_v_pga_ex} =  {Enz0_IF_3P} \cdot {kcat_IF_3P}
+```
+```math
+{vmax_v_MDAreduct} =  {Enz0_v_MDAreduct} \cdot {kcat_v_MDAreduct}
+```
+```math
+{vmax_v_GR} =  {Enz0_v_GR} \cdot {kcat_v_GR}
+```
+```math
+{vmax_v_DHAR} =  {Enz0_v_DHAR} \cdot {kcat_v_DHAR}
+```
+```math
+{keq_v_ATPsynth} =  {Pi_mol} \cdot \exp \left( \frac{{-\left( {DeltaG0_ATP} - {dG_pH} \cdot {HPR} \cdot \left( {pH_stroma} - {pH_lumen} \right) \right)}}{{{RT}}} \right)
+```
+```math
+{keq_v_b6f} =  \mathrm{{cast}} \left( \mathrm{{float}}, \exp \left( \frac{{-\left( -\left( -2 {F} \cdot {E0_PQ} + 2 {dG_pH} \cdot {pH_lumen} \right) + 2 \cdot -{F} \cdot {E0_PC} + 2 {dG_pH} \cdot \left( {pH_stroma} - {pH_lumen} \right) \right)}}{{{RT}}} \right) \right)
+```
+```math
+{Enz0_rubisco_active} =  {Enz0_rubisco} {E_CBB_active}
+```
+```math
+{vmax_v_RuBisCO_c} =  {Enz0_rubisco_active} \cdot {kcat_v_RuBisCO_c}
+```
+```math
+{Enz0_v_FBPase_active} =  {Enz0_v_FBPase} {E_CBB_active}
+```
+```math
+{vmax_v_FBPase} =  {Enz0_v_FBPase_active} \cdot {kcat_v_FBPase}
+```
+```math
+{Enz0_v_SBPase_active} =  {Enz0_v_SBPase} {E_CBB_active}
+```
+```math
+{vmax_v_SBPase} =  {Enz0_v_SBPase_active} \cdot {kcat_v_SBPase}
+```
+```math
+{Enz0_v_PRKase_active} =  {Enz0_v_PRKase} {E_CBB_active}
+```
+```math
+{vmax_v_PRKase} =  {Enz0_v_PRKase_active} \cdot {kcat_v_PRKase}
+```
+```math
+{Enz0_v_starch_active} =  {Enz0_v_starch} {E_CBB_active}
+```
+```math
+{vmax_v_starch} =  {Enz0_v_starch_active} \cdot {kcat_v_starch}
+```
+

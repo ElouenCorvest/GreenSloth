@@ -1,0 +1,141 @@
+------- Start on 2026-02-19 23:53:22.401873 -------
+
+```math
+{v_Einact} =  {kf_v_Einact} \cdot {E_CBB_active}
+```
+```math
+{v_Eact} =  {kf_v_Eact} \cdot {E_CBB_inactive} \cdot {TRX_red}
+```
+```math
+{v_3ASC} =  {kf_v_3ASC} \cdot {MDA}^{{2}}
+```
+```math
+{v_DHAR} =  \frac{{{vmax_v_DHAR} \cdot {DHA} \cdot {GSH}}}{{{K} + {{K}m_v_DHAR_DHA} \cdot {GSH} + {{K}m_v_DHAR_GSH} \cdot {DHA} + {DHA} \cdot {GSH}}}
+```
+```math
+{v_Mehler} =  {kMehler} \cdot {Y1} \cdot {O2_lumen}
+```
+```math
+{v_APXase} =  \frac{{{ASC} {H2O2} \cdot {XT}}}{{{ASC} {H2O2} \cdot \left( \frac{{1}}{{{kf3}}} + \frac{{1}}{{{kf5}}} \right) + \frac{{{ASC}}}{{{kf1}}} + \frac{{{H2O2}}}{{{kf4}}} + \frac{{{H2O2} \cdot {kr4}}}{{{kf4} \cdot {kf5}}} + \frac{{{H2O2}}}{{{kf2}}} + \frac{{{H2O2} \cdot {kr2}}}{{{kf2} \cdot {kf3}}} + \frac{{{kr1}}}{{{kf1} \cdot {kf2}}} + \frac{{{kr1} \cdot {kr2}}}{{{kf1} \cdot {kf2} \cdot {kf3}}}}}
+```
+```math
+{v_GR} =  \frac{{{vmax_v_GR} \cdot {NADPH_st} \cdot {GSSG}}}{{{km_v_GR_NADPH_st} \cdot {GSSG} + {km_v_GR_GSSG} \cdot {NADPH_st} + {NADPH_st} \cdot {GSSG} + {km_v_GR_NADPH_st} \cdot {km_v_GR_GSSG}}}
+```
+```math
+{v_MDAreduct} =  \frac{{{vmax_v_MDAreduct} \cdot {NADPH_st} \cdot {MDA}}}{{{km_v_MDAreduct_NADPH_st} \cdot {MDA} + {km_v_MDAreduct_MDA} \cdot {NADPH_st} + {NADPH_st} \cdot {MDA} + {km_v_MDAreduct_NADPH_st} \cdot {km_v_MDAreduct_MDA}}}
+```
+```math
+{v_FdTrReduc} =  {kf_v_FdTrReduc} \cdot {TRX_ox} \cdot {Fd_red}
+```
+```math
+{v_Fdred} =  {vmax_v_Fdred} \cdot {Fd_ox} \cdot {Y1} - \frac{{{vmax_v_Fdred}}}{{{keq_v_Fdred}}} \cdot {Fd_red} \cdot {Y2}
+```
+```math
+{v_NADPHcons} =  {kf_v_NADPHcons} \cdot {NADPH_st}
+```
+```math
+{v_PSI} =  \left( 1 - \m{Y0}thrm{{ps2cs}} \right) \m{Y0}thrm{{pfd}} {Y0}
+```
+```math
+{v_PGMase} =  {kre_v_PGMase} \cdot \left( {G6P} - \frac{{{G1P}}}{{{keq_v_PGMase}}} \right)
+```
+```math
+{v_PGIase} =  {kre_v_PGIase} \cdot \left( {F6P} - \frac{{{G6P}}}{{{keq_v_PGIase}}} \right)
+```
+```math
+{v_RPEase} =  {kre_v_RPEase} \cdot \left( {X5P} - \frac{{{RU5P}}}{{{keq_v_RPEase}}} \right)
+```
+```math
+{v_Rpiase} =  {kre_v_Rpiase} \cdot \left( {R5P} - \frac{{{RU5P}}}{{{keq_v_Rpiase}}} \right)
+```
+```math
+{v_TKase_R5P} =  {kre_v_TKase_R5P} \cdot \left( {GAP} \cdot {S7P} - \frac{{{R5P} \cdot {X5P}}}{{{keq_v_TKase_R5P}}} \right)
+```
+```math
+{v_Aldolase_SBP} =  {kre_v_Aldolase_SBP} \cdot \left( {DHAP} \cdot {E4P} - \frac{{{SBP}}}{{{keq_v_Aldolase_SBP}}} \right)
+```
+```math
+{v_TKase_E4P} =  {kre_v_TKase_E4P} \cdot \left( {GAP} \cdot {F6P} - \frac{{{E4P} \cdot {X5P}}}{{{keq_v_TKase_E4P}}} \right)
+```
+```math
+{v_Aldolase_FBP} =  {kre_v_Aldolase_FBP} \cdot \left( {GAP} \cdot {DHAP} - \frac{{{FBP}}}{{{keq_v_Aldolase_FBP}}} \right)
+```
+```math
+{v_TPIase} =  {kre_v_TPIase} \cdot \left( {GAP} - \frac{{{DHAP}}}{{{keq_v_TPIase}}} \right)
+```
+```math
+{v_BPGAdehynase} =  {kre_v_BPGAdehynase} \cdot \left( {BPGA} \cdot {NADPH_st} \cdot {H_stroma} - \frac{{{GAP} \cdot {NADP_st} \cdot {Pi_st}}}{{{keq_v_BPGAdehynase}}} \right)
+```
+```math
+{v_PGK1ase} =  {kre_v_PGK1ase} \cdot \left( {PGA} \cdot {ATP_st} - \frac{{{BPGA} \cdot {ADP_st}}}{{{keq_v_PGK1ase}}} \right)
+```
+```math
+{v_starch} =  \frac{{{vmax_v_starch} \cdot {G1P} \cdot {ATP_st}}}{{\left( {G1P} + {km_v_starch_G1P} \right) \left( \left( 1 + \frac{{{ADP_st}}}{{{ki_v_starch}}} \right) \left( {ATP_st} + {km_v_starch_ATP_st} \right) + \frac{{{km_v_starch_ATP_st} \cdot {Pi_st}}}{{{ki_v_starch_PGA} \cdot {PGA} + {ki_v_starch_F6P} \cdot {F6P} + {ki_v_starch_FBP} \cdot {FBP}}} \right)}}
+```
+```math
+{v_gap_ex} =  \frac{{{vmax_v_pga_ex} \cdot {GAP}}}{{{IF_3P} \cdot {km_v_gap_ex}}}
+```
+```math
+{v_dhap_ex} =  \frac{{{vmax_v_pga_ex} \cdot {DHAP}}}{{{IF_3P} \cdot {km_v_dhap_ex}}}
+```
+```math
+{v_pga_ex} =  \frac{{{vmax_v_pga_ex} \cdot {PGA}}}{{{IF_3P} \cdot {km_v_pga_ex}}}
+```
+```math
+{v_PRKase} =  \frac{{{vmax_v_PRKase} \cdot {RU5P} \cdot {ATP_st}}}{{\left( {RU5P} + {km_v_PRKase_RU5P} \cdot \left( 1 + \frac{{{PGA}}}{{{ki_v_PRKase_PGA}}} + \frac{{{RUBP}}}{{{ki_v_PRKase_RUBP}}} + \frac{{{Pi_st}}}{{{ki_v_PRKase_Pi_st}}} \right) \right) \left( {ATP_st} \cdot \left( 1 + \frac{{{ADP_st}}}{{{ki_v_PRKase_4}}} \right) + {km_v_PRKase_ATP_st} \cdot \left( 1 + \frac{{{ADP_st}}}{{{ki_v_PRKase_5}}} \right) \right)}}
+```
+```math
+{v_SBPase} =  \frac{{{vmax_v_SBPase} \cdot {SBP}}}{{{SBP} + {km_v_SBPase_s} \cdot \left( 1 + \frac{{{Pi_st}}}{{\mathrm{{k{Pi_st}}}}} \r{Pi_st}ght)}}
+```
+```math
+{v_FBPase} =  \frac{{{vmax_v_FBPase} \cdot {FBP}}}{{{FBP} + {km_v_FBPase_s} \cdot \left( 1 + \frac{{{F6P}}}{{{ki_v_FBPase_F6P}}} + \frac{{{Pi_st}}}{{{ki_v_FBPase_Pi_st}}} \right)}}
+```
+```math
+{v_RuBisCO_c} =  \frac{{{vmax_v_RuBisCO_c} \cdot {RUBP} \cdot {CO2}}}{{\left( {RUBP} + {km_v_RuBisCO_c_RUBP} \cdot \left( 1 + \frac{{{PGA}}}{{{ki_v_RuBisCO_c_PGA}}} + \frac{{{FBP}}}{{{ki_v_RuBisCO_c_FBP}}} + \frac{{{SBP}}}{{{ki_v_RuBisCO_c_SBP}}} + \frac{{{Pi_st}}}{{{ki_v_RuBisCO_c_Pi_st}}} + \frac{{{NADPH_st}}}{{{ki_v_RuBisCO_c_NADPH_st}}} \right) \right) \left( {CO2} + {km_v_RuBisCO_c_CO2} \right)}}
+```
+```math
+{v_PsbSD} =  {kf_v_PsbSD} \cdot {PsbSP}
+```
+```math
+{v_Epox} =  {kf_v_Epox} \cdot {Zx}
+```
+```math
+{v_Deepox} =  {kf_v_Deepox} \cdot \frac{{{H_lumen}^{{\mathrm{{n{H_lumen}}}}}}}{{{H_lumen}^{{\mathrm{{n{H_lumen}}}}} + \left( \mathrm{{protons\_stroma}} \left( {ksat_v_Deepox} \right) \right)^{{\mathrm{{n{H_lumen}}}}}}} {Vx}
+```
+```math
+{v_St12} =  {kStt7} \cdot \frac{{1}}{{1 + \left( \frac{{\frac{{{PQ}}}{{{PQ_tot}}}}}{{{km_v_St12}}} \right)^{{{n_ST}}}}} {LHC}
+```
+```math
+{v_St21} =  {kPph1} \cdot {LHCp}
+```
+```math
+{v_Cyc} =  {kf_v_Cyc} \cdot {Fd_red}^{{2}} \cdot {PQ}
+```
+```math
+{v_NDH} =  {kf_v_NDH} \cdot {PQ}
+```
+```math
+{v_FNR} =  \frac{{{vmax_v_FNR} \cdot \left( \left( \frac{{{Fd_red}}}{{{km_v_FNR_Fd_red}}} \right)^{{2}} \frac{{\frac{{{NADP_st}}}{{{convf}}}}}{{{km_v_FNR_NADP_st}}} - \frac{{\left( \frac{{{Fd_ox}}}{{{km_v_FNR_Fd_red}}} \right)^{{2}} \frac{{\frac{{{NADPH_st}}}{{{convf}}}}}{{{km_v_FNR_NADP_st}}}}}{{{keq_v_FNR}}} \right)}}{{\left( 1 + \frac{{{Fd_red}}}{{{km_v_FNR_Fd_red}}} + \left( \frac{{{Fd_red}}}{{{km_v_FNR_Fd_red}}} \right)^{{2}} \right) \left( 1 + \frac{{\frac{{{NADP_st}}}{{{convf}}}}}{{{km_v_FNR_NADP_st}}} \right) + \left( 1 + \frac{{{Fd_ox}}}{{{km_v_FNR_Fd_red}}} + \left( \frac{{{Fd_ox}}}{{{km_v_FNR_Fd_red}}} \right)^{{2}} \right) \left( 1 + \frac{{\frac{{{NADPH_st}}}{{{convf}}}}}{{{km_v_FNR_NADP_st}}} \right) - 1}}
+```
+```math
+{v_b6f} =  \mathrm{{cast}} \left( \mathrm{{float}}, \mathrm{{np}}.\mathrm{{maximum}} \left( {kcat_v_b6f} \cdot \left( {PQH_2} \cdot {PC_ox}^{{2}} - \frac{{{PQ} \cdot {PC_red}^{{2}}}}{{{keq_v_b6f}}} \right), -{kcat_v_b6f} \right) \right)
+```
+```math
+{v_PsbSP} =  \mat{H_lumen}rm{{k\_fwd}} \cdot \frac{{{H_lumen}^{{\mat{H_lumen}rm{{n{H_lumen}}}}}}}{{{H_lumen}^{{\mat{H_lumen}rm{{n{H_lumen}}}}} + \left( \mat{H_lumen}rm{{protons\_stroma}} \left( \mat{H_lumen}rm{{k\_p{H_lumen}\_sat}} \rig{H_lumen}t) \rig{H_lumen}t)^{{\mat{H_lumen}rm{{n{H_lumen}}}}}}} {psbS}
+```
+```math
+{v_ATPcons} =  {kf_v_ATPcons} \cdot {ATP_st}
+```
+```math
+{v_Leak} =  {kf_v_Leak} \cdot \left( {H_lumen} - \mathrm{{protons\_stroma}} \left( {pH_stroma} \right) \right)
+```
+```math
+{v_ATPsynth} =  {kf_v_ATPsynth} \cdot \left( \frac{{{ADP_st}}}{{{convf}}} - \frac{{\frac{{{ATP_st}}}{{{convf}}}}}{{{keq_v_ATPsynth}}} \right)
+```
+```math
+{v_PQ} =  {kPTOX} \cdot {PQH_2} \cdot {O2_lumen}
+```
+```math
+{v_PSII} =  0.5 {k2} \cdot {B1}
+```
+

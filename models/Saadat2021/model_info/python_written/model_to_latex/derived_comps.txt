@@ -1,0 +1,57 @@
+------- Start on 2026-02-19 23:58:57.569296 -------
+
+```math
+{pH_lumen} =  -\log_{{10}} \left( {H_lumen} \cdot 0.00025 \right)
+```
+```math
+{Zx} =  {Carotenoids_tot} - {Vx}
+```
+```math
+{Fd_red} =  {Fd_tot} - {Fd_ox}
+```
+```math
+{PC_red} =  {PC_tot} - {PC_ox}
+```
+```math
+{PsbSP} =  {PSBS_tot} - {psbS}
+```
+```math
+{LHCp} =  {LHC_tot} - {LHC}
+```
+```math
+{Q} =  {gamma0} \cdot {Vx} \cdot {psbS} + {gamma1} \cdot {Vx} \cdot {PsbSP} + {gamma2} \cdot \frac{{{Zx}}}{{{Zx} + {kZSat}}} \cdot {PsbSP} + {gamma3} \cdot \frac{{{Zx}}}{{{Zx} + {kZSat}}} \cdot {psbS}
+```
+```math
+{PQH_2} =  {PQ_tot} - {PQ}
+```
+```math
+{psIIcross} =  {staticAntII} + \left( 1 - {staticAntII} - {staticAntI} \right) {LHC}
+```
+```math
+{TRX_red} =  {Thioredoxin_tot} - {TRX_ox}
+```
+```math
+{E_CBB_active} =  {E_total} - {E_CBB_inactive}
+```
+```math
+{NADP_st} =  {NADP_tot} - {NADPH_st}
+```
+```math
+{ADP_st} =  {AP_tot} - {ATP_st}
+```
+```math
+{Pi_st} =  {Pi_tot} - \left( {PGA} + 2 {BPGA} + {GAP} + {DHAP} + 2 {FBP} + {F6P} + {G6P} + {G1P} + 2 {SBP} + {S7P} + {E4P} + {X5P} + {R5P} + 2 {RUBP} + {RU5P} + {ATP_st} \right)
+```
+```math
+{ASC} =  {ASC_tot} - {MDA} - {DHA}
+```
+```math
+{GSH} =  {Glutathion_tot} - 2 {GSSG}
+```
+```math
+{IF_3P} =  1 + \left( 1 + \frac{{{km_IF_3P_Pi_ext}}}{{{Pi_ext}}} \right) \left( \frac{{{Pi_st}}}{{{km_IF_3P_Pi_st}}} + \frac{{{PGA}}}{{{km_v_pga_ex}}} + \frac{{{GAP}}}{{{km_v_gap_ex}}} + \frac{{{DHAP}}}{{{km_v_dhap_ex}}} \right)
+```
+```math
+{Fluo} =  \frac{{{psIIcross} \cdot {kF} \cdot {B0}}}{{{kF} + {k2} + {kH} \cdot {Q}}} + \frac{{{psIIcross} \cdot {kF} \cdot {B2}}}{{{kF} + {kH} \cdot {Q}}}
+```
+
