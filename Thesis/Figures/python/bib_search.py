@@ -97,5 +97,5 @@ for side in ["top", "right"]:
 ax.set_xticks([])
 ax.set_yticks([0, 1])
 
-plt.savefig(Path(__file__).parents[1] / "fvcb_analyse.pdf")
+plt.savefig(Path(__file__).parents[1] / "fvcb_analyse.pdf", bbox_inches='tight')
     

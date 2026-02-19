@@ -1,4 +1,4 @@
-\newabbreviation[type=variable, category=variable]{vc}{\ensuremath{v_\mathrm{RuBisCO}}}{\gls{rubisco} carboxylation rate}
+\newabbreviation[type=variable, category=variable]{vc}{\ensuremath{v_\mathrm{RuBisCO|carb}}}{\gls{rubisco} carboxylation rate}
 \newabbreviation[type=variable, category=variable]{co2}{\ce{CO2}}{carbon dioxide}
 \newabbreviation[type=variable, category=variable]{ci}{\ensuremath{C_\mathrm{i}}}{intercellular \gls{co2} concentration}
 \newabbreviation[type=variable, category=variable]{A}{\ensuremath{A}}{carbon assimilation}
@@ -26,7 +26,7 @@
 \newabbreviation[type=variable, category=variable]{kzsat}{\ensuremath{K_\mathrm{ZSat}}}{half-saturation constant (relative concentration of \glsentryshort{zx}) for quenching}
 \newabbreviation[type=variable, category=variable]{kphsat}{\ensuremath{K_\mathrm{pHSat}}}{half-saturation pH for de-epoxidase activity, highest activity at pH 5.8}
 \newabbreviation[type=variable, category=variable]{kphsatlhc}{\ensuremath{K_\mathrm{pHSatLHC}}}{pKa of PsbS activation, kept the same as for VDA}
-\newabbreviation[type=variable, category=variable]{vcmax}{\ensuremath{V_\mathrm{max\|RuBisCO}}}{maximum rate of RuBisCO carboxylation}
+\newabbreviation[type=variable, category=variable]{vcmax}{\ensuremath{V_\mathrm{max|RuBisCO}}}{maximum rate of RuBisCO carboxylation}
 \newabbreviation[type=variable, category=variable]{chibeta}{\ensuremath{\chi \beta}}{turgor to conductance factor}
 \newabbreviation[type=variable, category=variable]{tau0}{\ensuremath{\tau_0}}{value of \ensuremath{\tau} in the dark}
 \newabbreviation[type=variable, category=variable]{Ki}{\ensuremath{K_{\mathrm{i}|g_\mathrm{S}}}}{time constant for increase in \ensuremath{g_\mathrm{S}}}
@@ -55,4 +55,16 @@
 \newabbreviation[type=variable, category=variable]{kcatmdareduct}{\ensuremath{k_\mathrm{MDAR}}}{turnover rate of monodehydroascorbate reductase}
 \newabbreviation[type=variable, category=variable]{kcatdhar}{\ensuremath{k_\mathrm{DHAR}}}{turnover rate of dehydroascorbate reductase}
 \newabbreviation[type=variable, category=variable]{qlact}{\ensuremath{qL_\mathrm{act}}}{regulation of \glsentryshort{kea3} activity by \glsentryshort{nadph}}
-\newabbreviation[type=variable, category=variable]{vo}{\ensuremath{v_\mathrm{o}}}{\glsentryshort{rubisco} oxygenation rate}
+\newabbreviation[type=variable, category=variable]{vo}{\ensuremath{v_\mathrm{RuBisCO|ox}}}{\glsentryshort{rubisco} oxygenation rate}
+\newabbreviation[type=variable, category=variable]{cvic}{\ensuremath{C}}{partial pressure of \glsentryshort{co2} in the vicinity of \glsentryshort{rubisco}}
+\newabbreviation[type=variable, category=variable]{wc}{\ensuremath{W_\mathrm{c}}}{\glsentryshort{vc} limited by \glsentryshort{rubisco} acivity}
+\newabbreviation[type=variable, category=variable]{wj}{\ensuremath{W_\mathrm{j}}}{\glsentryshort{vc} limited by \glsentryshort{rubp} regeneration}
+\newabbreviation[type=variable, category=variable]{wp}{\ensuremath{W_\mathrm{p}}}{\glsentryshort{vc} limited by triose phosphate utilization}
+\newabbreviation[type=variable, category=variable]{kmc}{\ensuremath{K_\mathrm{M|\glsentryshort{rubisco}|\glsentryshort{co2}}}}{michaelis-menten constant of \glsentryshort{co2} for \glsentryshort{rubisco} carboxylation}
+\newabbreviation[type=variable, category=variable]{kmo}{\ensuremath{K_\mathrm{M|\glsentryshort{rubisco}|\glsentryshort{o2}}}}{michaelis-menten constant of \glsentryshort{o2} for \glsentryshort{rubisco} oxygenation}
+\newabbreviation[type=variable, category=variable]{J}{\ensuremath{J}}{potential rate of linear electron transport to support \glsentryshort{rubp} regeneration}
+\newabbreviation[type=variable, category=variable]{alphaold}{\ensuremath{\alpha_\mathrm{old}}}{fraction of remaining glycolate carbon}
+\newabbreviation[type=variable, category=variable]{tp}{\ensuremath{T_\mathrm{p}}}{potential rate of triose phosphate utilization}
+\newabbreviation[type=variable, category=variable]{controlcoeff}{\ensuremath{C_{\glsentryshort{ststrate}}^{\glsentryshort{modelquantitiy}}}}{control coefficient of a model quantity of interest \glsentryshort{modelquantitiy} with respect to a specific steady-state rate \glsentryshort{ststrate}}
+\newabbreviation[type=variable, category=variable]{ststrate}{\ensuremath{v_i}}{specific steady-state rate used for calculating a control coefficient}
+\newabbreviation[type=variable, category=variable]{modelquantitiy}{\ensuremath{B}}{specific model quantity of interest used for calculating a control coefficient}
