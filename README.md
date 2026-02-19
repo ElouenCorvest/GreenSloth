@@ -1,4 +1,4 @@
-# GreenSloth
+# GreenSloth - Website
 
 In 2022, Elouen, the creator of GreenSloth, wrote his Bachelor's thesis about comparing the popular and simple steady-state Farquhar, von Caemmerer, and Berry Model (FvCB model) and a kinetic photosynthesis model. While searching for the other model, he searched various public sources for scientific literature and tried to recreate several models. During this time, he arrived at one conclusion: modeling, especially photosynthesis, aims to help others understand more of the essential process of life on Earth. However, the scientific community has not achieved a common way to share its models. This is where the idea of GreenSloth first came into play.
 
@@ -6,54 +6,56 @@ During his further experience with photosynthetic models, he found that this iss
 
 With GreenSloth, Elouen hopes to facilitate researchers' access to the modelling world. He believes this is vital to understanding and coping with the complexity of photosynthesis. This website will enable even better scientific transparency.
 
-## How to Use
+## What is this
 
-GreenSloth's main idea is to be made available as a website, however you can also go through this Git Repo, as all the information the website extracts, is located here. Each model can be found in the [models](./models/) directory, with their respective summaries, figure recreation, and model as a package.
+This branch of the GreenSloth repository is the code for the website, which is built using [Vite](https://vite.dev/) and plain HTML, CSS, and JavaScript. The website is hosted on an official RWTH Aachen site, and only the contact persons have access to upload the content to the WebDAV. However, the content of the website can be edited here, for later upload.
 
-## How to Contribute
+## How to Add Models
 
-As this is an open-ource project, it is greatly appreciated if anyone wants to contribute a model to GreenSloth! To do so, you can post an [issue](https://github.com/ElouenCorvest/GreenSloth/issues), where the issue template **New Model** will tell you what to do. In brief, you can submit a proposition for a model to be added to GreenSloth, however you need to formulate it in the same manner as the others models are in this repo. This will eleviate a lot of time for the maintainers, and so they only need to concentrate in perfecting the version of the model for publishing.
+Only models that have a full directory in the [models](https://github.com/ElouenCorvest/GreenSloth/tree/main/models) directory of the main branch can be added to the website. To add a model, you need to to two things:
+
+1) Fill the [models.json](./src/js/models.json) file with the new model, following the same format as the other models. You can also add new tags to the model, also new categories, if needed. Please make sure to also add the DOI of the paper, as this is important for the website and also for the users to find the original paper.
+
+```json
+"Matuszynska2016": {
+        "DOI": "https://doi.org/10.1016/j.bbabio.2016.09.003",
+        "tags": {
+            "Part of Photosynthesis": ["PSII", "ATP Synthase", "Cytochrome b6f", "PQ Cycle"],
+            "Demonstrations": ["Day Simulation", "PAM Simulation", "Photosynthesis MCA", "Fitting of NPQ"]
+        }
+    },
+```
+
+2) Duplicate any of the model HTML files in the [models](./src/html/models/) directory and rename it to the name of the new model.
+
+If the model directory on the main branch is correct, everything will be filled in correctly on the website, as the website automatically takes the information from the GitHub repository. 
+
+# How to add more stuff to the website
+
+This is where it gets complicated. As models need to be easily uploadable, the website is built in a way that it automatically takes the information from the GitHub repository. This means that most pages are created automatically, by JS. So if you wish to add more parts to the website, like new sections to models, or new comparisions, you will need to edit the JS code. Keep in mind that the website should be hands free when adding new models, so the JS code should be written in a way that it automatically takes the information from the GitHub repository, without the need to edit the code for each new model.
 
 ## How to locally start the website
 
 *This has been tested with Ubuntu 24.04.02 LTS*
 
-You first have to install [nvm](https://github.com/nvm-sh/nvm) and the latest version of [NodeJS](https://nodejs.org/en/download) and npm. Then clone this git repository and in the [website](./website/) directory you can find a bash-script to start hosting the website locally using [Vite](https://vite.dev/). This script will automatically install all the required npm packages and start it.
+You need to first install [npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/en/), which are required to run the website locally. After that, you can run the following command in the terminal, in the root directory of the website:
 
 ```console
-bash startlocal.sh
+npm install
+npm run dev -- --open
 ```
 
-***Note:** As the website automatically takes infromation from this git repo, however from the server database and not locally, you still need to have an internet connection to be able to use it.*
+## How to build for the website
 
-## How to for the devs
+To build the website for upload, you can run the following command in the terminal, in the root directory of the website:
 
-### Easy way
-
-If you have rights to access the WebDAV of the website and want to add to it please use `vite build`, by running the following `bash` script.
-
-```console
-bash startpublic.sh <optional/out/path>
-```
-
-This script has an optional argument that is the `outDir`, where the build will be generated. If you leave it blank, it will create a new directory called `public` inside the `website` directory. If you give it a path, it will build it there. Therefore, if you already have mounted the WebDAV to your file system you can automatically let it build in there and dont have to manually move the content (**and only the content**) of the `public` directory.
-
-If the script already finds a directory called `public` it will remove it before adding the new one, as this has produced an issue in the past. But you will be prompted to agree before it does it.
-
-### Not so Easy Way
-
-If you do not wish to use the bash script, you may build it yourself. To do that, run the following:
-
-```console
+```bash
+npm install
 npm run build
 ```
 
-This will create a `public` directory, which its contents can be uploaded to the website's WebDAV. To get access to the WebDAV, please ask the owner of this GitHub. Please remember to **only** copy the contents of the `public` directory.
+After building it is recommended to preview the build, so no mistakes are uploaded to the WebDAV. You can run the following command in the terminal, in the root directory of the website after building:
 
-If you already have access to the WebDAV and have also mounted it to your file system, you may also wish to directly build into it. You can also use the `vite build` script, however you need to specify a new `outDir`. You can do that with the following, please take care of the extra `--` in the middle, as these are essential and are not a typo.
-
-```console
-npm run build -- --outDir <path/to/WebDAV>
+```bash
+npm run preview
 ```
-
-If you have already run the empty script and therefore created a public directory here, you may encounter an error when wanting to choose a new `outDir`. To fix this, you must first delete the `public` folder beforehand.
