@@ -601,7 +601,7 @@ mdFile.new_paragraph(fr"""
 {RT} =  {T} \cdot {R}
 ```
 ```math
-{dG_pH} =  \log 10 \cdo{T} {R} {T}
+{dG_pH} =  \log 10 \cdot {R} {T}
 ```
 ```math
 {keq_PQH_2} =  \exp \left( \frac{{-\left( -2 \cdot -{E0_QA} {F} + -2 {E0_PQ} {F} + 2 {pH_stroma} \cdot {dG_pH} \right)}}{{{RT}}} \right)
@@ -717,7 +717,7 @@ mdFile.new_paragraph(fr"""
 {v_NADPHcons} =  {kf_v_NADPHcons} \cdot {NADPH_st}
 ```
 ```math
-{v_PSI} =  \left( 1 - \m{Y0}thrm{{ps2cs}} \right) \m{Y0}thrm{{pfd}} {Y0}
+{v_PSI} =  \left( 1 - \mathrm{{ps2cs}} \right) \mathrm{{pfd}} \cdot {Y0}
 ```
 ```math
 {v_PGMase} =  {kre_v_PGMase} \cdot \left( {G6P} - \frac{{{G1P}}}{{{keq_v_PGMase}}} \right)
@@ -768,7 +768,7 @@ mdFile.new_paragraph(fr"""
 {v_PRKase} =  \frac{{{vmax_v_PRKase} \cdot {RU5P} \cdot {ATP_st}}}{{\left( {RU5P} + {km_v_PRKase_RU5P} \cdot \left( 1 + \frac{{{PGA}}}{{{ki_v_PRKase_PGA}}} + \frac{{{RUBP}}}{{{ki_v_PRKase_RUBP}}} + \frac{{{Pi_st}}}{{{ki_v_PRKase_Pi_st}}} \right) \right) \left( {ATP_st} \cdot \left( 1 + \frac{{{ADP_st}}}{{{ki_v_PRKase_4}}} \right) + {km_v_PRKase_ATP_st} \cdot \left( 1 + \frac{{{ADP_st}}}{{{ki_v_PRKase_5}}} \right) \right)}}
 ```
 ```math
-{v_SBPase} =  \frac{{{vmax_v_SBPase} \cdot {SBP}}}{{{SBP} + {km_v_SBPase_s} \cdot \left( 1 + \frac{{{Pi_st}}}{{\mathrm{{k{Pi_st}}}}} \r{Pi_st}ght)}}
+{v_SBPase} =  \frac{{{vmax_v_SBPase} \cdot {SBP}}}{{{SBP} + {km_v_SBPase_s} \cdot \left( 1 + \frac{{{Pi_st}}}{{\mathrm{ki_v_SBPase_Pi_st}}} \right)}}
 ```
 ```math
 {v_FBPase} =  \frac{{{vmax_v_FBPase} \cdot {FBP}}}{{{FBP} + {km_v_FBPase_s} \cdot \left( 1 + \frac{{{F6P}}}{{{ki_v_FBPase_F6P}}} + \frac{{{Pi_st}}}{{{ki_v_FBPase_Pi_st}}} \right)}}
@@ -804,7 +804,7 @@ mdFile.new_paragraph(fr"""
 {v_b6f} =  \mathrm{{cast}} \left( \mathrm{{float}}, \mathrm{{np}}.\mathrm{{maximum}} \left( {kcat_v_b6f} \cdot \left( {PQH_2} \cdot {PC_ox}^{{2}} - \frac{{{PQ} \cdot {PC_red}^{{2}}}}{{{keq_v_b6f}}} \right), -{kcat_v_b6f} \right) \right)
 ```
 ```math
-{v_PsbSP} =  \mat{H_lumen}rm{{k\_fwd}} \cdot \frac{{{H_lumen}^{{\mat{H_lumen}rm{{n{H_lumen}}}}}}}{{{H_lumen}^{{\mat{H_lumen}rm{{n{H_lumen}}}}} + \left( \mat{H_lumen}rm{{protons\_stroma}} \left( \mat{H_lumen}rm{{k\_p{H_lumen}\_sat}} \rig{H_lumen}t) \rig{H_lumen}t)^{{\mat{H_lumen}rm{{n{H_lumen}}}}}}} {psbS}
+{v_PsbSP} =  \mathrm{{k\_fwd}} \cdot \frac{{{H_lumen}^{{\mathrm{{n{H_lumen}}}}}}}{{{H_lumen}^{{\mathrm{{n{H_lumen}}}}} + \left( \mathrm{{protons\_stroma}} \left( {ksat_v_PsbSP} \right) \right)^{{\mathrm{{{kh_v_PsbSP}}}}}}} {psbS}
 ```
 ```math
 {v_ATPcons} =  {kf_v_ATPcons} \cdot {ATP_st}

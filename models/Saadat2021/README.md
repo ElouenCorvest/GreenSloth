@@ -490,7 +490,7 @@ The packages required to run this model can either be installed by using the `pi
 RT =  T \cdot R
 ```
 ```math
-\Delta G _\mathrm{pH} =  \log 10 \cdoT R T
+\Delta G _\mathrm{pH} =  \log 10 \cdot R T
 ```
 ```math
 K_\mathrm{QAPQ} =  \exp \left( \frac{-\left( -2 \cdot -E^0\mathrm{(QA/QA^-)} F + -2 E^0\mathrm{(PQ/PQH_2)} F + 2 \mathrm{pH}_\mathrm{st} \cdot \Delta G _\mathrm{pH} \right)}{RT} \right)
@@ -653,7 +653,7 @@ v_{\mathrm{Fd}_{\mathrm{red}}} =  V_{\mathrm{max} \vert \mathrm{Fd_{red}}}  \cdo
 v_{\mathrm{NADPH}_\mathrm{consumption}} =  k_{\mathrm{ex}_{\mathrm{NADPH}}} \cdot \mathrm{NADPH}_\mathrm{st}
 ```
 ```math
-v_{\mathrm{PSI}} =  \left( 1 - \m\mathrm{Y_0}thrm{ps2cs} \right) \m\mathrm{Y_0}thrm{pfd} \mathrm{Y_0}
+v_{\mathrm{PSI}} =  \left( 1 - \mathrm{ps2cs} \right) \mathrm{pfd} \cdot \mathrm{Y_0}
 ```
 ```math
 v_{\mathrm{PGMase}} =  k_\mathrm{fast} \cdot \left( \mathrm{G6P} - \frac{\mathrm{G1P}}{K_\mathrm{PGMase}} \right)
@@ -704,7 +704,7 @@ v_{\mathrm{PGA,\ ex}} =  \frac{V_{\mathrm{max} \vert \mathrm{PGA,\ ex}}  \cdot \
 v_{\mathrm{PRKase}} =  \frac{V_{\mathrm{max} \vert \mathrm{PRKase}}  \cdot \mathrm{RU5P} \cdot \mathrm{ATP_{st}}}{\left( \mathrm{RU5P} + K_{\mathrm{m} \vert \mathrm{PRKase} \vert \mathrm{RU5P}} \cdot \left( 1 + \frac{\mathrm{PGA}}{K_{i \vert \mathrm{PRKase} \vert \mathrm{PGA}}} + \frac{\mathrm{RUBP}}{K_{i \vert \mathrm{PRKase} \vert \mathrm{RuBP}}} + \frac{\mathrm{P}_\mathrm{i,\ st}}{K_{i \vert \mathrm{PRKase} \vert \mathrm{Pi}}} \right) \right) \left( \mathrm{ATP_{st}} \cdot \left( 1 + \frac{\mathrm{ADP_{st}}}{K_{i \vert \mathrm{unc} \vert \mathrm{PRKase} \vert \mathrm{Pi}}} \right) + K_{\mathrm{m} \vert \mathrm{PRKase} \vert \mathrm{ATP}} \cdot \left( 1 + \frac{\mathrm{ADP_{st}}}{K_{i \vert \mathrm{com} \vert \mathrm{PRKase} \vert \mathrm{Pi}}} \right) \right)}
 ```
 ```math
-v_{\mathrm{SBPase}} =  \frac{V_{\mathrm{max} \vert \mathrm{SBPase}}  \cdot \mathrm{SBP}}{\mathrm{SBP} + K_{\mathrm{m} \vert \mathrm{SBPase}}  \cdot \left( 1 + \frac{\mathrm{P}_\mathrm{i,\ st}}{\mathrm{k\mathrm{P}_\mathrm{i,\ st}}} \r\mathrm{P}_\mathrm{i,\ st}ght)}
+v_{\mathrm{SBPase}} =  \frac{V_{\mathrm{max} \vert \mathrm{SBPase}}  \cdot \mathrm{SBP}}{\mathrm{SBP} + K_{\mathrm{m} \vert \mathrm{SBPase}}  \cdot \left( 1 + \frac{\mathrm{P}_\mathrm{i,\ st}}{\mathrmK_{i \vert \mathrm{SBPase} \vert \mathrm{Pi}}} \right)}
 ```
 ```math
 v_{\mathrm{FBPase}} =  \frac{V_{\mathrm{max} \vert \mathrm{FBPase}}  \cdot \mathrm{FBP}}{\mathrm{FBP} + K_{\mathrm{m} \vert \mathrm{FBPase}}  \cdot \left( 1 + \frac{\mathrm{F6P}}{K_{i \vert \mathrm{FBPase} \vert \mathrm{F6P}}} + \frac{\mathrm{P}_\mathrm{i,\ st}}{K_{i \vert \mathrm{FBPase} \vert \mathrm{Pi}}} \right)}
@@ -740,7 +740,7 @@ v_{\mathrm{FNR}} =  \frac{V_{\mathrm{max} \vert \mathrm{FNR}}  \cdot \left( \lef
 v_{\mathrm{b6f}} =  \mathrm{cast} \left( \mathrm{float}, \mathrm{np}.\mathrm{maximum} \left( k_\mathrm{Cytb6f} \cdot \left( \mathrm{PQH}_2 \cdot \mathrm{PC}_\mathrm{ox}^{2} - \frac{\mathrm{PQ} \cdot \mathrm{PC}_\mathrm{red}^{2}}{K_\mathrm{cytb6f}} \right), -k_\mathrm{Cytb6f} \right) \right)
 ```
 ```math
-v_{\mathrm{Psbs^P}} =  \mat\mathrm{H_{lu}}rm{k\_fwd} \cdot \frac{\mathrm{H_{lu}}^{\mat\mathrm{H_{lu}}rm{n\mathrm{H_{lu}}}}}{\mathrm{H_{lu}}^{\mat\mathrm{H_{lu}}rm{n\mathrm{H_{lu}}}} + \left( \mat\mathrm{H_{lu}}rm{protons\_stroma} \left( \mat\mathrm{H_{lu}}rm{k\_p\mathrm{H_{lu}}\_sat} \rig\mathrm{H_{lu}}t) \rig\mathrm{H_{lu}}t)^{\mat\mathrm{H_{lu}}rm{n\mathrm{H_{lu}}}}} \mathrm{psbS}
+v_{\mathrm{Psbs^P}} =  \mathrm{k\_fwd} \cdot \frac{\mathrm{H_{lu}}^{\mathrm{n\mathrm{H_{lu}}}}}{\mathrm{H_{lu}}^{\mathrm{n\mathrm{H_{lu}}}} + \left( \mathrm{protons\_stroma} \left( K_\mathrm{pHSatLHC} \right) \right)^{\mathrm{{\mathrm{nH}_\mathrm{PsbS}}}}} \mathrm{psbS}
 ```
 ```math
 v_{\mathrm{ATP}_{\mathrm{consumption}}} =  k_{\mathrm{ex}_{\mathrm{ATP}}} \cdot \mathrm{ATP_{st}}
