@@ -69,7 +69,7 @@ PQ = remove_math(derived_comps_table, r"$\mathrm{PQ}$")
 ADP_st = remove_math(derived_comps_table, r"$\mathrm{ADP}$")
 PsbSP = remove_math(derived_comps_table, r"$\mathrm{PsbS^P}$")
 Zx = remove_math(derived_comps_table, r"$\mathrm{Zx}$")
-Q = remove_math(derived_comps_table, r"")
+Q = remove_math(derived_comps_table, r"$Q$")
 B0 = remove_math(derived_comps_table, r"$\mathrm{B_0}$")
 B1 = remove_math(derived_comps_table, r"$\mathrm{B_1}$")
 B2 = remove_math(derived_comps_table, r"$\mathrm{B_2}$")
@@ -381,6 +381,8 @@ Sample simulation of a day cycle using real Photosynthetic Photon Flux Density (
 
 **Notes:**
 
+The model only includes the Fluorescence.
+
 </details>
 """)
 
@@ -437,6 +439,8 @@ Sample simulation of a common Pulse Amplitude Modulation (PAM) protocol to show 
 
 **Notes:**
 
+No NPQ, therefore calculated from fluorescnece
+
 </details>
 """)
 
@@ -459,27 +463,27 @@ A sample Metabolic Control Analysis (MCA) of typical photosynthesis variables an
 
 | Coefficient                   | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{{PSII}}$             | None|
+| $\mathrm{{PSII}}$             | {k_P}|
 | $\mathrm{{PSI}}$              | None |
 | $\mathrm{{RuBisCO \vert C}}$  | None |
-| $\mathrm{{cytb6f}}$           | None              |
-| $\mathrm{{ATPsynthase}}$      | None              |
+| $\mathrm{{cytb6f}}$           | {k_Cytb6f}              |
+| $\mathrm{{ATPsynthase}}$      | {k_ATPsynth}              |
 
 | Flux                          | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{{PSII}}$             | None |
+| $\mathrm{{PSII}}$             | {v_PSII} |
 | $\mathrm{{PSI}}$              | None |
 | $\mathrm{{RuBisCO \vert C}}$  | None |
-| $\mathrm{{cytb6f}}$           | None              |
-| $\mathrm{{ATPsynthase}}$      | None              |
+| $\mathrm{{cytb6f}}$           | {v_PQ}              |
+| $\mathrm{{ATPsynthase}}$      | {v_ATPsynth}              |
 
 | Variable                  | In Model      |
 | -----------               | -----------   |
 | $\mathrm{{CO_2}}$         | None       |
 | $\mathrm{{RUBP}}$         | None      |
-| $\mathrm{{PQ_{{ox}}}}$    | None          |
+| $\mathrm{{PQ_{{ox}}}}$    | {PQ}          |
 | $\mathrm{{PC_{{ox}}}}$    | None          |
-| $\mathrm{{ATP}}$          | None    |
+| $\mathrm{{ATP}}$          | {ATP_st}    |
 | $\mathrm{{NADPH}}$        | None  |
 
 </details>
@@ -501,6 +505,8 @@ Sample fitting to experimental Non-Photochemical Quenching (NPQ) data. The NPQ d
 - If $F_\mathrm{{m}}$ is found and NPQ is not present, NPQ is calculated using the formula: $NPQ_t = \frac{{F_{{\mathrm{{m}}\vert t=0}} - F_{{\mathrm{{m}} \vert t}}}}{{F_{{\mathrm{{m}} \vert t}}}}$
 
 **Notes:**
+
+The {gamma_0}, {gamma_1}, {gamma_2}, {gamma_3}, and {K_ZSat} parameters were fitted
 
 </details>
 """)

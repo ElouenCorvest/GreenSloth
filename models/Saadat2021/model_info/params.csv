@@ -68,15 +68,15 @@ Rate constant for photochemistry,$k_2$,$k_2$,$5 \times 10^9$,$\mathrm{s}^{-1}$,k
 Rate of non-radiative decay,$k_H$,$k_H$,$5 \times 10^9$,$\mathrm{s}^{-1}$,kH,https://doi.org/10.1098/rstb.2013.0223
 Rate of fluorescence,$k_F$,$k_F$,$6.25 \times 10^8$,$\mathrm{s}^{-1}$,kF,
 Estimated rate constant for summarized hydrogen peroxide production,$k_{\mathrm{Mehler}}$,$k_{\mathrm{Mehler}}$,$1.0$,$\mathrm{mM}^{-1}\ \mathrm{s}^{-1}$,kMehler,
-,,,,,Enz0_v_Fdred,
-,,,,,kcat_v_Fdred,
+,$\mathrm{E_{Fdred}}$,$\mathrm{E_{Fdred}}$,,,Enz0_v_Fdred,
+,$k_{\mathrm{cat}|\mathrm{Fdred}}$,$k_{\mathrm{cat}_\mathrm{Fdred}}$,,,kcat_v_Fdred,
 Rate constant of proton leak,$k_\mathrm{Leak}$,$k_\mathrm{leak}$,$10.0$,$\mathrm{s}^{-1}$,kf_v_Leak,https://doi.org/10.1098/rstb.2013.0223
 ,$k_\mathrm{PTOX}$,$k_\mathrm{PTOX}$,$0.01$,$\left(\mathrm{mol\ Chl}\right)\ \mathrm{mmol}^{-1}\ \mathrm{s}^{-1}$ ,kPTOX,https://doi.org/10.1098/rstb.2013.0223
 Rate of phosphorylation of state transition from PSII to PSI,$k_\mathrm{Stt7}$,$k_\mathrm{Stt7}$,$0.0035$,$\mathrm{s}^{-1}$,kStt7,https://doi.org/10.1098/rstb.2013.0223
 Switch point (half-activity of Stt7) for 20% PQ oxidised,$K_{\mathrm{M}_\mathrm{ST}}$,$K_{\mathrm{M}_\mathrm{ST}}$,$0.2$,,km_v_St12,https://doi.org/10.1098/rstb.2013.0223
 Hill coefficient of State transtion from PSII to PSI,$n_\mathrm{ST}$,$n_\mathrm{ST}$,$2.0$,,n_ST,https://doi.org/10.1098/rstb.2013.0223
 Rate of dephosphorylation of state transition from PSI to PSII,$k_\mathrm{Pph1}$,$k_\mathrm{Pph1}$,$0.0013$,$\mathrm{s}^{-1}$,kPph1,https://doi.org/10.1098/rstb.2013.0223
-,,,,,Enz0_rubisco,
+,$\mathrm{E_{RuBisCO}}$,$\mathrm{E_{Rubisco}}$,,,Enz0_rubisco,
 Base $V_\mathrm{max}$ of RuBisCO,"$V_{\mathrm{max,\ base}_{\mathrm{RuBisCO}}}$",$V_{1_{\mathrm{base}}}$,$0.34 \cdot 8$,$\mathrm{mM}\ s^{-1}$,kcat_v_RuBisCO_c,
 Michaelis Menten constant of RuBisCO for RUBP,$K_{\mathrm{m}|\mathrm{RuBisCO}|\mathrm{RUBP}}$,$K_{\mathrm{m}1}$,$0.02$,$\mathrm{mM}$,km_v_RuBisCO_c_RUBP,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x
 Michaelis Menten constant of RuBisCO for CO2,$K_{\mathrm{m}|\mathrm{RuBisCO}|\mathrm{CO_2}}$,$K_{\mathrm{mCO2}}$,$0.0107$,$\mathrm{mM}$,km_v_RuBisCO_c_CO2,https://doi.org/10.1111/j.1432-1033.1988.tb14242.x

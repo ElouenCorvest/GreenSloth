@@ -72,7 +72,7 @@ The packages required to run this model can either be installed by using the `pi
 |Stromal ADP concentration|$\mathrm{ADP_{st}}$|$\mathrm{ADP}$|C00008|ADP_st|ADP|
 |Concentration of protonated psbS protein|$\mathrm{psbS^P}$|$\mathrm{PsbS^P}$|K03542|PsbSP|Pnr|
 |Zeaxanthin concentration|$\mathrm{Zx}$|$\mathrm{Zx}$|C06098|Zx|Z|
-|Co-operative 4-state quenching mechanism|$\mathrm{Q}$|||Q|Q|
+|Co-operative 4-state quenching mechanism|$\mathrm{Q}$|$Q$||Q|Q|
 |Initial state of PSII|$\mathrm{B_0}$|$\mathrm{B_0}$|M00161|B0|B0|
 |Excited state of PSII|$\mathrm{B_1}$|$\mathrm{B_1}$|M00161|B1|B1|
 |Charge seperation state of PSII|$\mathrm{B_2}$|$\mathrm{B_2}$|M00161|B2|B2|
@@ -315,6 +315,8 @@ Sample simulation of a day cycle using real Photosynthetic Photon Flux Density (
 
 **Notes:**
 
+The model only includes the Fluorescence.
+
 </details>
 
 
@@ -371,6 +373,8 @@ Sample simulation of a common Pulse Amplitude Modulation (PAM) protocol to show 
 
 **Notes:**
 
+No NPQ, therefore calculated from fluorescnece
+
 </details>
 
 
@@ -393,27 +397,27 @@ A sample Metabolic Control Analysis (MCA) of typical photosynthesis variables an
 
 | Coefficient                   | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{PSII}$             | None|
+| $\mathrm{PSII}$             | k_P|
 | $\mathrm{PSI}$              | None |
 | $\mathrm{RuBisCO \vert C}$  | None |
-| $\mathrm{cytb6f}$           | None              |
-| $\mathrm{ATPsynthase}$      | None              |
+| $\mathrm{cytb6f}$           | k_{\mathrm{Cytb6f}}              |
+| $\mathrm{ATPsynthase}$      | k_{\mathrm{ATPsynthase}}              |
 
 | Flux                          | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{PSII}$             | None |
+| $\mathrm{PSII}$             | v_{\mathrm{PSII}} |
 | $\mathrm{PSI}$              | None |
 | $\mathrm{RuBisCO \vert C}$  | None |
-| $\mathrm{cytb6f}$           | None              |
-| $\mathrm{ATPsynthase}$      | None              |
+| $\mathrm{cytb6f}$           | v_{\mathrm{PQ}_{\mathrm{ox}}}              |
+| $\mathrm{ATPsynthase}$      | v_{\mathrm{ATPsynthase}}              |
 
 | Variable                  | In Model      |
 | -----------               | -----------   |
 | $\mathrm{CO_2}$         | None       |
 | $\mathrm{RUBP}$         | None      |
-| $\mathrm{PQ_{ox}}$    | None          |
+| $\mathrm{PQ_{ox}}$    | \mathrm{PQ}          |
 | $\mathrm{PC_{ox}}$    | None          |
-| $\mathrm{ATP}$          | None    |
+| $\mathrm{ATP}$          | \mathrm{ATP_{st}}    |
 | $\mathrm{NADPH}$        | None  |
 
 </details>
@@ -435,5 +439,7 @@ Sample fitting to experimental Non-Photochemical Quenching (NPQ) data. The NPQ d
 - If $F_\mathrm{m}$ is found and NPQ is not present, NPQ is calculated using the formula: $NPQ_t = \frac{F_{\mathrm{m}\vert t=0} - F_{\mathrm{m} \vert t}}{F_{\mathrm{m} \vert t}}$
 
 **Notes:**
+
+The \gamma_0, \gamma_1, \gamma_2, \gamma_3, and K_\mathrm{ZSat} parameters were fitted
 
 </details>

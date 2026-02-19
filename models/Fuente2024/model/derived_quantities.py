@@ -24,7 +24,7 @@ def _rcii_open(k1p: float, PQ_ox: float, sigma_PSII: float, k1m: float, PQ_red: 
     return k1p * PQ_ox / ((sigma_PSII + k1m * PQ_red) + k1p * PQ_ox)
 
 def _flourescence(Fluo_0: float, RCII_closed: float, sigma_PSII: float) -> float:
-    return Fluo_0 + RCII_closed * sigma_PSII
+    return (Fluo_0 + RCII_closed) * sigma_PSII
 
 def _npq(npq_max: float, q_active: float):
     return npq_max * q_active /(1 - npq_max * q_active)
