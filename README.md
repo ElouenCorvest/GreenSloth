@@ -6,54 +6,46 @@ During his further experience with photosynthetic models, he found that this iss
 
 With GreenSloth, Elouen hopes to facilitate researchers' access to the modelling world. He believes this is vital to understanding and coping with the complexity of photosynthesis. This website will enable even better scientific transparency.
 
-## How to Use
+## What is this
 
-GreenSloth's main idea is to be made available as a website, however you can also go through this Git Repo, as all the information the website extracts, is located here. Each model can be found in the [models](./models/) directory, with their respective summaries, figure recreation, and model as a package.
+All the models in the ecosystem of GreenSloth are found in this repository. Each model has its own directory, with a specific structure. The overarching name is the last Name of the first author and the date of publication of the model. This directory is best created using the [GreenSlothUtils](https://github.com/ElouenCorvest/GreenSlothUtils), as it will automatically use the name provided and insert it in the right places. Inside the model directory, you can find the following:
+
+```bash
+Corvest2000
+├── figures
+│   ├── demonstrations.ipynb
+│   └── paper_figures.ipynb
+├── model  
+│   ├── __init__.py
+│   ├── derived_quantities.py
+│   ├── rates.py
+│   └── basic_funcs.py
+├── model_info
+│   ├── comps.csv
+│   ├── derived_comps.csv
+│   ├── derived_params.csv
+│   ├── params.csv
+│   ├── rates.csv
+│   ├── model_glosses
+│   └── python_written
+│       ├── gloss_to_python
+│       └── model_to_latex
+│ 
+└── README_script.py
+```
+
+The `figures` directory includes the template Jupyter Notebooks for the recreations of the figures of the original paper and for demonstrations of the model.
+
+The `model` directory includes the Python code of the model, which is seperated into different files for better readability. The `__init__.py` file is the main file, which imports the other files and contains the main function of the model. The `derived_quantities.py` file contains the derived quantities of the model, and the `rates.py` file contains the rates of the model. The `basic_funcs.py` file contains the basic functions of the model, which are used in the other files.
+
+The `model_info` directory contains all the information about the model. The `.csv` files need to be filled with the information of the model, which is used in the README file. The comps and rates can be helped by the addition of the Glossary IDs. The `model_glosses` directory is filled after usage of the `GreenSlothUtils` to create the glossaries extracted from the model. The `python_written` directory contains pointers to be copied over to the README script, which are created by `GreenSlothUtils` from the model. 
+
+The `README_script.py` file is the script that generates the README file of the model, which is the main file that is shown on the website. This script needs to be filled with the python variables, latex equations, summary, figure recreations, and demontrations of the model. The script is then run, which generates the README file.
 
 ## How to Contribute
 
-As this is an open-ource project, it is greatly appreciated if anyone wants to contribute a model to GreenSloth! To do so, you can post an [issue](https://github.com/ElouenCorvest/GreenSloth/issues), where the issue template **New Model** will tell you what to do. In brief, you can submit a proposition for a model to be added to GreenSloth, however you need to formulate it in the same manner as the others models are in this repo. This will eleviate a lot of time for the maintainers, and so they only need to concentrate in perfecting the version of the model for publishing.
+To create a new model directory to be then included here, the best way is to follow the instructions in the [GreenSlothUtils](https://github.com/ElouenCorvest/GreenSlothUtils). This will automatically create the directory with the right structure and also fill in some of the files with the right information. After that, you can fill in the rest of the files with the information of the model. The README script is the most important file, as it generates the README file that is shown on the website. Therefore, it needs to be filled with care and attention to detail.
 
-## How to locally start the website
+Once the model directory is created and everything is filled out, you can create a pull request to this repository, which whill then be reviewed and merged by the maintainers of this repository. If your model directory follows the same format as the other model directories, it can be accepted. if it does not follow the same format, it will be sent back to you with comments on what needs to be changed.
 
-*This has been tested with Ubuntu 24.04.02 LTS*
-
-You first have to install [nvm](https://github.com/nvm-sh/nvm) and the latest version of [NodeJS](https://nodejs.org/en/download) and npm. Then clone this git repository and in the [website](./website/) directory you can find a bash-script to start hosting the website locally using [Vite](https://vite.dev/). This script will automatically install all the required npm packages and start it.
-
-```console
-bash startlocal.sh
-```
-
-***Note:** As the website automatically takes infromation from this git repo, however from the server database and not locally, you still need to have an internet connection to be able to use it.*
-
-## How to for the devs
-
-### Easy way
-
-If you have rights to access the WebDAV of the website and want to add to it please use `vite build`, by running the following `bash` script.
-
-```console
-bash startpublic.sh <optional/out/path>
-```
-
-This script has an optional argument that is the `outDir`, where the build will be generated. If you leave it blank, it will create a new directory called `public` inside the `website` directory. If you give it a path, it will build it there. Therefore, if you already have mounted the WebDAV to your file system you can automatically let it build in there and dont have to manually move the content (**and only the content**) of the `public` directory.
-
-If the script already finds a directory called `public` it will remove it before adding the new one, as this has produced an issue in the past. But you will be prompted to agree before it does it.
-
-### Not so Easy Way
-
-If you do not wish to use the bash script, you may build it yourself. To do that, run the following:
-
-```console
-npm run build
-```
-
-This will create a `public` directory, which its contents can be uploaded to the website's WebDAV. To get access to the WebDAV, please ask the owner of this GitHub. Please remember to **only** copy the contents of the `public` directory.
-
-If you already have access to the WebDAV and have also mounted it to your file system, you may also wish to directly build into it. You can also use the `vite build` script, however you need to specify a new `outDir`. You can do that with the following, please take care of the extra `--` in the middle, as these are essential and are not a typo.
-
-```console
-npm run build -- --outDir <path/to/WebDAV>
-```
-
-If you have already run the empty script and therefore created a public directory here, you may encounter an error when wanting to choose a new `outDir`. To fix this, you must first delete the `public` folder beforehand.
+After acceptance, the maintainers will then add the model to the website, which can take some time.
