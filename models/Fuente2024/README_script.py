@@ -292,15 +292,41 @@ mdFile.new_header(3, "Figures")
 
 mdFile.new_paragraph("""You can find the recreation of the figures from the original publication below. Due to differing copyright reasons the original figures cannot be included in this README file. Instead, the comparision has to be made using the original publication.""")
 
-# mdFile.new_paragraph(rf"""
+mdFile.new_paragraph(rf"""
                      
-# <details>
-# <summary>Figure </summary>
+<details>
+<summary>Figure 2</summary>
                      
-# <img style='float: center' src=''>
+<img style='float: center' src='figures/{model_title.lower()}_fig2.svg' alt='Figure 2' width='600'/>
 
-# </details>
-# """)
+The light intensity used in the simulation is oscillating between $50 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ and $950 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ with a frequency of 1/10000 $\mathrm{{{{s}}^{{-1}}}}$. as seen in the upper left plot. The ascent of light is shown in yellow, while the descent is shown in blue. The results shown are the lumenal pH (middle left), the ratio of Adenosine Triphosphate (ATP) in the stroma to the total adenylate stromal concentration (APtot ) (bottom left), the oxidised plastoquinone (PQox ) (top right), the activated PSII quencher (Qactive) (middle right), and the fraction of PSI donors per RCII that are available for the linear electron transport (PSIox) (bottom right). To calculate the lumenal pH, the following equation was used: $\mathrm{{pH_{{lu}}}} = -\log _{{10}} \left( \mathrm{{H^{{+}}}} \cdot 10^{{-6}} \right)$. The simulation is run with the default parameters. It extends to 40 000 s, whereas only the last 20 000 s are shown in the figure. This figure is recreated from figure 2 of the original publication of the Fuente2024 model.
+
+</details>
+""")
+
+mdFile.new_paragraph(rf"""
+                     
+<details>
+<summary>Figure 3</summary>
+                     
+<img style='float: center' src='figures/{model_title.lower()}_fig3.svg' alt='Figure 3' width='600'/>
+
+A steady-state scan of light intensities, from $0 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ to $1000 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ was done. The left plot shows the ratio of Adenosine Triphosphate (ATP) in the stroma to the total adenylate stromal concentration (APtot ) (green), the activated PSII quencher (Qactive ) (yellow), the lumenal pH (black), the ratio of the fraction of PSI donors per RCII that are available for the linear electron transport (PSIox ) to the total PSI (PSItot ) (orange), and the ratio of oxidised plastoquinone (PQox ) to the total plastoquinone (PQtot ). To calculate the lumenal pH, the following equation was used: $\mathrm{{pH_{{lu}}}} = -\log _{{10}} \left( \mathrm{{H^{{+}}}} \cdot 10^{{-6}} \right)$ The right plot shows the O2 evolution (black), the Non-Photochemical Quenching (NPQ) (yellow), and the chlorophyll fluorescence (F ) (blue), all directly taken from the simulation results. Note the two different y-axes on both plots to showcase different scales. The simulations are run with default parameters, with the oscillating light mechanism removed by setting the oscillation amplitude to zero. The light intensity is then input as a constant value for each simulation. This figure is recreated from Figure 3 of the original publication of the Fuente2024 model.
+
+</details>
+""")
+
+mdFile.new_paragraph(rf"""
+                     
+<details>
+<summary>Figure 4</summary>
+                     
+<img style='float: center' src='figures/{model_title.lower()}_fig4.svg' alt='Figure 4' width='600'/>
+
+Different simulations were done using different settings of the light oscillation. Each row of plots correspond to a different frequency used in the oscillation, with 1/10000 $\mathrm{{s^{{-1}}}}$, 1/1000 $\mathrm{{s^{{-1}}}}$, 1/100 $\mathrm{{s^{{-1}}}}$, 1 $\mathrm{{s^{{-1}}}}$, 1 / 0.1 $\mathrm{{s^{{-1}}}}$, 1 / 0.001 $\mathrm{{s^{{-1}}}}$, from top to bottom. Additionally, each frequency was simulated twice with differing amplitudes 0.001 s of oscillation. The oscillation was either between $50 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ and $950 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (solid) or between $50 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ and $150 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (dashed). The ascent of light is shown in yellow, while the descent is shown in blue. The results shown are the oxidised plastoquinone (PQox), the lumenal pH, the activated PSII quencher (Qactive ), the ratio of Adenosine Triphosphate (ATP) in the stroma, and the the fraction of PSI donors per RCII that are available for the linear electron transport (PSIox), from left to right. To calculate the lumenal pH, the following equation was used: $\mathrm{{pH_{{lu}}}} = -\log _{{10}} \left( \mathrm{{H^{{+}}}} \cdot 10^{{-6}} \right)$. The simulations are run using the default parameters, while changing the settings of the light oscillation as described. This figure is recreated from figure 4 of the original publication of the Fuente2024 model.
+
+</details>
+""")
 
 mdFile.new_header(3, "Demonstrations")
 
@@ -314,6 +340,8 @@ mdFile.new_paragraph(rf"""
 Sample simulation of a day cycle using real Photosynthetic Photon Flux Density (PPFD) data from Kansas, USA on June 19, 2023. The data was obtained from the National Ecological Observatory Network (NEON) data portal and is used to create a protocol for the light intensity PPFD over the course of the day, in a minute interval. The data used is filtered to only show a PPFD that equals or is higher than $40 \mathrm{{µmol\ m^{{−2}}\ s^{{−1}}}}$. This threshold is chosen as it has shown to allow most models to still simulate the photosynthetic machinery, while still being a decent representation of the actual daylight conditions. The simulation is run using the default parameters and initial conditions of each model, and the RuBisCO carboxylation rate (vRuBisCO), Adenosine Triphosphate (ATP) and Nicotinamide Adenine Dinucleotide Phosphate (NADPH) ratio, and fluorescence (F) results is plotted over the course of the day, if possible. The results do not represent actual plant behavior, but show the capabilities of the model to simulate complex and more realistic light protocols.
 
 **Notes:**
+
+Only fluorescence in this simulation.
 
 </details>
 """)
@@ -371,6 +399,8 @@ Sample simulation of a common Pulse Amplitude Modulation (PAM) protocol to show 
 
 **Notes:**
 
+Both fluorescence and NPQ are  present in the model
+
 </details>
 """)
 
@@ -393,16 +423,16 @@ A sample Metabolic Control Analysis (MCA) of typical photosynthesis variables an
 
 | Coefficient                   | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{{PSII}}$             | None|
-| $\mathrm{{PSI}}$              | None |
+| $\mathrm{{PSII}}$             | {k1p}|
+| $\mathrm{{PSI}}$              | {stoic_PSI} |
 | $\mathrm{{RuBisCO \vert C}}$  | None |
 | $\mathrm{{cytb6f}}$           | None              |
 | $\mathrm{{ATPsynthase}}$      | None              |
 
 | Flux                          | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{{PSII}}$             | None |
-| $\mathrm{{PSI}}$              | None |
+| $\mathrm{{PSII}}$             | {v_PSII_PQ} |
+| $\mathrm{{PSI}}$              | {v_PSI} |
 | $\mathrm{{RuBisCO \vert C}}$  | None |
 | $\mathrm{{cytb6f}}$           | None              |
 | $\mathrm{{ATPsynthase}}$      | None              |
@@ -411,9 +441,9 @@ A sample Metabolic Control Analysis (MCA) of typical photosynthesis variables an
 | -----------               | -----------   |
 | $\mathrm{{CO_2}}$         | None       |
 | $\mathrm{{RUBP}}$         | None      |
-| $\mathrm{{PQ_{{ox}}}}$    | None          |
+| $\mathrm{{PQ_{{ox}}}}$    | {PQ}          |
 | $\mathrm{{PC_{{ox}}}}$    | None          |
-| $\mathrm{{ATP}}$          | None    |
+| $\mathrm{{ATP}}$          | {ATP_st}    |
 | $\mathrm{{NADPH}}$        | None  |
 
 </details>
@@ -435,6 +465,8 @@ Sample fitting to experimental Non-Photochemical Quenching (NPQ) data. The NPQ d
 - If $F_\mathrm{{m}}$ is found and NPQ is not present, NPQ is calculated using the formula: $NPQ_t = \frac{{F_{{\mathrm{{m}}\vert t=0}} - F_{{\mathrm{{m}} \vert t}}}}{{F_{{\mathrm{{m}} \vert t}}}}$
 
 **Notes:**
+
+{NPQ_max} and {k4} are the parameters fitted.
 
 </details>
 """)
