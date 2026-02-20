@@ -262,6 +262,36 @@ Different simulations were done using different settings of the light oscillatio
 
 </details>
 
+
+
+                     
+<details>
+<summary>Figure 5</summary>
+
+Because chlorophyll fluorescence could not simulate correctly this figure could not be recreated.
+
+</details>
+
+
+
+                     
+<details>
+<summary>Figure 6</summary>
+
+Because chlorophyll fluorescence could not simulate correctly this figure could not be recreated.
+
+</details>
+
+
+
+                     
+<details>
+<summary>Figure 7</summary>
+
+Because chlorophyll fluorescence could not simulate correctly this figure could not be recreated.
+
+</details>
+
 ### Demonstrations
 
 
