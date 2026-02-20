@@ -30,7 +30,7 @@ Ratio of protons to ATP in ATP synthase,$\mathrm{HPR}$,$\mathrm{HPR}$,$\frac{14}
 Normalized maximal rate of ATP synthase,$V_\mathrm{max|ATPsynth}$,$V_\mathrm{max|ATPsynth}$,$200$,$\mathrm{s}^{-1}$,Vmax_ATPsynth,
 The proton buffering capacity of the lumen in M/pH unit,$b_\mathrm{H}$,$\mathrm{Buffering\ capacity}$,$0.014$,$\mathrm{M}\ \left( \mathrm{pH\ unit} \right)^{-1}$,b_H,
 The capcitance of the thylakoid expressed as V/charge/PSII,$vpc$,$\mathrm{Volts\_per\_charge}$,$0.047$,$\mathrm{V}$,vpc,
-The rate constant for ZE (zeaxanthin epoxidase),$k_\mathrm{kEpoxZ}$,$k_\mathrm{ZE},$0.004$,$\mathrm{s}^{-1}$,k_EZ,
+The rate constant for ZE (zeaxanthin epoxidase),$k_\mathrm{kEpoxZ}$,$k_\mathrm{ZE}$,$0.004$,$\mathrm{s}^{-1}$,k_EZ,
 The Hill coefficient for protonation of VDE,$nh_\mathrm{VDE}$,$\mathrm{Hill_{VDE}}$,$4$,,nh_VDE,
 The pKa for protonation and activation of VDE,$\mathrm{pK_{a|VDE}}$,$\mathrm{pK_{VDE}}$,$5.65$,,pKa_VDE,
 The maximal turnover of the fully protonated VDE enzyme,$V_\mathrm{max|VDE}$,$V_{max}\left( \mathrm{VDE} \right)$,$0.08$,$\mathrm{s}^{-1}$,Vmax_VDE,

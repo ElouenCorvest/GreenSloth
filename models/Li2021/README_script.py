@@ -96,7 +96,7 @@ v_NDH = remove_math(rates_table, r'$v_{NDH}$')
 v_PGR = remove_math(rates_table, r'$v_{PGR}$')
 PSI_ChSep = remove_math(rates_table, r'$PSI_{charge}$')
 v_PSI_PCoxid = remove_math(rates_table, r'$PSI_{PC\_oxidiation}$')
-v_FNR = remove_math(rates_table, r'')
+v_FNR = remove_math(rates_table, r'$v_{NADPH}$')
 v_Mehler = remove_math(rates_table, r'$v_{Mehler}$')
 v_CBB = remove_math(rates_table, r'$v_{CBB}$')
 v_KEA3 = remove_math(rates_table, r'$v_{KEA3}$')
@@ -141,7 +141,7 @@ HPR = remove_math(params_table, r'$\mathrm{HPR}$')
 Vmax_ATPsynth = remove_math(params_table, r'$V_\mathrm{max|ATPsynth}$')
 b_H = remove_math(params_table, r'$\mathrm{Buffering\ capacity}$')
 vpc = remove_math(params_table, r'$\mathrm{Volts\_per\_charge}$')
-k_EZ = remove_math(params_table, r'$k_\mathrm{ZE}')
+k_EZ = remove_math(params_table, r'$k_\mathrm{ZE}$')
 nh_VDE = remove_math(params_table, r'$\mathrm{Hill_{VDE}}$')
 pKa_VDE = remove_math(params_table, r'$\mathrm{pK_{VDE}}$')
 Vmax_VDE = remove_math(params_table, r'$V_{max}\left( \mathrm{VDE} \right)$')
@@ -414,15 +414,41 @@ mdFile.new_header(3, "Figures")
 
 mdFile.new_paragraph("""You can find the recreation of the figures from the original publication below. Due to differing copyright reasons the original figures cannot be included in this README file. Instead, the comparision has to be made using the original publication.""")
 
-# mdFile.new_paragraph(rf"""
+mdFile.new_paragraph(rf"""
                      
-# <details>
-# <summary>Figure </summary>
+<details>
+<summary>Figure 3</summary>
                      
-# <img style='float: center' src=''>
+<img style='float: center' src='figures/{model_title.lower()}_fig3.svg' alt='Figure 3' width='600'/>
 
-# </details>
-# """)
+A simple light protocol consisting of a light period of 20 min, with a light intensity of $100 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (black) or $500 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (red), and then a dark period of 5 min was used. This protocol was simulated for several genotypes of Arabidopsis thaliana, including the wild type (WT), and the knockout mutants of the Cl– channel (CLCE) (c), voltage-gated Cl– channel 1 (VCCN1) (v), K+ /H+ antiporter 3 (KEA3) (k), and every variation thereof (cv, ck, vk, vck). The results shown in the top row are qL, efficiency of photosystem II (ΦPSII), and the Non-Photochemical Quenching (NPQ) of the WT simulation, for each light intensity. Additionally, there are two empty plots left to make the figure more comparable to the publication, but they could not be reproduced. The bottom row shows the difference of NPQ between the mutant and the WT simulations, for both light intensities. The mutant depicted in the plot is shown in the title of each subplot. The simulations were run using the default parameters, while changing the Photosynthetic Photon Flux Density (PPFD) to match the light intensities. To create each mutant model, the corresponding rate constant of the rate being knocked out was set to zero, for example, the rate constant of KEA3 (kKEA). This figure is recreated from figure 3 of the original publication of the Li2021 model.
+
+</details>
+""")
+
+mdFile.new_paragraph(rf"""
+                     
+<details>
+<summary>Figure 4</summary>
+                     
+<img style='float: center' src='figures/{model_title.lower()}_fig4.svg' alt='Figure 4' width='600'/>
+
+The models of the wild type (WT) (top row), voltage-gated Cl – channel 1 (VCCN1) knockout mutant (middle row), K+ /H+ antiporter 3 (KEA3) knockout mutant (bottom row), and the combination of both with the additional Cl – channel (CLCE) knockout (right column) were simulated under a light intensity of $100 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (left column, and top row of right column), $500 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (middle column and bottom row of right column). The results shown in the top row of the two left columns are the proton motive force (PMF) (pink), the proton gradient between lumen and stroma (∆pH) (green), and the electric potential difference between lumen and stroma (∆Ψ) (black), all in Volts, for the WT. In the last two rows of the left columns, all curves are differences between the WT and the corresponding mutant. These results are the proton gradient between lumen and stroma (∆pH) (green) and the electric potential difference between lumen and stroma (∆Ψ) (black), and the fluxes of the concentration of K+ in the lumen (Klu+) (blue) and concentration of Cl– in the lumen (Cl–lu) (red). The fluxes are obtained from the model by evaluating the right-hand side at each time point of the corresponding Ordinary Differential Equation (ODE) and multiplying by 60 to convert from per second to per minute. The same results are plotted in the right column. The simulations were run using the default parameters, while changing the Photosynthetic Photon Flux Density (PPFD) to match the light intensities. To create each mutant model, the corresponding rate constant of the rate being knocked out was set to zero, for example, the rate constant of KEA3 (kKEA). This figure is recreated from figure 4 of the original publication of the Li2021 model.
+
+</details>
+""")
+
+mdFile.new_paragraph(rf"""
+                     
+<details>
+<summary>Figure 5</summary>
+                     
+<img style='float: center' src='figures/{model_title.lower()}_fig5.svg' alt='Figure 5' width='600'/>
+
+Three different types of simulation were performed here. The top row shows results of simulationsthat show the effect of K+ /H+ antiporter 3 (KEA3) regulation. The first two plots show the results of a simulation following a simple light protocol, with a light period of 20 min and a dark period of 5 min. Each plot consists of two simulations, each showing a simulation at either a light intensity of $100 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (black) or $500 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (red). The left plot describes the difference between theKEA3 knockout mutant and the WT simulation. In contrast, the right plot shows the difference betweena simulation without the K+ /H+ antiporter 3 (KEA3) regulation mechanism and the WT simulation.To remove the regulation of KEA3, the regulation of KEA3 activity by NADPH (qLact ) was set to aconstant value of one. These plots show the Non-Photochemical Quenching (NPQ) over time, which isalso shown in the right plot, however, as a scan of light intensities at the 2 min mark. Additionally, adifference curve is drawn in the plot (black, dashed). The middle row shows the model’s response tooscillating light. To simulate this new form of light, a simple sinus curve was used, with the followingequation: PPFD = PPFDbase + PPFDamp · sin (2π · f · t). In this equation, the PPFDbase shows the valuewhere the oscillation should happen, the PPFDamp shows the amplitude of the oscillation, and the fshows the frequency of the oscillation. The first two plots show the difference of NPQ to the WT of theKEA3, voltage-gated Cl – channel 1 (VCCN1), and without KEA3 regulation mutants, at two different1frequencies. The left at a frequency of 1/5 s−1 , and the right at a frequency of 1/120s−1 . The simulations were first run to 1000 s at a light intensity of $500 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ without any oscillation, and then until 4000s with an oscillation between $100 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ and $900 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ . The last plot shows the differencebetween the extrema of the last wave at varying frequencies of all three mutants. The last row shows theeffect of different abundances of KEA3 and VCCN1 on the proton gradient between lumen and stroma(∆pH) and electric potential difference between lumen and stroma (∆Ψ). The abundance of either KEA3 or VCCN1 was changed by a factor of 100, 10, 1, 0.1, and 0.01 by multiplying the factor by the respectiverate constant of the transporter. The simulations follow the same light protocol as the first row andshow the difference in ∆pH from the normal abundance (1) as a time series at $100 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ . Thefour plots in the middle show the initial and steady-state values of ∆pH (circles) and ∆Ψ (triangles) at $100 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (black) and $500 \mathrm{{\mu mol\ m^{{-2}}\ s^{{-1}}}}$ (red), for each abundance, also as a difference to thenormal abundance. The initial values were taken as the difference between the value at 50 s and the value at the start of the respective simulation. In contrast, the steady-state values were taken at 20 min.The last plot on the right shows the time it took to reach the extrema of the VCCN1 abundance timeseries. An example is marked with an arrow in the bottom-left plot. The time points of the extrema forboth light intensities are then plotted. All simulations listed here were run with the default parameters,unless otherwise stated. To create each mutant model, the corresponding rate constant of the rate being knocked out was set to zero, for example, the rate constant of KEA3 (kKEA). This figure is recreatedfrom figure 5 of the original publication of the Li2021 model.
+
+</details>
+""")
 
 mdFile.new_header(3, "Demonstrations")
 
@@ -436,6 +462,8 @@ mdFile.new_paragraph(rf"""
 Sample simulation of a day cycle using real Photosynthetic Photon Flux Density (PPFD) data from Kansas, USA on June 19, 2023. The data was obtained from the National Ecological Observatory Network (NEON) data portal and is used to create a protocol for the light intensity PPFD over the course of the day, in a minute interval. The data used is filtered to only show a PPFD that equals or is higher than $40 \mathrm{{µmol\ m^{{−2}}\ s^{{−1}}}}$. This threshold is chosen as it has shown to allow most models to still simulate the photosynthetic machinery, while still being a decent representation of the actual daylight conditions. The simulation is run using the default parameters and initial conditions of each model, and the RuBisCO carboxylation rate (vRuBisCO), Adenosine Triphosphate (ATP) and Nicotinamide Adenine Dinucleotide Phosphate (NADPH) ratio, and fluorescence (F) results is plotted over the course of the day, if possible. The results do not represent actual plant behavior, but show the capabilities of the model to simulate complex and more realistic light protocols.
 
 **Notes:**
+
+Model does not contain any of the quantities plotted
 
 </details>
 """)
@@ -493,6 +521,8 @@ Sample simulation of a common Pulse Amplitude Modulation (PAM) protocol to show 
 
 **Notes:**
 
+No fluorescence, but NPQ available
+
 </details>
 """)
 
@@ -515,28 +545,28 @@ A sample Metabolic Control Analysis (MCA) of typical photosynthesis variables an
 
 | Coefficient                   | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{{PSII}}$             | None|
-| $\mathrm{{PSI}}$              | None |
+| $\mathrm{{PSII}}$             | {k_recomb}|
+| $\mathrm{{PSI}}$              | {sigma0_I} |
 | $\mathrm{{RuBisCO \vert C}}$  | None |
-| $\mathrm{{cytb6f}}$           | None              |
+| $\mathrm{{cytb6f}}$           | {c_b6f}              |
 | $\mathrm{{ATPsynthase}}$      | None              |
 
 | Flux                          | In Model          |
 | -----------                   | -----------       |
-| $\mathrm{{PSII}}$             | None |
-| $\mathrm{{PSI}}$              | None |
+| $\mathrm{{PSII}}$             | {vPSII_recomb} |
+| $\mathrm{{PSI}}$              | {vPSII_ChSep} |
 | $\mathrm{{RuBisCO \vert C}}$  | None |
-| $\mathrm{{cytb6f}}$           | None              |
+| $\mathrm{{cytb6f}}$           | {v_b6f}              |
 | $\mathrm{{ATPsynthase}}$      | None              |
 
 | Variable                  | In Model      |
 | -----------               | -----------   |
 | $\mathrm{{CO_2}}$         | None       |
 | $\mathrm{{RUBP}}$         | None      |
-| $\mathrm{{PQ_{{ox}}}}$    | None          |
-| $\mathrm{{PC_{{ox}}}}$    | None          |
+| $\mathrm{{PQ_{{ox}}}}$    | {PQ}          |
+| $\mathrm{{PC_{{ox}}}}$    | {PC_ox}          |
 | $\mathrm{{ATP}}$          | None    |
-| $\mathrm{{NADPH}}$        | None  |
+| $\mathrm{{NADPH}}$        | {NADPH_st}  |
 
 </details>
 """)
@@ -557,6 +587,7 @@ Sample fitting to experimental Non-Photochemical Quenching (NPQ) data. The NPQ d
 - If $F_\mathrm{{m}}$ is found and NPQ is not present, NPQ is calculated using the formula: $NPQ_t = \frac{{F_{{\mathrm{{m}}\vert t=0}} - F_{{\mathrm{{m}} \vert t}}}}{{F_{{\mathrm{{m}} \vert t}}}}$
 
 **Notes:**
+{NPQ_max} and {pKa_PsbS} are the parameters fitted.
 
 </details>
 """)
