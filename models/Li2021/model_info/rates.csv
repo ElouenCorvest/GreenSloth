@@ -16,6 +16,6 @@ Rate of voltage-gated K+ channel,$v_\mathrm{VKC}$,$v_{K\_channel}$,,v_VKC,54
 Rate of main voltage-gated chloride channel (VCCN1),$v_\mathrm{VCCN1}$,$v_{VCCN1}$,,v_VCCN1,51
 Rate of ClCe,$v_\mathrm{ClCe}$,$v_{ClCe}$,,v_ClCe,52
 Transmembrane Proton Leak,$v_{\mathrm{Leak}}$,$v_{leak}$,,v_Leak,5
-,,$v_{pmf}$,,v_pmf_protons_activity,
+Pmf activity,$v_\mathrm{pmf}$,$v_{pmf}$,,v_pmf_protons_activity,
 Epoxidation of violaxanthin,$v_{\mathrm{Epox}}$,$v_{ZE}$,R10070,v_Epox,17
 De-epoxidation of violaxanthin,$v_{\mathrm{Deepox}}$,$v_{VDE}$,R10070,v_Deepox,16

@@ -17,7 +17,7 @@ The rate constant for NDH,$k_\mathrm{NDH1}$,$k_\mathrm{{NDH}}$,$1000$,$\mathrm{s
 The maximal turnover of the PGR5/PGRL1,$V_\mathrm{max|PGR}$,$V_{max}\left( \mathrm{PGR} \right)$,$0$,,Vmax_PGR,
 The relative cross section of PSI antenna,$\sigma _\mathrm{I} ^0$,$\mathrm{PSI_{antenna_size}}$,$0.5$,,sigma0_I,
 The averate rate constant of oxidation of QA- by QB and PQ,$k_\mathrm{QA}$,$k_\mathrm{{QA}}$,$1000$,$\mathrm{s}^{-1}$,k_QA,
-Equilibrium constant of QA- by QB and PQ,$K_\mathrm{QA}$,$Keq_{QA \rightarrow PQ}$S,$200$,,Keq_QA,
+Equilibrium constant of QA- by QB and PQ,$K_\mathrm{QA}$,$Keq_{QA \rightarrow PQ}$,$200$,,Keq_QA,
 The rate constant for transfer of electrons from PC to P700+,$k_\mathrm{PC|P700}$,$k_{PC\_to\_P700}$,$5000$,$\mathrm{M}$,k_PCtoP700,
 The second order rate constant for oxidation of Fd by NADP+,$k_\mathrm{Fd|NADP}$,$k_\mathrm{Fd\_to\_NADP}$,$1000$,,k_FdtoNADP,
 Stromal K+ concentration,$\mathrm{K}^{+}_{\mathrm{st}}$,$\mathrm{K}^{+}_{\mathrm{stroma}}$,$0.1$,,K_st,

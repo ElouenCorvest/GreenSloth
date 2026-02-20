@@ -55,10 +55,10 @@ The packages required to run this model can either be installed by using the `pi
 \frac{\mathrm{d}\mathrm{Q_{A \vert red}}}{\mathrm{d}t} = - v_\mathrm{PSII \vert recomb} + \mathrm{PSII_{ChSep}} - v_{\mathrm{PSII}} + v_{\mathrm{PQ}_{\mathrm{ox}}}
 ```
 ```math 
-\frac{\mathrm{d}\mathrm{pH}_\mathrm{lu}}{\mathrm{d}t} = \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_\mathrm{PSII \vert recomb} + \frac{-ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot \mathrm{PSII_{ChSep}} + \frac{-2 ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_{\mathrm{b6f}} + \frac{-2 ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_{\mathrm{NDH}} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_\mathrm{KEA3} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_\mathrm{ClCe} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_{\mathrm{Leak}} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot 
+\frac{\mathrm{d}\mathrm{pH}_\mathrm{lu}}{\mathrm{d}t} = \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_\mathrm{PSII \vert recomb} + \frac{-ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot \mathrm{PSII_{ChSep}} + \frac{-2 ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_{\mathrm{b6f}} + \frac{-2 ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_{\mathrm{NDH}} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_\mathrm{KEA3} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_\mathrm{ClCe} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_{\mathrm{Leak}} + \frac{ipt_\mathrm{lu}}{b_\mathrm{H}} \cdot v_\mathrm{pmf}
 ```
 ```math 
-\frac{\mathrm{d}\Delta \Psi _{\mathrm{thylakoid}}}{\mathrm{d}t} = - vpc \cdot v_\mathrm{PSII \vert recomb} + vpc \cdot \mathrm{PSII_{ChSep}} + vpc \cdot v_{\mathrm{b6f}} + vpc \cdot 2 \cdot v_{\mathrm{NDH}} + vpc \cdot -3 \cdot v_\mathrm{ClCe} - vpc \cdot v_{\mathrm{Leak}} - vpc \cdot  + vpc \cdot \mathrm{PSI_{ChSep}} - vpc \cdot v_\mathrm{VKC} - vpc \cdot v_\mathrm{VCCN1}
+\frac{\mathrm{d}\Delta \Psi _{\mathrm{thylakoid}}}{\mathrm{d}t} = - vpc \cdot v_\mathrm{PSII \vert recomb} + vpc \cdot \mathrm{PSII_{ChSep}} + vpc \cdot v_{\mathrm{b6f}} + vpc \cdot 2 \cdot v_{\mathrm{NDH}} + vpc \cdot -3 \cdot v_\mathrm{ClCe} - vpc \cdot v_{\mathrm{Leak}} - vpc \cdot v_\mathrm{pmf} + vpc \cdot \mathrm{PSI_{ChSep}} - vpc \cdot v_\mathrm{VKC} - vpc \cdot v_\mathrm{VCCN1}
 ```
 ```math 
 \frac{\mathrm{d}\mathrm{PQH}_2}{\mathrm{d}t} = 0.5 \cdot v_{\mathrm{PSII}} - 0.5 \cdot v_{\mathrm{PQ}_{\mathrm{ox}}} - 0.5 \cdot v_{\mathrm{b6f}} + 0.5 \cdot v_{\mathrm{NDH}} + 0.5 \cdot v_\mathrm{PRG5}
@@ -179,7 +179,7 @@ The packages required to run this model can either be installed by using the `pi
 |The maximal turnover of the PGR5/PGRL1|$V_\mathrm{max\|PGR}$|$V_{max}\left( \mathrm{PGR} \right)$|$0$||Vmax_PGR||
 |The relative cross section of PSI antenna|$\sigma _\mathrm{I} ^0$|$\mathrm{PSI_{antenna_size}}$|$0.5$||sigma0_I||
 |The averate rate constant of oxidation of QA- by QB and PQ|$k_\mathrm{QA}$|$k_\mathrm{{QA}}$|$1000$|$\mathrm{s}^{-1}$|k_QA||
-|Equilibrium constant of QA- by QB and PQ|$K_\mathrm{QA}$|$Keq_{QA \rightarrow PQ}$S|$200$||Keq_QA||
+|Equilibrium constant of QA- by QB and PQ|$K_\mathrm{QA}$|$Keq_{QA \rightarrow PQ}$|$200$||Keq_QA||
 |The rate constant for transfer of electrons from PC to P700+|$k_\mathrm{PC\|P700}$|$k_{PC\_to\_P700}$|$5000$|$\mathrm{M}$|k_PCtoP700||
 |The second order rate constant for oxidation of Fd by NADP+|$k_\mathrm{Fd\|NADP}$|$k_\mathrm{Fd\_to\_NADP}$|$1000$||k_FdtoNADP||
 |Stromal K+ concentration|$\mathrm{K}^{+}_{\mathrm{st}}$|$\mathrm{K}^{+}_{\mathrm{stroma}}$|$0.1$||K_st||
@@ -269,7 +269,7 @@ k_\mathrm{CBB} =  60 \frac{\mathrm{PAR}}{\mathrm{PAR} + 250}
 |Rate of main voltage-gated chloride channel (VCCN1)|$v_\mathrm{VCCN1}$|$v_{VCCN1}$||v_VCCN1|
 |Rate of ClCe|$v_\mathrm{ClCe}$|$v_{ClCe}$||v_ClCe|
 |Transmembrane Proton Leak|$v_{\mathrm{Leak}}$|$v_{leak}$||v_Leak|
-|||$v_{pmf}$||v_pmf_protons_activity|
+|Pmf activity|$v_\mathrm{pmf}$|$v_{pmf}$||v_pmf_protons_activity|
 |Epoxidation of violaxanthin|$v_{\mathrm{Epox}}$|$v_{ZE}$|R10070|v_Epox|
 |De-epoxidation of violaxanthin|$v_{\mathrm{Deepox}}$|$v_{VDE}$|R10070|v_Deepox|
 
@@ -331,13 +331,13 @@ v_\mathrm{ClCe} =  \frac{k_\mathrm{ClCe} \cdot \left( \mathrm{Cl_{df}} \cdot 2 +
 v_{\mathrm{Leak}} =  \mathrm{pmf} \cdot k_\mathrm{Leak} \cdot \mathrm{H_{lu}}
 ```
 ```math
- = ERROR because of function "_v_pmf_protons_activity"
+v_\mathrm{pmf} = \_v\_pmf\_protons\_activity
 ```
 ```math
-v_{\mathrm{Epox}} =  \mathrm{Zx} \cdot \mathrm{k\_E\mathrm{Zx}}
+v_{\mathrm{Epox}} =  \mathrm{Zx} \cdot k_\mathrm{kEpoxZ}
 ```
 ```math
-v_{\mathrm{Deepox}} =  \mathrm{Vx} \cdot \mathrm{\mathrm{Vx}max\_\mathrm{Vx}DE} \frac{1}{10^{\mathrm{nh\_\mathrm{Vx}DE} \cdot \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pKa\_\mathrm{Vx}DE} \right)} + 1}
+v_{\mathrm{Deepox}} =  \mathrm{Vx} \cdot V_\mathrm{max \vert VDE} \frac{1}{10^{nh_\mathrm{VDE} \cdot \left( \mathrm{pH}_\mathrm{lu} - \mathrm{pK_{a \vert VDE}} \right)} + 1}
 ```
 
 </details>

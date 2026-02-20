@@ -128,7 +128,7 @@ k_NDH1 = remove_math(params_table, r'$k_\mathrm{{NDH}}$')
 Vmax_PGR = remove_math(params_table, r'$V_{max}\left( \mathrm{PGR} \right)$')
 sigma0_I = remove_math(params_table, r'$\mathrm{PSI_{antenna_size}}$')
 k_QA = remove_math(params_table, r'$k_\mathrm{{QA}}$')
-Keq_QA = remove_math(params_table, r'$Keq_{QA \rightarrow PQ}$S')
+Keq_QA = remove_math(params_table, r'$Keq_{QA \rightarrow PQ}$')
 k_PCtoP700 = remove_math(params_table, r'$k_{PC\_to\_P700}$')
 k_FdtoNADP = remove_math(params_table, r'$k_\mathrm{Fd\_to\_NADP}$')
 K_st = remove_math(params_table, r'$\mathrm{K}^{+}_{\mathrm{stroma}}$')
@@ -396,13 +396,13 @@ mdFile.new_paragraph(fr"""
 {v_Leak} =  {pmf} \cdot {k_leak} \cdot {H_lumen}
 ```
 ```math
-{v_pmf_protons_activity} = ERROR because of function "_v_pmf_protons_activity"
+{v_pmf_protons_activity} = \_v\_pmf\_protons\_activity
 ```
 ```math
-{v_Epox} =  {Zx} \cdot \mathrm{{k\_E{Zx}}}
+{v_Epox} =  {Zx} \cdot {k_EZ}
 ```
 ```math
-{v_Deepox} =  {Vx} \cdot \mathrm{{{Vx}max\_{Vx}DE}} \frac{{1}}{{10^{{\mathrm{{nh\_{Vx}DE}} \cdot \left( {pH_lumen} - \mathrm{{pKa\_{Vx}DE}} \right)}} + 1}}
+{v_Deepox} =  {Vx} \cdot {Vmax_VDE} \frac{{1}}{{10^{{{nh_VDE} \cdot \left( {pH_lumen} - {pKa_VDE} \right)}} + 1}}
 ```
 
 </details>
