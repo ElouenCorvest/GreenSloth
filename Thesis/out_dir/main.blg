@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'out_dir/main.blg'
-[30] biber:340> INFO - === Thu Feb 19, 2026, 20:05:01
+[30] biber:340> INFO - === Thu Feb 19, 2026, 20:05:19
 [37] Biber.pm:419> INFO - Reading 'out_dir/main.bcf'
-[71] Biber.pm:979> INFO - Found 59 citekeys in bib section 0
-[76] Biber.pm:4419> INFO - Processing section 0
-[80] Biber.pm:4610> INFO - Looking for bibtex file 'GreenSloth.bib' for section 0
-[93] bibtex.pm:1713> INFO - LaTeX decoding ...
-[335] bibtex.pm:1519> INFO - Found BibTeX data source 'GreenSloth.bib'
-[716] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[716] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[716] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[716] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[734] bbl.pm:660> INFO - Writing 'out_dir/main.bbl' with encoding 'UTF-8'
-[757] bbl.pm:763> INFO - Output to out_dir/main.bbl
+[73] Biber.pm:979> INFO - Found 59 citekeys in bib section 0
+[78] Biber.pm:4419> INFO - Processing section 0
+[83] Biber.pm:4610> INFO - Looking for bibtex file 'GreenSloth.bib' for section 0
+[96] bibtex.pm:1713> INFO - LaTeX decoding ...
+[359] bibtex.pm:1519> INFO - Found BibTeX data source 'GreenSloth.bib'
+[746] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[746] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[746] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[746] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[763] bbl.pm:660> INFO - Writing 'out_dir/main.bbl' with encoding 'UTF-8'
+[786] bbl.pm:763> INFO - Output to out_dir/main.bbl
