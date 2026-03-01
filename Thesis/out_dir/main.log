@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  19 FEB 2026 20:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.7)  19 FEB 2026 22:14
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1322,4 +1322,662 @@ Package: fp-eval 1995/04/03
 \@dtl@foreach@level=\count569
 ) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
 Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
- (/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-german/glossaries-germa
+ (/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-german/glossaries-german.ldf
+File: glossaries-german.ldf 2014/11/23 v1.0
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries-english/glossaries-english.ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
+)
+\gls@level=\count570
+\@gls@tmpb=\toks48
+\gls@tmplen=\skip177
+\glskeylisttok=\toks49
+\glslabeltok=\toks50
+\glsshorttok=\toks51
+\glslongtok=\toks52
+ (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
+Package: glossary-hypernav 2023/09/29 v4.53 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+Package: glossary-list 2023/09/29 v4.53 (NLCT)
+\glslistdottedwidth=\skip178
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+Package: glossary-long 2023/09/29 v4.53 (NLCT)
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip179
+\LTright=\skip180
+\LTpre=\skip181
+\LTpost=\skip182
+\LTchunksize=\count571
+\LTcapwidth=\dimen395
+\LT@head=\box156
+\LT@firsthead=\box157
+\LT@foot=\box158
+\LT@lastfoot=\box159
+\LT@gbox=\box160
+\LT@cols=\count572
+\LT@rows=\count573
+\c@LT@tables=\count574
+\c@LT@chunks=\count575
+\LT@p@ftn=\toks53
+)
+\glsdescwidth=\skip183
+\glspagelistwidth=\skip184
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+Package: glossary-super 2023/09/29 v4.53 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+Package: glossary-tree 2023/09/29 v4.53 (NLCT)
+\glstreeindent=\skip185
+))
+\@glsxtr@leveloffset=\count576
+\glsxtrresourcecount=\count577
+\@glsxtrnewgls@inner=\count578
+\glsshortpltok=\toks54
+\glslongpltok=\toks55
+ (/usr/share/texlive/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def
+File: glossaries-extra-abbrstyles.def 2023/06/28 v1.52 (NLCT)
+)
+\mglselementindex=\count579
+)
+\glswrite=\write5
+\glo@main@file=\write6
+\openout6 = `main.glo'.
+
+Package glossaries Info: Writing glossary file main.glo on input line 132.
+\glo@abbreviations@file=\write7
+\openout7 = `main.glo-abr'.
+
+Package glossaries Info: Writing glossary file main.glo-abr on input line 132.
+\glo@variable@file=\write8
+\openout8 = `main.variable-glo'.
+
+Package glossaries Info: Writing glossary file main.variable-glo on input line 132.
+\glo@hidden@file=\write9
+\openout9 = `main.hio'.
+
+Package glossaries Info: Writing glossary file main.hio on input line 132.
+ (./Preamble/Acronyms.tex) (./Preamble/Variables.tex) (./Preamble/Species.tex)) (./Preamble/NewCommands.tex)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'german'.
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.bbl)
+Package biblatex Info: Reference section=0 on input line 6.
+Package biblatex Info: Reference segment=0 on input line 6.
+
+Package chemgreek Info: Activating mapping `upgreek' on line 6.
+
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count580
+\scratchdimen=\dimen396
+\scratchbox=\box161
+\nofMPsegments=\count581
+\nofMParguments=\count582
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count583
+\MPscratchDim=\dimen397
+\MPnumerator=\count584
+\makeMPintoPDFobject=\count585
+\everyMPtoPDFconversion=\toks57
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 702.78308pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=14.22636pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: supertabular package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count586
+ (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-german.trsl
+File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 6.
+ (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 6.
+ (/usr/share/texlive/texmf-dist/tex/latex/ninecolors/ninecolors.sty
+Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
+)
+Package hyperref Info: Link coloring OFF on input line 6.
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.out) (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.out)
+\@outlinefile=\write10
+\openout10 = `main.out'.
+
+ (./Titelpage.tex
+\c@theo=\count587
+<Figures/rwth_jp_computational_life_science_en_rgb.png, id=311, 1559.8275pt x 379.4175pt>
+File: Figures/rwth_jp_computational_life_science_en_rgb.png Graphic file (type png)
+<use Figures/rwth_jp_computational_life_science_en_rgb.png>
+Package pdftex.def Info: Figures/rwth_jp_computational_life_science_en_rgb.png  used on input line 30.
+(pdftex.def)             Requested size: 318.66948pt x 77.50897pt.
+
+Overfull \hbox (55.52023pt too wide) in paragraph at lines 30--31
+[]| [] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 40.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 53.
+ (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)) [1
+
+\openout5 = `main.ist'.
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/rwth_jp_computational_life_science_en_rgb.png>] [2] (./Sections/abstract.tex) [3] (./Sections/zusammenfassung.tex) [4] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.toc [5])
+\tf@toc=\write11
+\openout11 = `main.toc'.
+
+ [6] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.gls-abr [7]) [8] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.variable-gls [9]) [10] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.lol
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
+)
+\tf@lol=\write12
+\openout12 = `main.lol'.
+
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.lof [11])
+\tf@lof=\write13
+\openout13 = `main.lof'.
+
+ (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.lot)
+\tf@lot=\write14
+\openout14 = `main.lot'.
+
+\c@romannumbers=\count588
+ [12] (./Sections/introduction.tex
+<Figures/bibsearch.pdf, id=678, 722.7pt x 289.08pt>
+File: Figures/bibsearch.pdf Graphic file (type pdf)
+<use Figures/bibsearch.pdf>
+Package pdftex.def Info: Figures/bibsearch.pdf  used on input line 11.
+(pdftex.def)             Requested size: 455.24411pt x 182.0993pt.
+<Figures/fvcb_analyse.pdf, id=694, 202.55173pt x 358.04956pt>
+File: Figures/fvcb_analyse.pdf Graphic file (type pdf)
+<use Figures/fvcb_analyse.pdf>
+Package pdftex.def Info: Figures/fvcb_analyse.pdf  used on input line 20.
+(pdftex.def)             Requested size: 136.57462pt x 241.42715pt.
+ [1] [2 <./Figures/bibsearch.pdf> <./Figures/fvcb_analyse.pdf>] [3] [4]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 53.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\greensloth' on input line 53.
+
+[5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\greensloth' on input line 59.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\greensloth' on input line 63.
+
+
+Overfull \hbox (18.0499pt too wide) in paragraph at lines 75--77
+\OT1/cmr/m/n/10.95 Additionally, the [][]$\OML/cmm/m/it/10.95 v[]$[] \OT1/cmr/m/n/10.95 is rep-re-sented as be-ing lim-ited by ei-ther the [][]Ribulose-1,5-bisphosphate
+ []
+
+[6] [7] [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\greensloth' on input line 114.
+
+[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\greensloth' on input line 127.
+
+LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 133.
+) [10] (./Sections/materialandmethods.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\greensloth' on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 12.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 13.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 27.
+ [11{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (24.38905pt too wide) in paragraph at lines 69--69
+[]|\OT1/cmtt/m/n/10.95 demonstrations.ipynb| 
+ []
+
+
+Overfull \hbox (17.03073pt too wide) in paragraph at lines 69--69
+[]|\OT1/cmtt/m/n/10.95 paper[]figures.ipynb| 
+ []
+
+
+Overfull \hbox (28.5281pt too wide) in paragraph at lines 69--69
+[]|\OT1/cmtt/m/n/10.95 derived[]quantities.py| 
+ []
+
+
+Overfull \hbox (5.53336pt too wide) in paragraph at lines 69--69
+[]|\OT1/cmtt/m/n/10.95 derived[]comps.csv| 
+ []
+
+
+Overfull \hbox (11.28204pt too wide) in paragraph at lines 69--69
+[]|\OT1/cmtt/m/n/10.95 derived[]params.csv| 
+ []
+
+Package hyperref Info: bookmark level for unknown dirset defaults to 0 on input line 71.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 71.
+[12]
+Overfull \hbox (1.4241pt too wide) in paragraph at lines 82--83
+[]\OT1/cmr/m/n/10.95 Finally, the [][]\OT1/cmtt/m/n/10.95 README_script.py []\OT1/cmr/m/n/10.95 file is a tem-plate script in-tended to write the model's README
+ []
+
+[13] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (1.42534pt too wide) in paragraph at lines 234--235
+[]\OT1/cmr/m/n/10.95 To demon-strate the adapt-abil-ity of their model, the au-thors ap-plied their cal-i-brated [][]\OT1/cmr/m/it/10.95 A. thaliana[]
+ []
+
+[21]
+
+Package siunitx Warning: Unit macro \bar has been deprecated in this release.
+(siunitx)                
+(siunitx)                The BIPM have removed this unit from the SI Brochure.
+(siunitx)                You should define it yourself using \DeclareSIUnit in
+(siunitx)                your source. The current definition is
+(siunitx)                
+(siunitx)                \DeclareSIUnit\bar{bar}
+
+[22] [23] [24]) [25] [26] (./Sections/results.tex (./Tables/models_info.tex
+Overfull \hbox (28.77386pt too wide) in alignment at lines 1--6
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.77386pt too wide) in alignment at lines 6--11
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.77386pt too wide) in alignment at lines 11--15
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.77386pt too wide) in alignment at lines 15--17
+ [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.77386pt too wide) in alignment at lines 17--23
+ [] [] [] [] [] [] [] 
+ []
+
+) [27]
+<Figures/Validations/bellasio2019_fig3.pdf, id=1457, 615.66573pt x 619.53044pt>
+File: Figures/Validations/bellasio2019_fig3.pdf Graphic file (type pdf)
+<use Figures/Validations/bellasio2019_fig3.pdf>
+Package pdftex.def Info: Figures/Validations/bellasio2019_fig3.pdf  used on input line 16.
+(pdftex.def)             Requested size: 318.66948pt x 320.67352pt.
+<Figures/Validations/bellasio2019_fig4.pdf, id=1460, 614.27374pt x 675.17834pt>
+File: Figures/Validations/bellasio2019_fig4.pdf Graphic file (type pdf)
+<use Figures/Validations/bellasio2019_fig4.pdf>
+Package pdftex.def Info: Figures/Validations/bellasio2019_fig4.pdf  used on input line 23.
+(pdftex.def)             Requested size: 318.66948pt x 350.27057pt.
+<Figures/Validations/bellasio2019_fig5.pdf, id=1497, 614.49956pt x 674.03448pt>
+File: Figures/Validations/bellasio2019_fig5.pdf Graphic file (type pdf)
+<use Figures/Validations/bellasio2019_fig5.pdf>
+Package pdftex.def Info: Figures/Validations/bellasio2019_fig5.pdf  used on input line 32.
+(pdftex.def)             Requested size: 318.66948pt x 349.55374pt.
+<Figures/Validations/bellasio2019_fig6.pdf, id=1506, 614.49956pt x 673.91403pt>
+File: Figures/Validations/bellasio2019_fig6.pdf Graphic file (type pdf)
+<use Figures/Validations/bellasio2019_fig6.pdf>
+Package pdftex.def Info: Figures/Validations/bellasio2019_fig6.pdf  used on input line 41.
+(pdftex.def)             Requested size: 318.66948pt x 349.49127pt.
+<Figures/Validations/bellasio2019_fig7.pdf, id=1509, 422.28395pt x 267.51573pt>
+File: Figures/Validations/bellasio2019_fig7.pdf Graphic file (type pdf)
+<use Figures/Validations/bellasio2019_fig7.pdf>
+Package pdftex.def Info: Figures/Validations/bellasio2019_fig7.pdf  used on input line 48.
+(pdftex.def)             Requested size: 318.66948pt x 201.87312pt.
+ [28] [29 <./Figures/Validations/bellasio2019_fig3.pdf>] [30 <./Figures/Validations/bellasio2019_fig4.pdf>] [31 <./Figures/Validations/bellasio2019_fig5.pdf>] [32 <./Figures/Validations/bellasio2019_fig6.pdf>]
+<Figures/Validations/fuente2024_fig2.pdf, id=1560, 639.15208pt x 569.96489pt>
+File: Figures/Validations/fuente2024_fig2.pdf Graphic file (type pdf)
+<use Figures/Validations/fuente2024_fig2.pdf>
+Package pdftex.def Info: Figures/Validations/fuente2024_fig2.pdf  used on input line 59.
+(pdftex.def)             Requested size: 318.66948pt x 284.18161pt.
+<Figures/Validations/fuente2024_fig3.pdf, id=1563, 852.67209pt x 276.8711pt>
+File: Figures/Validations/fuente2024_fig3.pdf Graphic file (type pdf)
+<use Figures/Validations/fuente2024_fig3.pdf>
+Package pdftex.def Info: Figures/Validations/fuente2024_fig3.pdf  used on input line 66.
+(pdftex.def)             Requested size: 318.66948pt x 103.47574pt.
+ [33 <./Figures/Validations/bellasio2019_fig7.pdf>] [34 <./Figures/Validations/fuente2024_fig2.pdf>]
+<Figures/Validations/fuente2024_fig4.pdf, id=1600, 1179.34204pt x 1173.92679pt>
+File: Figures/Validations/fuente2024_fig4.pdf Graphic file (type pdf)
+<use Figures/Validations/fuente2024_fig4.pdf>
+Package pdftex.def Info: Figures/Validations/fuente2024_fig4.pdf  used on input line 75.
+(pdftex.def)             Requested size: 318.66948pt x 317.19733pt.
+<Figures/Validations/fuente2024_fig5.pdf, id=1608, 715.30396pt x 1069.98242pt>
+File: Figures/Validations/fuente2024_fig5.pdf Graphic file (type pdf)
+<use Figures/Validations/fuente2024_fig5.pdf>
+Package pdftex.def Info: Figures/Validations/fuente2024_fig5.pdf  used on input line 85.
+(pdftex.def)             Requested size: 318.66948pt x 476.68762pt.
+ [35 <./Figures/Validations/fuente2024_fig3.pdf>] [36 <./Figures/Validations/fuente2024_fig4.pdf>] [37 <./Figures/Validations/fuente2024_fig5.pdf>]
+<Figures/Validations/li2021_fig3.pdf, id=1643, 1186.15448pt x 338.33842pt>
+File: Figures/Validations/li2021_fig3.pdf Graphic file (type pdf)
+<use Figures/Validations/li2021_fig3.pdf>
+Package pdftex.def Info: Figures/Validations/li2021_fig3.pdf  used on input line 99.
+(pdftex.def)             Requested size: 318.66948pt x 90.89828pt.
+
+Overfull \hbox (17.29976pt too wide) in paragraph at lines 106--107
+[]\OT1/cmr/m/n/10.95 The fourth fig-ure was recre-ated to a good ex-tent, with ev-ery plot rep-re-sent-ing the $100$$[] m[] s[]$
+ []
+
+
+Overfull \hbox (14.22456pt too wide) in paragraph at lines 106--107
+\OT1/cmr/m/n/10.95 light in-ten-sity show-ing a good match to the pub-li-ca-tion [](see Fig. 13[])[]. How-ever, the $500$$[] m[] s[]$
+ []
+
+<Figures/Validations/li2021_fig4.pdf, id=1651, 998.32751pt x 561.1923pt>
+File: Figures/Validations/li2021_fig4.pdf Graphic file (type pdf)
+<use Figures/Validations/li2021_fig4.pdf>
+Package pdftex.def Info: Figures/Validations/li2021_fig4.pdf  used on input line 110.
+(pdftex.def)             Requested size: 318.66948pt x 179.13136pt.
+<Figures/Validations/li2021_fig5.pdf, id=1660, 1198.94923pt x 897.9108pt>
+File: Figures/Validations/li2021_fig5.pdf Graphic file (type pdf)
+<use Figures/Validations/li2021_fig5.pdf>
+Package pdftex.def Info: Figures/Validations/li2021_fig5.pdf  used on input line 120.
+(pdftex.def)             Requested size: 318.66948pt x 238.65767pt.
+[38 <./Figures/Validations/li2021_fig3.pdf>] [39 <./Figures/Validations/li2021_fig4.pdf>]
+<Figures/Validations/matuszynska2016_fig4.pdf, id=1681, 1071.58644pt x 195.40814pt>
+File: Figures/Validations/matuszynska2016_fig4.pdf Graphic file (type pdf)
+<use Figures/Validations/matuszynska2016_fig4.pdf>
+Package pdftex.def Info: Figures/Validations/matuszynska2016_fig4.pdf  used on input line 133.
+(pdftex.def)             Requested size: 455.24411pt x 83.01604pt.
+<Figures/Validations/matuszynska2016_fig5.pdf, id=1688, 541.23083pt x 506.23709pt>
+File: Figures/Validations/matuszynska2016_fig5.pdf Graphic file (type pdf)
+<use Figures/Validations/matuszynska2016_fig5.pdf>
+Package pdftex.def Info: Figures/Validations/matuszynska2016_fig5.pdf  used on input line 142.
+(pdftex.def)             Requested size: 318.66948pt x 298.06705pt.
+<Figures/Validations/matuszynska2016_fig6.pdf, id=1694, 568.85846pt x 424.79724pt>
+File: Figures/Validations/matuszynska2016_fig6.pdf Graphic file (type pdf)
+<use Figures/Validations/matuszynska2016_fig6.pdf>
+Package pdftex.def Info: Figures/Validations/matuszynska2016_fig6.pdf  used on input line 151.
+(pdftex.def)             Requested size: 318.66948pt x 237.96909pt.
+<Figures/Validations/saadat2021_fig2.pdf, id=1706, 624.03758pt x 323.16364pt>
+File: Figures/Validations/saadat2021_fig2.pdf Graphic file (type pdf)
+<use Figures/Validations/saadat2021_fig2.pdf>
+Package pdftex.def Info: Figures/Validations/saadat2021_fig2.pdf  used on input line 162.
+(pdftex.def)             Requested size: 318.66948pt x 165.0233pt.
+<Figures/Validations/saadat2021_fig3.pdf, id=1713, 714.1949pt x 276.22577pt>
+File: Figures/Validations/saadat2021_fig3.pdf Graphic file (type pdf)
+<use Figures/Validations/saadat2021_fig3.pdf>
+Package pdftex.def Info: Figures/Validations/saadat2021_fig3.pdf  used on input line 169.
+(pdftex.def)             Requested size: 318.66948pt x 123.25093pt.
+<Figures/Validations/saadat2021_fig4.pdf, id=1716, 566.06262pt x 423.13414pt>
+File: Figures/Validations/saadat2021_fig4.pdf Graphic file (type pdf)
+<use Figures/Validations/saadat2021_fig4.pdf>
+Package pdftex.def Info: Figures/Validations/saadat2021_fig4.pdf  used on input line 177.
+(pdftex.def)             Requested size: 318.66948pt x 238.21896pt.
+<Figures/Validations/saadat2021_fig5.pdf, id=1719, 722.6274pt x 287.09389pt>
+File: Figures/Validations/saadat2021_fig5.pdf Graphic file (type pdf)
+<use Figures/Validations/saadat2021_fig5.pdf>
+Package pdftex.def Info: Figures/Validations/saadat2021_fig5.pdf  used on input line 184.
+(pdftex.def)             Requested size: 318.66948pt x 126.60205pt.
+<Figures/Validations/saadat2021_fig6.pdf, id=1722, 707.28131pt x 520.38538pt>
+File: Figures/Validations/saadat2021_fig6.pdf Graphic file (type pdf)
+<use Figures/Validations/saadat2021_fig6.pdf>
+Package pdftex.def Info: Figures/Validations/saadat2021_fig6.pdf  used on input line 191.
+(pdftex.def)             Requested size: 318.66948pt x 234.46504pt.
+ [40] [41 <./Figures/Validations/li2021_fig5.pdf>] [42 <./Figures/Validations/matuszynska2016_fig4.pdf>] [43 <./Figures/Validations/matuszynska2016_fig5.pdf>] [44 <./Figures/Validations/matuszynska2016_fig6.pdf>] [45 <./Figures/Validations/saadat2021_fig2.pdf> <./Figures/Validations/saadat2021_fig3.pdf>] [46 <./Figures/Validations/saadat2021_fig4.pdf> <./Figures/Validations/saadat2021_fig5.pdf>] [47 <./Figures/Validations/saadat2021_fig6.pdf>]
+<Figures/Demonstrations/daysimulation.pdf, id=1817, 1176.53247pt x 1064.17876pt>
+File: Figures/Demonstrations/daysimulation.pdf Graphic file (type pdf)
+<use Figures/Demonstrations/daysimulation.pdf>
+Package pdftex.def Info: Figures/Demonstrations/daysimulation.pdf  used on input line 215.
+(pdftex.def)             Requested size: 318.66948pt x 288.24144pt.
+ [48] [49 <./Figures/Demonstrations/daysimulation.pdf>]
+<Figures/Demonstrations/fvcb.pdf, id=1850, 892.06964pt x 1068.05824pt>
+File: Figures/Demonstrations/fvcb.pdf Graphic file (type pdf)
+<use Figures/Demonstrations/fvcb.pdf>
+Package pdftex.def Info: Figures/Demonstrations/fvcb.pdf  used on input line 230.
+(pdftex.def)             Requested size: 318.66948pt x 381.53458pt.
+<Figures/Demonstrations/pam.pdf, id=1878, 1342.50264pt x 983.7038pt>
+File: Figures/Demonstrations/pam.pdf Graphic file (type pdf)
+<use Figures/Demonstrations/pam.pdf>
+Package pdftex.def Info: Figures/Demonstrations/pam.pdf  used on input line 245.
+(pdftex.def)             Requested size: 318.66948pt x 233.49698pt.
+ [50] [51 <./Figures/Demonstrations/fvcb.pdf>] [52 <./Figures/Demonstrations/pam.pdf>]
+<Figures/Demonstrations/mca.pdf, id=1948, 1466.43465pt x 1202.66515pt>
+File: Figures/Demonstrations/mca.pdf Graphic file (type pdf)
+<use Figures/Demonstrations/mca.pdf>
+Package pdftex.def Info: Figures/Demonstrations/mca.pdf  used on input line 264.
+(pdftex.def)             Requested size: 318.66948pt x 261.33899pt.
+ [53] [54 <./Figures/Demonstrations/mca.pdf>]
+<Figures/Demonstrations/fitting.pdf, id=1997, 1587.65044pt x 1178.78491pt>
+File: Figures/Demonstrations/fitting.pdf Graphic file (type pdf)
+<use Figures/Demonstrations/fitting.pdf>
+Package pdftex.def Info: Figures/Demonstrations/fitting.pdf  used on input line 281.
+(pdftex.def)             Requested size: 455.24411pt x 338.00769pt.
+<Figures/Website/landingpage.png, id=2002, 1927.2pt x 1084.05pt>
+File: Figures/Website/landingpage.png Graphic file (type png)
+<use Figures/Website/landingpage.png>
+Package pdftex.def Info: Figures/Website/landingpage.png  used on input line 292.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+<Figures/Website/howtouse.png, id=2003, 1927.2pt x 1084.05pt>
+File: Figures/Website/howtouse.png Graphic file (type png)
+<use Figures/Website/howtouse.png>
+Package pdftex.def Info: Figures/Website/howtouse.png  used on input line 299.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+<Figures/Website/machienry.png, id=2004, 1927.2pt x 1084.05pt>
+File: Figures/Website/machienry.png Graphic file (type png)
+<use Figures/Website/machienry.png>
+Package pdftex.def Info: Figures/Website/machienry.png  used on input line 306.
+(pdftex.def)             Requested size: 182.09486pt x 102.42342pt.
+<Figures/Website/machinery-select.png, id=2005, 1927.2pt x 1084.05pt>
+File: Figures/Website/machinery-select.png Graphic file (type png)
+<use Figures/Website/machinery-select.png>
+Package pdftex.def Info: Figures/Website/machinery-select.png  used on input line 306.
+(pdftex.def)             Requested size: 182.09486pt x 102.42342pt.
+<Figures/Website/modelpage.png, id=2007, 1927.2pt x 1084.05pt>
+File: Figures/Website/modelpage.png Graphic file (type png)
+<use Figures/Website/modelpage.png>
+Package pdftex.def Info: Figures/Website/modelpage.png  used on input line 315.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+ [55] [56 <./Figures/Demonstrations/fitting.pdf>] [57 <./Figures/Website/landingpage.png> <./Figures/Website/howtouse.png>] [58 <./Figures/Website/machienry.png> <./Figures/Website/machinery-select.png> <./Figures/Website/modelpage.png>]
+<Figures/Website/model-top.png, id=2041, 1927.2pt x 1084.05pt>
+File: Figures/Website/model-top.png Graphic file (type png)
+<use Figures/Website/model-top.png>
+Package pdftex.def Info: Figures/Website/model-top.png  used on input line 324.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+<Figures/Website/compare-var.png, id=2043, 1927.2pt x 1084.05pt>
+File: Figures/Website/compare-var.png Graphic file (type png)
+<use Figures/Website/compare-var.png>
+Package pdftex.def Info: Figures/Website/compare-var.png  used on input line 333.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+ [59 <./Figures/Website/model-top.png>]
+<Figures/Website/compare-sim.png, id=2050, 1927.2pt x 1084.05pt>
+File: Figures/Website/compare-sim.png Graphic file (type png)
+<use Figures/Website/compare-sim.png>
+Package pdftex.def Info: Figures/Website/compare-sim.png  used on input line 342.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+<Figures/Website/compare-demon.png, id=2053, 1927.2pt x 1084.05pt>
+File: Figures/Website/compare-demon.png Graphic file (type png)
+<use Figures/Website/compare-demon.png>
+Package pdftex.def Info: Figures/Website/compare-demon.png  used on input line 351.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+<Figures/Website/compare-schemes.png, id=2054, 1927.2pt x 1084.05pt>
+File: Figures/Website/compare-schemes.png Graphic file (type png)
+<use Figures/Website/compare-schemes.png>
+Package pdftex.def Info: Figures/Website/compare-schemes.png  used on input line 358.
+(pdftex.def)             Requested size: 318.66948pt x 179.24098pt.
+) [60 <./Figures/Website/compare-var.png>] [61 <./Figures/Website/compare-sim.png> <./Figures/Website/compare-demon.png>] (./Sections/discussion.tex [62 <./Figures/Website/compare-schemes.png>] [63] [64]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\glsxtrshort' on input line 42.
+
+
+Overfull \hbox (22.70872pt too wide) in paragraph at lines 44--45
+\OT1/cmr/m/n/10.95 Only the Bel-la-sio2019 and Saa-dat2021 mod-els have quan-ti-ties rep-re-sen-ta-tive of [][]$[][][]$[] and [][]$\OML/cmm/m/it/10.95 v[]$[]\OT1/cmr/m/n/10.95 ,
+ []
+
+[65]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\glsxtrshort' on input line 50.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\glsxtrshort' on input line 58.
+
+[66]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\glsxtrshort' on input line 68.
+
+[67] [68] [69]) [70] (./Sections/howtocontribute.tex [71]) [72]
+Overfull \hbox (70.4409pt too wide) in paragraph at lines 115--115
+[]\OT1/cmr/m/it/10.95 Fossil Fuel Share in En-ergy Con-sump-tion 1965-2024\OT1/cmr/m/n/10.95 . https://www.statista.com/statistics/1302762/fossil-
+ []
+
+[13] [14] [15] [16]
+Overfull \hbox (9.36717pt too wide) in paragraph at lines 115--115
+[]\OT1/cmr/m/it/10.95 Digital 2025: Global Overview Re-port\OT1/cmr/m/n/10.95 . https://datareportal.com/reports/digital-2025-global-
+ []
+
+[17] (/home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2020/03/25>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: B8E0EEDD3A58300327F3CCC34AC1D90E;10318.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 60568 strings out of 474222
+ 1257007 string characters out of 5748733
+ 2612882 words of memory out of 5000000
+ 81542 multiletter control sequences out of 15000+600000
+ 588460 words of font info for 124 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 114i,20n,125p,4355b,2795s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{glo:epipremnum} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:arabidopsis} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:chlamydomonas} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:saccharomyces} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:sapiens} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb>
+Output written on /home/elouencorvestnew/Documents/GreenSloth_Writing/Thesis/out_dir/main.pdf (89 pages, 7235634 bytes).
+PDF statistics:
+ 2604 PDF objects out of 2984 (max. 8388607)
+ 2250 compressed objects within 23 object streams
+ 470 named destinations out of 1000 (max. 500000)
+ 811 words of extra memory for PDF output out of 10000 (max. 10000000)
+
