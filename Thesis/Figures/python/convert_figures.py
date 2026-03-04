@@ -4,6 +4,7 @@ from svglib.svglib import svg2rlg
 from pathlib import Path
 import math
 import pandas as pd
+import matplotlib.pyplot as plt
 
 demon_dict = {}
 fig_dict = {}
@@ -54,7 +55,33 @@ info_df.to_latex(
     ),
     label="tab:models-meta",
 )
+
+fig, ax = plt.subplots(1, 1, figsize=(10, 6))
+
+style_dict = {
+    "Variables": {"color": "#00A6A6"},
+    "Parameters": {"color": "#F49F0A"},
+    "Reactions": {"color": "#E6F8B2"},
+    "Derived Variables": {"color": "#A44A3F"},
+    "Derived Parameters": {"color": "#D7C0D0"},
+}
+
+for idx, row in info_df.iterrows():
+    prior=0
+    for label, value in row.items():
+        if label == "Total":
+            ax.text(idx, prior + 2, str(value), ha='center', va='bottom')
+        else:
+            ax.bar(idx, value, bottom=prior, color=style_dict[label]["color"], label=label if idx == info_df.index[0] else "")
+            prior += value
+
+for side in ["top", "right"]:
+    ax.spines[side].set_visible(False)
     
+ax.legend(frameon=False)
+      
+plt.savefig(Path(__file__).parents[2] / "Figures" / "models_info.png", bbox_inches="tight")
+
 for model, figs in fig_dict.items():
     for fig, info in figs.items():
         output_path = Path(__file__).parents[1] / "Validations" / f"{model}_{fig}.pdf"
