@@ -26,6 +26,12 @@ def calc_h(pH):
 def calc_pmf(Dpsi, pH_lumen, pH_stroma, pmf_init):
     return Dpsi + 0.06 * (pH_stroma - pH_lumen) + pmf_init # checked
 
+def k_b6f(pH_lumen, pKa_reg, c_b6f, Vmax_b6f):
+    pHmod = 1 - (1 / (10 ** (pH_lumen - pKa_reg) + 1))
+    b6f_deprot = pHmod * c_b6f
+    return b6f_deprot
+
+
 
 def _delta_pH_inVolts(delta_pH: float):
     return 0.06 * delta_pH
@@ -133,6 +139,12 @@ def include_derived_quantities(m: Model):
         name='ATP_synthase_driving_force',
         fn=ATPsynthase_driving_force,
         args=['pmf', 'DeltaGATP_V', 'n'],
+    )
+
+    m.add_derived(
+        name='k_b6f',
+        fn=k_b6f,
+        args=['pH_lumen', 'pKa_reg', 'c_b6f', 'Vmax_b6f'],
     )
 
     return m
