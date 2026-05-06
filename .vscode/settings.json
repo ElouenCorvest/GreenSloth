@@ -5,7 +5,7 @@
     "python-envs.pythonProjects": [
         {
             "path": "models/.pixi_envs/modelbase2/.pixi/envs/default/bin",
-            "envManager": "ms-python.python:system",
+            "envManager": "ms-python.python:venv",
             "packageManager": "ms-python.python:pip"
         }
     ],
