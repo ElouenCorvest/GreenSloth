@@ -49,8 +49,6 @@ def Davis2017() -> Model:
             "NADP_tot": 1,  # checked
             "Xanthophyll_tot": 1, # checked
             "k_CBB": 3000, # checked
-            'pmf_init':0.0947503778735308, # checked
-            
         }
     )
 
@@ -63,6 +61,7 @@ def Davis2017() -> Model:
             "K_lu": Variable(0.04, unit="REPLACE"), # checked
             "PC_ox": Variable(0, unit="REPLACE"), # checked
             "Zx": Variable(0, unit="REPLACE"), # checked
+            # "PsbS": Variable(0, unit="REPLACE"), # checked
             "singO2": Variable(0, unit="REPLACE"), # checked
             'P700_ox': Variable(0, unit="REPLACE"), # checked
             "Fd_red": Variable(0, unit="REPLACE"), # checked

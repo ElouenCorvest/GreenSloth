@@ -18,6 +18,9 @@ def neg_point_one_val(x: float):
 def neg_point_two_val(x: float):
     return -0.2 * x
 
+def neg_proportional(x,y):
+    return -x*y
+
 def neg_thrice(x: float):
     return x * -3
 
@@ -162,6 +165,7 @@ def include_rates(m: Model):
         args=['Vmax_ATPsynth','ATP_synthase_driving_force'],
         stoichiometry={"ATP_made": 1, 
                        "pH_lumen": Derived(fn=ATP_stoi, args=['lumen_protons_per_turnover', 'n', 'b_H'], unit=None), 
+                       "Dpsi": Derived(fn=neg_proportional, args=['n','volt_per_charge'], unit=None), 
                        }
     )
 

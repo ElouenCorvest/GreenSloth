@@ -23,8 +23,8 @@ def ATPsynthase_driving_force(pmf, DeltaGATP, n):
 def calc_h(pH):
     return 10 ** (-1 * pH) # checked
 
-def calc_pmf(Dpsi, pH_lumen, pH_stroma, pmf_init):
-    return Dpsi + 0.06 * (pH_stroma - pH_lumen) + pmf_init # checked
+def calc_pmf(Dpsi, pH_lumen, pH_stroma):
+    return Dpsi + 0.06 * (pH_stroma - pH_lumen) # checked
 
 def k_b6f(pH_lumen, pKa_reg, c_b6f, Vmax_b6f):
     pHmod = 1 - (1 / (10 ** (pH_lumen - pKa_reg) + 1))
@@ -120,7 +120,7 @@ def include_derived_quantities(m: Model):
     m.add_derived(
         name="pmf",
         fn=calc_pmf,
-        args=['Dpsi', 'pH_lumen', 'pH_stroma', 'pmf_init'],
+        args=['Dpsi', 'pH_lumen', 'pH_stroma'],
     )
 
     m.add_derived(
