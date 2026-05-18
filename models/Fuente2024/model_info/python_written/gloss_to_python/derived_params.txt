@@ -1,5 +1,0 @@
-------- Start on 2026-02-03 14:32:35.911121 -------
-
-osc_light = remove_math(derived_params_table, r'$Light$')
-sigma_PSII = remove_math(derived_params_table, r'$\sigma _{II}$')
-

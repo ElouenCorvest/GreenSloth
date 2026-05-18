@@ -1,8 +1,0 @@
-------- Start on 2026-02-03 14:32:35.906957 -------
-
-Q_active = remove_math(comps_table, r'$FQ_{act}$')
-PQ = remove_math(comps_table, r'$PQ$')
-PSI_ox = remove_math(comps_table, r'$PI_{ox}$')
-H_lumen = remove_math(comps_table, r'$H_L$')
-ATP_st = remove_math(comps_table, r'$ATP$')
-

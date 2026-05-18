@@ -1,8 +1,0 @@
-Short Description,Common Abbr.,Paper Abbr.,Python Var
-PAR photons per PSII,$\mathrm{light\_per\_L}$,$\mathrm{light\_per\_L}$,light_per_L
-Simplified rate constant of CBB cycle,$k_\mathrm{CBB}$,$k_{CBC}$,kCBB
-Driving force of $\mathrm{Cl^-}$ across the thylakoid membrane,$\mathrm{Cl_{df}}$,$v$,driving_force_Cl
-Difference between pH in lumen and stroma,$\mathrm{\Delta pH}$,$\mathrm{\Delta pH}$,delta_pH
-pH Difference in Volts,$\mathrm{\Delta pH / V}$,$\mathrm{\Delta pH / V}$,delta_pH_inVolts
-KEA3 regulation by NADPH,$\mathrm{qL_{act}}$,$qL_{act}$,qL_act
-KEA3 regulation by lumen pH,$\mathrm{pH_{lu|act}}$,$pH_{act}$,pH_act
