@@ -1,0 +1,27 @@
+{
+  "name": "chatbots",
+  "version": "1.0.0",
+  "description": "Install [ollama](https://ollama.com/)",
+  "main": "test.js",
+  "dependencies": {
+    "base64-js": "^1.5.1",
+    "eventemitter3": "^4.0.7",
+    "js-tiktoken": "^1.0.21",
+    "langsmith": "^0.7.1",
+    "mustache": "^4.2.0",
+    "ollama": "^0.6.3",
+    "p-finally": "^1.0.0",
+    "p-queue": "^6.6.2",
+    "p-timeout": "^3.2.0",
+    "whatwg-fetch": "^3.6.20",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

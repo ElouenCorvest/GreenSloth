@@ -1,0 +1,20 @@
+{
+  "name": "chatbots-test",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "@langchain/ollama": "^1.2.7",
+    "langchain": "^1.4.1",
+    "marked": "^18.0.4",
+    "ollama": "^0.6.3"
+  }
+}
