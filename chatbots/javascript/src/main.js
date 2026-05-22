@@ -1,4 +1,5 @@
 import { ChatOllama } from "@langchain/ollama"
+import { tool } from "langchain"
 import { marked } from "marked"
 
 const chatModel = new ChatOllama({
@@ -6,6 +7,12 @@ const chatModel = new ChatOllama({
     temperature: 0,
     maxRetries: 2,
 })
+
+const searchPDF = tool(
+    ({ query }) => {
+        const retrievedDocs
+    }
+)
 
 const page = document.querySelector("#app")
 
